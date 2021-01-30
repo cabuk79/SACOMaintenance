@@ -12,5 +12,7 @@ namespace BuisnessModels
         public string Name { get; set; }
         public string Description { get; set; }
         public int MachineTypeId { get; set; } //Fk to machine type table
+        public string SerialIdentifierNumber { get; set; }
+        public string Comments { get; set; }
     }
 }

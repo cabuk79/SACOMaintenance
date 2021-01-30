@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BuisnessModels
 {
-    class PpeRequest
+    public class PpeRequest
     {
+        public int PPDId { get; set; } //FK to PPE table
+        public int MaintReqInitiationId { get; set; } //FK to MaintRequestInitation
     }
 }

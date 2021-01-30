@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BuisnessModels
 {
-    class RiskRequest
+    public class RiskRequest
     {
+        public int RiskAssementId { get; set; } //FK to RiskRequest ID
+        public int MaintReqInitiation { get; set; } //FK to MaintRequestInitiation
     }
 }
