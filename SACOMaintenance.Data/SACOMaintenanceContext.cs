@@ -19,10 +19,8 @@ namespace SACOMaintenance.Data
         public DbSet<MaintRequestInitiation> MaintRequestInitiations { get; set; }
         public DbSet<PlantRequest> PlantRequests { get; set; }
         public DbSet<PPE> PPE { get; set; }
-        public DbSet<PpeRequest> PPERequests { get; set; }
         public DbSet<RequestDailyRegister> RequestDailyRegisters { get; set; }
         public DbSet<Risk> Risks { get; set; }
-        public DbSet<RiskRequest> RiskRequests { get; set; }
 
 
         //TODO: remove this and inject at runtime
