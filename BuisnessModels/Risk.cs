@@ -11,5 +11,6 @@ namespace SACOMaintenance.BuisnessModels
         public int Id { get; set; }
         public string RiskName { get; set; }
         public string Description { get; set; }
+        public List<MaintRequestInitiation> MaintRequestInitiation { get; set; } = new List<MaintRequestInitiation>();
     }
 }

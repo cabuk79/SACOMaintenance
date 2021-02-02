@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SACOMaintenance.BuisnessModels
 {
@@ -13,5 +14,8 @@ namespace SACOMaintenance.BuisnessModels
         public int RequestedById { get; set; } //FK to users table
         public string RequestDetails { get; set; }
         public int RequestTypeId { get; set; } //FK to type table
+        public List<Risk> Risks { get; set; } = new List<Risk>();
+        public List<PPE> PPEEquipment { get; set; } = new List<PPE>();
+
     }
 }

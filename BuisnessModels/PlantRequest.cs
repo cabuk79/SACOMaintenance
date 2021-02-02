@@ -8,6 +8,7 @@ namespace SACOMaintenance.BuisnessModels
 {
     public class PlantRequest
     {
+        public int Id { get; set; }
         public int IsolationNitricAcid { get; set; }
         public int IsolatedPhosphoricAcid { get; set; }
         public int IsolatedSodiumHydroxide { get; set; }

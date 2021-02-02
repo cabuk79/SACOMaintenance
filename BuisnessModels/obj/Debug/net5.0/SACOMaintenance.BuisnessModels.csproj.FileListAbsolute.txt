@@ -1,0 +1,12 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\SACOMaintenance.BuisnessModels.deps.json
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\SACOMaintenance.BuisnessModels.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\ref\SACOMaintenance.BuisnessModels.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\SACOMaintenance.BuisnessModels.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.csprojAssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.csproj.CoreCompileInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\ref\SACOMaintenance.BuisnessModels.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.BuisnessModels.pdb

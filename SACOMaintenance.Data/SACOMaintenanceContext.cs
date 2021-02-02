@@ -23,5 +23,13 @@ namespace SACOMaintenance.Data
         public DbSet<RequestDailyRegister> RequestDailyRegisters { get; set; }
         public DbSet<Risk> Risks { get; set; }
         public DbSet<RiskRequest> RiskRequests { get; set; }
+
+
+        //TODO: remove this and inject at runtime
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                "Data Srouce=(lovaldb)\\MSSQLocalDB; Initial Catalog=SACOMaintenanceApp");
+        }
     }
 }
