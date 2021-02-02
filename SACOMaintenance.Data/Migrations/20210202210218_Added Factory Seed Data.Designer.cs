@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SACOMaintenance.Data;
 
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    partial class SACOMaintenanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210202210218_Added Factory Seed Data")]
+    partial class AddedFactorySeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,48 +64,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Areas");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AreaName = "Warehouse"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AreaName = "Plant"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AreaName = "Press Shop"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AreaName = "Tool Room"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AreaName = "Assembly"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            AreaName = "Offices F3"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            AreaName = "FL Production"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            AreaName = "GTL Production"
-                        });
                 });
 
             modelBuilder.Entity("SACOMaintenance.BuisnessModels.Company", b =>
@@ -119,23 +79,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CompantName = "SACO"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CompantName = "Nekem"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CompantName = "FL"
-                        });
                 });
 
             modelBuilder.Entity("SACOMaintenance.BuisnessModels.Equipment", b =>
@@ -314,26 +257,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PPE");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "General gloves",
-                            PPEName = "Gloves"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Hard covered saftey glasses",
-                            PPEName = "Saftey Glasses"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Steel toe capped",
-                            PPEName = "Saftery Boots"
-                        });
                 });
 
             modelBuilder.Entity("SACOMaintenance.BuisnessModels.PlantRequest", b =>
