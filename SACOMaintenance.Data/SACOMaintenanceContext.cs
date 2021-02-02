@@ -29,5 +29,15 @@ namespace SACOMaintenance.Data
             optionsBuilder.UseSqlServer(
                 "Data Source=LAPTOP-GMOCCUAU\\SQLEXPRESSLOCADB; Initial Catalog=SACOMaintenanceApp; Trusted_Connection=True");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Factory>().HasData
+            (
+                new Factory { Id = 1, FactoryName = "F1" },
+                new Factory { Id = 2, FactoryName = "F2" },
+                new Factory { Id = 3, FactoryName = "F3" }
+            );
+        }
     }
 }
