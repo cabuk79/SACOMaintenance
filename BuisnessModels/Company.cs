@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SACOMaintenance.BuisnessModels
 {
-    class Company
+    public class Company
     {
+        public int Id { get; set; }
+        public string CompantName { get; set; }
     }
 }
