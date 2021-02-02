@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BuisnessModels
+namespace SACOMaintenance.BuisnessModels
 {
     public class MaintRequestInitiation
     {

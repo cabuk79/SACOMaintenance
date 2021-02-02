@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuisnessModels
+namespace SACOMaintenance.BuisnessModels
 {
-    class Factory
+    public class Factory
     {
+        public int Id { get; set; }
+        public string FactoryName { get; set; }
     }
 }
