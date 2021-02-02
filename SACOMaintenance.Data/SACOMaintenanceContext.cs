@@ -27,7 +27,7 @@ namespace SACOMaintenance.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Data Srouce=(lovaldb)\\MSSQLocalDB; Initial Catalog=SACOMaintenanceApp");
+                "Data Source=LAPTOP-GMOCCUAU\\SQLEXPRESSLOCADB; Initial Catalog=SACOMaintenanceApp; Trusted_Connection=True");
         }
     }
 }
