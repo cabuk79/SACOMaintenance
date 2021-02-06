@@ -5,7 +5,7 @@ namespace SACOMaintenance.BuisnessModels
 {
     public class MaintRequestInitiation
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime DateRaised { get; set; }
         public int CompanyId { get; set; } //FK to company table
         public int FactoryId { get; set; } //FK to factory table
