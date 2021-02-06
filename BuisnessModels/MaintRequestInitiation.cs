@@ -16,6 +16,7 @@ namespace SACOMaintenance.BuisnessModels
         public int RequestTypeId { get; set; } //FK to type table
         public List<Risk> Risks { get; set; } = new List<Risk>();
         public List<PPE> PPEEquipment { get; set; } = new List<PPE>();
-
+        public List<User> Users { get; set; } = new List<User>();
+        public int Status { get; set; }
     }
 }

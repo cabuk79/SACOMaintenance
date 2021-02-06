@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.BuisnessModels", "BuisnessModels\SACOMaintenance.BuisnessModels.csproj", "{6259AC7A-22F6-46C8-9E94-0770285FE486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SACOMaintenance.Data", "SACOMaintenance.Data\SACOMaintenance.Data.csproj", "{0BE8CB30-77F8-459D-AB1E-5DDFB2649912}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.Data", "SACOMaintenance.Data\SACOMaintenance.Data.csproj", "{0BE8CB30-77F8-459D-AB1E-5DDFB2649912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SACOMaintenance.DataAccess", "SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj", "{B8600AA4-4BD4-44E2-B235-B8E3E091F394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0BE8CB30-77F8-459D-AB1E-5DDFB2649912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE8CB30-77F8-459D-AB1E-5DDFB2649912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE8CB30-77F8-459D-AB1E-5DDFB2649912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8600AA4-4BD4-44E2-B235-B8E3E091F394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8600AA4-4BD4-44E2-B235-B8E3E091F394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8600AA4-4BD4-44E2-B235-B8E3E091F394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8600AA4-4BD4-44E2-B235-B8E3E091F394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

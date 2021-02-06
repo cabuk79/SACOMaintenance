@@ -21,6 +21,8 @@ namespace SACOMaintenance.Data
         public DbSet<PPE> PPE { get; set; }
         public DbSet<RequestDailyRegister> RequestDailyRegisters { get; set; }
         public DbSet<Risk> Risks { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Status> Statuses { get; set; }
 
 
         //TODO: remove this and inject at runtime
@@ -39,6 +41,15 @@ namespace SACOMaintenance.Data
                 new Company { Id = 1, CompantName = "SACO" },
                 new Company { Id = 2, CompantName = "Nekem" },
                 new Company { Id = 3, CompantName = "FL" }
+            );
+
+            modelBuilder.Entity<Status>().HasData
+            (
+                new Status { Id = 1, StatusName = "Open" },
+                new Status { Id = 2, StatusName = "New" },
+                new Status { Id = 3, StatusName = "Completed" },
+                new Status { Id = 4, StatusName = "Cancelled" },
+                new Status { Id = 5, StatusName = "On Hold" }
             );
 
             //Area Seed Data
