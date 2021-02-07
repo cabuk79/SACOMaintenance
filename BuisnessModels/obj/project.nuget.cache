@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z4u/x+sEAmlNTDTB2hQr5A27FaCXm2+AVoNZTjO9asJKsnpp4XH1wnuancJLM7vUG/X1jUmBNHI1o77ds6WkxA==",
+  "dgSpecHash": "IgHb59AaK7xQJohPr3qKxdzn9U6BoRwGtr0LTaXKF6HrapOm00HW154jHsiwwPyYT1mbsKfuQId/ZXkymhRkcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.BuisnessModels.csproj",
+  "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

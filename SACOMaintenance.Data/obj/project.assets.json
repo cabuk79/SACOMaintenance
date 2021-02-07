@@ -1520,14 +1520,14 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "SACOMaintenance.BuisnessModels/1.0.0": {
+      "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/SACOMaintenance.BuisnessModels.dll": {}
+          "bin/placeholder/SACOMaintenance.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SACOMaintenance.BuisnessModels.dll": {}
+          "bin/placeholder/SACOMaintenance.Common.dll": {}
         }
       }
     }
@@ -5798,17 +5798,17 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "SACOMaintenance.BuisnessModels/1.0.0": {
+    "SACOMaintenance.Common/1.0.0": {
       "type": "project",
-      "path": "../BuisnessModels/SACOMaintenance.BuisnessModels.csproj",
-      "msbuildProject": "../BuisnessModels/SACOMaintenance.BuisnessModels.csproj"
+      "path": "../BuisnessModels/SACOMaintenance.Common.csproj",
+      "msbuildProject": "../BuisnessModels/SACOMaintenance.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
-      "SACOMaintenance.BuisnessModels >= 1.0.0"
+      "SACOMaintenance.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5843,8 +5843,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.BuisnessModels.csproj": {
-              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.BuisnessModels.csproj"
+            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
+              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
             }
           }
         }

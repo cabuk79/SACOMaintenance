@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BuisnessModels\SACOMaintenance.BuisnessModels.csproj" />
+    <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.BuisnessModels.csproj",
-      "projectName": "SACOMaintenance.BuisnessModels",
-      "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.BuisnessModels.csproj",
+      "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj",
+      "projectName": "SACOMaintenance.Common",
+      "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj",
       "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\obj\\",
       "projectStyle": "PackageReference",
