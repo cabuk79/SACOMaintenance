@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess.Interfaces
 {
-    public interface IArea
+    public interface IPlantRequest
     {
-        IEnumerable<AreaProvider> LoadAllAreas();
-        void LoadSingleArea(int Id);
-        void AddEditArea(AreaProvider area);
+        void GetPlantRequestInfo(int maintReqId);
+        void AddEditPlantRequestInfo(int maintReqId, PlantRequest generalRequest);
+        void GetSinalPlantRequestInfo(int Id);
     }
 }

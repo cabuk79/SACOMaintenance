@@ -47,6 +47,8 @@ namespace SACOMaintenance.BuisnessModels
         public DateTime ClearanceDateTime { get; set; }
 
         public List<RequestDailyRegister> ListOfDailyRgisters = new List<RequestDailyRegister>(); //List of all the daily registers linked to the request
+
+        public int MaintRequestId { get; set; } //FK to the maintenance request initation table
     }
 }
 

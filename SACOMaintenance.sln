@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.Data", "SAC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.DataAccess", "SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj", "{B8600AA4-4BD4-44E2-B235-B8E3E091F394}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SACOMaintenance.ViewModel", "SACOMaintenance.ViewModel\SACOMaintenance.ViewModel.csproj", "{B6412468-9BCB-4C2D-9C52-66ACFCCDA3A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.ViewModel", "SACOMaintenance.ViewModel\SACOMaintenance.ViewModel.csproj", "{B6412468-9BCB-4C2D-9C52-66ACFCCDA3A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{EFC17DA9-AFAA-4DC4-A034-47DE9AF2D26D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console.UI", "Console.UI", "{35E9F033-7886-4EAA-B5F6-ACD5F01720A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
