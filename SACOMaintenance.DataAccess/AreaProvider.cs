@@ -11,9 +11,9 @@ namespace SACOMaintenance.DataAccess
 {
     public class AreaProvider : IArea
     {
-        public AreaProvider(SACOMaintenanceContext sacoMaintenanceContext)
+        public AreaProvider()
         {
-            SacoMaintenanceContext = sacoMaintenanceContext;
+            SacoMaintenanceContext = new SACOMaintenanceContext(); // sacoMaintenanceContext;
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }
@@ -29,16 +29,16 @@ namespace SACOMaintenance.DataAccess
             );
         }
 
-        public IEnumerable<AreaProvider> LoadAllAreas()
+        public IEnumerable<Area> LoadAllAreas()
         {
             var areas = SacoMaintenanceContext.Areas.ToList();
-            return (IEnumerable<AreaProvider>)areas;
+            return (IEnumerable<Area>)areas;
         }
 
-        public void LoadSingleArea(int Id)
-        {
-            var area SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == Id);
-            return area;
-        }
+        //public void LoadSingleArea(int Id)
+        //{
+        //    var area SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == Id);
+        //    return area;
+        //}
     }
 }

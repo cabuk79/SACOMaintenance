@@ -10,7 +10,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
-          "SACOMaintenance.BuisnessModels": "1.0.0"
+          "SACOMaintenance.Common": "1.0.0"
         },
         "runtime": {
           "SACOMaintenance.Data.dll": {}
@@ -1067,9 +1067,9 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "SACOMaintenance.BuisnessModels/1.0.0": {
+      "SACOMaintenance.Common/1.0.0": {
         "runtime": {
-          "SACOMaintenance.BuisnessModels.dll": {}
+          "SACOMaintenance.Common.dll": {}
         }
       }
     }
@@ -1759,7 +1759,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "SACOMaintenance.BuisnessModels/1.0.0": {
+    "SACOMaintenance.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

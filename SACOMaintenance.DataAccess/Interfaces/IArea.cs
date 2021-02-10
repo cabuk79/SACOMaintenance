@@ -9,8 +9,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IArea
     {
-        IEnumerable<AreaProvider> LoadAllAreas();
-        void LoadSingleArea(int Id);
-        void AddEditArea(AreaProvider area);
+        IEnumerable<Area> LoadAllAreas();
+        //void LoadSingleArea(int Id);
+        void AddEditArea(Area area);
     }
 }

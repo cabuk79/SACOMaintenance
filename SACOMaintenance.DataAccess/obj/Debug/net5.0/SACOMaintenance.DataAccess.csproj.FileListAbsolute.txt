@@ -1,0 +1,17 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.deps.json
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\ref\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Common.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Data.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Common.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Data.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.csprojAssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.csproj.CopyComplete
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\ref\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.pdb
