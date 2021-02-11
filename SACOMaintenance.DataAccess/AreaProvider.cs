@@ -32,7 +32,7 @@ namespace SACOMaintenance.DataAccess
         public IEnumerable<Area> LoadAllAreas()
         {
             var areas = SacoMaintenanceContext.Areas.ToList();
-            return (IEnumerable<Area>)areas;
+            return areas;
         }
 
         //public void LoadSingleArea(int Id)

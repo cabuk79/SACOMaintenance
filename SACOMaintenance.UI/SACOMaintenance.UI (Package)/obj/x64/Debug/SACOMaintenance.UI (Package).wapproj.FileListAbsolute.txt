@@ -263,6 +263,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.U
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Data.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Data.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\vqgqkpqe.zzl\Microsoft.UI.Xaml.Controls.pri.xml
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\mfcawe3m.4xb\Microsoft.UI.Xaml.Controls.pri.xml
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\lktmtw4w.skz\Microsoft.UI.Xaml.Controls.pri.xml
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\5kn2jz2d.fm1\Microsoft.UI.Xaml.Controls.pri.xml
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\e5hvqjec.scj\Microsoft.UI.Xaml.Controls.pri.xml
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\o5rjfnyx.dmj\Microsoft.UI.Xaml.Controls.pri.xml

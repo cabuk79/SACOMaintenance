@@ -32,10 +32,10 @@ namespace SACOMaintenance.DataAccess
         public IEnumerable<Factory> LoadAllFactories()
         {
             var factories = SacoMaintenanceContext.Factories.ToList();
-            return (IEnumerable<Factory>)factories;
+            return factories;
         }
 
-        public void ViewSingleFactory(int Id)
+        public Factory ViewSingleFactory(int Id)
         {
             var factory = SacoMaintenanceContext.Factories.FirstOrDefault(i => i.Id == Id);
         }
