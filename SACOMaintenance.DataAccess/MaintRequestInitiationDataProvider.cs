@@ -1,28 +1,50 @@
 ﻿using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
     public class MaintRequestInitiationDataProvider : IMaintRequestInitiation
     {
+        public MaintRequestInitiationDataProvider()
+        {
+            SacoMaintenanceContext = new SACOMaintenanceContext();
+        }
+
+        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+
         public void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
         {
-            throw new NotImplementedException();
+            SacoMaintenanceContext.MaintRequestInitiations.Add
+            (
+                new MaintRequestInitiation
+                {
+                    DateRaised = maintRequestInitiation.DateRaised,
+                    CompanyId = maintRequestInitiation.CompanyId,
+                    FactoryId = maintRequestInitiation.FactoryId,
+                    AreaId = maintRequestInitiation.AreaId,
+                    EquipmentId = maintRequestInitiation.EquipmentId,
+                    RequestedById = maintRequestInitiation.RequestedById,
+                    RequestDetails = maintRequestInitiation.RequestDetails,
+                    RequestTypeId = maintRequestInitiation.RequestTypeId,
+                    Status = maintRequestInitiation.Status
+                }
+            );
+            SacoMaintenanceContext.SaveChanges();
         }
 
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
-            throw new NotImplementedException();
+            var maintReqInitiation = SacoMaintenanceContext.MaintRequestInitiations.FirstOrDefault(i => i.Id == Id);
+            return maintReqInitiation;
         }
 
         public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
         {
-            throw new NotImplementedException();
+            var maintReqInitationList = SacoMaintenanceContext.MaintRequestInitiations.ToList();
+            return maintReqInitationList;
         }
     }
 }

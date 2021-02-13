@@ -211,8 +211,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.U
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\ProjectArchitectures.txt
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\SACOMaintenance.UI (Package).wapproj.LastBuild.txt
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Common.dll
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Common.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\Humanizer.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\Microsoft.Data.SqlClient.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\Microsoft.EntityFrameworkCore.dll
@@ -261,8 +259,12 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.U
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Data.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Common.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.DataAccess.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\bin\x64\Debug\SACOMaintenance.UI\SACOMaintenance.Data.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\krsstkal.5mu\Microsoft.UI.Xaml.Controls.pri.xml
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\2gihmsps.3mc\Microsoft.UI.Xaml.Controls.pri.xml
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\qbttdjin.uig\Microsoft.UI.Xaml.Controls.pri.xml
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\ojwzrbcl.ei4\Microsoft.UI.Xaml.Controls.pri.xml
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\r4bhfkjj.tsn\Microsoft.UI.Xaml.Controls.pri.xml
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI (Package)\obj\x64\Debug\y0fh0taw.pid\Microsoft.UI.Xaml.Controls.pri.xml

@@ -1,4 +1,5 @@
 ﻿using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,39 @@ namespace SACOMaintenance.DataAccess
 {
     public class EquipmentDataProvider : IEquipment
     {
+        public EquipmentDataProvider()
+        {
+            SacoMaintenanceContext = new SACOMaintenanceContext();
+        }
+
+        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+
         public void AddEditEquipment(Equipment equipment)
         {
-            throw new NotImplementedException();
+            SacoMaintenanceContext.Equipment.Add
+            (
+                new Equipment 
+                { 
+                    Name = equipment.Name,
+                    Description = equipment.Description,
+                    Comments = equipment.Comments,
+                    MachineTypeId = equipment.MachineTypeId,
+                    SerialIdentifierNumber = equipment.SerialIdentifierNumber
+                }
+            );
+            SacoMaintenanceContext.SaveChanges();
         }
 
         public IEnumerable<Equipment> LoadAllEquipments()
         {
-            throw new NotImplementedException();
+            var equipments = SacoMaintenanceContext.Equipment.ToList();
+            return equipments;
         }
 
-        public Equipment ViewSingleEquipment(int Id)
+        public Equipment ViewSingleEquipment(int equipmentId)
         {
-            throw new NotImplementedException();
+            var equipment = SacoMaintenanceContext.Equipment.FirstOrDefault(i => i.Id == equipmentId);
+            return equipment;
         }
     }
 }

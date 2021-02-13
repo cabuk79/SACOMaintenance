@@ -1,28 +1,38 @@
 ﻿using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
     public class StatusDataProvider : IStatus
     {
+        public StatusDataProvider()
+        {
+            SacoMaintenanceContext = new SACOMaintenanceContext();
+        }
+
+        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+
         public void AddEditStatus(Status status)
         {
-            throw new NotImplementedException();
+            SacoMaintenanceContext.Add
+            (
+                new Status { StatusName = status.StatusName }
+            );
         }
 
         public Status GetSingleStatus(int Id)
         {
-            throw new NotImplementedException();
+            var status = SacoMaintenanceContext.Statuses.FirstOrDefault(i => i.Id == Id);
+            return status;
         }
 
         public IEnumerable<Status> LoadAllStatuses()
         {
-            throw new NotImplementedException();
+            var statusList = SacoMaintenanceContext.Statuses.ToList();
+            return statusList;
         }
     }
 }

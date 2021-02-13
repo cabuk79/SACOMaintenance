@@ -757,6 +757,9 @@
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Data.dll">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.Data.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll">
+      <PackagePath>SACOMaintenance.UI\SACOMaintenance.DataAccess.dll</PackagePath>
+    </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\">

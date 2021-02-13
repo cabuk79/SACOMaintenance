@@ -31,7 +31,7 @@
     <AppXManifest Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI %28Package%29\bin\x64\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-02-10T19:48:30.505</Modified>
+      <Modified>2021-02-13T12:40:02.701</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -41,11 +41,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-02-10T19:48:25.695</Modified>
+      <Modified>2021-02-13T12:39:56.883</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\MainWindow.xbf">
       <PackagePath>MainWindow.xbf</PackagePath>
-      <Modified>2021-02-10T19:48:25.695</Modified>
+      <Modified>2021-02-13T12:39:56.883</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\Microsoft.UI.Xaml\Assets\NoiseAsset_256X256_PNG.png">
       <PackagePath>Microsoft.UI.Xaml\Assets\NoiseAsset_256X256_PNG.png</PackagePath>
@@ -91,23 +91,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI %28Package%29\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-02-10T19:48:30.369</Modified>
+      <Modified>2021-02-13T12:40:02.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\obj\x64\Debug\net5.0-windows10.0.18362.0\Msix\SACOMaintenance.UI.deps.json">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.UI.deps.json</PackagePath>
-      <Modified>2021-02-10T19:48:27.304</Modified>
+      <Modified>2021-02-13T12:39:59.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\obj\x64\Debug\net5.0-windows10.0.18362.0\apphost.exe">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.UI.exe</PackagePath>
-      <Modified>2021-02-10T19:48:25.784</Modified>
+      <Modified>2021-02-13T12:39:56.973</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\obj\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.UI.dll">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.UI.dll</PackagePath>
-      <Modified>2021-02-10T19:48:25.776</Modified>
+      <Modified>2021-02-13T12:39:56.964</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.UI.runtimeconfig.json">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.UI.runtimeconfig.json</PackagePath>
-      <Modified>2021-02-10T19:48:19.774</Modified>
+      <Modified>2021-02-13T12:39:50.177</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.18362.13\lib\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>SACOMaintenance.UI\Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -1003,11 +1003,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\SACOMaintenance.Common.dll">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.Common.dll</PackagePath>
-      <Modified>2021-02-10T19:01:21.641</Modified>
+      <Modified>2021-02-13T10:31:40.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Data.dll">
       <PackagePath>SACOMaintenance.UI\SACOMaintenance.Data.dll</PackagePath>
-      <Modified>2021-02-10T19:01:22.627</Modified>
+      <Modified>2021-02-13T10:31:40.874</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll">
+      <PackagePath>SACOMaintenance.UI\SACOMaintenance.DataAccess.dll</PackagePath>
+      <Modified>2021-02-13T12:37:42.130</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

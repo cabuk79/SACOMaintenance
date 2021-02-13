@@ -36,6 +36,7 @@ namespace SACOMaintenance.DataAccess
             (
                 new Company { CompantName = company.CompantName }
             );
+            SacoMaintenanceContext.SaveChanges();
         }
     }
 }

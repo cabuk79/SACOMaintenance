@@ -245,5 +245,7 @@ C:\Users\cabuk\.nuget\packages\system.security.cryptography.protecteddata\4.7.0\
 C:\Users\cabuk\.nuget\packages\system.windows.extensions\4.7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Data.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\bin\Debug\net5.0\SACOMaintenance.Common.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Data.pdb

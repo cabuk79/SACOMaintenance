@@ -12,6 +12,7 @@
           "Microsoft.WinUI": "3.0.0-preview3.201113.0",
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.Data": "1.0.0",
+          "SACOMaintenance.DataAccess": "1.0.0",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.18362.13"
         },
         "runtime": {
@@ -1768,6 +1769,15 @@
         "runtime": {
           "SACOMaintenance.Data.dll": {}
         }
+      },
+      "SACOMaintenance.DataAccess/1.0.0": {
+        "dependencies": {
+          "SACOMaintenance.Common": "1.0.0",
+          "SACOMaintenance.Data": "1.0.0"
+        },
+        "runtime": {
+          "SACOMaintenance.DataAccess.dll": {}
+        }
       }
     }
   },
@@ -2481,6 +2491,11 @@
       "sha512": ""
     },
     "SACOMaintenance.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SACOMaintenance.DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

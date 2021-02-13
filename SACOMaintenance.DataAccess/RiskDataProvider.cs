@@ -1,4 +1,5 @@
 ﻿using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,32 @@ namespace SACOMaintenance.DataAccess
 {
     public class RiskDataProvider : IRisk
     {
+        public RiskDataProvider()
+        {
+            SacoMaintenanceContext = new SACOMaintenanceContext();
+        }
+
+        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+
         public void AddEditRisk(Risk risk)
         {
-            throw new NotImplementedException();
+            SacoMaintenanceContext.Risks.Add
+            (
+                new Risk { RiskName = risk.RiskName, Description = risk.Description }
+            );
+            SacoMaintenanceContext.SaveChanges();
         }
 
         public IEnumerable<Risk> LoadallRisks()
         {
-            throw new NotImplementedException();
+            var risks = SacoMaintenanceContext.Risks.ToList();
+            return risks;
         }
 
-        public Risk ViewSingleRisk(int Id)
+        public Risk ViewSingleRisk(int riskId)
         {
-            throw new NotImplementedException();
+            var risk = SacoMaintenanceContext.Risks.FirstOrDefault(i => i.Id == riskId);
+            return risk;
         }
     }
 }

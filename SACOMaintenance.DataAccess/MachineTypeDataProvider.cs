@@ -1,25 +1,44 @@
 ﻿using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SACOMaintenance.DataAccess
 {
     public class MachineTypeDataProvider : IMachineType
     {
+        public MachineTypeDataProvider()
+        {
+            SacoMaintenanceContext = new SACOMaintenanceContext();
+        }
+
+        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+
         public void AddEditMachineType(MachineType machineType)
         {
-            throw new NotImplementedException();
+            SacoMaintenanceContext.Add
+            (
+                new MachineType
+                {
+                    TypeName = machineType.TypeName,
+                    Description = machineType.Description
+                }
+            );
+            SacoMaintenanceContext.SaveChanges();
         }
 
         public IEnumerable<MachineType> LoadAllMachines()
         {
-            throw new NotImplementedException();
+            var machines = SacoMaintenanceContext.MachineTypes.ToList();
+            return machines;
         }
 
-        public MachineType ViewSingleMachineType(int Id)
+        public MachineType ViewSingleMachineType(int machineTypeId)
         {
-            throw new NotImplementedException();
+            var machineType = SacoMaintenanceContext.MachineTypes.FirstOrDefault(i => i.Id == machineTypeId);
+            return machineType;
         }
     }
 }

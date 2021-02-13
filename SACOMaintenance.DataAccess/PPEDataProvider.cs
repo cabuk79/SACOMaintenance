@@ -1,28 +1,44 @@
 ﻿using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
     public class PPEDataProvider : IPPE
     {
+        public PPEDataProvider()
+        {
+            SacoMaintenanceContext = new SACOMaintenanceContext()
+        }
+
+        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+
         public IEnumerable<PPE> LoadAllPPE()
         {
-            throw new NotImplementedException();
+            var ppe = SacoMaintenanceContext.PPE.ToList();
+            return ppe;
         }
 
         public void SaveAddPPE(PPE ppe)
         {
-            throw new NotImplementedException();
+            SacoMaintenanceContext.PPE.Add
+            (
+                new PPE 
+                { 
+                    PPEName = ppe.PPEName,  
+                    Description = ppe.Description,
+                    MaintRequestType = ppe.MaintRequestType
+                }
+            );
+            SacoMaintenanceContext.SaveChanges();
         }
 
-        public PPE ViewSinglePPEI(int Id)
+        public PPE ViewSinglePPEI(int ppeId)
         {
-            throw new NotImplementedException();
+            var ppe = SacoMaintenanceContext.PPE.FirstOrDefault(i => i.Id == ppeId);
+            return ppe;
         }
     }
 }
