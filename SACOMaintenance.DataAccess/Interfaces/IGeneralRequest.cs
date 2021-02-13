@@ -11,6 +11,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
     {
         void GetGeneralRequestInfo(int maintReqId);
         void AddEditGeneralRequestInfo(int maintReqId, GeneralRequest generalRequest);
-        void GetSinalGeneralRequestInfo(int Id);
+        GeneralRequest GetSingalGeneralRequestInfo(int Id);
     }
 }

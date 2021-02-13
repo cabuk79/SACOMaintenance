@@ -147,3 +147,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DbContextTesting\obj
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DbContextTesting\obj\Debug\net5.0\ref\SACOMaintenance.DbContextTesting.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DbContextTesting\obj\Debug\net5.0\SACOMaintenance.DbContextTesting.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DbContextTesting\obj\Debug\net5.0\SACOMaintenance.DbContextTesting.genruntimeconfig.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DbContextTesting\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DbContextTesting\bin\Debug\net5.0\SACOMaintenance.DataAccess.pdb

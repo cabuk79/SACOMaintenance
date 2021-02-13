@@ -2,25 +2,22 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
     public class MachineTypeDataProvider : IMachineType
     {
-        public void AddEditStatus(Status status)
+        public void AddEditMachineType(MachineType machineType)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<MachineType> LoaddAllMachines()
+        public IEnumerable<MachineType> LoadAllMachines()
         {
             throw new NotImplementedException();
         }
 
-        public void ViewSingleStatus(int Id)
+        public MachineType ViewSingleMachineType(int Id)
         {
             throw new NotImplementedException();
         }

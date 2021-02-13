@@ -10,7 +10,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IMaintRequestInitiation
     {
         IEnumerable<MaintRequestInitiation> LoadAllRequestInitations();
-        void GetSingleRequestInitiation(int Id);
+        MaintRequestInitiation GetSingleRequestInitiation(int Id);
         void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
     }
 }

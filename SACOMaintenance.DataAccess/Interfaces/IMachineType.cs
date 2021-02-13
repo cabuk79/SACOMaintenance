@@ -9,8 +9,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IMachineType
     {
-        IEnumerable<MachineType> LoaddAllMachines();
-        void ViewSingleStatus(int Id);
-        void AddEditStatus(Status status);
+        IEnumerable<MachineType> LoadAllMachines();
+        MachineType ViewSingleMachineType(int Id);
+        void AddEditMachineType(MachineType machineType);
     }
 }

@@ -11,6 +11,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
     {
         void GetPlantRequestInfo(int maintReqId);
         void AddEditPlantRequestInfo(int maintReqId, PlantRequest generalRequest);
-        void GetSinalPlantRequestInfo(int Id);
+        PlantRequest GetSinalPlantRequestInfo(int Id);
     }
 }

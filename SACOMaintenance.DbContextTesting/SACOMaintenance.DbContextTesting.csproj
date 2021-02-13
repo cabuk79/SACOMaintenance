@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />
     <ProjectReference Include="..\SACOMaintenance.Data\SACOMaintenance.Data.csproj" />
   </ItemGroup>
 

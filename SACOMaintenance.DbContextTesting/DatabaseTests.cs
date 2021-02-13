@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SACOMaintenance.BuisnessModels;
 using SACOMaintenance.Data;
+using SACOMaintenance.DataAccess;
 
 namespace SACOMaintenance.DbContextTesting
 {
@@ -37,17 +38,19 @@ namespace SACOMaintenance.DbContextTesting
                 context1.Database.EnsureDeleted();
                 context1.Database.EnsureCreated();
 
+                var nameOfArea = "New area addition and testing";
+
                 var area = new Area();
-                area.AreaName = "New area addition";
+                area.AreaName = nameOfArea;
 
-                var area1 = new Area();
-                area1.AreaName = "This is another area";
+                AreaProvider areaProvider = new AreaProvider();
 
-                context1.Areas.Add(area);
-                context1.Areas.Add(area1);
-                context1.SaveChanges();
+                areaProvider.AddEditArea(area);
+               
+                var foundArea = new Area();
+                foundArea = areaProvider.FindAreaByName(nameOfArea);
 
-                Assert.AreNotEqual(0, area.Id);
+                Assert.AreEqual(nameOfArea, foundArea.AreaName);
             }
         }
     }

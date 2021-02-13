@@ -34,10 +34,7 @@ namespace SACOMaintenance.DataAccess
         {
             SacoMaintenanceContext.Companies.Add
             (
-                new Company
-                {
-                    CompantName = company.CompantName
-                }
+                new Company { CompantName = company.CompantName }
             );
         }
     }

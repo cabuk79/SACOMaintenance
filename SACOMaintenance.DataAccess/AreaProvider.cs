@@ -13,7 +13,7 @@ namespace SACOMaintenance.DataAccess
     {
         public AreaProvider()
         {
-            SacoMaintenanceContext = new SACOMaintenanceContext(); // sacoMaintenanceContext;
+            SacoMaintenanceContext = new SACOMaintenanceContext();
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }
@@ -22,11 +22,16 @@ namespace SACOMaintenance.DataAccess
         {
             SacoMaintenanceContext.Areas.Add
             (
-                new Area
-                {
-                    AreaName = area.AreaName
-                }
+                new Area { AreaName = area.AreaName }
             );
+
+            SacoMaintenanceContext.SaveChanges();
+        }
+
+        public Area FindAreaByName(string areaName)
+        {
+            var area = SacoMaintenanceContext.Areas.FirstOrDefault(n => n.AreaName == areaName);
+            return area;
         }
 
         public IEnumerable<Area> LoadAllAreas()
@@ -35,10 +40,12 @@ namespace SACOMaintenance.DataAccess
             return areas;
         }
 
-        //public void LoadSingleArea(int Id)
-        //{
-        //    var area SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == Id);
-        //    return area;
-        //}
+        public Area LoadSingleArea(int Id)
+        {
+            var area = SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == Id);
+            return area;
+        }
+
+        
     }
 }

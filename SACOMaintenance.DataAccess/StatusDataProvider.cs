@@ -15,7 +15,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void GetSingleStatus(int Id)
+        public Status GetSingleStatus(int Id)
         {
             throw new NotImplementedException();
         }

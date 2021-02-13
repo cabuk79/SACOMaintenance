@@ -20,7 +20,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void ViewSingleRisk(int Id)
+        public Risk ViewSingleRisk(int Id)
         {
             throw new NotImplementedException();
         }

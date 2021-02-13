@@ -20,7 +20,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void ViewSinglePPEI(int Id)
+        public PPE ViewSinglePPEI(int Id)
         {
             throw new NotImplementedException();
         }

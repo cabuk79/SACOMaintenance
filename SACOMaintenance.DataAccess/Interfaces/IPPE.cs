@@ -11,6 +11,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
     {
         IEnumerable<PPE> LoadAllPPE();
         void SaveAddPPE(PPE ppe);
-        void ViewSinglePPEI(int Id);
+        PPE ViewSinglePPEI(int Id);
     }
 }

@@ -15,7 +15,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void GetPlantRequestInfo(int maintReqId)
+        public PlantRequest GetPlantRequestInfo(int maintReqId)
         {
             throw new NotImplementedException();
         }

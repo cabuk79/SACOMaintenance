@@ -20,7 +20,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void ViewSingleEquipment(int Id)
+        public Equipment ViewSingleEquipment(int Id)
         {
             throw new NotImplementedException();
         }

@@ -10,7 +10,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IRisk
     {
         IEnumerable<Risk> LoadallRisks();
-        void ViewSingleRisk(int Id);
+        Risk ViewSingleRisk(int Id);
         void AddEditRisk(Risk risk);
     }
 }

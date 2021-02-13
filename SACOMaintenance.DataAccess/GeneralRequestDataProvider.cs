@@ -20,7 +20,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void GetSinalGeneralRequestInfo(int Id)
+        public GeneralRequest GetSingalGeneralRequestInfo(int Id)
         {
             throw new NotImplementedException();
         }

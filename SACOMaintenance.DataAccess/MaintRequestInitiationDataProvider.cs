@@ -15,7 +15,7 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public void GetSingleRequestInitiation(int Id)
+        public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
             throw new NotImplementedException();
         }

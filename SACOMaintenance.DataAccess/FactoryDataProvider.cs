@@ -27,6 +27,8 @@ namespace SACOMaintenance.DataAccess
                     FactoryName = factory.FactoryName
                 }
             );
+
+            SacoMaintenanceContext.SaveChanges();
         }
 
         public IEnumerable<Factory> LoadAllFactories()
@@ -38,6 +40,8 @@ namespace SACOMaintenance.DataAccess
         public Factory ViewSingleFactory(int Id)
         {
             var factory = SacoMaintenanceContext.Factories.FirstOrDefault(i => i.Id == Id);
+            return factory;
+
         }
     }
 }
