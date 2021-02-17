@@ -13,12 +13,13 @@ namespace SACOMaintenance.ViewModel
 {
     public class AreaViewModel : INotifyPropertyChanged
     {
-        //private readonly Area area;
+        private Area area; 
         public ObservableCollection<Area> areas { get; } = new();
 
-        public AreaViewModel(/*Area area,*/ IArea areaDataProvider)
+        public AreaViewModel(IArea areaDataProvider)
         {
             //this.area = area;
+            area = new Area();
             AreaDataProvider = areaDataProvider;
         }
 
@@ -33,18 +34,30 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        //public string AreaName
-        //{
-        //    get => area.AreaName;
-        //    set 
-        //    {
-        //        if(area.AreaName != value)
-        //        {
-        //            area.AreaName = value;
-        //            RaisePropertychangedEvent();
-        //        }
-        //    }
-        //}
+        public string AreaName
+        {
+            get => area.AreaName;
+            set
+            {
+                if (area.AreaName != value)
+                {
+                    area.AreaName = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
+        public Area newArea = new Area();
+
+        public void SaveArea(Area area)
+        {
+            AreaDataProvider.UpdateArea(area);
+        }
+
+        public void AddNewArea()
+        {
+            AreaDataProvider.AddEditArea(newArea);
+        }
 
         public IArea AreaDataProvider { get; }
 

@@ -13,5 +13,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
         Area LoadSingleArea(int Id);
         void AddEditArea(Area area);
         Area FindAreaByName(string areaName);
+        void UpdateArea(Area area);
     }
 }

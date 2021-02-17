@@ -1,0 +1,113 @@
+[33mcommit cc8716c2f1cf89a0e7dc8f42532f68c72980f952[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sat Feb 13 16:46:07 2021 +0000
+
+    Updated DataProviders methods
+
+[33mcommit 71687ee1c959e2b4880af47a39ee5e531e74fb80[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sat Feb 13 11:34:52 2021 +0000
+
+    Updated DataAccess Interfaces and DataProviders
+
+[33mcommit 303f36f6f36f193e15ad8c17675de003e91ad487[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Thu Feb 11 21:18:36 2021 +0000
+
+    Added Data providers, added new test, altered ICompany and IFactory to return single Object model
+
+[33mcommit d9ca12e79cf15f0165a212d1e60cd56185cfd7be[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Wed Feb 10 21:46:57 2021 +0000
+
+    Added Test project, added UI, altered IArea, Added AreaProvider
+
+[33mcommit 7781c89d2fd709b57109338c8b3802b11b5a7646[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Mon Feb 8 21:40:45 2021 +0000
+
+    Added IArea interface, Add AreaProvider, altered PlantRequest, PPE ad Risk modle properties
+
+[33mcommit 656f6f83cbe7045c1c4271a281bd021eea505f6f[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sun Feb 7 21:03:55 2021 +0000
+
+    Added new migration and started to add Interfaces for DataAccess
+
+[33mcommit f2646b8c83e3b85ea4e682277bf162530af57264[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sat Feb 6 18:58:08 2021 +0000
+
+    Added Status table, added properties to User model, added Status seed data
+
+[33mcommit 8419e4c6d8a8cd7a59f88c71c9096d495c158766[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sat Feb 6 14:32:18 2021 +0000
+
+    Changed the PK in MaintRequestsInitalise from GUID to int - migration up changed to drop three tables and re create due to the OPK
+
+[33mcommit 542dd08bbe60b699e84b4a6f7f71d40d5529035c[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 21:12:52 2021 +0000
+
+    Added migration for inita seed data for Company, area, PPE and Factory
+
+[33mcommit 4dc876402ff2903356ff48b93311c2bda20a8ed0[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 20:58:08 2021 +0000
+
+    Added Factory seed data
+
+[33mcommit 4dae3d19d198787a89fbcb918a4a45500db7ac7c[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 20:36:15 2021 +0000
+
+    Altered the connection string for the database
+
+[33mcommit 3adf3c016c77ac929e6825d572a1e72cc04e346d[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 20:30:51 2021 +0000
+
+    Added Initial migration
+
+[33mcommit ed8f5a9b30552f6bc690b402a7d5cff8bd9572cb[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 20:28:48 2021 +0000
+
+    Removed link models and added lists links to Risk, PPE and MaintInitationRequest, added Connect in Context to DB
+
+[33mcommit aa4416b428979627758e2dc7277e2701e0ae1c65[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 20:08:16 2021 +0000
+
+    Added properties to Equipment model and Added SACOMaintenance.Data project eith SACOMaintenanceContext and DbSets
+
+[33mcommit 2f517d5d12e00b7bad0935b9a3e71d5d2b1e31a6[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Tue Feb 2 19:53:28 2021 +0000
+
+    Deleted Type.cs file and renamed the BuisnessModels project
+
+[33mcommit b53f1ecb068699b8eff6cb47dfd3324c5b5fcf3a[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Mon Feb 1 20:39:24 2021 +0000
+
+    Added RequestDailyRegister model and properties
+
+[33mcommit 7843d7c6df2b4f091cb3d68dd4a0333359788a7e[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Mon Feb 1 20:32:29 2021 +0000
+
+    Added daily register model and updated the general and plant requests with properties
+
+[33mcommit 0c2fe6bd34ff85999d4e55f4b3e71f84b24ae6a1[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sat Jan 30 20:25:55 2021 +0000
+
+    updated models equpment pperequest and riskrequest
+
+[33mcommit ddfd52a748909e35a25a4faca333b6639928006d[m
+Author: cabuk79 <cabuk79@googlemail.com>
+Date:   Sat Jan 30 18:17:23 2021 +0000
+
+    first commit

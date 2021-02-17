@@ -10,7 +10,7 @@ namespace SACOMaintenance.DataAccess
     {
         public PPEDataProvider()
         {
-            SacoMaintenanceContext = new SACOMaintenanceContext()
+            SacoMaintenanceContext = new SACOMaintenanceContext();
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }
@@ -29,7 +29,8 @@ namespace SACOMaintenance.DataAccess
                 { 
                     PPEName = ppe.PPEName,  
                     Description = ppe.Description,
-                    MaintRequestType = ppe.MaintRequestType
+                    MaintRequestType = ppe.MaintRequestType,
+                    IconFileLocation = ppe.IconFileLocation
                 }
             );
             SacoMaintenanceContext.SaveChanges();

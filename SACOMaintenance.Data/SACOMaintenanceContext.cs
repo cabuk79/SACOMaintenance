@@ -32,9 +32,9 @@ namespace SACOMaintenance.Data
                 "Data Source=LAPTOP-GMOCCUAU\\SQLEXPRESSLOCADB; Initial Catalog=SACOMaintenanceApp; Trusted_Connection=True");
         }
 
+        //Seed the basic data to use, other seeding is done in the testing
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             //Companies Seed Data
             modelBuilder.Entity<Company>().HasData
             (
@@ -79,6 +79,13 @@ namespace SACOMaintenance.Data
                 new Factory { Id = 1, FactoryName = "F1" },
                 new Factory { Id = 2, FactoryName = "F2" },
                 new Factory { Id = 3, FactoryName = "F3" }
+            );
+
+            //Risk Seed Data
+            modelBuilder.Entity<Risk>().HasData
+            (
+                new Risk { Id = 1, RiskName = "Risk 1"},
+                new Risk { Id = 2, RiskName = "Risk 2" }
             );
         }
     }

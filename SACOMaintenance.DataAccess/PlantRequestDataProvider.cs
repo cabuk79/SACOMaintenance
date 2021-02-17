@@ -55,13 +55,18 @@ namespace SACOMaintenance.DataAccess
 
         public void GetPlantRequestInfo(int maintReqId)
         {
-            
+            throw new NotImplementedException();
         }
 
         public PlantRequest GetSignalPlantRequestInfo(int Id)
         {
             var plantRequest = SacoMaintenanceContext.PlantRequests.FirstOrDefault(i => i.Id == Id);
             return plantRequest;
+        }
+
+        public PlantRequest GetSinalPlantRequestInfo(int Id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

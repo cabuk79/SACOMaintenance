@@ -275,6 +275,8 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.U
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.Data.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.DataAccess.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.ViewModel.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.ViewModel.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.Common.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.DataAccess.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.Data.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.UI\SACOMaintenance.UI\bin\x64\Debug\net5.0-windows10.0.18362.0\SACOMaintenance.DataAccess.pdb

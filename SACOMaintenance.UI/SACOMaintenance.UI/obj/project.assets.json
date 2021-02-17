@@ -2107,6 +2107,20 @@
         "runtime": {
           "bin/placeholder/SACOMaintenance.DataAccess.dll": {}
         }
+      },
+      "SACOMaintenance.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SACOMaintenance.Common": "1.0.0",
+          "SACOMaintenance.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
       }
     },
     "net5.0-windows10.0.18362/win10-arm64": {
@@ -3894,6 +3908,20 @@
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.DataAccess.dll": {}
+        }
+      },
+      "SACOMaintenance.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SACOMaintenance.Common": "1.0.0",
+          "SACOMaintenance.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         }
       }
     },
@@ -5685,6 +5713,20 @@
         "runtime": {
           "bin/placeholder/SACOMaintenance.DataAccess.dll": {}
         }
+      },
+      "SACOMaintenance.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SACOMaintenance.Common": "1.0.0",
+          "SACOMaintenance.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
       }
     },
     "net5.0-windows10.0.18362/win10-x86": {
@@ -7472,6 +7514,20 @@
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.DataAccess.dll": {}
+        }
+      },
+      "SACOMaintenance.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "SACOMaintenance.Common": "1.0.0",
+          "SACOMaintenance.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         }
       }
     }
@@ -12606,15 +12662,18 @@
       "type": "project",
       "path": "../../SACOMaintenance.DataAccess/SACOMaintenance.DataAccess.csproj",
       "msbuildProject": "../../SACOMaintenance.DataAccess/SACOMaintenance.DataAccess.csproj"
+    },
+    "SACOMaintenance.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../../SACOMaintenance.ViewModel/SACOMaintenance.ViewModel.csproj",
+      "msbuildProject": "../../SACOMaintenance.ViewModel/SACOMaintenance.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.18362": [
       "Microsoft.VCRTForwarders.140 >= 1.0.6",
       "Microsoft.WinUI >= 3.0.0-preview3.201113.0",
-      "SACOMaintenance.Common >= 1.0.0",
-      "SACOMaintenance.Data >= 1.0.0",
-      "SACOMaintenance.DataAccess >= 1.0.0"
+      "SACOMaintenance.ViewModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12649,14 +12708,8 @@
         "net5.0-windows10.0.18362": {
           "targetAlias": "net5.0-windows10.0.18362.0",
           "projectReferences": {
-            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
-              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
-            },
-            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj"
-            },
-            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj": {
-              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj"
+            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj": {
+              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj"
             }
           }
         }

@@ -46,6 +46,11 @@ namespace SACOMaintenance.DataAccess
             return area;
         }
 
-        
+        public void UpdateArea(Area area)
+        {
+            var areaToUpdate = SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == area.Id);
+            areaToUpdate.AreaName = area.AreaName;
+            SacoMaintenanceContext.SaveChanges();
+        }
     }
 }
