@@ -74,6 +74,12 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("AreaName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CommentsNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FactoryId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Areas");
@@ -82,42 +88,50 @@ namespace SACOMaintenance.Data.Migrations
                         new
                         {
                             Id = 1,
-                            AreaName = "Warehouse"
+                            AreaName = "Warehouse",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 2,
-                            AreaName = "Plant"
+                            AreaName = "Plant",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 3,
-                            AreaName = "Press Shop"
+                            AreaName = "Press Shop",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 4,
-                            AreaName = "Tool Room"
+                            AreaName = "Tool Room",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 5,
-                            AreaName = "Assembly"
+                            AreaName = "Assembly",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 6,
-                            AreaName = "Offices F3"
+                            AreaName = "Offices F3",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 7,
-                            AreaName = "FL Production"
+                            AreaName = "FL Production",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 8,
-                            AreaName = "GTL Production"
+                            AreaName = "GTL Production",
+                            FactoryId = 0
                         });
                 });
 
@@ -159,6 +173,9 @@ namespace SACOMaintenance.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
@@ -327,6 +344,12 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IconFileLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaintRequestType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PPEName")
                         .HasColumnType("nvarchar(max)");
 
@@ -431,6 +454,9 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("IsolationsWater")
                         .HasColumnType("int");
 
+                    b.Property<int>("MaintRequestId")
+                        .HasColumnType("int");
+
                     b.Property<string>("OtherPrecautions")
                         .HasColumnType("nvarchar(max)");
 
@@ -485,12 +511,27 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MaintRequestType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("RiskName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Risks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RiskName = "Risk 1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            RiskName = "Risk 2"
+                        });
                 });
 
             modelBuilder.Entity("SACOMaintenance.BuisnessModels.Status", b =>

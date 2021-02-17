@@ -12,7 +12,7 @@ namespace SACOMaintenance.WinForms.Forms
         public AreaForm()
         {
             InitializeComponent();
-            _viewModel = new AreaViewModel(new AreaProvider());
+            _viewModel = new AreaViewModel(new AreaProvider(), new FactoryDataProvider());
         }
 
         private void AreaForm_Load(object sender, System.EventArgs e)
@@ -35,6 +35,11 @@ namespace SACOMaintenance.WinForms.Forms
 
             //set the controls to the binding source
             txtAreaName.DataBindings.Add("Text", areasBindingSource, "AreaName", false, DataSourceUpdateMode.OnPropertyChanged);
+
+            cboFactory.DataSource = _viewModel.factories;
+            cboFactory.DisplayMember = "FactoryName";
+            cboFactory.ValueMember = "Id";
+            cboFactory.DataBindings.Add("SelectedValue", areasBindingSource, "FactoryId");
         }
 
         public void ReLoadList()

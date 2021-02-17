@@ -13,14 +13,16 @@ namespace SACOMaintenance.ViewModel
 {
     public class AreaViewModel : INotifyPropertyChanged
     {
-        private Area area; 
+        private Area area;
         public ObservableCollection<Area> areas { get; } = new();
+        public ObservableCollection<Factory> factories { get; } = new();
 
-        public AreaViewModel(IArea areaDataProvider)
+        public AreaViewModel(IArea areaDataProvider, IFactory factoryDataProvider)
         {
             //this.area = area;
             area = new Area();
             AreaDataProvider = areaDataProvider;
+            this.factoryDataProvider = factoryDataProvider;
         }
 
         public void Load()
@@ -31,6 +33,14 @@ namespace SACOMaintenance.ViewModel
             foreach(var areaItem in areasList)
             {
                 areas.Add(areaItem);
+            }
+
+            var factoriesList = factoryDataProvider.LoadAllFactories();
+            factories.Clear();
+
+            foreach(var factoryItem in factoriesList)
+            {
+                factories.Add(factoryItem);
             }
         }
 
@@ -47,7 +57,21 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+        public int FactoryId
+        {
+            get => area.FactoryId;
+            set
+            {
+                if(area.FactoryId != value)
+                {
+                    area.FactoryId = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
         public Area newArea = new Area();
+        private readonly IFactory factoryDataProvider;
 
         public void SaveArea(Area area)
         {

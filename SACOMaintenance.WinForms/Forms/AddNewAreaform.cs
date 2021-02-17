@@ -23,7 +23,7 @@ namespace SACOMaintenance.WinForms.Forms
         public AddNewAreaform()
         {
             InitializeComponent();
-            _viewModel = new AreaViewModel(new AreaProvider());
+            _viewModel = new AreaViewModel(new AreaProvider(), new FactoryDataProvider());
         }
 
         private void button1_Click(object sender, EventArgs e)

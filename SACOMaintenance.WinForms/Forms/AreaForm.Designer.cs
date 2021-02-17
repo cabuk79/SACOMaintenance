@@ -37,11 +37,13 @@ namespace SACOMaintenance.WinForms.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbAreaListNav = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnNewArea = new System.Windows.Forms.Button();
             this.btnSaveArea = new System.Windows.Forms.Button();
             this.txtAreaName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.areasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNewArea = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboFactory = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -111,6 +113,8 @@ namespace SACOMaintenance.WinForms.Forms
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.cboFactory);
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.btnNewArea);
             this.panel4.Controls.Add(this.btnSaveArea);
             this.panel4.Controls.Add(this.txtAreaName);
@@ -120,6 +124,16 @@ namespace SACOMaintenance.WinForms.Forms
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(662, 398);
             this.panel4.TabIndex = 3;
+            // 
+            // btnNewArea
+            // 
+            this.btnNewArea.Location = new System.Drawing.Point(127, 334);
+            this.btnNewArea.Name = "btnNewArea";
+            this.btnNewArea.Size = new System.Drawing.Size(75, 42);
+            this.btnNewArea.TabIndex = 3;
+            this.btnNewArea.Text = "New";
+            this.btnNewArea.UseVisualStyleBackColor = true;
+            this.btnNewArea.Click += new System.EventHandler(this.btnNewArea_Click);
             // 
             // btnSaveArea
             // 
@@ -149,15 +163,23 @@ namespace SACOMaintenance.WinForms.Forms
             this.label2.TabIndex = 0;
             this.label2.Text = "Area Name";
             // 
-            // btnNewArea
+            // label3
             // 
-            this.btnNewArea.Location = new System.Drawing.Point(127, 334);
-            this.btnNewArea.Name = "btnNewArea";
-            this.btnNewArea.Size = new System.Drawing.Size(75, 42);
-            this.btnNewArea.TabIndex = 3;
-            this.btnNewArea.Text = "New";
-            this.btnNewArea.UseVisualStyleBackColor = true;
-            this.btnNewArea.Click += new System.EventHandler(this.btnNewArea_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Factory";
+            // 
+            // cboFactory
+            // 
+            this.cboFactory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFactory.FormattingEnabled = true;
+            this.cboFactory.Location = new System.Drawing.Point(29, 129);
+            this.cboFactory.Name = "cboFactory";
+            this.cboFactory.Size = new System.Drawing.Size(304, 23);
+            this.cboFactory.TabIndex = 5;
             // 
             // AreaForm
             // 
@@ -196,5 +218,7 @@ namespace SACOMaintenance.WinForms.Forms
         private System.Windows.Forms.BindingSource areasBindingSource;
         private System.Windows.Forms.Button btnSaveArea;
         private System.Windows.Forms.Button btnNewArea;
+        private System.Windows.Forms.ComboBox cboFactory;
+        private System.Windows.Forms.Label label3;
     }
 }

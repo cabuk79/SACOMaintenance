@@ -10,5 +10,7 @@ namespace SACOMaintenance.BuisnessModels
     {
         public int Id { get; set; }
         public string AreaName { get; set; }
+        public string CommentsNotes { get; set; }
+        public int FactoryId { get; set; } //FK to the factory table
     }
 }

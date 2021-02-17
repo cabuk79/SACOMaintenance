@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SACOMaintenance.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialNew : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,9 @@ namespace SACOMaintenance.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AreaName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    AreaName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CommentsNotes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FactoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,7 +45,8 @@ namespace SACOMaintenance.Data.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MachineTypeId = table.Column<int>(type: "int", nullable: false),
                     SerialIdentifierNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AreaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -105,7 +108,8 @@ namespace SACOMaintenance.Data.Migrations
                 name: "MaintRequestInitiations",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     DateRaised = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false),
                     FactoryId = table.Column<int>(type: "int", nullable: false),
@@ -113,7 +117,8 @@ namespace SACOMaintenance.Data.Migrations
                     EquipmentId = table.Column<int>(type: "int", nullable: false),
                     RequestedById = table.Column<int>(type: "int", nullable: false),
                     RequestDetails = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RequestTypeId = table.Column<int>(type: "int", nullable: false)
+                    RequestTypeId = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -153,7 +158,8 @@ namespace SACOMaintenance.Data.Migrations
                     ClearanceDetails = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClearanceCompanyId = table.Column<int>(type: "int", nullable: false),
                     ClearancePosition = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClearanceDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ClearanceDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MaintRequestId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -167,7 +173,9 @@ namespace SACOMaintenance.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PPEName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IconFileLocation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MaintRequestType = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -197,7 +205,8 @@ namespace SACOMaintenance.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RiskName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MaintRequestType = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -205,10 +214,37 @@ namespace SACOMaintenance.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Statuses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StatusName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Statuses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MaintRequestInitiationPPE",
                 columns: table => new
                 {
-                    MaintRequestInitiationsId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MaintRequestInitiationsId = table.Column<int>(type: "int", nullable: false),
                     PPEEquipmentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -232,7 +268,7 @@ namespace SACOMaintenance.Data.Migrations
                 name: "MaintRequestInitiationRisk",
                 columns: table => new
                 {
-                    MaintRequestInitiationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MaintRequestInitiationId = table.Column<int>(type: "int", nullable: false),
                     RisksId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -252,6 +288,96 @@ namespace SACOMaintenance.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "MaintRequestInitiationUser",
+                columns: table => new
+                {
+                    MaintRequestInitiationId = table.Column<int>(type: "int", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MaintRequestInitiationUser", x => new { x.MaintRequestInitiationId, x.UsersId });
+                    table.ForeignKey(
+                        name: "FK_MaintRequestInitiationUser_MaintRequestInitiations_MaintRequestInitiationId",
+                        column: x => x.MaintRequestInitiationId,
+                        principalTable: "MaintRequestInitiations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MaintRequestInitiationUser_Users_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Areas",
+                columns: new[] { "Id", "AreaName", "CommentsNotes", "FactoryId" },
+                values: new object[,]
+                {
+                    { 1, "Warehouse", null, 0 },
+                    { 2, "Plant", null, 0 },
+                    { 3, "Press Shop", null, 0 },
+                    { 4, "Tool Room", null, 0 },
+                    { 5, "Assembly", null, 0 },
+                    { 6, "Offices F3", null, 0 },
+                    { 7, "FL Production", null, 0 },
+                    { 8, "GTL Production", null, 0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Companies",
+                columns: new[] { "Id", "CompantName" },
+                values: new object[,]
+                {
+                    { 1, "SACO" },
+                    { 2, "Nekem" },
+                    { 3, "FL" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Factories",
+                columns: new[] { "Id", "FactoryName" },
+                values: new object[,]
+                {
+                    { 3, "F3" },
+                    { 1, "F1" },
+                    { 2, "F2" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PPE",
+                columns: new[] { "Id", "Description", "IconFileLocation", "MaintRequestType", "PPEName" },
+                values: new object[,]
+                {
+                    { 1, "General gloves", null, null, "Gloves" },
+                    { 2, "Hard covered saftey glasses", null, null, "Saftey Glasses" },
+                    { 3, "Steel toe capped", null, null, "Saftery Boots" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Risks",
+                columns: new[] { "Id", "Description", "MaintRequestType", "RiskName" },
+                values: new object[,]
+                {
+                    { 1, null, null, "Risk 1" },
+                    { 2, null, null, "Risk 2" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Statuses",
+                columns: new[] { "Id", "StatusName" },
+                values: new object[,]
+                {
+                    { 4, "Cancelled" },
+                    { 1, "Open" },
+                    { 2, "New" },
+                    { 3, "Completed" },
+                    { 5, "On Hold" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_MaintRequestInitiationPPE_PPEEquipmentId",
                 table: "MaintRequestInitiationPPE",
@@ -261,6 +387,11 @@ namespace SACOMaintenance.Data.Migrations
                 name: "IX_MaintRequestInitiationRisk_RisksId",
                 table: "MaintRequestInitiationRisk",
                 column: "RisksId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MaintRequestInitiationUser_UsersId",
+                table: "MaintRequestInitiationUser",
+                column: "UsersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -290,19 +421,28 @@ namespace SACOMaintenance.Data.Migrations
                 name: "MaintRequestInitiationRisk");
 
             migrationBuilder.DropTable(
+                name: "MaintRequestInitiationUser");
+
+            migrationBuilder.DropTable(
                 name: "PlantRequests");
 
             migrationBuilder.DropTable(
                 name: "RequestDailyRegisters");
 
             migrationBuilder.DropTable(
+                name: "Statuses");
+
+            migrationBuilder.DropTable(
                 name: "PPE");
+
+            migrationBuilder.DropTable(
+                name: "Risks");
 
             migrationBuilder.DropTable(
                 name: "MaintRequestInitiations");
 
             migrationBuilder.DropTable(
-                name: "Risks");
+                name: "Users");
         }
     }
 }
