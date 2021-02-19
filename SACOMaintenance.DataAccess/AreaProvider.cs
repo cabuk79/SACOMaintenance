@@ -1,10 +1,7 @@
 ﻿using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SACOMaintenance.BuisnessModels;
 
 namespace SACOMaintenance.DataAccess
@@ -22,7 +19,12 @@ namespace SACOMaintenance.DataAccess
         {
             SacoMaintenanceContext.Areas.Add
             (
-                new Area { AreaName = area.AreaName }
+                new Area
+                {
+                    AreaName = area.AreaName,
+                    CommentsNotes = area.CommentsNotes,
+                    FactoryId = area.FactoryId
+                }
             );
 
             SacoMaintenanceContext.SaveChanges();

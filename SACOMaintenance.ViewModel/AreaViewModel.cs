@@ -70,17 +70,29 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+        public bool AreaExists { get; set; }
+
         public Area newArea = new Area();
         private readonly IFactory factoryDataProvider;
 
         public void SaveArea(Area area)
-        {
+        {          
             AreaDataProvider.UpdateArea(area);
         }
 
-        public void AddNewArea()
+        public void AddNewArea(Area areaToAdd) //string areaName)
         {
-            AreaDataProvider.AddEditArea(newArea);
+            Area areaExists = AreaDataProvider.FindAreaByName(areaToAdd.AreaName); // areaName);
+
+            if(areaExists == null)
+            {
+                AreaExists = false;
+                AreaDataProvider.AddEditArea(newArea);                             
+            }
+            else
+            {
+                AreaExists = true;
+            }            
         }
 
         public IArea AreaDataProvider { get; }

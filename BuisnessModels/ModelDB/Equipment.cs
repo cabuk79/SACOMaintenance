@@ -15,5 +15,7 @@ namespace SACOMaintenance.BuisnessModels
         public string SerialIdentifierNumber { get; set; }
         public string Comments { get; set; }
         public int AreaId { get; set; } //FK to the area table
+        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; }
+
     }
 }

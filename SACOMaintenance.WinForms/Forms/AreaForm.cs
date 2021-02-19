@@ -35,6 +35,7 @@ namespace SACOMaintenance.WinForms.Forms
 
             //set the controls to the binding source
             txtAreaName.DataBindings.Add("Text", areasBindingSource, "AreaName", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAreaComments.DataBindings.Add("Text", areasBindingSource, "CommentsNotes", false, DataSourceUpdateMode.OnPropertyChanged);
 
             cboFactory.DataSource = _viewModel.factories;
             cboFactory.DisplayMember = "FactoryName";

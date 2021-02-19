@@ -66,3 +66,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.WinForms\bin\Debug\n
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.WinForms\bin\Debug\net5.0-windows\SACOMaintenance.ViewModel.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.WinForms\obj\Debug\net5.0-windows\SACOMaintenance.WinForms.Forms.AreaForm.resources
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.WinForms\obj\Debug\net5.0-windows\SACOMaintenance.WinForms.Forms.AddNewAreaform.resources
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.WinForms\obj\Debug\net5.0-windows\SACOMaintenance.WinForms.Toasts.AddedToDatabaseToastSuccess.resources
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.WinForms\obj\Debug\net5.0-windows\SACOMaintenance.WinForms.Toasts.AddedToDatabaseToastFail.resources
