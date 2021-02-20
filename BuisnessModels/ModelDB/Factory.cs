@@ -10,5 +10,7 @@ namespace SACOMaintenance.BuisnessModels
     {
         public int Id { get; set; }
         public string FactoryName { get; set; }
+        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
+        public List<Area> Areas { get; set; } = new List<Area>();
     }
 }

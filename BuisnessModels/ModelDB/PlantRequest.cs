@@ -49,6 +49,7 @@ namespace SACOMaintenance.BuisnessModels
         public List<RequestDailyRegister> ListOfDailyRgisters = new List<RequestDailyRegister>(); //List of all the daily registers linked to the request
 
         public int MaintRequestId { get; set; } //FK to the maintenance request initation table
+        public MaintRequestInitiation MaintRequestInitiation { get; set; }
     }
 }
 

@@ -10,5 +10,6 @@ namespace SACOMaintenance.BuisnessModels
     {
         public int Id { get; set; }
         public string StatusName { get; set; }
+        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
     }
 }

@@ -12,6 +12,8 @@ namespace SACOMaintenance.BuisnessModels
         public DateTime Date { get; set; }
         public DateTime TimeIn { get; set; }
         public DateTime TimOut { get; set; }
-        public int MaintReqiestId { get; set; } //FK to the MaintRequestInitiation ID
+        public int PlantMaintRequestId { get; set; } //FK to the MaintRequestInitiation ID
+        public PlantRequest PlantRequest { get; set; }
+       
     }
 }

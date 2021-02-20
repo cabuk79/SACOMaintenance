@@ -16,12 +16,14 @@ namespace SACOMaintenance.ViewModel
         private readonly IMaintRequestInitiation maintReqDataProvider;
 
         public ObservableCollection<MaintRequestInitiation> MaintRequestsList { get; } = new();
-       
+        MaintRequestInitiation chosenRequest;
 
 
         public RequestsViewModel(IMaintRequestInitiation MaintReqDataProvider)
         {
             maintReqDataProvider = MaintReqDataProvider;
+
+            chosenRequest = maintReqDataProvider.GetSingleRequestInitiation(1);
         }
 
         public void Load()

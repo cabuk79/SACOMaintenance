@@ -34,7 +34,6 @@ namespace SACOMaintenance.WinForms
             this.header1 = new SACOMaintenance.WinForms.Controls.Header();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pRequests = new System.Windows.Forms.Panel();
-            this.dgvRequests = new System.Windows.Forms.DataGridView();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -59,7 +58,6 @@ namespace SACOMaintenance.WinForms
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pRequests.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).BeginInit();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,23 +103,12 @@ namespace SACOMaintenance.WinForms
             // 
             // pRequests
             // 
-            this.pRequests.Controls.Add(this.dgvRequests);
             this.pRequests.Controls.Add(this.panel12);
             this.pRequests.Dock = System.Windows.Forms.DockStyle.Top;
             this.pRequests.Location = new System.Drawing.Point(0, 129);
             this.pRequests.Name = "pRequests";
             this.pRequests.Size = new System.Drawing.Size(1082, 390);
             this.pRequests.TabIndex = 4;
-            // 
-            // dgvRequests
-            // 
-            this.dgvRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRequests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRequests.Location = new System.Drawing.Point(0, 50);
-            this.dgvRequests.Name = "dgvRequests";
-            this.dgvRequests.RowTemplate.Height = 25;
-            this.dgvRequests.Size = new System.Drawing.Size(1082, 340);
-            this.dgvRequests.TabIndex = 1;
             // 
             // panel12
             // 
@@ -322,7 +309,6 @@ namespace SACOMaintenance.WinForms
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pRequests.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -365,7 +351,6 @@ namespace SACOMaintenance.WinForms
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pRequests;
-        private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource requestBindingSource;

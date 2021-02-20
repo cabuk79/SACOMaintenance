@@ -10,6 +10,7 @@ namespace SACOMaintenance.BuisnessModels
     {
         public int Id { get; set; }
         public int MaintRequestId { get; set; } //FK to MaintRequestInitiation Id
+        public MaintRequestInitiation MaintRequestInitiation { get; set; }
         public int AuthorityToWorkUserId { get; set; }
         public DateTime AuthorityToWorkDateTime { get; set; }
         public string DetailOfWorkCompleted { get; set; }

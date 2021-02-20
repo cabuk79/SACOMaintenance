@@ -3,6 +3,7 @@ using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -37,13 +38,17 @@ namespace SACOMaintenance.DataAccess
 
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
-            var maintReqInitiation = SacoMaintenanceContext.MaintRequestInitiations.FirstOrDefault(i => i.Id == Id);
+            var maintReqInitiation = SacoMaintenanceContext.MaintRequestInitiations.Where(i => i.Id == Id)
+                .Include(e => e.Equipment)
+                .FirstOrDefault();
             return maintReqInitiation;
         }
 
         public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
         {
-            var maintReqInitationList = SacoMaintenanceContext.MaintRequestInitiations.ToList();
+            var maintReqInitationList = SacoMaintenanceContext.MaintRequestInitiations
+                .Include(e => e.Equipment)
+                .ToList();
             return maintReqInitationList;
         }
     }

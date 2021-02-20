@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SACOMaintenance.Data;
 
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    partial class SACOMaintenanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210220095945_Added into Equipment model Lsit of Maintenance Requests Initations")]
+    partial class AddedintoEquipmentmodelLsitofMaintenanceRequestsInitations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,12 +79,10 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("CommentsNotes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FactoryId")
+                    b.Property<int>("FactoryId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FactoryId");
 
                     b.ToTable("Areas");
 
@@ -90,42 +90,50 @@ namespace SACOMaintenance.Data.Migrations
                         new
                         {
                             Id = 1,
-                            AreaName = "Warehouse"
+                            AreaName = "Warehouse",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 2,
-                            AreaName = "Plant"
+                            AreaName = "Plant",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 3,
-                            AreaName = "Press Shop"
+                            AreaName = "Press Shop",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 4,
-                            AreaName = "Tool Room"
+                            AreaName = "Tool Room",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 5,
-                            AreaName = "Assembly"
+                            AreaName = "Assembly",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 6,
-                            AreaName = "Offices F3"
+                            AreaName = "Offices F3",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 7,
-                            AreaName = "FL Production"
+                            AreaName = "FL Production",
+                            FactoryId = 0
                         },
                         new
                         {
                             Id = 8,
-                            AreaName = "GTL Production"
+                            AreaName = "GTL Production",
+                            FactoryId = 0
                         });
                 });
 
@@ -168,7 +176,7 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("AreaId")
+                    b.Property<int>("AreaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Comments")
@@ -187,8 +195,6 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AreaId");
 
                     b.ToTable("Equipment");
                 });
@@ -250,9 +256,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("MaintRequestId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MaintRequestInitiationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SignOffDetails")
                         .HasColumnType("nvarchar(max)");
 
@@ -272,8 +275,6 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MaintRequestInitiationId");
 
                     b.ToTable("GeneralRequests");
                 });
@@ -303,13 +304,10 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("AreaId")
+                    b.Property<int>("AreaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("AssignedTo")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CompanyId")
+                    b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateRaised")
@@ -318,7 +316,7 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int?>("EquipmentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("FactoryId")
+                    b.Property<int>("FactoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("RequestDetails")
@@ -330,20 +328,12 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("RequestedById")
                         .HasColumnType("int");
 
-                    b.Property<int>("StatusId")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AreaId");
-
-                    b.HasIndex("CompanyId");
-
                     b.HasIndex("EquipmentId");
-
-                    b.HasIndex("FactoryId");
-
-                    b.HasIndex("StatusId");
 
                     b.ToTable("MaintRequestInitiations");
                 });
@@ -471,9 +461,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("MaintRequestId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MaintRequestInitiationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("OtherPrecautions")
                         .HasColumnType("nvarchar(max)");
 
@@ -491,8 +478,6 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MaintRequestInitiationId");
-
                     b.ToTable("PlantRequests");
                 });
 
@@ -506,10 +491,7 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PlantMaintRequestId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PlantRequestId")
+                    b.Property<int>("MaintReqiestId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TimOut")
@@ -519,8 +501,6 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PlantRequestId");
 
                     b.ToTable("RequestDailyRegisters");
                 });
@@ -663,104 +643,16 @@ namespace SACOMaintenance.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.Area", b =>
-                {
-                    b.HasOne("SACOMaintenance.BuisnessModels.Factory", "Factory")
-                        .WithMany("Areas")
-                        .HasForeignKey("FactoryId");
-
-                    b.Navigation("Factory");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.Equipment", b =>
-                {
-                    b.HasOne("SACOMaintenance.BuisnessModels.Area", "Area")
-                        .WithMany()
-                        .HasForeignKey("AreaId");
-
-                    b.Navigation("Area");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.GeneralRequest", b =>
-                {
-                    b.HasOne("SACOMaintenance.BuisnessModels.MaintRequestInitiation", "MaintRequestInitiation")
-                        .WithMany()
-                        .HasForeignKey("MaintRequestInitiationId");
-
-                    b.Navigation("MaintRequestInitiation");
-                });
-
             modelBuilder.Entity("SACOMaintenance.BuisnessModels.MaintRequestInitiation", b =>
                 {
-                    b.HasOne("SACOMaintenance.BuisnessModels.Area", "Area")
-                        .WithMany()
-                        .HasForeignKey("AreaId");
-
-                    b.HasOne("SACOMaintenance.BuisnessModels.Company", "Company")
-                        .WithMany("MaintenanceRequestIniations")
-                        .HasForeignKey("CompanyId");
-
                     b.HasOne("SACOMaintenance.BuisnessModels.Equipment", "Equipment")
                         .WithMany("MaintRequestInitiations")
                         .HasForeignKey("EquipmentId");
 
-                    b.HasOne("SACOMaintenance.BuisnessModels.Factory", "Factory")
-                        .WithMany("MaintRequestInitiations")
-                        .HasForeignKey("FactoryId");
-
-                    b.HasOne("SACOMaintenance.BuisnessModels.Status", "Status")
-                        .WithMany("MaintRequestInitiations")
-                        .HasForeignKey("StatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Area");
-
-                    b.Navigation("Company");
-
                     b.Navigation("Equipment");
-
-                    b.Navigation("Factory");
-
-                    b.Navigation("Status");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.PlantRequest", b =>
-                {
-                    b.HasOne("SACOMaintenance.BuisnessModels.MaintRequestInitiation", "MaintRequestInitiation")
-                        .WithMany()
-                        .HasForeignKey("MaintRequestInitiationId");
-
-                    b.Navigation("MaintRequestInitiation");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.RequestDailyRegister", b =>
-                {
-                    b.HasOne("SACOMaintenance.BuisnessModels.PlantRequest", "PlantRequest")
-                        .WithMany()
-                        .HasForeignKey("PlantRequestId");
-
-                    b.Navigation("PlantRequest");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.Company", b =>
-                {
-                    b.Navigation("MaintenanceRequestIniations");
                 });
 
             modelBuilder.Entity("SACOMaintenance.BuisnessModels.Equipment", b =>
-                {
-                    b.Navigation("MaintRequestInitiations");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.Factory", b =>
-                {
-                    b.Navigation("Areas");
-
-                    b.Navigation("MaintRequestInitiations");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.BuisnessModels.Status", b =>
                 {
                     b.Navigation("MaintRequestInitiations");
                 });
