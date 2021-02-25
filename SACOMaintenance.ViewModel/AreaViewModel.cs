@@ -1,4 +1,4 @@
-﻿using SACOMaintenance.BuisnessModels;
+﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,14 +13,14 @@ namespace SACOMaintenance.ViewModel
 {
     public class AreaViewModel : INotifyPropertyChanged
     {
-        private Area area;
-        public ObservableCollection<Area> areas { get; } = new();
+        private AreaModel area;
+        public ObservableCollection<AreaModel> areas { get; } = new();
         public ObservableCollection<Factory> factories { get; } = new();
 
         public AreaViewModel(IArea areaDataProvider, IFactory factoryDataProvider)
         {
             //this.area = area;
-            area = new Area();
+            area = new AreaModel();
             AreaDataProvider = areaDataProvider;
             this.factoryDataProvider = factoryDataProvider;
         }
@@ -72,17 +72,17 @@ namespace SACOMaintenance.ViewModel
 
         public bool AreaExists { get; set; }
 
-        public Area newArea = new Area();
+        public AreaModel newArea = new AreaModel();
         private readonly IFactory factoryDataProvider;
 
-        public void SaveArea(Area area)
+        public void SaveArea(AreaModel area)
         {          
             AreaDataProvider.UpdateArea(area);
         }
 
-        public void AddNewArea(Area areaToAdd) //string areaName)
+        public void AddNewArea(AreaModel areaToAdd) //string areaName)
         {
-            Area areaExists = AreaDataProvider.FindAreaByName(areaToAdd.AreaName); // areaName);
+            AreaModel areaExists = AreaDataProvider.FindAreaByName(areaToAdd.AreaName); // areaName);
 
             if(areaExists == null)
             {

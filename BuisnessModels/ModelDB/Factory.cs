@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SACOMaintenance.BuisnessModels
+namespace SACOMaintenance.Common.ModelDB
 {
     public class Factory
     {
         public int Id { get; set; }
         public string FactoryName { get; set; }
         public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
-        public List<Area> Areas { get; set; } = new List<Area>();
+        public List<AreaModel> Areas { get; set; } = new List<AreaModel>();
     }
 }

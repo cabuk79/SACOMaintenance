@@ -2,24 +2,25 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using SACOMaintenance.BuisnessModels;
+using SACOMaintenance.Common.ModelDB;
 
 namespace SACOMaintenance.DataAccess
 {
     public class AreaProvider : IArea
     {
-        public AreaProvider()
+        private readonly SACOMaintenanceContext _areaDBContext;
+        public AreaProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
-            SacoMaintenanceContext = new SACOMaintenanceContext();
+            _areaDBContext = sacoMaintenanceContext;
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
-        public void AddEditArea(Area area)
+        public void AddEditArea(AreaModel area)
         {
             SacoMaintenanceContext.Areas.Add
             (
-                new Area
+                new AreaModel
                 {
                     AreaName = area.AreaName,
                     CommentsNotes = area.CommentsNotes,
@@ -30,25 +31,25 @@ namespace SACOMaintenance.DataAccess
             SacoMaintenanceContext.SaveChanges();
         }
 
-        public Area FindAreaByName(string areaName)
+        public AreaModel FindAreaByName(string areaName)
         {
             var area = SacoMaintenanceContext.Areas.FirstOrDefault(n => n.AreaName == areaName);
             return area;
         }
 
-        public IEnumerable<Area> LoadAllAreas()
+        public IEnumerable<AreaModel> LoadAllAreas()
         {
             var areas = SacoMaintenanceContext.Areas.ToList();
             return areas;
         }
 
-        public Area LoadSingleArea(int Id)
+        public AreaModel LoadSingleArea(int Id)
         {
             var area = SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == Id);
             return area;
         }
 
-        public void UpdateArea(Area area)
+        public void UpdateArea(AreaModel area)
         {
             var areaToUpdate = SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == area.Id);
             areaToUpdate.AreaName = area.AreaName;

@@ -1,4 +1,4 @@
-﻿using SACOMaintenance.BuisnessModels;
+﻿using SACOMaintenance.Common.ModelDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IArea
     {
-        IEnumerable<Area> LoadAllAreas();
-        Area LoadSingleArea(int Id);
-        void AddEditArea(Area area);
-        Area FindAreaByName(string areaName);
-        void UpdateArea(Area area);
+        IEnumerable<AreaModel> LoadAllAreas();
+        AreaModel LoadSingleArea(int Id);
+        void AddEditArea(AreaModel area);
+        AreaModel FindAreaByName(string areaName);
+        void UpdateArea(AreaModel area);
     }
 }

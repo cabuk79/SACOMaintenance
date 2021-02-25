@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SACOMaintenance.BuisnessModels
+namespace SACOMaintenance.Common.ModelDB
 {
     public class MaintRequestInitiation
     {
@@ -12,7 +12,7 @@ namespace SACOMaintenance.BuisnessModels
         public int? FactoryId { get; set; } //FK to factory table
         public Factory Factory { get; set; }
         public int? AreaId { get; set; } //FK to area table
-        public Area Area { get; set; }
+        public AreaModel Area { get; set; }
         public int? EquipmentId { get; set; } //FK to equipment table
         public Equipment Equipment { get; set; }
         public int RequestedById { get; set; } //FK to users table

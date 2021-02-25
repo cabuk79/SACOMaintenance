@@ -1,0 +1,9 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\netcoreapp3.1\Models.DTO.deps.json
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\netcoreapp3.1\Models.DTO.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\netcoreapp3.1\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.csprojAssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.csproj.CoreCompileInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.pdb

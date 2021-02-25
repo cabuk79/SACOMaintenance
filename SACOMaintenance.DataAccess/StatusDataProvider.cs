@@ -1,4 +1,4 @@
-﻿using SACOMaintenance.BuisnessModels;
+﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace SACOMaintenance.DataAccess
     {
         public StatusDataProvider()
         {
-            SacoMaintenanceContext = new SACOMaintenanceContext();
+            //SacoMaintenanceContext = new SACOMaintenanceContext();
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }

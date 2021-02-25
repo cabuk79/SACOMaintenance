@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SACOMaintenance.BuisnessModels
+namespace SACOMaintenance.Common.ModelDB
 {
     public class Equipment
     {
@@ -15,7 +15,7 @@ namespace SACOMaintenance.BuisnessModels
         public string SerialIdentifierNumber { get; set; }
         public string Comments { get; set; }
         public int? AreaId { get; set; } //FK to the area table
-        public Area Area { get; set; }
+        public AreaModel Area { get; set; }
         public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
 
     }

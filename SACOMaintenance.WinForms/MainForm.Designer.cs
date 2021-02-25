@@ -95,7 +95,6 @@ namespace SACOMaintenance.WinForms
             this.panel2.Controls.Add(this.pRequests);
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1082, 598);
@@ -262,17 +261,17 @@ namespace SACOMaintenance.WinForms
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(152, 0);
             this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(5);
             this.panel4.Size = new System.Drawing.Size(155, 52);
             this.panel4.TabIndex = 2;
             // 
             // btnAreasForm
             // 
-            this.btnAreasForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAreasForm.Location = new System.Drawing.Point(10, 6);
+            this.btnAreasForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAreasForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAreasForm.Location = new System.Drawing.Point(5, 5);
             this.btnAreasForm.Name = "btnAreasForm";
-            this.btnAreasForm.Size = new System.Drawing.Size(134, 33);
+            this.btnAreasForm.Size = new System.Drawing.Size(145, 42);
             this.btnAreasForm.TabIndex = 0;
             this.btnAreasForm.Text = "Areas";
             this.btnAreasForm.UseVisualStyleBackColor = true;
@@ -284,14 +283,17 @@ namespace SACOMaintenance.WinForms
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(5);
             this.panel7.Size = new System.Drawing.Size(152, 52);
             this.panel7.TabIndex = 7;
             // 
             // btnMachineType
             // 
-            this.btnMachineType.Location = new System.Drawing.Point(12, 6);
+            this.btnMachineType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMachineType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMachineType.Location = new System.Drawing.Point(5, 5);
             this.btnMachineType.Name = "btnMachineType";
-            this.btnMachineType.Size = new System.Drawing.Size(134, 33);
+            this.btnMachineType.Size = new System.Drawing.Size(142, 42);
             this.btnMachineType.TabIndex = 3;
             this.btnMachineType.Text = "Machine Type";
             this.btnMachineType.UseVisualStyleBackColor = true;
@@ -301,9 +303,12 @@ namespace SACOMaintenance.WinForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 698);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);

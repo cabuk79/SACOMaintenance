@@ -1,4 +1,4 @@
-﻿using SACOMaintenance.BuisnessModels;
+﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace SACOMaintenance.DataAccess
     {
         public GeneralRequestDataProvider()
         {
-            SacoMaintenanceContext = new SACOMaintenanceContext();
+            //SacoMaintenanceContext = new SACOMaintenanceContext();
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }
