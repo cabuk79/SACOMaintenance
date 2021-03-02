@@ -3,6 +3,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using SACOMaintenance.Common.ModelDB;
+using Microsoft.EntityFrameworkCore;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -14,11 +15,11 @@ namespace SACOMaintenance.DataAccess
             _areaDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditArea(AreaModel area)
         {
-            SacoMaintenanceContext.Areas.Add
+            _areaDBContext.Areas.Add
             (
                 new AreaModel
                 {
@@ -28,32 +29,32 @@ namespace SACOMaintenance.DataAccess
                 }
             );
 
-            SacoMaintenanceContext.SaveChanges();
+            _areaDBContext.SaveChanges();
         }
 
         public AreaModel FindAreaByName(string areaName)
         {
-            var area = SacoMaintenanceContext.Areas.FirstOrDefault(n => n.AreaName == areaName);
+            var area = _areaDBContext.Areas.FirstOrDefault(n => n.AreaName == areaName);
             return area;
         }
 
         public IEnumerable<AreaModel> LoadAllAreas()
         {
-            var areas = SacoMaintenanceContext.Areas.ToList();
+            var areas = _areaDBContext.Areas.ToList();
             return areas;
         }
 
         public AreaModel LoadSingleArea(int Id)
         {
-            var area = SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == Id);
+            var area = _areaDBContext.Areas.FirstOrDefault(i => i.Id == Id);
             return area;
         }
 
         public void UpdateArea(AreaModel area)
         {
-            var areaToUpdate = SacoMaintenanceContext.Areas.FirstOrDefault(i => i.Id == area.Id);
+            var areaToUpdate = _areaDBContext.Areas.FirstOrDefault(i => i.Id == area.Id);
             areaToUpdate.AreaName = area.AreaName;
-            SacoMaintenanceContext.SaveChanges();
+            _areaDBContext.SaveChanges();
         }
     }
 }

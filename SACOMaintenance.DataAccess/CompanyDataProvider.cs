@@ -5,38 +5,47 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
     public class CompanyDataProvider : ICompany
     {
-        public CompanyDataProvider()
+        private readonly SACOMaintenanceContext _companyDBContext;
+
+        public CompanyDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _companyDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public IEnumerable<Company> LoadCompanies()
         {
-            var companies = SacoMaintenanceContext.Companies.ToList();
+            var companies = _companyDBContext.Companies.ToList();
             return companies;
         }
 
         public Company LoadSingleCompany(int Id)
         {
-            var company = SacoMaintenanceContext.Companies.FirstOrDefault(i => i.Id == Id);
+            var company = _companyDBContext.Companies
+                .Where(i => i.Id == Id)
+                .Include(c => c.MaintenanceRequestIniations)
+                .ThenInclude(a => a.Area)
+                .Include(f => f.MaintenanceRequestIniations).ThenInclude(f => f.Factory)
+                .FirstOrDefault();
             return company;
         }
 
         public void SaveEditArea(Company company)
         {
-            SacoMaintenanceContext.Companies.Add
+            _companyDBContext.Companies.Add
             (
                 new Company { CompantName = company.CompantName }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _companyDBContext.SaveChanges();
         }
     }
 }

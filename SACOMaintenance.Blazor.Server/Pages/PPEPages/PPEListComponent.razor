@@ -1,0 +1,46 @@
+﻿@page "/ppe-list"
+@using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.DataAccess.Interfaces
+@inject IPPE PPEDataProvider  
+
+
+
+<h3>PPE List</h3>
+
+<div class="container-fluid">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Image Icon</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    foreach(var ppeItem in PPEList)
+                    {
+                                <tr>
+                                    <td>@ppeItem.Id</td>
+                                    <td>@ppeItem.PPEName</td>
+                                    <td><img src="@ppeItem.IconFileLocation" class="ppe_image" /> </td> <!-- src="css/Images/glasses.jpg")" /></td> -->
+
+                                    <!-- <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" class="img-responsive rounded-circle employee-detail-img" /> -->
+                                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@code {
+    private IEnumerable<PPE> PPEList { get; set; } = new List<PPE>();
+
+    protected override void OnInitialized()
+    {
+        PPEList = PPEDataProvider.LoadAllPPE();
+    }
+}

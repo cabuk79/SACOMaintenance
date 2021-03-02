@@ -3,18 +3,39 @@
 @using SACOMaintenance.DataAccess.Interfaces
 @inject IArea AreaDataProvider
 
-<h3>Area List Component</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3>Areas List</h3>
+        </div>
+        <div class="col-lg-2">
+            <NavLink href="area/create" class="btn btn-primary stretched-link">Add New Area</NavLink>
+        </div>
+    </div>   
+</div>
 
-<div class="continer-fluid" style="background-color: red;">
-    <div class="col-lg-12">
-        <table>
+<div class="continer-fluid">
+    <div class="col-sm-12 col-md-12 col-lg-6">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
+                @{ 
+                    foreach(var areaItem in Areas)
+                    {
+                        <tr>
+                            <td>@areaItem.Id</td>
+                            <td>@areaItem.AreaName</td>
+                            <td><a href="@($"editarea/{areaItem.Id}")" class="btn btn-primary table-btn">
+                                <i class="fa fa-pencil-square"></i></a></td>
+                        </tr>
+                    }
+                }
             </tbody>
         </table>
     </div>
@@ -22,5 +43,10 @@
 
 
 @code {
-    private IEnumerable<AreaModel> Areas { get; set; }
+    private IEnumerable<AreaModel> Areas { get; set; } = new List<AreaModel>();
+
+    protected override void OnInitialized()
+    {
+        Areas = AreaDataProvider.LoadAllAreas();
+    }
 }

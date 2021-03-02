@@ -9,9 +9,9 @@ namespace SACOMaintenance.Common.ModelDB
         public DateTime DateRaised { get; set; }
         public int? CompanyId { get; set; } //FK to company table
         public Company Company { get; set; }
-        public int? FactoryId { get; set; } //FK to factory table
+        public virtual int? FactoryId { get; set; } //FK to factory table
         public Factory Factory { get; set; }
-        public int? AreaId { get; set; } //FK to area table
+        public virtual int? AreaId { get; set; } //FK to area table
         public AreaModel Area { get; set; }
         public int? EquipmentId { get; set; } //FK to equipment table
         public Equipment Equipment { get; set; }

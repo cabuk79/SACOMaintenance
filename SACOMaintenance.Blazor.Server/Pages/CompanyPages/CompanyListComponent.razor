@@ -1,0 +1,55 @@
+﻿@page "/companies-list"
+@using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.DataAccess.Interfaces
+@inject ICompany CompanyDataProvider
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3>Companies List</h3>
+        </div>
+        <div class="col-lg-2">
+            <NavLink href="area/create" class="btn btn-primary stretched-link">Add New Company</NavLink>
+        </div>
+    </div>
+</div>
+
+<div class="continer-fluid">
+    <div class="col-sm-12 col-md-12 col-lg-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var companyItem in Companies)
+                    {
+                        <tr>
+                            <td>@companyItem.Id</td>
+                            <td>@companyItem.CompantName</td>
+                            <td>
+                                <a href="@($"editarea/{companyItem.Id}")" class="btn btn-primary table-btn">
+                                    <i class="fa fa-pencil-square"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@code {
+    private IEnumerable<Company> Companies { get; set; } = new List<Company>();
+
+    protected override void OnInitialized()
+    {
+        Companies = CompanyDataProvider.LoadCompanies();
+    }
+}

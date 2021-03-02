@@ -11,16 +11,19 @@ namespace SACOMaintenance.DataAccess
 {
     public class FactoryDataProvider : IFactory
     {
-        public FactoryDataProvider()
+        private readonly SACOMaintenanceContext _factoryDBContext;
+
+        public FactoryDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _factoryDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditFactory(Factory factory)
         {
-            SacoMaintenanceContext.Factories.Add
+            _factoryDBContext.Factories.Add
             (
                 new Factory
                 {
@@ -28,18 +31,18 @@ namespace SACOMaintenance.DataAccess
                 }
             );
 
-            SacoMaintenanceContext.SaveChanges();
+            _factoryDBContext.SaveChanges();
         }
 
         public IEnumerable<Factory> LoadAllFactories()
         {
-            var factories = SacoMaintenanceContext.Factories.ToList();
+            var factories = _factoryDBContext.Factories.ToList();
             return factories;
         }
 
         public Factory ViewSingleFactory(int Id)
         {
-            var factory = SacoMaintenanceContext.Factories.FirstOrDefault(i => i.Id == Id);
+            var factory = _factoryDBContext.Factories.FirstOrDefault(i => i.Id == Id);
             return factory;
 
         }

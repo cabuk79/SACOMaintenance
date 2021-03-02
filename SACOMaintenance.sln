@@ -27,9 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{99
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.WinForms", "SACOMaintenance.WinForms\SACOMaintenance.WinForms.csproj", "{48FFE6BE-7BA1-467E-BAD0-7E87272B5305}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SACOMaintenance.Blazor.Server", "SACOMaintenance.Blazor.Server\SACOMaintenance.Blazor.Server.csproj", "{AE77B019-6856-4EC3-B937-520232D190E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACOMaintenance.Blazor.Server", "SACOMaintenance.Blazor.Server\SACOMaintenance.Blazor.Server.csproj", "{AE77B019-6856-4EC3-B937-520232D190E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models.DTO", "Models.DTO\Models.DTO.csproj", "{0CDC1ABA-2EA3-49CE-95EE-5DB6D3998319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models.DTO", "Models.DTO\Models.DTO.csproj", "{0CDC1ABA-2EA3-49CE-95EE-5DB6D3998319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

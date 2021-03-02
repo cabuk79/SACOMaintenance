@@ -76,6 +76,20 @@ using SACOMaintenance.Blazor.Server.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaListComponent.razor"
 using SACOMaintenance.Common.ModelDB;
 
@@ -98,9 +112,14 @@ using SACOMaintenance.DataAccess.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaListComponent.razor"
+#line 45 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaListComponent.razor"
        
-    private IEnumerable<AreaModel> Areas { get; set; }
+    private IEnumerable<AreaModel> Areas { get; set; } = new List<AreaModel>();
+
+    protected override void OnInitialized()
+    {
+        Areas = AreaDataProvider.LoadAllAreas();
+    }
 
 #line default
 #line hidden

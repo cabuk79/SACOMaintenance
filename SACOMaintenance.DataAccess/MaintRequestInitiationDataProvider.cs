@@ -9,16 +9,19 @@ namespace SACOMaintenance.DataAccess
 {
     public class MaintRequestInitiationDataProvider : IMaintRequestInitiation
     {
-        public MaintRequestInitiationDataProvider()
+        private readonly SACOMaintenanceContext _requestInitationDBContext;
+
+        public MaintRequestInitiationDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _requestInitationDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
         {
-            SacoMaintenanceContext.MaintRequestInitiations.Add
+            _requestInitationDBContext.MaintRequestInitiations.Add
             (
                 new MaintRequestInitiation
                 {
@@ -33,20 +36,24 @@ namespace SACOMaintenance.DataAccess
                     Status = maintRequestInitiation.Status
                 }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _requestInitationDBContext.SaveChanges();
         }
 
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
-            var maintReqInitiation = SacoMaintenanceContext.MaintRequestInitiations.Where(i => i.Id == Id)
+            var maintReqInitiation = _requestInitationDBContext.MaintRequestInitiations
+                .Where(i => i.Id == Id)
                 .Include(e => e.Equipment)
+                .Include(c => c.Company)
+                .Include(a => a.Area)
+                .Include(f => f.Factory)
                 .FirstOrDefault();
             return maintReqInitiation;
         }
 
         public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
         {
-            var maintReqInitationList = SacoMaintenanceContext.MaintRequestInitiations
+            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .ToList();
             return maintReqInitationList;

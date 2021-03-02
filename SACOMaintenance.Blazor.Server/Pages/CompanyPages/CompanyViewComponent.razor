@@ -1,0 +1,52 @@
+﻿@page "/company-view/{CompanyId}"
+@using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.DataAccess.Interfaces
+@inject ICompany CompanyDataProvider  
+
+<div class="col-lg-12">
+    <div class="row">
+        <h3>Company View for @CompanyModelItem.CompantName</h3>
+    </div>
+    <div class="row">
+        <h3>Lsit of Maintenance Requests Linked to @CompanyModelItem.CompantName</h3>
+    </div>
+    <div class="row">
+        <RadzenGrid Data="@ListOfMaintReqInitations" AllowSorting="true" AllowFiltering="true">
+            <Columns>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Id" Filterable="false"></RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details"></RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Area.AreaName" Title="Area"></RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Factory.FactoryName" Title="Factory"></RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Area.Id" Title="Actions" Filterable="false">
+                    <Template Context="data">
+                        <a href="@($"editarea/{data.AreaId}")" class="btn btn-primary table-btn">
+                            <i class="fa fa-pencil-square"></i>
+                        </a>
+                    </Template>
+                </RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
+    </div>
+</div>
+
+
+
+
+
+
+
+@code {
+    [Parameter]
+    public string CompanyId { get; set; }
+
+    public IEnumerable<MaintRequestInitiation> ListOfMaintReqInitations { get; set; } = new List<MaintRequestInitiation>();
+
+    private Company CompanyModelItem { get; set; } = new Company();
+
+    protected override void OnInitialized()
+    {
+        CompanyModelItem = CompanyDataProvider.LoadSingleCompany(Convert.ToInt32(CompanyId));
+        ListOfMaintReqInitations = CompanyModelItem.MaintenanceRequestIniations;   
+    }
+
+}

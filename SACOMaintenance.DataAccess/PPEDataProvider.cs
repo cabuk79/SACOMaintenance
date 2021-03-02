@@ -8,22 +8,25 @@ namespace SACOMaintenance.DataAccess
 {
     public class PPEDataProvider : IPPE
     {
-        public PPEDataProvider()
+        private readonly SACOMaintenanceContext _ppeDBContext;
+
+        public PPEDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _ppeDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public IEnumerable<PPE> LoadAllPPE()
         {
-            var ppe = SacoMaintenanceContext.PPE.ToList();
+            var ppe = _ppeDBContext.PPE.ToList();
             return ppe;
         }
 
         public void SaveAddPPE(PPE ppe)
         {
-            SacoMaintenanceContext.PPE.Add
+            _ppeDBContext.PPE.Add
             (
                 new PPE 
                 { 
@@ -33,12 +36,12 @@ namespace SACOMaintenance.DataAccess
                     IconFileLocation = ppe.IconFileLocation
                 }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _ppeDBContext.SaveChanges();
         }
 
         public PPE ViewSinglePPEI(int ppeId)
         {
-            var ppe = SacoMaintenanceContext.PPE.FirstOrDefault(i => i.Id == ppeId);
+            var ppe = _ppeDBContext.PPE.FirstOrDefault(i => i.Id == ppeId);
             return ppe;
         }
     }

@@ -1,0 +1,50 @@
+﻿@page "/editarea/{AreaId}"
+@using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.DataAccess.Interfaces
+@inject IArea AreaDataProvider
+@inject IFactory FactoryDataProvider
+
+<section class="area-form">
+    <div class="area-form-area">
+        <h3>Editing @AreaModelItem.AreaName</h3>
+        <EditForm Model="AreaModelItem">
+            <div class="form-group">
+                <div class="form-group-row">
+                    <label style="font-weight:bold">Name</label>
+                    <InputText @bind-Value="AreaModelItem.AreaName" class="form-control"></InputText>
+                </div>
+                <div class="form-group-row">
+                    <label style="font-weight:bold">Factory</label>
+                    <InputSelect id="factory" class="form-control" col-sm-8 @bind-Value="@AreaModelItem.FactoryId">
+                        @foreach (var factory in FactoryList)
+                        {
+                            <option value="@factory.Id">@factory.FactoryName</option>
+                        }
+                    </InputSelect>
+                </div>
+                <div class="form-group-row">
+                    <label style="font-weight:bold">Comments</label>
+                    <InputTextArea @bind-Value="AreaModelItem.CommentsNotes" class="form-control"></InputTextArea>
+                </div>
+            </div>
+        </EditForm>
+    </div> 
+</section>
+            
+        
+
+@code {
+
+        [Parameter]
+        public string AreaId { get; set; }
+
+        protected override void OnInitialized()
+        {
+            AreaModelItem = AreaDataProvider.LoadSingleArea(Convert.ToInt32(AreaId));
+            FactoryList = FactoryDataProvider.LoadAllFactories();
+        }
+
+
+        private AreaModel AreaModelItem { get; set; } = new AreaModel();
+        private IEnumerable<Factory> FactoryList; // { get; set; } = new IEnumerable<Factory>();
+}

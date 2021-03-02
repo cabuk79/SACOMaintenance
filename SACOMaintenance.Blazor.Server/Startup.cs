@@ -32,6 +32,9 @@ namespace SACOMaintenance.Blazor.Server
             services.AddDbContext<SACOMaintenanceContext>(options=>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IArea, AreaProvider>();
+            services.AddScoped<IFactory, FactoryDataProvider>();
+            services.AddScoped<ICompany, CompanyDataProvider>();
+            services.AddScoped<IPPE, PPEDataProvider>();
             services.AddRazorPages();
             services.AddServerSideBlazor();
         }

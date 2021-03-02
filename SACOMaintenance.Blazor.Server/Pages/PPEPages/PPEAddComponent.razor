@@ -1,0 +1,55 @@
+﻿@page "/ppe/create"
+@using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.DataAccess.Interfaces
+@inject IPPE PpeDataProvider 
+
+<div class-row mt-2 mb-5>
+    <h3 class="card card-title text-info col-lg-12">Add New PPE</h3>
+    <div class="col-md-6">
+        <div class="card">
+            <EditForm Model="PpeModelItem">
+                <div class="form-group">
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Name</label>
+                        <InputText @bind-Value="PpeModelItem.PPEName" class="form-control" placeholder="Enter a PPE name"></InputText>
+                    </div>
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Choose Image</label>
+                        <RadzenUpload Multiple="false" Accept="image/*" Url="css/images/"
+                                      Style="margin-bottom: 20px;"
+                                      Progress="@(args => OnProgress(args, "Images Only Allowed"))" />
+                    </div>
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Images Chosen</label>
+                        
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    private PPE PpeModelItem { get; set; } = new PPE();
+
+    private string ImagePath { get; set; }
+
+    int progress;
+    string info;
+    void OnProgress(UploadProgressArgs args, string name)
+    {
+        this.info = $"% '{name}' / {args.Loaded} of {args.Total} bytes.";
+        this.progress = args.Progress;
+
+        if (args.Progress == 100)
+        {
+            //console.Clear();
+
+            foreach (var file in args.Files)
+            {
+                //console.Log($"Uploaded: {file.Name} / {file.Size} bytes");
+                ImagePath = file.Name;
+            }
+        }
+    }
+}

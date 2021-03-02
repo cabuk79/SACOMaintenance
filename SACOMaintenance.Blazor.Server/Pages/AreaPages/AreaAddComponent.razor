@@ -1,0 +1,55 @@
+﻿@page "/area/create"
+@using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.DataAccess.Interfaces
+@inject IArea AreaDataProvider
+@inject IFactory FactoryDataProvider
+
+<div class="row mt-2 mb-5">
+    <h3 class="card-title text-info col-lg-12">Add New Area</h3>
+    <div class="col-md-6">
+        <div class="card">
+            <EditForm Model="AreaModelItem">
+                <div class="form-group">
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Name</label>
+                        <InputText @bind-Value="AreaModelItem.AreaName" class="form-control" placeholder="Enter Area Name"></InputText>
+                    </div>
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Factory</label>
+                        <InputSelect id="factory" class="form-control" col-sm-8 @bind-Value="@AreaModelItem.FactoryId" placeholder="Select a Factory">
+                            @foreach (var factory in FactoryList)
+                            {
+                                <option value="@factory.Id">@factory.FactoryName</option>
+                            }
+                        </InputSelect>
+                    </div>
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Comments</label>
+                        <InputTextArea @bind-Value="AreaModelItem.CommentsNotes" class="form-control" placeholder="Enter any comments"></InputTextArea>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+        <div class="area-button-group">
+            <a type="submit" class="btn btn-outline-primary" @onclick="@SaveAreaToDatabase">Save</a>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    private void SaveAreaToDatabase()
+    {
+        AreaDataProvider.AddEditArea(AreaModelItem);
+    }
+
+    private AreaModel AreaModelItem { get; set; } = new AreaModel();
+    private string Title { get; set; } = "Create";
+
+    protected override void OnInitialized()
+    {
+        FactoryList = FactoryDataProvider.LoadAllFactories();
+    }
+
+    private IEnumerable<Factory> FactoryList;
+}
