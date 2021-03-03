@@ -11,16 +11,18 @@ namespace SACOMaintenance.DataAccess
 {
     public class EquipmentDataProvider : IEquipment
     {
-        public EquipmentDataProvider()
+        private readonly SACOMaintenanceContext _equipmentDBContext;
+        public EquipmentDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _equipmentDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditEquipment(Equipment equipment)
         {
-            SacoMaintenanceContext.Equipment.Add
+            _equipmentDBContext.Equipment.Add
             (
                 new Equipment 
                 { 
@@ -31,18 +33,18 @@ namespace SACOMaintenance.DataAccess
                     SerialIdentifierNumber = equipment.SerialIdentifierNumber
                 }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _equipmentDBContext.SaveChanges();
         }
 
         public IEnumerable<Equipment> LoadAllEquipments()
         {
-            var equipments = SacoMaintenanceContext.Equipment.ToList();
+            var equipments = _equipmentDBContext.Equipment.ToList();
             return equipments;
         }
 
         public Equipment ViewSingleEquipment(int equipmentId)
         {
-            var equipment = SacoMaintenanceContext.Equipment.FirstOrDefault(i => i.Id == equipmentId);
+            var equipment = _equipmentDBContext.Equipment.FirstOrDefault(i => i.Id == equipmentId);
             return equipment;
         }
     }

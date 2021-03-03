@@ -35,6 +35,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IFactory, FactoryDataProvider>();
             services.AddScoped<ICompany, CompanyDataProvider>();
             services.AddScoped<IPPE, PPEDataProvider>();
+            services.AddScoped<IEquipment, EquipmentDataProvider>();
             services.AddRazorPages();
             services.AddServerSideBlazor();
         }
