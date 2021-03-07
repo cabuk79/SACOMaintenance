@@ -28,6 +28,7 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.9",
+          "Models.DTO": "1.0.0",
           "Radzen.Blazor": "3.1.3",
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.Data": "1.0.0",
@@ -1370,6 +1371,14 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Models.DTO/1.0.0": {
+        "runtime": {
+          "Models.DTO.dll": {}
+        },
+        "compile": {
+          "Models.DTO.dll": {}
         }
       },
       "SACOMaintenance.Common/1.0.0": {
@@ -3854,6 +3863,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Models.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",

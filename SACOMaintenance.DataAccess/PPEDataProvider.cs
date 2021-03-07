@@ -16,6 +16,12 @@ namespace SACOMaintenance.DataAccess
             _ppeDBContext = sacoMaintenanceContext;
         }
 
+        public IEnumerable<PPE> LoadAllPlantPPE(string ppeTypeName)
+        {
+            var ppe = _ppeDBContext.PPE.Where(t => t.MaintRequestType == ppeTypeName);
+            return ppe;
+        }
+
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public IEnumerable<PPE> LoadAllPPE()
@@ -38,6 +44,8 @@ namespace SACOMaintenance.DataAccess
             );
             _ppeDBContext.SaveChanges();
         }
+
+
 
         public PPE ViewSinglePPEI(int ppeId)
         {

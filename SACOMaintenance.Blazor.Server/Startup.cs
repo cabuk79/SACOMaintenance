@@ -36,6 +36,9 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<ICompany, CompanyDataProvider>();
             services.AddScoped<IPPE, PPEDataProvider>();
             services.AddScoped<IEquipment, EquipmentDataProvider>();
+            services.AddScoped<IMaintRequestInitiation, MaintRequestInitiationDataProvider>();
+            services.AddScoped<IGeneralRequest, GeneralRequestDataProvider>();
+            services.AddScoped<IPlantRequest, PlantRequestDataProvider>();
             services.AddRazorPages();
             services.AddServerSideBlazor();
         }

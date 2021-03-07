@@ -10,6 +10,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IPPE
     {
         IEnumerable<PPE> LoadAllPPE();
+        IEnumerable<PPE> LoadAllPlantPPE(string ppeTypeName);
         void SaveAddPPE(PPE ppe);
         PPE ViewSinglePPEI(int Id);
     }

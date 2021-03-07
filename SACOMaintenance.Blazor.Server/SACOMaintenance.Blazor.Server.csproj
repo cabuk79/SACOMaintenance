@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
+    <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
     <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />
     <ProjectReference Include="..\SACOMaintenance.Data\SACOMaintenance.Data.csproj" />
   </ItemGroup>

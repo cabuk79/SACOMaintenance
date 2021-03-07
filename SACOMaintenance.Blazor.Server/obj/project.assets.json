@@ -1645,6 +1645,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6236,6 +6246,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Models.DTO/1.0.0": {
+      "type": "project",
+      "path": "../Models.DTO/Models.DTO.csproj",
+      "msbuildProject": "../Models.DTO/Models.DTO.csproj"
+    },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",
       "path": "../BuisnessModels/SACOMaintenance.Common.csproj",
@@ -6257,6 +6272,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.3",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.9",
+      "Models.DTO >= 1.0.0",
       "Radzen.Blazor >= 3.1.3",
       "SACOMaintenance.Common >= 1.0.0",
       "SACOMaintenance.Data >= 1.0.0",
@@ -6297,6 +6313,9 @@
           "projectReferences": {
             "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
               "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
+            },
+            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\Models.DTO\\Models.DTO.csproj": {
+              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\Models.DTO\\Models.DTO.csproj"
             },
             "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj": {
               "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj"

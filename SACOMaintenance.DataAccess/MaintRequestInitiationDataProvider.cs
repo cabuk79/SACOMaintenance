@@ -47,6 +47,7 @@ namespace SACOMaintenance.DataAccess
                 .Include(c => c.Company)
                 .Include(a => a.Area)
                 .Include(f => f.Factory)
+                .Include(p => p.PPEEquipment)
                 .FirstOrDefault();
             return maintReqInitiation;
         }

@@ -11,16 +11,18 @@ namespace SACOMaintenance.DataAccess
 {
     public class PlantRequestDataProvider : IPlantRequest
     {
-        public PlantRequestDataProvider()
+        private readonly SACOMaintenanceContext _areaDBContext;
+        public PlantRequestDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _areaDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditPlantRequestInfo(int maintReqId, PlantRequest plantRequest)
         {
-            SacoMaintenanceContext.PlantRequests.Add
+            _areaDBContext.PlantRequests.Add
             (
                 new PlantRequest 
                 {
@@ -50,7 +52,7 @@ namespace SACOMaintenance.DataAccess
                     MaintRequestId = plantRequest.MaintRequestId
                 }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _areaDBContext.SaveChanges();
         }
 
         public void GetPlantRequestInfo(int maintReqId)
@@ -60,13 +62,14 @@ namespace SACOMaintenance.DataAccess
 
         public PlantRequest GetSignalPlantRequestInfo(int Id)
         {
-            var plantRequest = SacoMaintenanceContext.PlantRequests.FirstOrDefault(i => i.Id == Id);
+            var plantRequest = _areaDBContext.PlantRequests.FirstOrDefault(i => i.Id == Id);
             return plantRequest;
         }
 
         public PlantRequest GetSinalPlantRequestInfo(int Id)
         {
-            throw new NotImplementedException();
+            var plantRequest = _areaDBContext.PlantRequests.FirstOrDefault(i => i.MaintRequestId == Id);
+            return plantRequest;
         }
     }
 }

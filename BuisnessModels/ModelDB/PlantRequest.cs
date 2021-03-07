@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 
 namespace SACOMaintenance.Common.ModelDB
 {
+    //TODO: need to review the property types
     public class PlantRequest
     {
         public int Id { get; set; }
-        public int IsolationNitricAcid { get; set; }
-        public int IsolatedPhosphoricAcid { get; set; }
-        public int IsolatedSodiumHydroxide { get; set; }
-        public int IsolatedSulphuricAcid { get; set; }
+        public bool IsolationNitricAcid { get; set; }
+        public bool IsolatedPhosphoricAcid { get; set; }
+        public bool IsolatedSodiumHydroxide { get; set; }
+        public bool IsolatedSulphuricAcid { get; set; }
         public string IsolatedOther { get; set; }
 
 
-        public int DrainingLinesNitricAcid { get; set; }
-        public int DrainingLinesPhosphoricAcid { get; set; }
-        public int DrainingLinesSodiumHydroxide { get; set; }
-        public int DrainingLinesSulphuricAcid { get; set; }
+        public bool DrainingLinesNitricAcid { get; set; }
+        public bool DrainingLinesPhosphoricAcid { get; set; }
+        public bool DrainingLinesSodiumHydroxide { get; set; }
+        public bool DrainingLinesSulphuricAcid { get; set; }
         public string DrainingLinesOther { get; set; }
 
-        public int IsolationsCompressedAir { get; set; }
-        public int IsolationsElectrical { get; set; }
-        public int IsolationsGas { get; set; }
-        public int IsolationsMechanical { get; set; }
-        public int IsolationsSteam { get; set; }
-        public int IsolationsWater { get; set; }
+
+        public bool IsolationsCompressedAir { get; set; }
+        public bool IsolationsElectrical { get; set; }
+        public bool IsolationsGas { get; set; }
+        public bool IsolationsMechanical { get; set; }
+        public bool IsolationsSteam { get; set; }
+        public bool IsolationsWater { get; set; }
         public string IsolationsOther { get; set; }
 
         public string OtherPrecautions { get; set; }
