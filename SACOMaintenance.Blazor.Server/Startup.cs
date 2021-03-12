@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
 using SACOMaintenance.DataAccess.Interfaces;
+using SACOMaintenance.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,9 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMaintRequestInitiation, MaintRequestInitiationDataProvider>();
             services.AddScoped<IGeneralRequest, GeneralRequestDataProvider>();
             services.AddScoped<IPlantRequest, PlantRequestDataProvider>();
+
+            services.AddScoped<IAreaViewModel, AreaViewModel>();
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
         }

@@ -183,7 +183,7 @@ app {
 
     /* AREA Form Section  */
     .area-form-area{
-        padding: 2rem;
+        padding: 2rem 0 0 0;
     }
 
     .form-group-row{
@@ -201,5 +201,14 @@ app {
         width: 20px;
         height: 20px;
     }
+
+    /* Custom CSS */
+
+    /* Buttons */
+
+    .update-save-buttons{
+        margin: 0% 5% 0% 0%;
+    }
+
 
 }

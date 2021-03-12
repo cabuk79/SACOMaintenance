@@ -30,6 +30,7 @@
     <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
     <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />
     <ProjectReference Include="..\SACOMaintenance.Data\SACOMaintenance.Data.csproj" />
+    <ProjectReference Include="..\SACOMaintenance.ViewModel\SACOMaintenance.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

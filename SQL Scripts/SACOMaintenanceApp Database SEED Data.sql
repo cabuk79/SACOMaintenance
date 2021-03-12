@@ -10,35 +10,35 @@ INSERT INTO Companies (CompantName) Values ('Nekem');
 INSERT INTO Companies (CompantName) Values ('FL');
 
 --AREAS Table SEED data
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Warehouse F2', 'F2 warehouse area', 2);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Warehouse F3', 'F3 warehouse area at the end of factory 3', 3)
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Plant', 'Plant 1 and 2 areas', 1);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Press Shop', 'Pressing area', 2);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Tool Room', 'End of F2', 2);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Assembly', 'Assembly machine room , tool room, office and QC office', 2);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Offices F3', 'Includes Sales, HR, Nekem and projects offices', 3);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('FL Production', 'Production area', 3);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('GTL Production', 'Production area', 3);
-INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('F1 Top Floor Offices', 'These offices are currently not in use', 1);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Warehouse F2', 'F2 warehouse area', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Warehouse F3', 'F3 warehouse area at the end of factory 3', 4)
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Plant', 'Plant 1 and 2 areas', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Press Shop', 'Pressing area', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Tool Room', 'End of F2', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Assembly', 'Assembly machine room , tool room, office and QC office', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('Offices F3', 'Includes Sales, HR, Nekem and projects offices', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('FL Production', 'Production area', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('GTL Production', 'Production area', 4);
+INSERT INTO Areas (AreaName, CommentsNotes, FactoryId) Values ('F1 Top Floor Offices', 'These offices are currently not in use', 4);
 
 --Maint Request Type Table SEED Data
-INSERT INTO MaintRequestTypes (TypeName) Values ('Plant');
-INSERT INTO MaintRequestTypes (TypeName) Values ('Genenral');
-INSERT INTO MaintRequestTypes (TypeName) Values ('Both');
+--INSERT INTO MaintRequestTypes (TypeName) Values ('Plant');
+--INSERT INTO MaintRequestTypes (TypeName) Values ('Genenral');
+--INSERT INTO MaintRequestTypes (TypeName) Values ('Both');
 
 --PPE Table SEED Data
 INSERT INTO PPE (PPEName, Description, IconFileLocation, MaintRequestType) 
-            Values ('Gloves', 'css/Images/glasses.jpg', 1);
+            Values ('Gloves', 'Testing', 'css/Images/glasses.jpg', 1);
 INSERT INTO PPE (PPEName, Description, IconFileLocation, MaintRequestType)
-            Values ('Hard Hat', 'css/Images/glasses.jpg', 1);
+            Values ('Hard Hat', 'Testing', 'css/Images/glasses.jpg', 1);
 INSERT INTO PPE (PPEName, Description, IconFileLocation, MaintRequestType)
-            Values ('Safety Boots', 'css/Images/glasses.jpg', 1);
+            Values ('Safety Boots', 'Testing', 'css/Images/glasses.jpg', 1);
 INSERT INTO PPE (PPEName, Description, IconFileLocation, MaintRequestType)
-            Values ('Respitory Mask', 'css/Images/glasses.jpg', 1);            
+            Values ('Respitory Mask', 'Testing', 'css/Images/glasses.jpg', 1);            
 INSERT INTO PPE (PPEName, Description, IconFileLocation, MaintRequestType)
-            Values ('Overalls', 'css/Images/glasses.jpg', 1);
+            Values ('Overalls', 'Testing', 'css/Images/glasses.jpg', 1);
 INSERT INTO PPE (PPEName, Description, IconFileLocation, MaintRequestType)
-            Values ('Rubber Gloves', 'css/Images/glasses.jpg', 1);
+            Values ('Rubber Gloves', 'Testing', 'css/Images/glasses.jpg', 1);
 
 --Equipment SEED Data
 INSERT INTO Equipment (Name, Description, MachineTypeId, SerialIdentifierNumber, Comments, AreaId) 
@@ -86,6 +86,7 @@ INSERT INTO MaintRequestInitiations (DateRaised, CompanyId, FactoryId, AreaId, E
             Values ('2021/02/15', 1, 1, 1, 2, 'There is no power to the press is seems like the electrical cable has been cut.', 1, 1, 1);
 
 --Maintenance Request General
+
 
 --Maintenance Request Plant
 

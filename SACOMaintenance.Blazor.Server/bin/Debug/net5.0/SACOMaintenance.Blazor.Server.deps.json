@@ -33,6 +33,7 @@
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.Data": "1.0.0",
           "SACOMaintenance.DataAccess": "1.0.0",
+          "SACOMaintenance.ViewModel": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1412,6 +1413,18 @@
         },
         "compile": {
           "SACOMaintenance.DataAccess.dll": {}
+        }
+      },
+      "SACOMaintenance.ViewModel/1.0.0": {
+        "dependencies": {
+          "SACOMaintenance.Common": "1.0.0",
+          "SACOMaintenance.DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "SACOMaintenance.ViewModel.dll": {}
+        },
+        "compile": {
+          "SACOMaintenance.ViewModel.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3880,6 +3893,11 @@
       "sha512": ""
     },
     "SACOMaintenance.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SACOMaintenance.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

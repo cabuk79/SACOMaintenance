@@ -34,21 +34,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("MaintRequestInitiationPPE");
                 });
 
-            modelBuilder.Entity("MaintRequestInitiationRisk", b =>
-                {
-                    b.Property<int>("MaintRequestInitiationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RisksId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MaintRequestInitiationId", "RisksId");
-
-                    b.HasIndex("RisksId");
-
-                    b.ToTable("MaintRequestInitiationRisk");
-                });
-
             modelBuilder.Entity("MaintRequestInitiationUser", b =>
                 {
                     b.Property<int>("MaintRequestInitiationId")
@@ -272,6 +257,27 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("MaintRequestInitiations");
                 });
 
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk", b =>
+                {
+                    b.Property<int>("MaintRequestInitiationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RisksId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RiskLevel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RisksId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MaintRequestInitiationId", "RisksId1");
+
+                    b.HasIndex("RisksId1");
+
+                    b.ToTable("MaintRequestInitiationRisk");
+                });
+
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.PPE", b =>
                 {
                     b.Property<int>("Id")
@@ -472,6 +478,9 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
@@ -494,21 +503,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasOne("SACOMaintenance.Common.ModelDB.PPE", null)
                         .WithMany()
                         .HasForeignKey("PPEEquipmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MaintRequestInitiationRisk", b =>
-                {
-                    b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
-                        .WithMany()
-                        .HasForeignKey("MaintRequestInitiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SACOMaintenance.Common.ModelDB.Risk", null)
-                        .WithMany()
-                        .HasForeignKey("RisksId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -586,6 +580,21 @@ namespace SACOMaintenance.Data.Migrations
                     b.Navigation("Factory");
 
                     b.Navigation("Status");
+                });
+
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk", b =>
+                {
+                    b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
+                        .WithMany()
+                        .HasForeignKey("MaintRequestInitiationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Risk", null)
+                        .WithMany()
+                        .HasForeignKey("RisksId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.PlantRequest", b =>

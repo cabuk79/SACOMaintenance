@@ -103,7 +103,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/editarea/{AreaId}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/areas")]
     public partial class AreaEditComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -112,27 +112,38 @@ using SACOMaintenance.DataAccess.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
+#line 67 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
        
 
-        [Parameter]
-        public string AreaId { get; set; }
+    [Parameter]
+    public string AreaId { get; set; }
 
-        protected override void OnInitialized()
-        {
-            AreaModelItem = AreaDataProvider.LoadSingleArea(Convert.ToInt32(AreaId));
-            FactoryList = FactoryDataProvider.LoadAllFactories();
-        }
+    protected override void OnInitialized()
+    {
+        //areaViewModel.LoadSingleArea(Convert.ToInt32(AreaId));
+        //AreaModelItem = AreaDataProvider.LoadSingleArea(Convert.ToInt32(AreaId));
+        //FactoryList = FactoryDataProvider.LoadAllFactories();
+    }
 
+    void OnChange(object value, string name)
+    {
+        //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+        areaViewModel.LoadSingleArea(Convert.ToInt32(value));
+        //console.Log($"{name} value changed to {str}");
+    }
 
-        private AreaModel AreaModelItem { get; set; } = new AreaModel();
-        private IEnumerable<Factory> FactoryList; // { get; set; } = new IEnumerable<Factory>();
+    private void UpdateArea(MouseEventArgs e)
+    {
+        areaViewModel.SaveArea(areaViewModel.area);
+    }
+
+    //private AreaModel AreaModelItem { get; set; } = new AreaModel();
+    //private IEnumerable<Factory> FactoryList; // { get; set; } = new IEnumerable<Factory>();
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFactory FactoryDataProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IArea AreaDataProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.IAreaViewModel areaViewModel { get; set; }
     }
 }
 #pragma warning restore 1591
