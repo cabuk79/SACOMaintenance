@@ -1,24 +1,27 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace SACOMaintenance.DataAccess
 {
     public class MachineTypeDataProvider : IMachineType
     {
-        public MachineTypeDataProvider()
+        private readonly SACOMaintenanceContext _machineTypeDBContext;
+
+        public MachineTypeDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
-            //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _machineTypeDBContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+    
+        //public SACOMaintenanceContext _sacoMaintenanceContext { get; }
 
         public void AddEditMachineType(MachineType machineType)
         {
-            SacoMaintenanceContext.Add
+            _machineTypeDBContext.Add
             (
                 new MachineType
                 {
@@ -26,18 +29,18 @@ namespace SACOMaintenance.DataAccess
                     Description = machineType.Description
                 }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _machineTypeDBContext.SaveChanges();
         }
 
         public IEnumerable<MachineType> LoadAllMachines()
         {
-            var machines = SacoMaintenanceContext.MachineTypes.ToList();
+            var machines = _machineTypeDBContext.MachineTypes.ToList();
             return machines;
         }
 
         public MachineType ViewSingleMachineType(int machineTypeId)
         {
-            var machineType = SacoMaintenanceContext.MachineTypes.FirstOrDefault(i => i.Id == machineTypeId);
+            var machineType = _machineTypeDBContext.MachineTypes.FirstOrDefault(i => i.Id == machineTypeId);
             return machineType;
         }
     }

@@ -3,7 +3,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace SACOMaintenance.ViewModel
+namespace SACOMaintenance.ViewModel.Interfaces
 {
     public interface IAreaViewModel
     {

@@ -9,8 +9,4 @@
     <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="IAreaViewModel\" />
-  </ItemGroup>
-
 </Project>

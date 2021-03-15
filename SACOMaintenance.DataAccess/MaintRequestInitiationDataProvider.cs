@@ -59,5 +59,13 @@ namespace SACOMaintenance.DataAccess
                 .ToList();
             return maintReqInitationList;
         }
+
+        public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
+        {
+            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
+                .Include(e => e.Equipment)
+                .ToList();
+            return maintReqInitationList;
+        }
     }
 }

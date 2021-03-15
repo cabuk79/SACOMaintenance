@@ -1,25 +1,27 @@
 ﻿@page "/maint-req/full-add/{MaintReqID}" 
 @using SACOMaintenance.Common.ModelDB
-@using SACOMaintenance.DataAccess.Interfaces
-@inject IMaintRequestInitiation MaintRequestInitiationDataProvider
+@inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
+@*@inject IMaintRequestInitiation MaintRequestInitiationDataProvider*@
+
 
 <h3>MaintReqFull</h3>
 
-<EditForm Model="maintReq">
+<EditForm Model="maintReqInitation">
     <div class="form-group-row">
         <label style="font-weight:bold">Details</label>
-        <InputTextArea @bind-Value="maintReq.RequestDetails" class="form-control"></InputTextArea>
+        <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
     </div>
     <div class="form-group-row">
         <!-- Choose the correct container for the maintenance request -->
         @{ 
-            if(maintReq.AreaId == 2)
+            if(maintReqInitation.maintReqAreaId == 31)
             {
-                <PlantMaintReqComponent maintReqID="maintReq.Id" PpeTypeName="Plant"> @*ppeList="maintReq.PPEEquipment">*@</PlantMaintReqComponent>
+                <PlantMaintReqComponent></PlantMaintReqComponent>
+                <!--<PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId" PpeTypeName="Plant">--> @*ppeList="maintReq.PPEEquipment">*@<!--</PlantMaintReqComponent>-->
             }
             else
             {
-                <GeneralMaintReqComponent maintReqID="maintReq.Id"></GeneralMaintReqComponent>
+                <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
             }
         }
     </div>
@@ -29,10 +31,11 @@
     [Parameter]
     public string maintReqID { get; set; }
 
-    public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
+    //public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
 
     protected override void OnInitialized()
     {
-        maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
+        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+        //maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
     }
 }

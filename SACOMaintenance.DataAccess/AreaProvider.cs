@@ -3,7 +3,6 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using SACOMaintenance.Common.ModelDB;
-using Microsoft.EntityFrameworkCore;
 
 namespace SACOMaintenance.DataAccess
 {

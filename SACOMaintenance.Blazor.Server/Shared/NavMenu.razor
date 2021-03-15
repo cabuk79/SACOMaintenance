@@ -1,5 +1,5 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">SACOMaintenance.Blazor.Server</a>
+    <a class="navbar-brand" href="">SACO</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,17 +13,17 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="maintrequests-list" Match="NavLinkMatch.All">
                 <span class="oi oi-book" aria-hidden="true"></span> Requests
             </NavLink>
         </li>
-        <li class="nav-item px-3"> 
+        <li class="nav-item px-3">
             <NavLink class="nav-link" href="areas" Match="NavLinkMatch.All">
                 <span class="oi oi-map-marker" aria-hidden="true"></span> Areas
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="companies-list" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="company-view-edit" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Companies
             </NavLink>
         </li>
@@ -43,8 +43,13 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="machinetype-view-edit" Match="NavLinkMatch.All">
                 <span class="oi oi-cog" aria-hidden="true"></span> Machine Type
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="factories-view-edit" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Factories
             </NavLink>
         </li>
     </ul>

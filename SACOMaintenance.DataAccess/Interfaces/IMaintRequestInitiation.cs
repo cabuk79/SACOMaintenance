@@ -12,5 +12,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
         IEnumerable<MaintRequestInitiation> LoadAllRequestInitations();
         MaintRequestInitiation GetSingleRequestInitiation(int Id);
         void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
+        IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment();
     }
 }

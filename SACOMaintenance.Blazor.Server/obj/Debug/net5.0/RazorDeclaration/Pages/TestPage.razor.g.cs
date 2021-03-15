@@ -117,7 +117,7 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.IAreaViewModel areaViewModel { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IAreaViewModel areaViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -10,6 +10,7 @@ using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel;
+using SACOMaintenance.ViewModel.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace SACOMaintenance.Blazor.Server
         {
             services.AddDbContext<SACOMaintenanceContext>(options=>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            
             services.AddScoped<IArea, AreaProvider>();
             services.AddScoped<IFactory, FactoryDataProvider>();
             services.AddScoped<ICompany, CompanyDataProvider>();
@@ -40,8 +42,16 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMaintRequestInitiation, MaintRequestInitiationDataProvider>();
             services.AddScoped<IGeneralRequest, GeneralRequestDataProvider>();
             services.AddScoped<IPlantRequest, PlantRequestDataProvider>();
+            services.AddScoped<IMachineType, MachineTypeDataProvider>();
+            services.AddScoped<IMaintRequestInitiation, MaintRequestInitiationDataProvider>();
+            
 
+            services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
             services.AddScoped<IAreaViewModel, AreaViewModel>();
+            services.AddScoped<IFactoryViewModel, FactoryViewModel>();
+            services.AddScoped<ICompanyViewModel, CompanyViewModel>();
+            services.AddScoped<IRequestInitiationListViewModel, RequestInitiationListViewModel>();
+            services.AddScoped<IMaintRequestFullViewModel, MaintRequestFullViewModel>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

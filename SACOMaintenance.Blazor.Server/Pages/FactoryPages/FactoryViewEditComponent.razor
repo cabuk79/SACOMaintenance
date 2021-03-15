@@ -1,0 +1,59 @@
+﻿@page "/factories-view-edit"
+@inject SACOMaintenance.ViewModel.Interfaces.IFactoryViewModel factoryViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<div section="header">
+    <div class="container-fluid">
+        <h1>Areas</h1>
+    </div>
+</div>
+
+<div section="main-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <RadzenListBox TValue="int" Data=@factoryViewModel.factories TextProperty="FactoryName"
+                               ValueProperty="Id" Style="height:500px" Name="factoryListBox"
+                               Change=@(args => OnChange(args, "ListBox")) />
+            </div>
+
+            <div class="col-lg-10">
+                <section class="area-form">
+                    <div class="area-form-area">
+                        <h3>Viewing: @factoryViewModel.FactoryName</h3>
+                        <EditForm Model="@factoryViewModel.factory">
+                            <div class="form-group">
+                                <div class="form-group-row">
+                                    <label style="font-weight:bold">Name</label>
+                                    <InputText @bind-Value="factoryViewModel.FactoryName" class="form-control"></InputText>
+                                </div>
+                            </div>
+                        </EditForm>
+                    </div>
+                    <div class="update-save-buttons">
+                        <button class="btn btn-primary" @onclick="@UpdateArea">Save</button>
+                        <button class="btn btn-primary">Add New Area</button>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+
+    void OnChange(object value, string name)
+    {        
+        factoryViewModel.LoadSingleFactory(Convert.ToInt32(value));
+    }
+
+    private void UpdateArea(MouseEventArgs e)
+    {
+        //areaViewModel.SaveArea(areaViewModel.area);
+    }
+
+}

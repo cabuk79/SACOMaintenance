@@ -1,13 +1,9 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
-using System.Collections.Generic;
+using SACOMaintenance.ViewModel.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -18,7 +14,7 @@ namespace SACOMaintenance.ViewModel
         public AreaModel area { get; set; }
         public ObservableCollection<AreaModel> areas { get; } = new();
         public ObservableCollection<Factory> factories { get; } = new();
-
+        public IArea AreaDataProvider { get; }
         public AreaViewModel(IArea areaDataProvider, IFactory factoryDataProvider)
         {
             //this.area = area;
@@ -132,7 +128,7 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public IArea AreaDataProvider { get; }
+        
         
 
         public event PropertyChangedEventHandler PropertyChanged;

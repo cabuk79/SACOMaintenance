@@ -89,27 +89,6 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 1 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\PlantMaintReqComponent.razor"
-using SACOMaintenance.Common.ModelDB;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\PlantMaintReqComponent.razor"
-using SACOMaintenance.DataAccess.Interfaces;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\PlantMaintReqComponent.razor"
-using Models.DTO;
-
-#line default
-#line hidden
-#nullable disable
     public partial class PlantMaintReqComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -117,34 +96,6 @@ using Models.DTO;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 49 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\PlantMaintReqComponent.razor"
-       
-    [Parameter]
-    public int maintReqID { get; set; }
-
-    [Parameter]
-    public string PpeTypeName { get; set; }
-
-    public IEnumerable<PPE> ppeList { get; set; }
-
-    private PlantRequest plantReq { get; set; }
-
-    protected override void OnInitialized()
-    {
-        PppMaintTypeEnum maintTypeEnum = new PppMaintTypeEnum();
-
-        //plantReq = PlantReqDataProvider.GetSinalPlantRequestInfo(maintReqID);
-        ppeList = PpeReqDataProvider.LoadAllPlantPPE(PpeTypeName);
-
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPPE PpeReqDataProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPlantRequest PlantReqDataProvider { get; set; }
     }
 }
 #pragma warning restore 1591

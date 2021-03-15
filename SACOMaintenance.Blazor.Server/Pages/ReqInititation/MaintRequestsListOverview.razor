@@ -1,0 +1,29 @@
+﻿@page "/maintrequests-list"
+@inject SACOMaintenance.ViewModel.Interfaces.IRequestInitiationListViewModel maintReqListViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>List of Maintenance Requests</h3>
+
+
+
+<RadzenGrid Data="@maintReqListViewModel.requests"
+            AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+            FilterMode="FilterMode.Advanced" AllowPaging="true">
+    <Columns>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions">
+            <Template Context="data">
+                <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
+                    <i class="fa fa-pencil-square"></i>
+                </a>
+            </Template>
+        </RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+@code {
+
+}

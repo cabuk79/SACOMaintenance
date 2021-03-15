@@ -1,12 +1,9 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {

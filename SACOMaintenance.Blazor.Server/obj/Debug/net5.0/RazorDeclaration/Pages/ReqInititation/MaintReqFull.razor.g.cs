@@ -96,13 +96,6 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-using SACOMaintenance.DataAccess.Interfaces;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/full-add/{MaintReqID}")]
     public partial class MaintReqFull : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,22 +105,23 @@ using SACOMaintenance.DataAccess.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
 
-    public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
+    //public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
 
     protected override void OnInitialized()
     {
-        maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
+        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+        //maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IMaintRequestInitiation MaintRequestInitiationDataProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation { get; set; }
     }
 }
 #pragma warning restore 1591
