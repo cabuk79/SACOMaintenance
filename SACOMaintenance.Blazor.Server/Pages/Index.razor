@@ -1,5 +1,18 @@
 ﻿@page "/"
+@using SACOMaintenance.Blazor.Server.Pages.Dashboard
 
 <h1>SACO Maintenance Application</h1>
 
 <h1>Dashboard</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>New Requests UnAssigned</h2>
+            <MaintReqUnassigned></MaintReqUnassigned>
+        </div>
+        <div class="col-lg-6">
+            <h2>Open Requests</h2>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<RadzenGrid Data="@dashboardViewModel.MaintReqs">
+    <Columns>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
