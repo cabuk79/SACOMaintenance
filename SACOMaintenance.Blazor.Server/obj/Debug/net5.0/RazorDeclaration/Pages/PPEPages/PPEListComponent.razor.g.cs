@@ -90,15 +90,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEListComponent.razor"
-using SACOMaintenance.Common.ModelDB;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEListComponent.razor"
-using SACOMaintenance.DataAccess.Interfaces;
+using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
@@ -111,20 +104,7 @@ using SACOMaintenance.DataAccess.Interfaces;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 39 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEListComponent.razor"
-       
-    private IEnumerable<PPE> PPEList { get; set; } = new List<PPE>();
-
-    protected override void OnInitialized()
-    {
-        PPEList = PPEDataProvider.LoadAllPPE();
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPPE PPEDataProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IPPEViewModel ppeViewModel { get; set; }
     }
 }
 #pragma warning restore 1591
