@@ -1,36 +1,134 @@
 ﻿@*@using SACOMaintenance.Common.ModelDB
-@using SACOMaintenance.DataAccess.Interfaces
-@using Models.DTO
-@inject IPlantRequest PlantReqDataProvider
-@inject IPPE PpeReqDataProvider*@
+    @using SACOMaintenance.DataAccess.Interfaces
+    @using Models.DTO
+    @inject IPlantRequest PlantReqDataProvider
+    @inject IPPE PpeReqDataProvider*@
+@inject SACOMaintenance.ViewModel.Interfaces.IPlantMaintReqViewModel plantMaintViewModel
 
-<h3>PlantMaintReqComponent</h3>
+<h3><em>Isolations</em></h3>
 
-@*<EditForm Model="plantReq">
-    <div class="form-group-row">
-        <label style="font-weight:bold">Isolations</label>
+<table cellpadding="5">
+    <tr>
+        <td><label>Phosphoric Acide</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationNitricAcid"></InputCheckbox></td>
+        <td><label>Phosporic Acid</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedPhosphoricAcid"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Sodium Hydrozide</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSodiumHyrodzide"></InputCheckbox></td>
+        <td><label>Sulpric Acid</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSulphuricAcid"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Other</label></td>
+        <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.IsolationsOther" class="form-control"></InputTextArea></td>
+    </tr>
+</table>
+
+<h3>Drained Lines</h3>
+
+<table cellpadding="5">
+    <tr>
+        <td><label>Nitric Acid</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedNitricAcid"></InputCheckbox></td>
+        <td><label>Phosphoric Acid</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedPhosphoricAcicd"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Sodium Hydroxide</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedSodiumHydroxide"></InputCheckbox></td>
+        <td>Sulphuric Acid</td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinesSulphuricAcid"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Other</label></td>
+        <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.DrainingLinesOther" class="form-control"></InputTextArea></td>
+    </tr>
+</table>
+
+<h3>Isolations Other</h3>
+
+<table cellpadding="5">
+    <tr>
+        <td><label>Compressed Air</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsCompressedAir"></InputCheckbox></td>
+        <td><label>Electrical</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsElectrical"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Gas</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsGas"></InputCheckbox></td>
+        <td>Mechanical</td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsMechanical"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Steam</label></td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsSteam"></InputCheckbox></td>
+        <td>Water</td>
+        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsWater"></InputCheckbox></td>
+    </tr>
+    <tr>
+        <td><label>Other</label></td>
+        <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.OtherPrecations" class="form-control"></InputTextArea></td>
+    </tr>
+</table>
+
+
+@*<div class="container-fluid col-lg-12">
+    <EditForm Model="@plantMaintViewModel.plantRequest">
+        <div class="form-group-row">
+            <label style="font-weight:bold">Isolations</label>
+        </div>
+        <div class="form-group-row">
+            <div class="col-lg-4">
+                <label>Nitric Acid</label>
+            </div>
+            <div class="col-lg-4">
+                <InputCheckbox @bind-Value="plantMaintViewModel.IsolationNitricAcid">Nitric Acid</InputCheckbox>
+            </div>
+            <div class="form-group-row">
+                <div class="col-lg-4">
+                    <label>Phosporic Acid</label>
+                </div>
+                <div class="col-lg-4">
+                    <InputCheckbox @bind-Value="plantMaintViewModel.IsolatedPhosphoricAcid">Phosphoric Acid</InputCheckbox>
+                </div>
+            </div>
+        </div>*@
+@*<div class="form-group-row">
+        <div class="form-group-row">
+            <div class="col-lg-4">
+                <label>Sodium Hydrozide</label>
+            </div>
+            <div class="col-lg-4">
+                <InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSodiumHyrodzide">Sodium Hydroxide</InputCheckbox>
+            </div>
+        </div>
+        <div class="form-group-row">
+            <div class="col-lg-4">
+                <label>Sulpric Acid</label>
+            </div>
+            <div class="col-lg-4">
+                <InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSulphuricAcid">Sulphric Acid</InputCheckbox>
+            </div>
+        </div>
     </div>
     <div class="form-group-row">
         <div class="col-lg-4">
-            <InputCheckbox @bind-Value="plantReq.IsolationNitricAcid">Nitric Acid</InputCheckbox>
+            <div class="col-lg-4">
+                <label>Other</label>
+            </div>
+            <div class="col-lg-4">
+                <InputTextArea @bind-Value="plantMaintViewModel.IsolationsOther" class="form-control"></InputTextArea>
+            </div>
         </div>
-        <div class="form-group-row">
-            <InputCheckbox @bind-Value="plantReq.IsolatedPhosphoricAcid">Phosphoric Acid</InputCheckbox>
-        </div>
-        <div class="form-group-row">
-            <InputCheckbox @bind-Value="plantReq.IsolatedSodiumHydroxide">Sodium Hydroxide</InputCheckbox>
-        </div>
-        <div class="form-group-row">
-            <InputCheckbox @bind-Value="plantReq.IsolatedSulphuricAcid">Sulphric Acid</InputCheckbox>
-        </div>
-        <div class="col-lg-4">
-            <InputTextArea @bind-Value="plantReq.IsolationsOther" class="form-control"></InputTextArea>
-        </div>
-    </div>
-    <div class="form-group-row">
-        <label style="font-weight:bold">PPE</label>
-    </div>
-    <div class="row">
+    </div>*@
+
+<div class="form-group-row">
+    <label style="font-weight:bold">PPE</label>
+</div>
+@*<div class="row">
         @foreach (var ppeItem in ppeList)
         {
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1 col-xl-1 text-center">
@@ -43,8 +141,10 @@
                 </div>
             </div>
         }
-    </div>
-</EditForm>
+    </div>*@
+@*</EditForm>
+    </div>*@
+
 
 @code {
     [Parameter]
@@ -53,17 +153,18 @@
     [Parameter]
     public string PpeTypeName { get; set; }
 
-    public IEnumerable<PPE> ppeList { get; set; }
+    //public IEnumerable<PPE> ppeList { get; set; }
 
-    private PlantRequest plantReq { get; set; }
+    //private PlantRequest plantReq { get; set; }
 
     protected override void OnInitialized()
     {
-        PppMaintTypeEnum maintTypeEnum = new PppMaintTypeEnum();
+        plantMaintViewModel.LoadAll(maintReqID);
+        //PppMaintTypeEnum maintTypeEnum = new PppMaintTypeEnum();
 
-        //plantReq = PlantReqDataProvider.GetSinalPlantRequestInfo(maintReqID);
-        ppeList = PpeReqDataProvider.LoadAllPlantPPE(PpeTypeName);
+        ////plantReq = PlantReqDataProvider.GetSinalPlantRequestInfo(maintReqID);
+        //ppeList = PpeReqDataProvider.LoadAllPlantPPE(PpeTypeName);
 
     }
 
-}*@
+}

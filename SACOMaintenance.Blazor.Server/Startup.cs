@@ -54,6 +54,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMaintRequestFullViewModel, MaintRequestFullViewModel>();
             services.AddScoped<IPPEViewModel, PPEViewModel>();
             services.AddScoped<IDashboardViewModel, DashboardViewModel>();
+            services.AddScoped<IPlantMaintReqViewModel, PlantMaintReqModelView>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

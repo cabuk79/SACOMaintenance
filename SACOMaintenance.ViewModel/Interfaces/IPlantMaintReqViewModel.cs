@@ -12,7 +12,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region properties
 
         public PlantRequest plantRequest { get; set; }
-        IPlantRequest plantDataProvider { get; }
+        IPlantRequest PlantDataProvider { get; }
 
         public int Id { get; set; }
         public bool IsolationNitricAcid { get; set; }
@@ -39,7 +39,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region methods
 
-        public void LoadAll();
+        public void LoadAll(int id);
 
         #endregion
 

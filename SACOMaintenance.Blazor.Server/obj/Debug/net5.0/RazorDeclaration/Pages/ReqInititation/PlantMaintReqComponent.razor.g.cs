@@ -96,6 +96,34 @@ using Radzen.Blazor;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 149 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\PlantMaintReqComponent.razor"
+       
+    [Parameter]
+    public int maintReqID { get; set; }
+
+    [Parameter]
+    public string PpeTypeName { get; set; }
+
+    //public IEnumerable<PPE> ppeList { get; set; }
+
+    //private PlantRequest plantReq { get; set; }
+
+    protected override void OnInitialized()
+    {
+        plantMaintViewModel.LoadAll(maintReqID);
+        //PppMaintTypeEnum maintTypeEnum = new PppMaintTypeEnum();
+
+        ////plantReq = PlantReqDataProvider.GetSinalPlantRequestInfo(maintReqID);
+        //ppeList = PpeReqDataProvider.LoadAllPlantPPE(PpeTypeName);
+
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IPlantMaintReqViewModel plantMaintViewModel { get; set; }
     }
 }
 #pragma warning restore 1591
