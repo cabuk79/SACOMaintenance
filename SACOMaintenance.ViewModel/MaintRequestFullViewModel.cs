@@ -1,6 +1,7 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -10,12 +11,14 @@ namespace SACOMaintenance.ViewModel
     public class MaintRequestFullViewModel : INotifyPropertyChanged, IMaintRequestFullViewModel
     {
         public MaintRequestInitiation maintReqInitation { get; set; } = new();
-
+        public ObservableCollection<MaintRequestInitiationRisk> RiskInfoList { get; set; } = new();
         public IMaintRequestInitiation MaintReqDataProvider { get; }
+        public IRisk RiskDataProvider { get; }
 
-        public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider)
+        public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider)
         {
             MaintReqDataProvider = maintReqInitProvider;
+            RiskDataProvider = riskDataProvider;
         }
 
         public int maintReqId
@@ -57,6 +60,13 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+        public List<Risk> Risks
+        { 
+            get => maintReqInitation.Risks;
+        }
+
+        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
@@ -68,6 +78,18 @@ namespace SACOMaintenance.ViewModel
         {
             maintReqInitation = MaintReqDataProvider.GetSingleRequestInitiation(maintReqId);
             return maintReqInitation;
+        }
+
+        public ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId)
+        {
+            RiskInfoList = MaintReqDataProvider.LoadMaintRiskData(maintReqId);
+            return RiskInfoList;
+        }
+
+        public ObservableCollection<Risk> LoadRisks()
+        {
+            //Risks = RiskDataProvider.LoadallRisks();
+            return null;
         }
     }
 }

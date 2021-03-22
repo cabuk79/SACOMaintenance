@@ -89,20 +89,6 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
-using SACOMaintenance.Common.ModelDB;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
-using SACOMaintenance.DataAccess.Interfaces;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/add")]
     public partial class AddMaintReq : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,33 +98,32 @@ using SACOMaintenance.DataAccess.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 81 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 85 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
-    public MaintRequestInitiation MaintReqInit { get; set; } = new MaintRequestInitiation();
+    //public MaintRequestInitiation MaintReqInit { get; set; } = new MaintRequestInitiation();
 
-    private IEnumerable<Company> CompanyList;
-    private IEnumerable<Factory> FactoryList;
-    private IEnumerable<AreaModel> AreaList;
-    private IEnumerable<Equipment> EquipmentList;
-    private IEnumerable<PPE> PpeList;
+    //private IEnumerable<Company> CompanyList;
+    //private IEnumerable<Factory> FactoryList;
+    //private IEnumerable<AreaModel> AreaList;
+    //private IEnumerable<Equipment> EquipmentList;
+    //private IEnumerable<PPE> PpeList;
 
     protected override void OnInitialized()
     {
-        CompanyList = CompanyDataProvider.LoadCompanies();
-        FactoryList = FactoryDataProvider.LoadAllFactories();
-        AreaList = AreaDataProvider.LoadAllAreas();
-        EquipmentList = EquipmentDataProvider.LoadAllEquipments();
-        PpeList = PpeDataProvider.LoadAllPPE();
+        
+        //CompanyList = CompanyDataProvider.LoadCompanies();
+        //FactoryList = FactoryDataProvider.LoadAllFactories();
+        //AreaList = AreaDataProvider.LoadAllAreas();
+        //EquipmentList = EquipmentDataProvider.LoadAllEquipments();
+        //PpeList = PpeDataProvider.LoadAllPPE();
     }
+
+
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IEquipment EquipmentDataProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPPE PpeDataProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICompany CompanyDataProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFactory FactoryDataProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IArea AreaDataProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -43,6 +43,12 @@ namespace SACOMaintenance.DataAccess
             return areas;
         }
 
+        public IEnumerable<AreaModel> LoadAreasByFactory(int factoryId)
+        {
+            var areas = _areaDBContext.Areas.Where(f => f.FactoryId == factoryId).ToList();
+            return areas;
+        }
+
         public AreaModel LoadSingleArea(int Id)
         {
             var area = _areaDBContext.Areas.FirstOrDefault(i => i.Id == Id);

@@ -105,16 +105,21 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 79 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
 
     //public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
 
+    public enum RiskLevelLetter { H, M, L }
+
     protected override void OnInitialized()
     {
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+
+        maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
         //maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
     }
 

@@ -6,3 +6,4 @@ C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\M
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.csproj.CoreCompileInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\netcoreapp3.1\Models.DTO.csprojAssemblyReference.cache

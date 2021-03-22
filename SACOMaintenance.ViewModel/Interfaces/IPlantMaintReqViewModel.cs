@@ -14,6 +14,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public PlantRequest plantRequest { get; set; }
         IPlantRequest PlantDataProvider { get; }
 
+       
+
         public int Id { get; set; }
         public bool IsolationNitricAcid { get; set; }
         public bool IsolatedPhosphoricAcid { get; set; }

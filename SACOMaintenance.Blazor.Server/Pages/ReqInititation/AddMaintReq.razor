@@ -1,77 +1,81 @@
 ﻿@page "/maint-req/add"
-@using SACOMaintenance.Common.ModelDB
+@inject SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel
+@*@using SACOMaintenance.Common.ModelDB
 @using SACOMaintenance.DataAccess.Interfaces
 @inject IArea AreaDataProvider
 @inject IFactory FactoryDataProvider
 @inject ICompany CompanyDataProvider
 @inject IPPE PpeDataProvider    
-@inject IEquipment EquipmentDataProvider 
+@inject IEquipment EquipmentDataProvider*@ 
 
 <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
     <h3>Add New Request</h3>
     <div>
         <div>
-            <EditForm Model="MaintReqInit">
+            <EditForm Model="AddReqViewModel.MaintReq">
                 <div class="form-group">
                     <div class="form-group-row">
                         <label style="font-weight:bold">Details</label>
-                        <InputTextArea @bind-Value="MaintReqInit.RequestDetails" class="form-control" placeholder="Enter the details of the request"></InputTextArea>
+                        <InputTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" class="form-control" placeholder="Enter the details of the request"></InputTextArea>
                     </div>
                 </div>
-                <div class="form-group-row">
-                    <label style="font-weight:bold">Company</label>
-                    <InputSelect id="company" class="form-control" @bind-Value="@MaintReqInit.CompanyId" placeholder="Select a company">
-                        @foreach (var company in CompanyList)
-                        {
-                            <option value="@company.Id">@company.CompantName</option>
-                        }
-                    </InputSelect>
-                </div>
+                @*<div class="form-group-row">
+            <label style="font-weight:bold">Company</label>
+            <InputSelect id="company" class="form-control" @bind-Value="@MaintReqInit.CompanyId" placeholder="Select a company">
+                @foreach (var company in CompanyList)
+                {
+                    <option value="@company.Id">@company.CompantName</option>
+                }
+            </InputSelect>
+        </div>*@
                 <div class="form-group-row">
                     <label style="font-weight:bold">Factory</label>
-                    <InputSelect id="factory" class="form-control" @bind-Value="@MaintReqInit.FactoryId">
-                        @foreach (var factory in FactoryList)
+                    <InputSelect id="factory" class="form-control" @bind-Value="@AddReqViewModel.FactoryId">
+                        @foreach (var factory in AddReqViewModel.Factories)
                         {
                             <option value="@factory.Id">@factory.FactoryName</option>
                         }
                     </InputSelect>
                 </div>
-                <div class="form-group-row">
-                    <label style="font-weight:bold">Area</label>
-                    <InputSelect id="area" class="form-control" @bind-Value="MaintReqInit.AreaId">
-                        @foreach (var area in AreaList)
-                        {
-                            <option value="@area.Id">@area.AreaName</option>
-                        }
-                    </InputSelect>
-                </div>
+                @if (AddReqViewModel.Areas != null)
+                {
+                    <div class="form-group-row">
+                        <label style="font-weight:bold">Area</label>
+                        <InputSelect id="area" class="form-control" @bind-Value="AddReqViewModel.MaintReq.AreaId">
+                            @foreach (var area in AddReqViewModel.Areas)
+                                {
+                                <option value="@area.Id">@area.AreaName</option>
+                                }
+                        </InputSelect>
+                    </div>
+                }
                 <div class="form-group-row">
                     <label style="font-weight:bold">Equipment/Machine</label>
-                    <InputSelect id="equipment" class="form-control" @bind-Value="MaintReqInit.EquipmentId">
-                        @foreach (var equipment in EquipmentList)
+                    <InputSelect id="equipment" class="form-control" @bind-Value="AddReqViewModel.MaintReq.EquipmentId">
+                        @foreach (var equipment in AddReqViewModel.Equipment)
                         {
                             <option value="@equipment.Id">@equipment.Name  |  @equipment.Description</option>
                         }
                     </InputSelect>
                 </div>
                 @*<div class="form-group-row">
-                    <label style="font-weight:bold">PPE</label>
+            <label style="font-weight:bold">PPE</label>
+        </div>
+        <div class="row">
+            @foreach (var ppeItem in PpeList)
+            {
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1 col-xl-1 text-center">
+                    <div class="custom-control custom-checkbox image-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="@ppeItem.Id">
+                        <label class="custom-control-label" for="@ppeItem.Id">
+                            <img src="@ppeItem.IconFileLocation" class="img-fluid" width="50" height="50" />
+                        </label>
+                        <p>@ppeItem.PPEName</p>
                 </div>
-                <div class="row">
-                    @foreach (var ppeItem in PpeList)
-                    {
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-1 col-xl-1 text-center">
-                            <div class="custom-control custom-checkbox image-checkbox">                      
-                                <input type="checkbox" class="custom-control-input" id="@ppeItem.Id">
-                                <label class="custom-control-label" for="@ppeItem.Id">
-                                    <img src="@ppeItem.IconFileLocation" class="img-fluid" width="50" height="50" />                                
-                                </label>                            
-                                <p>@ppeItem.PPEName</p>
-                        </div>
-                    </div>
-                    }
-                </div>*@
+            </div>
+            }
+        </div>*@
             </EditForm>
         </div>
     </div>
@@ -79,22 +83,25 @@
 </div>
 
 @code {
-    public MaintRequestInitiation MaintReqInit { get; set; } = new MaintRequestInitiation();
+    //public MaintRequestInitiation MaintReqInit { get; set; } = new MaintRequestInitiation();
 
-    private IEnumerable<Company> CompanyList;
-    private IEnumerable<Factory> FactoryList;
-    private IEnumerable<AreaModel> AreaList;
-    private IEnumerable<Equipment> EquipmentList;
-    private IEnumerable<PPE> PpeList;
+    //private IEnumerable<Company> CompanyList;
+    //private IEnumerable<Factory> FactoryList;
+    //private IEnumerable<AreaModel> AreaList;
+    //private IEnumerable<Equipment> EquipmentList;
+    //private IEnumerable<PPE> PpeList;
 
     protected override void OnInitialized()
     {
-        CompanyList = CompanyDataProvider.LoadCompanies();
-        FactoryList = FactoryDataProvider.LoadAllFactories();
-        AreaList = AreaDataProvider.LoadAllAreas();
-        EquipmentList = EquipmentDataProvider.LoadAllEquipments();
-        PpeList = PpeDataProvider.LoadAllPPE();
+        
+        //CompanyList = CompanyDataProvider.LoadCompanies();
+        //FactoryList = FactoryDataProvider.LoadAllFactories();
+        //AreaList = AreaDataProvider.LoadAllAreas();
+        //EquipmentList = EquipmentDataProvider.LoadAllEquipments();
+        //PpeList = PpeDataProvider.LoadAllPPE();
     }
+
+
 }
 
 

@@ -14,5 +14,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
         void AddEditArea(AreaModel area);
         AreaModel FindAreaByName(string areaName);
         void UpdateArea(AreaModel area);
+        IEnumerable<AreaModel> LoadAreasByFactory(int factoryId);
     }
 }

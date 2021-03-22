@@ -18,6 +18,7 @@ namespace SACOMaintenance.Common.ModelDB
         public int RequestedById { get; set; } //FK to users table
         public string RequestDetails { get; set; }
         public int RequestTypeId { get; set; } //FK to type table
+        //public List<MaintRequestInitiationRisk> MaintRequestInitiationRisk { get; set; } = new List<MaintRequestInitiationRisk>();
         public List<Risk> Risks { get; set; } = new List<Risk>();
         public List<PPE> PPEEquipment { get; set; } = new List<PPE>();
         public List<User> Users { get; set; } = new List<User>();

@@ -4,6 +4,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -48,6 +49,7 @@ namespace SACOMaintenance.DataAccess
                 .Include(a => a.Area)
                 .Include(f => f.Factory)
                 .Include(p => p.PPEEquipment)
+                .Include(r => r.Risks)
                 .FirstOrDefault();
             return maintReqInitiation;
         }
@@ -60,12 +62,23 @@ namespace SACOMaintenance.DataAccess
             return maintReqInitationList;
         }
 
+       
+
         public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
         {
             var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .ToList();
             return maintReqInitationList;
+        }
+
+        ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.LoadMaintRiskData(int maintReqId)
+        {
+            ObservableCollection<MaintRequestInitiationRisk> listInfo =
+                new ObservableCollection<MaintRequestInitiationRisk>(_requestInitationDBContext.Set<MaintRequestInitiationRisk>()
+                .Where(mr => mr.MaintRequestInitiationId == maintReqId).ToList());
+
+            return listInfo;
         }
     }
 }

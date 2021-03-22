@@ -262,18 +262,15 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("MaintRequestInitiationId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RisksId1")
+                    b.Property<int>("RiskId")
                         .HasColumnType("int");
 
                     b.Property<string>("RiskLevel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RisksId")
-                        .HasColumnType("int");
+                    b.HasKey("MaintRequestInitiationId", "RiskId");
 
-                    b.HasKey("MaintRequestInitiationId", "RisksId1");
-
-                    b.HasIndex("RisksId1");
+                    b.HasIndex("RiskId");
 
                     b.ToTable("MaintRequestInitiationRisk");
                 });
@@ -592,7 +589,7 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasOne("SACOMaintenance.Common.ModelDB.Risk", null)
                         .WithMany()
-                        .HasForeignKey("RisksId1")
+                        .HasForeignKey("RiskId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

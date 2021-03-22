@@ -11,10 +11,59 @@
         <label style="font-weight:bold">Details</label>
         <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
     </div>
+
+    
+  
+     <div class="row">
+         <div class="col-lg-3">Description</div>
+         <div class="col-lg-2">Level</div>
+     </div>
+
+  
+            
+                @foreach (var item in maintReqInitation.RiskInfoList)
+                {
+                    
+                    @foreach (var riskITem in maintReqInitation.Risks)
+                    {
+                        if (riskITem.Id == item.RiskId)
+                        {
+                           @riskITem.RiskName
+                              <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
+                               @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
+                               {
+                                   <option value=@levelItem>@levelItem</option>
+                               }
+                               </InputSelect>
+                         
+                        }
+                       
+                    }
+                     <br />
+                }
+            
+    
+
+    @foreach (var item in maintReqInitation.RiskInfoList)
+    {
+                               @foreach (var riskITem in maintReqInitation.Risks)
+        {
+                                   if (riskITem.Id == item.RiskId)
+                                   {
+                <div class="row">
+                    <div class="col-lg-3">@riskITem.RiskName</div>
+                    <div vlass="col-lg-2">@item.RiskLevel</div>
+                </div>
+            }                                                   
+        }                    
+     }
+
+
+
     <div class="form-group-row">
         <!-- Choose the correct container for the maintenance request -->
         @{ 
-            if(maintReqInitation.maintReqAreaId == 31)
+            if (maintReqInitation.maintReqAreaId == 31)
             {
                 <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
                 <!--<PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId" PpeTypeName="Plant">--> @*ppeList="maintReq.PPEEquipment">*@<!--</PlantMaintReqComponent>-->
@@ -33,9 +82,14 @@
 
     //public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
 
+    public enum RiskLevelLetter { H, M, L }
+
     protected override void OnInitialized()
     {
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+
+        maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
         //maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
     }
 }
