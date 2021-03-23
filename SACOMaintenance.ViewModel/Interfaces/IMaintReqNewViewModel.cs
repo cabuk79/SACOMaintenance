@@ -18,10 +18,11 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         public IEnumerable<AreaModel> Areas { get; set; }
         public IEnumerable<Factory> Factories { get; }
-        public IEnumerable<Equipment> Equipment { get; }
+        public IEnumerable<Equipment> Equipment { get; set;  }
 
         public MaintRequestInitiation MaintReq { get; set; }
         public int FactoryId { get; set; }
+        public int AreaId { get; set; }
         #endregion
 
         #region methods

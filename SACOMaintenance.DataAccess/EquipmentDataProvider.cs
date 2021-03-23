@@ -42,6 +42,12 @@ namespace SACOMaintenance.DataAccess
             return equipments;
         }
 
+        public IEnumerable<Equipment> LoadByArea(int areaId)
+        {
+            var equipment = _equipmentDBContext.Equipment.Where(a => a.AreaId == areaId).ToList();
+            return equipment;
+        }
+
         public Equipment ViewSingleEquipment(int equipmentId)
         {
             var equipment = _equipmentDBContext.Equipment.FirstOrDefault(i => i.Id == equipmentId);

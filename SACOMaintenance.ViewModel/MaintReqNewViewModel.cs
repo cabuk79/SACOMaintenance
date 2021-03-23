@@ -25,7 +25,7 @@ namespace SACOMaintenance.ViewModel
 
         public IEnumerable<Factory> Factories { get; }
 
-        public IEnumerable<Equipment> Equipment { get; }
+        public IEnumerable<Equipment> Equipment { get; set; }
         public int FactoryId
         {
             get => MaintReq.FactoryId.GetValueOrDefault();
@@ -39,6 +39,21 @@ namespace SACOMaintenance.ViewModel
                 }
             }
         }
+
+        public int AreaId
+        {
+            get => MaintReq.AreaId.GetValueOrDefault();
+            set
+            {
+                if(MaintReq.AreaId != value)
+                {
+                    MaintReq.AreaId = value;
+                    RaisePropertychangedEvent();
+                    LoadEquipmentByArea();
+                }
+            }
+        }
+
         
 
         public MaintReqNewViewModel(IMaintRequestInitiation maintReqDataProvider, IFactory factoryDataProvider, IEquipment equipmentProvider, IArea areaProvider)
@@ -50,7 +65,7 @@ namespace SACOMaintenance.ViewModel
 
            // Areas = AreaDataProvider.LoadAllAreas();
             Factories = FactoryDataProvider.LoadAllFactories();
-            Equipment = EquipmentDataProvider.LoadAllEquipments();
+            //Equipment = EquipmentDataProvider.LoadAllEquipments();
 
             MaintReq = new MaintRequestInitiation();
         }
@@ -70,6 +85,11 @@ namespace SACOMaintenance.ViewModel
         public void LoadAreasByFactory()
         {
             Areas = AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId.Value);
+        }
+
+        private void LoadEquipmentByArea()
+        {
+            Equipment = EquipmentDataProvider.LoadByArea(MaintReq.AreaId.Value);
         }
     }
 }

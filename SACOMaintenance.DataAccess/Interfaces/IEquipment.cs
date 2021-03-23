@@ -12,5 +12,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
         IEnumerable<Equipment> LoadAllEquipments();
         Equipment ViewSingleEquipment(int Id);
         void AddEditEquipment(Equipment equipment);
+        IEnumerable<Equipment> LoadByArea(int areaId);
     }
 }
