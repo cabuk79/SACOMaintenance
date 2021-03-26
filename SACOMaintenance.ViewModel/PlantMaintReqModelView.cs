@@ -1,6 +1,7 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -272,6 +273,10 @@ namespace SACOMaintenance.ViewModel
         public void LoadAll(int id)
         {
             plantRequest = PlantDataProvider.GetSinalPlantRequestInfo(id);
+            if(plantRequest == null)
+            {
+                plantRequest = new PlantRequest();
+            }
         }
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)

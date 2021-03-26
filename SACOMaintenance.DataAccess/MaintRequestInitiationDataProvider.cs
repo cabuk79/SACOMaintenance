@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
+using System;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -16,28 +17,62 @@ namespace SACOMaintenance.DataAccess
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
             _requestInitationDBContext = sacoMaintenanceContext;
-        }
+            //ObservableCollection<Risk> riskList = new ObservableCollection<Risk>();
+    }
+
+        //public IQueryable<Risk> riskList { get; set; }
+        ObservableCollection<Risk> riskList { get; set; }
 
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
         {
-            _requestInitationDBContext.MaintRequestInitiations.Add
-            (
-                new MaintRequestInitiation
-                {
-                    DateRaised = maintRequestInitiation.DateRaised,
-                    CompanyId = maintRequestInitiation.CompanyId,
-                    FactoryId = maintRequestInitiation.FactoryId,
-                    AreaId = maintRequestInitiation.AreaId,
-                    EquipmentId = maintRequestInitiation.EquipmentId,
-                    RequestedById = maintRequestInitiation.RequestedById,
-                    RequestDetails = maintRequestInitiation.RequestDetails,
-                    RequestTypeId = maintRequestInitiation.RequestTypeId,
-                    Status = maintRequestInitiation.Status
-                }
-            );
+            MaintRequestInitiation newRequest = new MaintRequestInitiation
+            {
+                DateRaised = DateTime.Now,
+                CompanyId = 4, //maintRequestInitiation.CompanyId,
+                FactoryId = maintRequestInitiation.FactoryId,
+                AreaId = maintRequestInitiation.AreaId,
+                EquipmentId = maintRequestInitiation.EquipmentId,
+                RequestedById = 1, //maintRequestInitiation.RequestedById,
+                RequestDetails = maintRequestInitiation.RequestDetails,
+                RequestTypeId = maintRequestInitiation.RequestTypeId,
+                StatusId = 6
+            };
+
+            _requestInitationDBContext.MaintRequestInitiations.Add(newRequest); 
             _requestInitationDBContext.SaveChanges();
+
+            //TODO: get the risks table and loop through and add the risks
+            //with the request based on if it is a plant request or general
+
+            //Get all the risks for the request type either General or Plant
+            var riskType = ""; 
+            if(newRequest.RequestTypeId == 1) { riskType = "Plant"; } else { riskType = "Both"; }
+            LoadRisksByMaintType(riskType);
+
+            //Lopo through the risks and add them into the maintreqrisk link table
+            var newRisk = new MaintRequestInitiationRisk();
+            foreach (var item in riskList)
+            {
+                newRisk.MaintRequestInitiationId = newRequest.Id;
+                newRisk.RiskId = item.Id;
+                newRisk.RiskLevel = "";
+
+                _requestInitationDBContext.Add(newRisk);
+                _requestInitationDBContext.SaveChanges();
+            }
+
+            //Add the risks and leave the Risk Level blank
+            //var newRisk = new MaintRequestInitiationRisk
+            //{
+            //    MaintRequestInitiationId = newRequest.Id,
+            //    RiskId = 3,
+            //    RiskLevel = ""
+            //};
+
+            //_requestInitationDBContext.Add(newRisk);
+            //_requestInitationDBContext.SaveChanges();
         }
 
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
@@ -72,6 +107,17 @@ namespace SACOMaintenance.DataAccess
             return maintReqInitationList;
         }
 
+        //public ObservableCollection<Risk> LoadRisksByMaintType(string maintType)
+        //{
+        //    ObservableCollection<Risk> riskList =
+        //        new ObservableCollection<Risk>(
+        //            _requestInitationDBContext.Risks
+        //            .Where(type => type.MaintRequestType == maintType)
+        //            );
+
+        //    return riskList;
+        //}
+
         ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.LoadMaintRiskData(int maintReqId)
         {
             ObservableCollection<MaintRequestInitiationRisk> listInfo =
@@ -79,6 +125,18 @@ namespace SACOMaintenance.DataAccess
                 .Where(mr => mr.MaintRequestInitiationId == maintReqId).ToList());
 
             return listInfo;
+        }
+
+        public void LoadRisksByMaintType(string maintType)
+        {
+            if(maintType == "Plant")
+            {
+                riskList = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.ToList());
+            }
+            else
+            {
+                riskList = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToList());
+            }
         }
     }
 }

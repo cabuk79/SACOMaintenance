@@ -21,14 +21,14 @@
                     </div>
                 </div>
                 @*<div class="form-group-row">
-            <label style="font-weight:bold">Company</label>
-            <InputSelect id="company" class="form-control" @bind-Value="@MaintReqInit.CompanyId" placeholder="Select a company">
-                @foreach (var company in CompanyList)
-                {
-                    <option value="@company.Id">@company.CompantName</option>
-                }
-            </InputSelect>
-        </div>*@
+                    <label style="font-weight:bold">Company</label>
+                    <InputSelect id="company" class="form-control" @bind-Value="@MaintReqInit.CompanyId" placeholder="Select a company">
+                        @foreach (var company in CompanyList)
+                        {
+                            <option value="@company.Id">@company.CompantName</option>
+                        }
+                    </InputSelect>
+                </div>*@
                 <div class="form-group-row">
                     <div class="row">
                         <div class="col-lg-4">
@@ -40,46 +40,53 @@
                                 }
                             </InputSelect>
                         </div>
-                    
-                                        
-                
-                @if (AddReqViewModel.Areas != null)
-                {
-                    <div class="col-lg-4">
-                        <label style="font-weight:bold">Area</label>
-                        <InputSelect id="area" class="form-control" @bind-Value="AddReqViewModel.AreaId">
-                            @foreach (var area in AddReqViewModel.Areas)
-                                {
-                                <option value="@area.Id">@area.AreaName</option>
-                                }
-                        </InputSelect>
+
+
+
+                        @if (AddReqViewModel.Areas != null)
+                        {
+                            <div class="col-lg-4">
+                                <label style="font-weight:bold">Area</label>
+                                <InputSelect id="area" class="form-control" @bind-Value="AddReqViewModel.AreaId">
+                                    @foreach (var area in AddReqViewModel.Areas)
+                                        {
+                                        <option value="@area.Id">@area.AreaName</option>
+                                        }
+                                </InputSelect>
+                            </div>
+
+
+
+                        }
                     </div>
-                
-                    
-                    
-                }
-                </div>
                 </div>
 
                 @if (AddReqViewModel.Equipment != null)
                 {
                     <div class="form-group-row">
-          
+
                         <div class="col-lg-4">
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
-                                               FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.Contains" AllowFiltering="true"
-                                                Data=@AddReqViewModel.Equipment TextProperty="Name" ValueProperty="Id" >
-                                </RadzenDropDown>
-                            </div>
+                            <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+                                            @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains" 
+                                            AllowFiltering="true"
+                                            Data=@AddReqViewModel.Equipment TextProperty="Name" ValueProperty="Id">
+                            </RadzenDropDown>
+                        </div>
 
                         <div class="col-lg-4">
                             If the equipment is not there contact maintenance!
                         </div>
-                        
+
                     </div>
                 }
             </EditForm>
         </div>
+
+        <div class="area-button-group">
+            <a type="submit" class="btn btn-outline-primary" @onclick="@AddReqViewModel.AddNewRequest">Save</a>
+        </div>
+
     </div>
  </div>
 

@@ -12,57 +12,57 @@
         <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
     </div>
 
-    
-  
-     <div class="row">
-         <div class="col-lg-3">Description</div>
-         <div class="col-lg-2">Level</div>
-     </div>
 
-  
-            
-                @foreach (var item in maintReqInitation.RiskInfoList)
+
+    <div class="row">
+        <div class="col-lg-3">Description</div>
+        <div class="col-lg-2">Level</div>
+    </div>
+
+
+        @foreach (var item in maintReqInitation.RiskInfoList)
+        {
+            @foreach (var riskITem in maintReqInitation.Risks)
+            {
+                if (riskITem.Id == item.RiskId)
                 {
-                    
-                    @foreach (var riskITem in maintReqInitation.Risks)
-                    {
-                        if (riskITem.Id == item.RiskId)
-                        {
-                           @riskITem.RiskName
-                              <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
-                               @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
-                               {
-                                   <option value=@levelItem>@levelItem</option>
-                               }
-                               </InputSelect>
-                         
-                        }
-                       
-                    }
-                     <br />
+                    @riskITem.RiskName
+                    <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
+                        @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
+                                        {
+                            <option value=@levelItem>@levelItem</option>
+                                        }
+                    </InputSelect>
+
                 }
-            
+
+            }
+            <br />
+        }
     
+
+
+
 
     @foreach (var item in maintReqInitation.RiskInfoList)
     {
-                               @foreach (var riskITem in maintReqInitation.Risks)
+        @foreach (var riskITem in maintReqInitation.Risks)
         {
-                                   if (riskITem.Id == item.RiskId)
-                                   {
+            if (riskITem.Id == item.RiskId)
+            {
                 <div class="row">
                     <div class="col-lg-3">@riskITem.RiskName</div>
                     <div vlass="col-lg-2">@item.RiskLevel</div>
                 </div>
-            }                                                   
-        }                    
-     }
+            }
+        }
+    }
 
 
 
     <div class="form-group-row">
         <!-- Choose the correct container for the maintenance request -->
-        @{ 
+        @{
             if (maintReqInitation.maintReqAreaId == 31)
             {
                 <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>

@@ -16,5 +16,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
         IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment();
         ObservableCollection<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId);
         
+        public void LoadRisksByMaintType(string maintType);
     }
 }

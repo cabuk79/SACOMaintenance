@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using EmployeeManager.ViewModel.Command;
 using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
@@ -24,7 +25,7 @@ namespace SACOMaintenance.ViewModel
         public IEnumerable<AreaModel> Areas { get; set; }
 
         public IEnumerable<Factory> Factories { get; }
-
+        public DelegateCommand SaveCommand { get; }
         public IEnumerable<Equipment> Equipment { get; set; }
         public int FactoryId
         {
@@ -48,13 +49,34 @@ namespace SACOMaintenance.ViewModel
                 if(MaintReq.AreaId != value)
                 {
                     MaintReq.AreaId = value;
+                    if(AreaId == 31)
+                    {
+                        MaintReq.RequestTypeId = 1;
+                    }
+                    else
+                    {
+                        MaintReq.RequestTypeId = 0;
+                    }
                     RaisePropertychangedEvent();
                     LoadEquipmentByArea();
                 }
             }
         }
 
-        
+        public int EquipmentId
+        {
+            get => MaintReq.EquipmentId.GetValueOrDefault();
+            set
+            {
+                if (MaintReq.EquipmentId != value)
+                {
+                    MaintReq.EquipmentId = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
+
 
         public MaintReqNewViewModel(IMaintRequestInitiation maintReqDataProvider, IFactory factoryDataProvider, IEquipment equipmentProvider, IArea areaProvider)
         {
@@ -67,10 +89,12 @@ namespace SACOMaintenance.ViewModel
             Factories = FactoryDataProvider.LoadAllFactories();
             //Equipment = EquipmentDataProvider.LoadAllEquipments();
 
+            SaveCommand = new DelegateCommand(AddNewRequest);
+
             MaintReq = new MaintRequestInitiation();
         }
 
-        public void AddNewRequest(MaintRequestInitiation maintReqToAdd)
+        public void AddNewRequest()
         {
             MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
         }

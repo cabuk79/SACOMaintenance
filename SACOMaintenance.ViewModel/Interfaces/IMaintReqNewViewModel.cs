@@ -23,11 +23,12 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public MaintRequestInitiation MaintReq { get; set; }
         public int FactoryId { get; set; }
         public int AreaId { get; set; }
+        public int EquipmentId { get; set; }
         #endregion
 
         #region methods
 
-        public void AddNewRequest(MaintRequestInitiation maintReqToAdd);
+        public void AddNewRequest();
         public void LoadAreasByFactory();
         #endregion
     }
