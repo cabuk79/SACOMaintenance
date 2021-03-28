@@ -1,0 +1,21 @@
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IEquipmentListViewModel equipmentListViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>List of Equipment</h3>
+
+<RadzenGrid Data="@equipmentListViewModel.EquipmentList">
+    <Columns>
+        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Id"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Name" Title="Name"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Description" Title="Description"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="SerialIdentifierNumber" Title="Serial Number"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Comments" Title="Comments"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Actions">
+            <Template Context="data">
+                <a href="@($"equipment/{data.Id}")" class="btn btn-primary table-btn">
+                    <i class="fa fa-pencil-square"></i>
+                </a>
+            </Template>
+        </RadzenGridColumn>    
+    </Columns>
+</RadzenGrid>

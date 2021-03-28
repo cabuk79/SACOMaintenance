@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Pages.ReqInititation
+namespace SACOMaintenance.Blazor.Server.Pages.EquipmentPages
 {
     #line hidden
     using System;
@@ -90,39 +90,20 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentListComponent.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/full-add/{MaintReqID}")]
-    public partial class MaintReqFull : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class EquipmentListComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 65 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-       
-    [Parameter] 
-    public string maintReqID { get; set; }
-
-    public enum RiskLevelLetter { H, M, L }
-
-    protected override void OnInitialized()
-    {
-        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
-
-        maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IEquipmentListViewModel equipmentListViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

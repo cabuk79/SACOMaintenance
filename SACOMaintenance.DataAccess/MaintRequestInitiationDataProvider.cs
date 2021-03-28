@@ -43,15 +43,12 @@ namespace SACOMaintenance.DataAccess
             _requestInitationDBContext.MaintRequestInitiations.Add(newRequest); 
             _requestInitationDBContext.SaveChanges();
 
-            //TODO: get the risks table and loop through and add the risks
-            //with the request based on if it is a plant request or general
-
             //Get all the risks for the request type either General or Plant
             var riskType = ""; 
             if(newRequest.RequestTypeId == 1) { riskType = "Plant"; } else { riskType = "Both"; }
             LoadRisksByMaintType(riskType);
 
-            //Lopo through the risks and add them into the maintreqrisk link table
+            //Loop through the risks and add them into the maintreqrisk link table
             var newRisk = new MaintRequestInitiationRisk();
             foreach (var item in riskList)
             {
@@ -62,19 +59,9 @@ namespace SACOMaintenance.DataAccess
                 _requestInitationDBContext.Add(newRisk);
                 _requestInitationDBContext.SaveChanges();
             }
-
-            //Add the risks and leave the Risk Level blank
-            //var newRisk = new MaintRequestInitiationRisk
-            //{
-            //    MaintRequestInitiationId = newRequest.Id,
-            //    RiskId = 3,
-            //    RiskLevel = ""
-            //};
-
-            //_requestInitationDBContext.Add(newRisk);
-            //_requestInitationDBContext.SaveChanges();
         }
 
+        //Load a single request with all of the Navigvation properties populated
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
             var maintReqInitiation = _requestInitationDBContext.MaintRequestInitiations
@@ -127,6 +114,7 @@ namespace SACOMaintenance.DataAccess
             return listInfo;
         }
 
+        //Get the Risks for the type of request it is General or Plant
         public void LoadRisksByMaintType(string maintType)
         {
             if(maintType == "Plant")

@@ -1,72 +1,58 @@
 ﻿@page "/maint-req/full-add/{MaintReqID}" 
 @using SACOMaintenance.Common.ModelDB
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
-@*@inject IMaintRequestInitiation MaintRequestInitiationDataProvider*@
-
 
 <h3>MaintReqFull</h3>
 
 <EditForm Model="maintReqInitation">
-    <div class="form-group-row">
-        <label style="font-weight:bold">Details</label>
-        <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
+    <div class="container-fluid" style="border:1px solid">
+        <div class="row">
+            <h3>Request For Work Information</h3>
+        </div>
+        <div class="row">
+            <label style="font-weight:bold">Details</label>
+            <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
+        </div>
     </div>
-
-
-
-    <div class="row">
-        <div class="col-lg-3">Description</div>
-        <div class="col-lg-2">Level</div>
-    </div>
-
-
-        @foreach (var item in maintReqInitation.RiskInfoList)
-        {
-            @foreach (var riskITem in maintReqInitation.Risks)
-            {
-                if (riskITem.Id == item.RiskId)
-                {
-                    @riskITem.RiskName
-                    <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
-                        @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
-                                        {
-                            <option value=@levelItem>@levelItem</option>
-                                        }
-                    </InputSelect>
-
-                }
-
-            }
-            <br />
-        }
     
-
-
-
-
-    @foreach (var item in maintReqInitation.RiskInfoList)
-    {
-        @foreach (var riskITem in maintReqInitation.Risks)
-        {
-            if (riskITem.Id == item.RiskId)
+    <div class="container-fluid" style="border:1px solid">
+        <div class="row">
+            <h3>Dynamic Risk Assessment (to be completed by person in charge of the work)</h3>
+        </div>
+        <div class="row">
+            @foreach (var item in maintReqInitation.RiskInfoList)
             {
-                <div class="row">
-                    <div class="col-lg-3">@riskITem.RiskName</div>
-                    <div vlass="col-lg-2">@item.RiskLevel</div>
-                </div>
+                @foreach (var riskITem in maintReqInitation.Risks)
+                {
+                    if (riskITem.Id == item.RiskId)
+                    {
+                        <div class="col-4">
+                            <div class="mt-2 row">
+                                <div class="w-75">
+                                    @riskITem.RiskName
+                                </div>
+                                <div class="w-25">
+                                    <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
+                                        @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
+                                        {
+                                            <option class="riskLevelOption" value=@levelItem>@levelItem</option>
+                                        }
+                                    </InputSelect>
+                                </div>
+                            </div>                                                                                    
+                        </div>
+                    }
+                }
             }
-        }
-    }
-
-
-
+        </div>        
+    </div>
+        
     <div class="form-group-row">
         <!-- Choose the correct container for the maintenance request -->
         @{
-            if (maintReqInitation.maintReqAreaId == 31)
+            if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
             {
                 <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
-                <!--<PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId" PpeTypeName="Plant">--> @*ppeList="maintReq.PPEEquipment">*@<!--</PlantMaintReqComponent>-->
             }
             else
             {
@@ -77,10 +63,8 @@
 </EditForm>
 
 @code {
-    [Parameter]
+    [Parameter] 
     public string maintReqID { get; set; }
-
-    //public MaintRequestInitiation maintReq { get; set; } = new MaintRequestInitiation();
 
     public enum RiskLevelLetter { H, M, L }
 
@@ -89,7 +73,5 @@
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
         maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
-
-        //maintReq = MaintRequestInitiationDataProvider.GetSingleRequestInitiation(Convert.ToInt32(maintReqID));
     }
 }

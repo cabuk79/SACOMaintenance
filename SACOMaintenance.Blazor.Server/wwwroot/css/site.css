@@ -210,5 +210,10 @@ app {
         margin: 0% 5% 0% 0%;
     }
 
+    .container-fluid {
+        padding: 2em;
+        margin: 20px 2px 2px 2px;
+    }
+
 
 }

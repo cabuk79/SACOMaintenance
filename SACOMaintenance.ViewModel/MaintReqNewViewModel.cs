@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using EmployeeManager.ViewModel.Command;
@@ -25,7 +23,7 @@ namespace SACOMaintenance.ViewModel
         public IEnumerable<AreaModel> Areas { get; set; }
 
         public IEnumerable<Factory> Factories { get; }
-        public DelegateCommand SaveCommand { get; }
+        public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
         public IEnumerable<Equipment> Equipment { get; set; }
         public int FactoryId
         {

@@ -1,0 +1,58 @@
+﻿@page "/equipment/{id}"
+@inject SACOMaintenance.ViewModel.Interfaces.IEquipmentViewModel equipmentViewModel
+@using SACOMaintenance.Common.ModelDB 
+
+<h3>Details for @equipmentViewModel.equipment.Name</h3>
+
+<EditForm Model="equipmentViewModel">
+    <div class="container-fluid">
+        <div class="row">
+            <label>Description</label>
+            <InputTextArea @bind-Value="equipmentViewModel.equipment.Description" class="form-control"></InputTextArea>
+>        </div>
+        <div class="row">
+            <label>Serial Number</label>
+            <InputTextArea @bind-Value="equipmentViewModel.equipment.SerialIdentifierNumber" class="form-control"></InputTextArea>
+        </div>
+        <div class="row">
+            <label>Comments</label>
+            <InputTextArea @bind-Value="equipmentViewModel.equipment.Comments" class="form-control"></InputTextArea>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <RadzenGrid Data="@equipmentViewModel.maintReqsList"
+                        AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                        FilterMode="FilterMode.Advanced" AllowPaging="true">
+                <Columns>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions">
+                        <Template Context="data">
+                            <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
+                                <i class="fa fa-pencil-square"></i>
+                            </a>
+                        </Template>
+                    </RadzenGridColumn>
+                </Columns>
+            </RadzenGrid>
+        </div>
+    </div>
+</EditForm>
+
+
+
+
+@code { 
+    [Parameter]
+    public string id { get; set; }
+
+    protected override void OnInitialized()
+    {
+        equipmentViewModel.LoadEquipment(Convert.ToInt32(id));
+        equipmentViewModel.LoadAllEquipmentAndFactories(Convert.ToInt32(id));
+    }
+}

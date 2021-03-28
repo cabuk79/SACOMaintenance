@@ -45,6 +45,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMachineType, MachineTypeDataProvider>();
             services.AddScoped<IMaintRequestInitiation, MaintRequestInitiationDataProvider>();
             services.AddScoped<IRisk, RiskDataProvider>();
+            services.AddScoped<IEquipment, EquipmentDataProvider>();
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
             services.AddScoped<IAreaViewModel, AreaViewModel>();
@@ -56,6 +57,8 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IDashboardViewModel, DashboardViewModel>();
             services.AddScoped<IPlantMaintReqViewModel, PlantMaintReqModelView>();
             services.AddScoped<IMaintReqNewViewModel, MaintReqNewViewModel>();
+            services.AddScoped<IEquipmentViewModel, EquipmentViewModel>();
+            services.AddScoped<IEquipmentListViewModel, EquipmentListViewModel>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

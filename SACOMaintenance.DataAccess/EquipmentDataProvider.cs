@@ -36,6 +36,12 @@ namespace SACOMaintenance.DataAccess
             _equipmentDBContext.SaveChanges();
         }
 
+        public IEnumerable<MaintRequestInitiation> GetMaintReqsForEquipment(int equipmentId)
+        {
+            var requests = _equipmentDBContext.MaintRequestInitiations.Where(e => e.EquipmentId == equipmentId).ToList();
+            return requests;
+        }
+
         public IEnumerable<Equipment> LoadAllEquipments()
         {
             var equipments = _equipmentDBContext.Equipment.ToList();
