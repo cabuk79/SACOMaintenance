@@ -96,6 +96,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentListComponent.razor"
+using Microsoft.AspNetCore.SignalR.Client;
+
+#line default
+#line hidden
+#nullable disable
     public partial class EquipmentListComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -103,6 +110,51 @@ using SACOMaintenance.Common.ModelDB;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 26 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentListComponent.razor"
+      
+
+    private HubConnection hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+
+        equipmentListViewModel.LoadAllEquipment();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            equipmentListViewModel.LoadAllEquipment();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IEquipmentListViewModel equipmentListViewModel { get; set; }
     }
 }

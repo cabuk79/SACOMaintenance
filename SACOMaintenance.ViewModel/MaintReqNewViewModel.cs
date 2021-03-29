@@ -95,6 +95,7 @@ namespace SACOMaintenance.ViewModel
         public void AddNewRequest()
         {
             MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

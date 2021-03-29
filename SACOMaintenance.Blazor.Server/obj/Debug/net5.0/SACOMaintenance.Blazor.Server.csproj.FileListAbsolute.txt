@@ -133,3 +133,12 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\EquipmentPages\EquipmentListComponent.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\EquipmentPages\EquipmentOverviewPage.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\EquipmentPages\EquipmentSinglePage.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\System.IO.Pipelines.dll

@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SACOMaintenance.Blazor.Server.Hubs;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
 using SACOMaintenance.DataAccess.Interfaces;
@@ -62,6 +64,14 @@ namespace SACOMaintenance.Blazor.Server
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSignalR();
+
+            services.AddResponseCompression(opts =>
+            {
+                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+                    new[] { "application/octet-stream" });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,6 +88,8 @@ namespace SACOMaintenance.Blazor.Server
                 app.UseHsts();
             }
 
+           
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -87,6 +99,9 @@ namespace SACOMaintenance.Blazor.Server
             {
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapHub<BroadcastHub>("/broadcastHub");
+                
+                //app.UseSignalR(routes => routes.MapHub<Blazor.NetCore.Server.SignalRHub.SignalRHub>("/broadcastHub"));
             });
         }
     }

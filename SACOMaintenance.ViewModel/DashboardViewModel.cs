@@ -17,7 +17,7 @@ namespace SACOMaintenance.ViewModel
         public DashboardViewModel(IMaintRequestInitiation maintReqDataProvider)
         {
             MaintReqDataProvider = maintReqDataProvider;
-            LoadMaintReqs();
+            //LoadMaintReqs();
         }
 
         public void LoadMaintReqs()

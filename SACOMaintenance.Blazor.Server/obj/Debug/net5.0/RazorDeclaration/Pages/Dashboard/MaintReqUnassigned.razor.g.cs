@@ -90,8 +90,15 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
 using SACOMaintenance.Common.ModelDB;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
+using Microsoft.AspNetCore.SignalR.Client;
 
 #line default
 #line hidden
@@ -103,6 +110,56 @@ using SACOMaintenance.Common.ModelDB;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
+      
+
+    private HubConnection hubConnection;
+    public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            reqGrid.Reload();
+            InvokeAsync(() => StateHasChanged());
+
+            //StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+
+        dashboardViewModel.LoadMaintReqs();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            dashboardViewModel.LoadMaintReqs();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel { get; set; }
     }
 }

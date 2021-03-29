@@ -96,6 +96,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+using Microsoft.AspNetCore.SignalR.Client;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maintrequests-list")]
     public partial class MaintRequestsListOverview : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -104,6 +111,51 @@ using SACOMaintenance.Common.ModelDB;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 31 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+      
+
+    private HubConnection hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+
+        maintReqListViewModel.LoadRequests();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            maintReqListViewModel.LoadRequests();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IRequestInitiationListViewModel maintReqListViewModel { get; set; }
     }
 }

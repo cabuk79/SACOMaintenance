@@ -96,6 +96,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+using Microsoft.AspNetCore.SignalR.Client;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/add")]
     public partial class AddMaintReq : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -104,6 +111,54 @@ using SACOMaintenance.Common.ModelDB;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 98 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+       
+    //static event Action OnChange;
+
+    //void Refresh() => InvokeAsync(StateHasChanged);
+    //override protected void OnInitialized() => OnChange += Refresh;
+    //void IDisposable.Dispose() => OnChange -= Refresh;
+
+    private HubConnection hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //book = await Http.GetFromJsonAsync<Book>("api/books/" + id);
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        await hubConnection.StartAsync();
+    }
+
+    protected async Task UpdateBook()
+    {
+        AddReqViewModel.AddNewRequest();
+        //await Http.PutAsJsonAsync("api/books/" + id, book);
+        if (IsConnected) await SendMessage();
+        //NavigationManager.NavigateTo("listbooks");
+    }
+
+    Task SendMessage() => hubConnection.SendAsync("SendMessage");
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+
+
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel { get; set; }
     }
 }

@@ -1,7 +1,18 @@
-﻿@inject SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel
-@using SACOMaintenance.Common.ModelDB
+﻿
 
-<RadzenGrid Data="@dashboardViewModel.MaintReqs">
+@inject SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel
+@using SACOMaintenance.Common.ModelDB
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.SignalR.Client
+
+
+@foreach (var item in dashboardViewModel.MaintReqs)
+    {
+        <h1>@item.Id</h1>
+    }
+
+
+<RadzenGrid Data="@dashboardViewModel.MaintReqs" @ref="reqGrid">
     <Columns>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails"></RadzenGridColumn>
@@ -9,3 +20,51 @@
     </Columns>
 </RadzenGrid>
 
+
+
+
+
+@code{
+
+    private HubConnection hubConnection;
+    public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            reqGrid.Reload();
+            InvokeAsync(() => StateHasChanged());
+
+            //StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+
+        dashboardViewModel.LoadMaintReqs();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            dashboardViewModel.LoadMaintReqs();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+
+}

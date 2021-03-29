@@ -1,13 +1,15 @@
 ﻿@page "/maintrequests-list"
 @inject SACOMaintenance.ViewModel.Interfaces.IRequestInitiationListViewModel maintReqListViewModel
 @using SACOMaintenance.Common.ModelDB
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.SignalR.Client
 
 <h3>List of Maintenance Requests</h3>
 
 
 
 <RadzenGrid Data="@maintReqListViewModel.requests"
-            AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+            AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
             FilterMode="FilterMode.Advanced" AllowPaging="true">
     <Columns>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
@@ -24,6 +26,44 @@
     </Columns>
 </RadzenGrid>
 
-@code {
+
+
+@code{
+
+    private HubConnection hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+
+        maintReqListViewModel.LoadRequests();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            maintReqListViewModel.LoadRequests();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
 
 }
