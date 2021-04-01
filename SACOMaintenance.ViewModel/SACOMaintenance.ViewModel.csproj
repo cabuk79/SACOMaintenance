@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
+    <ProjectReference Include="..\ExcelLibs\ExcelLibs.csproj" />
     <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />
   </ItemGroup>
 

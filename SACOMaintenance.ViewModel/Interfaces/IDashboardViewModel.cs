@@ -10,6 +10,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         public IMaintRequestInitiation MaintReqDataProvider { get; }
         public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; }
+        public ObservableCollection<MaintRequestInitiation> MaintReqsAssignedOpen { get; set; }
        //public int Id { get; set; }
         //public string MaintRequestDetails { get; set; }
         #endregion
@@ -18,6 +19,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region methods
 
         public void LoadMaintReqs();
+        public void LoadAssignedOpenReqs();
 
         #endregion
     }

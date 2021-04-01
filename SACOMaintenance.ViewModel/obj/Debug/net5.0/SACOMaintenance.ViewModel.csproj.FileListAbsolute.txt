@@ -17,3 +17,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\SACOMaintenance.ViewModel.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\ref\SACOMaintenance.ViewModel.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\SACOMaintenance.ViewModel.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ExcelLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ExcelLibs.pdb

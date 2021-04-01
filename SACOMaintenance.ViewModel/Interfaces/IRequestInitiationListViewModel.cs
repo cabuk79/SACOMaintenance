@@ -24,6 +24,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region Methods
 
         void LoadRequests();
+        void LoadNewRequests();
+        void ExportList();
 
         #endregion
     }

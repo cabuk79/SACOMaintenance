@@ -6,16 +6,22 @@
 
 <h3>List of Maintenance Requests</h3>
 
-
+<RadzenButton Click=@(args => @maintReqListViewModel.ExportList()) Text="Export All Requests" 
+               Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
 <RadzenGrid Data="@maintReqListViewModel.requests"
             AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
             FilterMode="FilterMode.Advanced" AllowPaging="true">
     <Columns>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details">
+            <Template Context="data">
+                <p style="white-space:pre-wrap">@data.RequestDetails</p>
+            </Template>
+        </RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions">
             <Template Context="data">
                 <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
@@ -30,10 +36,18 @@
 
 @code{
 
+
     private HubConnection hubConnection;
+
+
+
 
     protected override async Task OnInitializedAsync()
     {
+
+
+
+        maintReqListViewModel.LoadRequests();
 
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))

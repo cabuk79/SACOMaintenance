@@ -37,7 +37,7 @@ namespace SACOMaintenance.DataAccess
                 RequestedById = 1, //maintRequestInitiation.RequestedById,
                 RequestDetails = maintRequestInitiation.RequestDetails,
                 RequestTypeId = maintRequestInitiation.RequestTypeId,
-                StatusId = 6
+                StatusId = 7 //set the default value to new
             };
 
             _requestInitationDBContext.MaintRequestInitiations.Add(newRequest); 
@@ -80,6 +80,7 @@ namespace SACOMaintenance.DataAccess
         {
             var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
+                .Include(s => s.Status)
                 .ToList();
             return maintReqInitationList;
         }
@@ -90,9 +91,29 @@ namespace SACOMaintenance.DataAccess
         {
             var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
+                .Include(s => s.Status)
                 .ToList();
             return maintReqInitationList;
         }
+
+        public IEnumerable<MaintRequestInitiation> LoadNewRequests()
+        {
+            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 7)
+                .Include(e => e.Equipment)
+                .Include(s => s.Status)
+                .ToList();
+            return maintReqInitationList;
+        }
+
+        public IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen()
+        {
+            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)
+                .Include(e => e.Equipment)
+                .Include(s => s.Status)
+                .ToList();
+            return maintReqInitationList;
+        }
+
 
         //public ObservableCollection<Risk> LoadRisksByMaintType(string maintType)
         //{
@@ -126,5 +147,7 @@ namespace SACOMaintenance.DataAccess
                 riskList = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToList());
             }
         }
+
+        
     }
 }

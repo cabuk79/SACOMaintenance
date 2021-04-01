@@ -90,14 +90,14 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
 using Microsoft.AspNetCore.SignalR.Client;
 
 #line default
@@ -111,15 +111,16 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
+#line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
       
+
 
     private HubConnection hubConnection;
     public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-
+        dashboardViewModel.LoadMaintReqs();
 
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
@@ -130,8 +131,6 @@ using Microsoft.AspNetCore.SignalR.Client;
             CallLoadData();
             reqGrid.Reload();
             InvokeAsync(() => StateHasChanged());
-
-            //StateHasChanged();
         });
 
         await hubConnection.StartAsync();

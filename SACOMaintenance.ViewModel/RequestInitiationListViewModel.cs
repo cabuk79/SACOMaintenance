@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using ExcelLibs;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
 using System;
@@ -19,7 +20,6 @@ namespace SACOMaintenance.ViewModel
         public RequestInitiationListViewModel(IMaintRequestInitiation maintReqDataProvider)
         {
             MaintReqDataProvider = maintReqDataProvider;
-            LoadRequests();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,11 +33,30 @@ namespace SACOMaintenance.ViewModel
             {
                 requests.Add(item);
             }
-        } 
+        }
+
+        public void LoadNewRequests()
+        {
+            var maintNewreq = MaintReqDataProvider.LoadNewRequests();
+            requests.Clear();
+
+            foreach(var item in maintNewreq)
+            {
+                requests.Add(item);
+            }
+        }
+
+        public void ExportList()
+        {
+            MaintenanceRequestsExcel exportReqList = new MaintenanceRequestsExcel();
+            exportReqList.ExportListToExcel(requests);
+        }
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
     }
 }

@@ -142,3 +142,11 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Dashboard\MaintReqAssignedOpen.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\Dashboard\MaintReqAssignedOpen.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\ClosedXML.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\DocumentFormat.OpenXml.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\ExcelNumberFormat.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\System.IO.Packaging.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\ExcelLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\ExcelLibs.pdb
