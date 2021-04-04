@@ -109,6 +109,14 @@
             "ClosedXML": {
               "target": "Package",
               "version": "[0.95.4, )"
+            },
+            "ClosedXML.Report": {
+              "target": "Package",
+              "version": "[0.2.1, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.12.3, )"
             }
           },
           "imports": [

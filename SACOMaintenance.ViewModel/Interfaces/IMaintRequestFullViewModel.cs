@@ -23,6 +23,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         MaintRequestInitiation GetMaintReqInitation(int maintReqId);
         ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId);
         //ObservableCollection<Risk> LoadRisks();
+        void ExportRequest();
         #endregion
     }
 }

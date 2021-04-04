@@ -4,11 +4,70 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using SACOMaintenance.Common.ModelDB;
+using ClosedXML.Report;
 
 namespace ExcelLibs
 {
     public class MaintenanceRequestsExcel
     {
+
+        public void ExportSingalReqest(MaintRequestInitiation maintReqSingle, ObservableCollection<MaintRequestInitiationRisk> maintReqRiskList)
+        {
+            var template = new XLTemplate(@"C:\Excel Export Test\TestRequest.xlsx");
+
+
+            template.AddVariable(maintReqSingle);
+            template.Generate();
+            template.SaveAs(@"C:\Excel Export Test\New Report " + maintReqSingle.Id + ".xlsx");
+
+            //open the excel file and loop through and set the risks
+            using(var workbook = XLWorkbook.OpenFromTemplate(@"C:\Excel Export Test\New Report " + maintReqSingle.Id + ".xlsx"))
+            {
+                var worksheet = workbook.Worksheet(1);
+
+                //loop through the risks and put into the correct position
+                foreach(var item in maintReqSingle.Risks)
+                {
+                    var riskId = item.Id;
+
+                    //loop through the risk link table to get the set level of risk
+                    foreach(var itemRisk in maintReqRiskList)
+                    {
+                        if(itemRisk.RiskId == item.Id)
+                        {
+                            switch(item.RiskName)
+                            {
+                                case "Slips, trips and falls":
+                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C18").Value = "X";  }
+                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D18").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E18").Value = "X"; }
+                                    break;
+                                case "Falls from height":
+                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C19").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D19").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E19").Value = "X"; }
+                                    break;
+                                case "Contact with moving machinery":
+                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C20").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D20").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E20").Value = "X"; }
+                                    break;
+                                case "Electrical":
+                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C21").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D21").Value = "X"; }
+                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E21").Value = "X"; }
+                                    break;
+                            }
+                        }
+                    }
+                }
+
+                workbook.SaveAs(@"C:\Excel Export Test\New Report " + maintReqSingle.Id + "trtrtr.xlsx");
+            }
+        }
+    
+         
+
         public void ExportListToExcel(ObservableCollection<MaintRequestInitiation> exportList)
        {
             using (var workbook = new XLWorkbook())

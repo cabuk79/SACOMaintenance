@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using ExcelLibs;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
 using System.Collections.Generic;
@@ -90,6 +91,12 @@ namespace SACOMaintenance.ViewModel
         {
             //Risks = RiskDataProvider.LoadallRisks();
             return null;
+        }
+
+        public void ExportRequest()
+        {
+            MaintenanceRequestsExcel exportReqList = new MaintenanceRequestsExcel();
+            exportReqList.ExportSingalReqest(maintReqInitation, RiskInfoList);
         }
     }
 }
