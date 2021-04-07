@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Radzen;
 using SACOMaintenance.Blazor.Server.Hubs;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
@@ -48,6 +49,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMaintRequestInitiation, MaintRequestInitiationDataProvider>();
             services.AddScoped<IRisk, RiskDataProvider>();
             services.AddScoped<IEquipment, EquipmentDataProvider>();
+            services.AddScoped<IStatus, StatusDataProvider>();
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
             services.AddScoped<IAreaViewModel, AreaViewModel>();
@@ -61,6 +63,8 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMaintReqNewViewModel, MaintReqNewViewModel>();
             services.AddScoped<IEquipmentViewModel, EquipmentViewModel>();
             services.AddScoped<IEquipmentListViewModel, EquipmentListViewModel>();
+
+            services.AddScoped<NotificationService>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

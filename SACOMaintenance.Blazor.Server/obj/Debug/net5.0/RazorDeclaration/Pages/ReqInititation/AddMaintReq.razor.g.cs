@@ -97,7 +97,7 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
 using Microsoft.AspNetCore.SignalR.Client;
 
 #line default
@@ -112,7 +112,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 98 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 102 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
     //static event Action OnChange;
 
@@ -139,6 +139,21 @@ using Microsoft.AspNetCore.SignalR.Client;
         //await Http.PutAsJsonAsync("api/books/" + id, book);
         if (IsConnected) await SendMessage();
         //NavigationManager.NavigateTo("listbooks");
+
+        ShowNotification(new NotificationMessage 
+        { 
+            Severity = NotificationSeverity.Success,
+            Summary = "Saved",
+            Detail = "New maintenance request saved to database!",
+            Duration = 4000
+        });
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+
+        //console.Log($"{message.Severity} notification");
     }
 
     Task SendMessage() => hubConnection.SendAsync("SendMessage");
@@ -159,6 +174,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NotificationService NotificationService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel { get; set; }
     }
 }

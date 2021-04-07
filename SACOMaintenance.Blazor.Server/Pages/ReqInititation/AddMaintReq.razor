@@ -1,6 +1,7 @@
 ﻿@page "/maint-req/add"
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel
 @using SACOMaintenance.Common.ModelDB
+@inject NotificationService NotificationService
 
 
 
@@ -13,6 +14,8 @@
     @inject ICompany CompanyDataProvider
     @inject IPPE PpeDataProvider
     @inject IEquipment EquipmentDataProvider*@
+
+<RadzenNotification></RadzenNotification>
 
 <div class="row">
     <h3>Add New Maintenance Request</h3>
@@ -38,7 +41,8 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <label style="font-weight:bold">Factory</label>
-                            <InputSelect id="factory" class="form-control" @bind-Value="@AddReqViewModel.FactoryId">
+                            <InputSelect id="factory" class="form-control"
+                                         @bind-Value="@AddReqViewModel.FactoryId">
                                 @foreach (var factory in AddReqViewModel.Factories)
                                 {
                                     <option value="@factory.Id">@factory.FactoryName</option>
@@ -121,6 +125,21 @@
         //await Http.PutAsJsonAsync("api/books/" + id, book);
         if (IsConnected) await SendMessage();
         //NavigationManager.NavigateTo("listbooks");
+
+        ShowNotification(new NotificationMessage 
+        { 
+            Severity = NotificationSeverity.Success,
+            Summary = "Saved",
+            Detail = "New maintenance request saved to database!",
+            Duration = 4000
+        });
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+
+        //console.Log($"{message.Severity} notification");
     }
 
     Task SendMessage() => hubConnection.SendAsync("SendMessage");

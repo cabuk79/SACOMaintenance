@@ -85,7 +85,14 @@ namespace SACOMaintenance.DataAccess
             return maintReqInitationList;
         }
 
-       
+        public IEnumerable<MaintRequestInitiation> LoadReqBasedOnStatus(int statusId)
+        {
+            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
+                .Include(e => e.Equipment)
+                .Include(s => s.Status).Where(si => si.StatusId == statusId)
+                .ToList();
+            return maintReqInitationList;
+        }
 
         public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
         {

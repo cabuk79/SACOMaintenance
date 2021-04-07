@@ -2,15 +2,19 @@
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace SACOMaintenance.DataAccess
 {
     public class StatusDataProvider : IStatus
     {
-        public StatusDataProvider()
+        private readonly SACOMaintenanceContext _statusDBContext;
+
+        public StatusDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _statusDBContext = sacoMaintenanceContext;
         }
 
         public SACOMaintenanceContext SacoMaintenanceContext { get; }
@@ -29,9 +33,10 @@ namespace SACOMaintenance.DataAccess
             return status;
         }
 
+        //public IEnumerable<Status> LoadAllStatuses()
         public IEnumerable<Status> LoadAllStatuses()
         {
-            var statusList = SacoMaintenanceContext.Statuses.ToList();
+            var statusList = _statusDBContext.Statuses.ToList();
             return statusList;
         }
     }

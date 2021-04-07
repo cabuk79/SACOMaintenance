@@ -12,8 +12,12 @@ namespace SACOMaintenance.ViewModel.Interfaces
     {
         #region Properties
 
+        public Status currentStatus { get; set; }
+        public IEnumerable<MaintRequestInitiation> filteredMaintRequests { get; set; }
         ObservableCollection<MaintRequestInitiation> requests { get; }
         ObservableCollection<Equipment> equipment { get; }
+        public ObservableCollection<Status> statusList { get; set; }
+        public int StatusId { get; set; }
 
         //int RequestId { get; }
         //string RequestDetails { get; }
@@ -25,6 +29,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         void LoadRequests();
         void LoadNewRequests();
+        void LoadReqsByStatusId(int statusId);
         void ExportList();
 
         #endregion

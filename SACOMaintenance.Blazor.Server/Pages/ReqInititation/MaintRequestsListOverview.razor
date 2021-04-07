@@ -4,14 +4,15 @@
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.SignalR.Client
 
-<h3>List of Maintenance Requests</h3>
+<h3>List of All Maintenance Requests</h3>
 
 <RadzenButton Click=@(args => @maintReqListViewModel.ExportList()) Text="Export All Requests" 
                Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
-<RadzenGrid Data="@maintReqListViewModel.requests"
+<RadzenGrid Data="@maintReqListViewModel.requests" @ref="maintGrid" AllowSorting="true"
             AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-            FilterMode="FilterMode.Advanced" AllowPaging="true">
+            FilterMode="FilterMode.Advanced"
+             AllowPaging="true">
     <Columns>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details">
@@ -21,7 +22,15 @@
         </RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status">
+            <FilterTemplate>
+                <RadzenDropDown @bind-Value="@maintReqListViewModel.StatusId" TextProperty="Text"
+                                ValueProperty="Value" Style="width:100%"
+                                Change=@OnChange 
+                                Data="@maintReqListViewModel.statusList.Select(t => new { Text = $"{t.StatusName}", Value = t.Id })" />
+
+            </FilterTemplate>
+        </RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions">
             <Template Context="data">
                 <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
@@ -35,11 +44,27 @@
 
 
 @code{
-
+    
+    RadzenGrid<MaintRequestInitiation> maintGrid;
 
     private HubConnection hubConnection;
 
+    void OnChange()
+    {
 
+        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
+        maintGrid.Reload();
+        InvokeAsync(StateHasChanged);
+
+
+
+        //= maintReqListViewModel.requests
+        //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
+
+
+        //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
+        //e.Status == maintReqListViewModel.currentStatus : true);
+    }
 
 
     protected override async Task OnInitializedAsync()

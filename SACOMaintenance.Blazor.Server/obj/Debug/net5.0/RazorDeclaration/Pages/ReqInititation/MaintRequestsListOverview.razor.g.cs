@@ -112,13 +112,29 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+#line 46 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
-
+    
+    RadzenGrid<MaintRequestInitiation> maintGrid;
 
     private HubConnection hubConnection;
 
+    void OnChange()
+    {
 
+        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
+        maintGrid.Reload();
+        InvokeAsync(StateHasChanged);
+
+
+
+        //= maintReqListViewModel.requests
+        //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
+
+
+        //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
+        //e.Status == maintReqListViewModel.currentStatus : true);
+    }
 
 
     protected override async Task OnInitializedAsync()
