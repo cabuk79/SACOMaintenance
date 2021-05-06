@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
+    <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
   </ItemGroup>
 
 </Project>

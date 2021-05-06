@@ -96,6 +96,13 @@ using SACOMaintenance.Blazor.Server.Pages.Dashboard;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Index.razor"
+using SACOMaintenance.Blazor.Server.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

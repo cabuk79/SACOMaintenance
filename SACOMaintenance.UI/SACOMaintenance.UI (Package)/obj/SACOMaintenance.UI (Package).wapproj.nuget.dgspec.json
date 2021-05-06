@@ -1,0 +1,562 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj": {}
+  },
+  "projects": {
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj",
+        "projectName": "SACOMaintenance.Common",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\ExcelLibs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\ExcelLibs.csproj",
+        "projectName": "ExcelLibs",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\ExcelLibs.csproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.95.4, )"
+            },
+            "ClosedXML.Report": {
+              "target": "Package",
+              "version": "[0.2.1, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.12.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj",
+        "projectName": "SACOMaintenance.DataAccess",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
+              },
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj",
+        "projectName": "SACOMaintenance.Data",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj",
+        "projectName": "SACOMaintenance.UI (Package)",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.17763"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17763": {
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17763": {
+          "imports": [
+            "netcoreapp3.1",
+            "netcoreapp3.0",
+            "netcoreapp2.0",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net5.0-windows10.0.17763",
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj",
+        "projectName": "SACOMaintenance.UI",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows10.0.18362"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows10.0.18362": {
+            "targetAlias": "net5.0-windows10.0.18362.0",
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows10.0.18362": {
+          "targetAlias": "net5.0-windows10.0.18362.0",
+          "dependencies": {
+            "Microsoft.VCRTForwarders.140": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
+            "Microsoft.WinUI": {
+              "target": "Package",
+              "version": "[3.0.0-preview3.201113.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-arm64",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.18362.15, 10.0.18362.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[5.0.5, 5.0.5]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[5.0.5, 5.0.5]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Windows.SDK.NET.Ref": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win10-arm64": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj",
+        "projectName": "SACOMaintenance.ViewModel",
+        "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\BuisnessModels\\SACOMaintenance.Common.csproj"
+              },
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\ExcelLibs.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\ExcelLibs.csproj"
+              },
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

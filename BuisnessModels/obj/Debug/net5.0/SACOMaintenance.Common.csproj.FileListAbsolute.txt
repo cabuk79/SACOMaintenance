@@ -9,4 +9,3 @@ C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACO
 C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\ref\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.Common.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\BuisnessModels\obj\Debug\net5.0\SACOMaintenance.Common.csprojAssemblyReference.cache

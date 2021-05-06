@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "dgSpecHash": "2BUY97P7pEHsT6G9WuI/Z/8Hz+COtz/ILtIXri1lz2t30E1TzDRZsQ8LK3M9kIHgtvGPptZZP2xmcd43agUe9g==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763). Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm64-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86-aot"
+      ]
+    }
+  ]
+}

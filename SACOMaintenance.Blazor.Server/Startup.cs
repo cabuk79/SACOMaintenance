@@ -63,6 +63,8 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IMaintReqNewViewModel, MaintReqNewViewModel>();
             services.AddScoped<IEquipmentViewModel, EquipmentViewModel>();
             services.AddScoped<IEquipmentListViewModel, EquipmentListViewModel>();
+            services.AddScoped<IRequestsGraphViewModel, RequestsGraphViewModel>();
+            services.AddScoped<IRequestsGraphDateViewModel, RequestsGraphDateViewModel>();
 
             services.AddScoped<NotificationService>();
 

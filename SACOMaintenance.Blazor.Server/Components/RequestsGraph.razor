@@ -1,0 +1,98 @@
+﻿
+<h3>Requests Status Graph</h3>
+@inject SACOMaintenance.ViewModel.Interfaces.IRequestsGraphViewModel requestGraphViewModel
+@using System.Globalization
+
+<RadzenChart>
+    <RadzenColumnSeries Data="@statusData" CategoryProperty="statusName" Title="Status Type"
+                        ValueProperty="number"></RadzenColumnSeries>
+    <RadzenColumnOptions Radius="5"/>
+    <RadzenValueAxis>
+        <RadzenGridLines Visible="true"/>
+        <RadzenAxisTitle Text="Number of Status"/>
+    </RadzenValueAxis>
+</RadzenChart>
+
+@code {
+
+    public class DataItem
+    {
+        public int number { get; set; }
+        public string statusName { get; set; }
+    }
+
+    //public DataItem[] statusData = new DataItem[2];
+
+    public static int closedCount;
+    public static int newCount;
+    public static int countAssigned;
+    public static int onHoldCount;
+    public static int cancelledCount;
+
+    protected override void OnInitialized()
+    {
+        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6);
+        newCount = requestGraphViewModel.GetRequestsByStatusCount(7);
+        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8);
+        onHoldCount = requestGraphViewModel.GetRequestsByStatusCount(11);
+        cancelledCount = requestGraphViewModel.GetRequestsByStatusCount(10);
+    }
+
+    DataItem[] statusData = new DataItem[]
+    {
+            new DataItem
+            {
+                number = closedCount,
+                statusName = "Closed"
+            },
+            new DataItem
+            {
+                number = newCount,
+                statusName = "New"
+            },
+            new DataItem
+            {
+                number = countAssigned,
+                statusName = "Assigned"
+            },
+            new DataItem
+            {
+                number = onHoldCount,
+                statusName = "On Hold"
+            },
+            new DataItem
+            {
+                number = cancelledCount,
+                statusName = "Cancelled"
+            }
+    };
+    // getStatusCount();
+
+
+    public void getStatusCount()
+    {
+        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6);
+        newCount = requestGraphViewModel.GetRequestsByStatusCount(7);
+        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8);
+
+
+        DataItem[] statusData = new DataItem[]
+        {
+            new DataItem
+            {
+                number = closedCount,
+                statusName = "Closed"
+            },
+            new DataItem
+            {
+                number = newCount,
+                statusName = "New"
+            },
+            new DataItem
+            {
+                number = countAssigned,
+                statusName = "Assigned"
+            }
+        };
+    }
+}

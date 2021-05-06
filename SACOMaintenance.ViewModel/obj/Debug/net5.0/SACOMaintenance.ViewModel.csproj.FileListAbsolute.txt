@@ -2,10 +2,12 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.ViewModel.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ref\SACOMaintenance.ViewModel.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.ViewModel.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.Data.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.Common.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ExcelLibs.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.DataAccess.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\SACOMaintenance.Data.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\SACOMaintenance.ViewModel.csprojAssemblyReference.cache
@@ -17,5 +19,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\SACOMaintenance.ViewModel.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\ref\SACOMaintenance.ViewModel.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\obj\Debug\net5.0\SACOMaintenance.ViewModel.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ExcelLibs.dll
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\ExcelLibs.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\Models.DTO.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.ViewModel\bin\Debug\net5.0\Models.DTO.pdb

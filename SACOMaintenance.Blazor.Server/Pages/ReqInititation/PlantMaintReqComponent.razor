@@ -1,73 +1,89 @@
 ﻿@inject SACOMaintenance.ViewModel.Interfaces.IPlantMaintReqViewModel plantMaintViewModel
 
+
 <h3><em>Isolations</em></h3>
+<div class="row">
+    <div class="col-lg-6">
+        <table cellpadding="5">
+            <tr>
+                <td><label>Phosphoric Acide</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationNitricAcid"></InputCheckbox></td>
+                <td><label>Phosporic Acid</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedPhosphoricAcid"></InputCheckbox></td>
+            </tr>
+            <tr>
+                <td><label>Sodium Hydrozide</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSodiumHyrodzide"></InputCheckbox></td>
+                <td><label>Sulpric Acid</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSulphuricAcid"></InputCheckbox></td>
+            </tr>
+            <tr>
+                <td><label>Other</label></td>
+                <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.IsolationsOther" class="form-control"></InputTextArea></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <h3>Drained Lines</h3>
 
-<table cellpadding="5">
-    <tr>
-        <td><label>Phosphoric Acide</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationNitricAcid"></InputCheckbox></td>
-        <td><label>Phosporic Acid</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedPhosphoricAcid"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Sodium Hydrozide</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSodiumHyrodzide"></InputCheckbox></td>
-        <td><label>Sulpric Acid</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolatedSulphuricAcid"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Other</label></td>
-        <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.IsolationsOther" class="form-control"></InputTextArea></td>
-    </tr>
-</table>
-
-<h3>Drained Lines</h3>
-
-<table cellpadding="5">
-    <tr>
-        <td><label>Nitric Acid</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedNitricAcid"></InputCheckbox></td>
-        <td><label>Phosphoric Acid</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedPhosphoricAcicd"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Sodium Hydroxide</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedSodiumHydroxide"></InputCheckbox></td>
-        <td>Sulphuric Acid</td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinesSulphuricAcid"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Other</label></td>
-        <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.DrainingLinesOther" class="form-control"></InputTextArea></td>
-    </tr>
-</table>
+        <table cellpadding="5">
+            <tr>
+                <td><label>Nitric Acid</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedNitricAcid"></InputCheckbox></td>
+                <td><label>Phosphoric Acid</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedPhosphoricAcicd"></InputCheckbox></td>
+            </tr>
+            <tr>
+                <td><label>Sodium Hydroxide</label></td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinedSodiumHydroxide"></InputCheckbox></td>
+                <td>Sulphuric Acid</td>
+                <td><InputCheckbox @bind-Value="plantMaintViewModel.DrainingLinesSulphuricAcid"></InputCheckbox></td>
+            </tr>
+            <tr>
+                <td><label>Other</label></td>
+                <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.DrainingLinesOther" class="form-control"></InputTextArea></td>
+            </tr>
+        </table>
+    </div>
+</div>
 
 <h3>Isolations Other</h3>
+<div class="row">
+    <div class="col-lg-4">
+        <label>Compressed Air</label>
+        <InputCheckbox @bind-Value="plantMaintViewModel.IsolationsCompressedAir"></InputCheckbox>
+    </div>
+    <div class="col-lg-4">
+        <label>Electrical</label>
+        <InputCheckbox @bind-Value="plantMaintViewModel.IsolationsElectrical"></InputCheckbox>
+    </div>
+    <div class="col-lg-4">
+        <label>Gas</label>
+        <InputCheckbox @bind-Value="plantMaintViewModel.IsolationsGas"></InputCheckbox>
+    </div>
+    <div class="col-lg-4">
+        <label>Mechanical</label>
+        <InputCheckbox @bind-Value="plantMaintViewModel.IsolationsMechanical"></InputCheckbox>
+    </div>
+    <div class="col-lg-4">
+        <label>Steam</label>
+        <InputCheckbox @bind-Value="plantMaintViewModel.IsolationsSteam"></InputCheckbox>
+    </div>
+    <div class="col-lg-4">
+        <label>Water</label>
+        <InputCheckbox @bind-Value="plantMaintViewModel.IsolationsWater"></InputCheckbox>
+    </div>
+    <div class="col-lg-4">
+        <label>Other</label>
+        <InputTextArea @bind-Value="plantMaintViewModel.OtherPrecations" class="form-control"></InputTextArea>
+    </div>                                                                                                 
+</div>
 
-<table cellpadding="5">
-    <tr>
-        <td><label>Compressed Air</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsCompressedAir"></InputCheckbox></td>
-        <td><label>Electrical</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsElectrical"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Gas</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsGas"></InputCheckbox></td>
-        <td>Mechanical</td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsMechanical"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Steam</label></td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsSteam"></InputCheckbox></td>
-        <td>Water</td>
-        <td><InputCheckbox @bind-Value="plantMaintViewModel.IsolationsWater"></InputCheckbox></td>
-    </tr>
-    <tr>
-        <td><label>Other</label></td>
-        <td colspan="3"><InputTextArea @bind-Value="plantMaintViewModel.OtherPrecations" class="form-control"></InputTextArea></td>
-    </tr>
-</table>
+
+
+
+
+
 
 
 @*<div class="container-fluid col-lg-12">

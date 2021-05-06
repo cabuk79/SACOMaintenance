@@ -11,6 +11,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "runtime": {
@@ -134,6 +135,11 @@
           }
         }
       },
+      "Models.DTO/1.0.0": {
+        "runtime": {
+          "Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "runtime": {
           "SACOMaintenance.Common.dll": {}
@@ -223,6 +229,11 @@
       "sha512": "sha512-PluG/+dQhX0dfWFlz7nbcC8jRS+wBAo4uiOJqdpax7LVeXoxwuVbJpdkBRRcJhIj45OrkmwwLW2tJNIbpCnBaw==",
       "path": "system.linq.dynamic.core/1.1.1",
       "hashPath": "system.linq.dynamic.core.1.1.1.nupkg.sha512"
+    },
+    "Models.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",

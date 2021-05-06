@@ -1,9 +1,25 @@
 ﻿@page "/"
 @using SACOMaintenance.Blazor.Server.Pages.Dashboard
+@using SACOMaintenance.Blazor.Server.Components 
 
 <h1>SACO Maintenance Application</h1>
 
 <h1>Dashboard</h1>
+
+<div class="row">
+    <div class="col-lg-6">
+        <RequestsGraph></RequestsGraph>
+    </div>
+    <div class="col-lg-6">
+        <RequestsYearGraphComponent></RequestsYearGraphComponent>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <RequestsMonthYearGraphComponent></RequestsMonthYearGraphComponent>
+    </div>
+</div>
 
 <div class="container-fluid">
     <div class="row">
@@ -17,3 +33,5 @@
         </div>
     </div>
 </div>
+
+

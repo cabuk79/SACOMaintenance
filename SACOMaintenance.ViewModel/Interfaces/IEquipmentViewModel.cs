@@ -14,5 +14,6 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public void LoadEquipment(int EquipmentId);
 
         public int EquipmentId { get; set; }
+
     }
 }

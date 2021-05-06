@@ -1142,10 +1142,16 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "runtime": {
           "ExcelLibs.dll": {}
+        }
+      },
+      "Models.DTO/1.0.0": {
+        "runtime": {
+          "Models.DTO.dll": {}
         }
       },
       "SACOMaintenance.Common/1.0.0": {
@@ -1909,6 +1915,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "ExcelLibs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

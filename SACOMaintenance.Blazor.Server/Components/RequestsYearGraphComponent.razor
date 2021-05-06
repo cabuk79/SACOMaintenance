@@ -1,0 +1,58 @@
+﻿
+<h3>Number of Requests By Year</h3>
+@inject SACOMaintenance.ViewModel.Interfaces.IRequestsGraphDateViewModel requestViewModel
+@using System.Globalization
+
+<RadzenChart>
+    <RadzenColumnSeries Data="@statusData" CategoryProperty="yearName" Title="Year"
+                        ValueProperty="yearCount"></RadzenColumnSeries>
+    <RadzenColumnOptions Radius="5" />
+    <RadzenValueAxis>
+        <RadzenGridLines Visible="true" />
+        <RadzenAxisTitle Text="Number of Status" />
+    </RadzenValueAxis>
+</RadzenChart>
+
+@code {
+    public class DataItem
+    {
+        public int yearCount { get; set; }
+        public string yearName { get; set; }
+    }
+
+    public static int year2020;
+    public static int year2021;
+
+    protected override void OnInitialized()
+    {
+        requestViewModel.GetRequests();
+
+        foreach(var item in requestViewModel.MaintReqs)
+        {
+            var year = DateTime.Parse(item.DateRaised.ToString()).Year;
+            if(year == 2020)
+            {
+                year2020++;
+            }
+            else if(year == 2021)
+            {
+                year2021++;
+            }
+        }
+    }
+
+    DataItem[] statusData = new DataItem[]
+    {
+        new DataItem
+        {
+            yearCount = year2020,
+            yearName = "2020"
+        },
+        new DataItem
+        {
+            yearCount = year2021,
+            yearName = "2021"
+        }
+    };
+
+}

@@ -1604,6 +1604,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "compile": {
@@ -1611,6 +1612,16 @@
         },
         "runtime": {
           "bin/placeholder/ExcelLibs.dll": {}
+        }
+      },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
         }
       },
       "SACOMaintenance.Common/1.0.0": {
@@ -6081,6 +6092,11 @@
       "path": "../ExcelLibs/ExcelLibs.csproj",
       "msbuildProject": "../ExcelLibs/ExcelLibs.csproj"
     },
+    "Models.DTO/1.0.0": {
+      "type": "project",
+      "path": "../Models.DTO/Models.DTO.csproj",
+      "msbuildProject": "../Models.DTO/Models.DTO.csproj"
+    },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",
       "path": "../BuisnessModels/SACOMaintenance.Common.csproj",
@@ -6106,7 +6122,8 @@
   },
   "packageFolders": {
     "C:\\Users\\cabuk\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6118,10 +6135,12 @@
       "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -6172,7 +6191,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

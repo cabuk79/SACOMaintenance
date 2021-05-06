@@ -9,7 +9,15 @@
       "DEBUG",
       "NET",
       "NET5_0",
-      "NETCOREAPP"
+      "NETCOREAPP",
+      "NET5_0_OR_GREATER",
+      "NETCOREAPP1_0_OR_GREATER",
+      "NETCOREAPP1_1_OR_GREATER",
+      "NETCOREAPP2_0_OR_GREATER",
+      "NETCOREAPP2_1_OR_GREATER",
+      "NETCOREAPP2_2_OR_GREATER",
+      "NETCOREAPP3_0_OR_GREATER",
+      "NETCOREAPP3_1_OR_GREATER"
     ],
     "languageVersion": "9.0",
     "platform": "",
@@ -1589,6 +1597,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "runtime": {

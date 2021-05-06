@@ -1,0 +1,270 @@
+{
+  "version": 3,
+  "targets": {
+    "UAP,Version=v10.0.17763": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-arm": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-arm-aot": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-arm64-aot": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-x64": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-x64-aot": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-x86": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    },
+    "UAP,Version=v10.0.17763/win10-x86-aot": {
+      "SACOMaintenance.UI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SACOMaintenance.UI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SACOMaintenance.UI/1.0.0": {
+      "type": "project",
+      "path": "../SACOMaintenance.UI/SACOMaintenance.UI.csproj",
+      "msbuildProject": "../SACOMaintenance.UI/SACOMaintenance.UI.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "UAP,Version=v10.0.17763": [
+      "SACOMaintenance.UI >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\cabuk\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj",
+      "projectName": "SACOMaintenance.UI (Package)",
+      "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\SACOMaintenance.UI (Package).wapproj",
+      "packagesPath": "C:\\Users\\cabuk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI (Package)\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "uap10.0.17763"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "uap10.0.17763": {
+          "projectReferences": {
+            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj": {
+              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "uap10.0.17763": {
+        "imports": [
+          "netcoreapp3.1",
+          "netcoreapp3.0",
+          "netcoreapp2.0",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net5.0-windows10.0.17763",
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    },
+    "runtimes": {
+      "win10-arm": {
+        "#import": []
+      },
+      "win10-arm-aot": {
+        "#import": []
+      },
+      "win10-arm64-aot": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
+      },
+      "win10-x64-aot": {
+        "#import": []
+      },
+      "win10-x86": {
+        "#import": []
+      },
+      "win10-x86-aot": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763). Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm64-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SACOMaintenance.UI is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86-aot. Project SACOMaintenance.UI supports: net5.0-windows10.0.18362 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "SACOMaintenance.UI",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86-aot"
+      ]
+    }
+  ]
+}

@@ -2,6 +2,56 @@
   "version": 3,
   "targets": {
     "net5.0-windows10.0.18362": {
+      "ClosedXML/0.95.4": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.7.2",
+          "ExcelNumberFormat": "1.0.10",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        }
+      },
+      "ClosedXML.Report/0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML": "0.95.0",
+          "System.Linq.Dynamic.Core": "1.1.1",
+          "morelinq": "2.9.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.12.3": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        }
+      },
+      "ExcelNumberFormat/1.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -388,7 +438,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.VCRTForwarders.140/1.0.6": {
+      "Microsoft.VCRTForwarders.140/1.0.7": {
         "type": "package",
         "build": {
           "build/netcoreapp2.0/Microsoft.VCRTForwarders.140.targets": {}
@@ -978,6 +1028,15 @@
           }
         }
       },
+      "morelinq/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        }
+      },
       "Newtonsoft.Json/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -1227,7 +1286,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
@@ -1358,6 +1417,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Packaging/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1372,6 +1440,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
+        }
+      },
+      "System.Linq.Dynamic.Core/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
         }
       },
       "System.Linq.Expressions/4.3.0": {
@@ -2069,6 +2146,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ExcelLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ClosedXML": "0.95.4",
+          "ClosedXML.Report": "0.2.1",
+          "DocumentFormat.OpenXml": "2.12.3",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -2112,6 +2205,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.DataAccess": "1.0.0"
         },
@@ -2124,6 +2218,56 @@
       }
     },
     "net5.0-windows10.0.18362/win10-arm64": {
+      "ClosedXML/0.95.4": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.7.2",
+          "ExcelNumberFormat": "1.0.10",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        }
+      },
+      "ClosedXML.Report/0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML": "0.95.0",
+          "System.Linq.Dynamic.Core": "1.1.1",
+          "morelinq": "2.9.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.12.3": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        }
+      },
+      "ExcelNumberFormat/1.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -2470,7 +2614,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.VCRTForwarders.140/1.0.6": {
+      "Microsoft.VCRTForwarders.140/1.0.7": {
         "type": "package",
         "native": {
           "runtimes/win10-arm64/native/debug/concrt140d_app.dll": {},
@@ -2573,6 +2717,15 @@
         "build": {
           "buildTransitive/Microsoft.WinUI.props": {},
           "buildTransitive/Microsoft.WinUI.targets": {}
+        }
+      },
+      "morelinq/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -3075,7 +3228,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {}
@@ -3192,6 +3345,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Packaging/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3206,6 +3368,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
+        }
+      },
+      "System.Linq.Dynamic.Core/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
         }
       },
       "System.Linq.Expressions/4.3.0": {
@@ -3871,6 +4042,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ExcelLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ClosedXML": "0.95.4",
+          "ClosedXML.Report": "0.2.1",
+          "DocumentFormat.OpenXml": "2.12.3",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -3914,6 +4101,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.DataAccess": "1.0.0"
         },
@@ -3926,6 +4114,56 @@
       }
     },
     "net5.0-windows10.0.18362/win10-x64": {
+      "ClosedXML/0.95.4": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.7.2",
+          "ExcelNumberFormat": "1.0.10",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        }
+      },
+      "ClosedXML.Report/0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML": "0.95.0",
+          "System.Linq.Dynamic.Core": "1.1.1",
+          "morelinq": "2.9.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.12.3": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        }
+      },
+      "ExcelNumberFormat/1.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -4272,7 +4510,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.VCRTForwarders.140/1.0.6": {
+      "Microsoft.VCRTForwarders.140/1.0.7": {
         "type": "package",
         "native": {
           "runtimes/win10-x64/native/debug/concrt140d_app.dll": {},
@@ -4377,6 +4615,15 @@
         "build": {
           "buildTransitive/Microsoft.WinUI.props": {},
           "buildTransitive/Microsoft.WinUI.targets": {}
+        }
+      },
+      "morelinq/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -4879,7 +5126,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {}
@@ -4996,6 +5243,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Packaging/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5010,6 +5266,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
+        }
+      },
+      "System.Linq.Dynamic.Core/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
         }
       },
       "System.Linq.Expressions/4.3.0": {
@@ -5675,6 +5940,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ExcelLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ClosedXML": "0.95.4",
+          "ClosedXML.Report": "0.2.1",
+          "DocumentFormat.OpenXml": "2.12.3",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5718,6 +5999,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.DataAccess": "1.0.0"
         },
@@ -5730,6 +6012,56 @@
       }
     },
     "net5.0-windows10.0.18362/win10-x86": {
+      "ClosedXML/0.95.4": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.7.2",
+          "ExcelNumberFormat": "1.0.10",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {}
+        }
+      },
+      "ClosedXML.Report/0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML": "0.95.0",
+          "System.Linq.Dynamic.Core": "1.1.1",
+          "morelinq": "2.9.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.12.3": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        }
+      },
+      "ExcelNumberFormat/1.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -6076,7 +6408,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.VCRTForwarders.140/1.0.6": {
+      "Microsoft.VCRTForwarders.140/1.0.7": {
         "type": "package",
         "native": {
           "runtimes/win10-x86/native/debug/concrt140d_app.dll": {},
@@ -6179,6 +6511,15 @@
         "build": {
           "buildTransitive/Microsoft.WinUI.props": {},
           "buildTransitive/Microsoft.WinUI.targets": {}
+        }
+      },
+      "morelinq/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {}
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -6681,7 +7022,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {}
@@ -6798,6 +7139,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Packaging/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -6812,6 +7162,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
+        }
+      },
+      "System.Linq.Dynamic.Core/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {}
         }
       },
       "System.Linq.Expressions/4.3.0": {
@@ -7477,6 +7836,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ExcelLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ClosedXML": "0.95.4",
+          "ClosedXML.Report": "0.2.1",
+          "DocumentFormat.OpenXml": "2.12.3",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExcelLibs.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7520,6 +7895,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
           "SACOMaintenance.DataAccess": "1.0.0"
         },
@@ -7533,6 +7909,80 @@
     }
   },
   "libraries": {
+    "ClosedXML/0.95.4": {
+      "sha512": "YixFPzUJ4Ni2AaW/FbPgzFvdtjIzE/4NKROwI1RqIQHWka7QN9Spt4sHuXaSk9PLmXBkk8newHGW0UWLcLs5GA==",
+      "type": "package",
+      "path": "closedxml/0.95.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "closedxml.0.95.4.nupkg.sha512",
+        "closedxml.nuspec",
+        "lib/net40/ClosedXML.dll",
+        "lib/net40/ClosedXML.pdb",
+        "lib/net40/ClosedXML.xml",
+        "lib/net46/ClosedXML.dll",
+        "lib/net46/ClosedXML.pdb",
+        "lib/net46/ClosedXML.xml",
+        "lib/netstandard2.0/ClosedXML.dll",
+        "lib/netstandard2.0/ClosedXML.pdb",
+        "lib/netstandard2.0/ClosedXML.xml",
+        "nuget-logo.png"
+      ]
+    },
+    "ClosedXML.Report/0.2.1": {
+      "sha512": "xD7BvYErI4c0Eys6uGEPjpIWdc9qtuTBSty+ELWw2Yr+kshNJ4V6xyyfre5/Twp2NNyXBYw+4JQq81+48I1kZw==",
+      "type": "package",
+      "path": "closedxml.report/0.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "closedxml.report.0.2.1.nupkg.sha512",
+        "closedxml.report.nuspec",
+        "lib/net40/ClosedXML.Report.dll",
+        "lib/net46/ClosedXML.Report.dll",
+        "lib/netstandard2.0/ClosedXML.Report.dll"
+      ]
+    },
+    "DocumentFormat.OpenXml/2.12.3": {
+      "sha512": "qLww6khV25dTzGU3+9rG5vB6RbMoWuNA015151ZmazoepkvxW6/4a5u4QQASoXsZsBITsw5ZO0/Xpzm31tQ43g==",
+      "type": "package",
+      "path": "documentformat.openxml/2.12.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "documentformat.openxml.2.12.3.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.dll",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
+      ]
+    },
+    "ExcelNumberFormat/1.0.10": {
+      "sha512": "dRx817M5t0sv4GCJyAXU8qmhFXcqRpCHzLpxNmkMWTvzlfE0/KM7BNk6qEble0ffAr4xT7RyU7s/HpovVlA/9g==",
+      "type": "package",
+      "path": "excelnumberformat/1.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excelnumberformat.1.0.10.nupkg.sha512",
+        "excelnumberformat.nuspec",
+        "lib/net20/ExcelNumberFormat.dll",
+        "lib/net20/ExcelNumberFormat.xml",
+        "lib/netstandard1.0/ExcelNumberFormat.dll",
+        "lib/netstandard1.0/ExcelNumberFormat.xml",
+        "lib/netstandard2.0/ExcelNumberFormat.dll",
+        "lib/netstandard2.0/ExcelNumberFormat.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -8175,10 +8625,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.VCRTForwarders.140/1.0.6": {
-      "sha512": "CRemcSRRhH5wtdovxqcz3AgjttqgEXJzJuXSCjNStxW/JSm54xM7kSkwVb3tYen/mGCnGv/+PHvpEaliMEUxYA==",
+    "Microsoft.VCRTForwarders.140/1.0.7": {
+      "sha512": "ihE2cKWZuQjkSrJOVw7p4ppKGLVr2+HEgbS+a79G0YPKvAD3n61Mqitg3DL+X2/kuKD5C3edfP//HyToz+M11A==",
       "type": "package",
-      "path": "microsoft.vcrtforwarders.140/1.0.6",
+      "path": "microsoft.vcrtforwarders.140/1.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8207,7 +8657,7 @@
         "build/native/Microsoft.VCRTForwarders.140.targets",
         "build/net45/Microsoft.VCRTForwarders.140.targets",
         "build/netcoreapp2.0/Microsoft.VCRTForwarders.140.targets",
-        "microsoft.vcrtforwarders.140.1.0.6.nupkg.sha512",
+        "microsoft.vcrtforwarders.140.1.0.7.nupkg.sha512",
         "microsoft.vcrtforwarders.140.nuspec",
         "runtimes/win10-arm64/native/debug/concrt140d_app.dll",
         "runtimes/win10-arm64/native/debug/msvcp140_1d_app.dll",
@@ -8546,6 +8996,25 @@
         "tools/arm64/GenXbf.dll",
         "tools/x64/GenXbf.dll",
         "tools/x86/GenXbf.dll"
+      ]
+    },
+    "morelinq/2.9.0": {
+      "sha512": "bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
+      "type": "package",
+      "path": "morelinq/2.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/MoreLinq.dll",
+        "lib/net35/MoreLinq.xml",
+        "lib/net40/MoreLinq.dll",
+        "lib/net40/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
+        "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
+        "lib/netstandard2.0/MoreLinq.xml",
+        "morelinq.2.9.0.nupkg.sha512",
+        "morelinq.nuspec"
       ]
     },
     "Newtonsoft.Json/10.0.1": {
@@ -10257,6 +10726,33 @@
         "system.io.filesystem.primitives.nuspec"
       ]
     },
+    "System.IO.Packaging/4.7.0": {
+      "sha512": "9VV4KAbgRQZ79iEoG40KIeZy38O30oWwewScAST879+oki8g/Wa2HXZQgrhDDxQM4GkP1PnRJll05NMiVPbYAw==",
+      "type": "package",
+      "path": "system.io.packaging/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.IO.Packaging.dll",
+        "lib/net46/System.IO.Packaging.xml",
+        "lib/netstandard1.3/System.IO.Packaging.dll",
+        "lib/netstandard1.3/System.IO.Packaging.xml",
+        "lib/netstandard2.0/System.IO.Packaging.dll",
+        "lib/netstandard2.0/System.IO.Packaging.xml",
+        "ref/net46/System.IO.Packaging.dll",
+        "ref/net46/System.IO.Packaging.xml",
+        "ref/netstandard1.3/System.IO.Packaging.dll",
+        "ref/netstandard1.3/System.IO.Packaging.xml",
+        "ref/netstandard2.0/System.IO.Packaging.dll",
+        "ref/netstandard2.0/System.IO.Packaging.xml",
+        "system.io.packaging.4.7.0.nupkg.sha512",
+        "system.io.packaging.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Linq/4.3.0": {
       "sha512": "5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
       "type": "package",
@@ -10327,6 +10823,42 @@
         "ref/xamarinwatchos10/_._",
         "system.linq.4.3.0.nupkg.sha512",
         "system.linq.nuspec"
+      ]
+    },
+    "System.Linq.Dynamic.Core/1.1.1": {
+      "sha512": "PluG/+dQhX0dfWFlz7nbcC8jRS+wBAo4uiOJqdpax7LVeXoxwuVbJpdkBRRcJhIj45OrkmwwLW2tJNIbpCnBaw==",
+      "type": "package",
+      "path": "system.linq.dynamic.core/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/System.Linq.Dynamic.Core.dll",
+        "lib/net35/System.Linq.Dynamic.Core.pdb",
+        "lib/net35/System.Linq.Dynamic.Core.xml",
+        "lib/net40/System.Linq.Dynamic.Core.dll",
+        "lib/net40/System.Linq.Dynamic.Core.pdb",
+        "lib/net40/System.Linq.Dynamic.Core.xml",
+        "lib/net45/System.Linq.Dynamic.Core.dll",
+        "lib/net45/System.Linq.Dynamic.Core.pdb",
+        "lib/net45/System.Linq.Dynamic.Core.xml",
+        "lib/net46/System.Linq.Dynamic.Core.dll",
+        "lib/net46/System.Linq.Dynamic.Core.pdb",
+        "lib/net46/System.Linq.Dynamic.Core.xml",
+        "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll",
+        "lib/netcoreapp2.1/System.Linq.Dynamic.Core.pdb",
+        "lib/netcoreapp2.1/System.Linq.Dynamic.Core.xml",
+        "lib/netstandard1.3/System.Linq.Dynamic.Core.dll",
+        "lib/netstandard1.3/System.Linq.Dynamic.Core.pdb",
+        "lib/netstandard1.3/System.Linq.Dynamic.Core.xml",
+        "lib/netstandard2.0/System.Linq.Dynamic.Core.dll",
+        "lib/netstandard2.0/System.Linq.Dynamic.Core.pdb",
+        "lib/netstandard2.0/System.Linq.Dynamic.Core.xml",
+        "lib/uap10.0/System.Linq.Dynamic.Core.dll",
+        "lib/uap10.0/System.Linq.Dynamic.Core.pdb",
+        "lib/uap10.0/System.Linq.Dynamic.Core.pri",
+        "lib/uap10.0/System.Linq.Dynamic.Core.xml",
+        "system.linq.dynamic.core.1.1.1.nupkg.sha512",
+        "system.linq.dynamic.core.nuspec"
       ]
     },
     "System.Linq.Expressions/4.3.0": {
@@ -12648,6 +13180,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "ExcelLibs/1.0.0": {
+      "type": "project",
+      "path": "../../ExcelLibs/ExcelLibs.csproj",
+      "msbuildProject": "../../ExcelLibs/ExcelLibs.csproj"
+    },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",
       "path": "../../BuisnessModels/SACOMaintenance.Common.csproj",
@@ -12671,14 +13208,15 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.18362": [
-      "Microsoft.VCRTForwarders.140 >= 1.0.6",
+      "Microsoft.VCRTForwarders.140 >= 1.0.7",
       "Microsoft.WinUI >= 3.0.0-preview3.201113.0",
       "SACOMaintenance.ViewModel >= 1.0.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\cabuk\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -12690,10 +13228,12 @@
       "outputPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\cabuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -12726,7 +13266,7 @@
         "dependencies": {
           "Microsoft.VCRTForwarders.140": {
             "target": "Package",
-            "version": "[1.0.6, )"
+            "version": "[1.0.7, )"
           },
           "Microsoft.WinUI": {
             "target": "Package",
@@ -12747,39 +13287,39 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-arm64",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x86",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.18362.13, 10.0.18362.13]"
+            "version": "[10.0.18362.15, 10.0.18362.15]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-            "version": "[5.0.3, 5.0.3]"
+            "version": "[5.0.5, 5.0.5]"
           }
         ],
         "frameworkReferences": {
@@ -12790,7 +13330,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

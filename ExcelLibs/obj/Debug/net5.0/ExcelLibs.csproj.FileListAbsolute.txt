@@ -13,3 +13,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ref\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.pdb
