@@ -1,0 +1,17 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\WordLibs.deps.json
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\WordLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\ref\WordLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\WordLibs.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\Models.DTO.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\SACOMaintenance.Common.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\SACOMaintenance.Common.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\bin\Debug\net5.0\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.csproj.CoreCompileInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.csproj.CopyComplete
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\ref\WordLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net5.0\WordLibs.csproj.AssemblyReference.cache

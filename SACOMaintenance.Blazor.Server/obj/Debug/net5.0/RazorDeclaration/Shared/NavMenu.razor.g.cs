@@ -97,8 +97,11 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
+#line 86 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
        
+
+    private bool requestExpand;
+
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;

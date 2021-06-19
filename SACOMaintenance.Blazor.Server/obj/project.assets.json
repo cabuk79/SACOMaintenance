@@ -1899,13 +1899,29 @@
         "dependencies": {
           "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
-          "SACOMaintenance.DataAccess": "1.0.0"
+          "SACOMaintenance.DataAccess": "1.0.0",
+          "WordLibs": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
+      },
+      "WordLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WordLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordLibs.dll": {}
         }
       }
     }
@@ -6787,6 +6803,11 @@
       "type": "project",
       "path": "../SACOMaintenance.ViewModel/SACOMaintenance.ViewModel.csproj",
       "msbuildProject": "../SACOMaintenance.ViewModel/SACOMaintenance.ViewModel.csproj"
+    },
+    "WordLibs/1.0.0": {
+      "type": "project",
+      "path": "../WordLibs/WordLibs.csproj",
+      "msbuildProject": "../WordLibs/WordLibs.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6907,7 +6928,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

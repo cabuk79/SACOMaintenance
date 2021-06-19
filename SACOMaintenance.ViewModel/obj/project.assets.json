@@ -1662,6 +1662,21 @@
         "runtime": {
           "bin/placeholder/SACOMaintenance.DataAccess.dll": {}
         }
+      },
+      "WordLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WordLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordLibs.dll": {}
+        }
       }
     }
   },
@@ -6111,13 +6126,19 @@
       "type": "project",
       "path": "../SACOMaintenance.DataAccess/SACOMaintenance.DataAccess.csproj",
       "msbuildProject": "../SACOMaintenance.DataAccess/SACOMaintenance.DataAccess.csproj"
+    },
+    "WordLibs/1.0.0": {
+      "type": "project",
+      "path": "../WordLibs/WordLibs.csproj",
+      "msbuildProject": "../WordLibs/WordLibs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "ExcelLibs >= 1.0.0",
       "SACOMaintenance.Common >= 1.0.0",
-      "SACOMaintenance.DataAccess >= 1.0.0"
+      "SACOMaintenance.DataAccess >= 1.0.0",
+      "WordLibs >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6163,6 +6184,9 @@
             },
             "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj": {
               "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.DataAccess\\SACOMaintenance.DataAccess.csproj"
+            },
+            "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\WordLibs\\WordLibs.csproj": {
+              "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\WordLibs\\WordLibs.csproj"
             }
           }
         }
@@ -6191,7 +6215,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

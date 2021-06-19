@@ -6,7 +6,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Data.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\SACOMaintenance.Common.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.csprojAssemblyReference.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.AssemblyInfoInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.AssemblyInfo.cs
@@ -16,3 +15,4 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\ref\SACOMaintenance.Data.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.genruntimeconfig.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.csproj.AssemblyReference.cache

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.12.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
+    <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

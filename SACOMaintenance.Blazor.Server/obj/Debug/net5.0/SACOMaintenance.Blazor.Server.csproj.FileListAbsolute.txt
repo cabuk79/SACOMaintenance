@@ -71,7 +71,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\SACOMaintenance.Data.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\SACOMaintenance.ViewModel.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\ExcelLibs.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.csprojAssemblyReference.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.AssemblyInfoInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.AssemblyInfo.cs
@@ -158,3 +157,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\ref\SACOMaintenance.Blazor.Server.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.genruntimeconfig.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\WordLibs.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\WordLibs.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.csproj.AssemblyReference.cache

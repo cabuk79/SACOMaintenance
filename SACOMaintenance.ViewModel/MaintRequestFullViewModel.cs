@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using WordLibs;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -95,8 +96,10 @@ namespace SACOMaintenance.ViewModel
 
         public void ExportRequest()
         {
-            MaintenanceRequestsExcel exportReqList = new MaintenanceRequestsExcel();
-            exportReqList.ExportSingalReqest(maintReqInitation, RiskInfoList);
+            //MaintenanceRequestsExcel exportReqList = new MaintenanceRequestsExcel();
+            //exportReqList.ExportSingalReqest(maintReqInitation, RiskInfoList);
+            MaintenanceRequestWordExport WordExport = new MaintenanceRequestWordExport();
+            WordExport.CreateMaintenanceRequestReport(maintReqInitation);
         }
     }
 }

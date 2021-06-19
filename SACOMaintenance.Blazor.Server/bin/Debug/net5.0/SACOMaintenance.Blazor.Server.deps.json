@@ -1652,13 +1652,27 @@
         "dependencies": {
           "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
-          "SACOMaintenance.DataAccess": "1.0.0"
+          "SACOMaintenance.DataAccess": "1.0.0",
+          "WordLibs": "1.0.0"
         },
         "runtime": {
           "SACOMaintenance.ViewModel.dll": {}
         },
         "compile": {
           "SACOMaintenance.ViewModel.dll": {}
+        }
+      },
+      "WordLibs/1.0.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "runtime": {
+          "WordLibs.dll": {}
+        },
+        "compile": {
+          "WordLibs.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4206,6 +4220,11 @@
       "sha512": ""
     },
     "SACOMaintenance.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WordLibs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
