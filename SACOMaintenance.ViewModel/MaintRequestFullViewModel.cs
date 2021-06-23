@@ -14,13 +14,16 @@ namespace SACOMaintenance.ViewModel
     {
         public MaintRequestInitiation maintReqInitation { get; set; } = new();
         public ObservableCollection<MaintRequestInitiationRisk> RiskInfoList { get; set; } = new();
+        public ObservableCollection<Factory> FactoriesList { get; set; } = new();
         public IMaintRequestInitiation MaintReqDataProvider { get; }
         public IRisk RiskDataProvider { get; }
+        public IFactory FactoryDataProvider { get; }
 
-        public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider)
+        public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider, IFactory factoryDataProvider)
         {
             MaintReqDataProvider = maintReqInitProvider;
             RiskDataProvider = riskDataProvider;
+            FactoryDataProvider = factoryDataProvider;
         }
 
         public int maintReqId
@@ -62,11 +65,41 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+
+        public int maintReqFactoryId
+        {
+            get => (int)maintReqInitation.FactoryId;
+            set
+            {
+                if (maintReqInitation.FactoryId != value)
+                {
+                    maintReqInitation.Factory.Id = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
+        public string areaName
+        {
+            get => maintReqInitation.Area.AreaName;
+        }
+
+        public string factoryName
+        {
+            get => maintReqInitation.Factory.FactoryName;
+        }
+
+        public string equipName
+        {
+            get => maintReqInitation.Equipment.Name;
+        }
+
         public List<Risk> Risks
         { 
             get => maintReqInitation.Risks;
         }
 
+        
         
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -86,6 +119,12 @@ namespace SACOMaintenance.ViewModel
         {
             RiskInfoList = MaintReqDataProvider.LoadMaintRiskData(maintReqId);
             return RiskInfoList;
+        }
+
+        public ObservableCollection<Factory> LoadFactories()
+        {
+            FactoriesList = new ObservableCollection<Factory>(FactoryDataProvider.LoadAllFactories());
+            return FactoriesList;
         }
 
         public ObservableCollection<Risk> LoadRisks()

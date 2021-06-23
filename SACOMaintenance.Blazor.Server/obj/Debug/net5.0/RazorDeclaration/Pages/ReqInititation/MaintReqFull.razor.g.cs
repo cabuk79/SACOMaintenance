@@ -105,7 +105,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 71 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 92 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter] 
     public string maintReqID { get; set; }
@@ -117,6 +117,8 @@ using SACOMaintenance.Common.ModelDB;
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
         maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
+        maintReqInitation.LoadFactories();
     }
 
 #line default

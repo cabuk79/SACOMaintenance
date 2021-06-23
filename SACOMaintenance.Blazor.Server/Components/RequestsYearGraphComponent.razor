@@ -1,8 +1,8 @@
-﻿
-<h3>Number of Requests By Year</h3>
-@inject SACOMaintenance.ViewModel.Interfaces.IRequestsGraphDateViewModel requestViewModel
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IRequestsGraphDateViewModel requestViewModel
 @using System.Globalization
 
+
+<h3>Number of Requests By Year</h3>
 <RadzenChart>
     <RadzenColumnSeries Data="@statusData" CategoryProperty="yearName" Title="Year"
                         ValueProperty="yearCount"></RadzenColumnSeries>
@@ -27,14 +27,14 @@
     {
         requestViewModel.GetRequests();
 
-        foreach(var item in requestViewModel.MaintReqs)
+        foreach (var item in requestViewModel.MaintReqs)
         {
             var year = DateTime.Parse(item.DateRaised.ToString()).Year;
-            if(year == 2020)
+            if (year == 2020)
             {
                 year2020++;
             }
-            else if(year == 2021)
+            else if (year == 2021)
             {
                 year2021++;
             }
@@ -53,6 +53,6 @@
             yearCount = year2021,
             yearName = "2021"
         }
-    };
+        };
 
 }

@@ -2,7 +2,7 @@
 @using SACOMaintenance.Common.ModelDB
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
 
-<h3>MaintReqFull</h3>
+<h3>Maintenance Request @maintReqInitation.maintReqId</h3>
 
 <RadzenButton Click=@(args => maintReqInitation.ExportRequest()) Text="Create Request Form Word"
               Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
@@ -16,10 +16,31 @@
             <h3>Request For Work Information</h3>
         </div>
         <div class="row">
-            <label style="font-weight:bold">Details</label>
-            <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <strong><label>Factory:  </label></strong>@maintReqInitation.factoryName
+                    </div>
+                    <div class="col-lg-3">
+                        <strong><label>Area:   </label></strong>@maintReqInitation.areaName
+                    </div>
+                    <div class="col-lg-3">
+                        <strong><label>Equipment:   </label></strong>@maintReqInitation.equipName
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <label style="font-weight:bold">Details</label>
+                    <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
+                </div>
+            </div>            
         </div>
     </div>
+
+    
     
     <div class="container-fluid" style="border:1px solid">
         <div class="row">
@@ -79,5 +100,7 @@
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
         maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
+        maintReqInitation.LoadFactories();
     }
 }

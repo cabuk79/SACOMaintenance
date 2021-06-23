@@ -3,7 +3,7 @@
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.SignalR.Client
 
-<RadzenGrid Data="@dashboardViewModel.MaintReqsAssignedOpen" @ref="reqGrid">
+<RadzenGrid Data="@dashboardViewModel.MaintReqsAssignedOpen" @ref="reqGrid" Responsive="false" AllowColumnResize="true">
     <Columns>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Id" Width="20"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details">

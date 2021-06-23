@@ -90,7 +90,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
 using System.Globalization;
 
 #line default
@@ -119,14 +119,14 @@ using System.Globalization;
     {
         requestViewModel.GetRequests();
 
-        foreach(var item in requestViewModel.MaintReqs)
+        foreach (var item in requestViewModel.MaintReqs)
         {
             var year = DateTime.Parse(item.DateRaised.ToString()).Year;
-            if(year == 2020)
+            if (year == 2020)
             {
                 year2020++;
             }
-            else if(year == 2021)
+            else if (year == 2021)
             {
                 year2021++;
             }
@@ -145,7 +145,7 @@ using System.Globalization;
             yearCount = year2021,
             yearName = "2021"
         }
-    };
+        };
 
 
 #line default

@@ -90,14 +90,14 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
 using Microsoft.AspNetCore.SignalR.Client;
 
 #line default
@@ -112,20 +112,13 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 94 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 81 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
-    //static event Action OnChange;
-
-    //void Refresh() => InvokeAsync(StateHasChanged);
-    //override protected void OnInitialized() => OnChange += Refresh;
-    //void IDisposable.Dispose() => OnChange -= Refresh;
-
+  
     private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
-    {
-        //book = await Http.GetFromJsonAsync<Book>("api/books/" + id);
-
+    {  
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
             .Build();
@@ -136,12 +129,11 @@ using Microsoft.AspNetCore.SignalR.Client;
     protected async Task UpdateBook()
     {
         AddReqViewModel.AddNewRequest();
-        //await Http.PutAsJsonAsync("api/books/" + id, book);
+     
         if (IsConnected) await SendMessage();
-        //NavigationManager.NavigateTo("listbooks");
 
-        ShowNotification(new NotificationMessage 
-        { 
+        ShowNotification(new NotificationMessage
+        {
             Severity = NotificationSeverity.Success,
             Summary = "Saved",
             Detail = "New maintenance request saved to database!",
@@ -152,8 +144,6 @@ using Microsoft.AspNetCore.SignalR.Client;
     void ShowNotification(NotificationMessage message)
     {
         NotificationService.Notify(message);
-
-        //console.Log($"{message.Severity} notification");
     }
 
     Task SendMessage() => hubConnection.SendAsync("SendMessage");
@@ -165,10 +155,6 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
         _ = hubConnection.DisposeAsync();
     }
-
-
-
-
 
 #line default
 #line hidden

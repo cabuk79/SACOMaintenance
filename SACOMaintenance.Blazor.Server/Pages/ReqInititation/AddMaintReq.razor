@@ -1,25 +1,18 @@
 ﻿@page "/maint-req/add"
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel
-@using SACOMaintenance.Common.ModelDB
 @inject NotificationService NotificationService
-
-
-
-
-@using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager NavigationManager
-@*@using SACOMaintenance.DataAccess.Interfaces
-    @inject IArea AreaDataProvider
-    @inject IFactory FactoryDataProvider
-    @inject ICompany CompanyDataProvider
-    @inject IPPE PpeDataProvider
-    @inject IEquipment EquipmentDataProvider*@
+@using SACOMaintenance.Common.ModelDB
+@using Microsoft.AspNetCore.SignalR.Client
 
 <RadzenNotification></RadzenNotification>
 
 <div class="row">
-    <h3>Add New Maintenance Request</h3>
     <div class="container-fluid">
+        <div>
+            <h3>Add New Maintenance Request</h3>
+        </div>
+        
         <div>
             <EditForm Model="AddReqViewModel.MaintReq">
                 <div class="form-group">
@@ -28,15 +21,6 @@
                         <InputTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" class="form-control" placeholder="Enter the details of the request"></InputTextArea>
                     </div>
                 </div>
-                @*<div class="form-group-row">
-                    <label style="font-weight:bold">Company</label>
-                    <InputSelect id="company" class="form-control" @bind-Value="@MaintReqInit.CompanyId" placeholder="Select a company">
-                        @foreach (var company in CompanyList)
-                        {
-                            <option value="@company.Id">@company.CompantName</option>
-                        }
-                    </InputSelect>
-                </div>*@
                 <div class="form-group-row">
                     <div class="row">
                         <div class="col-lg-4">
@@ -47,63 +31,59 @@
                                             AllowFiltering="true"
                                             Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id">
                             </RadzenDropDown>
+                            <p>If the factory you want is not in the list contact maintenance!</p>
                         </div>
-
-
-
                         @if (AddReqViewModel.Areas != null)
                         {
-                            <div class="col-lg-4">
-                                <label style="font-weight:bold">Area</label>
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
-                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
-                                                AllowFiltering="true"
-                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName" ValueProperty="Id">
-                                </RadzenDropDown>
-                            </div>
+                            var numberAreasEquipment = AddReqViewModel.Areas.Count();
+                            if (numberAreasEquipment > 0)
+                            {
+                                <div class="col-lg-4">
+                                    <label style="font-weight:bold">Area</label>
+                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                    @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
+                                                    AllowFiltering="true"
+                                                    Data="@AddReqViewModel.Areas" TextProperty="AreaName" ValueProperty="Id">
+                                    </RadzenDropDown>
+                                    <p>If the area is want is not in the list contact maintenance!</p>
+                                </div>
+                            }
                         }
 
                         @if (AddReqViewModel.Equipment != null)
                         {
-                            <div class="col-lg-4">
-                                <label style="font-weight:bold">Equipment</label>
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
-                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
-                                                AllowFiltering="true"
-                                                Data=@AddReqViewModel.Equipment TextProperty="Name" ValueProperty="Id">
-                                </RadzenDropDown>
-                            </div>
-                            <div class="col-lg-4">
-                                If the equipment is not there contact maintenance!
-                            </div>
+                            var numberEuipmentItems = AddReqViewModel.Equipment.Count();
+                            if (numberEuipmentItems > 0)
+                            {
+                                <div class="col-lg-4">
+                                    <label style="font-weight:bold">Equipment</label>
+                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                    @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
+                                                    AllowFiltering="true"
+                                                    Data=@AddReqViewModel.Equipment TextProperty="Name" ValueProperty="Id">
+                                    </RadzenDropDown>
+                                    <p>If the equipment is not there contact maintenance!</p>
+                                </div>
+                            }
                         }
                     </div>
                 </div>
             </EditForm>
+            <div class="area-button-group">
+                <RadzenButton Click="@UpdateBook" Text="Save New Request" Icon="save" Style="margin-bottom: 20px; width: 200px" />
+            </div>
         </div>
-        <div class="area-button-group">
-            <RadzenButton Click="@UpdateBook" Icon="save" Style="margin-bottom: 20px; width: 80px" Text="Save New Request" />
-            @*<a type="submit" class="btn btn-outline-primary" @onclick="@UpdateBook">Save</a>*@               @*AddReqViewModel.AddNewRequest">Save</a>*@
-        </div>
-
     </div>
 </div>
 
 @code {
-    //static event Action OnChange;
-
-    //void Refresh() => InvokeAsync(StateHasChanged);
-    //override protected void OnInitialized() => OnChange += Refresh;
-    //void IDisposable.Dispose() => OnChange -= Refresh;
-
+  
     private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
-    {
-        //book = await Http.GetFromJsonAsync<Book>("api/books/" + id);
-
+    {  
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
             .Build();
@@ -114,12 +94,11 @@
     protected async Task UpdateBook()
     {
         AddReqViewModel.AddNewRequest();
-        //await Http.PutAsJsonAsync("api/books/" + id, book);
+     
         if (IsConnected) await SendMessage();
-        //NavigationManager.NavigateTo("listbooks");
 
-        ShowNotification(new NotificationMessage 
-        { 
+        ShowNotification(new NotificationMessage
+        {
             Severity = NotificationSeverity.Success,
             Summary = "Saved",
             Detail = "New maintenance request saved to database!",
@@ -130,8 +109,6 @@
     void ShowNotification(NotificationMessage message)
     {
         NotificationService.Notify(message);
-
-        //console.Log($"{message.Severity} notification");
     }
 
     Task SendMessage() => hubConnection.SendAsync("SendMessage");
@@ -143,8 +120,4 @@
     {
         _ = hubConnection.DisposeAsync();
     }
-
-
-
-
 }

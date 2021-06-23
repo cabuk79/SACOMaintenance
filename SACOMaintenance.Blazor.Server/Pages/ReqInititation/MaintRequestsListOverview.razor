@@ -4,17 +4,17 @@
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.SignalR.Client
 
-<h3>List of All Maintenance Requests</h3>
+<h3>All Maintenance Requests</h3>
 
 <RadzenButton Click=@(args => @maintReqListViewModel.ExportList()) Text="Export All Requests" 
                Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
 <RadzenGrid Data="@maintReqListViewModel.requests" @ref="maintGrid" AllowSorting="true"
             AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-            FilterMode="FilterMode.Advanced"
+            FilterMode="FilterMode.Advanced" AllowColumnResize="true"
              AllowPaging="true">
     <Columns>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
+        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number" Width="50px"></RadzenGridColumn>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details">
             <Template Context="data">
                 <p style="white-space:pre-wrap">@data.RequestDetails</p>
