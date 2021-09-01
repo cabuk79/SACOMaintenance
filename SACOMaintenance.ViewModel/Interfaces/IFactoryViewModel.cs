@@ -11,6 +11,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         IFactory FactoryDataProvider { get; }
         ObservableCollection<Factory> factories { get; set; }
 
+        //public ObservableCollection<Equipment> areasList { get; set; }
 
         public int FactoryId { get; }
         public string FactoryName { get; set; }

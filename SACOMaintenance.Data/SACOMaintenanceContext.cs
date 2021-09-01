@@ -23,6 +23,9 @@ namespace SACOMaintenance.Data
         public DbSet<Risk> Risks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Status> Statuses { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Part> Parts { get; set; }
+        public DbSet<PartSupplier> PartSuppliers { get; set; }
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {
@@ -44,6 +47,9 @@ namespace SACOMaintenance.Data
                 .UsingEntity<MaintRequestInitiationRisk>
                 (mr => mr.HasOne<Risk>().WithMany(),
                 mm => mm.HasOne<MaintRequestInitiation>().WithMany());
+
+            modelBuilder.Entity<PartSupplier>()
+                .Property(e => e.Price).HasPrecision(18, 4);
         }        
     }
 }

@@ -26,6 +26,8 @@ namespace SACOMaintenance.ViewModel
 
         public ObservableCollection<Factory> factories { get; set; } = new();
 
+        //public ObservableCollection<AreaModel> areasList { get; set; } = new();
+
         public int FactoryId
         {
             get => factory.Id;

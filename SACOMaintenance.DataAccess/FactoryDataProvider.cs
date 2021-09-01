@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
@@ -42,7 +43,10 @@ namespace SACOMaintenance.DataAccess
 
         public Factory ViewSingleFactory(int Id)
         {
-            var factory = _factoryDBContext.Factories.FirstOrDefault(i => i.Id == Id);
+            var factory = _factoryDBContext.Factories
+                .Where(i => i.Id == Id)
+                .Include(a => a.Areas)
+                .FirstOrDefault();
             return factory;
 
         }

@@ -17,6 +17,7 @@ namespace SACOMaintenance.Common.ModelDB
         public int? AreaId { get; set; } //FK to the area table
         public AreaModel Area { get; set; }
         public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
+        public List<Part> Parts { get; set; } = new List<Part>();
 
     }
 }

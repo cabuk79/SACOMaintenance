@@ -36,8 +36,19 @@
                     </div>
 
                 </section>
+
+                <div class="row">
+                    <RadzenGrid Data="@factoryViewModel.factory.Areas">
+                        <Columns>
+                            <RadzenGridColumn TItem="AreaModel" Property="Id" Title="Id" Width="50px"></RadzenGridColumn>
+                            <RadzenGridColumn TItem="AreaModel" Property="AreaName" Title="Area Name"></RadzenGridColumn>
+                            <RadzenGridColumn TItem="AreaModel" Property="CommentsNotes" Title="Comments/Notes"></RadzenGridColumn>
+                        </Columns>
+                    </RadzenGrid>
+                </div>
             </div>
         </div>
+        
     </div>
 </div>
 
