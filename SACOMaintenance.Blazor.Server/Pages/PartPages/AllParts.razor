@@ -1,0 +1,61 @@
+﻿@page "/parts-list"
+@inject SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>All Parts</h3>
+
+
+<RadzenGrid Data="@partViewModel.parts"
+            SelectionMode="DataGridSelectionMode.Single" TItem="Part"
+            CellRender="@CellRenderQty">
+    <Columns>
+        <RadzenGridColumn TItem="Part" Property="Id" Title="ID"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Part" Property="Name" Title="Part Name"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Part" Property="Comment" Title="Comments"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Part" Property="CurrentQty" Title="Stock Qty">
+            <Template Context="data">
+                @if (data.CurrentQty > data.MinQtyInStock)
+                {
+                    <span style='color:black'>@data.CurrentQty</span>
+                }
+                else
+                {
+                    <span style='color:white'>@data.CurrentQty</span>
+                }
+            </Template>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Part" Property="MinQtyInStock" Title="Minimum Qty"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Part" Property="Id" Title="View Full Details">
+            <Template Context="data">
+                <a href="@($"part/full/{data.Id}")" class="btn btn-primary table-btn">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </Template>
+        </RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+<br />
+@*<RadzenGrid Data="@partViewModel.parts.FirstOrDefault()?.SupplierParts" TItem="PartSupplier">
+        <Columns>
+            <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
+        </Columns>
+    </RadzenGrid>*@
+
+@code {
+   
+    protected override async Task OnInitializedAsync()
+    {
+        partViewModel.LoadAllParts();
+    }
+
+    public void CellRenderQty(Radzen.CellRenderEventArgs<Part> args)
+    {
+
+        if (args.Column.Property == "CurrentQty")
+        {
+            args.Attributes.Add("style", $"background-color: {(args.Data.CurrentQty < args.Data.MinQtyInStock ? "red" : "white")};");
+        }
+
+    }
+}
+

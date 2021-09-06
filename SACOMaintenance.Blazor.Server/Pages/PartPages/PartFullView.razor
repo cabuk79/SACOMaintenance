@@ -1,0 +1,42 @@
+﻿@page "/part/full/{Id}"
+@inject SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>Full Part @partViewModel.SelectedPart.Name</h3>
+
+<RadzenGrid Data="partViewModel.SelectedPart.SupplierParts" TItem="PartSupplier">
+    <Columns>
+        <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="SupplierCode" Title="Supplier Code"></RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="PartSupplierSingle.Name" Title="Supplier">
+            <Template Context="data">
+                @foreach (var supp in partViewModel.suppliers)
+                {
+                    if (supp.Id == data.SupplierId)
+                    {
+                        @supp.Name;
+                    }
+                }
+            </Template>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="Price" Title="Last Price"></RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="SupplierId" Title="Actions">
+            <Template Context="data">
+                <a href="@($"supplier/full/{data.SupplierId}")" class="btn btn-primary table-btn">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </Template>
+        </RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override void OnInitialized()
+    {
+        partViewModel.LoadSinglePart(Convert.ToInt32(Id));
+    }
+}

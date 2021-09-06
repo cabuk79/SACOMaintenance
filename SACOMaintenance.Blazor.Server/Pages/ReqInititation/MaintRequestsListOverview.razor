@@ -9,7 +9,9 @@
 <RadzenButton Click=@(args => @maintReqListViewModel.ExportList()) Text="Export All Requests" 
                Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
-<RadzenGrid Data="@maintReqListViewModel.requests" @ref="maintGrid" AllowSorting="true"
+<RadzenGrid Data="@maintReqListViewModel.requests" 
+            SelectionMode="DataGridSelectionMode.Single"
+            @ref="maintGrid" AllowSorting="true"
             AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
             FilterMode="FilterMode.Advanced" AllowColumnResize="true"
              AllowPaging="true">

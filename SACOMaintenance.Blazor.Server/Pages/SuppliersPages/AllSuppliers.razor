@@ -1,0 +1,21 @@
+﻿@page "/suppliers-list"
+@inject SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>All Suppliers</h3>
+
+<RadzenGrid Data="@supplierViewModel.suppliers">
+    <Columns>
+        <RadzenGridColumn TItem="Supplier" Property="Id" Title="ID" Width="30px"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Supplier" Property="Name" Title="Name" Width="250px"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        supplierViewModel.LoadAllSuppliers();
+    }
+}

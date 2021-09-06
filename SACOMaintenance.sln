@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models.DTO", "Models.DTO\Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelLibs", "ExcelLibs\ExcelLibs.csproj", "{4B80087E-360F-44A8-A803-226E46D19A90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordLibs", "WordLibs\WordLibs.csproj", "{331C9386-1749-4980-B819-41E2C7DFEA27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordLibs", "WordLibs\WordLibs.csproj", "{331C9386-1749-4980-B819-41E2C7DFEA27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

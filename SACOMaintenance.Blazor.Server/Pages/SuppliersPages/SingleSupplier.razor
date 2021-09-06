@@ -1,0 +1,24 @@
+﻿@page "/supplier/full/{Id}"
+@inject SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>Showing Information for @supplierViewModel.SelectedSupplier.Name</h3>
+
+<RadzenGrid Data="supplierViewModel.SelectedSupplier.SupplierParts" TItem="PartSupplier">
+    <Columns>
+        <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="SupplierCode" Title="Supplier Code"></RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="Part.Name" Title="Name"></RadzenGridColumn>
+        <RadzenGridColumn TItem="PartSupplier" Property="Price" Title="Last Price"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override void OnInitialized()
+    {
+        supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
+    }
+}

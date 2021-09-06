@@ -355,7 +355,7 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("SupplierCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SupplierId")
+                    b.Property<int>("SupplierId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -700,11 +700,15 @@ namespace SACOMaintenance.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SACOMaintenance.Common.ModelDB.Supplier", null)
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Supplier", "PartSupplierSingle")
                         .WithMany("SupplierParts")
-                        .HasForeignKey("SupplierId");
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Part");
+
+                    b.Navigation("PartSupplierSingle");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.PlantRequest", b =>
