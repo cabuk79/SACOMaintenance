@@ -26,6 +26,10 @@ namespace SACOMaintenance.Data
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Part> Parts { get; set; }
         public DbSet<PartSupplier> PartSuppliers { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {

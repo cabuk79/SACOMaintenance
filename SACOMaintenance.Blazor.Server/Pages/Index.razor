@@ -1,39 +1,72 @@
 ﻿@page "/"
 @using SACOMaintenance.Blazor.Server.Pages.Dashboard
-@using SACOMaintenance.Blazor.Server.Components 
-
-<h1>SACO Maintenance Application</h1>
-
-<h1>Dashboard</h1>
-
-<div class="row">
-    <div class="col-lg-6">
-        <RequestsGraph></RequestsGraph>
-    </div>
-    <div class="col-lg-6">
-        <RequestsYearGraphComponent></RequestsYearGraphComponent>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <RequestsMonthYearGraphComponent></RequestsMonthYearGraphComponent>
-    </div>
-</div>
+@using SACOMaintenance.Blazor.Server.Components
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col">
+            <h1>SACO Maintenance Application</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><TotalOpenMaintReqs></TotalOpenMaintReqs></div>
+        <div class="col-lg-4"><NewMaintReqs></NewMaintReqs></div>
+        <div class="col-lg-4"><TotalMaintReqCurrentYear></TotalMaintReqCurrentYear></div>
+    </div>
+    <div class="row" >
+        <div class="col-lg-12 h-50">
             <h2>New Requests UnAssigned</h2>
             <MaintReqUnassigned></MaintReqUnassigned>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
-            <h2>Open Requests - Assigned</h2>
-            <MaintReqAssignedOpen></MaintReqAssignedOpen>
-        </div>
+        <div class="col-lg-6"><RequestsGraph></RequestsGraph></div>
+        <div class="col-lg-6"><RequestsYearGraphComponent></RequestsYearGraphComponent></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><RequestsMonthYearGraphComponent></RequestsMonthYearGraphComponent></div>
     </div>
 </div>
+
+<RadzenCard>
+
+</RadzenCard>
+
+
+
+    @*<div class="row">
+            <div class="col-lg-6">
+                <RequestsGraph></RequestsGraph>
+            </div>
+            <div class="col-lg-6">
+                <RequestsYearGraphComponent></RequestsYearGraphComponent>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <RequestsMonthYearGraphComponent></RequestsMonthYearGraphComponent>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>New Requests UnAssigned</h2>
+                    <MaintReqUnassigned></MaintReqUnassigned>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Open Requests - Assigned</h2>
+                    <MaintReqAssignedOpen></MaintReqAssignedOpen>
+                </div>
+            </div>
+        </div>*@
 
 

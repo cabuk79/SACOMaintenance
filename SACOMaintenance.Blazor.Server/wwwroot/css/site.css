@@ -216,4 +216,25 @@ app {
     }
 
 
+    /* Dashboard number counter containers */
+    .containerDashNumberCount {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: block;
+        position: relative;
+        border: solid 2px #6e7491;
+        padding: 1px 1px;
+        /*min-width: 300px;
+        max-width: 300px;*/
+        width: 300px;
+        margin: 10px auto 0;
+    }
+
+    .containerDashNumberCountNumber {
+        color: darkblue;
+        font-size: 30px;
+    }
+
 }

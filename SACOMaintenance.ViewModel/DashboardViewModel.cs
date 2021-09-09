@@ -12,6 +12,8 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; } = new();
         public IMaintRequestInitiation MaintReqDataProvider { get; }
         public ObservableCollection<MaintRequestInitiation> MaintReqsAssignedOpen { get; set; } = new();
+        public ObservableCollection<MaintRequestInitiation> MaintReqsNew { get; set; } = new();
+        public ObservableCollection<MaintRequestInitiation> MaintReqCurrentYear { get; set; } = new();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -33,6 +35,17 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+        public void LoadNewReqs()
+        {
+            var list = MaintReqDataProvider.LoadNewRequests();
+            MaintReqsNew.Clear();
+
+            foreach(var item in list)
+            {
+                MaintReqsNew.Add(item);
+            }
+        }
+
         public void LoadAssignedOpenReqs()
         {
             var list = MaintReqDataProvider.LoadReqsAssignedOpen();
@@ -49,6 +62,15 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
+        public void LoadReqsCurrentYear()
+        {
+            var list = MaintReqDataProvider.LoadAllRequestsCurrentYear();
+            MaintReqCurrentYear.Clear();
+
+            foreach(var item in list)
+            {
+                MaintReqCurrentYear.Add(item);
+            }
+        }
     }
 }

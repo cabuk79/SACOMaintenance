@@ -1,0 +1,23 @@
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel
+@using SACOMaintenance.Common.ModelDB
+
+
+<div class="containerDashNumberCount">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title" align="center">Total Request for @DateTime.Now.Year</h4>
+            <p class="card-text, containerDashNumberCountNumber" align="center"><containerDashNumberCountNumber>@dashboardViewModel.MaintReqCurrentYear.Count</containerDashNumberCountNumber></p>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        dashboardViewModel.LoadReqsCurrentYear();
+    }
+}

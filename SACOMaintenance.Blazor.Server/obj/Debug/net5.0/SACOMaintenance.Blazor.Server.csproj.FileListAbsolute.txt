@@ -168,3 +168,9 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\PartPages\PartFullView.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Pages\SuppliersPages\SingleSupplier.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\SuppliersPages\SingleSupplier.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Components\TotalOpenMaintReqs.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\TotalOpenMaintReqs.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Components\NewMaintReqs.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\NewMaintReqs.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Components\TotalMaintReqCurrentYear.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\TotalMaintReqCurrentYear.razor.g.cs

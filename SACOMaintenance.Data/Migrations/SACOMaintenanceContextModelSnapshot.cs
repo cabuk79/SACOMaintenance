@@ -102,6 +102,24 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("Companies");
                 });
 
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Department", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Departments");
+                });
+
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Equipment", b =>
                 {
                     b.Property<int>("Id")
@@ -290,6 +308,65 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("MaintRequestInitiationRisk");
                 });
 
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PartId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Qty")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("PartId");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.PPE", b =>
                 {
                     b.Property<int>("Id")
@@ -333,7 +410,12 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PartId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PartId");
 
                     b.ToTable("Parts");
                 });
@@ -692,6 +774,51 @@ namespace SACOMaintenance.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Order", b =>
+                {
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Department", "Departme")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Departme");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.OrderItem", b =>
+                {
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Part", "Part")
+                        .WithMany()
+                        .HasForeignKey("PartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Part");
+                });
+
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Part", b =>
+                {
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Part", null)
+                        .WithMany("Parts")
+                        .HasForeignKey("PartId");
+                });
+
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.PartSupplier", b =>
                 {
                     b.HasOne("SACOMaintenance.Common.ModelDB.Part", "Part")
@@ -746,8 +873,15 @@ namespace SACOMaintenance.Data.Migrations
                     b.Navigation("MaintRequestInitiations");
                 });
 
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Order", b =>
+                {
+                    b.Navigation("OrderItems");
+                });
+
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Part", b =>
                 {
+                    b.Navigation("Parts");
+
                     b.Navigation("SupplierParts");
                 });
 

@@ -112,6 +112,14 @@ namespace SACOMaintenance.DataAccess
             return maintReqInitationList;
         }
 
+        public IEnumerable<MaintRequestInitiation> LoadAllRequestsCurrentYear()
+        {
+            var currentYear = DateTime.Now.Year;
+
+            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(d => d.DateRaised.Year == currentYear).ToList();
+            return maintReqInitationList;
+        }
+
         public IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen()
         {
             var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)

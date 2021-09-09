@@ -3,70 +3,73 @@
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.SignalR.Client
 
-
-<RadzenGrid Data="@dashboardViewModel.MaintReqs" @ref="reqGrid" Responsive="false" AllowColumnResize="true">
-    <Columns>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Id" Width="50px"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details">
-            <Template Context="data">
-                <p style="white-space:pre-wrap">@data.RequestDetails</p>
-            </Template>
-        </RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Origin Date" Width="200px"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions" Width="50px">
-            <Template Context="data">
-                <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
-                    <i class="fa fa-pencil-square"></i>
-                </a>
-            </Template>
-        </RadzenGridColumn>
-    </Columns>
-</RadzenGrid>
-
-
-
-
-
-@code{
+<div class="card">
+    <div class="card-body">
+        <RadzenGrid Data="@dashboardViewModel.MaintReqs" @ref="reqGrid" Responsive="false" AllowColumnResize="true" AllowPaging="true" PageSize="5"
+                    FilterMode="FilterMode.Advanced" AllowSorting="true">
+            <Columns>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Id" Width="50px"></RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details" Width="200px">
+                    <Template Context="data">
+                        <p style="white-space:pre-wrap">@data.RequestDetails</p>
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Origin Date" Width="100px" Filterable="true"></RadzenGridColumn>
+                <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions" Width="50px" Sortable="false">
+                    <Template Context="data">
+                        <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
+                            <i class="fa fa-pencil-square"></i>
+                        </a>
+                    </Template>
+                </RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
+    </div>
+</div>
 
 
-    private HubConnection hubConnection;
-    public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        dashboardViewModel.LoadMaintReqs();
 
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-            .Build();
+        @code{
 
-        hubConnection.On("ReceiveMessage", () =>
-        {
-            CallLoadData();
-            reqGrid.Reload();
-            InvokeAsync(() => StateHasChanged());
-        });
 
-        await hubConnection.StartAsync();
+            private HubConnection hubConnection;
+            public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
 
-        dashboardViewModel.LoadMaintReqs();
-    }
+            protected override async Task OnInitializedAsync()
+            {
+                dashboardViewModel.LoadMaintReqs();
 
-    private void CallLoadData()
-    {
-        Task.Run(async () =>
-        {
-            dashboardViewModel.LoadMaintReqs();
-        });
-    }
+                hubConnection = new HubConnectionBuilder()
+                    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+                    .Build();
 
-    public bool IsConnected =>
-        hubConnection.State == HubConnectionState.Connected;
+                hubConnection.On("ReceiveMessage", () =>
+                {
+                    CallLoadData();
+                    reqGrid.Reload();
+                    InvokeAsync(() => StateHasChanged());
+                });
 
-    public void Dispose()
-    {
-        _ = hubConnection.DisposeAsync();
-    }
+                await hubConnection.StartAsync();
 
-}
+                dashboardViewModel.LoadMaintReqs();
+            }
+
+            private void CallLoadData()
+            {
+                Task.Run(async () =>
+                {
+                    dashboardViewModel.LoadMaintReqs();
+                });
+            }
+
+            public bool IsConnected =>
+                hubConnection.State == HubConnectionState.Connected;
+
+            public void Dispose()
+            {
+                _ = hubConnection.DisposeAsync();
+            }
+
+        }

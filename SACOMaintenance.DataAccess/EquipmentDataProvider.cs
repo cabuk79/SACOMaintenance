@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -56,7 +57,10 @@ namespace SACOMaintenance.DataAccess
 
         public Equipment ViewSingleEquipment(int equipmentId)
         {
-            var equipment = _equipmentDBContext.Equipment.FirstOrDefault(i => i.Id == equipmentId);
+            var equipment = _equipmentDBContext.Equipment
+                .Where(i => i.Id == equipmentId)
+                .Include(p => p.Parts)
+                .FirstOrDefault();
             return equipment;
         }
     }

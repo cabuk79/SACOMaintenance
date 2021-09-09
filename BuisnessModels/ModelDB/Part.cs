@@ -15,5 +15,6 @@ namespace SACOMaintenance.Common.ModelDB
         public int CurrentQty { get; set; }
         public List<Equipment> Equipment { get; set; } = new List<Equipment>();
         public List<PartSupplier> SupplierParts { get; set; } = new List<PartSupplier>();
+        public List<Part> Parts { get; set; } = new List<Part>();
     }
 }
