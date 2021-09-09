@@ -318,8 +318,14 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SupplierId")
                         .HasColumnType("int");
@@ -349,7 +355,7 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PartId")
+                    b.Property<int?>("PartId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -803,9 +809,7 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasOne("SACOMaintenance.Common.ModelDB.Part", "Part")
                         .WithMany()
-                        .HasForeignKey("PartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PartId");
 
                     b.Navigation("Order");
 

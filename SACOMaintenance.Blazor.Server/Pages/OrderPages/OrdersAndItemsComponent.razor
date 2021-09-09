@@ -1,0 +1,34 @@
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IOrderViewModel orderViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<RadzenGrid Data="@orderViewModel.Orders" TItem="Order" ExpandMode="DataGridExpandMode.Single">
+    <Template Context="order">
+        <RadzenGrid Data="@order.OrderItems" TItem="OrderItem">
+            <Columns>
+                <RadzenGridColumn TItem="OrderItem" Property="Id" Title="ID"></RadzenGridColumn>
+                <RadzenGridColumn TItem="OrderItem" Property="ItemName" Title="Item Name"></RadzenGridColumn>
+                <RadzenGridColumn TItem="OrderItem" Property="Qty" Title="Qty"></RadzenGridColumn>
+                <RadzenGridColumn TItem="OrderItem" Property="Price" Title="Price"></RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
+    </Template>    
+    <Columns>
+        <RadzenGridColumn TItem="Order" Property="Id" Title="ID"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Order" Property="Description" Title="Description"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Order" Property="Date" Title="Date"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        orderViewModel.LoadAllOrders();
+    }
+
+    //void RowRender(RowRenderEventArgs<Order> args)
+    //{
+    //    args.Expandable = args.Data.ShipCountry == "France" || args.Data.ShipCountry == "Brazil";
+    //}
+}

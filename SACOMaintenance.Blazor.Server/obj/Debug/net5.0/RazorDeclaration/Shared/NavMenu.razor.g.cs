@@ -104,7 +104,7 @@ using Radzen.Blazor.Rendering;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 96 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
+#line 101 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
        
 
     private bool requestExpand;

@@ -15,7 +15,7 @@ namespace SACOMaintenance.Common.ModelDB
         public decimal Price { get; set; }
         public int OrderId { get; set; }
         public Order Order { get; set; }
-        public int PartId { get; set; }
+        public int? PartId { get; set; }
         public Part Part { get; set; }
 
     }
