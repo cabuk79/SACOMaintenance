@@ -112,7 +112,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
+#line 47 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
        
     [Parameter]
     public string Id { get; set; }
@@ -120,6 +120,23 @@ using SACOMaintenance.Common.ModelDB;
     protected override void OnInitialized()
     {
         partViewModel.LoadSinglePart(Convert.ToInt32(Id));
+    }
+
+    public void openDrawing(string fileLocation)
+    {
+
+        var p = new System.Diagnostics.Process();
+
+        p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+        {
+            UseShellExecute = true
+        };
+
+        p.Start();
+
+
+        //..System.Diagnostics.Process.Start(fileLocation);
+        //System.IO.File.OpenText(fileLocation);
     }
 
 #line default

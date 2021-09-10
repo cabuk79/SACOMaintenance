@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SACOMaintenance.Data;
 
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    partial class SACOMaintenanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210910095804_Added TechnicalDrawingsLocation model and added List of drawings into PArt model")]
+    partial class AddedTechnicalDrawingsLocationmodelandaddedListofdrawingsintoPArtmodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -658,7 +660,7 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasIndex("PartId");
 
-                    b.ToTable("TechnicalDrawingsLocations");
+                    b.ToTable("TechnicalDrawingsLocation");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.User", b =>

@@ -24,6 +24,7 @@ namespace SACOMaintenance.DataAccess
             var singlePart = _sacoMaintenanceContext.Parts
                 .Where(i => i.Id == Id)
                 .Include(s => s.SupplierParts)
+                .Include(d => d.Drawings)
                 .FirstOrDefault();
             return singlePart;
         }

@@ -29,6 +29,7 @@ namespace SACOMaintenance.Data
         public DbSet<Department> Departments { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<TechnicalDrawingsLocation> TechnicalDrawingsLocations { get; set; }
 
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)

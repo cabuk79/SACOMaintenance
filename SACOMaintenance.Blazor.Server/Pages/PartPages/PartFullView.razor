@@ -4,6 +4,18 @@
 
 <h3>Full Part @partViewModel.SelectedPart.Name</h3>
 
+<RadzenGrid Data="partViewModel.SelectedPart.Drawings" TItem="TechnicalDrawingsLocation">
+    <Columns>
+        <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="Id" Title="ID"></RadzenGridColumn>
+        <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="DrawingFileLocation" Title="Location"></RadzenGridColumn>
+        <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="DrawingFileLocation" Title="Action">
+            <Template Context="drawingData">
+                <RadzenButton Click=@(args => openDrawing(drawingData.DrawingFileLocation)) Text="View Drawing" ></RadzenButton>
+            </Template>
+        </RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
 <RadzenGrid Data="partViewModel.SelectedPart.SupplierParts" TItem="PartSupplier">
     <Columns>
         <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
@@ -31,6 +43,7 @@
 </RadzenGrid>
 
 
+
 @code {
     [Parameter]
     public string Id { get; set; }
@@ -38,5 +51,18 @@
     protected override void OnInitialized()
     {
         partViewModel.LoadSinglePart(Convert.ToInt32(Id));
+    }
+
+    public void openDrawing(string fileLocation)
+    {
+
+        var p = new System.Diagnostics.Process();
+
+        p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+        {
+            UseShellExecute = true
+        };
+
+        p.Start();
     }
 }

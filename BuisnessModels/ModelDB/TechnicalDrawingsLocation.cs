@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace SACOMaintenance.Common.ModelDB
 {
-    public class MachineType
+    public class TechnicalDrawingsLocation
     {
         public int Id { get; set; }
-        public string TypeName { get; set; }
-        public string Description { get; set; }
-        public List<Equipment> EquipmentList { get; set; } = new();
+        public int PartId { get; set; }
+        public string DrawingFileLocation { get; set; }
     }
 }

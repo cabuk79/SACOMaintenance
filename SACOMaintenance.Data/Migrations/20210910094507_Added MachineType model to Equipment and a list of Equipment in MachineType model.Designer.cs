@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SACOMaintenance.Data;
 
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    partial class SACOMaintenanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210910094507_Added MachineType model to Equipment and a list of Equipment in MachineType model")]
+    partial class AddedMachineTypemodeltoEquipmentandalistofEquipmentinMachineTypemodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -641,26 +643,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("Suppliers");
                 });
 
-            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.TechnicalDrawingsLocation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DrawingFileLocation")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PartId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PartId");
-
-                    b.ToTable("TechnicalDrawingsLocations");
-                });
-
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.User", b =>
                 {
                     b.Property<int>("Id")
@@ -890,15 +872,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.Navigation("PlantRequest");
                 });
 
-            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.TechnicalDrawingsLocation", b =>
-                {
-                    b.HasOne("SACOMaintenance.Common.ModelDB.Part", null)
-                        .WithMany("Drawings")
-                        .HasForeignKey("PartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Company", b =>
                 {
                     b.Navigation("MaintenanceRequestIniations");
@@ -928,8 +901,6 @@ namespace SACOMaintenance.Data.Migrations
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Part", b =>
                 {
-                    b.Navigation("Drawings");
-
                     b.Navigation("Parts");
 
                     b.Navigation("SupplierParts");

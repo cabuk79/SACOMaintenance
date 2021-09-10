@@ -15,7 +15,6 @@ namespace ExcelLibs
         {
             var template = new XLTemplate(@"C:\Excel Export Test\TestRequest.xlsx");
 
-
             template.AddVariable(maintReqSingle);
             template.Generate();
             template.SaveAs(@"C:\Excel Export Test\New Report " + maintReqSingle.Id + ".xlsx");
