@@ -1,18 +1,25 @@
 ﻿@inject SACOMaintenance.ViewModel.Interfaces.IEquipmentListViewModel equipmentListViewModel
 @using SACOMaintenance.Common.ModelDB
+@using System.Text.RegularExpressions
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.SignalR.Client
 
 <h3>List of Equipment</h3>
 
-<RadzenGrid Data="@equipmentListViewModel.EquipmentList">
+<RadzenGrid Data="@equipmentListViewModel.EquipmentList" AllowColumnResize="true" AllowPaging="true" PageSize="10" 
+            AllowSorting="true" FilterMode="FilterMode.Advanced" FilterCaseSensitivity="FilterCaseSensitivity.Default">
     <Columns>
-        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Id"></RadzenGridColumn>
-        <RadzenGridColumn TItem="Equipment" Property="Name" Title="Name"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Id" TextAlign="TextAlign.Center"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Name" Title="Name" Filterable="true"></RadzenGridColumn>
         <RadzenGridColumn TItem="Equipment" Property="Description" Title="Description"></RadzenGridColumn>
-        <RadzenGridColumn TItem="Equipment" Property="SerialIdentifierNumber" Title="Serial Number"></RadzenGridColumn>
-        <RadzenGridColumn TItem="Equipment" Property="Comments" Title="Comments"></RadzenGridColumn>
-        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Actions">
+        <RadzenGridColumn TItem="Equipment" Property="SerialIdentifierNumber" Title="Serial Number" Filterable="true"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Comments" Title="Comments">
+            <Template Context="data">
+               @{ string nonHtmlComment = Regex.Replace(data.Comments, "<.*?>", String.Empty); } @*get rid of the html tags for the table*@
+               @nonHtmlComment              
+            </Template>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Actions" Sortable="false">
             <Template Context="data">
                 <a href="@($"equipment/{data.Id}")" class="btn btn-primary table-btn">
                     <i class="fa fa-pencil-square"></i>
@@ -39,7 +46,7 @@
             CallLoadData();
             StateHasChanged();
         });
-
+        
         await hubConnection.StartAsync();
 
         equipmentListViewModel.LoadAllEquipment();

@@ -45,7 +45,9 @@ namespace SACOMaintenance.DataAccess
 
         public IEnumerable<Equipment> LoadAllEquipments()
         {
-            var equipments = _equipmentDBContext.Equipment.ToList();
+            var equipments = _equipmentDBContext.Equipment
+                .Include(mt => mt.MachineType)
+                .ToList();
             return equipments;
         }
 

@@ -15,8 +15,8 @@
             <InputTextArea @bind-Value="equipmentViewModel.equipment.SerialIdentifierNumber" class="form-control"></InputTextArea>
         </div>
         <div class="row">
-            <label>Comments</label>
-            <InputTextArea @bind-Value="equipmentViewModel.equipment.Comments" class="form-control"></InputTextArea>
+            <label>General Comments</label>
+            <RadzenHtmlEditor @bind-Value=@equipmentViewModel.equipment.Comments />
         </div>
     </div>
     

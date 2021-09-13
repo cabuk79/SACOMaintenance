@@ -37,6 +37,16 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenGrid Data="@machineViewModel.machineType.EquipmentList">
+                    <Columns>
+                        <RadzenGridColumn TItem="Equipment" Property="Id" Title="Id"></RadzenGridColumn>
+                        <RadzenGridColumn TItem="Equipment" Property="Name" Title="Name"></RadzenGridColumn>
+                    </Columns>
+                </RadzenGrid>
+            </div>
+        </div>
     </div>
 </div>
 
