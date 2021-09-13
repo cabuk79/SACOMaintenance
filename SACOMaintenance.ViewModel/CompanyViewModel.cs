@@ -21,6 +21,7 @@ namespace SACOMaintenance.ViewModel
         }
 
         public ObservableCollection<Company> companies { get; set; } = new();
+        public ObservableCollection<MaintRequestInitiation> maintRegs { get; set; } = new();
 
         public int CompanyId
         {
@@ -70,6 +71,7 @@ namespace SACOMaintenance.ViewModel
         public Company LoadSingleCompany(int CompanyId)
         {
             company = CompanyDataProvider.LoadSingleCompany(CompanyId);
+            maintRegs = new ObservableCollection<MaintRequestInitiation>(company.MaintenanceRequestIniations);
             return company;
         }
 

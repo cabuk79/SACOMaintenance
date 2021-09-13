@@ -98,6 +98,13 @@ using Radzen.Blazor.Rendering;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
+using Models.DTO;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
 using System.Globalization;
 
 #line default
@@ -111,49 +118,70 @@ using System.Globalization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
+#line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
        
-    public class DataItem
-    {
-        public int yearCount { get; set; }
-        public string yearName { get; set; }
-    }
-
-    public static int year2020;
-    public static int year2021;
+    //TODO: workout why the years are going up in halfs i.e. 2019>2019.5>2020>2020.5
+    public int startYear;// = 2019; //TODO: make this a global varibale that can be set on install or by user once logged in etc.
+    public int currentYear = DateTime.Now.Year;
+    public List<YearMaintenanceRequestModel> YearsList = new();
 
     protected override void OnInitialized()
     {
         requestViewModel.GetRequests();
 
+        //UpdateStartYear();
+
+        startYear = 2019;
+
+        //if (YearsList.Count == 0)
+        //{
+        var yearDiffernce = (currentYear - startYear) + 1;
+
+        while (yearDiffernce > 0)
+        {
+            YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear, YearNumber = 0 });
+            startYear++;
+            yearDiffernce--;
+        }
+
         foreach (var item in requestViewModel.MaintReqs)
         {
-            var year = DateTime.Parse(item.DateRaised.ToString()).Year;
-            if (year == 2020)
+            foreach (var yearItem in YearsList)
             {
-                year2020++;
+                if (item.DateRaised.Year == yearItem.YearName)
+                {
+                    yearItem.YearNumber++;
+                }
             }
-            else if (year == 2021)
+        }
+        //}
+    }
+
+    public void UpdateStartYear()
+    {
+        if(YearsList.Count == 0)
+        {
+            var yearDiffernce = currentYear - startYear;
+
+            while (yearDiffernce >= 0)
             {
-                year2021++;
+                YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear, YearNumber = 0 });
+                startYear++;
+                yearDiffernce--;
+            }
+
+            foreach (var item in requestViewModel.MaintReqs)
+            {
+                foreach (var yearItem in YearsList)
+                {
+                    if (item.DateRaised.Year == yearItem.YearName)
+                    {
+                        yearItem.YearNumber++;
+                    }
+                }
             }
         }
     }
-
-    DataItem[] statusData = new DataItem[]
-    {
-        new DataItem
-        {
-            yearCount = year2020,
-            yearName = "2020"
-        },
-        new DataItem
-        {
-            yearCount = year2021,
-            yearName = "2021"
-        }
-        };
-
 
 #line default
 #line hidden

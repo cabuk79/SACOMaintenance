@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "SACOMaintenance.Common/1.0.0": {
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "runtime": {
           "SACOMaintenance.Common.dll": {}
+        }
+      },
+      "Models.DTO/1.0.0": {
+        "runtime": {
+          "Models.DTO.dll": {}
         }
       }
     }
   },
   "libraries": {
     "SACOMaintenance.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

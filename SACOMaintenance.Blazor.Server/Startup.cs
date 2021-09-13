@@ -1,23 +1,17 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Radzen;
 using SACOMaintenance.Blazor.Server.Hubs;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel;
 using SACOMaintenance.ViewModel.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.Blazor.Server
 {
@@ -36,6 +30,7 @@ namespace SACOMaintenance.Blazor.Server
         {
             services.AddDbContext<SACOMaintenanceContext>(options=>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
 
             services.AddScoped<IArea, AreaProvider>();
             services.AddScoped<IFactory, FactoryDataProvider>();
@@ -72,7 +67,9 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IPartViewModel, PartViewModel>();
             services.AddScoped<IOrderViewModel, OrderViewModel>();
 
-            services.AddScoped<NotificationService>();
+            
+
+            
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

@@ -1,68 +1,149 @@
 ﻿@page "/part/full/{Id}"
 @inject SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel
+
 @using SACOMaintenance.Common.ModelDB
 
-<h3>Full Part @partViewModel.SelectedPart.Name</h3>
+    <h3>Information for @partViewModel.SelectedPart.Name</h3>
 
-<RadzenGrid Data="partViewModel.SelectedPart.Drawings" TItem="TechnicalDrawingsLocation">
-    <Columns>
-        <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="Id" Title="ID"></RadzenGridColumn>
-        <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="DrawingFileLocation" Title="Location"></RadzenGridColumn>
-        <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="DrawingFileLocation" Title="Action">
-            <Template Context="drawingData">
-                <RadzenButton Click=@(args => openDrawing(drawingData.DrawingFileLocation)) Text="View Drawing" ></RadzenButton>
-            </Template>
-        </RadzenGridColumn>
-    </Columns>
-</RadzenGrid>
-
-<RadzenGrid Data="partViewModel.SelectedPart.SupplierParts" TItem="PartSupplier">
-    <Columns>
-        <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="SupplierCode" Title="Supplier Code"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="PartSupplierSingle.Name" Title="Supplier">
-            <Template Context="data">
-                @foreach (var supp in partViewModel.suppliers)
-                {
-                    if (supp.Id == data.SupplierId)
+    <RadzenTemplateForm Data="@partViewModel.SelectedPart">
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenFieldset Text="Details">
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <RadzenLabel Text="Comments"></RadzenLabel>
+                        </div>
+                        <div class="col-lg-11">
+                            <RadzenTextArea @bind-value="partViewModel.SelectedPart.Comment" Style="width: 100%;"></RadzenTextArea>
+                        </div>
+                    </div>
+                </RadzenFieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenFieldset Text="Stock Information">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <RadzenLabel Text="Current Quantity"></RadzenLabel>
+                        </div>
+                        <div class="col-lg-4">
+                            <RadzenNumeric @bind-Value="partViewModel.SelectedPart.CurrentQty" Style="width: 100%"></RadzenNumeric>
+                        </div>
+                        <div class="col-lg-2">
+                            <RadzenLabel Text="Minimum Quantity"></RadzenLabel>
+                        </div>
+                        <div class="col-lg-4">
+                            <RadzenNumeric @bind-Value="partViewModel.SelectedPart.MinQtyInStock" Style="width: 100%"></RadzenNumeric>
+                        </div>
+                    </div>
+                    @if (partViewModel.SelectedPart.CurrentQty < partViewModel.SelectedPart.MinQtyInStock)
                     {
-                        @supp.Name;
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <RadzenLabel Text="Stock level is below minimum stock required.  Please order new stock!!"
+                                             Style="color: red"></RadzenLabel>
+                            </div>
+                        </div>
                     }
-                }
-            </Template>
-        </RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="Price" Title="Last Price"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="SupplierId" Title="Actions">
-            <Template Context="data">
-                <a href="@($"supplier/full/{data.SupplierId}")" class="btn btn-primary table-btn">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </Template>
-        </RadzenGridColumn>
-    </Columns>
-</RadzenGrid>
+                </RadzenFieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenFieldset Text="Drawings">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <RadzenGrid Data="partViewModel.SelectedPart.Drawings" TItem="TechnicalDrawingsLocation">
+                                <Columns>
+                                    <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="Id" Title="ID"></RadzenGridColumn>
+                                    <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="DrawingFileLocation" Title="Location"></RadzenGridColumn>
+                                    <RadzenGridColumn TItem="TechnicalDrawingsLocation" Property="DrawingFileLocation" Title="Action">
+                                        <Template Context="drawingData">
+                                            <RadzenButton Click=@(args => openDrawing(drawingData.DrawingFileLocation)) Text="View Drawing" Icon="visibility"></RadzenButton>
+                                        </Template>
+                                    </RadzenGridColumn>
+                                </Columns>
+                            </RadzenGrid>
+                        </div>
+                    </div>
+                </RadzenFieldset>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenFieldset Text="Equipment">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <RadzenGrid Data="partViewModel.SelectedPart.Equipment" TItem="Equipment">
+                                    <Columns>
+                                        <RadzenGridColumn TItem="Equipment" Property="Id" Title="ID"></RadzenGridColumn>
+                                        <RadzenGridColumn TItem="Equipment" Property="Name" Title="Name"></RadzenGridColumn>
+                                        <RadzenGridColumn TItem="Equipment" Property="Description" Title="Description"></RadzenGridColumn>
+                                    </Columns>
+                                </RadzenGrid>
+                            </div>
+                        </div>
+                    </RadzenFieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenFieldset Text="Suppliers">
+                        <dic class="row">
+                            <div class="col-lg-12">
+                                <RadzenGrid Data="partViewModel.SelectedPart.SupplierParts" TItem="PartSupplier">
+                                    <Columns>
+                                        <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
+                                        <RadzenGridColumn TItem="PartSupplier" Property="SupplierCode" Title="Supplier Code"></RadzenGridColumn>
+                                        <RadzenGridColumn TItem="PartSupplier" Property="PartSupplierSingle.Name" Title="Supplier">
+                                            <Template Context="data">
+                                                @foreach (var supp in partViewModel.suppliers)
+                                                {
+                                                    if (supp.Id == data.SupplierId)
+                                                    {
+                                                        @supp.Name;
+                                                    }
+                                                }
+                                            </Template>
+                                        </RadzenGridColumn>
+                                        <RadzenGridColumn TItem="PartSupplier" Property="Price" Title="Last Price"></RadzenGridColumn>
+                                        <RadzenGridColumn TItem="PartSupplier" Property="SupplierId" Title="Actions">
+                                            <Template Context="data">
+                                                <a href="@($"supplier/full/{data.SupplierId}")" class="btn btn-primary table-btn">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </Template>
+                                        </RadzenGridColumn>
+                                    </Columns>
+                                </RadzenGrid>
+                            </div>
+                        </dic>
+                    </RadzenFieldset>
+                </div>
+            </div>
+        </div>
+    </RadzenTemplateForm>
 
 
+    @code {
+        [Parameter]
+        public string Id { get; set; }
 
-@code {
-    [Parameter]
-    public string Id { get; set; }
-
-    protected override void OnInitialized()
-    {
-        partViewModel.LoadSinglePart(Convert.ToInt32(Id));
-    }
-
-    public void openDrawing(string fileLocation)
-    {
-
-        var p = new System.Diagnostics.Process();
-
-        p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+        protected override void OnInitialized()
         {
-            UseShellExecute = true
-        };
+            partViewModel.LoadSinglePart(Convert.ToInt32(Id));
+        }
 
-        p.Start();
+        public void openDrawing(string fileLocation)
+        {
+
+            var p = new System.Diagnostics.Process();
+
+            p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+            {
+                UseShellExecute = true
+            };
+
+            p.Start();
+        }
     }
-}

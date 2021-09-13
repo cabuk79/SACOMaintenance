@@ -11,6 +11,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public Company company { get; set; }
         ICompany CompanyDataProvider { get; }
         ObservableCollection<Company> companies { get; set; }
+        ObservableCollection<MaintRequestInitiation> maintRegs { get; set; }
         public int CompanyId { get; }
         public string CompanyName { get; set; }
         #endregion

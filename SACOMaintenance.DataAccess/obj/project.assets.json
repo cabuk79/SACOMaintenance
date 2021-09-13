@@ -1520,9 +1520,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SACOMaintenance.Common.dll": {}
         },
@@ -5812,6 +5825,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Models.DTO/1.0.0": {
+      "type": "project",
+      "path": "../Models.DTO/Models.DTO.csproj",
+      "msbuildProject": "../Models.DTO/Models.DTO.csproj"
     },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",

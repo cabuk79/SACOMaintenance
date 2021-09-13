@@ -2153,6 +2153,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "compile": {
@@ -2162,9 +2163,22 @@
           "bin/placeholder/ExcelLibs.dll": {}
         }
       },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SACOMaintenance.Common.dll": {}
         },
@@ -2207,13 +2221,29 @@
         "dependencies": {
           "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
-          "SACOMaintenance.DataAccess": "1.0.0"
+          "SACOMaintenance.DataAccess": "1.0.0",
+          "WordLibs": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
+      },
+      "WordLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WordLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordLibs.dll": {}
         }
       }
     },
@@ -4049,6 +4079,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "compile": {
@@ -4058,9 +4089,22 @@
           "bin/placeholder/ExcelLibs.dll": {}
         }
       },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SACOMaintenance.Common.dll": {}
         },
@@ -4103,13 +4147,29 @@
         "dependencies": {
           "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
-          "SACOMaintenance.DataAccess": "1.0.0"
+          "SACOMaintenance.DataAccess": "1.0.0",
+          "WordLibs": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
+      },
+      "WordLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WordLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordLibs.dll": {}
         }
       }
     },
@@ -5947,6 +6007,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "compile": {
@@ -5956,9 +6017,22 @@
           "bin/placeholder/ExcelLibs.dll": {}
         }
       },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SACOMaintenance.Common.dll": {}
         },
@@ -6001,13 +6075,29 @@
         "dependencies": {
           "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
-          "SACOMaintenance.DataAccess": "1.0.0"
+          "SACOMaintenance.DataAccess": "1.0.0",
+          "WordLibs": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
+      },
+      "WordLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WordLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordLibs.dll": {}
         }
       }
     },
@@ -7843,6 +7933,7 @@
           "ClosedXML": "0.95.4",
           "ClosedXML.Report": "0.2.1",
           "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
           "SACOMaintenance.Common": "1.0.0"
         },
         "compile": {
@@ -7852,9 +7943,22 @@
           "bin/placeholder/ExcelLibs.dll": {}
         }
       },
+      "Models.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Models.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.DTO.dll": {}
+        }
+      },
       "SACOMaintenance.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SACOMaintenance.Common.dll": {}
         },
@@ -7897,13 +8001,29 @@
         "dependencies": {
           "ExcelLibs": "1.0.0",
           "SACOMaintenance.Common": "1.0.0",
-          "SACOMaintenance.DataAccess": "1.0.0"
+          "SACOMaintenance.DataAccess": "1.0.0",
+          "WordLibs": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
         },
         "runtime": {
           "bin/placeholder/SACOMaintenance.ViewModel.dll": {}
+        }
+      },
+      "WordLibs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "Models.DTO": "1.0.0",
+          "SACOMaintenance.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WordLibs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WordLibs.dll": {}
         }
       }
     }
@@ -13185,6 +13305,11 @@
       "path": "../../ExcelLibs/ExcelLibs.csproj",
       "msbuildProject": "../../ExcelLibs/ExcelLibs.csproj"
     },
+    "Models.DTO/1.0.0": {
+      "type": "project",
+      "path": "../../Models.DTO/Models.DTO.csproj",
+      "msbuildProject": "../../Models.DTO/Models.DTO.csproj"
+    },
     "SACOMaintenance.Common/1.0.0": {
       "type": "project",
       "path": "../../BuisnessModels/SACOMaintenance.Common.csproj",
@@ -13204,6 +13329,11 @@
       "type": "project",
       "path": "../../SACOMaintenance.ViewModel/SACOMaintenance.ViewModel.csproj",
       "msbuildProject": "../../SACOMaintenance.ViewModel/SACOMaintenance.ViewModel.csproj"
+    },
+    "WordLibs/1.0.0": {
+      "type": "project",
+      "path": "../../WordLibs/WordLibs.csproj",
+      "msbuildProject": "../../WordLibs/WordLibs.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13287,39 +13417,43 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-arm64",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x86",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.18362.15, 10.0.18362.15]"
+            "version": "[10.0.18362.19, 10.0.18362.19]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-            "version": "[5.0.5, 5.0.5]"
+            "version": "[5.0.9, 5.0.9]"
           }
         ],
         "frameworkReferences": {
@@ -13330,7 +13464,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -2,39 +2,49 @@
 @inject SACOMaintenance.ViewModel.Interfaces.ICompanyViewModel companyViewModel
 @using SACOMaintenance.Common.ModelDB 
 
-<div section="header">
-    <div class="container-fluid">
-        <h1>Companies</h1>
-    </div>
-</div>
 
-<div section="main-body">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2">
-                <RadzenListBox TValue="int" Data="@companyViewModel.companies" TextProperty="CompantName"
-                               ValueProperty="Id" Style="height:500px" Name="companyListBox"
-                               Change=@(args => OnChange(args, "ListBox")) />
-            </div>
 
-            <div class="col-lg-10">
-                <div class="area-form">
-                    <div class="area-form-area">
-                        <h3>Viewing @companyViewModel.CompanyName</h3>
-                        <EditForm Model="@companyViewModel.company">
-                            <div class="form-group">
-                                <div class="form-group-row">
-                                    <label style="font-weight:bold">Name</label>
-                                    <InputText @bind-Value="companyViewModel.CompanyName" class="form-control"></InputText>
-                                </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Companies Information">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <RadzenListBox TValue="int" Data="@companyViewModel.companies" TextProperty="CompantName"
+                                       ValueProperty="Id" Name="companyListBox"
+                                       Change=@(args => OnChange(args, "ListBox")) />
+                    </div>
+                    <div class="Col-lg-10">
+                        <div class="area-form">
+                            <div class="area-form-area">
+                                <h3>Viewing @companyViewModel.CompanyName</h3>
+                                <EditForm Model="@companyViewModel.company">
+                                    <div class="form-group">
+                                        <div class="form-group-row">
+                                            <label style="font-weight:bold">Name</label>
+                                            <InputText @bind-Value="companyViewModel.CompanyName" class="form-control"></InputText>
+                                        </div>
+                                    </div>
+                                </EditForm>
                             </div>
-                        </EditForm>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-lg-10">
+                        <RadzenGrid Data="@companyViewModel.maintRegs" TItem="MaintRequestInitiation">
+                            <Columns>
+                                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="ID"></RadzenGridColumn>
+                            </Columns>
+                        </RadzenGrid>
+                    </div>
+                </div>
+            </RadzenFieldset>
         </div>
     </div>
-</div>
+ </div>
+
 
 
 @code {

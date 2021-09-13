@@ -6,6 +6,52 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
+      "ClosedXML/0.95.4": {
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.12.3",
+          "ExcelNumberFormat": "1.0.10",
+          "Microsoft.CSharp": "4.7.0",
+          "System.Drawing.Common": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.dll": {
+            "assemblyVersion": "0.95.4.0",
+            "fileVersion": "0.95.4.0"
+          }
+        }
+      },
+      "ClosedXML.Report/0.2.1": {
+        "dependencies": {
+          "ClosedXML": "0.95.4",
+          "System.Linq.Dynamic.Core": "1.1.1",
+          "morelinq": "2.9.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ClosedXML.Report.dll": {
+            "assemblyVersion": "0.2.1.0",
+            "fileVersion": "0.2.1.0"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/2.12.3": {
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "2.12.3.0",
+            "fileVersion": "2.12.3.0"
+          }
+        }
+      },
+      "ExcelNumberFormat/1.0.10": {
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "assemblyVersion": "1.0.10.0",
+            "fileVersion": "1.0.10.0"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -384,6 +430,14 @@
           }
         }
       },
+      "morelinq/2.9.0": {
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {
+            "assemblyVersion": "2.9.21302.0",
+            "fileVersion": "2.9.21302.1052"
+          }
+        }
+      },
       "Newtonsoft.Json/10.0.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -718,6 +772,14 @@
           }
         }
       },
+      "System.IO.Packaging/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
       "System.Linq/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -730,6 +792,14 @@
           "lib/netstandard1.6/System.Linq.dll": {
             "assemblyVersion": "4.1.1.0",
             "fileVersion": "4.6.24705.1"
+          }
+        }
+      },
+      "System.Linq.Dynamic.Core/1.1.1": {
+        "runtime": {
+          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {
+            "assemblyVersion": "1.1.1.0",
+            "fileVersion": "1.1.1.0"
           }
         }
       },
@@ -1368,6 +1438,34 @@
     }
   },
   "libraries": {
+    "ClosedXML/0.95.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YixFPzUJ4Ni2AaW/FbPgzFvdtjIzE/4NKROwI1RqIQHWka7QN9Spt4sHuXaSk9PLmXBkk8newHGW0UWLcLs5GA==",
+      "path": "closedxml/0.95.4",
+      "hashPath": "closedxml.0.95.4.nupkg.sha512"
+    },
+    "ClosedXML.Report/0.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xD7BvYErI4c0Eys6uGEPjpIWdc9qtuTBSty+ELWw2Yr+kshNJ4V6xyyfre5/Twp2NNyXBYw+4JQq81+48I1kZw==",
+      "path": "closedxml.report/0.2.1",
+      "hashPath": "closedxml.report.0.2.1.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml/2.12.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qLww6khV25dTzGU3+9rG5vB6RbMoWuNA015151ZmazoepkvxW6/4a5u4QQASoXsZsBITsw5ZO0/Xpzm31tQ43g==",
+      "path": "documentformat.openxml/2.12.3",
+      "hashPath": "documentformat.openxml.2.12.3.nupkg.sha512"
+    },
+    "ExcelNumberFormat/1.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dRx817M5t0sv4GCJyAXU8qmhFXcqRpCHzLpxNmkMWTvzlfE0/KM7BNk6qEble0ffAr4xT7RyU7s/HpovVlA/9g==",
+      "path": "excelnumberformat/1.0.10",
+      "hashPath": "excelnumberformat.1.0.10.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -1578,6 +1676,13 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "morelinq/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bn/bQ6a+DBFF3LhDHKv7oNyCeFGKxNPXV4+b81+phYLyPD/cxVbW1phx/KpLxCvqHn2fE7E8UNCWsxQHXMScig==",
+      "path": "morelinq/2.9.0",
+      "hashPath": "morelinq.2.9.0.nupkg.sha512"
+    },
     "Newtonsoft.Json/10.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1746,12 +1851,26 @@
       "path": "system.io.filesystem.primitives/4.3.0",
       "hashPath": "system.io.filesystem.primitives.4.3.0.nupkg.sha512"
     },
+    "System.IO.Packaging/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9VV4KAbgRQZ79iEoG40KIeZy38O30oWwewScAST879+oki8g/Wa2HXZQgrhDDxQM4GkP1PnRJll05NMiVPbYAw==",
+      "path": "system.io.packaging/4.7.0",
+      "hashPath": "system.io.packaging.4.7.0.nupkg.sha512"
+    },
     "System.Linq/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
       "path": "system.linq/4.3.0",
       "hashPath": "system.linq.4.3.0.nupkg.sha512"
+    },
+    "System.Linq.Dynamic.Core/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PluG/+dQhX0dfWFlz7nbcC8jRS+wBAo4uiOJqdpax7LVeXoxwuVbJpdkBRRcJhIj45OrkmwwLW2tJNIbpCnBaw==",
+      "path": "system.linq.dynamic.core/1.1.1",
+      "hashPath": "system.linq.dynamic.core.1.1.1.nupkg.sha512"
     },
     "System.Linq.Expressions/4.3.0": {
       "type": "package",

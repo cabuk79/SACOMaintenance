@@ -41,6 +41,9 @@
         }
       },
       "SACOMaintenance.Common/1.0.0": {
+        "dependencies": {
+          "Models.DTO": "1.0.0"
+        },
         "runtime": {
           "SACOMaintenance.Common.dll": {}
         }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I9iJTkYm77VsIEFWMULuzwLUznhuUD0xW1U6It1MC+sf0UpsBVVZvBP9evXSoOp9zeVnc81am67qMHzgYTU67A==",
+  "dgSpecHash": "5cLFNZGIzZpe9ajWwgvHuwgvN4MW1JaLdlMApjHZZzN/63ITi/c2nBoI0M2yuWtM0BkYI/SWiAN604Q6tqF6uw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.UI\\SACOMaintenance.UI\\SACOMaintenance.UI.csproj",
   "expectedPackageFiles": [
@@ -134,15 +134,16 @@
     "C:\\Users\\cabuk\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.5\\microsoft.netcore.app.runtime.win-x64.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.5\\microsoft.aspnetcore.app.runtime.win-x64.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\5.0.5\\microsoft.netcore.app.runtime.win-arm64.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.5\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.15\\microsoft.windows.sdk.net.ref.10.0.18362.15.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\5.0.5\\microsoft.aspnetcore.app.runtime.win-arm64.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\5.0.5\\microsoft.netcore.app.runtime.win-x86.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\5.0.5\\microsoft.aspnetcore.app.runtime.win-x86.5.0.5.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\5.0.5\\microsoft.windowsdesktop.app.runtime.win-x86.5.0.5.nupkg.sha512"
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.9\\microsoft.netcore.app.runtime.win-x64.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.9\\microsoft.aspnetcore.app.runtime.win-x64.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\5.0.9\\microsoft.netcore.app.runtime.win-arm64.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.9\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.19\\microsoft.windows.sdk.net.ref.10.0.18362.19.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\5.0.9\\microsoft.aspnetcore.app.runtime.win-arm64.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\5.0.9\\microsoft.netcore.app.runtime.win-x86.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\5.0.9\\microsoft.windowsdesktop.app.runtime.win-arm64.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\5.0.9\\microsoft.aspnetcore.app.runtime.win-x86.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\5.0.9\\microsoft.windowsdesktop.app.runtime.win-x86.5.0.9.nupkg.sha512"
   ],
   "logs": []
 }

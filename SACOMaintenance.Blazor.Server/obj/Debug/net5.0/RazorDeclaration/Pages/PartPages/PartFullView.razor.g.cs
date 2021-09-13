@@ -97,7 +97,7 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
@@ -112,32 +112,29 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
-       
-    [Parameter]
-    public string Id { get; set; }
+#line 128 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
+           
+        [Parameter]
+        public string Id { get; set; }
 
-    protected override void OnInitialized()
-    {
-        partViewModel.LoadSinglePart(Convert.ToInt32(Id));
-    }
-
-    public void openDrawing(string fileLocation)
-    {
-
-        var p = new System.Diagnostics.Process();
-
-        p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+        protected override void OnInitialized()
         {
-            UseShellExecute = true
-        };
+            partViewModel.LoadSinglePart(Convert.ToInt32(Id));
+        }
 
-        p.Start();
+        public void openDrawing(string fileLocation)
+        {
 
+            var p = new System.Diagnostics.Process();
 
-        //..System.Diagnostics.Process.Start(fileLocation);
-        //System.IO.File.OpenText(fileLocation);
-    }
+            p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+            {
+                UseShellExecute = true
+            };
+
+            p.Start();
+        }
+    
 
 #line default
 #line hidden

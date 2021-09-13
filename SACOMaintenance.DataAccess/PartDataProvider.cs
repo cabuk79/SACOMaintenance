@@ -25,6 +25,7 @@ namespace SACOMaintenance.DataAccess
                 .Where(i => i.Id == Id)
                 .Include(s => s.SupplierParts)
                 .Include(d => d.Drawings)
+                .Include(e => e.Equipment)
                 .FirstOrDefault();
             return singlePart;
         }

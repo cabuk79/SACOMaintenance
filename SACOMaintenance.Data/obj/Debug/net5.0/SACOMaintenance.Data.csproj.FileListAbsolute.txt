@@ -16,3 +16,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.genruntimeconfig.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net5.0\SACOMaintenance.Data.csproj.AssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\Models.DTO.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\bin\Debug\net5.0\Models.DTO.pdb

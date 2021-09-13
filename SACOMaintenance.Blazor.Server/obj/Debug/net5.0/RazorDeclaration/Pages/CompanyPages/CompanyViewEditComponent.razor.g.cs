@@ -112,7 +112,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
+#line 50 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
        
 
     void OnChange(object value, string name)

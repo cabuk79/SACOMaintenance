@@ -33,7 +33,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\Models.DTO\\Models.DTO.csproj": {
+                "projectPath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\Models.DTO\\Models.DTO.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
