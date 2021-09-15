@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SACOMaintenance.Data;
 
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    partial class SACOMaintenanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210915140105_Added PsotCode model and updated Supplier model")]
+    partial class AddedPsotCodemodelandupdatedSuppliermodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
