@@ -32,7 +32,9 @@ namespace SACOMaintenance.DataAccess
             var singleSupplier = _sacoMaintenanceContext.Suppliers
                 .Where(i => i.Id == Id)
                 .Include(sp => sp.SupplierParts)
+                .Include(pc => pc.Postcode)
                 .FirstOrDefault();
+            
             return singleSupplier;
         }
     }

@@ -2,23 +2,113 @@
 @inject SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel
 @using SACOMaintenance.Common.ModelDB
 
-<h3>Showing Information for @supplierViewModel.SelectedSupplier.Name</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8"><h3>Showing Information for @supplierViewModel.SelectedSupplier.Name</h3></div>
+        <div class="col-lg-4"><RadzenLabel Text="Read Only"></RadzenLabel><RadzenSwitch @bind-Value="@switchValue" ></RadzenSwitch></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Address Information" Style="border-color: black">
+                <div class="row" style="padding: 5px 5px 5px 5px">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-4"><RadzenLabel Text="Address One"></RadzenLabel></div>
+                            <div class="col-lg-8">
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                               @bind-Value="supplierViewModel.SelectedSupplier.AddressLineOne"></RadzenTextBox>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px 5px 5px 5px">
+                            <div class="col-lg-4"><RadzenLabel Text="Address Two"></RadzenLabel></div>
+                            <div class="col-lg-8">
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                               @bind-Value="supplierViewModel.SelectedSupplier.AddressLineTwo"></RadzenTextBox>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px 5px 5px 5px">
+                            <div class="col-lg-4"><RadzenLabel Text="County"></RadzenLabel></div>
+                            <div class="col-lg-8">
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.County"></RadzenTextBox>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px 5px 5px 5px">
+                            <div class="col-lg-4"><RadzenLabel Text="Town"></RadzenLabel></div>
+                            <div class="col-lg-8">
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.District"></RadzenTextBox>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px 5px 5px 5px">
+                            <div class="col-lg-4"><RadzenLabel Text="Post Code"></RadzenLabel></div>
+                            <div class="col-lg-8">
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.PostCode"></RadzenTextBox>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px 5px 5px 5px">
+                            <div class="col-lg-12"><RadzenLabel Text="Comment"></RadzenLabel></div>
+                            <div class="col-lg-12"><RadzenHtmlEditor Disabled="@switchValue" @bind-Value="supplierViewModel.SelectedSupplier.Comments"></RadzenHtmlEditor></div>
+                        </div>
+                        @if (switchValue == false)
+                        {
+                            <div class="row">
+                                <div class="col-lg-4"><RadzenButton Text="UPDATE"></RadzenButton></div>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-lg-6">
+                        <RadzenGoogleMap style="height: 500px; width: 700px" Zoom=15 ApiKey="AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM"
+                                         Center=@(new GoogleMapPosition()
+                                  {
+                                      Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
+                                      Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
+                                  })>
+                            <Markers>
+                                <RadzenGoogleMapMarker Title="@supplierViewModel.SelectedSupplier.Postcode.District"
+                                                       Label="@supplierViewModel.SelectedSupplier.Postcode.District"
+                                                       Position=@(new GoogleMapPosition()
+                                          {
+                                              Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
+                                              Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
+                                          }) />
+                            </Markers>
+                        </RadzenGoogleMap>
+                    </div>
+                </div>
+            </RadzenFieldset>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px 0px 0px 0px">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Parts Supplied" Style="border-color: black">
+                <RadzenGrid Data="supplierViewModel.SelectedSupplier.SupplierParts" TItem="PartSupplier" Style="border-color: black">
+                    <Columns>
+                        <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
+                        <RadzenGridColumn TItem="PartSupplier" Property="SupplierCode" Title="Supplier Code"></RadzenGridColumn>
+                        <RadzenGridColumn TItem="PartSupplier" Property="Part.Name" Title="Name"></RadzenGridColumn>
+                        <RadzenGridColumn TItem="PartSupplier" Property="Price" Title="Last Price"></RadzenGridColumn>
+                    </Columns>
+                </RadzenGrid>
+            </RadzenFieldset>
+        </div>
+    </div>
+</div>    
 
-<RadzenGrid Data="supplierViewModel.SelectedSupplier.SupplierParts" TItem="PartSupplier">
-    <Columns>
-        <RadzenGridColumn TItem="PartSupplier" Property="Id" Title="ID"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="SupplierCode" Title="Supplier Code"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="Part.Name" Title="Name"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PartSupplier" Property="Price" Title="Last Price"></RadzenGridColumn>
-    </Columns>
-</RadzenGrid>
+    @code {
+        [Parameter]
+        public string Id { get; set; }
 
-@code {
-    [Parameter]
-    public string Id { get; set; }
+        bool switchValue = true;
 
-    protected override void OnInitialized()
-    {
-        supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
+        protected override void OnInitialized()
+        {
+            supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
+        }
+
+        //void OnChange(bool? value, string name)
+        //{
+        //    console.Log($"{name} value changed to {value}");
+        //}
     }
-}

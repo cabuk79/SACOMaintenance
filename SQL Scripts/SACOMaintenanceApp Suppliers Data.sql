@@ -1,10 +1,17 @@
-INSERT INTO Suppliers (Name) VALUES ('Abex');
+INSERT INTO Suppliers
+(Name, GeneralEmailAddress, TelephoneNumber, AddressLineOne, PostCode)
+VALUES ('Abex', 'sales@abex.co.uk', '01282 696593', 'Edward Streent', 55);
+
 INSERT INTO Suppliers (Name) VALUES ('Adept');
-INSERT INTO Suppliers (Name) VALUES ('Alan Brookes');
-INSERT INTO Suppliers (Name) VALUES ('Expert');
-INSERT INTO Suppliers (Name) VALUES ('Fulton');
-INSERT INTO Suppliers (Name) VALUES ('Gilby');
-INSERT INTO Suppliers (Name) VALUES ('Howarth Timber');
-INSERT INTO Suppliers (Name) VALUES ('Quest');
-INSERT INTO Suppliers (Name) VALUES ('TC Direct');
-INSERT INTO Suppliers (Name) VALUES ('Wenglor');
+
+INSERT INTO Suppliers (Name, GeneralEmailAddress, TelephoneNumber, AddressLineOne, PostCode) 
+VALUES ('Alan Brookes', 'alan.brookes@brookes.com', '07358 658458', 'Birtwistle Avenue', 10458);
+
+INSERT INTO Suppliers (Name, GeneralEmailAddress, TelephoneNumber) 
+VALUES ('Expert', 'info@expert.net', '01282 709819');
+
+INSERT INTO Suppliers (Name, GeneralEmailAddress, TelephoneNumber, AddressLineOne, PostCode)
+VALUES ('Fulton', 'info@fulton.com', '07895 5458756', 'Board Avenue', 567);
+
+INSERT INTO Suppliers (Name, GeneralEmailAddress, TelephoneNumber, AddressLineOne, PostCode)
+VALUES ('Gilby', 'support@gilby.co.uk', '01282 658789', '9 Farrer Street', 12345);

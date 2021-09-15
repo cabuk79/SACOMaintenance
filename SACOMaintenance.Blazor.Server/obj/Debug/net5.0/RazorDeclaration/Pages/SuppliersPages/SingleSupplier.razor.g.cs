@@ -112,15 +112,23 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
-       
-    [Parameter]
-    public string Id { get; set; }
+#line 99 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
+           
+        [Parameter]
+        public string Id { get; set; }
 
-    protected override void OnInitialized()
-    {
-        supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
-    }
+        bool switchValue = true;
+
+        protected override void OnInitialized()
+        {
+            supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
+        }
+
+        //void OnChange(bool? value, string name)
+        //{
+        //    console.Log($"{name} value changed to {value}");
+        //}
+    
 
 #line default
 #line hidden
