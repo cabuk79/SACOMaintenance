@@ -25,6 +25,7 @@ namespace SACOMaintenance.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<PostCodeTown> PostCodeTowns { get; set; }
         public DbSet<Part> Parts { get; set; }
         public DbSet<PartSupplier> PartSuppliers { get; set; }
         public DbSet<Department> Departments { get; set; }

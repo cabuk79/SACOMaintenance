@@ -16,6 +16,7 @@ namespace SACOMaintenance.Common.ModelDB
         public string AddressLineOne { get; set; }
         public string AddressLineTwo { get; set; }
         public int? PostCode { get; set; }
+        public PostCodeTown Postcode { get; set; }
         public List<PartSupplier> SupplierParts { get; set; } = new List<PartSupplier>();
     }
 }
