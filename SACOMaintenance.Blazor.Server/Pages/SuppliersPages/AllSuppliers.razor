@@ -4,10 +4,22 @@
 
 <h3>All Suppliers</h3>
 
+<a href="@($"supplier/add")" class="btn btn-primary table-btn">
+    Add New
+    <i class="fa fa-pen"></i>
+</a>
 <RadzenGrid Data="@supplierViewModel.suppliers">
     <Columns>
         <RadzenGridColumn TItem="Supplier" Property="Id" Title="ID" Width="30px"></RadzenGridColumn>
         <RadzenGridColumn TItem="Supplier" Property="Name" Title="Name" Width="250px"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Supplier" Property="Id" Title="Actions">
+            <Template Context="data">
+                <a href="@($"supplier/full/{data.Id}")" class="btn btn-primary table-btn">
+                    <i class="fa fa-eye"></i>
+                </a>
+                
+            </Template>
+        </RadzenGridColumn>
     </Columns>
 </RadzenGrid>
 

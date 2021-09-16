@@ -14,5 +14,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
         public PostCodeTown GetPostCode(string postCode);
         public PostCodeTown LoadPostCodesByRef(string postCode);
         Supplier LoadSingleSupplier(int Id);
+        public void AddNewSupplier(Supplier supplier);
+        public void UpdateSupplier(Supplier supplier);
     }
 }

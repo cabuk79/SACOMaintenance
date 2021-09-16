@@ -97,14 +97,14 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/supplier/full/{Id}")]
-    public partial class SingleSupplier : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/supplier/add")]
+    public partial class AddSupplierPage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,7 +112,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 121 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
+#line 109 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
            
         [Parameter]
         public string Id { get; set; }
@@ -123,23 +123,21 @@ using SACOMaintenance.Common.ModelDB;
 
         protected override void OnInitialized()
         {
-            supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));         
+            supplierViewModel.CreateEmptySupplier();           
         }
 
-        
-
-        void Update()
+        void AddNewSupplier()
         {
-            supplierViewModel.UpdateSupplier();
+            supplierViewModel.AddNewSupplier();
+            NavigationManager.NavigateTo("suppliers-list");
         }
+
 
         void PostCodeOnChange(string value)
         {
+            supplierViewModel.postcodefound(value, "New");
 
-            // supplierViewModel.SelectedSupplier.PostCodeId = 
-            supplierViewModel.postcodefound(value,  "Edit");
-
-            if (supplierViewModel.SelectedSupplier.Postcode.Id == 0)
+            if (supplierViewModel.NewSupplier.Postcode.Id == 0)
             {
                 postCodeFoundError = "Sorry no post code could be found!";
                 hasFoundPostCodeError = true;
@@ -148,14 +146,13 @@ using SACOMaintenance.Common.ModelDB;
             {
                 hasFoundPostCodeError = false;
             }
-        //this.StateHasChanged();
-    }
-
+        }
     
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel { get; set; }
     }
 }

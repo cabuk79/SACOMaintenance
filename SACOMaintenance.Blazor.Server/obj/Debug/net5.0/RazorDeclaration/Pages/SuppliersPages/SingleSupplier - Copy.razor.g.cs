@@ -97,14 +97,14 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier - Copy.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/supplier/full/{Id}")]
-    public partial class SingleSupplier : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class SingleSupplier___Copy : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,7 +112,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 121 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
+#line 121 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier - Copy.razor"
            
         [Parameter]
         public string Id { get; set; }
@@ -126,18 +126,12 @@ using SACOMaintenance.Common.ModelDB;
             supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));         
         }
 
-        
-
-        void Update()
-        {
-            supplierViewModel.UpdateSupplier();
-        }
 
         void PostCodeOnChange(string value)
         {
 
             // supplierViewModel.SelectedSupplier.PostCodeId = 
-            supplierViewModel.postcodefound(value,  "Edit");
+            supplierViewModel.postcodefound(value);
 
             if (supplierViewModel.SelectedSupplier.Postcode.Id == 0)
             {

@@ -2,6 +2,12 @@
 @inject SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel
 @using SACOMaintenance.Common.ModelDB
 
+@if (supplierViewModel.SelectedSupplier == null)
+{
+    <RadzenLabel Style="color: red" Text="Sorry this supplier cannot be found!"></RadzenLabel>
+}
+else
+{
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8"><h3>Showing Information for @supplierViewModel.SelectedSupplier.Name</h3></div>
@@ -29,56 +35,64 @@
                         <div class="row" style="padding: 5px 5px 5px 5px">
                             <div class="col-lg-4"><RadzenLabel Text="County"></RadzenLabel></div>
                             <div class="col-lg-8">
-                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="true"
                                                @bind-Value="supplierViewModel.SelectedSupplier.Postcode.County"></RadzenTextBox>
                             </div>
                         </div>
                         <div class="row" style="padding: 5px 5px 5px 5px">
                             <div class="col-lg-4"><RadzenLabel Text="Town"></RadzenLabel></div>
                             <div class="col-lg-8">
-                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="true"
                                                @bind-Value="supplierViewModel.SelectedSupplier.Postcode.District"></RadzenTextBox>
                             </div>
                         </div>
                         <div class="row" style="padding: 5px 5px 5px 5px">
-                            <div class="col-lg-4"><RadzenLabel Text="Post Code"></RadzenLabel></div>      
-                            <div class="col-lg-4">                     
+                            <div class="col-lg-4"><RadzenLabel Text="Post Code"></RadzenLabel></div>
+                            <div class="col-lg-4">
                                 <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
-                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.PostCode" ></RadzenTextBox>
-                               </div>
-                                @if (switchValue == false) 
-                                { 
-                                    <div class="col-lg-4">
-                                        <RadzenButton Text="Search" Click=@(args => PostCodeOnChange(supplierViewModel.SelectedSupplier.Postcode.PostCode))></RadzenButton>
-                                    </div>                                   
-                                }                           
-                        <div class="row" style="padding: 5px 5px 5px 5px">
-                            <div class="col-lg-12"><RadzenLabel Text="Comment"></RadzenLabel></div>
-                            <div class="col-lg-12"><RadzenHtmlEditor Disabled="@switchValue" @bind-Value="supplierViewModel.SelectedSupplier.Comments"></RadzenHtmlEditor></div>
-                        </div>
+                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.PostCode"></RadzenTextBox>
+                            </div>
+                            @if (switchValue == false)
+                            {
+                                <div class="col-lg-4">
+                                    <RadzenButton Text="Search" Click=@(args => PostCodeOnChange(supplierViewModel.SelectedSupplier.Postcode.PostCode))></RadzenButton>
+                                </div>
+                            }
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @if (hasFoundPostCodeError == true)
+                                    {
+                                        <RadzenLabel Style="color: red" Text="@postCodeFoundError"></RadzenLabel>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 5px 5px 5px 5px">
+                                <div class="col-lg-12"><RadzenLabel Text="Comment"></RadzenLabel></div>
+                                <div class="col-lg-12"><RadzenHtmlEditor Disabled="@switchValue" @bind-Value="supplierViewModel.SelectedSupplier.Comments"></RadzenHtmlEditor></div>
+                            </div>
                             @if (switchValue == false)
                             {
                                 <div class="row">
-                                    <div class="col-lg-4"><RadzenButton Text="UPDATE"></RadzenButton></div>
+                                    <div class="col-lg-4"><RadzenButton Text="UPDATE" Click=@(args => Update())></RadzenButton></div>
                                 </div>
                             }
-                        </div>
+                        </div>                       
                     </div>
                     <div class="col-lg-6">
                         <RadzenGoogleMap Zoom=15 ApiKey="AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM"
                                          Center=@(new GoogleMapPosition()
-                                  {
-                                      Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
-                                      Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
-                                  })>
+                                                  {
+                                                      Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
+                                                      Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
+                                                  })>
                             <Markers>
                                 <RadzenGoogleMapMarker Title="@supplierViewModel.SelectedSupplier.Postcode.District"
                                                        Label="@supplierViewModel.SelectedSupplier.Postcode.District"
                                                        Position=@(new GoogleMapPosition()
-                                          {
-                                              Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
-                                              Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
-                                          }) />
+                                                                  {
+                                                                      Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
+                                                                      Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
+                                                                  }) />
                             </Markers>
                         </RadzenGoogleMap>
                         </div>
@@ -100,27 +114,46 @@
             </RadzenFieldset>
         </div>
     </div>
-</div>    
+</div> 
+}
+
 
     @code {
         [Parameter]
         public string Id { get; set; }
 
+        string postCodeFoundError;
+        bool hasFoundPostCodeError = false;
         bool switchValue = true;
 
         protected override void OnInitialized()
         {
-            supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
-        
+            supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));         
         }
 
+        
+
+        void Update()
+        {
+            supplierViewModel.UpdateSupplier();
+        }
 
         void PostCodeOnChange(string value)
         {
 
-            supplierViewModel.SelectedSupplier.PostCodeId = supplierViewModel.postcodefound(value).Id;
+            // supplierViewModel.SelectedSupplier.PostCodeId = 
+            supplierViewModel.postcodefound(value,  "Edit");
 
-            this.StateHasChanged();
-        }
-  
+            if (supplierViewModel.SelectedSupplier.Postcode.Id == 0)
+            {
+                postCodeFoundError = "Sorry no post code could be found!";
+                hasFoundPostCodeError = true;
+            }
+            else
+            {
+                hasFoundPostCodeError = false;
+            }
+        //this.StateHasChanged();
+    }
+
     }

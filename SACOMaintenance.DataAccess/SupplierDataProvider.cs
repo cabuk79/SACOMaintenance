@@ -53,5 +53,17 @@ namespace SACOMaintenance.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateSupplier(Supplier supplier)
+        {
+            _sacoMaintenanceContext.Update<Supplier>(supplier);
+            _sacoMaintenanceContext.SaveChanges();
+        }
+
+        public void AddNewSupplier(Supplier supplier)
+        {
+            _sacoMaintenanceContext.Add<Supplier>(supplier);
+            _sacoMaintenanceContext.SaveChanges();
+        }
     }
 }

@@ -12,14 +12,22 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<Supplier> suppliers { get; set; } = new();
         public Supplier SelectedSupplier { get; set; }
         
+        
         public ISupplier SupplierDataProvider { get; }
         public ObservableCollection<PostCodeTown> postcodes { get; set; } = new();
+        public Supplier NewSupplier { get;  set; }
 
         public SupplierViewModel(ISupplier supplierDataProvider)
         {
             SupplierDataProvider = supplierDataProvider;
         }
 
+
+        public void CreateEmptySupplier()
+        {
+            NewSupplier = new();
+            NewSupplier.Postcode = new();
+        }
 
         public void LoadAllSuppliers()
         {
@@ -32,11 +40,21 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public PostCodeTown postcodefound (string value)
+        public void postcodefound (string value, string newEdit)
         {
-            var postcode = SupplierDataProvider.LoadPostCodesByRef(value);
-            SelectedSupplier.Postcode = SupplierDataProvider.GetPostCode(value);
-            return postcode;
+           // var postcode = SupplierDataProvider.LoadPostCodesByRef(value);
+            if(newEdit == "Edit")
+            {
+                SelectedSupplier.Postcode = SupplierDataProvider.GetPostCode(value);
+                if (SelectedSupplier.Postcode == null) { SelectedSupplier.Postcode = new PostCodeTown(); }
+            }
+            else if(newEdit == "New")
+            {
+                NewSupplier.Postcode = SupplierDataProvider.GetPostCode(value);
+                if (NewSupplier.Postcode == null) { NewSupplier.Postcode = new PostCodeTown(); }
+            }
+            
+            //return postcode;
         }
 
       
@@ -53,6 +71,14 @@ namespace SACOMaintenance.ViewModel
 
         }
 
-        
+        public void UpdateSupplier()
+        {
+            SupplierDataProvider.UpdateSupplier(SelectedSupplier);
+        }
+
+        public void AddNewSupplier()
+        {
+            SupplierDataProvider.AddNewSupplier(NewSupplier);
+        }
     }
 }

@@ -12,13 +12,17 @@ namespace SACOMaintenance.ViewModel.Interfaces
     public interface ISupplierViewModel
     {
         ObservableCollection<Supplier> suppliers { get; set; }
-        public PostCodeTown postcodefound(string value);
+        public void postcodefound(string value, string newEdit);
+        public void UpdateSupplier();
         public void LoadAllSuppliers();
+        public void CreateEmptySupplier();
+        public void AddNewSupplier();
         //public void LoadAllPostCodes();
         //public void LoadPostCodesByRef();
         //public void LoadPostCodesByRef(string postCodeString);
         //public ISupplier SupplierDataProvider { get; }
         public void GetSingleSupplier(int Id);
         public Supplier SelectedSupplier { get; set; }
+        public Supplier NewSupplier { get;  set; }
     }
 }
