@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <RadzenFieldset Text="Address Information" Style="border-color: black">
+            <RadzenFieldset Text="Address Information" Style="border-color: black; height: max-content">
                 <div class="row" style="padding: 5px 5px 5px 5px">
                     <div class="col-lg-6">
                         <div class="row">
@@ -41,25 +41,31 @@
                             </div>
                         </div>
                         <div class="row" style="padding: 5px 5px 5px 5px">
-                            <div class="col-lg-4"><RadzenLabel Text="Post Code"></RadzenLabel></div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-4"><RadzenLabel Text="Post Code"></RadzenLabel></div>      
+                            <div class="col-lg-4">                     
                                 <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
-                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.PostCode"></RadzenTextBox>
-                            </div>
-                        </div>
+                                               @bind-Value="supplierViewModel.SelectedSupplier.Postcode.PostCode" ></RadzenTextBox>
+                               </div>
+                                @if (switchValue == false) 
+                                { 
+                                    <div class="col-lg-4">
+                                        <RadzenButton Text="Search" Click=@(args => PostCodeOnChange(supplierViewModel.SelectedSupplier.Postcode.PostCode))></RadzenButton>
+                                    </div>                                   
+                                }                           
                         <div class="row" style="padding: 5px 5px 5px 5px">
                             <div class="col-lg-12"><RadzenLabel Text="Comment"></RadzenLabel></div>
                             <div class="col-lg-12"><RadzenHtmlEditor Disabled="@switchValue" @bind-Value="supplierViewModel.SelectedSupplier.Comments"></RadzenHtmlEditor></div>
                         </div>
-                        @if (switchValue == false)
-                        {
-                            <div class="row">
-                                <div class="col-lg-4"><RadzenButton Text="UPDATE"></RadzenButton></div>
-                            </div>
-                        }
+                            @if (switchValue == false)
+                            {
+                                <div class="row">
+                                    <div class="col-lg-4"><RadzenButton Text="UPDATE"></RadzenButton></div>
+                                </div>
+                            }
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <RadzenGoogleMap style="height: 500px; width: 700px" Zoom=15 ApiKey="AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM"
+                        <RadzenGoogleMap Zoom=15 ApiKey="AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM"
                                          Center=@(new GoogleMapPosition()
                                   {
                                       Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
@@ -75,7 +81,7 @@
                                           }) />
                             </Markers>
                         </RadzenGoogleMap>
-                    </div>
+                        </div>
                 </div>
             </RadzenFieldset>
         </div>
@@ -105,10 +111,16 @@
         protected override void OnInitialized()
         {
             supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));
+        
         }
 
-        //void OnChange(bool? value, string name)
-        //{
-        //    console.Log($"{name} value changed to {value}");
-        //}
+
+        void PostCodeOnChange(string value)
+        {
+
+            supplierViewModel.SelectedSupplier.PostCodeId = supplierViewModel.postcodefound(value).Id;
+
+            this.StateHasChanged();
+        }
+  
     }

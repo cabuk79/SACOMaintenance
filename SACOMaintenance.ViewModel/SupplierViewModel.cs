@@ -13,6 +13,7 @@ namespace SACOMaintenance.ViewModel
         public Supplier SelectedSupplier { get; set; }
         
         public ISupplier SupplierDataProvider { get; }
+        public ObservableCollection<PostCodeTown> postcodes { get; set; } = new();
 
         public SupplierViewModel(ISupplier supplierDataProvider)
         {
@@ -31,7 +32,14 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+        public PostCodeTown postcodefound (string value)
+        {
+            var postcode = SupplierDataProvider.LoadPostCodesByRef(value);
+            SelectedSupplier.Postcode = SupplierDataProvider.GetPostCode(value);
+            return postcode;
+        }
 
+      
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
@@ -44,5 +52,7 @@ namespace SACOMaintenance.ViewModel
             SelectedSupplier = SupplierDataProvider.LoadSingleSupplier(Id);
 
         }
+
+        
     }
 }

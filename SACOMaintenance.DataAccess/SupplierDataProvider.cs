@@ -19,7 +19,12 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        
+        public PostCodeTown LoadPostCodesByRef(string postCode)
+        {
+            var postCodes = _sacoMaintenanceContext.PostCodeTowns
+                .Where(pc => pc.PostCode == postCode).FirstOrDefault();
+            return postCodes;
+        }
 
         public IEnumerable<Supplier> LoadAllSuppliers()
         {
@@ -36,6 +41,17 @@ namespace SACOMaintenance.DataAccess
                 .FirstOrDefault();
             
             return singleSupplier;
+        }
+
+        public PostCodeTown GetPostCode(string postCode)
+        {
+            var singlePostCode = _sacoMaintenanceContext.PostCodeTowns.Where(code => code.PostCode == postCode).FirstOrDefault();
+            return singlePostCode;
+        }
+
+        public IEnumerable<PostCodeTown> LoadAllPostCodes()
+        {
+            throw new NotImplementedException();
         }
     }
 }
