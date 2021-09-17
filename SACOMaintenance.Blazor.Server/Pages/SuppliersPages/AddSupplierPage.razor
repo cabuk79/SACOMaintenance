@@ -5,32 +5,32 @@
 
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4"><RadzenLabel Text="Read Only"></RadzenLabel><RadzenSwitch @bind-Value="@switchValue"></RadzenSwitch></div>
+        <div class="row" style="padding: 5px 0px 10px 5px">
+            <div class="col-lg-4"><RadzenLabel Text="Add New Supplier - Fill in the Details Below"></RadzenLabel></div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <RadzenFieldset Text="Address Information" Style="border-color: black; height: max-content">
                     <div class="row" style="padding: 5px 5px 5px 5px">
                         <div class="col-lg-6">
-                            <div class="row">
+                            <div class="row" style="padding: 5px 5px 5px 5px">
                                 <div class="col-lg-4"><RadzenLabel Text="Name"></RadzenLabel></div>
                                 <div class="col-lg-8">
-                                    <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                    <RadzenTextBox Style="width: 100%; border-color: black"
                                                    @bind-Value="supplierViewModel.NewSupplier.Name"></RadzenTextBox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4"><RadzenLabel Text="Address One"></RadzenLabel></div>
                                 <div class="col-lg-8">
-                                    <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                    <RadzenTextBox Style="width: 100%; border-color: black"
                                                    @bind-Value="supplierViewModel.NewSupplier.AddressLineOne"></RadzenTextBox>
                                 </div>
                             </div>
                             <div class="row" style="padding: 5px 5px 5px 5px">
                                 <div class="col-lg-4"><RadzenLabel Text="Address Two"></RadzenLabel></div>
                                 <div class="col-lg-8">
-                                    <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                    <RadzenTextBox Style="width: 100%; border-color: black"
                                                    @bind-Value="supplierViewModel.NewSupplier.AddressLineTwo"></RadzenTextBox>
                                 </div>
                             </div>
@@ -51,15 +51,12 @@
                             <div class="row" style="padding: 5px 5px 5px 5px">
                                 <div class="col-lg-4"><RadzenLabel Text="Post Code"></RadzenLabel></div>
                                 <div class="col-lg-4">
-                                    <RadzenTextBox Style="width: 100%; border-color: black" ReadOnly="@switchValue"
+                                    <RadzenTextBox Style="width: 100%; border-color: black"
                                                    @bind-Value="supplierViewModel.NewSupplier.Postcode.PostCode"></RadzenTextBox>
                                 </div>
-                                @if (switchValue == false)
-                                {
                                     <div class="col-lg-4">
                                         <RadzenButton Text="Search" Click=@(args => PostCodeOnChange(supplierViewModel.NewSupplier.Postcode.PostCode))></RadzenButton>
                                     </div>
-                                }
                                 <div class="row">
                                     <div class="col-lg-12">
                                         @if (hasFoundPostCodeError == true)
@@ -70,14 +67,11 @@
                                 </div>
                                 <div class="row" style="padding: 5px 5px 5px 5px">
                                     <div class="col-lg-12"><RadzenLabel Text="Comment"></RadzenLabel></div>
-                                    <div class="col-lg-12"><RadzenHtmlEditor Disabled="@switchValue" @bind-Value="supplierViewModel.NewSupplier.Comments"></RadzenHtmlEditor></div>
+                                    <div class="col-lg-12"><RadzenHtmlEditor @bind-Value="supplierViewModel.NewSupplier.Comments"></RadzenHtmlEditor></div>
                                 </div>
-                                @if (switchValue == false)
-                                {
-                                    <div class="row">
-                                        <div class="col-lg-4"><RadzenButton Text="SAVE" Click="@(args => AddNewSupplier())"></RadzenButton></div>
-                                    </div>
-                                }
+                                <div class="row">
+                                    <div class="col-lg-4"><RadzenButton Text="SAVE" Click="@(args => AddNewSupplier())"></RadzenButton></div>
+                                </div>                                
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -112,7 +106,6 @@
 
         string postCodeFoundError;
         bool hasFoundPostCodeError = false;
-        bool switchValue = true;
 
         protected override void OnInitialized()
         {

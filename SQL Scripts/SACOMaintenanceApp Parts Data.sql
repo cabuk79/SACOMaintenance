@@ -1,5 +1,5 @@
-INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Battery 265', 'General use battery', 5, 20);
-INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Bulb 25 Watt', 'General use bulb', 15, 20);
-INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Cat 5 Cable', '', 25, 20);
-INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Top Shaft 611', 'Top shaft for 611 presses', 1, 0);
+INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Thyristor Firing Board', 'E301/3', 5, 20);
+INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('560 Amp Fuses', 'F1', 15, 20);
+INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Connecotr Cooling Fan', 'K3', 25, 20);
+INSERT INTO Parts (Name, Comment, MinQtyInStock, CurrentQty) VALUES ('Cooling Fan 600mm', 'KX4-200-4505-3', 1, 0);
 

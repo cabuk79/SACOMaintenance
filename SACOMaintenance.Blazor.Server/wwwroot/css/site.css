@@ -228,13 +228,28 @@ app {
         padding: 1px 1px;
         /*min-width: 300px;
         max-width: 300px;*/
-        width: 300px;
-        margin: 10px auto 0;
+        width: 150px;
+        margin: 2px auto 0;
     }
 
     .containerDashNumberCountNumber {
         color: darkblue;
         font-size: 30px;
     }
+
+    /* Request Card Priority */
+    .requestPriorityCentre{
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .requestPriorityRight {
+        margin: auto;
+        /*padding: 0px;*/
+        text-align: right;
+    }
+
+
 
 }

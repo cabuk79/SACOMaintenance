@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Pages.SuppliersPages
+namespace SACOMaintenance.Blazor.Server.Components
 {
     #line hidden
     using System;
@@ -96,22 +96,7 @@ using Radzen.Blazor.Rendering;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
-using SACOMaintenance.Common.ModelDB;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
-using System.Text.RegularExpressions;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/suppliers-list")]
-    public partial class AllSuppliers : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class RequestPriorityDashboardItem : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,17 +104,21 @@ using System.Text.RegularExpressions;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
+#line 21 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestPriorityDashboardItem.razor"
        
-    protected override async Task OnInitializedAsync()
-    {
-        supplierViewModel.LoadAllSuppliers();
-    }
+
+    [Parameter]
+    public string imageLocation { get; set; }
+
+    [Parameter]
+    public string color { get; set; }
+
+    [Parameter]
+    public string text { get; set; }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

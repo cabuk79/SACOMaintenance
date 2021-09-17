@@ -112,7 +112,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 128 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
+#line 160 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
            
         [Parameter]
         public string Id { get; set; }

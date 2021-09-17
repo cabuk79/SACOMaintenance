@@ -112,14 +112,13 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 109 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
+#line 103 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
            
         [Parameter]
         public string Id { get; set; }
 
         string postCodeFoundError;
         bool hasFoundPostCodeError = false;
-        bool switchValue = true;
 
         protected override void OnInitialized()
         {
