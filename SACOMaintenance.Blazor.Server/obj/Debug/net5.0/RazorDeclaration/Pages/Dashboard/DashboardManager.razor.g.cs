@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Pages.FactoryPages
+namespace SACOMaintenance.Blazor.Server.Pages.Dashboard
 {
     #line hidden
     using System;
@@ -97,39 +97,26 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\FactoryPages\FactoryViewEditComponent.razor"
-using SACOMaintenance.Common.ModelDB;
+#line 1 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardManager.razor"
+using SACOMaintenance.Blazor.Server.Pages.Dashboard;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/factories-view-edit")]
-    public partial class FactoryViewEditComponent : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardManager.razor"
+using SACOMaintenance.Blazor.Server.Components;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class DashboardManager : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 66 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\FactoryPages\FactoryViewEditComponent.razor"
-       
-
-    void OnChange(object value, string name)
-    {        
-        factoryViewModel.LoadSingleFactory(Convert.ToInt32(value));
-    }
-
-    private void UpdateArea(MouseEventArgs e)
-    {
-        //areaViewModel.SaveArea(areaViewModel.area);
-    }
-
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IFactoryViewModel factoryViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

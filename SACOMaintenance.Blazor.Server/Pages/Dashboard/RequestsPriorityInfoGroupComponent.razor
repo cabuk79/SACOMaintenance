@@ -1,0 +1,14 @@
+﻿@using SACOMaintenance.Blazor.Server.Components
+
+<RadzenFieldset Text="Maintenance Request Priority">
+    <div class="row">
+        <div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="fas fa-ambulance fa-5x" color="bg-danger" text="Critical"></RequestPriorityDashboardItem></div>
+        <div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="far fa-clock fa-5x" color="bg-warning" text="Priority 1"></RequestPriorityDashboardItem></div>
+        <div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="fas fa-exclamation-triangle fa-5x" color="bg-info" text="Priority 2"></RequestPriorityDashboardItem></div>
+        <div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="fas fa-info fa-5x" color="bg-dark" text="Priority 3-5"></RequestPriorityDashboardItem></div>
+    </div>
+</RadzenFieldset>
+
+@code {
+
+}

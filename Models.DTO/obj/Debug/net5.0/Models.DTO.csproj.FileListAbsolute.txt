@@ -9,3 +9,4 @@ C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.D
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\ref\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.csproj.AssemblyReference.cache

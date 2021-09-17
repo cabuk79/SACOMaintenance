@@ -104,7 +104,7 @@ using Radzen.Blazor.Rendering;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestPriorityDashboardItem.razor"
+#line 19 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestPriorityDashboardItem.razor"
        
 
     [Parameter]
