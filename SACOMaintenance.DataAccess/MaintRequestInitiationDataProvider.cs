@@ -37,7 +37,8 @@ namespace SACOMaintenance.DataAccess
                 RequestedById = 1, //maintRequestInitiation.RequestedById,
                 RequestDetails = maintRequestInitiation.RequestDetails,
                 RequestTypeId = maintRequestInitiation.RequestTypeId,
-                StatusId = 1 //set the default value to new
+                StatusId = 1,
+                PriorityId = (int)maintRequestInitiation.PriorityId //set the default value to new
             };
 
             _requestInitationDBContext.MaintRequestInitiations.Add(newRequest); 

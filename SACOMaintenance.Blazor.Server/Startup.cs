@@ -49,6 +49,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<ISupplier, SupplierDataProvider>();
             services.AddScoped<IPart, PartDataProvider>();
             services.AddScoped<IOrder, OrderDataProvider>();
+            services.AddScoped<IPriorities, PrioritiesDataProvider>();
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
             services.AddScoped<IAreaViewModel, AreaViewModel>();

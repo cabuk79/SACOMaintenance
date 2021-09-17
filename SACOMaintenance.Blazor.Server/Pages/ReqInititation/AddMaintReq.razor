@@ -16,19 +16,19 @@
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="Enter Request Details">
-                @*<div class="row">
+                <div class="row">
                     <div class="col-lg-3">
-                        <RadzenLabel Text="Company"></RadzenLabel>
+                        <RadzenLabel Text="Priority"></RadzenLabel>
                     </div>
                     <div class="col-lg-4">
-                        <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                        <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                         FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                        @bind-Value="@AddReqViewModel." FilterOperator="StringFilterOperator.Contains"
+                                        @bind-Value="@AddReqViewModel.PriorityId" FilterOperator="StringFilterOperator.Contains"
                                         AllowFiltering="true"
-                                        Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id">
+                                        Data="@AddReqViewModel.Priorities" TextProperty="Name" ValueProperty="Id">
                         </RadzenDropDown>
                     </div>
-                </div>*@
+                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <RadzenLabel Text="Provide details of the request below"></RadzenLabel>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <RadzenTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="width: 100%"></RadzenTextArea>
+                        <RadzenTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
                     </div>
                 </div>
                 <div class="row">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
-                        <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                        <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                         FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                         @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
                                         AllowFiltering="true"
@@ -65,7 +65,7 @@
                             var numberAreasEquipment = AddReqViewModel.Areas.Count();
                             if (numberAreasEquipment > 0)
                             {
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                                 FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                                 @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
                                                 AllowFiltering="true"
@@ -81,7 +81,7 @@
                             var numberEuipmentItems = AddReqViewModel.Equipment.Count();
                             if (numberEuipmentItems > 0)
                             {
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                                 FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                                 @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
                                                 AllowFiltering="true"

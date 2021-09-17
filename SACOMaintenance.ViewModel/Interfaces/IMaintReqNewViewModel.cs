@@ -15,21 +15,25 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public IFactory FactoryDataProvider { get; }
         public IEquipment EquipmentDataProvider { get; }
         public IArea AreaDataProvider { get; }
+        public IPriorities PriorityDataProvider { get; }
 
         public IEnumerable<AreaModel> Areas { get; set; }
         public IEnumerable<Factory> Factories { get; }
-        public IEnumerable<Equipment> Equipment { get; set;  }
+        public IEnumerable<Equipment> Equipment { get; set; }
+        public IEnumerable<Priority> Priorities { get; set; }
 
         public MaintRequestInitiation MaintReq { get; set; }
         public int FactoryId { get; set; }
         public int AreaId { get; set; }
         public int EquipmentId { get; set; }
+        public int PriorityId { get; set; }
         #endregion
 
         #region methods
 
         public void AddNewRequest();
         public void LoadAreasByFactory();
+        public void LoadPriorities();
         #endregion
     }
 }
