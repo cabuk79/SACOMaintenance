@@ -30,14 +30,14 @@ namespace SACOMaintenance.DataAccess
             MaintRequestInitiation newRequest = new MaintRequestInitiation
             {
                 DateRaised = DateTime.Now,
-                CompanyId = 4, //maintRequestInitiation.CompanyId,
+                CompanyId = 1, //maintRequestInitiation.CompanyId,
                 FactoryId = maintRequestInitiation.FactoryId,
                 AreaId = maintRequestInitiation.AreaId,
                 EquipmentId = maintRequestInitiation.EquipmentId,
                 RequestedById = 1, //maintRequestInitiation.RequestedById,
                 RequestDetails = maintRequestInitiation.RequestDetails,
                 RequestTypeId = maintRequestInitiation.RequestTypeId,
-                StatusId = 7 //set the default value to new
+                StatusId = 1 //set the default value to new
             };
 
             _requestInitationDBContext.MaintRequestInitiations.Add(newRequest); 

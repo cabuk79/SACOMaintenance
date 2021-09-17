@@ -103,6 +103,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+using SACOMaintenance.Blazor.Server.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/full-add/{MaintReqID}")]
     public partial class MaintReqFull : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,10 +119,12 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 90 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 125 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter] 
     public string maintReqID { get; set; }
+
+    public bool moveCol = false;
 
     public enum RiskLevelLetter { H, M, L }
 
@@ -123,9 +132,11 @@ using SACOMaintenance.Common.ModelDB;
     {
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-        maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+       // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
         maintReqInitation.LoadFactories();
+
+        maintReqInitation.LoadRisks();
     }
 
 #line default

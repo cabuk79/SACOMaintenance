@@ -94,10 +94,8 @@ namespace SACOMaintenance.ViewModel
             get => maintReqInitation.Equipment.Name;
         }
 
-        public List<Risk> Risks
-        { 
-            get => maintReqInitation.Risks;
-        }
+        public ObservableCollection<Risk> Risks { get; set; }
+        
 
         
         
@@ -127,10 +125,9 @@ namespace SACOMaintenance.ViewModel
             return FactoriesList;
         }
 
-        public ObservableCollection<Risk> LoadRisks()
+        public void LoadRisks()
         {
-            //Risks = RiskDataProvider.LoadallRisks();
-            return null;
+            Risks = new ObservableCollection<Risk>(RiskDataProvider.LoadallRisks());
         }
 
         public void ExportRequest()

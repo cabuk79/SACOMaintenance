@@ -7,77 +7,99 @@
 
 <RadzenNotification></RadzenNotification>
 
-
-
-<div class="row">
-    <div class="container-fluid">
-        <div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
             <h3>Add New Maintenance Request</h3>
         </div>
-        
-        <div>
-            <EditForm Model="AddReqViewModel.MaintReq">
-                <div class="form-group">
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Details</label>
-                        <InputTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" class="form-control" placeholder="Enter the details of the request"></InputTextArea>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Enter Request Details">
+                @*<div class="row">
+                    <div class="col-lg-3">
+                        <RadzenLabel Text="Company"></RadzenLabel>
+                    </div>
+                    <div class="col-lg-4">
+                        <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                        @bind-Value="@AddReqViewModel." FilterOperator="StringFilterOperator.Contains"
+                                        AllowFiltering="true"
+                                        Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id">
+                        </RadzenDropDown>
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenLabel Text="Provide details of the request below"></RadzenLabel>
                     </div>
                 </div>
-                <div class="form-group-row">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <label style="font-weight:bold">Factory</label>
-                            <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
-                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                            @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
-                                            AllowFiltering="true"
-                                            Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id">
-                            </RadzenDropDown>
-                            <p>If the factory you want is not in the list contact maintenance!</p>
-                        </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="width: 100%"></RadzenTextArea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <RadzenLabel Text="Factory"></RadzenLabel>
+                    </div>
+                    <div class="col-lg-4">
+                        <RadzenLabel Text="Area"></RadzenLabel>
+                    </div>
+                    <div class="col-lg-4">
+                        <RadzenLabel Text="Equipment"></RadzenLabel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                        @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
+                                        AllowFiltering="true"
+                                        Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id">
+                        </RadzenDropDown>
+                    </div>
+                    <div class="col-lg-4">
                         @if (AddReqViewModel.Areas != null)
                         {
                             var numberAreasEquipment = AddReqViewModel.Areas.Count();
                             if (numberAreasEquipment > 0)
                             {
-                                <div class="col-lg-4">
-                                    <label style="font-weight:bold">Area</label>
-                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
-                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                    @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
-                                                    AllowFiltering="true"
-                                                    Data="@AddReqViewModel.Areas" TextProperty="AreaName" ValueProperty="Id">
-                                    </RadzenDropDown>
-                                    <p>If the area is want is not in the list please contact maintenance!</p>
-                                </div>
+                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
+                                                AllowFiltering="true"
+                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName" ValueProperty="Id">
+                                </RadzenDropDown>
+                                <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
                             }
                         }
-
+                    </div>
+                    <div class="col-lg-4">
                         @if (AddReqViewModel.Equipment != null)
                         {
                             var numberEuipmentItems = AddReqViewModel.Equipment.Count();
                             if (numberEuipmentItems > 0)
                             {
-                                <div class="col-lg-4">
-                                    <label style="font-weight:bold">Equipment</label>
-                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
-                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                    @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
-                                                    AllowFiltering="true"
-                                                    Data=@AddReqViewModel.Equipment TextProperty="Name" ValueProperty="Id">
-                                    </RadzenDropDown>
-                                    <p>If the equipment is not there contact maintenance!</p>
-                                </div>
+                                <RadzenDropDown AllowClear="true" TValue="int" Style="width:100%;"
+                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
+                                                AllowFiltering="true"
+                                                Data="@AddReqViewModel.Equipment" TextProperty="Name" ValueProperty="Id">
+                                </RadzenDropDown>
+                                <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
                             }
                         }
                     </div>
                 </div>
-            </EditForm>
-            <div class="area-button-group">
-                <RadzenButton Click="@UpdateBook" Text="Save New Request" Icon="save" Style="margin-bottom: 20px; width: 200px" />
-            </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenButton Click="@UpdateBook" Text="Save New Request" Icon="save" Style="margin-bottom: 20px; width: 200px" />
+                    </div>
+                </div>
+            </RadzenFieldset>
         </div>
-    </div>
+    </div>    
 </div>
 
 @code {

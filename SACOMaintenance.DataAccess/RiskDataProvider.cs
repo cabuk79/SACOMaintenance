@@ -11,31 +11,34 @@ namespace SACOMaintenance.DataAccess
 {
     public class RiskDataProvider : IRisk
     {
-        public RiskDataProvider()
+        private readonly SACOMaintenanceContext _sacoMaintenanceContext;
+        public RiskDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
             //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditRisk(Risk risk)
         {
-            SacoMaintenanceContext.Risks.Add
+            _sacoMaintenanceContext.Risks.Add
             (
                 new Risk { RiskName = risk.RiskName, Description = risk.Description }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _sacoMaintenanceContext.SaveChanges();
         }
 
         public IEnumerable<Risk> LoadallRisks()
         {
-            var risks = SacoMaintenanceContext.Risks.ToList();
+            var risks = _sacoMaintenanceContext.Risks.ToList();
             return risks;
+
         }
 
         public Risk ViewSingleRisk(int riskId)
         {
-            var risk = SacoMaintenanceContext.Risks.FirstOrDefault(i => i.Id == riskId);
+            var risk = _sacoMaintenanceContext.Risks.FirstOrDefault(i => i.Id == riskId);
             return risk;
         }
     }

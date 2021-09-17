@@ -467,6 +467,9 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int?>("FactoryId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PriorityId")
+                        .HasColumnType("int");
+
                     b.Property<string>("RequestDetails")
                         .HasColumnType("nvarchar(max)");
 
@@ -488,6 +491,8 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasIndex("EquipmentId");
 
                     b.HasIndex("FactoryId");
+
+                    b.HasIndex("PriorityId");
 
                     b.HasIndex("StatusId");
 
@@ -790,6 +795,21 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("PostCodeTowns");
                 });
 
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Priority", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Priorites");
+                });
+
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.RequestDailyRegister", b =>
                 {
                     b.Property<int>("Id")
@@ -877,7 +897,7 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PostCodeId")
+                    b.Property<int>("PostCodeId")
                         .HasColumnType("int");
 
                     b.Property<string>("TelephoneNumber")
@@ -1073,6 +1093,10 @@ namespace SACOMaintenance.Data.Migrations
                         .WithMany("MaintRequestInitiations")
                         .HasForeignKey("FactoryId");
 
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Priority", "Priority")
+                        .WithMany("MaintRes")
+                        .HasForeignKey("PriorityId");
+
                     b.HasOne("SACOMaintenance.Common.ModelDB.Status", "Status")
                         .WithMany("MaintRequestInitiations")
                         .HasForeignKey("StatusId")
@@ -1086,6 +1110,8 @@ namespace SACOMaintenance.Data.Migrations
                     b.Navigation("Equipment");
 
                     b.Navigation("Factory");
+
+                    b.Navigation("Priority");
 
                     b.Navigation("Status");
                 });
@@ -1189,7 +1215,9 @@ namespace SACOMaintenance.Data.Migrations
                 {
                     b.HasOne("SACOMaintenance.Common.ModelDB.PostCodeTown", "Postcode")
                         .WithMany()
-                        .HasForeignKey("PostCodeId");
+                        .HasForeignKey("PostCodeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Postcode");
                 });
@@ -1237,6 +1265,11 @@ namespace SACOMaintenance.Data.Migrations
                     b.Navigation("Parts");
 
                     b.Navigation("SupplierParts");
+                });
+
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Priority", b =>
+                {
+                    b.Navigation("MaintRes");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Status", b =>

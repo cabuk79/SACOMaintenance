@@ -1,6 +1,7 @@
 ﻿@page "/maint-req/full-add/{MaintReqID}" 
 @using SACOMaintenance.Common.ModelDB
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
+@using SACOMaintenance.Blazor.Server.Components
 
 <h3>Maintenance Request @maintReqInitation.maintReqId</h3>
 
@@ -36,60 +37,96 @@
                     <label style="font-weight:bold">Details</label>
                     <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 
-    <div class="container-fluid" style="border:1px solid">
-        <div class="row">
-            <h3>Dynamic Risk Assessment (to be completed by person in charge of the work)</h3>
-        </div>
-        <div class="row">
-            @foreach (var item in maintReqInitation.RiskInfoList)
-            {
-                @foreach (var riskITem in maintReqInitation.Risks)
-                {
-                    if (riskITem.Id == item.RiskId)
+    <RadzenTabs RenderMode="TabRenderMode.Client">
+        <Tabs>
+            <RadzenTabsItem Text="Risk Assessment">
+                <table border="1">
+                    <tr>
+                        <th>Hazard(s)</th>
+                        <th>H</th>
+                        <th>M</th>
+                        <th>L</th>
+                    </tr>
+                    @foreach (var item in maintReqInitation.Risks)
                     {
-                        <div class="col-4">
-                            <div class="mt-2 row">
-                                <div class="w-75">
-                                    @riskITem.RiskName
+                        <tr>
+                            <td>@item.RiskName</td>
+                            <td colspan="3"><RiskLevelsChooser></RiskLevelsChooser></td>
+                        </tr>
+                    }
+                </table>
+            </RadzenTabsItem>
+        </Tabs>
+    </RadzenTabs>
+
+        
+
+
+        <div class="container-fluid" style="border:1px solid">
+            <div class="row">
+                <h3>Dynamic Risk Assessment (to be completed by person in charge of the work)</h3>
+            </div>
+            <div class="row">
+                @foreach (var item in maintReqInitation.RiskInfoList)
+                {
+                    @foreach (var riskITem in maintReqInitation.Risks)
+                    {
+                        if (riskITem.Id == item.RiskId)
+                        {
+                            <div class="col-4">
+                                <div class="mt-2 row">
+                                    <div class="w-75">
+                                        @riskITem.RiskName
+                                    </div>
+                                    <div class="w-25">
+                                        <RadzenRadioButtonList @bind-Value="@item.RiskId" TValue="int">
+                                            <Items>
+                                                <RadzenRadioButtonListItem Text="H" Value="@item.RiskId"></RadzenRadioButtonListItem>
+                                                <RadzenRadioButtonListItem Text="M" Value="@item.RiskId"></RadzenRadioButtonListItem>
+                                                <RadzenRadioButtonListItem Text="L" Value="@item.RiskId"></RadzenRadioButtonListItem>
+                                            </Items>
+                                        </RadzenRadioButtonList>
+
+
+                                        @*<InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
+                                                @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
+                                                {
+                                                    <option class="riskLevelOption" value=@levelItem>@levelItem</option>
+                                                }
+                                            </InputSelect>*@
+                                    </div>
                                 </div>
-                                <div class="w-25">
-                                    <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
-                                        @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
-                                        {
-                                            <option class="riskLevelOption" value=@levelItem>@levelItem</option>
-                                        }
-                                    </InputSelect>
-                                </div>
-                            </div>                                                                                    
-                        </div>
+                            </div>
+                        }
                     }
                 }
+            </div>
+        </div>
+
+        <div class="form-group-row">
+            <!-- Choose the correct container for the maintenance request -->
+            @{
+                if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
+                {
+                    <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
+                }
+                else
+                {
+                    <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
+                }
             }
-        </div>        
-    </div>
-        
-    <div class="form-group-row">
-        <!-- Choose the correct container for the maintenance request -->
-        @{
-            if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
-            {
-                <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
-            }
-            else
-            {
-                <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
-            }
-        }
-    </div>
+        </div>
 </EditForm>
 
 @code {
     [Parameter] 
     public string maintReqID { get; set; }
+
+    public bool moveCol = false;
 
     public enum RiskLevelLetter { H, M, L }
 
@@ -97,8 +134,10 @@
     {
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-        maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+       // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
         maintReqInitation.LoadFactories();
+
+        maintReqInitation.LoadRisks();
     }
 }
