@@ -113,10 +113,11 @@ namespace SACOMaintenance.ViewModel
             return maintReqInitation;
         }
 
-        public ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId)
+        public void LoadMaintRiskData(int maintReqId)
         {
-            RiskInfoList = MaintReqDataProvider.LoadMaintRiskData(maintReqId);
-            return RiskInfoList;
+            RiskInfoList = new ObservableCollection<MaintRequestInitiationRisk>(MaintReqDataProvider.LoadMaintRiskData(maintReqId));
+            // RiskInfoList = MaintReqDataProvider.LoadMaintRiskData(main tReqId);
+            //return RiskInfoList;
         }
 
         public ObservableCollection<Factory> LoadFactories()

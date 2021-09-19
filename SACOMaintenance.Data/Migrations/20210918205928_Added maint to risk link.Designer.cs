@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SACOMaintenance.Data;
 
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    partial class SACOMaintenanceContextModelSnapshot : ModelSnapshot
+    [Migration("20210918205928_Added maint to risk link")]
+    partial class Addedmainttorisklink
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -507,20 +509,14 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("RiskId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("H")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("L")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("M")
-                        .HasColumnType("bit");
+                    b.Property<string>("RiskLevel")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaintRequestInitiationId", "RiskId");
 
                     b.HasIndex("RiskId");
 
-                    b.ToTable("MaintRequestInitiationRisk");
+                    b.ToTable("MaintReqRisksLinked");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Order", b =>

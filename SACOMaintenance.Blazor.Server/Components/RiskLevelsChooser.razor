@@ -1,13 +1,26 @@
-﻿
-<RadzenRadioButtonList TValue="int">
+﻿@using SACOMaintenance.Common.ModelDB
+
+
+<RadzenCheckBox @bind-Value="@checkH" TValue="bool"></RadzenCheckBox>
+<RadzenCheckBox @bind-Value="@checkM" TValue="bool"></RadzenCheckBox>
+<RadzenCheckBox @bind-Value="@checkL" TValue="bool"></RadzenCheckBox>
+
+@*<RadzenRadioButtonList TValue="int" Data="@maintRequest.Risks" ValueProperty="RiskLevel">
     <Items>
-       <RadzenRadioButtonListItem Value="1" Style="border-color: black"></RadzenRadioButtonListItem>
-            <RadzenRadioButtonListItem Value="2" Style="border-color: black"></RadzenRadioButtonListItem>
-            <RadzenRadioButtonListItem Value="3" Style="border-color: black"></RadzenRadioButtonListItem>
-           
+        <RadzenRadioButtonListItem Value="1"  Style="border-color: black"></RadzenRadioButtonListItem>
+        <RadzenRadioButtonListItem Value="2" Style="border-color: black"></RadzenRadioButtonListItem>
+        <RadzenRadioButtonListItem Value="3" Style="border-color: black"></RadzenRadioButtonListItem>
+       
     </Items>
-</RadzenRadioButtonList>
+</RadzenRadioButtonList>*@
 
 @code {
+    [Parameter]
+    public MaintRequestInitiation maintRequest { get; set; }
 
+    bool checkH;
+    bool checkM;
+    bool checkL;
+
+    //string value = "H";
 }

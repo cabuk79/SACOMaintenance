@@ -18,6 +18,7 @@ namespace SACOMaintenance.Data
         public DbSet<GeneralRequest> GeneralRequests { get; set; }
         public DbSet<MachineType> MachineTypes { get; set; }
         public DbSet<MaintRequestInitiation> MaintRequestInitiations { get; set; }
+        public DbSet<MaintRequestInitiationRisk> MaintRequestInitiationRisk { get; set; }
         public DbSet<PlantRequest> PlantRequests { get; set; }
         public DbSet<PPE> PPE { get; set; }
         public DbSet<RequestDailyRegister> RequestDailyRegisters { get; set; }

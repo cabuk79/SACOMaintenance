@@ -23,6 +23,9 @@ namespace SACOMaintenance.DataAccess
         //public IQueryable<Risk> riskList { get; set; }
         ObservableCollection<Risk> riskList { get; set; }
 
+        IEnumerable<MaintRequestInitiationRisk> risksDataList { get; set; }
+        ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.risksDataList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
@@ -55,7 +58,9 @@ namespace SACOMaintenance.DataAccess
             {
                 newRisk.MaintRequestInitiationId = newRequest.Id;
                 newRisk.RiskId = item.Id;
-                newRisk.RiskLevel = "";
+                newRisk.H = false;
+                newRisk.M = false;
+                newRisk.L = false;
 
                 _requestInitationDBContext.Add(newRisk);
                 _requestInitationDBContext.SaveChanges();
@@ -142,13 +147,12 @@ namespace SACOMaintenance.DataAccess
         //    return riskList;
         //}
 
-        ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.LoadMaintRiskData(int maintReqId)
+        public IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId)
         {
-            ObservableCollection<MaintRequestInitiationRisk> listInfo =
-                new ObservableCollection<MaintRequestInitiationRisk>(_requestInitationDBContext.Set<MaintRequestInitiationRisk>()
-                .Where(mr => mr.MaintRequestInitiationId == maintReqId).ToList());
+            var riskDataLinks = _requestInitationDBContext.MaintRequestInitiationRisk
+                .Where(i => i.MaintRequestInitiationId == maintReqId).ToList();
 
-            return listInfo;
+            return riskDataLinks;
         }
 
         //Get the Risks for the type of request it is General or Plant
@@ -164,6 +168,14 @@ namespace SACOMaintenance.DataAccess
             }
         }
 
-        
+        //void IMaintRequestInitiation.LoadMaintRiskData(int maintReqId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public void LoadRiskLevel(int maintReqId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

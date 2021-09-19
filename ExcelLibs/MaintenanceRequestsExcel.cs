@@ -34,29 +34,29 @@ namespace ExcelLibs
                     {
                         if(itemRisk.RiskId == item.Id)
                         {
-                            switch(item.RiskName)
-                            {
-                                case "Slips, trips and falls":
-                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C18").Value = "X";  }
-                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D18").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E18").Value = "X"; }
-                                    break;
-                                case "Falls from height":
-                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C19").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D19").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E19").Value = "X"; }
-                                    break;
-                                case "Contact with moving machinery":
-                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C20").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D20").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E20").Value = "X"; }
-                                    break;
-                                case "Electrical":
-                                    if (itemRisk.RiskLevel == "H") { worksheet.Cell("C21").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "M") { worksheet.Cell("D21").Value = "X"; }
-                                    if (itemRisk.RiskLevel == "L") { worksheet.Cell("E21").Value = "X"; }
-                                    break;
-                            }
+                            //switch(item.RiskName)
+                            //{
+                            //    case "Slips, trips and falls":
+                            //        if (itemRisk.RiskLevel == "H") { worksheet.Cell("C18").Value = "X";  }
+                            //        if (itemRisk.RiskLevel == "M") { worksheet.Cell("D18").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "L") { worksheet.Cell("E18").Value = "X"; }
+                            //        break;
+                            //    case "Falls from height":
+                            //        if (itemRisk.RiskLevel == "H") { worksheet.Cell("C19").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "M") { worksheet.Cell("D19").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "L") { worksheet.Cell("E19").Value = "X"; }
+                            //        break;
+                            //    case "Contact with moving machinery":
+                            //        if (itemRisk.RiskLevel == "H") { worksheet.Cell("C20").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "M") { worksheet.Cell("D20").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "L") { worksheet.Cell("E20").Value = "X"; }
+                            //        break;
+                            //    case "Electrical":
+                            //        if (itemRisk.RiskLevel == "H") { worksheet.Cell("C21").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "M") { worksheet.Cell("D21").Value = "X"; }
+                            //        if (itemRisk.RiskLevel == "L") { worksheet.Cell("E21").Value = "X"; }
+                            //        break;
+                            //}
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-﻿@page "/maint-req/full-add/{MaintReqID}" 
+﻿@page "/maint-req/full-add/{MaintReqID}"
 @using SACOMaintenance.Common.ModelDB
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
 @using SACOMaintenance.Blazor.Server.Components
@@ -9,7 +9,7 @@
               Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
 @*<RadzenButton Click=@(args => maintReqInitation.ExportRequest()) Text="Create Request Form"
-              Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>*@
+    Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>*@
 
 <EditForm Model="maintReqInitation">
     <div class="container-fluid" style="border:1px solid">
@@ -41,36 +41,74 @@
         </div>
     </div>
 
+
+
     <RadzenTabs RenderMode="TabRenderMode.Client">
         <Tabs>
             <RadzenTabsItem Text="Risk Assessment">
-                <table border="1">
-                    <tr>
-                        <th>Hazard(s)</th>
-                        <th>H</th>
-                        <th>M</th>
-                        <th>L</th>
-                    </tr>
-                    @foreach (var item in maintReqInitation.Risks)
-                    {
-                        <tr>
-                            <td>@item.RiskName</td>
-                            <td colspan="3"><RiskLevelsChooser></RiskLevelsChooser></td>
-                        </tr>
-                    }
-                </table>
+                <RadzenGrid Data="@maintReqInitation.RiskInfoList" TItem="MaintRequestInitiationRisk">
+                    <Columns>
+                        <RadzenGridColumn TItem="MaintRequestInitiationRisk" Property="RiskId" Title="Risk Name">
+                            <Template Context="data">
+                                @foreach (var riskItem in maintReqInitation.Risks)
+                                {
+                                    if (riskItem.Id == data.RiskId)
+                                    {
+                                        @riskItem.RiskName
+                                    }
+                                }
+                            </Template>
+                        </RadzenGridColumn>
+                        <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="H">
+                            <Template Context="data">
+                                @if (data.M == true || data.L == true)
+                                {
+                                    <RadzenCheckBox @bind-Value="data.H" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
+                                }
+                                else
+                                {
+                                    <RadzenCheckBox @bind-Value="data.H" TValue="bool" Style="border-color: black"></RadzenCheckBox>
+                                }
+                            </Template>
+                        </RadzenGridColumn>
+                        <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="M">
+                            <Template Context="data">
+                                @if (data.H == true || data.L == true)
+                                {
+                                    <RadzenCheckBox @bind-Value="data.M" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
+                                }
+                                else
+                                {
+                                    <RadzenCheckBox @bind-Value="data.M" TValue="bool" Style="border-color: black"></RadzenCheckBox>
+                                }
+                            </Template>
+                        </RadzenGridColumn>
+                        <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="L">
+                            <Template Context="data">
+                                @if (data.H == true || data.M == true)
+                                {
+                                    <RadzenCheckBox @bind-Value="data.L" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
+                                }
+                                else
+                                {
+                                    <RadzenCheckBox @bind-Value="data.L" TValue="bool" Style="border-color: black"></RadzenCheckBox>
+                                }
+                            </Template>
+                        </RadzenGridColumn>
+                    </Columns>
+                </RadzenGrid>
             </RadzenTabsItem>
         </Tabs>
     </RadzenTabs>
 
-        
 
 
-        <div class="container-fluid" style="border:1px solid">
-            <div class="row">
-                <h3>Dynamic Risk Assessment (to be completed by person in charge of the work)</h3>
-            </div>
-            <div class="row">
+
+    <div class="container-fluid" style="border:1px solid">
+        <div class="row">
+            <h3>Dynamic Risk Assessment (to be completed by person in charge of the work)</h3>
+        </div>
+        @*<div class="row">
                 @foreach (var item in maintReqInitation.RiskInfoList)
                 {
                     @foreach (var riskITem in maintReqInitation.Risks)
@@ -85,59 +123,72 @@
                                     <div class="w-25">
                                         <RadzenRadioButtonList @bind-Value="@item.RiskId" TValue="int">
                                             <Items>
-                                                <RadzenRadioButtonListItem Text="H" Value="@item.RiskId"></RadzenRadioButtonListItem>
-                                                <RadzenRadioButtonListItem Text="M" Value="@item.RiskId"></RadzenRadioButtonListItem>
-                                                <RadzenRadioButtonListItem Text="L" Value="@item.RiskId"></RadzenRadioButtonListItem>
+                                                <RadzenRadioButtonListItem Text="1" Value="@item.RiskId"></RadzenRadioButtonListItem>
+                                                <RadzenRadioButtonListItem Text="2" Value="@item.RiskId"></RadzenRadioButtonListItem>
+                                                <RadzenRadioButtonListItem Text="3" Value="@item.RiskId"></RadzenRadioButtonListItem>
                                             </Items>
                                         </RadzenRadioButtonList>
 
 
-                                        @*<InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
+                                        <InputSelect id="riskLevel" @bind-Value="item.RiskLevel">
                                                 @foreach (RiskLevelLetter levelItem in Enum.GetValues(typeof(RiskLevelLetter)))
                                                 {
                                                     <option class="riskLevelOption" value=@levelItem>@levelItem</option>
                                                 }
-                                            </InputSelect>*@
+                                            </InputSelect>
                                     </div>
                                 </div>
                             </div>
                         }
                     }
                 }
-            </div>
-        </div>
+            </div>*@
+    </div>
 
-        <div class="form-group-row">
-            <!-- Choose the correct container for the maintenance request -->
-            @{
-                if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
-                {
-                    <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
-                }
-                else
-                {
-                    <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
-                }
+    <div class="form-group-row">
+        <!-- Choose the correct container for the maintenance request -->
+        @{
+            if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
+            {
+                <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
             }
-        </div>
+            else
+            {
+                <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
+            }
+        }
+    </div>
 </EditForm>
 
 @code {
-    [Parameter] 
+    [Parameter]
     public string maintReqID { get; set; }
 
-    public bool moveCol = false;
+    
 
-    public enum RiskLevelLetter { H, M, L }
+        string value = "";
 
-    protected override void OnInitialized()
-    {
-        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-       // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+            public void Testing()
+            {
 
-        maintReqInitation.LoadFactories();
+            }
 
-        maintReqInitation.LoadRisks();
-    }
+
+            public bool moveCol = false;
+
+            public enum RiskLevelLetter { H, M, L }
+
+            protected override void OnInitialized()
+            {
+                maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+
+                // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
+                maintReqInitation.LoadFactories();
+
+                maintReqInitation.LoadRisks();
+
+                maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
+            }
 }

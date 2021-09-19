@@ -27,8 +27,9 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region methods
         MaintRequestInitiation GetMaintReqInitation(int maintReqId);
-        ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId);
+        //ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId);
         ObservableCollection<Factory> LoadFactories();
+        public void LoadMaintRiskData(int maintReqId);
         public void LoadRisks();
         void ExportRequest();
         #endregion

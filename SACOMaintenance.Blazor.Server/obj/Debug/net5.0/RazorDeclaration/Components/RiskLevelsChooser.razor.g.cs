@@ -96,6 +96,13 @@ using Radzen.Blazor.Rendering;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RiskLevelsChooser.razor"
+using SACOMaintenance.Common.ModelDB;
+
+#line default
+#line hidden
+#nullable disable
     public partial class RiskLevelsChooser : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -103,6 +110,21 @@ using Radzen.Blazor.Rendering;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 17 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RiskLevelsChooser.razor"
+       
+    [Parameter]
+    public MaintRequestInitiation maintRequest { get; set; }
+
+    bool checkH;
+    bool checkM;
+    bool checkL;
+
+    //string value = "H";
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591
