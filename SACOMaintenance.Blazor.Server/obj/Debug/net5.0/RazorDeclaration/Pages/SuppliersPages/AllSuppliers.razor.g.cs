@@ -119,11 +119,15 @@ using System.Text.RegularExpressions;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
+#line 62 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
        
+
+    string detailMarkUp;
+
     protected override async Task OnInitializedAsync()
     {
         supplierViewModel.LoadAllSuppliers();
+        
     }
 
 #line default

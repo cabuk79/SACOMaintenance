@@ -19,6 +19,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
         IEnumerable<MaintRequestInitiation> LoadNewRequests();
         IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen();
         IEnumerable<MaintRequestInitiation> LoadReqBasedOnStatus(int statusId);
+        
         //IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId);
         public IEnumerable<MaintRequestInitiation> LoadAllRequestsCurrentYear();
 

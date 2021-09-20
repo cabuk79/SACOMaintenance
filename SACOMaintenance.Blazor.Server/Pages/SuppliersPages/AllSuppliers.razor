@@ -4,6 +4,7 @@
 @using System.Text.RegularExpressions
 
 
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10">
@@ -59,8 +60,12 @@
 
 
 @code {
+
+    string detailMarkUp;
+
     protected override async Task OnInitializedAsync()
     {
         supplierViewModel.LoadAllSuppliers();
+        
     }
 }

@@ -18,12 +18,16 @@ namespace SACOMaintenance.ViewModel
         public IMaintRequestInitiation MaintReqDataProvider { get; }
         public IRisk RiskDataProvider { get; }
         public IFactory FactoryDataProvider { get; }
+        public IPPE PpeDataProvider { get; }
 
-        public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider, IFactory factoryDataProvider)
+
+        public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider,
+            IFactory factoryDataProvider, IPPE ppeDataProvider)
         {
             MaintReqDataProvider = maintReqInitProvider;
             RiskDataProvider = riskDataProvider;
             FactoryDataProvider = factoryDataProvider;
+            PpeDataProvider = ppeDataProvider;
         }
 
         public int maintReqId
@@ -95,10 +99,7 @@ namespace SACOMaintenance.ViewModel
         }
 
         public ObservableCollection<Risk> Risks { get; set; }
-        
-
-        
-        
+        public ObservableCollection<PPE> Ppe { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -137,6 +138,11 @@ namespace SACOMaintenance.ViewModel
             //exportReqList.ExportSingalReqest(maintReqInitation, RiskInfoList);
             MaintenanceRequestWordExport WordExport = new MaintenanceRequestWordExport();
             WordExport.CreateMaintenanceRequestReport(maintReqInitation);
+        }
+
+        public void LoadPPE()
+        {
+            Ppe = new ObservableCollection<PPE>(PpeDataProvider.LoadAllPPE());
         }
     }
 }

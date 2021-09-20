@@ -13,7 +13,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<MaintRequestInitiationRisk> RiskInfoList { get; set; }
         ObservableCollection<Factory> FactoriesList { get; set; }
         ObservableCollection<Risk> Risks { get; set; }
-
+        ObservableCollection<PPE> Ppe { get; set; }
+             
         IMaintRequestInitiation MaintReqDataProvider { get; }
         IRisk RiskDataProvider { get; }
         int maintReqId { get; set; }
@@ -32,6 +33,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public void LoadMaintRiskData(int maintReqId);
         public void LoadRisks();
         void ExportRequest();
+        public void LoadPPE();
         #endregion
     }
 }

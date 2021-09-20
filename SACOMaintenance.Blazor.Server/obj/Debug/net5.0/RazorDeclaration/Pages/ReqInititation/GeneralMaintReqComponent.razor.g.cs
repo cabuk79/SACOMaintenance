@@ -110,6 +110,13 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+using SACOMaintenance.ViewModel.Interfaces;
+
+#line default
+#line hidden
+#nullable disable
     public partial class GeneralMaintReqComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -118,16 +125,20 @@ using SACOMaintenance.DataAccess.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 73 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
     [Parameter]
     public int maintReqID { get; set; }
 
+    protected override void OnInitialized()
+    {
 
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGeneralMaintRequestViewModel GeneralViewModel { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGeneralRequest GeneralRequestDataProvider { get; set; }
     }
 }

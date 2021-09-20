@@ -19,22 +19,25 @@ namespace SACOMaintenance.ViewModel
         public IArea AreaDataProvider { get; }
 
         public IPriorities PriorityDataProvider { get; }
+        public ICompany CompanyDataProvider { get; }
 
         public MaintRequestInitiation MaintReq { get; set; }
-       
+
         public IEnumerable<AreaModel> Areas { get; set; }
+
 
         public IEnumerable<Factory> Factories { get; }
         public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
         public IEnumerable<Equipment> Equipment { get; set; }
         public IEnumerable<Priority> Priorities { get; set; }
+        public IEnumerable<Company> Companies { get; set; }
 
         public int FactoryId
         {
             get => MaintReq.FactoryId.GetValueOrDefault();
             set
             {
-                if(MaintReq.FactoryId != value)
+                if (MaintReq.FactoryId != value)
                 {
                     MaintReq.FactoryId = value;
                     RaisePropertychangedEvent();
@@ -43,15 +46,27 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+        public int CompanyId 
+        {
+            get => MaintReq.CompanyId.GetValueOrDefault();
+            set
+            {
+                if(MaintReq.CompanyId != value)
+                {
+                    MaintReq.CompanyId = value;
+                }                
+            }
+        }
+
         public int AreaId
         {
             get => MaintReq.AreaId.GetValueOrDefault();
             set
             {
-                if(MaintReq.AreaId != value)
+                if (MaintReq.AreaId != value)
                 {
                     MaintReq.AreaId = value;
-                    if(AreaId == 31)
+                    if (AreaId == 31)
                     {
                         MaintReq.RequestTypeId = 1;
                     }
@@ -95,18 +110,20 @@ namespace SACOMaintenance.ViewModel
 
         public MaintReqNewViewModel(IMaintRequestInitiation maintReqDataProvider,
             IFactory factoryDataProvider, IEquipment equipmentProvider, IArea areaProvider,
-            IPriorities priorityProvider)
+            IPriorities priorityProvider, ICompany companyProvider)
         {
             FactoryDataProvider = factoryDataProvider;
             EquipmentDataProvider = equipmentProvider;
             AreaDataProvider = areaProvider;
             MaintReqDataProvider = maintReqDataProvider;
             PriorityDataProvider = priorityProvider;
+            CompanyDataProvider = companyProvider;
 
             // Areas = AreaDataProvider.LoadAllAreas();
             Factories = FactoryDataProvider.LoadAllFactories();
             //Equipment = EquipmentDataProvider.LoadAllEquipments();
             LoadPriorities();
+            LoadCompanies();
 
             SaveCommand = new DelegateCommand(AddNewRequest);
 
@@ -116,7 +133,7 @@ namespace SACOMaintenance.ViewModel
         public void AddNewRequest()
         {
             MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
-            
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -134,6 +151,11 @@ namespace SACOMaintenance.ViewModel
         private void LoadEquipmentByArea()
         {
             Equipment = EquipmentDataProvider.LoadByArea(MaintReq.AreaId.Value);
+        }
+
+        public void LoadCompanies()
+        {
+            Companies = CompanyDataProvider.LoadCompanies();
         }
 
         public void LoadPriorities()

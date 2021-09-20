@@ -31,10 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\Images\glasses.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
     <ProjectReference Include="..\Models.DTO\Models.DTO.csproj" />
     <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />

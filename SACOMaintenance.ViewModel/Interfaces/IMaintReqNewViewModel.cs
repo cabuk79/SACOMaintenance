@@ -21,12 +21,14 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public IEnumerable<Factory> Factories { get; }
         public IEnumerable<Equipment> Equipment { get; set; }
         public IEnumerable<Priority> Priorities { get; set; }
+        public IEnumerable<Company> Companies { get; set; }
 
         public MaintRequestInitiation MaintReq { get; set; }
         public int FactoryId { get; set; }
         public int AreaId { get; set; }
         public int EquipmentId { get; set; }
         public int PriorityId { get; set; }
+        public int CompanyId { get; set; }
         #endregion
 
         #region methods

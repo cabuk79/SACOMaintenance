@@ -17,10 +17,8 @@
         <div class="col-lg-12">
             <RadzenFieldset Text="Enter Request Details">
                 <div class="row">
-                    <div class="col-lg-3">
-                        <RadzenLabel Text="Priority"></RadzenLabel>
-                    </div>
                     <div class="col-lg-4">
+                        <RadzenLabel Text="Priority"></RadzenLabel>
                         <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                         FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                         @bind-Value="@AddReqViewModel.PriorityId" FilterOperator="StringFilterOperator.Contains"
@@ -34,34 +32,23 @@
                                     <div class="col-lg-5">
                                         @((context as Priority).Name)
                                     </div>
-                                </div>                              
+                                </div>
                             </Template>
                         </RadzenDropDown>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <RadzenLabel Text="Provide details of the request below"></RadzenLabel>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <RadzenTextArea @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
+                    <div class="col-lg-4">
+                        <RadzenLabel Text="Company"></RadzenLabel>
+                        <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
+                                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                        @bind-Value="@AddReqViewModel.CompanyId" FilterOperator="StringFilterOperator.Contains"
+                                        AllowFiltering="true"
+                                        Data="@AddReqViewModel.Companies" TextProperty="CompantName" ValueProperty="Id">
+                        </RadzenDropDown>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <RadzenLabel Text="Factory"></RadzenLabel>
-                    </div>
-                    <div class="col-lg-4">
-                        <RadzenLabel Text="Area"></RadzenLabel>
-                    </div>
-                    <div class="col-lg-4">
-                        <RadzenLabel Text="Equipment"></RadzenLabel>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
                         <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                         FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                         @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
@@ -75,6 +62,7 @@
                             var numberAreasEquipment = AddReqViewModel.Areas.Count();
                             if (numberAreasEquipment > 0)
                             {
+                                <RadzenLabel Text="Area"></RadzenLabel>
                                 <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                                 FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                                 @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
@@ -91,6 +79,7 @@
                             var numberEuipmentItems = AddReqViewModel.Equipment.Count();
                             if (numberEuipmentItems > 0)
                             {
+                                <RadzenLabel Text="Equipment"></RadzenLabel>
                                 <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
                                                 FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                                 @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
@@ -100,6 +89,11 @@
                                 <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
                             }
                         }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenHtmlEditor @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="height: 500px; border-color: black"></RadzenHtmlEditor>
                     </div>
                 </div>
                 <div class="row">

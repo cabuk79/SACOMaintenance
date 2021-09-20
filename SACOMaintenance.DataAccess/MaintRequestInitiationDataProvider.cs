@@ -33,7 +33,7 @@ namespace SACOMaintenance.DataAccess
             MaintRequestInitiation newRequest = new MaintRequestInitiation
             {
                 DateRaised = DateTime.Now,
-                CompanyId = 1, //maintRequestInitiation.CompanyId,
+                CompanyId = maintRequestInitiation.CompanyId, //maintRequestInitiation.CompanyId,
                 FactoryId = maintRequestInitiation.FactoryId,
                 AreaId = maintRequestInitiation.AreaId,
                 EquipmentId = maintRequestInitiation.EquipmentId,

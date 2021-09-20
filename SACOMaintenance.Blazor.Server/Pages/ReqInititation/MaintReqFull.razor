@@ -3,6 +3,7 @@
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
 @using SACOMaintenance.Blazor.Server.Components
 
+
 <h3>Maintenance Request @maintReqInitation.maintReqId</h3>
 
 <RadzenButton Click=@(args => maintReqInitation.ExportRequest()) Text="Create Request Form Word"
@@ -20,7 +21,7 @@
                         <div class="row">
                             <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Factory" /></div>
                             <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Area" /></div>
-                            <div class="col-lg-4"><RadzenLabel  Style="font-weight: bold" Text="Equipment" /></div>
+                            <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Equipment" /></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-4"><span>@maintReqInitation.factoryName</span></div>
@@ -36,9 +37,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <RadzenTextArea @bind-Value="@maintReqInitation.maintReqDetails"  ReadOnly="true"  Style="width: 100%; height: 300px; border-color: black"></RadzenTextArea>
+                                        <div class="card text-white" style="width: 100%">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        @((MarkupString)detailMarkUp)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                    
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </RadzenFieldset>
@@ -100,14 +109,21 @@
                                 </RadzenGrid>
                             </RadzenFieldset>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
+            @if (maintReqInitation.maintReqAreaId == 1)  //This ID 31 refers to the plant Area so either plant 1 or 2
+            {
+                <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
+            }
+            else
+            {
+                <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
+            }
         </div>
     </div>
 </div>
@@ -152,17 +168,17 @@
             <RadzenTabsItem Text="Risk Assessment">
                 <div class="row">
                     <div class="col-lg-6">
-                        
+
                     </div>
-                </div>                
+                </div>
             </RadzenTabsItem>
         </Tabs>
     </RadzenTabs>*@
 
 
-    <!--<div class="form-group-row">-->
-        <!-- Choose the correct container for the maintenance request -->
-        <!--@{
+<!--<div class="form-group-row">-->
+<!-- Choose the correct container for the maintenance request -->
+<!--@{
             if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
             {
                 <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
@@ -179,31 +195,33 @@
     [Parameter]
     public string maintReqID { get; set; }
 
-    
+    string detailMarkUp;
 
-        string value = "";
-
-
-            public void Testing()
-            {
-
-            }
+    string value = "";
 
 
-            public bool moveCol = false;
+    public void Testing()
+    {
 
-            public enum RiskLevelLetter { H, M, L }
+    }
 
-            protected override void OnInitialized()
-            {
-                maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-                // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+    public bool moveCol = false;
 
-                maintReqInitation.LoadFactories();
+    public enum RiskLevelLetter { H, M, L }
 
-                maintReqInitation.LoadRisks();
+    protected override void OnInitialized()
+    {
+        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-                maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
-            }
+        // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
+        maintReqInitation.LoadFactories();
+
+        maintReqInitation.LoadRisks();
+
+        maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
+
+        detailMarkUp = maintReqInitation.maintReqDetails;
+    }
 }

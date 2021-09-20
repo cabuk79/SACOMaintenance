@@ -119,38 +119,40 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 178 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 194 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
 
-    
+    string detailMarkUp;
 
-        string value = "";
-
-
-            public void Testing()
-            {
-
-            }
+    string value = "";
 
 
-            public bool moveCol = false;
+    public void Testing()
+    {
 
-            public enum RiskLevelLetter { H, M, L }
+    }
 
-            protected override void OnInitialized()
-            {
-                maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-                // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+    public bool moveCol = false;
 
-                maintReqInitation.LoadFactories();
+    public enum RiskLevelLetter { H, M, L }
 
-                maintReqInitation.LoadRisks();
+    protected override void OnInitialized()
+    {
+        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-                maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
-            }
+        // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+
+        maintReqInitation.LoadFactories();
+
+        maintReqInitation.LoadRisks();
+
+        maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
+
+        detailMarkUp = maintReqInitation.maintReqDetails;
+    }
 
 #line default
 #line hidden
