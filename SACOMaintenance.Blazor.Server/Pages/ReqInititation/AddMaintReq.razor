@@ -26,6 +26,16 @@
                                         @bind-Value="@AddReqViewModel.PriorityId" FilterOperator="StringFilterOperator.Contains"
                                         AllowFiltering="true"
                                         Data="@AddReqViewModel.Priorities" TextProperty="Name" ValueProperty="Id">
+                            <Template>
+                                <div class="row">
+                                    <div class="col-lg-1">
+                                        <i class="@((context as Priority).Icon)"></i>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        @((context as Priority).Name)
+                                    </div>
+                                </div>                              
+                            </Template>
                         </RadzenDropDown>
                     </div>
                 </div>
