@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TLwiFpVRTwYEK/BAUO7V0Q40Ue670geBK1QcEndLbhjY1MhFjb2fYjQjQ9rWb0CIhJsIB3rbqOPx4HRsmgWdKw==",
+  "dgSpecHash": "PxP3pt/TfR7OQYDPtojGlry/EJBjUuyHc+XB0puS7cLApAB2WEx1hTCAxWgcTfeEMtE+wtPyKxNbpqEvLvpq6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.Data\\SACOMaintenance.Data.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,7 @@
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.9\\microsoft.entityframeworkcore.5.0.9.nupkg.sha512",
-    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.9\\microsoft.entityframeworkcore.abstractions.5.0.9.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.9\\microsoft.entityframeworkcore.analyzers.5.0.9.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.9\\microsoft.entityframeworkcore.design.5.0.9.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.9\\microsoft.entityframeworkcore.relational.5.0.9.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ILsWdsTDvAglosGQnSJLjxFg8TntkyR7eYhJnz7evmELaDOttKITKJFyWWy7ueWETTbD50sShFy8aDBWhs/xrg==",
+  "dgSpecHash": "TxDMqPH8ADmN+0P3niu5ZFcHyCpMmVvg7eOlp0PKcR6DGI1y/eNDnmSXqThn8ZmqNcSu/35EoPooieUYsKkfyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\ExcelLibs\\ExcelLibs.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.10\\microsoft.aspnetcore.cryptography.internal.5.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.10\\microsoft.aspnetcore.cryptography.keyderivation.5.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

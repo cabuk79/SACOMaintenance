@@ -21,6 +21,7 @@ namespace SACOMaintenance.Common.ModelDB
         public Priority Priority { get; set; }
         public int RequestTypeId { get; set; } //FK to type table
         //public List<MaintRequestInitiationRisk> MaintRequestInitiationRisk { get; set; } = new List<MaintRequestInitiationRisk>();
+        public List<Isolation> Isolations { get; set; } = new List<Isolation>();
         public List<Risk> Risks { get; set; } = new List<Risk>();
         public List<PPE> PPEEquipment { get; set; } = new List<PPE>();
         public List<User> Users { get; set; } = new List<User>();

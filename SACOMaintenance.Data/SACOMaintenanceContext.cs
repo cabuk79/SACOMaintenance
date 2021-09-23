@@ -34,7 +34,8 @@ namespace SACOMaintenance.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<TechnicalDrawingsLocation> TechnicalDrawingsLocations { get; set; }
         public DbSet<Priority> Priorites { get; set; }
-
+        public DbSet<Isolation> Isolations { get; set; }
+        //public DbSet<IsolationMaintRequestInitiation> IsolationMaintRequestInitiations { get; set; }
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {
@@ -59,8 +60,17 @@ namespace SACOMaintenance.Data
                 (mr => mr.HasOne<Risk>().WithMany(),
                 mm => mm.HasOne<MaintRequestInitiation>().WithMany());
 
+            //modelBuilder.Entity<MaintRequestInitiation>()
+            //    .HasMany(r => r.Isolations)
+            //    .WithMany(b => b.MaintRequestInitiation)
+            //    .UsingEntity<IsolationMaintRequestInitiation>
+            //    (mr => mr.HasOne<Isolation>().WithMany(),
+            //    mm => mm.HasOne<MaintRequestInitiation>().WithMany());
+
             modelBuilder.Entity<PartSupplier>()
                 .Property(e => e.Price).HasPrecision(18, 4);
+
+
         }        
     }
 }

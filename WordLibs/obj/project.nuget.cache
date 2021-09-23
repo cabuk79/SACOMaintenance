@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "6RtHPiaAvzwY2s2XABqcgEUJwgiXqoA6mgsAFu/dHtqjIT+87rnE0LqlAmCL7bNMUZP0ZBIyOBw8s0JHIM+jQQ==",
+  "dgSpecHash": "O1NI6n4pUsfTvJj/EW6W5O+WRistmpa9i4nr7hBqphRARscvB+SpdZZPr1xIhRnE0aO7nuRjTdXpIdmsrSlivA==",
   "success": true,
   "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\WordLibs\\WordLibs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cabuk\\.nuget\\packages\\documentformat.openxml\\2.12.3\\documentformat.openxml.2.12.3.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.10\\microsoft.aspnetcore.cryptography.internal.5.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.10\\microsoft.aspnetcore.cryptography.keyderivation.5.0.10.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

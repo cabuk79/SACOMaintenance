@@ -34,6 +34,21 @@ namespace SACOMaintenance.Data.Migrations
                     b.ToTable("EquipmentPart");
                 });
 
+            modelBuilder.Entity("IsolationMaintRequestInitiation", b =>
+                {
+                    b.Property<int>("IsolationsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaintRequestInitiationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("IsolationsId", "MaintRequestInitiationId");
+
+                    b.HasIndex("MaintRequestInitiationId");
+
+                    b.ToTable("IsolationMaintRequestInitiation");
+                });
+
             modelBuilder.Entity("MaintRequestInitiationPPE", b =>
                 {
                     b.Property<int>("MaintRequestInitiationsId")
@@ -422,6 +437,21 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasIndex("MaintRequestInitiationId");
 
                     b.ToTable("GeneralRequests");
+                });
+
+            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Isolation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Isolations");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.MachineType", b =>
@@ -969,6 +999,21 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasOne("SACOMaintenance.Common.ModelDB.Part", null)
                         .WithMany()
                         .HasForeignKey("PartsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("IsolationMaintRequestInitiation", b =>
+                {
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Isolation", null)
+                        .WithMany()
+                        .HasForeignKey("IsolationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
+                        .WithMany()
+                        .HasForeignKey("MaintRequestInitiationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

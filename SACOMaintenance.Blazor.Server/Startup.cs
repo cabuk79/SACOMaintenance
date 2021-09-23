@@ -50,6 +50,8 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IPart, PartDataProvider>();
             services.AddScoped<IOrder, OrderDataProvider>();
             services.AddScoped<IPriorities, PrioritiesDataProvider>();
+            services.AddScoped<IIsolations, IsolationDataProvider>();
+            services.AddScoped<IIsolationMaintRequestInitiation, IsolationMaintRequestInitiationDataProvider>();
 
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
@@ -70,6 +72,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IPartViewModel, PartViewModel>();
             services.AddScoped<IOrderViewModel, OrderViewModel>();
             services.AddScoped<IGeneralMaintRequestViewModel, GeneralMaintRequestViewModel>();
+            
 
             services.AddScoped<DialogService>();
             services.AddScoped<NotificationService>();

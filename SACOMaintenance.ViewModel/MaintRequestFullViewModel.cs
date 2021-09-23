@@ -15,19 +15,28 @@ namespace SACOMaintenance.ViewModel
         public MaintRequestInitiation maintReqInitation { get; set; } = new();
         public ObservableCollection<MaintRequestInitiationRisk> RiskInfoList { get; set; } = new();
         public ObservableCollection<Factory> FactoriesList { get; set; } = new();
+        public ObservableCollection<Isolation> Isolations { get; set; } = new();
         public IMaintRequestInitiation MaintReqDataProvider { get; }
+        public List<string> SelectedIsolationIds { get; set; } = new List<string>();
         public IRisk RiskDataProvider { get; }
         public IFactory FactoryDataProvider { get; }
         public IPPE PpeDataProvider { get; }
+        public IIsolations IsolationsDataProvider { get; }
+        public IIsolationMaintRequestInitiation IsolationMaintReqDataProvider { get; }
+        
 
 
         public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider,
-            IFactory factoryDataProvider, IPPE ppeDataProvider)
+            IFactory factoryDataProvider, IPPE ppeDataProvider, IIsolations isolationDataProvider, IIsolationMaintRequestInitiation isolationMaintReqDataProvider)
         {
             MaintReqDataProvider = maintReqInitProvider;
             RiskDataProvider = riskDataProvider;
             FactoryDataProvider = factoryDataProvider;
             PpeDataProvider = ppeDataProvider;
+            IsolationsDataProvider = isolationDataProvider;
+            IsolationMaintReqDataProvider = isolationMaintReqDataProvider;
+
+            SelectedIsolationIds.Clear();
         }
 
         public int maintReqId
@@ -100,6 +109,8 @@ namespace SACOMaintenance.ViewModel
 
         public ObservableCollection<Risk> Risks { get; set; }
         public ObservableCollection<PPE> Ppe { get; set; }
+        public ObservableCollection<Isolation> IsolationByRequest { get; set; }
+        public List<int> AllIsolationIds { get; set; } = new();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -143,6 +154,46 @@ namespace SACOMaintenance.ViewModel
         public void LoadPPE()
         {
             Ppe = new ObservableCollection<PPE>(PpeDataProvider.LoadAllPPE());
+        }
+
+        public void LoadIsolations()
+        {
+            Isolations = new ObservableCollection<Isolation>(IsolationsDataProvider.LoadAllIsolations());
+        }
+
+        public void LoadIsoaltionsByMaint()
+        {
+            AllIsolationIds.Clear();
+
+            AllIsolationIds = IsolationMaintReqDataProvider.LoadAllIsolationsIds();
+
+            SelectedIsolationIds.Clear();
+
+            IsolationByRequest = new ObservableCollection<Isolation>(IsolationMaintReqDataProvider.LoadIsolationsByMaint(maintReqId));
+            
+            foreach(var item in IsolationByRequest)
+            {
+                if(item.MaintRequestInitiation.Count > 0)
+                {
+                    SelectedIsolationIds.Add(item.Id.ToString());
+                }                                               
+            }
+        }
+
+        public void UpdateMaintReqRisks()
+        {
+            // RiskInfoList
+            MaintReqDataProvider.UpdateRiskRecords(RiskInfoList);
+            MaintReqDataProvider.UpdateIsolationsRecords(SelectedIsolationIds, maintReqId, AllIsolationIds);
+        }
+
+
+        /// <summary>
+        /// Update the maintenance request with all of the details
+        /// </summary>
+        public void UpdateRequest()
+        {
+           // MaintReqDataProvider
         }
     }
 }

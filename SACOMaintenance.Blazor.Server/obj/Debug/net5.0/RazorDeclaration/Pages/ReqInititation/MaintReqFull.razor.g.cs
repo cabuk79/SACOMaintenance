@@ -119,7 +119,7 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 194 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 233 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
@@ -134,6 +134,11 @@ using SACOMaintenance.Blazor.Server.Components;
 
     }
 
+
+    protected async Task UpdateRisks()
+    {
+        maintReqInitation.UpdateMaintReqRisks();
+    }
 
     public bool moveCol = false;
 
@@ -150,6 +155,8 @@ using SACOMaintenance.Blazor.Server.Components;
         maintReqInitation.LoadRisks();
 
         maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
+        maintReqInitation.LoadIsolations();
+        maintReqInitation.LoadIsoaltionsByMaint();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
     }

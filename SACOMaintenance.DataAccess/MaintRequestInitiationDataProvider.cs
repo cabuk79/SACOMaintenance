@@ -67,6 +67,107 @@ namespace SACOMaintenance.DataAccess
             }
         }
 
+        public void UpdateMaintReq(MaintRequestInitiation maintReqToUpdate)
+        {
+            _requestInitationDBContext.Update(maintReqToUpdate);          
+        }
+
+        public void UpdateRiskRecords(ObservableCollection<MaintRequestInitiationRisk> risksUpdate)
+        {
+            //loop through eash risk to update in risksUpdate then update
+            foreach(var item in risksUpdate)
+            {
+                //find the record
+                var foundItem = _requestInitationDBContext.MaintRequestInitiationRisk
+                    .Where(ri => ri.RiskId == item.RiskId && ri.MaintRequestInitiationId == item.MaintRequestInitiationId).FirstOrDefault();
+
+                foundItem.H = item.H;
+                foundItem.M = item.M;
+                foundItem.L = item.L;
+
+                _requestInitationDBContext.Update(foundItem);
+                _requestInitationDBContext.SaveChanges();
+            }
+        }
+
+        public void UpdateIsolationsRecords(List<string> isolationsChosen, int maintId, List<int> allIsolationId)  //add the isolations full list to remove them all then use IsolationsChosen to add them
+        {
+            //Get all isolations from the table and loop through, remove any that are not in the isolations chosen and then loop through and
+            //add the ones chosen
+
+            //Get all Isolations where the maintenance id is equal to the maintenance id passed
+
+            foreach(var item in allIsolationId)
+            {
+                var isolationsWithRequest = _requestInitationDBContext.Isolations
+                    .Include(b => b.MaintRequestInitiation.Where(i => i.Id == maintId))
+                    .Single(s => s.Id == item);
+
+                if(isolationsWithRequest.MaintRequestInitiation.Count > 0)
+                {
+                    var req = isolationsWithRequest.MaintRequestInitiation[0];
+
+                    isolationsWithRequest.MaintRequestInitiation.Remove(req);
+
+                    _requestInitationDBContext.SaveChanges();
+                }                
+            }
+
+            //loop through the isolationsChosen and add to the table the many-to-many relationships
+            foreach(var item in isolationsChosen)
+            {
+                var newIsolationRequest = new IsolationMaintRequestInitiation
+                {
+                    IsolationId = Convert.ToInt32(item),
+                    MaintReqInitationListId = maintId
+                };
+                _requestInitationDBContext.Add(newIsolationRequest);
+                _requestInitationDBContext.SaveChanges();
+            }
+            
+
+
+
+
+            //var isolationsWithRequest = _requestInitationDBContext.Isolations
+            //    .Include(b => b.MaintRequestInitiation.Where(i => i.Id == maintId))
+            //    .ToList();
+
+            //var itemCount = isolationsWithRequest.Count;
+
+            //foreach(var item in isolationsWithRequest)
+            //{
+                
+                
+                
+            //}
+
+            //for (int i = 0; i < itemCount; i++)
+            //{
+            //    var req = isolationsWithRequest.
+            //}    
+
+
+
+
+            //find if there is a record and if so then delete otherwise add
+            //foreach(var item in isolationsChosen)
+            //{
+            //    var foundItem = _requestInitationDBContext.IsolationMaintRequestInitiations
+            //                    .Where(i => i.MaintReqInitationListId == maintId && i.IsolationId == Convert.ToInt32(item)).FirstOrDefault();
+
+            //    if(foundItem == null)
+            //    {
+            //        IsolationMaintRequestInitiation newReqIsolation = new IsolationMaintRequestInitiation();
+            //        newReqIsolation.IsolationId = Convert.ToInt32(item);
+            //        newReqIsolation.MaintReqInitationListId = maintId;
+
+            //        _requestInitationDBContext.IsolationMaintRequestInitiations.Add(newReqIsolation);
+            //    }
+            //}
+            //_requestInitationDBContext.SaveChanges();   
+        }
+
         //Load a single request with all of the Navigvation properties populated
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {

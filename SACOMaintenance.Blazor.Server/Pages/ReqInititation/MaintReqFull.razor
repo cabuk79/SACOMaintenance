@@ -17,44 +17,83 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-6">
-                    <RadzenFieldset Text="Details" Style="border-color: black">
-                        <div class="row">
-                            <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Factory" /></div>
-                            <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Area" /></div>
-                            <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Equipment" /></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4"><span>@maintReqInitation.factoryName</span></div>
-                            <div class="col-lg-4"><span>@maintReqInitation.areaName</span></div>
-                            <div class="col-lg-4"><span>@maintReqInitation.equipName</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <RadzenFieldset Text="Details" Style="border-color: black">
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <label style="font-weight:bold">Details</label>
-                                    </div>
+                                    <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Factory" /></div>
+                                    <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Area" /></div>
+                                    <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Equipment" /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4"><span>@maintReqInitation.factoryName</span></div>
+                                    <div class="col-lg-4"><span>@maintReqInitation.areaName</span></div>
+                                    <div class="col-lg-4"><span>@maintReqInitation.equipName</span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <div class="card text-white" style="width: 100%">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        @((MarkupString)detailMarkUp)
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label style="font-weight:bold">Details</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card text-white" style="width: 100%">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                @((MarkupString)detailMarkUp)
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>                                    
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </RadzenFieldset>
+                        </div>                        
+                    </div>
+                    <dicv class="row">
+                        <div class="col-lg-12">
+                            <RadzenFieldset Text="Isolations" Style="border-color: black">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <CheckListBox Data="@maintReqInitation.Isolations"
+                                                      TextField="@((item)=>item.Name)"
+                                                      ValueField="@((item)=>item.Id)"
+                                                      SelectedValues="@(maintReqInitation.SelectedIsolationIds)">
+                                        </CheckListBox>
+                                    </div>
+                                </div>
+                            </RadzenFieldset>
+                                
+                                @*<RadzenListBox AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" @bind-Value=@maintReqInitation.IsolationByRequest
+                           Multiple="true" Data=@maintReqInitation.Isolations
+                           TextProperty="Name" ValueProperty="Id">
+
+            </RadzenListBox>*@
+                                @* TODO: here is the Isolations table location *@
+                                @*<RadzenGrid Data="@maintReqInitation.IsolationByRequest" TItem="IsolationMaintRequestInitiation">
+                <Columns>
+                    <RadzenGridColumn TItem="IsolationMaintRequestInitiation" Property="Id" Title="Isolation">
+                        <Template Context="data">
+                            @foreach (var item in maintReqInitation.Isolations)
+                            {
+                                @item.Name
+                            }
+                        </Template>
+                    </RadzenGridColumn>
+                </Columns>
+            </RadzenGrid>*@
                         </div>
-                    </RadzenFieldset>
+                    </dicv>                  
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-lg-12">
+                            <RadzenButton Click="@UpdateRisks"></RadzenButton>
                             <RadzenFieldset Text="Risk Assemssment" Style="border-color: black">
                                 <RadzenGrid Data="@maintReqInitation.RiskInfoList" TItem="MaintRequestInitiationRisk">
                                     <Columns>
@@ -206,6 +245,11 @@
     }
 
 
+    protected async Task UpdateRisks()
+    {
+        maintReqInitation.UpdateMaintReqRisks();
+    }
+
     public bool moveCol = false;
 
     public enum RiskLevelLetter { H, M, L }
@@ -221,6 +265,8 @@
         maintReqInitation.LoadRisks();
 
         maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
+        maintReqInitation.LoadIsolations();
+        maintReqInitation.LoadIsoaltionsByMaint();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
     }
