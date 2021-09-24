@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SACOMaintenance.Data.Migrations
 {
-    public partial class NewInitialafterdeletingallmigrations : Migration
+    public partial class Restartedthemigrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -91,6 +91,19 @@ namespace SACOMaintenance.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Isolations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Isolations", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MachineTypes",
                 columns: table => new
                 {
@@ -128,6 +141,23 @@ namespace SACOMaintenance.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PostCodeTowns",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PostCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    County = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    District = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Latitide = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Longitude = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PostCodeTowns", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PPE",
                 columns: table => new
                 {
@@ -141,6 +171,21 @@ namespace SACOMaintenance.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PPE", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Priorites",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Icon = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Priorites", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -169,19 +214,6 @@ namespace SACOMaintenance.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Statuses", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Suppliers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Suppliers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -332,6 +364,61 @@ namespace SACOMaintenance.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Suppliers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GeneralEmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TelephoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddressLineOne = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddressLineTwo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PostCodeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Suppliers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Suppliers_PostCodeTowns_PostCodeId",
+                        column: x => x.PostCodeId,
+                        principalTable: "PostCodeTowns",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Equipment",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MachineTypeId = table.Column<int>(type: "int", nullable: false),
+                    SerialIdentifierNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AreaId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Equipment", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Equipment_Areas_AreaId",
+                        column: x => x.AreaId,
+                        principalTable: "Areas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Equipment_MachineTypes_MachineTypeId",
+                        column: x => x.MachineTypeId,
+                        principalTable: "MachineTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -389,66 +476,6 @@ namespace SACOMaintenance.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Equipment",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MachineTypeId = table.Column<int>(type: "int", nullable: false),
-                    SerialIdentifierNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AreaId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Equipment", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Equipment_Areas_AreaId",
-                        column: x => x.AreaId,
-                        principalTable: "Areas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Equipment_MachineTypes_MachineTypeId",
-                        column: x => x.MachineTypeId,
-                        principalTable: "MachineTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "OrderItems",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Qty = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    PartId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderItems", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_OrderItems_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderItems_Parts_PartId",
-                        column: x => x.PartId,
-                        principalTable: "Parts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "EquipmentPart",
                 columns: table => new
                 {
@@ -485,6 +512,7 @@ namespace SACOMaintenance.Data.Migrations
                     EquipmentId = table.Column<int>(type: "int", nullable: true),
                     RequestedById = table.Column<int>(type: "int", nullable: false),
                     RequestDetails = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PriorityId = table.Column<int>(type: "int", nullable: true),
                     RequestTypeId = table.Column<int>(type: "int", nullable: false),
                     StatusId = table.Column<int>(type: "int", nullable: false),
                     AssignedTo = table.Column<int>(type: "int", nullable: false)
@@ -517,11 +545,47 @@ namespace SACOMaintenance.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
+                        name: "FK_MaintRequestInitiations_Priorites_PriorityId",
+                        column: x => x.PriorityId,
+                        principalTable: "Priorites",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_MaintRequestInitiations_Statuses_StatusId",
                         column: x => x.StatusId,
                         principalTable: "Statuses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ItemName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Qty = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    PartId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderItems_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderItems_Parts_PartId",
+                        column: x => x.PartId,
+                        principalTable: "Parts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -556,6 +620,30 @@ namespace SACOMaintenance.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "IsolationMaintRequestInitiation",
+                columns: table => new
+                {
+                    IsolationsId = table.Column<int>(type: "int", nullable: false),
+                    MaintRequestInitiationsId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IsolationMaintRequestInitiation", x => new { x.IsolationsId, x.MaintRequestInitiationsId });
+                    table.ForeignKey(
+                        name: "FK_IsolationMaintRequestInitiation_Isolations_IsolationsId",
+                        column: x => x.IsolationsId,
+                        principalTable: "Isolations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_IsolationMaintRequestInitiation_MaintRequestInitiations_MaintRequestInitiationsId",
+                        column: x => x.MaintRequestInitiationsId,
+                        principalTable: "MaintRequestInitiations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MaintRequestInitiationPPE",
                 columns: table => new
                 {
@@ -585,7 +673,9 @@ namespace SACOMaintenance.Data.Migrations
                 {
                     MaintRequestInitiationId = table.Column<int>(type: "int", nullable: false),
                     RiskId = table.Column<int>(type: "int", nullable: false),
-                    RiskLevel = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    H = table.Column<bool>(type: "bit", nullable: false),
+                    M = table.Column<bool>(type: "bit", nullable: false),
+                    L = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -764,6 +854,11 @@ namespace SACOMaintenance.Data.Migrations
                 column: "MaintRequestInitiationId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_IsolationMaintRequestInitiation_MaintRequestInitiationsId",
+                table: "IsolationMaintRequestInitiation",
+                column: "MaintRequestInitiationsId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MaintRequestInitiationPPE_PPEEquipmentId",
                 table: "MaintRequestInitiationPPE",
                 column: "PPEEquipmentId");
@@ -792,6 +887,11 @@ namespace SACOMaintenance.Data.Migrations
                 name: "IX_MaintRequestInitiations_FactoryId",
                 table: "MaintRequestInitiations",
                 column: "FactoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MaintRequestInitiations_PriorityId",
+                table: "MaintRequestInitiations",
+                column: "PriorityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MaintRequestInitiations_StatusId",
@@ -849,6 +949,11 @@ namespace SACOMaintenance.Data.Migrations
                 column: "PlantRequestId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Suppliers_PostCodeId",
+                table: "Suppliers",
+                column: "PostCodeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TechnicalDrawingsLocations_PartId",
                 table: "TechnicalDrawingsLocations",
                 column: "PartId");
@@ -878,6 +983,9 @@ namespace SACOMaintenance.Data.Migrations
                 name: "GeneralRequests");
 
             migrationBuilder.DropTable(
+                name: "IsolationMaintRequestInitiation");
+
+            migrationBuilder.DropTable(
                 name: "MaintRequestInitiationPPE");
 
             migrationBuilder.DropTable(
@@ -900,6 +1008,9 @@ namespace SACOMaintenance.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Isolations");
 
             migrationBuilder.DropTable(
                 name: "PPE");
@@ -929,10 +1040,16 @@ namespace SACOMaintenance.Data.Migrations
                 name: "MaintRequestInitiations");
 
             migrationBuilder.DropTable(
+                name: "PostCodeTowns");
+
+            migrationBuilder.DropTable(
                 name: "Companies");
 
             migrationBuilder.DropTable(
                 name: "Equipment");
+
+            migrationBuilder.DropTable(
+                name: "Priorites");
 
             migrationBuilder.DropTable(
                 name: "Statuses");

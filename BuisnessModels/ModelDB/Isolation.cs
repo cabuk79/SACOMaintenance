@@ -10,6 +10,6 @@ namespace SACOMaintenance.Common.ModelDB
     {
         public int Id { get; set; }
         public string Name { get; set; }      
-        public List<MaintRequestInitiation> MaintRequestInitiation { get; set; } = new List<MaintRequestInitiation>();
+        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
     }
 }

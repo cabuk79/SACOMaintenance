@@ -39,12 +39,12 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("IsolationsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MaintRequestInitiationId")
+                    b.Property<int>("MaintRequestInitiationsId")
                         .HasColumnType("int");
 
-                    b.HasKey("IsolationsId", "MaintRequestInitiationId");
+                    b.HasKey("IsolationsId", "MaintRequestInitiationsId");
 
-                    b.HasIndex("MaintRequestInitiationId");
+                    b.HasIndex("MaintRequestInitiationsId");
 
                     b.ToTable("IsolationMaintRequestInitiation");
                 });
@@ -1013,7 +1013,7 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
                         .WithMany()
-                        .HasForeignKey("MaintRequestInitiationId")
+                        .HasForeignKey("MaintRequestInitiationsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

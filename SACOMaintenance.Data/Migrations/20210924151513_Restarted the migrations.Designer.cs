@@ -10,8 +10,8 @@ using SACOMaintenance.Data;
 namespace SACOMaintenance.Data.Migrations
 {
     [DbContext(typeof(SACOMaintenanceContext))]
-    [Migration("20210922144614_Changed the reqiest isolations table to have a PK link and rename the columns")]
-    partial class ChangedthereqiestisolationstabletohaveaPKlinkandrenamethecolumns
+    [Migration("20210924151513_Restarted the migrations")]
+    partial class Restartedthemigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,21 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasIndex("PartsId");
 
                     b.ToTable("EquipmentPart");
+                });
+
+            modelBuilder.Entity("IsolationMaintRequestInitiation", b =>
+                {
+                    b.Property<int>("IsolationsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaintRequestInitiationsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("IsolationsId", "MaintRequestInitiationsId");
+
+                    b.HasIndex("MaintRequestInitiationsId");
+
+                    b.ToTable("IsolationMaintRequestInitiation");
                 });
 
             modelBuilder.Entity("MaintRequestInitiationPPE", b =>
@@ -439,27 +454,6 @@ namespace SACOMaintenance.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Isolations");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.IsolationMaintRequestInitiation", b =>
-                {
-                    b.Property<int>("IsolationsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IsolationsId1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("maintReqInitationListId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("maintReqInitationListId1")
-                        .HasColumnType("int");
-
-                    b.HasIndex("IsolationsId1");
-
-                    b.HasIndex("maintReqInitationListId1");
-
-                    b.ToTable("IsolationMaintRequestInitiations");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.MachineType", b =>
@@ -1011,6 +1005,21 @@ namespace SACOMaintenance.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("IsolationMaintRequestInitiation", b =>
+                {
+                    b.HasOne("SACOMaintenance.Common.ModelDB.Isolation", null)
+                        .WithMany()
+                        .HasForeignKey("IsolationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
+                        .WithMany()
+                        .HasForeignKey("MaintRequestInitiationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("MaintRequestInitiationPPE", b =>
                 {
                     b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
@@ -1123,17 +1132,6 @@ namespace SACOMaintenance.Data.Migrations
                         .HasForeignKey("MaintRequestInitiationId");
 
                     b.Navigation("MaintRequestInitiation");
-                });
-
-            modelBuilder.Entity("SACOMaintenance.Common.ModelDB.IsolationMaintRequestInitiation", b =>
-                {
-                    b.HasOne("SACOMaintenance.Common.ModelDB.Isolation", null)
-                        .WithMany()
-                        .HasForeignKey("IsolationsId1");
-
-                    b.HasOne("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", null)
-                        .WithMany()
-                        .HasForeignKey("maintReqInitationListId1");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.MaintRequestInitiation", b =>

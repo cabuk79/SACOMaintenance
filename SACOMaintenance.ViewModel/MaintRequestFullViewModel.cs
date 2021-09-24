@@ -173,7 +173,7 @@ namespace SACOMaintenance.ViewModel
             
             foreach(var item in IsolationByRequest)
             {
-                if(item.MaintRequestInitiation.Count > 0)
+                if(item.MaintRequestInitiations.Count > 0)
                 {
                     SelectedIsolationIds.Add(item.Id.ToString());
                 }                                               

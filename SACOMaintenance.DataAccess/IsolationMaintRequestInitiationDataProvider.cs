@@ -22,7 +22,7 @@ namespace SACOMaintenance.DataAccess
         public List<Isolation> LoadIsolationsByMaint(int Id)
         {
             var isolations = _maintenanceDBContext.Isolations
-                .Include(b => b.MaintRequestInitiation.Where(i => i.Id == Id))
+                .Include(b => b.MaintRequestInitiations.Where(i => i.Id == Id))
                 .ToList();
             //var isolations = _maintenanceDBContext.IsolationMaintRequestInitiations
             //    .Where(i => i.MaintReqInitationListId == Id).ToList();

@@ -35,7 +35,6 @@ namespace SACOMaintenance.Data
         public DbSet<TechnicalDrawingsLocation> TechnicalDrawingsLocations { get; set; }
         public DbSet<Priority> Priorites { get; set; }
         public DbSet<Isolation> Isolations { get; set; }
-        //public DbSet<IsolationMaintRequestInitiation> IsolationMaintRequestInitiations { get; set; }
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {
@@ -59,6 +58,8 @@ namespace SACOMaintenance.Data
                 .UsingEntity<MaintRequestInitiationRisk>
                 (mr => mr.HasOne<Risk>().WithMany(),
                 mm => mm.HasOne<MaintRequestInitiation>().WithMany());
+
+            //modelBuilder.Entity<IsolationMaintRequestInitiation>().HasKey(i => new { i.IsolationsId, i.MaintReqInitationListId });
 
             //modelBuilder.Entity<MaintRequestInitiation>()
             //    .HasMany(r => r.Isolations)

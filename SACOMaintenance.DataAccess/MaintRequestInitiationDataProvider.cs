@@ -100,14 +100,14 @@ namespace SACOMaintenance.DataAccess
             foreach(var item in allIsolationId)
             {
                 var isolationsWithRequest = _requestInitationDBContext.Isolations
-                    .Include(b => b.MaintRequestInitiation.Where(i => i.Id == maintId))
+                    .Include(b => b.MaintRequestInitiations.Where(i => i.Id == maintId))
                     .Single(s => s.Id == item);
 
-                if(isolationsWithRequest.MaintRequestInitiation.Count > 0)
+                if(isolationsWithRequest.MaintRequestInitiations.Count > 0)
                 {
-                    var req = isolationsWithRequest.MaintRequestInitiation[0];
+                    var req = isolationsWithRequest.MaintRequestInitiations[0];
 
-                    isolationsWithRequest.MaintRequestInitiation.Remove(req);
+                    isolationsWithRequest.MaintRequestInitiations.Remove(req);
 
                     _requestInitationDBContext.SaveChanges();
                 }                
