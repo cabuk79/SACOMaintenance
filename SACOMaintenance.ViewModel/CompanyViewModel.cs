@@ -38,12 +38,12 @@ namespace SACOMaintenance.ViewModel
 
         public string CompanyName
         {
-            get => company.CompantName;
+            get => company.CompanyName;
             set
             {
-                if(company.CompantName != value)
+                if(company.CompanyName != value)
                 {
-                    company.CompantName = value;
+                    company.CompanyName = value;
                     RaisePropertychangedEvent();
                 }
             }

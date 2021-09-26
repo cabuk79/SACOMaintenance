@@ -13,7 +13,7 @@ namespace SACOMaintenance.Common.ModelDB
         public DateTime TimeIn { get; set; }
         public DateTime TimOut { get; set; }
         public int PlantMaintRequestId { get; set; } //FK to the MaintRequestInitiation ID
-        public PlantRequest PlantRequest { get; set; }
+        public virtual PlantRequest PlantRequest { get; set; }
        
     }
 }

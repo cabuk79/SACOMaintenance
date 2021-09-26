@@ -114,16 +114,16 @@ namespace SACOMaintenance.DataAccess
             }
 
             //loop through the isolationsChosen and add to the table the many-to-many relationships
-            foreach(var item in isolationsChosen)
-            {
-                var newIsolationRequest = new IsolationMaintRequestInitiation
-                {
-                    IsolationId = Convert.ToInt32(item),
-                    MaintReqInitationListId = maintId
-                };
-                _requestInitationDBContext.Add(newIsolationRequest);
-                _requestInitationDBContext.SaveChanges();
-            }
+            //foreach(var item in isolationsChosen)
+            //{
+            //    var newIsolationRequest = new IsolationMaintRequestInitiation
+            //    {
+            //        IsolationId = Convert.ToInt32(item),
+            //        MaintReqInitationListId = maintId
+            //    };
+            //    _requestInitationDBContext.Add(newIsolationRequest);
+            //    _requestInitationDBContext.SaveChanges();
+            //}
             
 
 

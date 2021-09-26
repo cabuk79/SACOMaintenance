@@ -34,7 +34,7 @@ namespace SACOMaintenance.ViewModel
 
         public int FactoryId
         {
-            get => MaintReq.FactoryId.GetValueOrDefault();
+            get => MaintReq.FactoryId;
             set
             {
                 if (MaintReq.FactoryId != value)
@@ -48,7 +48,7 @@ namespace SACOMaintenance.ViewModel
 
         public int CompanyId 
         {
-            get => MaintReq.CompanyId.GetValueOrDefault();
+            get => MaintReq.CompanyId;
             set
             {
                 if(MaintReq.CompanyId != value)
@@ -60,7 +60,7 @@ namespace SACOMaintenance.ViewModel
 
         public int AreaId
         {
-            get => MaintReq.AreaId.GetValueOrDefault();
+            get => MaintReq.AreaId;
             set
             {
                 if (MaintReq.AreaId != value)
@@ -82,7 +82,7 @@ namespace SACOMaintenance.ViewModel
 
         public int EquipmentId
         {
-            get => MaintReq.EquipmentId.GetValueOrDefault();
+            get => MaintReq.EquipmentId;
             set
             {
                 if (MaintReq.EquipmentId != value)
@@ -96,7 +96,7 @@ namespace SACOMaintenance.ViewModel
 
         public int PriorityId
         {
-            get => MaintReq.PriorityId.GetValueOrDefault();
+            get => MaintReq.PriorityId;
             set
             {
                 if (MaintReq.PriorityId != value)
@@ -145,12 +145,12 @@ namespace SACOMaintenance.ViewModel
 
         public void LoadAreasByFactory()
         {
-            Areas = AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId.Value);
+            Areas = AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId);
         }
 
         private void LoadEquipmentByArea()
         {
-            Equipment = EquipmentDataProvider.LoadByArea(MaintReq.AreaId.Value);
+            Equipment = EquipmentDataProvider.LoadByArea(MaintReq.AreaId);
         }
 
         public void LoadCompanies()

@@ -90,7 +90,7 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public int? FactoryId
+        public int FactoryId
         {
             get => area.FactoryId;
             set

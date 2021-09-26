@@ -40,7 +40,7 @@ namespace SACOMaintenance.DataAccess
         {
             _companyDBContext.Companies.Add
             (
-                new Company { CompantName = company.CompantName }
+                new Company { CompanyName = company.CompanyName }
             );
             _companyDBContext.SaveChanges();
         }

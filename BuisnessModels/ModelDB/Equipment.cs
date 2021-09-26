@@ -12,13 +12,13 @@ namespace SACOMaintenance.Common.ModelDB
         public string Name { get; set; }
         public string Description { get; set; }
         public int MachineTypeId { get; set; } //Fk to machine type table
-        public MachineType MachineType { get; set; }
+        public virtual MachineType MachineType { get; set; }
         public string SerialIdentifierNumber { get; set; }
         public string Comments { get; set; }      
-        public int? AreaId { get; set; } //FK to the area table
-        public AreaModel Area { get; set; }
-        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
-        public List<Part> Parts { get; set; } = new List<Part>();
+        public int AreaId { get; set; } //FK to the area table
+        public virtual AreaModel Area { get; set; }
+        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new();
+        public List<Part> Parts { get; set; } = new();
 
     }
 }

@@ -14,7 +14,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         string CommentsNotes { get; set; }
         ObservableCollection<AreaModel> areas { get; }
         ObservableCollection<Factory> factories { get; }
-        int? FactoryId { get; set; }
+        int FactoryId { get; set; }
 
         event PropertyChangedEventHandler PropertyChanged;
 

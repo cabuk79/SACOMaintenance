@@ -48,10 +48,10 @@ namespace SACOMaintenance.Common.ModelDB
         public string ClearancePosition { get; set; }
         public DateTime ClearanceDateTime { get; set; }
 
-        public List<RequestDailyRegister> ListOfDailyRgisters = new List<RequestDailyRegister>(); //List of all the daily registers linked to the request
+        public List<RequestDailyRegister> ListOfDailyRgisters = new(); //List of all the daily registers linked to the request
 
         public int MaintRequestId { get; set; } //FK to the maintenance request initation table
-        public MaintRequestInitiation MaintRequestInitiation { get; set; }
+        public virtual MaintRequestInitiation MaintRequestInitiation { get; set; }
     }
 }
 

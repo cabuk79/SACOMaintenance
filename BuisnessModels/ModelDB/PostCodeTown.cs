@@ -14,6 +14,6 @@ namespace SACOMaintenance.Common.ModelDB
         public string District { get; set; }
         public decimal Latitide { get; set; }
         public decimal Longitude { get; set; }
-        public List<Supplier> SuppliersAtPostCode = new List<Supplier>();
+        public List<Supplier> SuppliersAtPostCode = new();
     }
 }

@@ -9,7 +9,7 @@ namespace SACOMaintenance.Common.ModelDB
     public class Company
     {
         public int Id { get; set; }
-        public string CompantName { get; set; }
-        public List<MaintRequestInitiation> MaintenanceRequestIniations { get; set; } = new List<MaintRequestInitiation>();
+        public string CompanyName { get; set; }
+        public List<MaintRequestInitiation> MaintenanceRequestIniations { get; set; } = new();
     }
 }
