@@ -1,3 +1,3 @@
-INSERT INTO Companies (CompantName) VALUES ('SACO');
-INSERT INTO Companies (CompantName) VALUES ('GTL');
-INSERT INTO Companies (CompantName) VALUES ('Nekem');
+INSERT INTO Companies (CompanyName) VALUES ('SACO');
+INSERT INTO Companies (CompanyName) VALUES ('GTL');
+INSERT INTO Companies (CompanyName) VALUES ('Nekem');

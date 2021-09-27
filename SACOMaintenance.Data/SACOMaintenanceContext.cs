@@ -35,6 +35,7 @@ namespace SACOMaintenance.Data
         public DbSet<TechnicalDrawingsLocation> TechnicalDrawingsLocations { get; set; }
         public DbSet<Priority> Priorites { get; set; }
         public DbSet<Isolation> Isolations { get; set; }
+        public DbSet<MaintReqUptateNote> MaintReqUptateNotes { get; set; }
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {
@@ -51,13 +52,18 @@ namespace SACOMaintenance.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+          
             modelBuilder.Entity<MaintRequestInitiation>()
                 .HasMany(r => r.Risks)
                 .WithMany(b => b.MaintRequestInitiation)
                 .UsingEntity<MaintRequestInitiationRisk>
                 (mr => mr.HasOne<Risk>().WithMany(),
                 mm => mm.HasOne<MaintRequestInitiation>().WithMany());
+
+            //modelBuilder.Entity<MaintReqUptateNote>()
+            //    .HasOne(p => p.User)
+            //    .WithMany(b => b.MaintReqUptateNotes)
+            //    .HasForeignKey(f => f.UserId);
 
             //modelBuilder.Entity<IsolationMaintRequestInitiation>().HasKey(i => new { i.IsolationsId, i.MaintReqInitationListId });
 
@@ -71,7 +77,12 @@ namespace SACOMaintenance.Data
             modelBuilder.Entity<PartSupplier>()
                 .Property(e => e.Price).HasPrecision(18, 4);
 
+            //Set the defautl value of the closed column to false
+            modelBuilder.Entity<MaintRequestInitiation>()
+                .Property(b => b.Closed)
+                .HasDefaultValue(false);
 
+            //Console.WriteLine(modelBuilder.Model.ToDebugString(Microsoft.EntityFrameworkCore.Infrastructure.MetadataDebugStringOptions.IncludeAnnotations));
         }        
     }
 }

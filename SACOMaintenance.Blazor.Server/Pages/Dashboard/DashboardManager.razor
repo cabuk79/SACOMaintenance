@@ -1,6 +1,7 @@
 ﻿@using SACOMaintenance.Blazor.Server.Pages.Dashboard
 @using SACOMaintenance.Blazor.Server.Components
-
+@using Microsoft.Extensions.Configuration
+ 
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -17,6 +18,7 @@
         <div class="col-lg-12">
             <RadzenFieldset Text="Request Stats">
                 <div class="row">
+                    <RequestPriorityDashboardItem imageLocation="fas fa-door-open fa-5x" color="bg-dark" text="Open"></RequestPriorityDashboardItem>
                     <div class="col-lg-2"><TotalOpenMaintReqs></TotalOpenMaintReqs></div>
                     <div class="col-lg-2"><NewMaintReqs></NewMaintReqs></div>
                     <div class="col-lg-2"><TotalMaintReqCurrentYear></TotalMaintReqCurrentYear></div>
@@ -47,3 +49,8 @@
         </div>
     </div>
 </div>
+
+
+@code{
+ 
+}

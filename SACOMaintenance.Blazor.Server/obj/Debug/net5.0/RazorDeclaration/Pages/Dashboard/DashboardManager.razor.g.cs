@@ -110,6 +110,13 @@ using SACOMaintenance.Blazor.Server.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardManager.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
     public partial class DashboardManager : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

@@ -6,6 +6,7 @@ namespace SACOMaintenance.Common.ModelDB
     public class MaintRequestInitiation
     {
         public int Id { get; set; }
+        public bool Closed { get; set; }
         public DateTime DateRaised { get; set; }
         public int CompanyId { get; set; } //FK to company table
         public virtual Company Company { get; set; }
@@ -24,7 +25,8 @@ namespace SACOMaintenance.Common.ModelDB
         public List<Isolation> Isolations { get; set; } = new List<Isolation>();
         public List<Risk> Risks { get; set; } = new List<Risk>();
         public List<PPE> PPEEquipment { get; set; } = new List<PPE>();
-        public List<User> Users { get; set; } = new List<User>();
+        public List<User> Users { get; set; } = new List<User>(); //Is this needed?
+        public List<MaintReqUptateNote> UpdateNotes { get; set; } = new();
         public int StatusId { get; set; }
         public virtual Status Status { get; set; }
         public int AssignedTo { get; set; }  //TODO: check if there needs to be multiple people assigned as well as single
