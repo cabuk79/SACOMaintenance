@@ -76,28 +76,30 @@ else
                                     <div class="col-lg-4"><RadzenButton Text="UPDATE" Click=@(args => Update())></RadzenButton></div>
                                 </div>
                             }
-                        </div>                       
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <RadzenGoogleMap Zoom=15 ApiKey="AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM"
-                                         Center=@(new GoogleMapPosition()
+                    <div class="d-none d-sm-block">
+                        <div class="col-lg-6">
+                            <RadzenGoogleMap Zoom=15 ApiKey="AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM"
+                                             Center=@(new GoogleMapPosition()
                                                   {
                                                       Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
                                                       Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
                                                   })>
-                            <Markers>
-                                <RadzenGoogleMapMarker Title="@supplierViewModel.SelectedSupplier.Postcode.District"
-                                                       Label="@supplierViewModel.SelectedSupplier.Postcode.District"
-                                                       Position=@(new GoogleMapPosition()
+                                <Markers>
+                                    <RadzenGoogleMapMarker Title="@supplierViewModel.SelectedSupplier.Postcode.District"
+                                                           Label="@supplierViewModel.SelectedSupplier.Postcode.District"
+                                                           Position=@(new GoogleMapPosition()
                                                                   {
                                                                       Lat = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Latitide),
                                                                       Lng = Convert.ToDouble(supplierViewModel.SelectedSupplier.Postcode.Longitude)
                                                                   }) />
-                            </Markers>
-                        </RadzenGoogleMap>
+                                </Markers>
+                            </RadzenGoogleMap>
                         </div>
+                    </div>                       
                 </div>
-            </RadzenFieldset>
+</RadzenFieldset>
         </div>
     </div>
     <div class="row" style="padding: 15px 0px 0px 0px">

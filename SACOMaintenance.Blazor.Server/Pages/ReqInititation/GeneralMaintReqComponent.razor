@@ -3,39 +3,61 @@
 @using SACOMaintenance.ViewModel.Interfaces
 @inject IGeneralRequest GeneralRequestDataProvider
 @inject IGeneralMaintRequestViewModel GeneralViewModel
+@using SACOMaintenance.Blazor.Server.Components
 
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Control Measures Taken" Style="width: 100%; border-color: black">
+                <RadzenTextArea Style="width: 100%; border-color: black"></RadzenTextArea>
+            </RadzenFieldset>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black">
                 <div class="row">
                     @foreach (var ppeItem in GeneralViewModel.ppeList)
                     {
-                        <div class="col d-flex justify-content-center">
-                            <RadzenCard Style="width: 150px; height: 200px; border-color: black">
-
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <RadzenImage Path="@ppeItem.IconFileLocation" Style="width: 75px; align-content: center" />
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <RadzenLabel Text="@ppeItem.PPEName" Style="align-items: center; width=100%" />
-                                    </div>
-                                </div>
-                                <div class="row row d-flex justify-content-center">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <RadzenCheckBox TValue="int"></RadzenCheckBox>
-                                    </div>
-                                </div>
-                            </RadzenCard>
+                        foreach (var item in maintReq.PPEEquipment)
+                        {
+                            if (item.Id == ppeItem.Id)
+                            {
+                                colour = "red";
+                                break;
+                            }
+                        }
+                        <div class="col-lg-2">
+                            <PPEEquipmentComponent
+                                        ppe="@ppeItem"
+                                        colour="@colour"
+                                        maintReq="@maintReq">
+                            </PPEEquipmentComponent>
                         </div>
+                        colour = "black";
                     }
                 </div>
             </RadzenFieldset>
-        </div>            
-    </div>       
+        </div>
+    </div>
+
+
+    <RadzenButton Click="seeppe"></RadzenButton>
+
+    @foreach(var item in maintReq.PPEEquipment)
+    {
+        <span>@item.Id;</span>
+        <span>@item.PPEName;</span>
+    }
+
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
+                <RadzenLabel Text="Choose Person to Authorise"></RadzenLabel>
+                <RadzenButton Text="Request"></RadzenButton>
+            </RadzenFieldset>
+        </div>
+    </div>
 </div>
 
 
@@ -72,7 +94,18 @@
 
 @code {
     [Parameter]
-    public int maintReqID { get; set; }
+    public MaintRequestInitiation maintReq { get; set; }
+
+    public void seeppe()
+    {
+        foreach(var item in maintReq.PPEEquipment)
+        {
+            Console.WriteLine(item.Id + "       " + item.PPEName);
+        }
+    }
+
+
+    public string colour = "black";
 
     protected override void OnInitialized()
     {

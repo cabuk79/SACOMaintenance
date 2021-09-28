@@ -183,6 +183,12 @@ namespace SACOMaintenance.DataAccess
             return maintReqInitiation;
         }
 
+        public ObservableCollection<Priority> LoadAllRequestsPriority()
+        {
+            var requests = new ObservableCollection<Priority>(_requestInitationDBContext.Priorites.ToList());
+
+            return requests;
+        }
         public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
         {
             var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
@@ -269,6 +275,8 @@ namespace SACOMaintenance.DataAccess
             }
         }
 
+
+
         //void IMaintRequestInitiation.LoadMaintRiskData(int maintReqId)
         //{
         //    throw new NotImplementedException();
@@ -278,5 +286,7 @@ namespace SACOMaintenance.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

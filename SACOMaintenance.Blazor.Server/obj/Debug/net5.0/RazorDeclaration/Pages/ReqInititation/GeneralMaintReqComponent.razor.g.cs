@@ -117,6 +117,13 @@ using SACOMaintenance.ViewModel.Interfaces;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+using SACOMaintenance.Blazor.Server.Components;
+
+#line default
+#line hidden
+#nullable disable
     public partial class GeneralMaintReqComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -125,10 +132,21 @@ using SACOMaintenance.ViewModel.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 73 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 95 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
     [Parameter]
-    public int maintReqID { get; set; }
+    public MaintRequestInitiation maintReq { get; set; }
+
+    public void seeppe()
+    {
+        foreach(var item in maintReq.PPEEquipment)
+        {
+            Console.WriteLine(item.Id + "       " + item.PPEName);
+        }
+    }
+
+
+    public string colour = "black";
 
     protected override void OnInitialized()
     {

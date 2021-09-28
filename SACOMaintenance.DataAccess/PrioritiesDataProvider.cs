@@ -3,6 +3,7 @@ using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintContext = sacoMaintContext;
         }
         
-        public IEnumerable<Priority> LoadAllPriorities()
+        public ObservableCollection<Priority> LoadAllPriorities()
         {
-            var priorities = _sacoMaintContext.Priorites.ToList();
+            var priorities = new ObservableCollection<Priority>(_sacoMaintContext.Priorites.ToList());
             return priorities;
         }
     }

@@ -39,10 +39,29 @@ namespace SACOMaintenance.ViewModel
             return MaintReqs.Count;
         }
 
+        public ObservableCollection<Priority> GetPriorties()
+        {
+            var prios = new ObservableCollection<Priority>(MaintReqDataProvider.LoadAllRequestsPriority().ToList());
+            return prios;
+        }
+
+        //public ObservableCollection<MaintRequestInitiation> GetRequestsByPriority()
+        //{
+        //    var requests = new ObservableCollection<MaintRequestInitiation>(MaintReqDataProvider.LoadAllRequestsPriority().ToList());
+        //    return requests;
+        //}
+
+        //public int GetRequestsByPriority(int priorityId)
+        //{
+        //    var request = MaintReqDataProvider.LoadAllRequestsPriority(priorityId);
+        //    return request.Count();
+        //}
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
     }
 }

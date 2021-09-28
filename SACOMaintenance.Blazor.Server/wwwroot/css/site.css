@@ -241,6 +241,7 @@ app {
     .requestPriorityCentre{
         display: flex;
         justify-content: center;
+        object-fit: cover;
     }
 
     .requestPriorityRight {

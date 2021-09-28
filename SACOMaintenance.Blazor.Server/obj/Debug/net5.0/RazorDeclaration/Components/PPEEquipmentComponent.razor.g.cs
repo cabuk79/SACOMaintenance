@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Pages.SuppliersPages
+namespace SACOMaintenance.Blazor.Server.Components
 {
     #line hidden
     using System;
@@ -97,14 +97,13 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
+#line 1 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\PPEEquipmentComponent.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/supplier/full/{Id}")]
-    public partial class SingleSupplier : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class PPEEquipmentComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,51 +111,44 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 123 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\SingleSupplier.razor"
-           
-        [Parameter]
-        public string Id { get; set; }
+#line 54 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\PPEEquipmentComponent.razor"
+       
+    [Parameter]
+    public PPE ppe { get; set; }
 
-        string postCodeFoundError;
-        bool hasFoundPostCodeError = false;
-        bool switchValue = true;
+    [Parameter]
+    public EventCallback<MaintRequestInitiation> maintReqChanged { get; set; }
 
-        protected override void OnInitialized()
+    [Parameter]
+    public string colour { get; set; }
+
+    [Parameter]
+    public MaintRequestInitiation maintReq { get; set; }
+
+
+    private void maintppeChanged()
+    {
+        if (colour == "red")
         {
-            supplierViewModel.GetSingleSupplier(Convert.ToInt32(Id));         
+            colour = "black";
+            var reqid = maintReq.PPEEquipment;
+
+            maintReq.PPEEquipment.RemoveAll(i => i.Id == ppe.Id);
+
+            maintReqChanged.InvokeAsync(maintReq);
         }
-
-        
-
-        void Update()
+        else
         {
-            supplierViewModel.UpdateSupplier();
+            colour = "red";
+            maintReq.PPEEquipment.Add(ppe);
         }
-
-        void PostCodeOnChange(string value)
-        {
-
-            // supplierViewModel.SelectedSupplier.PostCodeId = 
-            supplierViewModel.postcodefound(value,  "Edit");
-
-            if (supplierViewModel.SelectedSupplier.Postcode.Id == 0)
-            {
-                postCodeFoundError = "Sorry no post code could be found!";
-                hasFoundPostCodeError = true;
-            }
-            else
-            {
-                hasFoundPostCodeError = false;
-            }
-        //this.StateHasChanged();
     }
 
-    
+
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.ISupplierViewModel supplierViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -14,40 +14,43 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <RadzenFieldset Text="Request Stats">
-                <div class="row">
-                    <RequestPriorityDashboardItem imageLocation="fas fa-door-open fa-5x" color="bg-dark" text="Open"></RequestPriorityDashboardItem>
-                    <div class="col-lg-2"><TotalOpenMaintReqs></TotalOpenMaintReqs></div>
-                    <div class="col-lg-2"><NewMaintReqs></NewMaintReqs></div>
-                    <div class="col-lg-2"><TotalMaintReqCurrentYear></TotalMaintReqCurrentYear></div>
-                </div>
-            </RadzenFieldset>
+    <div class="d-none d-sm-block"><!-- Hide if on a mobile phone section - start -->
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenFieldset Text="Request Stats">
+                    <div class="row">
+                        <RequestPriorityDashboardItem imageLocation="fas fa-door-open fa-5x" color="bg-dark" text="Open"></RequestPriorityDashboardItem>
+                        <div class="col-lg-2"><TotalOpenMaintReqs></TotalOpenMaintReqs></div>
+                        <div class="col-lg-2"><NewMaintReqs></NewMaintReqs></div>
+                        <div class="col-lg-2"><TotalMaintReqCurrentYear></TotalMaintReqCurrentYear></div>
+                    </div>
+                </RadzenFieldset>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <RadzenFieldset Text="New Unassigned Requests">
-                <div class="row">
-                    <div class="col-lg-12"><MaintReqUnassigned></MaintReqUnassigned></div>
-                </div>
-            </RadzenFieldset>
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenFieldset Text="New Unassigned Requests">
+                    <div class="row">
+                        <div class="col-lg-12"><MaintReqUnassigned></MaintReqUnassigned></div>
+                    </div>
+                </RadzenFieldset>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <RadzenFieldset Text="Data Graphs">
-                <div class="row">
-                    <div class="col-lg-6"><RequestsGraph></RequestsGraph></div>
-                    <div class="col-lg-6"><RequestsYearGraphComponent></RequestsYearGraphComponent></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12"><RequestsMonthYearGraphComponent></RequestsMonthYearGraphComponent></div>
-                </div>
-            </RadzenFieldset>
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenFieldset Text="Data Graphs">
+                    <div class="row">
+                        <div class="col-lg-6"><RequestsGraph></RequestsGraph></div>
+                        <div class="col-lg-6"><RequestsYearGraphComponent></RequestsYearGraphComponent></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12"><RequestsMonthYearGraphComponent></RequestsMonthYearGraphComponent></div>
+                    </div>
+                </RadzenFieldset>
+            </div>
         </div>
-    </div>
+    </div><!-- Hide if on a mobile phone section - end -->
+
 </div>
 
 

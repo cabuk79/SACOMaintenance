@@ -1,5 +1,5 @@
 ﻿
-<div class="card text-white @color" style="width: 18rem; height: 130px">
+<div class="card text-white @color">
     <div class="card-body">
         <div class="row">
             <div class="col-lg-6 requestPriorityCentre">
@@ -8,7 +8,7 @@
             <div class="col-lg-6">
                 <div class="requestPriorityRight">
                     <h2>@text</h2>
-                    <h2>235</h2>
+                    <h2>@count</h2>
                 </div>            
             </div>
         </div>  
@@ -26,4 +26,9 @@
 
     [Parameter]
     public string text { get; set; }
+
+    [Parameter]
+    public int count { get; set; }
+
+
 }

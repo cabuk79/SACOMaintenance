@@ -26,11 +26,25 @@ namespace SACOMaintenance.ViewModel
         public IEnumerable<AreaModel> Areas { get; set; }
 
 
-        public IEnumerable<Factory> Factories { get; }
+        public IEnumerable<Factory> Factories { get; set; }
         public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
         public IEnumerable<Equipment> Equipment { get; set; }
         public IEnumerable<Priority> Priorities { get; set; }
         public IEnumerable<Company> Companies { get; set; }
+
+        public int CompanyId
+        {
+            get => MaintReq.CompanyId;
+            set
+            {
+                if (MaintReq.CompanyId != value)
+                {
+                    MaintReq.CompanyId = value;
+                    RaisePropertychangedEvent();
+                    LoadFactoriesByCompany();
+                }
+            }
+        }
 
         public int FactoryId
         {
@@ -46,17 +60,6 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public int CompanyId 
-        {
-            get => MaintReq.CompanyId;
-            set
-            {
-                if(MaintReq.CompanyId != value)
-                {
-                    MaintReq.CompanyId = value;
-                }                
-            }
-        }
 
         public int AreaId
         {
@@ -141,6 +144,11 @@ namespace SACOMaintenance.ViewModel
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void LoadFactoriesByCompany()
+        {
+            Factories = FactoryDataProvider.LoadAllFactories();
         }
 
         public void LoadAreasByFactory()

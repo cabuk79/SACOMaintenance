@@ -22,5 +22,6 @@ namespace SACOMaintenance.Common.ModelDB
         public int WorkCompletedSignOffYesNo { get; set; }
         public int WorkCompletedSignOffUserId { get; set; }
         public int WorkCompletedSignOffDateTime { get; set; }
+        public string ControlMeasuresTaken { get; set; }
     }
 }

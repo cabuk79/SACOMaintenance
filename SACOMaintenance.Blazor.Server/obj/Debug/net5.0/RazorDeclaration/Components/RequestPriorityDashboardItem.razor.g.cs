@@ -116,6 +116,11 @@ using Radzen.Blazor.Rendering;
     [Parameter]
     public string text { get; set; }
 
+    [Parameter]
+    public int count { get; set; }
+
+
+
 #line default
 #line hidden
 #nullable disable

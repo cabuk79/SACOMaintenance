@@ -41,6 +41,8 @@ namespace SACOMaintenance.DataAccess
             return factories;
         }
 
+        
+
         public Factory ViewSingleFactory(int Id)
         {
             var factory = _factoryDBContext.Factories

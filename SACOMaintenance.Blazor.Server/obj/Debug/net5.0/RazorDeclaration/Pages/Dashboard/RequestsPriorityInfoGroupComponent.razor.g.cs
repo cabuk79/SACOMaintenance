@@ -103,6 +103,20 @@ using SACOMaintenance.Blazor.Server.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
+using SACOMaintenance.Common.ModelDB;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
+using System.Collections.ObjectModel;
+
+#line default
+#line hidden
+#nullable disable
     public partial class RequestsPriorityInfoGroupComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -110,6 +124,26 @@ using SACOMaintenance.Blazor.Server.Components;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 35 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
+           
+        public ObservableCollection<MaintRequestInitiation> regs;
+        public ObservableCollection<Priority> prios;
+
+
+
+        protected override void OnInitialized()
+        {
+           //regs = viewMod.GetRequestsByPriority();
+            prios = viewMod.GetPriorties();
+        }
+
+    
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IRequestsGraphViewModel viewMod { get; set; }
     }
 }
 #pragma warning restore 1591

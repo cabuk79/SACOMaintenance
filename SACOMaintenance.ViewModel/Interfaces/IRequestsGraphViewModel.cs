@@ -15,5 +15,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; }
 
         public int GetRequestsByStatusCount(int statusId);
+        //public ObservableCollection<MaintRequestInitiation> GetRequestsByPriority();
+        public ObservableCollection<Priority> GetPriorties();
     }
 }

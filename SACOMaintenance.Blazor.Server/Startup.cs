@@ -72,6 +72,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IPartViewModel, PartViewModel>();
             services.AddScoped<IOrderViewModel, OrderViewModel>();
             services.AddScoped<IGeneralMaintRequestViewModel, GeneralMaintRequestViewModel>();
+            services.AddScoped<IRequestsGraphViewModel, RequestsGraphViewModel>();
             
 
             services.AddScoped<DialogService>();

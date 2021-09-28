@@ -60,11 +60,6 @@ namespace SACOMaintenance.Data
                 (mr => mr.HasOne<Risk>().WithMany(),
                 mm => mm.HasOne<MaintRequestInitiation>().WithMany());
 
-            //modelBuilder.Entity<MaintReqUptateNote>()
-            //    .HasOne(p => p.User)
-            //    .WithMany(b => b.MaintReqUptateNotes)
-            //    .HasForeignKey(f => f.UserId);
-
             //modelBuilder.Entity<IsolationMaintRequestInitiation>().HasKey(i => new { i.IsolationsId, i.MaintReqInitationListId });
 
             //modelBuilder.Entity<MaintRequestInitiation>()

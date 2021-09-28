@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <div class="card text-white" style="width: 100%">
+                                                <div class="card text-black" style="width: 100%">
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col-lg-12">
@@ -155,13 +155,13 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            @if (maintReqInitation.maintReqAreaId == 1)  //This ID 31 refers to the plant Area so either plant 1 or 2
+            @if (maintReqInitation.maintReqAreaId == 1)  //This ID 1 refers to the plant Area so either plant 1 or 2
             {
-                <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
+                @*<PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>*@
             }
             else
             {
-                <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
+                <GeneralMaintReqComponent maintReq="maintReqInitation.maintReqInitation"></GeneralMaintReqComponent>
             }
         </div>
     </div>
