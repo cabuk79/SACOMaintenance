@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SACOMaintenance.Data
 {
-    public class SACOMaintenanceContext : IdentityDbContext
+    public class SACOMaintenanceContext : IdentityDbContext<User>
     {
         public DbSet<AreaModel> Areas { get; set; }
         public DbSet<Company> Companies { get; set; }

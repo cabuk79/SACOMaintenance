@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -33,6 +34,9 @@ namespace SACOMaintenance.Blazor.Server
             services.AddDbContext<SACOMaintenanceContext>(options=>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddIdentity<Common.ModelDB.User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<SACOMaintenanceContext>().AddDefaultTokenProviders()
+                .AddDefaultUI();
 
             services.AddScoped<IArea, AreaProvider>();
             services.AddScoped<IFactory, FactoryDataProvider>();
@@ -80,7 +84,6 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<DialogService>();
             services.AddScoped<NotificationService>();
 
-
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSignalR();
@@ -91,7 +94,11 @@ namespace SACOMaintenance.Blazor.Server
                     new[] { "application/octet-stream" });
             });
 
+                    
         }
+
+        
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -111,11 +118,14 @@ namespace SACOMaintenance.Blazor.Server
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
                 endpoints.MapHub<BroadcastHub>("/broadcastHub");
