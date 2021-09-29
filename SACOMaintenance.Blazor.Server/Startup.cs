@@ -114,15 +114,15 @@ namespace SACOMaintenance.Blazor.Server
                 app.UseHsts();
             }
 
-           
 
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //app.UseRouting();
+            
+            
             app.UseRouting();
-            app.UseAuthentication();
             app.UseAuthorization();
-            app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

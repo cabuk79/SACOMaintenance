@@ -12,37 +12,42 @@
                 <span class="oi oi-dashboard" aria-hidden="true"></span> Dashboard
             </NavLink>
         </li>
-        @* Requests Menu and Sub Menu *@
-        <li class="nav-item dropdown show">
-            <NavLink class="nav-link dropdown-toggle" @onclick="()=>
+
+            @* Requests Menu and Sub Menu *@
+            <li class="nav-item dropdown show">
+                <NavLink class="nav-link dropdown-toggle" @onclick="()=>
                 requestExpand = !requestExpand">
-                <span class="oi oi-book" aria-hidden="true"></span>Requests
-            </NavLink>
-        </li>
-        @if ((requestExpand))
-        {
-            <li>
-                <ul>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="maintrequests-list"
-                                 Match="NavLinkMatch.All">
-                            <span class="oi oi-book" aria-hidden="true"></span> View Requests
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="/maint-req/add" Match="NavLinkMatch.All">
-                            <span class="oi oi-plus" aria-hidden="true"></span> Add New Request
-                        </NavLink>
-                    </li>
-                </ul>
+                    <span class="oi oi-book" aria-hidden="true"></span>Requests
+                </NavLink>
             </li>
-        }
+            @if ((requestExpand))
+            {
+                <li>
+                    <ul>
+                        <AuthorizeView Roles="Administrators, Electrical User">
+                            <li class="nav-item px-3">
+                                <NavLink class="nav-link" href="maintrequests-list"
+                                         Match="NavLinkMatch.All">
+                                    <span class="oi oi-book" aria-hidden="true"></span> View Requests
+                                </NavLink>
+                            </li>
+                        </AuthorizeView>
+                        <li class="nav-item px-3">
+                            <NavLink class="nav-link" href="/maint-req/add" Match="NavLinkMatch.All">
+                                <span class="oi oi-plus" aria-hidden="true"></span> Add New Request
+                            </NavLink>
+                        </li>
+                    </ul>
+                </li>
+            }
+        
+        
 
 
 
         @*<li class="nav-item px-3">
 
-        </li>*@
+            </li>*@
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="areas" Match="NavLinkMatch.All">
                 <span class="oi oi-map-marker" aria-hidden="true"></span> Areas
@@ -93,27 +98,30 @@
                 <span class="oi oi-clipboard" aria-hidden="true"></span> Orders
             </NavLink>
         </li>
-        @* Settings Menu and Sub Menu *@
-        <li class="nav-item dropdown show">
-            <NavLink class="nav-link dropdown-toggle" @onclick="()=>
+        <AuthorizeView Roles="Administrators">
+            @* Settings Menu and Sub Menu *@
+            <li class="nav-item dropdown show">
+                <NavLink class="nav-link dropdown-toggle" @onclick="()=>
                 settingsExpand = !settingsExpand">
-                <span class="oi oi-book" aria-hidden="true"></span>Settings
-            </NavLink>
-        </li>
-        @if ((settingsExpand))
-        {
-            <li>
-                <ul>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="administration-viewusers"
-                                 Match="NavLinkMatch.All">
-                            <span class="oi oi-person" aria-hidden="true"></span> Users
-                        </NavLink>
-                    </li>
-                </ul>
+                    <span class="oi oi-book" aria-hidden="true"></span>Settings
+                </NavLink>
             </li>
-        }
+            @if ((settingsExpand))
+            {
+                <li>
+                    <ul>
+                        <li class="nav-item px-3">
+                            <NavLink class="nav-link" href="administration-viewusers"
+                                     Match="NavLinkMatch.All">
+                                <span class="oi oi-person" aria-hidden="true"></span> Users
+                            </NavLink>
+                        </li>
+                    </ul>
+                </li>
+            }
+        </AuthorizeView>
     </ul>
+    
 </div>
 
 @code {

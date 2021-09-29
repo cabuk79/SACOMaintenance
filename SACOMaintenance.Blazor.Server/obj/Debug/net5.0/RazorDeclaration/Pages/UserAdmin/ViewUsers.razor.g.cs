@@ -97,7 +97,7 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
 using Microsoft.AspNetCore.Identity;
 
 #line default
@@ -112,199 +112,204 @@ using Microsoft.AspNetCore.Identity;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 108 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
+#line 123 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
        
 
 
-    string ADMINISTRATION_ROLE = "Administrators";
+            string ADMINISTRATION_ROLE = "Administrators";
 
-    // Property used to add or edit the currently selected user
-    Common.ModelDB.User objUser = new Common.ModelDB.User();
-    // Tracks the selected role for the currently selected user
-    string CurrentUserRole { get; set; } = "";
-    // Collection to display the existing users
-    List<Common.ModelDB.User> ColUsers = new List<Common.ModelDB.User>();
-    // Options to display in the roles dropdown when editing a user
-    List<string> Options = new List<string>() { "General User", "Administrators", "Electrical User", "Mechanial User", "Maintenance Admin", "General Manager" };
-    // To hold any possible errors
-    string strError = "";
-    // To enable showing the Popup
-    bool ShowPopup = false;
+            // Property used to add or edit the currently selected user
+            Common.ModelDB.User objUser = new Common.ModelDB.User();
+            // Tracks the selected role for the currently selected user
+            string CurrentUserRole { get; set; } = "";
+            // Collection to display the existing users
+            List<Common.ModelDB.User> ColUsers = new List<Common.ModelDB.User>();
+            // Options to display in the roles dropdown when editing a user
+            List<string> Options = new List<string>() { "General User", "Administrators", "Electrical User", "Mechanial User", "Maintenance Admin", "General Manager" };
+            // To hold any possible errors
+            string strError = "";
+            // To enable showing the Popup
+            bool ShowPopup = false;
 
-    protected override async Task OnInitializedAsync()
-    {
-        var user = await _UserManager.FindByNameAsync("craig.brunton@sacoltd.com");
-        if (user != null)
-        {
-            // Is Admin@BlazorHelpWebsite.com in administrator role?
-            var UserResult = await _UserManager.IsInRoleAsync(user, ADMINISTRATION_ROLE);
-            if (!UserResult)
+            protected override async Task OnInitializedAsync()
             {
-                // Put admin in Administrator role
-                await _UserManager.AddToRoleAsync(user, ADMINISTRATION_ROLE);
-            }
-        }
-
-        GetUsers();
-    }
-
-    public void GetUsers()
-    {
-        // clear any error messages
-        strError = "";
-        // Collection to hold users
-        ColUsers = new List<Common.ModelDB.User>();
-        // get users from _UserManager
-        var user = _UserManager.Users.Select(x => new Common.ModelDB.User
-        {
-            Id = x.Id,
-            UserName = x.UserName,
-            Email = x.Email,
-            PasswordHash = "*****"
-        });
-        foreach (var item in user)
-        {
-            ColUsers.Add(item);
-        }
-    }
-
-    void AddNewUser()
-    {
-        // Make new user
-        objUser = new Common.ModelDB.User();
-        objUser.PasswordHash = "*****";
-        // Set Id to blank so we know it is a new record
-        objUser.Id = "";
-        // Open the Popup
-        ShowPopup = true;
-    }
-
-    async Task SaveUser()
-    {
-        try
-        {
-            // Is this an existing user
-            if (objUser.Id != "")
-            {
-                //Remove current role so it is not addedtwice
-
-                // Get the user
-                var user = await _UserManager.FindByIdAsync(objUser.Id);
-
-                if(CurrentUserRole != "")
+                var user = await _UserManager.FindByNameAsync("craig.brunton@sacoltd.com");
+                if (user != null)
                 {
-                    foreach(var item in Options)
+                    // Is Admin@BlazorHelpWebsite.com in administrator role?
+                    var UserResult = await _UserManager.IsInRoleAsync(user, ADMINISTRATION_ROLE);
+                    if (!UserResult)
                     {
-                        await _UserManager.RemoveFromRoleAsync(user, item);
+                        // Put admin in Administrator role
+                        await _UserManager.AddToRoleAsync(user, ADMINISTRATION_ROLE);
                     }
-
                 }
 
-                user.FirstName = objUser.FirstName;
-                user.LastName = objUser.LastName;
-                // Update Email
-                user.Email = objUser.Email;
-                await _UserManager.AddToRoleAsync(user, CurrentUserRole);
-                // Update the user
-                await _UserManager.UpdateAsync(user);
-                // Only update password if the current value
-                // is not the default value
-                if (objUser.PasswordHash != "*****")
-                {
-                    var resetToken = await _UserManager.GeneratePasswordResetTokenAsync(user);
-                    var passworduser = await _UserManager
-                        .ResetPasswordAsync(
-                            user,
-                            resetToken,
-                            objUser.PasswordHash);
+                GetUsers();
+            }
 
-                    if (!passworduser.Succeeded)
+            public void GetUsers()
+            {
+                // clear any error messages
+                strError = "";
+                // Collection to hold users
+                ColUsers = new List<Common.ModelDB.User>();
+                // get users from _UserManager
+                var user = _UserManager.Users.Select(x => new Common.ModelDB.User
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    UserName = x.UserName,
+                    Email = x.Email,
+                    PasswordHash = "*****",
+                    AvatarLocation = x.AvatarLocation
+                });
+                foreach (var item in user)
+                {
+                    ColUsers.Add(item);
+                }
+            }
+
+            void AddNewUser()
+            {
+                // Make new user
+                objUser = new Common.ModelDB.User();
+                objUser.PasswordHash = "*****";
+                // Set Id to blank so we know it is a new record
+                objUser.Id = "";
+                // Open the Popup
+                ShowPopup = true;
+            }
+
+            async Task SaveUser()
+            {
+                try
+                {
+                    // Is this an existing user
+                    if (objUser.Id != "")
                     {
-                        if (passworduser.Errors.FirstOrDefault() != null)
+                        //Remove current role so it is not addedtwice
+
+                        // Get the user
+                        var user = await _UserManager.FindByIdAsync(objUser.Id);
+
+                        if (CurrentUserRole != "")
+                        {
+                            foreach (var item in Options)
+                            {
+                                await _UserManager.RemoveFromRoleAsync(user, item);
+                            }
+
+                        }
+
+                        user.FirstName = objUser.FirstName;
+                        user.LastName = objUser.LastName;
+
+                        // Update Email
+                        user.Email = objUser.Email;
+                        await _UserManager.AddToRoleAsync(user, CurrentUserRole);
+                        // Update the user
+                        await _UserManager.UpdateAsync(user);
+                        // Only update password if the current value
+                        // is not the default value
+                        if (objUser.PasswordHash != "*****")
+                        {
+                            var resetToken = await _UserManager.GeneratePasswordResetTokenAsync(user);
+                            var passworduser = await _UserManager
+                                .ResetPasswordAsync(
+                                    user,
+                                    resetToken,
+                                    objUser.PasswordHash);
+
+                            if (!passworduser.Succeeded)
+                            {
+                                if (passworduser.Errors.FirstOrDefault() != null)
+                                {
+                                    strError =
+                                        passworduser
+                                        .Errors
+                                        .FirstOrDefault()
+                                        .Description;
+                                }
+                                else
+                                {
+                                    strError = "Pasword error";
+                                }
+                                // Keep the popup opened
+                                return;
+                            }
+
+
+                        }
+
+                        // Handle Roles
+                        // Is user in administrator role?
+                        //var UserResult = await _UserManager.IsInRoleAsync(user, ADMINISTRATION_ROLE);
+
+                        // Is Administrator role selected but user is not an Administrator?
+                        //if ((CurrentUserRole == ADMINISTRATION_ROLE) & (!UserResult))
+                        //{
+                        // Put admin in Administrator role
+                        //    await _UserManager.AddToRoleAsync(user, CurrentUserRole);
+                        //}
+                        //else
+                        //{
+                        // Is Administrator role not selected
+                        // but user is an Administrator?
+                        //   if ((CurrentUserRole != ADMINISTRATION_ROLE) & (UserResult))
+                        //   {
+                        // Remove user from Administrator role
+                        //   await _UserManager.RemoveFromRoleAsync(user, ADMINISTRATION_ROLE);
+                        //   }
+                        // }
+                    }
+                    else
+                    {
+                        // Insert new user
+                        var NewUser =
+                            new Common.ModelDB.User
+                            {
+                                FirstName = objUser.FirstName,
+                                LastName = objUser.LastName,
+                                UserName = objUser.FirstName + "." + objUser.LastName,
+                                Email = objUser.Email,
+                                AvatarLocation = @"css/Images/UserProfilePics/blankprofilepic.png"
+                    };
+                    var CreateResult = await _UserManager.CreateAsync(NewUser, objUser.PasswordHash);
+                    if (!CreateResult.Succeeded)
+                    {
+                        if (CreateResult.Errors.FirstOrDefault() != null)
                         {
                             strError =
-                                passworduser
+                                CreateResult
                                 .Errors
                                 .FirstOrDefault()
                                 .Description;
                         }
                         else
                         {
-                            strError = "Pasword error";
+                            strError = "Create error";
                         }
                         // Keep the popup opened
                         return;
                     }
-
-
-                }
-
-                // Handle Roles
-                // Is user in administrator role?
-                //var UserResult = await _UserManager.IsInRoleAsync(user, ADMINISTRATION_ROLE);
-
-                // Is Administrator role selected but user is not an Administrator?
-                //if ((CurrentUserRole == ADMINISTRATION_ROLE) & (!UserResult))
-                //{
-                // Put admin in Administrator role
-                //    await _UserManager.AddToRoleAsync(user, CurrentUserRole);
-                //}
-                //else
-                //{
-                // Is Administrator role not selected 
-                // but user is an Administrator?
-                //   if ((CurrentUserRole != ADMINISTRATION_ROLE) & (UserResult))
-                //   {
-                // Remove user from Administrator role
-                //   await _UserManager.RemoveFromRoleAsync(user, ADMINISTRATION_ROLE);
-                //   }
-                // }
-            }
-            else
-            {
-                // Insert new user
-                var NewUser =
-                    new Common.ModelDB.User
-                    {
-                        FirstName = objUser.FirstName,
-                        LastName = objUser.LastName,
-                        UserName = objUser.UserName,
-                        Email = objUser.Email
-                    };
-                var CreateResult = await _UserManager.CreateAsync(NewUser, objUser.PasswordHash);
-                if (!CreateResult.Succeeded)
-                {
-                    if (CreateResult.Errors.FirstOrDefault() != null)
-                    {
-                        strError =
-                            CreateResult
-                            .Errors
-                            .FirstOrDefault()
-                            .Description;
-                    }
                     else
                     {
-                        strError = "Create error";
-                    }
-                    // Keep the popup opened
-                    return;
-                }
-                else
-                {
-                    // Handle Roles
-                    //if (CurrentUserRole == ADMINISTRATION_ROLE)
-                    //{
-                    // Put admin in Administrator role
+                        // Handle Roles
+                        //if (CurrentUserRole == ADMINISTRATION_ROLE)
+                        //{
+                        // Put admin in Administrator role
 
-                    await _UserManager.AddToRoleAsync(NewUser, CurrentUserRole); // ADMINISTRATION_ROLE);
-                    //}
+                        await _UserManager.AddToRoleAsync(NewUser, CurrentUserRole); // ADMINISTRATION_ROLE);
+                                                                                     //}
+                    }
                 }
-            }
             // Close the Popup
             ShowPopup = false;
-            // Refresh Users
-            GetUsers();
-        }
+                // Refresh Users
+                GetUsers();
+            }
         catch (Exception ex)
         {
             strError = ex.GetBaseException().Message;
@@ -322,7 +327,7 @@ using Microsoft.AspNetCore.Identity;
         {
             var userRoles = await _UserManager.GetRolesAsync(user);
 
-            if(userRoles.Count == 0)
+            if (userRoles.Count == 0)
             {
                 CurrentUserRole = "";
             }
@@ -357,6 +362,7 @@ using Microsoft.AspNetCore.Identity;
 
     void ClosePopup()
     {
+        CurrentUserRole = "";
         // Close the Popup
         ShowPopup = false;
     }
