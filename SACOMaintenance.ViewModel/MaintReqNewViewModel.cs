@@ -32,6 +32,8 @@ namespace SACOMaintenance.ViewModel
         public IEnumerable<Priority> Priorities { get; set; }
         public IEnumerable<Company> Companies { get; set; }
 
+        public int NewAddedMaintId { get; set; }
+
         public int CompanyId
         {
             get => MaintReq.CompanyId;
@@ -135,7 +137,8 @@ namespace SACOMaintenance.ViewModel
 
         public void AddNewRequest()
         {
-            MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
+            NewAddedMaintId =  MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
+            //NewAddedMaintId = MaintReq.Id;
 
         }
 

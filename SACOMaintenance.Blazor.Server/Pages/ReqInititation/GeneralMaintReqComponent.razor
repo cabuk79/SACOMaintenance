@@ -28,10 +28,9 @@
                             }
                         }
                         <div class="col-lg-2">
-                            <PPEEquipmentComponent
-                                        ppe="@ppeItem"
-                                        colour="@colour"
-                                        maintReq="@maintReq">
+                            <PPEEquipmentComponent ppe="@ppeItem"
+                                                   colour="@colour"
+                                                   maintReq="@maintReq">
                             </PPEEquipmentComponent>
                         </div>
                         colour = "black";
@@ -41,10 +40,9 @@
         </div>
     </div>
 
-
     <RadzenButton Click="seeppe"></RadzenButton>
 
-    @foreach(var item in maintReq.PPEEquipment)
+    @foreach (var item in maintReq.PPEEquipment)
     {
         <span>@item.Id;</span>
         <span>@item.PPEName;</span>
@@ -60,15 +58,40 @@
     </div>
 </div>
 
+@if (GeneralViewModel.genralRequestInfo.AuthorityToWorkUserId > 0  && GeneralViewModel.genralRequestInfo != null)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Completion of the Works">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenLabel Text="Details of the work completed"></RadzenLabel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-gl-12">
+                        <RadzenTextArea @bind-Value="GeneralViewModel.genralRequestInfo.DetailOfWorkCompleted"></RadzenTextArea>
+                    </div>
+                </div>
+            </RadzenFieldset>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <h1>You need approval to work</h1>
+    </div>
+}
 
-    @*<div class="card text-white" style="width: 18rem; height: 130px">
+@*<div class="card text-white" style="width: 18rem; height: 130px">
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-6">
                     <img src="@ppeItem.IconFileLocation" width="30" height="30" />
                 </div>
                 <div class="col-lg-6">
-                   <p>@ppeItem.Description</p>               
+                   <p>@ppeItem.Description</p>
                 </div>
             </div>
         </div>
@@ -78,16 +101,16 @@
 
 
 @*<RadzenGrid Data="GeneralViewModel.ppeList">
-    <Columns>
-        <RadzenGridColumn TItem="PPE" Property="ID" Title="Id" Width="15px"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PPE" Property="PPEName" Title="Name" Width="50px"></RadzenGridColumn>
-        <RadzenGridColumn TItem="PPE" Property="IconLocation">
-            <Template Context="data">
-                <RadzenImage Path="@data.IconFileLocation" Style="width:30px"></RadzenImage>
-            </Template>
-        </RadzenGridColumn>
-    </Columns>
-</RadzenGrid>*@
+        <Columns>
+            <RadzenGridColumn TItem="PPE" Property="ID" Title="Id" Width="15px"></RadzenGridColumn>
+            <RadzenGridColumn TItem="PPE" Property="PPEName" Title="Name" Width="50px"></RadzenGridColumn>
+            <RadzenGridColumn TItem="PPE" Property="IconLocation">
+                <Template Context="data">
+                    <RadzenImage Path="@data.IconFileLocation" Style="width:30px"></RadzenImage>
+                </Template>
+            </RadzenGridColumn>
+        </Columns>
+    </RadzenGrid>*@
 
 
 
@@ -98,7 +121,7 @@
 
     public void seeppe()
     {
-        foreach(var item in maintReq.PPEEquipment)
+        foreach (var item in maintReq.PPEEquipment)
         {
             Console.WriteLine(item.Id + "       " + item.PPEName);
         }
@@ -109,6 +132,7 @@
 
     protected override void OnInitialized()
     {
-
+        GeneralViewModel.maintId = maintReq.Id;
+        GeneralViewModel.GetGeneralRequest(maintReq.Id);
     }
 }

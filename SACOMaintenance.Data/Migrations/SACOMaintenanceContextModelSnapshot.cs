@@ -393,16 +393,19 @@ namespace SACOMaintenance.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("AuthorityToWorkDateTime")
+                    b.Property<DateTime?>("AuthorityToWorkDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("AuthorityToWorkUserId")
+                    b.Property<int?>("AuthorityToWorkUserId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DetailOfWorkCompeltedDateTime")
+                    b.Property<string>("ControlMeasuresTaken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DetailOfWorkCompeltedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DetailOfWorkCompeltedUserId")
+                    b.Property<int?>("DetailOfWorkCompeltedUserId")
                         .HasColumnType("int");
 
                     b.Property<string>("DetailOfWorkCompleted")
@@ -420,16 +423,16 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<string>("WorkCompletedDetails")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("WorkCompletedSignOffDateTime")
+                    b.Property<int?>("WorkCompletedSignOffDateTime")
                         .HasColumnType("int");
 
-                    b.Property<int>("WorkCompletedSignOffUserId")
+                    b.Property<int?>("WorkCompletedSignOffUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("WorkCompletedSignOffYesNo")
+                    b.Property<int?>("WorkCompletedSignOffYesNo")
                         .HasColumnType("int");
 
-                    b.Property<int>("WorkCompletedYesNo")
+                    b.Property<int?>("WorkCompletedYesNo")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1020,6 +1023,9 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pin")
+                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("User");
                 });

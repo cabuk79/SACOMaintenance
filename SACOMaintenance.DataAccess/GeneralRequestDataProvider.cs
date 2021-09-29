@@ -7,16 +7,16 @@ namespace SACOMaintenance.DataAccess
 {
     public class GeneralRequestDataProvider : IGeneralRequest
     {
-        public GeneralRequestDataProvider()
+        public GeneralRequestDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
-            //SacoMaintenanceContext = new SACOMaintenanceContext();
+            _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        public SACOMaintenanceContext SacoMaintenanceContext { get; }
+        private readonly SACOMaintenanceContext _sacoMaintenanceContext;
 
         public void AddEditGeneralRequestInfo(int maintReqId, GeneralRequest generalRequest)
         {
-            SacoMaintenanceContext.GeneralRequests.Add
+            _sacoMaintenanceContext.GeneralRequests.Add
             (
                 new GeneralRequest
                 {
@@ -34,7 +34,7 @@ namespace SACOMaintenance.DataAccess
                     WorkCompletedSignOffDateTime = generalRequest.WorkCompletedSignOffDateTime
                 }
             );
-            SacoMaintenanceContext.SaveChanges();
+            _sacoMaintenanceContext.SaveChanges();
         }
 
         public void GetGeneralRequestInfo(int maintReqId)
@@ -44,7 +44,7 @@ namespace SACOMaintenance.DataAccess
 
         public GeneralRequest GetSingalGeneralRequestInfo(int maintReqId)
         {
-            var generalRequest = SacoMaintenanceContext.GeneralRequests.FirstOrDefault(i => i.MaintRequestId == maintReqId);
+            var generalRequest = _sacoMaintenanceContext.GeneralRequests.FirstOrDefault(i => i.MaintRequestId == maintReqId);
             return generalRequest;
         }
     }

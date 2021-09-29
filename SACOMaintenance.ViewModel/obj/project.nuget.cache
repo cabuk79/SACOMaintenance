@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4F2lziiXCHbiDFMpdSB6dCsOSA60a+aLKCJxL4OmpfOt4fk/GPHscn41O6TsJNciXahJdqB98I5w1fmkKJAN2g==",
+  "dgSpecHash": "kB4yS+hhpDJDtQoBB8BKX5iFya+i3VcXXeiFA7TebH6XwZR1pD4rl19vahulXYZCJ07zJg0/p8BIqeeIZvgQ/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\cabuk\\source\\repos\\SACOMaintenance\\SACOMaintenance.ViewModel\\SACOMaintenance.ViewModel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cabuk\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\closedxml.report\\0.2.1\\closedxml.report.0.2.1.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\documentformat.openxml\\2.12.3\\documentformat.openxml.2.12.3.nupkg.sha512",
+    "C:\\Users\\cabuk\\.nuget\\packages\\entityframeworkcore.encryptcolumn\\5.0.6\\entityframeworkcore.encryptcolumn.5.0.6.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cabuk\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.10\\microsoft.aspnetcore.cryptography.internal.5.0.10.nupkg.sha512",

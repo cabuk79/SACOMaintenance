@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Radzen;
+using SACOMaintenance.Blazor.Server.Data;
 using SACOMaintenance.Blazor.Server.Hubs;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
@@ -73,7 +74,8 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IOrderViewModel, OrderViewModel>();
             services.AddScoped<IGeneralMaintRequestViewModel, GeneralMaintRequestViewModel>();
             services.AddScoped<IRequestsGraphViewModel, RequestsGraphViewModel>();
-            
+
+            services.AddSingleton<SmsService>();
 
             services.AddScoped<DialogService>();
             services.AddScoped<NotificationService>();

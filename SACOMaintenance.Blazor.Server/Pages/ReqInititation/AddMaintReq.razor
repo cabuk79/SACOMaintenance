@@ -4,6 +4,8 @@
 @inject NavigationManager NavigationManager
 @using SACOMaintenance.Common.ModelDB
 @using Microsoft.AspNetCore.SignalR.Client
+@using SACOMaintenance.Blazor.Server.Data 
+@inject SmsService SmsService  
 
 <RadzenNotification></RadzenNotification>
 
@@ -107,11 +109,11 @@
 </div>
 
 @code {
-  
+
     private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
-    {  
+    {
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
             .Build();
@@ -122,7 +124,22 @@
     protected async Task UpdateBook()
     {
         AddReqViewModel.AddNewRequest();
-     
+
+        //Check if the prisority is emergency then send text to let someone know
+        if(AddReqViewModel.PriorityId == 1)
+        {
+            Equipment equipName = AddReqViewModel.Equipment.Where(i => i.Id == AddReqViewModel.MaintReq.EquipmentId).FirstOrDefault();
+            string message = "MAINT-" + AddReqViewModel.NewAddedMaintId.ToString("D4") +
+                " has just been added and is either buisness crirtical or danger to life or health.  Please review ASAP!!!\n\n\nEquipment: "
+                + equipName.Name + "\n\nDetails:\n" + AddReqViewModel.MaintReq.RequestDetails;
+
+            var respone = SmsService.SendSms("447854 355995", "SACO Maint", message);
+            string MessageId = respone.Messages[0].MessageId;
+
+            //var responOne = SmsService.SendSms("447432556452", "SACO Maint", message);
+            //string MessageIdTwo = respone.Messages[0].MessageId;
+        }
+
         if (IsConnected) await SendMessage();
 
         ShowNotification(new NotificationMessage

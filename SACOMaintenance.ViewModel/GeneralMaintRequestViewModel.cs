@@ -17,11 +17,16 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<PPE> ppeList { get; set; }
 
         public IPPE PpeDataProvider { get; }
+        public IGeneralRequest _generalREquestDataProvider {get;}
+        public GeneralRequest genralRequestInfo { get; set; }
+        public int maintId { get; set; }
 
-        public GeneralMaintRequestViewModel(IPPE ppeDataProvider)
+        public GeneralMaintRequestViewModel(IPPE ppeDataProvider, IGeneralRequest generalRequestDataProvider)
         {
             PpeDataProvider = ppeDataProvider;
+            _generalREquestDataProvider = generalRequestDataProvider;
             LoadAllPPE();
+            //GetGeneralRequest(maintId);
         }
 
         private void LoadAllPPE()
@@ -29,10 +34,17 @@ namespace SACOMaintenance.ViewModel
             ppeList = new ObservableCollection<PPE>(PpeDataProvider.LoadAllPPE());
         }
 
+        public void GetGeneralRequest(int maintId)
+        {
+            genralRequestInfo = _generalREquestDataProvider.GetSingalGeneralRequestInfo(maintId);
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+       
     }
 }

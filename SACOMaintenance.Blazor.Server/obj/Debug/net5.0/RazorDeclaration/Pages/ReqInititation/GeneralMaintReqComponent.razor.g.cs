@@ -132,14 +132,14 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 95 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 118 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
     [Parameter]
     public MaintRequestInitiation maintReq { get; set; }
 
     public void seeppe()
     {
-        foreach(var item in maintReq.PPEEquipment)
+        foreach (var item in maintReq.PPEEquipment)
         {
             Console.WriteLine(item.Id + "       " + item.PPEName);
         }
@@ -150,7 +150,8 @@ using SACOMaintenance.Blazor.Server.Components;
 
     protected override void OnInitialized()
     {
-
+        GeneralViewModel.maintId = maintReq.Id;
+        GeneralViewModel.GetGeneralRequest(maintReq.Id);
     }
 
 #line default

@@ -15,6 +15,17 @@
           "SACOMaintenance.DataAccess.dll": {}
         }
       },
+      "EntityFrameworkCore.EncryptColumn/5.0.6": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.9"
+        },
+        "runtime": {
+          "lib/netcoreapp5.0/EntityFrameworkCore.EncryptColumn.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -1130,6 +1141,7 @@
       },
       "SACOMaintenance.Common/1.0.0": {
         "dependencies": {
+          "EntityFrameworkCore.EncryptColumn": "5.0.6",
           "Microsoft.EntityFrameworkCore.Abstractions": "5.0.10",
           "Microsoft.Extensions.Identity.Stores": "5.0.10",
           "Models.DTO": "1.0.0"
@@ -1156,6 +1168,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EntityFrameworkCore.EncryptColumn/5.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H2UvThbeuicdX7Z/ZThb9sUN6fQBqffzZsnI4h9DhLQbMiX14q6rGQQm7W/JvxQD/OHB4bbxgK74/Znji0HrrA==",
+      "path": "entityframeworkcore.encryptcolumn/5.0.6",
+      "hashPath": "entityframeworkcore.encryptcolumn.5.0.6.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

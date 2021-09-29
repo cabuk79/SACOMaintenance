@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "EntityFrameworkCore.EncryptColumn/5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.6"
+        },
+        "compile": {
+          "lib/netcoreapp5.0/EntityFrameworkCore.EncryptColumn.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp5.0/EntityFrameworkCore.EncryptColumn.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1596,6 +1608,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "EntityFrameworkCore.EncryptColumn": "5.0.6",
           "Microsoft.EntityFrameworkCore.Abstractions": "5.0.10",
           "Microsoft.Extensions.Identity.Stores": "5.0.10",
           "Models.DTO": "1.0.0"
@@ -1610,6 +1623,19 @@
     }
   },
   "libraries": {
+    "EntityFrameworkCore.EncryptColumn/5.0.6": {
+      "sha512": "H2UvThbeuicdX7Z/ZThb9sUN6fQBqffzZsnI4h9DhLQbMiX14q6rGQQm7W/JvxQD/OHB4bbxgK74/Znji0HrrA==",
+      "type": "package",
+      "path": "entityframeworkcore.encryptcolumn/5.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "entityframeworkcore.encryptcolumn.5.0.6.nupkg.sha512",
+        "entityframeworkcore.encryptcolumn.nuspec",
+        "lib/netcoreapp5.0/EntityFrameworkCore.EncryptColumn.dll",
+        "lib/netcoreapp5.0/EntityFrameworkCore.EncryptColumn.pdb"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",

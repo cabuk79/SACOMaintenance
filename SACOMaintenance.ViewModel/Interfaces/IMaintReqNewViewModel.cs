@@ -29,6 +29,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public int EquipmentId { get; set; }
         public int PriorityId { get; set; }
         public int CompanyId { get; set; }
+        public int NewAddedMaintId { get; set; }
         #endregion
 
         #region methods

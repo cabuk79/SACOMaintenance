@@ -110,6 +110,13 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+using SACOMaintenance.Blazor.Server.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/add")]
     public partial class AddMaintReq : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -119,13 +126,13 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 109 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 111 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
-  
+
     private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
-    {  
+    {
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
             .Build();
@@ -136,7 +143,22 @@ using Microsoft.AspNetCore.SignalR.Client;
     protected async Task UpdateBook()
     {
         AddReqViewModel.AddNewRequest();
-     
+
+        //Check if the prisority is emergency then send text to let someone know
+        if(AddReqViewModel.PriorityId == 1)
+        {
+            Equipment equipName = AddReqViewModel.Equipment.Where(i => i.Id == AddReqViewModel.MaintReq.EquipmentId).FirstOrDefault();
+            string message = "MAINT-" + AddReqViewModel.NewAddedMaintId.ToString("D4") +
+                " has just been added and is either buisness crirtical or danger to life or health.  Please review ASAP!!!\n\n\nEquipment: "
+                + equipName.Name + "\n\nDetails:\n" + AddReqViewModel.MaintReq.RequestDetails;
+
+            var respone = SmsService.SendSms("447854 355995", "SACO Maint", message);
+            string MessageId = respone.Messages[0].MessageId;
+
+            //var responOne = SmsService.SendSms("447432556452", "SACO Maint", message);
+            //string MessageIdTwo = respone.Messages[0].MessageId;
+        }
+
         if (IsConnected) await SendMessage();
 
         ShowNotification(new NotificationMessage
@@ -166,6 +188,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SmsService SmsService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NotificationService NotificationService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintReqNewViewModel AddReqViewModel { get; set; }

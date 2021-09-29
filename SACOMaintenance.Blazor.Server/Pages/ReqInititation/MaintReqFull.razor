@@ -9,8 +9,6 @@
 <RadzenButton Click=@(args => maintReqInitation.ExportRequest()) Text="Create Request Form Word"
               Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
-@*<RadzenButton Click=@(args => maintReqInitation.ExportRequest()) Text="Create Request Form"
-    Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>*@
 
 <div class="container-fluid">
     <div class="row">
@@ -67,26 +65,7 @@
                                         </CheckListBox>
                                     </div>
                                 </div>
-                            </RadzenFieldset>
-                                
-                                @*<RadzenListBox AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" @bind-Value=@maintReqInitation.IsolationByRequest
-                           Multiple="true" Data=@maintReqInitation.Isolations
-                           TextProperty="Name" ValueProperty="Id">
-
-            </RadzenListBox>*@
-                                @* TODO: here is the Isolations table location *@
-                                @*<RadzenGrid Data="@maintReqInitation.IsolationByRequest" TItem="IsolationMaintRequestInitiation">
-                <Columns>
-                    <RadzenGridColumn TItem="IsolationMaintRequestInitiation" Property="Id" Title="Isolation">
-                        <Template Context="data">
-                            @foreach (var item in maintReqInitation.Isolations)
-                            {
-                                @item.Name
-                            }
-                        </Template>
-                    </RadzenGridColumn>
-                </Columns>
-            </RadzenGrid>*@
+                            </RadzenFieldset>                                  
                         </div>
                     </dicv>                  
                 </div>

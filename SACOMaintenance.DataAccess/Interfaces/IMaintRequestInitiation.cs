@@ -12,7 +12,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
     {
         IEnumerable<MaintRequestInitiation> LoadAllRequestInitations();
         MaintRequestInitiation GetSingleRequestInitiation(int Id);
-        void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
+        public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
         ObservableCollection<MaintRequestInitiationRisk> risksDataList { get; set; }
         IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId);
         IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment();

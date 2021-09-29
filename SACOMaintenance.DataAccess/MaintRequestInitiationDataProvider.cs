@@ -28,7 +28,7 @@ namespace SACOMaintenance.DataAccess
 
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
-        public void AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
+        public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
         {
             MaintRequestInitiation newRequest = new MaintRequestInitiation
             {
@@ -46,6 +46,7 @@ namespace SACOMaintenance.DataAccess
 
             _requestInitationDBContext.MaintRequestInitiations.Add(newRequest); 
             _requestInitationDBContext.SaveChanges();
+            
 
             //Get all the risks for the request type either General or Plant
             var riskType = ""; 
@@ -65,6 +66,8 @@ namespace SACOMaintenance.DataAccess
                 _requestInitationDBContext.Add(newRisk);
                 _requestInitationDBContext.SaveChanges();
             }
+
+            return newRequest.Id;
         }
 
         public void UpdateMaintReq(MaintRequestInitiation maintReqToUpdate)
