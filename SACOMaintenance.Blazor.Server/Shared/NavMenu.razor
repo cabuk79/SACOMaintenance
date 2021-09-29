@@ -36,8 +36,6 @@
                     </li>
                 </ul>
             </li>
-
-
         }
 
 
@@ -95,12 +93,33 @@
                 <span class="oi oi-clipboard" aria-hidden="true"></span> Orders
             </NavLink>
         </li>
+        @* Settings Menu and Sub Menu *@
+        <li class="nav-item dropdown show">
+            <NavLink class="nav-link dropdown-toggle" @onclick="()=>
+                settingsExpand = !settingsExpand">
+                <span class="oi oi-book" aria-hidden="true"></span>Settings
+            </NavLink>
+        </li>
+        @if ((settingsExpand))
+        {
+            <li>
+                <ul>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="administration-viewusers"
+                                 Match="NavLinkMatch.All">
+                            <span class="oi oi-person" aria-hidden="true"></span> Users
+                        </NavLink>
+                    </li>
+                </ul>
+            </li>
+        }
     </ul>
 </div>
 
 @code {
 
     private bool requestExpand;
+    private bool settingsExpand;
 
     private bool collapseNavMenu = true;
 

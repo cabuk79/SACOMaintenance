@@ -24,7 +24,7 @@ namespace SACOMaintenance.Blazor.Server.Areas.Identity.Pages.Account
         private readonly UserManager<User> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-
+   
         public RegisterModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
@@ -46,6 +46,15 @@ namespace SACOMaintenance.Blazor.Server.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            //Added this custom to get the first and last names
+            [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -75,7 +84,7 @@ namespace SACOMaintenance.Blazor.Server.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = Input.Email, Email = Input.Email };
+                var user = new User { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName }; //Altered this section to save the first and last names
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

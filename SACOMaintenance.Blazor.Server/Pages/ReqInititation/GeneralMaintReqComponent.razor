@@ -51,6 +51,20 @@
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
+                <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
+                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                               Data="@GeneralViewModel.Users" TextProperty="FullName" ValueProperty="Id">
+                    <Template>
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <img class="avatar-circle" src="@((context as User).AvatarLocation)" width="20" height="20" />             
+                            </div>
+                            <div class="co-lg-11">
+                                @((context as User).FullName)
+                            </div>
+                        </div>
+                    </Template>
+                </RadzenDropDown>
                 <RadzenLabel Text="Choose Person to Authorise"></RadzenLabel>
                 <RadzenButton Text="Request"></RadzenButton>
             </RadzenFieldset>

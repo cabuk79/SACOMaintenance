@@ -1,4 +1,5 @@
 ﻿using SACOMaintenance.Common.ModelDB;
+using SACOMaintenance.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,10 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<PPE> ppeList { get; set; }
         public int maintId { get; set; }
         public GeneralRequest genralRequestInfo { get; set; }
-        
+        public ObservableCollection<User> Users { get; set; }
+
+        public IUsers UsersDataProvider { get; set; }
         public void GetGeneralRequest(int maintId);
+        public void LoadAllUsers();
     }
 }

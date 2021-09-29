@@ -16,6 +16,7 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<MaintRequestInitiationRisk> RiskInfoList { get; set; } = new();
         public ObservableCollection<Factory> FactoriesList { get; set; } = new();
         public ObservableCollection<Isolation> Isolations { get; set; } = new();
+        public ObservableCollection<User> Users { get; set; } = new();
         public IMaintRequestInitiation MaintReqDataProvider { get; }
         public List<string> SelectedIsolationIds { get; set; } = new List<string>();
         public IRisk RiskDataProvider { get; }
@@ -23,11 +24,15 @@ namespace SACOMaintenance.ViewModel
         public IPPE PpeDataProvider { get; }
         public IIsolations IsolationsDataProvider { get; }
         public IIsolationMaintRequestInitiation IsolationMaintReqDataProvider { get; }
-        
+        public IUsers UsersDataProvider { get; set; }
+
 
 
         public MaintRequestFullViewModel(IMaintRequestInitiation maintReqInitProvider, IRisk riskDataProvider,
-            IFactory factoryDataProvider, IPPE ppeDataProvider, IIsolations isolationDataProvider, IIsolationMaintRequestInitiation isolationMaintReqDataProvider)
+            IFactory factoryDataProvider, IPPE ppeDataProvider, 
+            IIsolations isolationDataProvider, 
+            IIsolationMaintRequestInitiation isolationMaintReqDataProvider,
+            IUsers usersDataProvider)
         {
             MaintReqDataProvider = maintReqInitProvider;
             RiskDataProvider = riskDataProvider;
@@ -35,6 +40,7 @@ namespace SACOMaintenance.ViewModel
             PpeDataProvider = ppeDataProvider;
             IsolationsDataProvider = isolationDataProvider;
             IsolationMaintReqDataProvider = isolationMaintReqDataProvider;
+            UsersDataProvider = usersDataProvider;
 
             SelectedIsolationIds.Clear();
         }
@@ -136,6 +142,11 @@ namespace SACOMaintenance.ViewModel
         {
             FactoriesList = new ObservableCollection<Factory>(FactoryDataProvider.LoadAllFactories());
             return FactoriesList;
+        }
+
+        public void LoadAllUsers()
+        {
+            Users = new ObservableCollection<User>(UsersDataProvider.GetAllUsers());
         }
 
         public void LoadRisks()

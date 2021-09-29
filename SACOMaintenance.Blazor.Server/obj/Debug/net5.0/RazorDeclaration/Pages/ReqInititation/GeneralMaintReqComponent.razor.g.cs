@@ -132,7 +132,7 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 118 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 132 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
     [Parameter]
     public MaintRequestInitiation maintReq { get; set; }
