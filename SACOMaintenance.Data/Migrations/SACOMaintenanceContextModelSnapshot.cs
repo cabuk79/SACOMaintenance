@@ -220,19 +220,32 @@ namespace SACOMaintenance.Data.Migrations
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.AuthorizationRequest", b =>
                 {
-                    b.Property<int>("MaintRequestInitiationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AuthorizationType")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("LastChaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MaintRequestInitiationId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RequestedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Satus")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MaintRequestInitiationId", "UserId");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MaintRequestInitiationId");
 
                     b.HasIndex("UserId");
 
@@ -331,8 +344,8 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<DateTime?>("AuthorityToWorkDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("AuthorityToWorkUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("AuthorityToWorkUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ControlMeasuresTaken")
                         .HasColumnType("nvarchar(max)");
@@ -361,8 +374,8 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int?>("WorkCompletedSignOffDateTime")
                         .HasColumnType("int");
 
-                    b.Property<int?>("WorkCompletedSignOffUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("WorkCompletedSignOffUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("WorkCompletedSignOffYesNo")
                         .HasColumnType("int");
@@ -1140,9 +1153,7 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasOne("SACOMaintenance.Common.ModelDB.User", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("SACOMaintenance.Common.ModelDB.Equipment", b =>

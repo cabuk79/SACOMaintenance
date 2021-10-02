@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SACOMaintenance.Common.ModelDB;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SACOMaintenance.Data
 {
@@ -53,7 +48,9 @@ namespace SACOMaintenance.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-          
+
+            
+
             modelBuilder.Entity<MaintRequestInitiation>()
                 .HasMany(r => r.Risks)
                 .WithMany(b => b.MaintRequestInitiation)

@@ -121,8 +121,8 @@ using Microsoft.AspNetCore.SignalR.Client;
 #nullable restore
 #line 48 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
-    
-    RadzenGrid<MaintRequestInitiation> maintGrid;
+
+    public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
     private HubConnection hubConnection;
 
@@ -146,9 +146,6 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     protected override async Task OnInitializedAsync()
     {
-
-
-
         maintReqListViewModel.LoadRequests();
 
         hubConnection = new HubConnectionBuilder()
@@ -158,7 +155,8 @@ using Microsoft.AspNetCore.SignalR.Client;
         hubConnection.On("ReceiveMessage", () =>
         {
             CallLoadData();
-            StateHasChanged();
+            InvokeAsync(() => StateHasChanged());
+            maintGrid.Reload();
         });
 
         await hubConnection.StartAsync();
@@ -171,8 +169,18 @@ using Microsoft.AspNetCore.SignalR.Client;
         Task.Run(async () =>
         {
             maintReqListViewModel.LoadRequests();
+            //maintGrid.Reload();
+            //InvokeAsync(() => StateHasChanged());
+            //await InvokeAsync(StateHasChanged);
+
+            //await InvokeAsync(() =>
+            //{
+            //    StateHasChanged();
+            //});
         });
     }
+
+
 
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;

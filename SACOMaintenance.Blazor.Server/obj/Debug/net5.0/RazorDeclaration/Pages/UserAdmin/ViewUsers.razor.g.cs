@@ -272,7 +272,7 @@ using Microsoft.AspNetCore.Identity;
                             {
                                 FirstName = objUser.FirstName,
                                 LastName = objUser.LastName,
-                                UserName = objUser.FirstName + "." + objUser.LastName,
+                                UserName = objUser.FirstName.ToLower() + "." + objUser.LastName.ToLower(),
                                 Email = objUser.Email,
                                 AvatarLocation = @"css/Images/UserProfilePics/blankprofilepic.png"
                     };

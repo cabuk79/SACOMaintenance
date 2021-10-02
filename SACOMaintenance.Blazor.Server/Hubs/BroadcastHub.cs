@@ -12,5 +12,10 @@ namespace SACOMaintenance.Blazor.Server.Hubs
         {
             await Clients.All.SendAsync("ReceiveMessage");
         }
+
+        //public async Task ReceiveMessageSingleReq()
+        //{
+        //    await Clients.All.SendAsync("ReceiveMessageSingleReq");
+        //}
     }
 }

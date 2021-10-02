@@ -110,6 +110,13 @@ using SACOMaintenance.Blazor.Server.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+using Microsoft.AspNetCore.SignalR.Client;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/full-add/{MaintReqID}")]
     public partial class MaintReqFull : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -119,7 +126,7 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 212 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 214 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
@@ -127,6 +134,12 @@ using SACOMaintenance.Blazor.Server.Components;
     string detailMarkUp;
 
     string value = "";
+    private bool isReadOnly = false;
+
+    private void ReqChangeBool(bool isReadOnlyPage)
+    {
+        isReadOnly = isReadOnlyPage;
+    }
 
 
     public void Testing()
@@ -138,13 +151,16 @@ using SACOMaintenance.Blazor.Server.Components;
     protected async Task UpdateRisks()
     {
         maintReqInitation.UpdateMaintReqRisks();
+        if (IsConnected) SendMessage();
     }
+
+    Task SendMessage() => hubConnection.SendAsync("ReceiveMessageSingleReq");
 
     public bool moveCol = false;
 
     public enum RiskLevelLetter { H, M, L }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
@@ -159,11 +175,49 @@ using SACOMaintenance.Blazor.Server.Components;
         maintReqInitation.LoadIsoaltionsByMaint();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
+
+
+        //Auto update
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessageSingleReq", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+       await hubConnection.StartAsync();
+    }
+
+
+
+    //Auto update code
+    //TODO: may need to remove this or modiy to suit
+    private HubConnection hubConnection;
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+            maintReqInitation.LoadMaintRiskData(Convert.ToInt32(maintReqID));
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation { get; set; }
     }
 }

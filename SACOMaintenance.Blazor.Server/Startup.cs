@@ -58,6 +58,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IIsolations, IsolationDataProvider>();
             services.AddScoped<IIsolationMaintRequestInitiation, IsolationMaintRequestInitiationDataProvider>();
             services.AddScoped<IUsers, UsersDataProvider>();
+            services.AddScoped<IAuthorization, AuthorizationDataProvider>();
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
             services.AddScoped<IAreaViewModel, AreaViewModel>();
@@ -94,7 +95,12 @@ namespace SACOMaintenance.Blazor.Server
                     new[] { "application/octet-stream" });
             });
 
-                    
+            services.AddDbContext<SACOMaintenanceContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.EnableSensitiveDataLogging();
+            });
+
         }
 
         
@@ -123,14 +129,16 @@ namespace SACOMaintenance.Blazor.Server
             
             app.UseRouting();
             app.UseAuthorization();
+
+           // app.UseSignalR(
+             //   routes => routes.MapHub<Blazor.NetCore.Server.SignalRHub.SignalRHub>("/broadcastHub"));
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
                 endpoints.MapHub<BroadcastHub>("/broadcastHub");
-                
-                //app.UseSignalR(routes => routes.MapHub<Blazor.NetCore.Server.SignalRHub.SignalRHub>("/broadcastHub"));
+                endpoints.MapFallbackToPage("/_Host");
             });
         }
     }

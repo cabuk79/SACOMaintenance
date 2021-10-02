@@ -142,6 +142,12 @@ using SACOMaintenance.Blazor.Server.Data;
 
     protected async Task UpdateBook()
     {
+        //hubConnection = new HubConnectionBuilder()
+        //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+        //    .Build();
+
+        //await hubConnection.StartAsync();
+
         AddReqViewModel.AddNewRequest();
 
         //Check if the prisority is emergency then send text to let someone know

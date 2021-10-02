@@ -15,9 +15,16 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public int maintId { get; set; }
         public GeneralRequest genralRequestInfo { get; set; }
         public ObservableCollection<User> Users { get; set; }
-
+        public AuthorizationRequest AuthrazationReq { get; set; }
         public IUsers UsersDataProvider { get; set; }
+        public IAuthorization AuthrizationDataProvider { get; }
         public void GetGeneralRequest(int maintId);
         public void LoadAllUsers();
+        public void AddNewAuthrization();
+        public void LoadStartToworkAuth();
+        public void RemoveAuthStartToWorkUser();
+        public void SaveGeneralRequest(GeneralRequest request, string newEdit);
+   
+        public string UserAuthIdStartWork { get; set; }
     }
 }

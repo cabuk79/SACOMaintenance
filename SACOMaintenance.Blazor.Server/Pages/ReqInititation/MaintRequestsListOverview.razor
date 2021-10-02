@@ -13,7 +13,7 @@
             SelectionMode="DataGridSelectionMode.Single"
             @ref="maintGrid" AllowSorting="true"
             AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-            FilterMode="FilterMode.Advanced" AllowColumnResize="true"
+            FilterMode="FilterMode.Advanced" AllowColumnResize="true" 
              AllowPaging="true">
     <Columns>
         <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number" Width="50px"></RadzenGridColumn>
@@ -46,8 +46,8 @@
 
 
 @code{
-    
-    RadzenGrid<MaintRequestInitiation> maintGrid;
+
+    public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
     private HubConnection hubConnection;
 
@@ -71,9 +71,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-
-
-
         maintReqListViewModel.LoadRequests();
 
         hubConnection = new HubConnectionBuilder()
@@ -83,7 +80,8 @@
         hubConnection.On("ReceiveMessage", () =>
         {
             CallLoadData();
-            StateHasChanged();
+            InvokeAsync(() => StateHasChanged());
+            maintGrid.Reload();
         });
 
         await hubConnection.StartAsync();
@@ -96,8 +94,18 @@
         Task.Run(async () =>
         {
             maintReqListViewModel.LoadRequests();
+            //maintGrid.Reload();
+            //InvokeAsync(() => StateHasChanged());
+            //await InvokeAsync(StateHasChanged);
+
+            //await InvokeAsync(() =>
+            //{
+            //    StateHasChanged();
+            //});
         });
     }
+
+
 
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;

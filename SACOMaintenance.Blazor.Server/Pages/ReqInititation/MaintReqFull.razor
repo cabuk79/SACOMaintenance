@@ -2,6 +2,8 @@
 @using SACOMaintenance.Common.ModelDB
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel maintReqInitation
 @using SACOMaintenance.Blazor.Server.Components
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
 
 
 <h3>Maintenance Request @maintReqInitation.maintReqId</h3>
@@ -51,11 +53,11 @@
                                     </div>
                                 </div>
                             </RadzenFieldset>
-                        </div>                        
+                        </div>
                     </div>
                     <dicv class="row">
                         <div class="col-lg-12">
-                            <RadzenFieldset Text="Isolations" Style="border-color: black">
+                            <RadzenFieldset Text="Isolations" Style="border-color: black" AllowCollapse="true">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <CheckListBox Data="@maintReqInitation.Isolations"
@@ -65,9 +67,9 @@
                                         </CheckListBox>
                                     </div>
                                 </div>
-                            </RadzenFieldset>                                  
+                            </RadzenFieldset>
                         </div>
-                    </dicv>                  
+                    </dicv>
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
@@ -89,7 +91,7 @@
                                         </RadzenGridColumn>
                                         <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="H" Width="10px">
                                             <Template Context="data">
-                                                @if (data.M == true || data.L == true)
+                                                @if (data.M == true || data.L == true || isReadOnly == true)
                                                 {
                                                     <RadzenCheckBox @bind-Value="data.H" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
                                                 }
@@ -101,7 +103,7 @@
                                         </RadzenGridColumn>
                                         <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="M" Width="10px">
                                             <Template Context="data">
-                                                @if (data.H == true || data.L == true)
+                                                @if (data.H == true || data.L == true || isReadOnly == true)
                                                 {
                                                     <RadzenCheckBox @bind-Value="data.M" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
                                                 }
@@ -113,7 +115,7 @@
                                         </RadzenGridColumn>
                                         <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="L" Width="10px">
                                             <Template Context="data">
-                                                @if (data.H == true || data.M == true)
+                                                @if (data.H == true || data.M == true || isReadOnly == true)
                                                 {
                                                     <RadzenCheckBox @bind-Value="data.L" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
                                                 }
@@ -140,7 +142,7 @@
             }
             else
             {
-                <GeneralMaintReqComponent maintReq="maintReqInitation.maintReqInitation"></GeneralMaintReqComponent>
+                <GeneralMaintReqComponent maintReq="maintReqInitation.maintReqInitation" ReqReadOnly="false" ReqReadOnlyChanged="ReqChangeBool"></GeneralMaintReqComponent>
             }
         </div>
     </div>
@@ -216,6 +218,12 @@
     string detailMarkUp;
 
     string value = "";
+    private bool isReadOnly = false;
+
+    private void ReqChangeBool(bool isReadOnlyPage)
+    {
+        isReadOnly = isReadOnlyPage;
+    }
 
 
     public void Testing()
@@ -227,13 +235,16 @@
     protected async Task UpdateRisks()
     {
         maintReqInitation.UpdateMaintReqRisks();
+        if (IsConnected) SendMessage();
     }
+
+    Task SendMessage() => hubConnection.SendAsync("ReceiveMessageSingleReq");
 
     public bool moveCol = false;
 
     public enum RiskLevelLetter { H, M, L }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
@@ -248,5 +259,42 @@
         maintReqInitation.LoadIsoaltionsByMaint();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
+
+
+        //Auto update
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessageSingleReq", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+       await hubConnection.StartAsync();
+    }
+
+
+
+    //Auto update code
+    //TODO: may need to remove this or modiy to suit
+    private HubConnection hubConnection;
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+            maintReqInitation.LoadMaintRiskData(Convert.ToInt32(maintReqID));
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
     }
 }

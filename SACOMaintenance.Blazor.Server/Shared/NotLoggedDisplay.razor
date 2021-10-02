@@ -1,0 +1,40 @@
+﻿@*<div class="main">
+        <div class="top-row px-4">
+            <LoginDisplay></LoginDisplay>
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <div class="content px-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Sorry you must be logged in to access this application.</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col=lg-12">
+                    <img src="css/Images/AuthoisizedNot/notallowed.png" width="700" height="500" />
+                </div>
+            </div>
+        </div>
+    </div>*@
+@inject NavigationManager Navigation
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await AuthenticationStateTask;
+
+        if (authenticationState?.User?.Identity is null || !authenticationState.User.Identity.IsAuthenticated)
+        {
+            var returnURL = Navigation.ToBaseRelativePath(Navigation.Uri);
+
+            if (string.IsNullOrWhiteSpace(returnURL))
+                Navigation.NavigateTo("Identity/Account/Login", true);
+            else
+                Navigation.NavigateTo($"Identity/Account/Login?returnUrl={returnURL}", true);
+        }
+    }
+}

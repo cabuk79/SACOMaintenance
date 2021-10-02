@@ -14,26 +14,34 @@ namespace SACOMaintenance.DataAccess
 
         private readonly SACOMaintenanceContext _sacoMaintenanceContext;
 
-        public void AddEditGeneralRequestInfo(int maintReqId, GeneralRequest generalRequest)
+        public void AddEditGeneralRequestInfo(int maintReqId, GeneralRequest generalRequest, string newEdit)
         {
-            _sacoMaintenanceContext.GeneralRequests.Add
-            (
-                new GeneralRequest
-                {
-                    MaintRequestId = maintReqId,
-                    AuthorityToWorkUserId = generalRequest.AuthorityToWorkUserId,
-                    AuthorityToWorkDateTime = generalRequest.AuthorityToWorkDateTime,
-                    DetailOfWorkCompleted = generalRequest.DetailOfWorkCompleted,
-                    DetailOfWorkCompeltedUserId = generalRequest.DetailOfWorkCompeltedUserId,
-                    DetailOfWorkCompeltedDateTime = generalRequest.DetailOfWorkCompeltedDateTime,
-                    WorkCompletedYesNo = generalRequest.WorkCompletedYesNo,
-                    WorkCompletedDetails = generalRequest.WorkCompletedDetails,
-                    SignOffDetails = generalRequest.SignOffDetails,
-                    WorkCompletedSignOffYesNo = generalRequest.WorkCompletedSignOffYesNo,
-                    WorkCompletedSignOffUserId = generalRequest.WorkCompletedSignOffUserId,
-                    WorkCompletedSignOffDateTime = generalRequest.WorkCompletedSignOffDateTime
-                }
-            );
+            if(newEdit == "New")
+            {
+                _sacoMaintenanceContext.GeneralRequests.Add
+                            (
+                                new GeneralRequest
+                                {
+                                    MaintRequestId = maintReqId,
+                                    AuthorityToWorkUserId = generalRequest.AuthorityToWorkUserId,
+                                    AuthorityToWorkDateTime = generalRequest.AuthorityToWorkDateTime,
+                                    DetailOfWorkCompleted = generalRequest.DetailOfWorkCompleted,
+                                    DetailOfWorkCompeltedUserId = generalRequest.DetailOfWorkCompeltedUserId,
+                                    DetailOfWorkCompeltedDateTime = generalRequest.DetailOfWorkCompeltedDateTime,
+                                    WorkCompletedYesNo = generalRequest.WorkCompletedYesNo,
+                                    WorkCompletedDetails = generalRequest.WorkCompletedDetails,
+                                    SignOffDetails = generalRequest.SignOffDetails,
+                                    WorkCompletedSignOffYesNo = generalRequest.WorkCompletedSignOffYesNo,
+                                    WorkCompletedSignOffUserId = generalRequest.WorkCompletedSignOffUserId,
+                                    WorkCompletedSignOffDateTime = generalRequest.WorkCompletedSignOffDateTime
+                                }
+                            );
+            }
+            else if(newEdit == "Edit")
+            {
+                _sacoMaintenanceContext.Update(generalRequest);
+            }
+            
             _sacoMaintenanceContext.SaveChanges();
         }
 

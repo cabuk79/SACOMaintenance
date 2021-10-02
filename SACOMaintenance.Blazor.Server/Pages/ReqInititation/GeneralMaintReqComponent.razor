@@ -4,6 +4,8 @@
 @inject IGeneralRequest GeneralRequestDataProvider
 @inject IGeneralMaintRequestViewModel GeneralViewModel
 @using SACOMaintenance.Blazor.Server.Components
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.SignalR.Client 
 
 <div class="container-fluid">
     <div class="row">
@@ -15,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black">
+            <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black" AllowCollapse="true">
                 <div class="row">
                     @foreach (var ppeItem in GeneralViewModel.ppeList)
                     {
@@ -50,29 +52,84 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
-                <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
-                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                               Data="@GeneralViewModel.Users" TextProperty="FullName" ValueProperty="Id">
-                    <Template>
-                        <div class="row">
-                            <div class="col-lg-1">
-                                <img class="avatar-circle" src="@((context as User).AvatarLocation)" width="20" height="20" />             
+            @if (GeneralViewModel.AuthrazationReq == null || GeneralViewModel.AuthrazationReq.Satus == null)
+            {
+                <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
+                    <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
+                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                    @bind-value="@GeneralViewModel.UserAuthIdStartWork"
+                                    Data="@GeneralViewModel.Users" TextProperty="FullName" ValueProperty="Id">
+                        <Template>
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <img class="avatar-circle" src="@((context as User).AvatarLocation)" width="20" height="20" />
+                                </div>
+                                <div class="co-lg-11">
+                                    @((context as User).FullName)
+                                </div>
                             </div>
-                            <div class="co-lg-11">
-                                @((context as User).FullName)
-                            </div>
+                        </Template>
+                    </RadzenDropDown>
+                    <RadzenLabel Text="Choose Person to Authorise"></RadzenLabel>
+                    <RadzenButton Text="Request and Save Request Data" Click="@StartWorkRequest" Icon="Save" @oninput="IsReadOnlyChanged"
+                                  Style="margin-bottom: 20px; width: 200px"></RadzenButton>
+                </RadzenFieldset>
+            }
+            else
+            {
+                <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @{
+                                foreach (var item in GeneralViewModel.Users)
+                                {
+                                    if (item.Id == GeneralViewModel.UserAuthIdStartWork)
+                                    {
+                                        name = item.FirstName + " " + item.LastName;
+                                    }
+                                }
+                            }
+                            @if (GeneralViewModel.AuthrazationReq.Satus == "Requested")
+                            {
+                                <p>
+                                    This request approval to work has been @GeneralViewModel.AuthrazationReq.Satus
+                                    and is waiting approval from @name on the @GeneralViewModel.AuthrazationReq.RequestedDate.ToLongDateString() at
+                                    @GeneralViewModel.AuthrazationReq.RequestedDate.ToLongTimeString()
+                                </p>
+                            }
+                            else if (GeneralViewModel.AuthrazationReq.Satus == "Approved")
+                            {
+                                <p>
+                                    This request approval to work has been @GeneralViewModel.AuthrazationReq.Satus
+                                    by @name onthe ***get approval date***
+                                </p>
+                            }
+                            else if (GeneralViewModel.AuthrazationReq.Satus == "Rejected")
+                            {
+                                <p>
+                                    This request approval to work has been @GeneralViewModel.AuthrazationReq.Satus
+                                    by @name onthe ***get approval date*** and the reason or comment for this is:
+
+                                </p>
+                            }
+
                         </div>
-                    </Template>
-                </RadzenDropDown>
-                <RadzenLabel Text="Choose Person to Authorise"></RadzenLabel>
-                <RadzenButton Text="Request"></RadzenButton>
-            </RadzenFieldset>
+                    </div>
+                    @if (GeneralViewModel.AuthrazationReq.Satus == "Requested" || GeneralViewModel.AuthrazationReq.Satus == "")
+                    {
+                        <div class="row">
+                            <div class="col-lg-3"><RadzenButton Text="Chase Approval"></RadzenButton></div>
+                            <div class="col-lg-4"><RadzenButton Text="Choose Another Person for Approval" Click="@DeleteAuthroization"></RadzenButton></div>
+                        </div>
+                    }
+
+                </RadzenFieldset>
+            }
         </div>
     </div>
 </div>
 
-@if (GeneralViewModel.genralRequestInfo.AuthorityToWorkUserId > 0  && GeneralViewModel.genralRequestInfo != null)
+@if (GeneralViewModel.AuthrazationReq.Satus == "Approved" && GeneralViewModel.AuthrazationReq != null && GeneralViewModel.genralRequestInfo != null)
 {
     <div class="row">
         <div class="col-lg-12">
@@ -98,40 +155,20 @@ else
     </div>
 }
 
-@*<div class="card text-white" style="width: 18rem; height: 130px">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="@ppeItem.IconFileLocation" width="30" height="30" />
-                </div>
-                <div class="col-lg-6">
-                   <p>@ppeItem.Description</p>
-                </div>
-            </div>
-        </div>
-    </div>*@
-
-
-
-
-@*<RadzenGrid Data="GeneralViewModel.ppeList">
-        <Columns>
-            <RadzenGridColumn TItem="PPE" Property="ID" Title="Id" Width="15px"></RadzenGridColumn>
-            <RadzenGridColumn TItem="PPE" Property="PPEName" Title="Name" Width="50px"></RadzenGridColumn>
-            <RadzenGridColumn TItem="PPE" Property="IconLocation">
-                <Template Context="data">
-                    <RadzenImage Path="@data.IconFileLocation" Style="width:30px"></RadzenImage>
-                </Template>
-            </RadzenGridColumn>
-        </Columns>
-    </RadzenGrid>*@
-
-
-
-
 @code {
     [Parameter]
     public MaintRequestInitiation maintReq { get; set; }
+
+
+    [Parameter]
+    public bool ReqReadOnly { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> ReqReadOnlyChanged { get; set; }
+
+    private HubConnection hubConnection;
+
+    public string name;
 
     public void seeppe()
     {
@@ -141,12 +178,93 @@ else
         }
     }
 
+    public void DeleteAuthroization()
+    {
+        GeneralViewModel.RemoveAuthStartToWorkUser();
+        ReqReadOnly = false;
+        ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+        if (IsConnected) ReceiveMessageSingleReq();
+    }
+
+    Task ReceiveMessageSingleReq() => hubConnection.SendAsync("SendMessage");
+
+    private void IsReadOnlyChanged(ChangeEventArgs arg)
+    {
+        if (ReqReadOnly == true)
+        {
+            ReqReadOnly = false;
+        }
+        else if (ReqReadOnly == false)
+        {
+            ReqReadOnly = true;
+        }
+
+    }
 
     public string colour = "black";
 
     protected override void OnInitialized()
     {
+
         GeneralViewModel.maintId = maintReq.Id;
         GeneralViewModel.GetGeneralRequest(maintReq.Id);
+        GeneralViewModel.LoadStartToworkAuth();
+
+
+
+        hubConnection = new HubConnectionBuilder()
+        .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+        .Build();
+
+        //hubConnection.On("ReceiveMessage", () =>
+        //{
+        //    CallLoadData();
+        //    StateHasChanged();
+        //});
+
+        hubConnection.StartAsync();
+
+
+
+
+    }
+
+
+    private void StartWorkRequest(MouseEventArgs e)
+    {
+        GeneralViewModel.AddNewAuthrization();
+        GeneralViewModel.LoadStartToworkAuth();
+
+        if (ReqReadOnly == true)
+        {
+            ReqReadOnly = false;
+        }
+        else if (ReqReadOnly == false)
+        {
+            ReqReadOnly = true;
+        }
+
+        ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+    }
+
+
+
+
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            GeneralViewModel.GetGeneralRequest(maintReq.Id);
+            GeneralViewModel.LoadStartToworkAuth();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
     }
 }

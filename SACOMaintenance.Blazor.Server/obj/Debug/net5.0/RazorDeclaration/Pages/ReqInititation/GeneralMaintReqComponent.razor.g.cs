@@ -124,6 +124,13 @@ using SACOMaintenance.Blazor.Server.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+using Microsoft.AspNetCore.SignalR.Client;
+
+#line default
+#line hidden
+#nullable disable
     public partial class GeneralMaintReqComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -132,10 +139,21 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 132 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 158 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
     [Parameter]
     public MaintRequestInitiation maintReq { get; set; }
+
+
+    [Parameter]
+    public bool ReqReadOnly { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> ReqReadOnlyChanged { get; set; }
+
+    private HubConnection hubConnection;
+
+    public string name;
 
     public void seeppe()
     {
@@ -145,18 +163,100 @@ using SACOMaintenance.Blazor.Server.Components;
         }
     }
 
+    public void DeleteAuthroization()
+    {
+        GeneralViewModel.RemoveAuthStartToWorkUser();
+        ReqReadOnly = false;
+        ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+        if (IsConnected) ReceiveMessageSingleReq();
+    }
+
+    Task ReceiveMessageSingleReq() => hubConnection.SendAsync("SendMessage");
+
+    private void IsReadOnlyChanged(ChangeEventArgs arg)
+    {
+        if (ReqReadOnly == true)
+        {
+            ReqReadOnly = false;
+        }
+        else if (ReqReadOnly == false)
+        {
+            ReqReadOnly = true;
+        }
+
+    }
 
     public string colour = "black";
 
     protected override void OnInitialized()
     {
+
         GeneralViewModel.maintId = maintReq.Id;
         GeneralViewModel.GetGeneralRequest(maintReq.Id);
+        GeneralViewModel.LoadStartToworkAuth();
+
+
+
+        hubConnection = new HubConnectionBuilder()
+        .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+        .Build();
+
+        //hubConnection.On("ReceiveMessage", () =>
+        //{
+        //    CallLoadData();
+        //    StateHasChanged();
+        //});
+
+        hubConnection.StartAsync();
+
+
+
+
+    }
+
+
+    private void StartWorkRequest(MouseEventArgs e)
+    {
+        GeneralViewModel.AddNewAuthrization();
+        GeneralViewModel.LoadStartToworkAuth();
+
+        if (ReqReadOnly == true)
+        {
+            ReqReadOnly = false;
+        }
+        else if (ReqReadOnly == false)
+        {
+            ReqReadOnly = true;
+        }
+
+        ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+    }
+
+
+
+
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            GeneralViewModel.GetGeneralRequest(maintReq.Id);
+            GeneralViewModel.LoadStartToworkAuth();
+        });
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGeneralMaintRequestViewModel GeneralViewModel { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGeneralRequest GeneralRequestDataProvider { get; set; }
     }
