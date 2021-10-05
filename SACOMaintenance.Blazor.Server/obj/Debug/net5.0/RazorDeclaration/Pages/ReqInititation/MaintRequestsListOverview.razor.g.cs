@@ -169,14 +169,6 @@ using Microsoft.AspNetCore.SignalR.Client;
         Task.Run(async () =>
         {
             maintReqListViewModel.LoadRequests();
-            //maintGrid.Reload();
-            //InvokeAsync(() => StateHasChanged());
-            //await InvokeAsync(StateHasChanged);
-
-            //await InvokeAsync(() =>
-            //{
-            //    StateHasChanged();
-            //});
         });
     }
 

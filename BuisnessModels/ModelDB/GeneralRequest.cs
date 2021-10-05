@@ -14,7 +14,7 @@ namespace SACOMaintenance.Common.ModelDB
         public string AuthorityToWorkUserId { get; set; }
         public DateTime? AuthorityToWorkDateTime { get; set; }
         public string DetailOfWorkCompleted { get; set; }
-        public int? DetailOfWorkCompeltedUserId { get; set; }
+        public string DetailOfWorkCompeltedUserId { get; set; }
         public DateTime? DetailOfWorkCompeltedDateTime { get; set; }
         public int? WorkCompletedYesNo { get; set; }
         public string WorkCompletedDetails { get; set; }

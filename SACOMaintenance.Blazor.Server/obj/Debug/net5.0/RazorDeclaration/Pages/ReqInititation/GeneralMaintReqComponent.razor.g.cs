@@ -139,8 +139,11 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 158 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 216 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
+
+    public bool ppeIsChecked;
+
     [Parameter]
     public MaintRequestInitiation maintReq { get; set; }
 
@@ -168,10 +171,10 @@ using Microsoft.AspNetCore.SignalR.Client;
         GeneralViewModel.RemoveAuthStartToWorkUser();
         ReqReadOnly = false;
         ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
-        if (IsConnected) ReceiveMessageSingleReq();
+        if (IsConnected) SendMessage();
     }
 
-    Task ReceiveMessageSingleReq() => hubConnection.SendAsync("SendMessage");
+    Task SendMessage() => hubConnection.SendAsync("SendMessage");
 
     private void IsReadOnlyChanged(ChangeEventArgs arg)
     {
@@ -194,7 +197,9 @@ using Microsoft.AspNetCore.SignalR.Client;
         GeneralViewModel.maintId = maintReq.Id;
         GeneralViewModel.GetGeneralRequest(maintReq.Id);
         GeneralViewModel.LoadStartToworkAuth();
+        GeneralViewModel.LoadCompletedUser();
 
+        GeneralViewModel.PPEItemsSelected = GeneralViewModel.ppeList.Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
 
         hubConnection = new HubConnectionBuilder()
@@ -214,10 +219,15 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     }
 
+    private void SignOffWorkCompleted(MouseEventArgs e)
+    {
+        GeneralViewModel.AddNewAuthrization("Approved", "Completed");
+    }
+
 
     private void StartWorkRequest(MouseEventArgs e)
     {
-        GeneralViewModel.AddNewAuthrization();
+        GeneralViewModel.AddNewAuthrization("Requested", "AuthorityToWork");
         GeneralViewModel.LoadStartToworkAuth();
 
         if (ReqReadOnly == true)
@@ -231,10 +241,6 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
     }
-
-
-
-
 
     private void CallLoadData()
     {

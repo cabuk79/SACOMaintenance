@@ -24,6 +24,8 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<User> Users { get; set; } = new();
         public IUsers UsersDataProvider { get; set; }
         public AuthorizationRequest AuthrazationReq { get; set; }
+        public AuthorizationRequest CompletedAuth { get; set; }
+        public List<PPE> PPEItemsSelected { get; set; }
 
         public GeneralMaintRequestViewModel(IPPE ppeDataProvider,
             IGeneralRequest generalRequestDataProvider, IUsers usersDataProvider,
@@ -36,6 +38,7 @@ namespace SACOMaintenance.ViewModel
 
             genralRequestInfo = new GeneralRequest();
             AuthrazationReq = new AuthorizationRequest();
+            CompletedAuth = new AuthorizationRequest();
             LoadAllPPE();
             LoadAllUsers();
             //LoadStartToworkAuth();
@@ -50,6 +53,19 @@ namespace SACOMaintenance.ViewModel
                 if(genralRequestInfo.AuthorityToWorkUserId != value)
                 {
                     genralRequestInfo.AuthorityToWorkUserId = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
+        public string MaintenanceUserCompletedId
+        {
+            get => genralRequestInfo.DetailOfWorkCompeltedUserId;
+            set
+            {
+                if(genralRequestInfo.DetailOfWorkCompeltedUserId != value)
+                {
+                    genralRequestInfo.DetailOfWorkCompeltedUserId = value;
                     RaisePropertychangedEvent();
                 }
             }
@@ -72,14 +88,24 @@ namespace SACOMaintenance.ViewModel
         }
 
         //Add new authrization request
-        public void AddNewAuthrization()
+        public void AddNewAuthrization(string status, string type)
         {
-            AuthrazationReq.UserId = UserAuthIdStartWork;
-            AuthrazationReq.MaintRequestInitiationId = maintId;
-            AuthrazationReq.Satus = "Requested";
-            AuthrazationReq.AuthorizationType = "StartWork";
+            AuthorizationRequest completedAuth = new AuthorizationRequest();
 
-            AuthrizationDataProvider.AddNewAuthorization(AuthrazationReq);
+            if(type == "AuthorityToWork")
+            {
+                completedAuth.UserId = UserAuthIdStartWork;
+            }
+            else if(type == "Completed")
+            {
+                completedAuth.UserId = MaintenanceUserCompletedId;
+            }
+
+            completedAuth.MaintRequestInitiationId = maintId;
+            completedAuth.Satus = status;
+            completedAuth.AuthorizationType = type;
+
+            AuthrizationDataProvider.AddNewAuthorization(completedAuth);
         }
 
         public void LoadStartToworkAuth()
@@ -88,6 +114,15 @@ namespace SACOMaintenance.ViewModel
             if(AuthrazationReq == null)
             {
                 AuthrazationReq = new AuthorizationRequest();
+            }
+        }
+
+        public void LoadCompletedUser()
+        {
+            CompletedAuth = AuthrizationDataProvider.FindAuthorizationByReqAndUser(MaintenanceUserCompletedId, maintId);
+            if(CompletedAuth == null)
+            {
+                CompletedAuth = new AuthorizationRequest();
             }
         }
 

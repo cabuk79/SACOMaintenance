@@ -1,11 +1,13 @@
 ﻿@using SACOMaintenance.Blazor.Server.Pages.Dashboard
 @using SACOMaintenance.Blazor.Server.Components
 @using Microsoft.Extensions.Configuration
- 
+@inject IConfiguration _configuration
+@inject SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel
+
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1>Dashboard</h1>
+            <h1>Dashboard for @dashboardViewModel.yearStart</h1>
         </div>
     </div>
     <div class="row">
@@ -14,7 +16,8 @@
         </div>
     </div>
 
-    <div class="d-none d-sm-block"><!-- Hide if on a mobile phone section - start -->
+    <div class="d-none d-sm-block">
+        <!-- Hide if on a mobile phone section - start -->
         <div class="row">
             <div class="col-lg-12">
                 <RadzenFieldset Text="Request Stats">
@@ -52,8 +55,3 @@
     </div><!-- Hide if on a mobile phone section - end -->
 
 </div>
-
-
-@code{
- 
-}

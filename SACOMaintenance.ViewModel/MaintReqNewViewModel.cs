@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using EmployeeManager.ViewModel.Command;
+using Microsoft.Extensions.Configuration;
 using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
@@ -31,6 +33,7 @@ namespace SACOMaintenance.ViewModel
         public IEnumerable<Equipment> Equipment { get; set; }
         public IEnumerable<Priority> Priorities { get; set; }
         public IEnumerable<Company> Companies { get; set; }
+        public bool SendTextMessageForEmergencyPriority { get; set; }
 
         public int NewAddedMaintId { get; set; }
 
@@ -112,10 +115,13 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
+       
+
+        public IConfiguration _config;
 
         public MaintReqNewViewModel(IMaintRequestInitiation maintReqDataProvider,
             IFactory factoryDataProvider, IEquipment equipmentProvider, IArea areaProvider,
-            IPriorities priorityProvider, ICompany companyProvider)
+            IPriorities priorityProvider, ICompany companyProvider, IConfiguration config)
         {
             FactoryDataProvider = factoryDataProvider;
             EquipmentDataProvider = equipmentProvider;
@@ -133,6 +139,9 @@ namespace SACOMaintenance.ViewModel
             SaveCommand = new DelegateCommand(AddNewRequest);
 
             MaintReq = new MaintRequestInitiation();
+
+            _config = config;
+            SendTextMessageForEmergencyPriority = Convert.ToBoolean(_config["SendTextMessageForEmergencyPriority"]);
         }
 
         public void AddNewRequest()

@@ -13,6 +13,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public ObservableCollection<MaintRequestInitiation> MaintReqsAssignedOpen { get; set; }
         public ObservableCollection<MaintRequestInitiation> MaintReqsNew { get; set; }
         public ObservableCollection<MaintRequestInitiation> MaintReqCurrentYear { get; set; }
+        public int yearStart { get; set; }
         //public int Id { get; set; }
         //public string MaintRequestDetails { get; set; }
         #endregion

@@ -353,8 +353,8 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<DateTime?>("DetailOfWorkCompeltedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DetailOfWorkCompeltedUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("DetailOfWorkCompeltedUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DetailOfWorkCompleted")
                         .HasColumnType("nvarchar(max)");
@@ -821,6 +821,9 @@ namespace SACOMaintenance.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Colour")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");

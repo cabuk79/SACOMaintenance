@@ -17,6 +17,16 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
+            <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE" @bind-SelectedItems="maintReq.PPEEquipment">
+                <ItemTemplate>
+                    @PPE.PPEName
+                </ItemTemplate>
+            </SquareCheckBox>
+        </div>
+    </div>
+    <!-- "GeneralViewModel.PPEItemsSelected" -->
+    <div class="row">
+        <div class="col-lg-12">
             <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black" AllowCollapse="true">
                 <div class="row">
                     @foreach (var ppeItem in GeneralViewModel.ppeList)
@@ -48,6 +58,7 @@
     {
         <span>@item.Id;</span>
         <span>@item.PPEName;</span>
+        <span>@item.MaintRequestInitiations.Count;</span>
     }
 
     <div class="row">
@@ -140,10 +151,57 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-gl-12">
-                        <RadzenTextArea @bind-Value="GeneralViewModel.genralRequestInfo.DetailOfWorkCompleted"></RadzenTextArea>
+                    <div class="col-lg-12">
+                        <RadzenTextArea @bind-Value="GeneralViewModel.genralRequestInfo.DetailOfWorkCompleted" Style="width: 100%; border-color: black"></RadzenTextArea>
                     </div>
                 </div>
+                <div class="row"><!-- Sign off by the maintenance user for work completed -->
+                    <div class="col-lg-12">
+                        @{
+                            foreach (var item in GeneralViewModel.Users)
+                            {
+                                if (item.Id == GeneralViewModel.UserAuthIdStartWork)
+                                {
+                                    name = item.FirstName + " " + item.LastName;
+                                }
+                            }
+                        }
+                        @if (GeneralViewModel.CompletedAuth == null
+                           || GeneralViewModel.CompletedAuth.Satus == null)
+                        {
+                            <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
+                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                            @bind-value="@GeneralViewModel.MaintenanceUserCompletedId"
+                                            Data="@GeneralViewModel.Users" TextProperty="FullName" ValueProperty="Id">
+                                <Template>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img class="avatar-circle" src="@((context as User).AvatarLocation)" width="20" height="20" />
+                                        </div>
+                                        <div class="co-lg-11">
+                                            @((context as User).FullName)
+                                        </div>
+                                    </div>
+                                </Template>
+                            </RadzenDropDown>
+                            <RadzenLabel Text="Sign Off on Work Details Completed"></RadzenLabel>
+                            <RadzenButton Text="Save" Click="@SignOffWorkCompleted" Icon="Save" @oninput="IsReadOnlyChanged"
+                                          Style="margin-bottom: 20px; width: 200px"></RadzenButton>
+                        }
+                        else
+                        {
+                            <span>This has been completed.</span>
+                        }
+
+                    </div>
+                </div>
+            </RadzenFieldset>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Sign Off">
+                <RadzenTextArea @bind-value="GeneralViewModel.genralRequestInfo.SignOffDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
             </RadzenFieldset>
         </div>
     </div>
@@ -156,6 +214,9 @@ else
 }
 
 @code {
+
+    public bool ppeIsChecked;
+
     [Parameter]
     public MaintRequestInitiation maintReq { get; set; }
 
@@ -183,10 +244,10 @@ else
         GeneralViewModel.RemoveAuthStartToWorkUser();
         ReqReadOnly = false;
         ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
-        if (IsConnected) ReceiveMessageSingleReq();
+        if (IsConnected) SendMessage();
     }
 
-    Task ReceiveMessageSingleReq() => hubConnection.SendAsync("SendMessage");
+    Task SendMessage() => hubConnection.SendAsync("SendMessage");
 
     private void IsReadOnlyChanged(ChangeEventArgs arg)
     {
@@ -209,7 +270,9 @@ else
         GeneralViewModel.maintId = maintReq.Id;
         GeneralViewModel.GetGeneralRequest(maintReq.Id);
         GeneralViewModel.LoadStartToworkAuth();
+        GeneralViewModel.LoadCompletedUser();
 
+        GeneralViewModel.PPEItemsSelected = GeneralViewModel.ppeList.Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
 
         hubConnection = new HubConnectionBuilder()
@@ -229,10 +292,15 @@ else
 
     }
 
+    private void SignOffWorkCompleted(MouseEventArgs e)
+    {
+        GeneralViewModel.AddNewAuthrization("Approved", "Completed");
+    }
+
 
     private void StartWorkRequest(MouseEventArgs e)
     {
-        GeneralViewModel.AddNewAuthrization();
+        GeneralViewModel.AddNewAuthrization("Requested", "AuthorityToWork");
         GeneralViewModel.LoadStartToworkAuth();
 
         if (ReqReadOnly == true)
@@ -246,10 +314,6 @@ else
 
         ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
     }
-
-
-
-
 
     private void CallLoadData()
     {

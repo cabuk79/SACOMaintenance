@@ -32,7 +32,9 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public int PriorityId { get; set; }
         public int CompanyId { get; set; }
         public int NewAddedMaintId { get; set; }
+        public bool SendTextMessageForEmergencyPriority { get; set; }
         #endregion
+
 
         #region methods
 

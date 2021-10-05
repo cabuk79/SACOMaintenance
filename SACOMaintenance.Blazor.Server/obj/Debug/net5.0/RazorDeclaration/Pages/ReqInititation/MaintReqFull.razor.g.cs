@@ -126,10 +126,12 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 214 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 152 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
+
+    public RadzenGrid<MaintRequestInitiationRisk> risksGrid { get; set; }
 
     string detailMarkUp;
 
@@ -151,10 +153,13 @@ using Microsoft.AspNetCore.SignalR.Client;
     protected async Task UpdateRisks()
     {
         maintReqInitation.UpdateMaintReqRisks();
-        if (IsConnected) SendMessage();
+        CallLoadData();
+        if (IsConnected) await SendMessageSingleReq();
+        await risksGrid.Reload();
+        InvokeAsync(() => StateHasChanged());
     }
 
-    Task SendMessage() => hubConnection.SendAsync("ReceiveMessageSingleReq");
+    Task SendMessageSingleReq() => hubConnection.SendAsync("broadcastHub");
 
     public bool moveCol = false;
 
@@ -185,10 +190,11 @@ using Microsoft.AspNetCore.SignalR.Client;
         hubConnection.On("ReceiveMessageSingleReq", () =>
         {
             CallLoadData();
-            StateHasChanged();
+            //InvokeAsync(() => StateHasChanged());
+            //risksGrid.Reload();
         });
 
-       await hubConnection.StartAsync();
+        await hubConnection.StartAsync();
     }
 
 

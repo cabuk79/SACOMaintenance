@@ -1,0 +1,45 @@
+﻿@typeparam TItem
+
+@foreach (var item in Items)
+{
+    var Id = Guid.NewGuid();
+    <label for="@Id">@ItemTemplate(item)</label>
+
+    @if (SelectedItems.Contains(item))
+    {
+        <input id="@Id" type="checkbox" checked @onchange="_ => HandleChange(item)" />
+    }
+    else
+    {
+        <input id="@Id" type="checkbox" @onchange="_ => HandleChange(item)" />
+    }
+
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<TItem> Items { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> ItemTemplate { get; set; }
+
+    [Parameter]
+    public List<TItem> SelectedItems { get; set; }
+
+    [Parameter]
+    public EventCallback<List<TItem>> SelectedItemsChanged { get; set; }
+
+    void HandleChange(TItem item)
+    {
+        if (SelectedItems.Contains(item))
+        {
+            SelectedItems.Remove(item);
+        }
+        else
+        {
+            SelectedItems.Add(item);
+        }
+
+        SelectedItemsChanged.InvokeAsync(SelectedItems);
+    }
+}

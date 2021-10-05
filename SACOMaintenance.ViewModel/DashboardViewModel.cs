@@ -1,6 +1,8 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.Extensions.Configuration;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -17,9 +19,16 @@ namespace SACOMaintenance.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public DashboardViewModel(IMaintRequestInitiation maintReqDataProvider)
+        public IConfiguration _config;
+        public int yearStart { get; set; }
+
+
+
+        public DashboardViewModel(IMaintRequestInitiation maintReqDataProvider, IConfiguration config)
         {
             MaintReqDataProvider = maintReqDataProvider;
+            _config = config;
+            yearStart =  Convert.ToInt32(_config["MaintenanceReqYearGraphStartDate"]);
             //LoadMaintReqs();
         }
 

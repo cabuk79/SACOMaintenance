@@ -154,13 +154,16 @@ using SACOMaintenance.Blazor.Server.Data;
         if(AddReqViewModel.PriorityId == 1)
         {
             Equipment equipName = AddReqViewModel.Equipment.Where(i => i.Id == AddReqViewModel.MaintReq.EquipmentId).FirstOrDefault();
-            string message = "MAINT-" + AddReqViewModel.NewAddedMaintId.ToString("D4") +
+
+            if(AddReqViewModel.SendTextMessageForEmergencyPriority == true)
+            {
+                string message = "MAINT-" + AddReqViewModel.NewAddedMaintId.ToString("D4") +
                 " has just been added and is either buisness crirtical or danger to life or health.  Please review ASAP!!!\n\n\nEquipment: "
                 + equipName.Name + "\n\nDetails:\n" + AddReqViewModel.MaintReq.RequestDetails;
 
-            var respone = SmsService.SendSms("447854 355995", "SACO Maint", message);
-            string MessageId = respone.Messages[0].MessageId;
-
+                var respone = SmsService.SendSms("447432 556452", "SACO Maint", message);
+                string MessageId = respone.Messages[0].MessageId;
+            }
             //var responOne = SmsService.SendSms("447432556452", "SACO Maint", message);
             //string MessageIdTwo = respone.Messages[0].MessageId;
         }

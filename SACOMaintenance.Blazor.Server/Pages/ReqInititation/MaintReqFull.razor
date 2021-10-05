@@ -59,11 +59,12 @@
                         <div class="col-lg-12">
                             <RadzenFieldset Text="Isolations" Style="border-color: black" AllowCollapse="true">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 float-lg-right">
                                         <CheckListBox Data="@maintReqInitation.Isolations"
                                                       TextField="@((item)=>item.Name)"
                                                       ValueField="@((item)=>item.Id)"
-                                                      SelectedValues="@(maintReqInitation.SelectedIsolationIds)">
+                                                      SelectedValues="@(maintReqInitation.SelectedIsolationIds)"
+                                                      >
                                         </CheckListBox>
                                     </div>
                                 </div>
@@ -76,7 +77,7 @@
                         <div class="col-lg-12">
                             <RadzenButton Click="@UpdateRisks"></RadzenButton>
                             <RadzenFieldset Text="Risk Assemssment" Style="border-color: black">
-                                <RadzenGrid Data="@maintReqInitation.RiskInfoList" TItem="MaintRequestInitiationRisk">
+                                <RadzenGrid @ref="risksGrid" Data="@maintReqInitation.RiskInfoList" TItem="MaintRequestInitiationRisk">
                                     <Columns>
                                         <RadzenGridColumn TItem="MaintRequestInitiationRisk" Property="RiskId" Title="Risk Name" Width="15px">
                                             <Template Context="data">
@@ -148,72 +149,11 @@
     </div>
 </div>
 
-
-
-
-@*<EditForm Model="maintReqInitation">
-    <div class="container-fluid" style="border:1px solid">
-        <div class="row">
-            <h3>Request For Work Information</h3>
-        </div>
-        <div class="row">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <strong><label>Factory:  </label></strong>@maintReqInitation.factoryName
-                    </div>
-                    <div class="col-lg-3">
-                        <strong><label>Area:   </label></strong>@maintReqInitation.areaName
-                    </div>
-                    <div class="col-lg-3">
-                        <strong><label>Equipment:   </label></strong>@maintReqInitation.equipName
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="container-fluid">
-                <div class="row">
-                    <label style="font-weight:bold">Details</label>
-                    <InputTextArea @bind-Value="maintReqInitation.maintReqDetails" class="form-control"></InputTextArea>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <RadzenTabs RenderMode="TabRenderMode.Client" Style="border-color: black">
-        <Tabs>
-            <RadzenTabsItem Text="Risk Assessment">
-                <div class="row">
-                    <div class="col-lg-6">
-
-                    </div>
-                </div>
-            </RadzenTabsItem>
-        </Tabs>
-    </RadzenTabs>*@
-
-
-<!--<div class="form-group-row">-->
-<!-- Choose the correct container for the maintenance request -->
-<!--@{
-            if (maintReqInitation.maintReqAreaId == 31)  //This ID 31 refers to the plant Area so either plant 1 or 2
-            {
-                <PlantMaintReqComponent maintReqID="maintReqInitation.maintReqId"></PlantMaintReqComponent>
-            }
-            else
-            {
-                <GeneralMaintReqComponent maintReqID="maintReqInitation.maintReqId"></GeneralMaintReqComponent>
-            }
-        }
-    </div>
-</EditForm>-->
-
 @code {
     [Parameter]
     public string maintReqID { get; set; }
+
+    public RadzenGrid<MaintRequestInitiationRisk> risksGrid { get; set; }
 
     string detailMarkUp;
 
@@ -235,10 +175,13 @@
     protected async Task UpdateRisks()
     {
         maintReqInitation.UpdateMaintReqRisks();
-        if (IsConnected) SendMessage();
+        CallLoadData();
+        if (IsConnected) await SendMessageSingleReq();
+        await risksGrid.Reload();
+        InvokeAsync(() => StateHasChanged());
     }
 
-    Task SendMessage() => hubConnection.SendAsync("ReceiveMessageSingleReq");
+    Task SendMessageSingleReq() => hubConnection.SendAsync("broadcastHub");
 
     public bool moveCol = false;
 
@@ -269,10 +212,11 @@
         hubConnection.On("ReceiveMessageSingleReq", () =>
         {
             CallLoadData();
-            StateHasChanged();
+            //InvokeAsync(() => StateHasChanged());
+            //risksGrid.Reload();
         });
 
-       await hubConnection.StartAsync();
+        await hubConnection.StartAsync();
     }
 
 

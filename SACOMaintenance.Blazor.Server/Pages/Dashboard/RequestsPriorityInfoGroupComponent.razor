@@ -3,45 +3,31 @@
 @using SACOMaintenance.Common.ModelDB;
 @using System.Collections.ObjectModel;
 
-    <RadzenFieldset Text="Maintenance Request Priority">
-        <div class="container-fluid">
-            <div class="row">
+<RadzenFieldset Text="Maintenance Request Priority">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card-group">
                 @foreach (var item in prios)
                 {
-                    <div class="col requestPriorityCentre">
+                    <div class="col-lg-3 requestPriorityCentre">
                         <RequestPriorityDashboardItem imageLocation="@item.Icon"
-                                                      color="bg-danger"
+                                                      color="@item.Colour"
                                                       text="@item.Name"
-                                                      count="45"></RequestPriorityDashboardItem>
+                                                      count="@item.MaintRes.Count"></RequestPriorityDashboardItem>
                     </div>
                 }
-
-            </div>
+            </div>           
         </div>
-        
-            @*<div class="col-lg-3 requestPriorityCentre">
-                <RequestPriorityDashboardItem imageLocation="@prios.Where(i => i.Id == 1).FirstOrDefault().Icon"
-                                              color="bg-danger"
-                                              text="Critical"
-                                              count="@prios.Where(c => c.Id == 1).Count()"></RequestPriorityDashboardItem>
-            </div>*@
+    </div>
+</RadzenFieldset>
 
-            @*<div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="far fa-clock fa-5x" color="bg-warning" text="Priority 1" count="3"></RequestPriorityDashboardItem></div>
-        <div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="fas fa-exclamation-triangle fa-5x" color="bg-info" text="Priority 2" count="15"></RequestPriorityDashboardItem></div>
-        <div class="col-lg-3 requestPriorityCentre"><RequestPriorityDashboardItem imageLocation="fas fa-info fa-5x" color="bg-dark" text="Priority 3-5" count="6"></RequestPriorityDashboardItem></div>*@
-        @*</div>*@
-    </RadzenFieldset>
+@code {
+    public ObservableCollection<MaintRequestInitiation> regs;
+    public ObservableCollection<Priority> prios;
 
-    @code {
-        public ObservableCollection<MaintRequestInitiation> regs;
-        public ObservableCollection<Priority> prios;
-
-
-
-        protected override void OnInitialized()
-        {
-           //regs = viewMod.GetRequestsByPriority();
-            prios = viewMod.GetPriorties();
-        }
-
+    protected override void OnInitialized()
+    {
+        prios = viewMod.GetPriorties();
     }
+
+}

@@ -125,20 +125,16 @@ using System.Collections.ObjectModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
-           
-        public ObservableCollection<MaintRequestInitiation> regs;
-        public ObservableCollection<Priority> prios;
+#line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
+       
+    public ObservableCollection<MaintRequestInitiation> regs;
+    public ObservableCollection<Priority> prios;
 
+    protected override void OnInitialized()
+    {
+        prios = viewMod.GetPriorties();
+    }
 
-
-        protected override void OnInitialized()
-        {
-           //regs = viewMod.GetRequestsByPriority();
-            prios = viewMod.GetPriorties();
-        }
-
-    
 
 #line default
 #line hidden

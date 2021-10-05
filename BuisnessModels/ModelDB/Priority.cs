@@ -12,6 +12,7 @@ namespace SACOMaintenance.Common.ModelDB
         public string Name { get; set; }
         public string Notes { get; set; }
         public string Icon { get; set; }
+        public string Colour { get; set; }
         public List<MaintRequestInitiation> MaintRes { get; set; } = new();
 
     }   
