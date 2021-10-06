@@ -117,6 +117,13 @@ using Microsoft.Extensions.Configuration;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardManager.razor"
+using SACOMaintenance.Common.ModelDB;
+
+#line default
+#line hidden
+#nullable disable
     public partial class DashboardManager : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -124,6 +131,24 @@ using Microsoft.Extensions.Configuration;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 70 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardManager.razor"
+      
+    public List<PPE> testlist { get; set; } = new() ;
+
+    public List<PPE> selectedlist { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        testlist.Add(new PPE { Id = 1, PPEName = "craig" });
+        testlist.Add(new PPE { Id = 1, PPEName = "bob" });
+        testlist.Add(new PPE { Id = 1, PPEName = "steve" });
+        testlist.Add(new PPE { Id = 1, PPEName = "john" });
+    }
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _configuration { get; set; }
     }

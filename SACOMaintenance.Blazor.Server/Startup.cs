@@ -85,7 +85,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<DialogService>();
             services.AddScoped<NotificationService>();
 
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddServerSideBlazor();
             services.AddSignalR();
 

@@ -7,6 +7,23 @@
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.SignalR.Client 
 
+<div class="col-lg-12">
+    <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE" @bind-SelectedItems="maintReq.PPEEquipment">
+        <ItemTemplate>
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="@PPE.IconFileLocation" alt="@PPE.PPEName" width="60" height="60" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    @PPE.PPEName
+                </div>
+            </div>
+        </ItemTemplate>
+    </SquareCheckBox>
+</div>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
@@ -17,11 +34,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE" @bind-SelectedItems="maintReq.PPEEquipment">
-                <ItemTemplate>
-                    @PPE.PPEName
-                </ItemTemplate>
-            </SquareCheckBox>
+            <!-- PPE to go here -->
         </div>
     </div>
     <!-- "GeneralViewModel.PPEItemsSelected" -->

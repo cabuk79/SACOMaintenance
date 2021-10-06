@@ -3,6 +3,16 @@
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration _configuration
 @inject SACOMaintenance.ViewModel.Interfaces.IDashboardViewModel dashboardViewModel
+@using SACOMaintenance.Common.ModelDB
+
+
+<SquareCheckBox @bind-SelectedItems="selectedlist" Items="testlist" Context="PPE">
+    <ItemTemplate>
+        @PPE.PPEName
+    </ItemTemplate>
+</SquareCheckBox>
+
+
 
 <div class="container-fluid">
     <div class="row">
@@ -55,3 +65,18 @@
     </div><!-- Hide if on a mobile phone section - end -->
 
 </div>
+
+
+@code{
+    public List<PPE> testlist { get; set; } = new() ;
+
+    public List<PPE> selectedlist { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        testlist.Add(new PPE { Id = 1, PPEName = "craig" });
+        testlist.Add(new PPE { Id = 1, PPEName = "bob" });
+        testlist.Add(new PPE { Id = 1, PPEName = "steve" });
+        testlist.Add(new PPE { Id = 1, PPEName = "john" });
+    }
+}

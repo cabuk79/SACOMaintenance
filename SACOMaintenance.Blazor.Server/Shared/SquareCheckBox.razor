@@ -1,20 +1,31 @@
 ﻿@typeparam TItem
 
-@foreach (var item in Items)
-{
-    var Id = Guid.NewGuid();
-    <label for="@Id">@ItemTemplate(item)</label>
-
-    @if (SelectedItems.Contains(item))
+<div class="container">
+    @foreach (var item in Items)
     {
-        <input id="@Id" type="checkbox" checked @onchange="_ => HandleChange(item)" />
+        var Id = Guid.NewGuid();
+    
+        <label for="@Id" class="option_item" >
+            <!-- Check to see if the checkbox needs to be checked or not from the user data byt checking if any of the items are already in the SelectedList -->
+            @if (SelectedItems.Contains(item))
+            {
+                <input id="@Id" type="checkbox" class="checkbox" checked @onchange="_ => HandleChange(item)" />
+            }
+            else
+            {
+                <input id="@Id" type="checkbox" class="checkbox" @onchange="_ => HandleChange(item)" />
+            }
+            <div class="option_inner theme">
+                <div class="tickmark"></div>
+                <div class="name">
+                    @ItemTemplate(item)
+                </div>
+            </div>
+        </label>
     }
-    else
-    {
-        <input id="@Id" type="checkbox" @onchange="_ => HandleChange(item)" />
-    }
+</div>
 
-}
+
 
 @code {
     [Parameter]
