@@ -272,8 +272,8 @@ using Microsoft.AspNetCore.Identity;
                             {
                                 FirstName = objUser.FirstName,
                                 LastName = objUser.LastName,
-                                UserName = objUser.FirstName.ToLower() + "." + objUser.LastName.ToLower(),
-                                Email = objUser.Email,
+                                UserName = objUser.Email, //objUser.FirstName.ToLower() + "." + objUser.LastName.ToLower(),
+                                Email = objUser.Email,                 
                                 AvatarLocation = @"css/Images/UserProfilePics/blankprofilepic.png"
                     };
                     var CreateResult = await _UserManager.CreateAsync(NewUser, objUser.PasswordHash);
