@@ -113,7 +113,7 @@ using Radzen.Blazor.Rendering;
     public RenderFragment<TItem> ItemTemplate { get; set; }
 
     [Parameter]
-    public List<TItem> SelectedItems { get; set; }
+    public List<TItem> SelectedItems { get; set; } = new();
 
     [Parameter]
     public EventCallback<List<TItem>> SelectedItemsChanged { get; set; }

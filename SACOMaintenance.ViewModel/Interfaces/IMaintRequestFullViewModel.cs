@@ -27,6 +27,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public string areaName { get; }
         public string factoryName { get; }
         public string equipName { get; }
+        public List<Isolation> IsolationsSelected { get; set; }
         #endregion
 
         #region methods

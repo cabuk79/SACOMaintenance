@@ -126,7 +126,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 152 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 166 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
@@ -181,6 +181,9 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         detailMarkUp = maintReqInitation.maintReqDetails;
 
+        maintReqInitation.IsolationsSelected =
+            maintReqInitation.IsolationByRequest
+            .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
         //Auto update
         hubConnection = new HubConnectionBuilder()

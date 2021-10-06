@@ -43,7 +43,7 @@ body[b-tv8wdhpw7e] {
 .option_item .option_inner[b-tv8wdhpw7e] {
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #ebebf2; /*#fff;*/
     border-radius: 5px;
     text-align: center;
     padding: 58px 40px;
@@ -67,8 +67,8 @@ body[b-tv8wdhpw7e] {
     }
 
 .option_item .checkbox:checked ~ .option_inner.theme[b-tv8wdhpw7e] {
-    border-color: #3b5999;
-    color: #3b5999;
+    border-color: #ff0000;
+    color: #ff0000;
 }
 
 .option_item .option_inner .tickmark[b-tv8wdhpw7e] {
@@ -97,6 +97,9 @@ body[b-tv8wdhpw7e] {
 }
 
 .option_item .option_inner.theme .tickmark[b-tv8wdhpw7e] {
-    border-color: #3b5999 transparent transparent #3b5999;
+    border-color: #ff0000 transparent transparent #ff0000;
 }
+
+
+/*border-color: #3b5999 transparent transparent #3b5999;*/
 

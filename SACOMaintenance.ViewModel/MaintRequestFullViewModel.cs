@@ -25,6 +25,7 @@ namespace SACOMaintenance.ViewModel
         public IIsolations IsolationsDataProvider { get; }
         public IIsolationMaintRequestInitiation IsolationMaintReqDataProvider { get; }
         public IUsers UsersDataProvider { get; set; }
+        public List<Isolation> IsolationsSelected { get; set; } = new();
 
 
 
