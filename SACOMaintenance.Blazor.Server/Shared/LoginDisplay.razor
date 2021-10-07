@@ -1,15 +1,46 @@
-﻿<AuthorizeView>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+@using Microsoft.AspNetCore.Http;
+@using System.Security.Claims
+@using SACOMaintenance.Common.ModelDB
+@inject UserManager<Common.ModelDB.User> _UserManager
+
+
+@*@inject AuthenticationStateProvider AuthenticationStateProvider*@
+@using Microsoft.AspNetCore.Identity;
+@*@inject UserManager<IdentityUser> UserManager;*@
+
+<AuthorizeView>
     <Authorized>
-        Hello, @context.User.Identity.Name
+        <img src="@UserAvatar" height="20" width="20" class="avatar-circle" />    <label>Hello, @UserFullName</label>
         <a href="Identity/Account/Logout">Logout</a>
     </Authorized>
     <NotAuthorized>
         <a href="Identity/Account/Login">Login</a>
-    </NotAuthorized>     
+    </NotAuthorized>
 </AuthorizeView>
 
 
 @code {
+    Common.ModelDB.User objUser = new Common.ModelDB.User();
+    string UserFullName { get; set; }
+    string UserAvatar { get; set; }
+    //User UserLogged { get; set; }
 
+    string userId { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+
+        //Get the current logged in users ID
+        var principal = HttpContextAccessor.HttpContext.User;
+        userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        ////Get the full details of the current logged in user from the ID
+        objUser = await _UserManager.FindByIdAsync(userId);
+
+        //Ge tusder full name and avatar
+        UserFullName = objUser.FullName;
+        UserAvatar = objUser.AvatarLocation;
+    }
 }
 

@@ -16,7 +16,8 @@ namespace SACOMaintenance.Common.ModelDB
         public virtual AreaModel Area { get; set; }
         public int EquipmentId { get; set; } //FK to equipment table
         public virtual Equipment Equipment { get; set; }
-        public int RequestedById { get; set; } //FK to users table
+        public string UserId { get; set; } //FK to users table
+        //public virtual User User { get; set; }
         public string RequestDetails { get; set; }
         public int PriorityId { get; set; } //FK to priority table
         public virtual Priority Priority { get; set; }

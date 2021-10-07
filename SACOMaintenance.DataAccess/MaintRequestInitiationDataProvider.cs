@@ -37,7 +37,7 @@ namespace SACOMaintenance.DataAccess
                 FactoryId = maintRequestInitiation.FactoryId,
                 AreaId = maintRequestInitiation.AreaId,
                 EquipmentId = maintRequestInitiation.EquipmentId,
-                RequestedById = 1, //maintRequestInitiation.RequestedById,
+                UserId = maintRequestInitiation.UserId, //maintRequestInitiation.RequestedById,
                 RequestDetails = maintRequestInitiation.RequestDetails,
                 RequestTypeId = maintRequestInitiation.RequestTypeId,
                 StatusId = 1,
@@ -217,6 +217,15 @@ namespace SACOMaintenance.DataAccess
                 .Include(s => s.Status)
                 .ToList();
             return maintReqInitationList;
+        }
+
+        public ObservableCollection<MaintRequestInitiation> LoadReqsByUser(string userId)
+        {
+            var maintReqs = new ObservableCollection<MaintRequestInitiation>(_requestInitationDBContext.MaintRequestInitiations.Where(u => u.UserId == userId)
+                .Include(e => e.Equipment)
+                .Include(s => s.Status)
+                .ToList());
+            return maintReqs;
         }
 
         public IEnumerable<MaintRequestInitiation> LoadNewRequests()

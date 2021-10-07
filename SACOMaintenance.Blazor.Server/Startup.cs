@@ -79,6 +79,9 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IOrderViewModel, OrderViewModel>();
             services.AddScoped<IGeneralMaintRequestViewModel, GeneralMaintRequestViewModel>();
             services.AddScoped<IRequestsGraphViewModel, RequestsGraphViewModel>();
+            services.AddScoped<IUserRequestsAll, UserRequestAllViewModel>();
+
+            services.AddHttpContextAccessor();
 
             services.AddSingleton<SmsService>();
 

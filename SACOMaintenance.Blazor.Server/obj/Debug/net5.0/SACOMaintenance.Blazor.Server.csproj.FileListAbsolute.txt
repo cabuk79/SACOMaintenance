@@ -613,3 +613,5 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Components\RequestsForUserAll.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\RequestsForUserAll.razor.g.cs

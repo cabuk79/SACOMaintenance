@@ -204,6 +204,14 @@ app {
 
     /* Custom CSS */
 
+    .container {
+        padding: 0px;
+    }
+
+    .row-allrequest-table {
+        padding: 0px;
+    }
+
     /* Buttons */
 
     .update-save-buttons{
@@ -258,4 +266,28 @@ app {
         border-bottom-right-radius: 50% 50%;
         border-bottom-left-radius: 50% 50%;
     }
+
+    .outer-ava-camera {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100px !important; /* any size */
+        max-height: 100px !important; /* any size */
+        margin: auto;
+        background-color: transparent;
+        border-radius: 100%;
+        position: relative;
+    }
+
+    .inner-ava-camera {
+        background-color: lightgray; /*#0000ff;*/
+        border-color: black;
+        width:30px;
+        height: 30px;
+        border-radius: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 5px;
+    }
+    
+           
 }

@@ -1,0 +1,52 @@
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IUserRequestsAll userRequestAllViewModel
+@using SACOMaintenance.Common.ModelDB
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <label>Dashboard</label>
+    </div>
+</div>
+
+@if(userRequestAllViewModel.Requests.Count > 0)
+{
+    <div class="row row-allrequest-table">
+        <div class="col-lg-12">
+            <RadzenFieldset Text="Your Open Requests">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenGrid Data="@userRequestAllViewModel.Requests" AllowColumnResize="true" AllowFiltering="true"
+                                    AllowSorting="true">
+                            <Columns>
+                                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number"></RadzenGridColumn>
+                                <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Description"></RadzenGridColumn>
+                                <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
+                                <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status"></RadzenGridColumn>
+                                <RadzenGridColumn TItem="MaintRequestInitiation" Title="Staff Assigned">
+                                    <Template Context="data">
+                                        @foreach(var item in data.Users)
+                                        {
+                                            <img src="@item.AvatarLocation" width="30" height="30" />
+                                        }
+                                    </Template>
+                                </RadzenGridColumn>  
+                            </Columns>
+                        </RadzenGrid>
+                    </div>
+                </div>
+            </RadzenFieldset>
+        </div>
+    </div>    
+}
+
+
+@code {
+
+    [Parameter]
+    public string UserId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await userRequestAllViewModel.LoadAllRequestsForUser(UserId);
+    }
+}

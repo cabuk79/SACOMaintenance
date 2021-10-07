@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Shared
+namespace SACOMaintenance.Blazor.Server.Components
 {
     #line hidden
     using System;
@@ -97,34 +97,13 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\LoginDisplay.razor"
-using Microsoft.AspNetCore.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\LoginDisplay.razor"
-using System.Security.Claims;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\LoginDisplay.razor"
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\LoginDisplay.razor"
-using Microsoft.AspNetCore.Identity;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class LoginDisplay : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class RequestsForUserAll : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -132,35 +111,21 @@ using Microsoft.AspNetCore.Identity;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\LoginDisplay.razor"
+#line 43 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
        
-    Common.ModelDB.User objUser = new Common.ModelDB.User();
-    string UserFullName { get; set; }
-    string UserAvatar { get; set; }
-    //User UserLogged { get; set; }
 
-    string userId { get; set; }
+    [Parameter]
+    public string UserId { get; set; }
 
-    protected async override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-
-        //Get the current logged in users ID
-        var principal = HttpContextAccessor.HttpContext.User;
-        userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
-
-        ////Get the full details of the current logged in user from the ID
-        objUser = await _UserManager.FindByIdAsync(userId);
-
-        //Ge tusder full name and avatar
-        UserFullName = objUser.FullName;
-        UserAvatar = objUser.AvatarLocation;
+        await userRequestAllViewModel.LoadAllRequestsForUser(UserId);
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Common.ModelDB.User> _UserManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor HttpContextAccessor { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IUserRequestsAll userRequestAllViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

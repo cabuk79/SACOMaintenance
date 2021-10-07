@@ -1,4 +1,28 @@
 ﻿@page "/"
 @using SACOMaintenance.Blazor.Server.Pages.Dashboard
+@using SACOMaintenance.Blazor.Server.Components
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<Common.ModelDB.User> _UserManager
+@using Microsoft.AspNetCore.Http;
+@using System.Security.Claims
+@inject IHttpContextAccessor HttpContextAccessor
 
-<DashboardManager></DashboardManager>
+<AuthorizeView Roles="Administrators">
+    <DashboardManager></DashboardManager>
+</AuthorizeView>
+
+<AuthorizeView Roles="General User">
+    <RequestsForUserAll UserId="@userId"></RequestsForUserAll>
+</AuthorizeView>
+
+
+@code{
+
+    string userId { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        var principal = HttpContextAccessor.HttpContext.User;
+        userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+    }
+}

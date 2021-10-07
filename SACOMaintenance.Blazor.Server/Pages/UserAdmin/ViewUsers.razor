@@ -14,6 +14,8 @@
                     <th>Avatar</th>
                     <th>Id</th>
                     <th>User Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
                     <th>Email</th>
                 </tr>
             </thead>
@@ -24,6 +26,8 @@
                         <td><img class="avatar-circle" src="@user.AvatarLocation" width="40" height="40" /></td>
                         <td>@user.Id.Substring(0, 5) ...</td>
                         <td>@user.UserName</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
                         <td>@user.Email</td>
                         <td>
                             <!-- Edit the current forecast  -->
@@ -44,10 +48,10 @@
         {
             <!-- This is the popup to create or edit a user -->
             <div class="modal" tabindex="-1" style="display:block" role="dialog">
-                <div class="modal-dialog">
+                <div class="modal-dialog"style="border-color: black">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h3 class="modal-title">Edit User</h3>
+                            <h3 class="modal-title" style="background-color: aliceblue">Editing User</h3>
                             <!-- Button to close the popup -->
                             <button type="button" class="close"
                                     @onclick="ClosePopup">
@@ -59,51 +63,126 @@
                             <!-- Only show Id if not a new user -->
                             @if (objUser.Id != "")
                             {
-                                <label>User Id</label>
-                                <p>@objUser.Id</p>
+                                <div class="row">
+                                    <div class="col-lg-12" style="text-align: center">
+                                        <div class="container">
+                                            <div class="outer-ava-camera">
+                                                <img class="avatar-circle" src="@objUser.AvatarLocation" width="100" height="100" />
+                                                <div class="inner-ava-camera">
+                                                    <img src="css/Images/UserProfilePics/camera.png" width="20" height="20" />
+                                                </div>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label><strong>User Id</strong></label>
+                                        <p>@objUser.Id</p>
+                                    </div>
+                                </div>
+
                             }
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @if (objUser.Id != "")
+                                    {
+                                        <label>Username</label>
+                                        <p>@objUser.UserName</p>
+                                    }
+                                </div>
+                            </div>
                             <!-- Only allow edit if a new user -->
-                            @if (objUser.Id != "")
-                            {
-                                <label>Username</label>
-                                <p>@objUser.UserName</p>
-                            }
                             @*else
                             {
                                 <input class="form-control" type="text"
                                        placeholder="UserName" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black"
                                        @bind="objUser.UserName" />
                             }*@
-                            <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="text" placeholder="Enter First Name" @bind="objUser.FirstName" />
-                            <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="text" placeholder="Enter Surname Name" @bind="objUser.LastName" />
-                            <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="text" placeholder="Email" @bind="objUser.Email" />
-                            <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="password" placeholder="Password" @bind="objUser.PasswordHash" />
-                            <select class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black"
-                                    @bind="@CurrentUserRole">
-                                @foreach (var option in Options)
-                                {
-                                    <option value="@option">
-                                        @option
-                                    </option>
-                                }
-                            </select>
-                            <br /><br />
-                            <!-- Button to save the user -->
-                            <button class="btn btn-primary"
-                                    @onclick="SaveUser">
-                                Save
-                            </button>
-                            <!-- Only show delete button if not a new record -->
-                            @if (objUser.Id != "")
-                            {
-                                <!-- Button to delete the forecast -->
-                                <button class="btn btn-danger"
-                                        @onclick="DeleteUser">
-                                    Delete
-                                </button>
-                            }
-                            <br />
-                            <span style="color:red">@strError</span>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label><strong>First Name</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="text" placeholder="Enter First Name" @bind="objUser.FirstName" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label><strong>Lastname</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="text" placeholder="Enter Surname Name" @bind="objUser.LastName" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label><strong>Email</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="text" placeholder="Email" @bind="objUser.Email" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label><strong>Password</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black" type="password" placeholder="Password" @bind="objUser.PasswordHash" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label><strong>Role</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <select class="form-control" style="padding: 5px; margin: 10px 5px 10px 5px; border-color: black"
+                                            @bind="@CurrentUserRole">
+                                        @foreach (var option in Options)
+                                        {
+                                            <option value="@option">
+                                                @option
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <!-- Button to save the user -->
+                                    <button class="btn btn-primary"
+                                            @onclick="SaveUser">
+                                        Save
+                                    </button>
+                                    </div>
+                                <div class="col-lg-3">
+                                    <!-- Only show delete button if not a new record -->
+                                    @if (objUser.Id != "")
+                                    {
+                                        <!-- Button to delete the forecast -->
+                                        <button class="btn btn-danger"
+                                                @onclick="DeleteUser">
+                                            Delete
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <span style="color:red">@strError</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
