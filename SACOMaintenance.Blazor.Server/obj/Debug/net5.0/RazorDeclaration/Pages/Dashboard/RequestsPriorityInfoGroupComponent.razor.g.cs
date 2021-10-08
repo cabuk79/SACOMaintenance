@@ -97,6 +97,13 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
 using SACOMaintenance.Blazor.Server.Components;
 
@@ -127,12 +134,13 @@ using System.Collections.ObjectModel;
 #nullable restore
 #line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
        
+
     public ObservableCollection<MaintRequestInitiation> regs;
     public ObservableCollection<Priority> prios;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        prios = viewMod.GetPriorties();
+        prios = await viewMod.GetPriorties();
     }
 
 

@@ -97,6 +97,13 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
 using SACOMaintenance.Common.ModelDB;
 
@@ -117,6 +124,20 @@ using SACOMaintenance.Blazor.Server.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+using Microsoft.AspNetCore.Http;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/add")]
     public partial class AddMaintReq : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -126,8 +147,13 @@ using SACOMaintenance.Blazor.Server.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 111 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 115 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
+
+
+    Common.ModelDB.User objUser = new Common.ModelDB.User();
+    string userId { get; set; }
+
 
     private HubConnection hubConnection;
 
@@ -138,6 +164,18 @@ using SACOMaintenance.Blazor.Server.Data;
             .Build();
 
         await hubConnection.StartAsync();
+
+        //Get the current logged in users ID
+        var principal = HttpContextAccessor.HttpContext.User;
+        userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        ////Get the full details of the current logged in user from the ID
+        objUser = await _UserManager.FindByIdAsync(userId);
+
+        //Ge tusder full name and avatar
+        userId = objUser.Id;
+
+        AddReqViewModel.MaintReq.UserId = userId;
     }
 
     protected async Task UpdateBook()
@@ -151,11 +189,11 @@ using SACOMaintenance.Blazor.Server.Data;
         AddReqViewModel.AddNewRequest();
 
         //Check if the prisority is emergency then send text to let someone know
-        if(AddReqViewModel.PriorityId == 1)
+        if (AddReqViewModel.PriorityId == 1)
         {
             Equipment equipName = AddReqViewModel.Equipment.Where(i => i.Id == AddReqViewModel.MaintReq.EquipmentId).FirstOrDefault();
 
-            if(AddReqViewModel.SendTextMessageForEmergencyPriority == true)
+            if (AddReqViewModel.SendTextMessageForEmergencyPriority == true)
             {
                 string message = "MAINT-" + AddReqViewModel.NewAddedMaintId.ToString("D4") +
                 " has just been added and is either buisness crirtical or danger to life or health.  Please review ASAP!!!\n\n\nEquipment: "
@@ -197,6 +235,8 @@ using SACOMaintenance.Blazor.Server.Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Common.ModelDB.User> _UserManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor HttpContextAccessor { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SmsService SmsService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NotificationService NotificationService { get; set; }

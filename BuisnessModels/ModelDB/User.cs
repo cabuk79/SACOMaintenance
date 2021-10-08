@@ -24,6 +24,6 @@ namespace SACOMaintenance.Common.ModelDB
         public int Pin { get; set; }
         public string AvatarLocation { get; set; }
         public List<MaintReqUptateNote> MaintReqUptateNotes { get; set; } = new();
-        public List<MaintRequestInitiation> MaintRequestInitiation { get; set; } = new List<MaintRequestInitiation>();
+        public List<MaintRequestInitiation> MaintRequestInitiations { get; set; } = new List<MaintRequestInitiation>();
     }
 }

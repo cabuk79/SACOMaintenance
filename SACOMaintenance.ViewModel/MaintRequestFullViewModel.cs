@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using WordLibs;
 
 namespace SACOMaintenance.ViewModel
@@ -126,17 +127,19 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        MaintRequestInitiation IMaintRequestFullViewModel.GetMaintReqInitation(int maintReqId)
+        public async Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId)
         {
-            maintReqInitation = MaintReqDataProvider.GetSingleRequestInitiation(maintReqId);
+            maintReqInitation = await MaintReqDataProvider.GetSingleRequestInitiation(maintReqId);
             return maintReqInitation;
         }
 
-        public void LoadMaintRiskData(int maintReqId)
+        public async Task<bool> LoadMaintRiskData(int maintReqId)
         {
-            RiskInfoList = new ObservableCollection<MaintRequestInitiationRisk>(MaintReqDataProvider.LoadMaintRiskData(maintReqId));
+           RiskInfoList = new ObservableCollection<MaintRequestInitiationRisk>(await MaintReqDataProvider.LoadMaintRiskData(maintReqId));
             // RiskInfoList = MaintReqDataProvider.LoadMaintRiskData(main tReqId);
             //return RiskInfoList;
+
+            return true;
         }
 
         public ObservableCollection<Factory> LoadFactories()
@@ -207,5 +210,7 @@ namespace SACOMaintenance.ViewModel
         {
            // MaintReqDataProvider
         }
+
+ 
     }
 }

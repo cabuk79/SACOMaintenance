@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text.Json;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -17,7 +18,7 @@ namespace SACOMaintenance.ViewModel
         public IEnumerable<MaintRequestInitiation> filteredMaintRequests { get; set; }
         public ObservableCollection<Status> statusList { get; set; } = new();
 
-        public ObservableCollection<MaintRequestInitiation> requests { get; } = new();
+        public ObservableCollection<MaintRequestInitiation> requests { get; set; } = new();
 
         public ObservableCollection<Equipment> equipment { get; } = new();
 
@@ -45,12 +46,15 @@ namespace SACOMaintenance.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void LoadRequests()
+        public async void LoadRequests()
         {
-            var maintReqList = MaintReqDataProvider.LoadRequestInitiationWithEquipment();
+            
+            var items = new ObservableCollection<MaintRequestInitiation>
+                (await MaintReqDataProvider.LoadRequestInitiationWithEquipment());
             requests.Clear();
 
-            foreach(var item in maintReqList)
+
+            foreach (var item in items)
             {
                 requests.Add(item);
             }
@@ -65,9 +69,9 @@ namespace SACOMaintenance.ViewModel
 
         
 
-        public void LoadReqsByStatusId(int statusId)
+        public async void LoadReqsByStatusId(int statusId)
         {
-            var maintReqList = MaintReqDataProvider.LoadReqBasedOnStatus(statusId);
+            var maintReqList = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus(statusId));
             requests.Clear();
 
             foreach(var item in maintReqList)
@@ -76,9 +80,9 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public void LoadNewRequests()
+        public async void LoadNewRequests()
         {
-            var maintNewreq = MaintReqDataProvider.LoadNewRequests();
+            var maintNewreq = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadNewRequests());
             requests.Clear();
 
             foreach(var item in maintNewreq)

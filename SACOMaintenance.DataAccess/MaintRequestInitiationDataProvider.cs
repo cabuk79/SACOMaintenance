@@ -6,27 +6,25 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System;
+using System.Threading.Tasks;
+using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SACOMaintenance.DataAccess
 {
     public class MaintRequestInitiationDataProvider : IMaintRequestInitiation
     {
         private readonly SACOMaintenanceContext _requestInitationDBContext;
-
+    
         public MaintRequestInitiationDataProvider(SACOMaintenanceContext sacoMaintenanceContext)
         {
-            //SacoMaintenanceContext = new SACOMaintenanceContext();
             _requestInitationDBContext = sacoMaintenanceContext;
-            //ObservableCollection<Risk> riskList = new ObservableCollection<Risk>();
     }
 
-        //public IQueryable<Risk> riskList { get; set; }
         ObservableCollection<Risk> riskList { get; set; }
 
         IEnumerable<MaintRequestInitiationRisk> risksDataList { get; set; }
         ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.risksDataList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
         {
@@ -95,11 +93,6 @@ namespace SACOMaintenance.DataAccess
 
         public void UpdateIsolationsRecords(List<string> isolationsChosen, int maintId, List<int> allIsolationId)  //add the isolations full list to remove them all then use IsolationsChosen to add them
         {
-            //Get all isolations from the table and loop through, remove any that are not in the isolations chosen and then loop through and
-            //add the ones chosen
-
-            //Get all Isolations where the maintenance id is equal to the maintenance id passed
-
             foreach(var item in allIsolationId)
             {
                 var isolationsWithRequest = _requestInitationDBContext.Isolations
@@ -114,164 +107,165 @@ namespace SACOMaintenance.DataAccess
 
                     _requestInitationDBContext.SaveChanges();
                 }                
-            }
-
-            //loop through the isolationsChosen and add to the table the many-to-many relationships
-            //foreach(var item in isolationsChosen)
-            //{
-            //    var newIsolationRequest = new IsolationMaintRequestInitiation
-            //    {
-            //        IsolationId = Convert.ToInt32(item),
-            //        MaintReqInitationListId = maintId
-            //    };
-            //    _requestInitationDBContext.Add(newIsolationRequest);
-            //    _requestInitationDBContext.SaveChanges();
-            //}
-            
-
-
-
-
-            //var isolationsWithRequest = _requestInitationDBContext.Isolations
-            //    .Include(b => b.MaintRequestInitiation.Where(i => i.Id == maintId))
-            //    .ToList();
-
-            //var itemCount = isolationsWithRequest.Count;
-
-            //foreach(var item in isolationsWithRequest)
-            //{
-                
-                
-                
-            //}
-
-            //for (int i = 0; i < itemCount; i++)
-            //{
-            //    var req = isolationsWithRequest.
-            //}    
-
-
-
-
-            //find if there is a record and if so then delete otherwise add
-            //foreach(var item in isolationsChosen)
-            //{
-            //    var foundItem = _requestInitationDBContext.IsolationMaintRequestInitiations
-            //                    .Where(i => i.MaintReqInitationListId == maintId && i.IsolationId == Convert.ToInt32(item)).FirstOrDefault();
-
-            //    if(foundItem == null)
-            //    {
-            //        IsolationMaintRequestInitiation newReqIsolation = new IsolationMaintRequestInitiation();
-            //        newReqIsolation.IsolationId = Convert.ToInt32(item);
-            //        newReqIsolation.MaintReqInitationListId = maintId;
-
-            //        _requestInitationDBContext.IsolationMaintRequestInitiations.Add(newReqIsolation);
-            //    }
-            //}
-            //_requestInitationDBContext.SaveChanges();   
+            }  
         }
 
         //Load a single request with all of the Navigvation properties populated
-        public MaintRequestInitiation GetSingleRequestInitiation(int Id)
+        public async Task<MaintRequestInitiation> GetSingleRequestInitiation(int Id)
         {
-            var maintReqInitiation = _requestInitationDBContext.MaintRequestInitiations
+            var maintReqInitiation = await _requestInitationDBContext.MaintRequestInitiations
                 .Where(i => i.Id == Id)
                 .Include(e => e.Equipment)
                 .Include(c => c.Company)
                 .Include(a => a.Area)
                 .Include(f => f.Factory)
-                .Include(p => p.PPEEquipment)
+                //.Include(p => p.PPEEquipment)
                 .Include(r => r.Risks)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             return maintReqInitiation;
         }
 
-        public ObservableCollection<Priority> LoadAllRequestsPriority()
+        
+        //public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
+        public async Task<List<MaintRequestInitiation>> LoadAllRequestInitations()
         {
-            var requests = new ObservableCollection<Priority>(_requestInitationDBContext.Priorites.ToList());
-
-            return requests;
-        }
-        public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
-        {
-            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
+            //var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status)
+            //    .ToList();
+            //return maintReqInitationList;
+            return await _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
-                .ToList();
-            return maintReqInitationList;
+                .ToListAsync();
         }
 
-        public IEnumerable<MaintRequestInitiation> LoadReqBasedOnStatus(int statusId)
+        public async Task<List<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId)
         {
-            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
+            //var maintReqInitationListStatus = _requestInitationDBContext.MaintRequestInitiations
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status).Where(si => si.StatusId == statusId)
+            //    .ToList();
+            //return maintReqInitationListStatus;
+            return await _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .Include(s => s.Status).Where(si => si.StatusId == statusId)
-                .ToList();
-            return maintReqInitationList;
+                .ToListAsync();
         }
 
-        public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
+        //public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
+        public async Task<List<MaintRequestInitiation>> LoadRequestInitiationWithEquipment() 
         {
-            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
+            //var maintReqInitationListEquip = _requestInitationDBContext.MaintRequestInitiations
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status)
+            //    .ToList();
+            //return maintReqInitationListEquip;
+            return await _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
-                .ToList();
-            return maintReqInitationList;
+                .ToListAsync();
         }
 
-        public ObservableCollection<MaintRequestInitiation> LoadReqsByUser(string userId)
+        //public IEnumerable<Priority> LoadAllRequestsPriority()
+        public async Task<List<Priority>> LoadAllRequestsPriority()
+    {
+        //var requestsPrio = _requestContext.Priorites.ToList();
+        //return requestsPrio;
+        return await _requestInitationDBContext.Priorites.ToListAsync();
+        }
+
+        //public IEnumerable<MaintRequestInitiation> LoadReqsByUser(string userId)
+        public async Task<List<MaintRequestInitiation>> LoadReqsByUser(string userId)
         {
-            var maintReqs = new ObservableCollection<MaintRequestInitiation>(_requestInitationDBContext.MaintRequestInitiations.Where(u => u.UserId == userId)
+            //var maintReqsByUserAll = _requestInitationDBContext.MaintRequestInitiations
+            //    .Where(u => u.UserId == userId)
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status)
+            //    .Include(u => u.Users)
+            //    .ToList();
+            //return maintReqsByUserAll; 
+
+            var list =  await _requestInitationDBContext.MaintRequestInitiations
+                .Where(u => u.UserId == userId)
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
-                .ToList());
-            return maintReqs;
+                .Include(u => u.Users)
+                .ToListAsync();
+
+            return list;
         }
 
-        public IEnumerable<MaintRequestInitiation> LoadNewRequests()
+        //public IEnumerable<MaintRequestInitiation> LoadReqsByUserOpen(string userId)
+        public async Task<List<MaintRequestInitiation>> LoadReqsByUserOpen(string userId)
         {
-            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 7)
+            //var maintReqsByUserStatus = _requestInitationDBContext.MaintRequestInitiations
+            //    .Where(u => u.UserId == userId && u.StatusId != 3)
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status)
+            //    .Include(u => u.Users)
+            //    .ToList();
+            //return maintReqsByUserStatus;
+
+            return await _requestInitationDBContext.MaintRequestInitiations
+                .Where(u => u.UserId == userId && u.StatusId != 3)
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
-                .ToList();
-            return maintReqInitationList;
+                .Include(u => u.Users)
+                .ToListAsync();
         }
 
-        public IEnumerable<MaintRequestInitiation> LoadAllRequestsCurrentYear()
+        //public IEnumerable<MaintRequestInitiation> LoadNewRequests()
+        public async Task<List<MaintRequestInitiation>> LoadNewRequests()
+        {
+            //var maintReqInitationListNew = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 7)
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status)
+            //    .ToList();
+            //return maintReqInitationListNew;
+
+            return await _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 7)
+                .Include(e => e.Equipment)
+                .Include(s => s.Status)
+                .ToListAsync();
+        }
+
+        //public IEnumerable<MaintRequestInitiation> LoadAllRequestsCurrentYear()
+        public async Task<List<MaintRequestInitiation>> LoadAllRequestsCurrentYear()
         {
             var currentYear = DateTime.Now.Year;
 
-            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(d => d.DateRaised.Year == currentYear).ToList();
-            return maintReqInitationList;
+            //var maintReqInitationListCurrentYear = _requestInitationDBContext.MaintRequestInitiations.Where(d => d.DateRaised.Year == currentYear).ToList();
+            //return maintReqInitationListCurrentYear;
+
+            return await _requestInitationDBContext.MaintRequestInitiations.Where(d => d.DateRaised.Year == currentYear).ToListAsync();
         }
 
-        public IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen()
+        //public IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen()
+        public async Task<List<MaintRequestInitiation>> LoadReqsAssignedOpen()
         {
-            var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)
+            //var maintReqInitationListAssignedOpen = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status)
+            //    .ToList();
+            //return maintReqInitationListAssignedOpen;
+
+            return await _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)  //TOD: workout this maybe do it on name?
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
-                .ToList();
-            return maintReqInitationList;
+                .ToListAsync();
         }
 
-
-        //public ObservableCollection<Risk> LoadRisksByMaintType(string maintType)
-        //{
-        //    ObservableCollection<Risk> riskList =
-        //        new ObservableCollection<Risk>(
-        //            _requestInitationDBContext.Risks
-        //            .Where(type => type.MaintRequestType == maintType)
-        //            );
-
-        //    return riskList;
-        //}
-
-        public IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId)
+        //public IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId)
+        public async Task<List<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId)
         {
-            var riskDataLinks = _requestInitationDBContext.MaintRequestInitiationRisk
-                .Where(i => i.MaintRequestInitiationId == maintReqId).ToList();
+            //var riskDataLinks = _requestInitationDBContext.MaintRequestInitiationRisk
+            //    .Where(i => i.MaintRequestInitiationId == maintReqId).ToList();
 
-            return riskDataLinks;
+            //return riskDataLinks;
+
+            return await _requestInitationDBContext.MaintRequestInitiationRisk
+                .Where(i => i.MaintRequestInitiationId == maintReqId).ToListAsync();
         }
 
         //Get the Risks for the type of request it is General or Plant
@@ -286,13 +280,6 @@ namespace SACOMaintenance.DataAccess
                 riskList = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToList());
             }
         }
-
-
-
-        //void IMaintRequestInitiation.LoadMaintRiskData(int maintReqId)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public void LoadRiskLevel(int maintReqId)
         {

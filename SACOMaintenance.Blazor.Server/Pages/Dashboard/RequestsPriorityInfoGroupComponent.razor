@@ -22,12 +22,13 @@
 </RadzenFieldset>
 
 @code {
+
     public ObservableCollection<MaintRequestInitiation> regs;
     public ObservableCollection<Priority> prios;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        prios = viewMod.GetPriorties();
+        prios = await viewMod.GetPriorties();
     }
 
 }

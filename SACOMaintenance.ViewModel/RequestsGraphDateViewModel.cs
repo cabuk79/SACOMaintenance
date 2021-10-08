@@ -25,9 +25,9 @@ namespace SACOMaintenance.ViewModel
             MaintReqDataProvider = requestDataProvider;
         }
 
-        public void GetRequests()
+        public async void GetRequests()
         {
-            MaintReqs = MaintReqDataProvider.LoadAllRequestInitations();
+            MaintReqs = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadAllRequestInitations());
         }
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)

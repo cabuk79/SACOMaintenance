@@ -32,6 +32,8 @@ namespace SACOMaintenance.Data
         public DbSet<Isolation> Isolations { get; set; }
         public DbSet<MaintReqUptateNote> MaintReqUptateNotes { get; set; }
         public DbSet<AuthorizationRequest> AuthorizationRequests { get; set; }
+        public DbSet<MaintRequestUsersAssigned> MaintReqUsersAssigned { get; set; }
+
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {
@@ -60,8 +62,15 @@ namespace SACOMaintenance.Data
 
             modelBuilder.Entity<MaintRequestInitiation>()
                 .HasMany(r => r.Users)
-                .WithMany(b => b.MaintRequestInitiation)
+                .WithMany(b => b.MaintRequestInitiations)
                 .UsingEntity<AuthorizationRequest>
+                (mr => mr.HasOne<User>().WithMany(),
+                mm => mm.HasOne<MaintRequestInitiation>().WithMany());
+
+            modelBuilder.Entity<MaintRequestInitiation>()
+                .HasMany(r => r.Users)
+                .WithMany(b => b.MaintRequestInitiations)
+                .UsingEntity<MaintRequestUsersAssigned>
                 (mr => mr.HasOne<User>().WithMany(),
                 mm => mm.HasOne<MaintRequestInitiation>().WithMany());
 

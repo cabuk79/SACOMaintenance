@@ -23,17 +23,20 @@ namespace SACOMaintenance.ViewModel
         {
             maintReqDataProvider = MaintReqDataProvider;
 
-            chosenRequest = maintReqDataProvider.GetSingleRequestInitiation(1);
+            //chosenRequest = maintReqDataProvider.GetSingleRequestInitiation(1);
         }
 
-        public void Load()
+       
+        public async Task<ObservableCollection<MaintRequestInitiation>> Load()
         {
-            var requestsList = maintReqDataProvider.LoadAllRequestInitations();
+            var requestsList = await maintReqDataProvider.LoadAllRequestInitations();
             
             foreach(var requestItem in requestsList)
             {
                 MaintRequestsList.Add(requestItem);
             }
+
+            return MaintRequestsList;
         }
 
 

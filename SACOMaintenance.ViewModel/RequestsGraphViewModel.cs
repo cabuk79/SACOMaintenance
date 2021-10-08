@@ -26,22 +26,23 @@ namespace SACOMaintenance.ViewModel
         }
 
       
-        public int GetRequestsByStatusCount(int statusId)
+        public async Task<int> GetRequestsByStatusCount(int statusId)
         {
-            var maintRequests = MaintReqDataProvider.LoadReqBasedOnStatus(statusId);
             MaintReqs.Clear();
+            MaintReqs = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus(statusId));
+        
 
-            foreach(var item in maintRequests)
-            {
-                MaintReqs.Add(item);
-            }
+            //foreach(var item in maintRequests)
+            //{
+            //    MaintReqs.Add(item);
+            //}
 
             return MaintReqs.Count;
         }
 
-        public ObservableCollection<Priority> GetPriorties()
+        public async Task<ObservableCollection<Priority>> GetPriorties()
         {
-            var prios = new ObservableCollection<Priority>(MaintReqDataProvider.LoadAllRequestsPriority().ToList());
+            var prios = new ObservableCollection<Priority>(await MaintReqDataProvider.LoadAllRequestsPriority());
             return prios;
         }
 

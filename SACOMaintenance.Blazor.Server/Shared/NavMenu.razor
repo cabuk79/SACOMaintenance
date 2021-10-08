@@ -13,6 +13,7 @@
             </NavLink>
         </li>
 
+        <AuthorizeView Roles="Administrators">
             @* Requests Menu and Sub Menu *@
             <li class="nav-item dropdown show">
                 <NavLink class="nav-link dropdown-toggle" @onclick="()=>
@@ -24,14 +25,14 @@
             {
                 <li>
                     <ul>
-                        <AuthorizeView Roles="Administrators, Electrical User">
-                            <li class="nav-item px-3">
-                                <NavLink class="nav-link" href="maintrequests-list"
-                                         Match="NavLinkMatch.All">
-                                    <span class="oi oi-book" aria-hidden="true"></span> View Requests
-                                </NavLink>
-                            </li>
-                        </AuthorizeView>
+
+                        <li class="nav-item px-3">
+                            <NavLink class="nav-link" href="maintrequests-list"
+                                     Match="NavLinkMatch.All">
+                                <span class="oi oi-book" aria-hidden="true"></span> View Requests
+                            </NavLink>
+                        </li>
+
                         <li class="nav-item px-3">
                             <NavLink class="nav-link" href="/maint-req/add" Match="NavLinkMatch.All">
                                 <span class="oi oi-plus" aria-hidden="true"></span> Add New Request
@@ -40,78 +41,77 @@
                     </ul>
                 </li>
             }
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="areas" Match="NavLinkMatch.All">
-                <span class="oi oi-map-marker" aria-hidden="true"></span> Areas
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="company-view-edit" Match="NavLinkMatch.All">
-                <span class="fa fa-building" aria-hidden="true"></span> Companies
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="ppe-list" Match="NavLinkMatch.All">
-                <span class="oi oi-shield" aria-hidden="true"></span> PPE
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="fa fa-ambulance" aria-hidden="true"></span> Risks
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="equipmentList" Match="NavLinkMatch.All">
-                <span class="oi oi-wrench" aria-hidden="true"></span> Equipment
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="machinetype-view-edit" Match="NavLinkMatch.All">
-                <span class="oi oi-cog" aria-hidden="true"></span> Machine Type
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="factories-view-edit" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Factories
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="suppliers-list" Match="NavLinkMatch.All">
-                <span class="oi oi-people" aria-hidden="true"></span> Suppliers
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="parts-list" Match="NavLinkMatch.All">
-                <span class="oi oi-wrench" aria-hidden="true"></span> Parts
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="orders-list" Match="NavLinkMatch.All">
-                <span class="oi oi-clipboard" aria-hidden="true"></span> Orders
-            </NavLink>
-        </li>
-        <AuthorizeView Roles="Administrators">
-            @* Settings Menu and Sub Menu *@
-            <li class="nav-item dropdown show">
-                <NavLink class="nav-link dropdown-toggle" @onclick="()=>
-                settingsExpand = !settingsExpand">
-                    <span class="oi oi-book" aria-hidden="true"></span>Settings
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="areas" Match="NavLinkMatch.All">
+                    <span class="oi oi-map-marker" aria-hidden="true"></span> Areas
                 </NavLink>
             </li>
-            @if ((settingsExpand))
-            {
-                <li>
-                    <ul>
-                        <li class="nav-item px-3">
-                            <NavLink class="nav-link" href="administration-viewusers"
-                                     Match="NavLinkMatch.All">
-                                <span class="oi oi-person" aria-hidden="true"></span> Users
-                            </NavLink>
-                        </li>
-                    </ul>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="company-view-edit" Match="NavLinkMatch.All">
+                    <span class="fa fa-building" aria-hidden="true"></span> Companies
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="ppe-list" Match="NavLinkMatch.All">
+                    <span class="oi oi-shield" aria-hidden="true"></span> PPE
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="fa fa-ambulance" aria-hidden="true"></span> Risks
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="equipmentList" Match="NavLinkMatch.All">
+                    <span class="oi oi-wrench" aria-hidden="true"></span> Equipment
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="machinetype-view-edit" Match="NavLinkMatch.All">
+                    <span class="oi oi-cog" aria-hidden="true"></span> Machine Type
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="factories-view-edit" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> Factories
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="suppliers-list" Match="NavLinkMatch.All">
+                    <span class="oi oi-people" aria-hidden="true"></span> Suppliers
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="parts-list" Match="NavLinkMatch.All">
+                    <span class="oi oi-wrench" aria-hidden="true"></span> Parts
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="orders-list" Match="NavLinkMatch.All">
+                    <span class="oi oi-clipboard" aria-hidden="true"></span> Orders
+                </NavLink>
+            </li>
+                @* Settings Menu and Sub Menu *@
+                <li class="nav-item dropdown show">
+                    <NavLink class="nav-link dropdown-toggle" @onclick="()=>
+                settingsExpand = !settingsExpand">
+                        <span class="oi oi-book" aria-hidden="true"></span>Settings
+                    </NavLink>
                 </li>
-            }
-        </AuthorizeView>
+                @if ((settingsExpand))
+                {
+                    <li>
+                        <ul>
+                            <li class="nav-item px-3">
+                                <NavLink class="nav-link" href="administration-viewusers"
+                                         Match="NavLinkMatch.All">
+                                    <span class="oi oi-person" aria-hidden="true"></span> Users
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </li>
+                }
+            </AuthorizeView>
     </ul>
     
 </div>

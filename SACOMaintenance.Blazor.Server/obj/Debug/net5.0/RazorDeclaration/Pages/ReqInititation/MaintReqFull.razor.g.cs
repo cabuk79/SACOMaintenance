@@ -97,6 +97,13 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
 using SACOMaintenance.Common.ModelDB;
 
@@ -126,7 +133,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 166 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 160 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
@@ -156,7 +163,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         CallLoadData();
         if (IsConnected) await SendMessageSingleReq();
         await risksGrid.Reload();
-        InvokeAsync(() => StateHasChanged());
+        await InvokeAsync(() => StateHasChanged());
     }
 
     Task SendMessageSingleReq() => hubConnection.SendAsync("broadcastHub");
@@ -167,7 +174,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     protected override async Task OnInitializedAsync()
     {
-        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+        await maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
         // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
@@ -175,7 +182,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         maintReqInitation.LoadRisks();
 
-        maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
+        await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
         maintReqInitation.LoadIsolations();
         maintReqInitation.LoadIsoaltionsByMaint();
 

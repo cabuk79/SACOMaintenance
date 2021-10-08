@@ -2,6 +2,7 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -31,11 +32,12 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #endregion
 
         #region methods
-        MaintRequestInitiation GetMaintReqInitation(int maintReqId);
+        public Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId);
         //ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId);
         ObservableCollection<Factory> LoadFactories();
 
-        public void LoadMaintRiskData(int maintReqId);
+        //public void LoadMaintRiskData(int maintReqId);
+        public Task<bool> LoadMaintRiskData(int maintReqId);
         public void LoadRisks();
         void ExportRequest();
         public void LoadPPE();

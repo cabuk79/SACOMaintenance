@@ -8,14 +8,15 @@ namespace SACOMaintenance.ViewModel.Interfaces
     {
         #region Properties
 
-        ObservableCollection<MaintRequestInitiation> Requests { get; set; }
+        ObservableCollection<MaintRequestInitiation> Requests { get; }
+        ObservableCollection<MaintRequestInitiation> RequestsOpen { get; }
 
         #endregion
 
         #region Methods
 
-        public Task LoadAllRequestsForUser(string userId);
-
+        Task<ObservableCollection<MaintRequestInitiation>> LoadAllRequestsForUser(string userId);
+        Task<ObservableCollection<MaintRequestInitiation>> LoadallRequestsForUserOpen(string userId);
         #endregion
     }
 }

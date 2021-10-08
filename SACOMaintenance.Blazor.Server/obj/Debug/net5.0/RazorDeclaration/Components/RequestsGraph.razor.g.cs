@@ -97,6 +97,13 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsGraph.razor"
 using System.Globalization;
 
@@ -128,13 +135,13 @@ using System.Globalization;
     public static int onHoldCount;
     public static int cancelledCount;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6);
-        newCount = requestGraphViewModel.GetRequestsByStatusCount(7);
-        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8);
-        onHoldCount = requestGraphViewModel.GetRequestsByStatusCount(11);
-        cancelledCount = requestGraphViewModel.GetRequestsByStatusCount(10);
+        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6).Result;
+        newCount = requestGraphViewModel.GetRequestsByStatusCount(7).Result;
+        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8).Result;
+        onHoldCount = requestGraphViewModel.GetRequestsByStatusCount(11).Result;
+        cancelledCount = requestGraphViewModel.GetRequestsByStatusCount(10).Result;
     }
 
     DataItem[] statusData = new DataItem[]
@@ -170,9 +177,9 @@ using System.Globalization;
 
     public void getStatusCount()
     {
-        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6);
-        newCount = requestGraphViewModel.GetRequestsByStatusCount(7);
-        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8);
+        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6).Result;
+        newCount = requestGraphViewModel.GetRequestsByStatusCount(7).Result;
+        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8).Result;
 
 
         DataItem[] statusData = new DataItem[]

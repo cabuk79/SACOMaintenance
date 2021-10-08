@@ -14,8 +14,6 @@ namespace SACOMaintenance.DataAccess
             _areaDBContext = sacoMaintenanceContext;
         }
 
-        //public SACOMaintenanceContext SacoMaintenanceContext { get; }
-
         public void AddEditArea(AreaModel area)
         {
             _areaDBContext.Areas.Add

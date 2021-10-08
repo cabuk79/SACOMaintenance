@@ -4,8 +4,12 @@
 @inject NavigationManager NavigationManager
 @using SACOMaintenance.Common.ModelDB
 @using Microsoft.AspNetCore.SignalR.Client
-@using SACOMaintenance.Blazor.Server.Data 
-@inject SmsService SmsService  
+@using SACOMaintenance.Blazor.Server.Data
+@inject SmsService SmsService
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@inject UserManager<Common.ModelDB.User> _UserManager
 
 <RadzenNotification></RadzenNotification>
 
@@ -105,10 +109,15 @@
                 </div>
             </RadzenFieldset>
         </div>
-    </div>    
+    </div>
 </div>
 
 @code {
+
+
+    Common.ModelDB.User objUser = new Common.ModelDB.User();
+    string userId { get; set; }
+
 
     private HubConnection hubConnection;
 
@@ -119,6 +128,18 @@
             .Build();
 
         await hubConnection.StartAsync();
+
+        //Get the current logged in users ID
+        var principal = HttpContextAccessor.HttpContext.User;
+        userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        ////Get the full details of the current logged in user from the ID
+        objUser = await _UserManager.FindByIdAsync(userId);
+
+        //Ge tusder full name and avatar
+        userId = objUser.Id;
+
+        AddReqViewModel.MaintReq.UserId = userId;
     }
 
     protected async Task UpdateBook()
@@ -132,11 +153,11 @@
         AddReqViewModel.AddNewRequest();
 
         //Check if the prisority is emergency then send text to let someone know
-        if(AddReqViewModel.PriorityId == 1)
+        if (AddReqViewModel.PriorityId == 1)
         {
             Equipment equipName = AddReqViewModel.Equipment.Where(i => i.Id == AddReqViewModel.MaintReq.EquipmentId).FirstOrDefault();
 
-            if(AddReqViewModel.SendTextMessageForEmergencyPriority == true)
+            if (AddReqViewModel.SendTextMessageForEmergencyPriority == true)
             {
                 string message = "MAINT-" + AddReqViewModel.NewAddedMaintId.ToString("D4") +
                 " has just been added and is either buisness crirtical or danger to life or health.  Please review ASAP!!!\n\n\nEquipment: "

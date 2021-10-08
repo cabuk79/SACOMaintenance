@@ -10,19 +10,20 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IMaintRequestInitiation
     {
-        IEnumerable<MaintRequestInitiation> LoadAllRequestInitations();
-        MaintRequestInitiation GetSingleRequestInitiation(int Id);
+        Task<List<MaintRequestInitiation>> LoadAllRequestInitations();
+        Task<MaintRequestInitiation> GetSingleRequestInitiation(int Id);
         public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
         ObservableCollection<MaintRequestInitiationRisk> risksDataList { get; set; }
-        IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId);
-        IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment();
-        IEnumerable<MaintRequestInitiation> LoadNewRequests();
-        IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen();
-        IEnumerable<MaintRequestInitiation> LoadReqBasedOnStatus(int statusId);
-        ObservableCollection<Priority> LoadAllRequestsPriority();
-        public ObservableCollection<MaintRequestInitiation> LoadReqsByUser(string userId);
+        Task<List<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId);
+        Task<List<MaintRequestInitiation>> LoadRequestInitiationWithEquipment();
+        Task<List<MaintRequestInitiation>> LoadNewRequests();
+        Task<List<MaintRequestInitiation>> LoadReqsAssignedOpen();
+        Task<List<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId);
+        Task<List<MaintRequestInitiation>> LoadReqsByUserOpen(string userId);
+        Task<List<Priority>> LoadAllRequestsPriority();
+        Task<List<MaintRequestInitiation>> LoadReqsByUser(string userId);
         //IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId);
-        public IEnumerable<MaintRequestInitiation> LoadAllRequestsCurrentYear();
+        Task<List<MaintRequestInitiation>> LoadAllRequestsCurrentYear();
 
         public void LoadRiskLevel(int maintReqId);
 
