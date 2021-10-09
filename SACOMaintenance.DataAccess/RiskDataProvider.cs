@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
@@ -29,9 +30,9 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext.SaveChanges();
         }
 
-        public IEnumerable<Risk> LoadallRisks()
+        public async Task<List<Risk>> LoadallRisks()
         {
-            var risks = _sacoMaintenanceContext.Risks.ToList();
+            var risks = await _sacoMaintenanceContext.Risks.ToListAsync();
             return risks;
 
         }

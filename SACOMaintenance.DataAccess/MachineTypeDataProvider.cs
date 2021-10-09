@@ -4,6 +4,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -32,11 +33,11 @@ namespace SACOMaintenance.DataAccess
             _machineTypeDBContext.SaveChanges();
         }
 
-        public IEnumerable<MachineType> LoadAllMachines()
+        public async Task<List<MachineType>> LoadAllMachines()
         {
-            var machines = _machineTypeDBContext.MachineTypes
+            var machines = await _machineTypeDBContext.MachineTypes
                 .Include(eq => eq.EquipmentList)
-                .ToList();
+                .ToListAsync();
             return machines;
         }
 

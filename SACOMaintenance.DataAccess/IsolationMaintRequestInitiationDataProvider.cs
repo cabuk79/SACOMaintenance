@@ -19,21 +19,21 @@ namespace SACOMaintenance.DataAccess
             _maintenanceDBContext = sacoMaintenanceContext;
         }
 
-        public List<Isolation> LoadIsolationsByMaint(int Id)
+        public async Task<List<Isolation>> LoadIsolationsByMaint(int Id)
         {
-            var isolations = _maintenanceDBContext.Isolations
+            var isolations = await _maintenanceDBContext.Isolations
                 .Include(b => b.MaintRequestInitiations.Where(i => i.Id == Id))
-                .ToList();
+                .ToListAsync();
             //var isolations = _maintenanceDBContext.IsolationMaintRequestInitiations
             //    .Where(i => i.MaintReqInitationListId == Id).ToList();
 
             return isolations;
         }
 
-        public List<int> LoadAllIsolationsIds()
+        public async Task<List<int>> LoadAllIsolationsIds()
         {
             List<int> ids = new();
-            var allIsolationIds = _maintenanceDBContext.Isolations.ToList();
+            var allIsolationIds = await _maintenanceDBContext.Isolations.ToListAsync();
             foreach(var item in allIsolationIds)
             {
                 ids.Add(item.Id);

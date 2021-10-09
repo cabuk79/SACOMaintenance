@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
@@ -18,9 +19,9 @@ namespace SACOMaintenance.DataAccess
             _usersContext = usersContext;
         }
 
-        public IEnumerable<User> GetAllUsers()
+        public async Task<List<User>> GetAllUsers()
         {
-            var allUsers = _usersContext.Users.ToList();
+            var allUsers = await _usersContext.Users.ToListAsync();
             return allUsers;
         }
     }

@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
@@ -19,9 +20,9 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintContext = sacoMaintContext;
         }
         
-        public ObservableCollection<Priority> LoadAllPriorities()
+        public async Task<List<Priority>> LoadAllPriorities()
         {
-            var priorities = new ObservableCollection<Priority>(_sacoMaintContext.Priorites.ToList());
+            var priorities = await _sacoMaintContext.Priorites.ToListAsync();
             return priorities;
         }
     }

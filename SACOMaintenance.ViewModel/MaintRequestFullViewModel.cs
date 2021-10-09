@@ -166,9 +166,15 @@ namespace SACOMaintenance.ViewModel
             WordExport.CreateMaintenanceRequestReport(maintReqInitation);
         }
 
-        public void LoadPPE()
+        public async void LoadPPE()
         {
-            Ppe = new ObservableCollection<PPE>(PpeDataProvider.LoadAllPPE());
+            var list = new ObservableCollection<PPE>(await PpeDataProvider.LoadAllPPE());
+            Ppe.Clear();
+
+            foreach(var item in list)
+            {
+                Ppe.Add(item);
+            }
         }
 
         public void LoadIsolations()

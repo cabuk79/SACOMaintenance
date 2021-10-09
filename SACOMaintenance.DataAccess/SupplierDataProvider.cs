@@ -26,9 +26,9 @@ namespace SACOMaintenance.DataAccess
             return postCodes;
         }
 
-        public IEnumerable<Supplier> LoadAllSuppliers()
+        public async Task<List<Supplier>> LoadAllSuppliers()
         {
-            var suppliers = _sacoMaintenanceContext.Suppliers.ToList();
+            var suppliers = await _sacoMaintenanceContext.Suppliers.ToListAsync();
             return suppliers;
         }
 
@@ -49,7 +49,7 @@ namespace SACOMaintenance.DataAccess
             return singlePostCode;
         }
 
-        public IEnumerable<PostCodeTown> LoadAllPostCodes()
+        public async Task<List<PostCodeTown>> LoadAllPostCodes()
         {
             throw new NotImplementedException();
         }

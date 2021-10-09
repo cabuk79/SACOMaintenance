@@ -1,8 +1,10 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -16,17 +18,17 @@ namespace SACOMaintenance.DataAccess
             _ppeDBContext = sacoMaintenanceContext;
         }
 
-        public IEnumerable<PPE> LoadAllPlantPPE(string ppeTypeName)
+        public async Task<List<PPE>> LoadAllPlantPPE(string ppeTypeName)
         {
-            var ppe = _ppeDBContext.PPE.Where(t => t.MaintRequestType == ppeTypeName);
+            var ppe = await _ppeDBContext.PPE.Where(t => t.MaintRequestType == ppeTypeName).ToListAsync();
             return ppe;
         }
 
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
-        public IEnumerable<PPE> LoadAllPPE()
+        public async Task<List<PPE>> LoadAllPPE()
         {
-            var ppe = _ppeDBContext.PPE.ToList();
+            var ppe = await _ppeDBContext.PPE.ToListAsync();
             return ppe;
         }
 
@@ -47,9 +49,9 @@ namespace SACOMaintenance.DataAccess
 
 
 
-        public PPE ViewSinglePPEI(int ppeId)
+        public async Task<PPE> ViewSinglePPEI(int ppeId)
         {
-            var ppe = _ppeDBContext.PPE.FirstOrDefault(i => i.Id == ppeId);
+            var ppe = await _ppeDBContext.PPE.FirstOrDefaultAsync(i => i.Id == ppeId);
             return ppe;
         }
     }

@@ -198,11 +198,12 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     public string colour = "black";
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
 
         GeneralViewModel.maintId = maintReq.Id;
         GeneralViewModel.GetGeneralRequest(maintReq.Id);
+        await GeneralViewModel.LoadAllPPE();
         GeneralViewModel.LoadStartToworkAuth();
         GeneralViewModel.LoadCompletedUser();
 

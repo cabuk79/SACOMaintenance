@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
@@ -19,9 +20,9 @@ namespace SACOMaintenance.DataAccess
             _maintenanceDBContext = sacoMaintenanceContext;
         }
 
-        public IEnumerable<Isolation> LoadAllIsolations()
+        public async Task<List<Isolation>> LoadAllIsolations()
         {
-            var isolations = _maintenanceDBContext.Isolations.ToList();
+            var isolations = await _maintenanceDBContext.Isolations.ToListAsync();
             return isolations;
         }
     }

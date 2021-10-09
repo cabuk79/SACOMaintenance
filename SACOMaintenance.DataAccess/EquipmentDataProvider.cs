@@ -37,23 +37,23 @@ namespace SACOMaintenance.DataAccess
             _equipmentDBContext.SaveChanges();
         }
 
-        public IEnumerable<MaintRequestInitiation> GetMaintReqsForEquipment(int equipmentId)
+        public async Task<List<MaintRequestInitiation>> GetMaintReqsForEquipment(int equipmentId)
         {
-            var requests = _equipmentDBContext.MaintRequestInitiations.Where(e => e.EquipmentId == equipmentId).ToList();
+            var requests = await _equipmentDBContext.MaintRequestInitiations.Where(e => e.EquipmentId == equipmentId).ToListAsync();
             return requests;
         }
 
-        public IEnumerable<Equipment> LoadAllEquipments()
+        public async Task<List<Equipment>> LoadAllEquipments()
         {
-            var equipments = _equipmentDBContext.Equipment
+            var equipments = await _equipmentDBContext.Equipment
                 .Include(mt => mt.MachineType)
-                .ToList();
+                .ToListAsync();
             return equipments;
         }
 
-        public IEnumerable<Equipment> LoadByArea(int areaId)
+        public async Task<List<Equipment>> LoadByArea(int areaId)
         {
-            var equipment = _equipmentDBContext.Equipment.Where(a => a.AreaId == areaId).ToList();
+            var equipment = await _equipmentDBContext.Equipment.Where(a => a.AreaId == areaId).ToListAsync();
             return equipment;
         }
 

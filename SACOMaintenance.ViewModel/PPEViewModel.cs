@@ -62,9 +62,9 @@ namespace SACOMaintenance.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void LoadAllPPE()
+        public async void LoadAllPPE()
         {
-            var list = PPEDataProvider.LoadAllPPE();
+            var list = await PPEDataProvider.LoadAllPPE();
             PPEList.Clear();
             
             foreach(var item in list)

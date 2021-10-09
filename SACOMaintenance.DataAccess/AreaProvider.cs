@@ -3,6 +3,8 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using SACOMaintenance.Common.ModelDB;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -35,15 +37,15 @@ namespace SACOMaintenance.DataAccess
             return area;
         }
 
-        public IEnumerable<AreaModel> LoadAllAreas()
+        public async Task<List<AreaModel>> LoadAllAreas()
         {
-            var areas = _areaDBContext.Areas.ToList();
+            var areas = await _areaDBContext.Areas.ToListAsync();
             return areas;
         }
 
-        public IEnumerable<AreaModel> LoadAreasByFactory(int factoryId)
+        public async Task<List<AreaModel>> LoadAreasByFactory(int factoryId)
         {
-            var areas = _areaDBContext.Areas.Where(f => f.FactoryId == factoryId).ToList();
+            var areas = await _areaDBContext.Areas.Where(f => f.FactoryId == factoryId).ToListAsync();
             return areas;
         }
 

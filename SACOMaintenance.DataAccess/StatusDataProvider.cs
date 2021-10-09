@@ -1,9 +1,11 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -34,9 +36,9 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<Status> LoadAllStatuses()
-        public IEnumerable<Status> LoadAllStatuses()
+        public async Task<List<Status>> LoadAllStatuses()
         {
-            var statusList = _statusDBContext.Statuses.ToList();
+            var statusList = await _statusDBContext.Statuses.ToListAsync();
             return statusList;
         }
     }

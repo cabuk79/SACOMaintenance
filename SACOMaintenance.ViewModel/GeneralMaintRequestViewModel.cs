@@ -39,8 +39,8 @@ namespace SACOMaintenance.ViewModel
             genralRequestInfo = new GeneralRequest();
             AuthrazationReq = new AuthorizationRequest();
             CompletedAuth = new AuthorizationRequest();
-            LoadAllPPE();
-            LoadAllUsers();
+            //LoadAllPPE();
+           // LoadAllUsers();
             //LoadStartToworkAuth();
             //GetGeneralRequest(maintId);
         }
@@ -126,9 +126,17 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        private void LoadAllPPE()
+        public async Task<bool> LoadAllPPE()
         {
-            ppeList = new ObservableCollection<PPE>(PpeDataProvider.LoadAllPPE());
+            var list = new ObservableCollection<PPE>(await PpeDataProvider.LoadAllPPE());
+            ppeList.Clear();
+
+            foreach(var item in list)
+            {
+                ppeList.Add(item);
+            }
+
+            return true;
         }
 
         public void LoadAllUsers()
@@ -136,9 +144,11 @@ namespace SACOMaintenance.ViewModel
             Users = new ObservableCollection<User>(UsersDataProvider.GetAllUsers());
         }
 
-        public void GetGeneralRequest(int maintId)
+        public async Task<GeneralRequest> GetGeneralRequest(int maintId)
         {
-            genralRequestInfo = _generalREquestDataProvider.GetSingalGeneralRequestInfo(maintId);
+            var req = await _generalREquestDataProvider.GetSingalGeneralRequestInfo(maintId);
+            genralRequestInfo = req;
+            return genralRequestInfo;
         }
 
 

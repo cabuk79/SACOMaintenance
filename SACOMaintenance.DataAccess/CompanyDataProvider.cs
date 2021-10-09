@@ -4,6 +4,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -19,9 +20,9 @@ namespace SACOMaintenance.DataAccess
 
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
-        public IEnumerable<Company> LoadCompanies()
+        public async Task<List<Company>> LoadCompanies()
         {
-            var companies = _companyDBContext.Companies.ToList();
+            var companies = await _companyDBContext.Companies.ToListAsync();
             return companies;
         }
 

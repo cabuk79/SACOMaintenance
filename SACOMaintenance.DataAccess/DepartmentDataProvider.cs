@@ -17,9 +17,9 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        public IEnumerable<Department> LoadAllDepartments()
+        public async Task<List<Department>> LoadAllDepartments()
         {
-            var departments = _sacoMaintenanceContext.Departments.ToList();
+            var departments = await await _sacoMaintenanceContext.Departments.ToListAsync();
             return departments;
         }
 
