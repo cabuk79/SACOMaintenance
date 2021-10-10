@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
@@ -60,15 +61,15 @@ namespace SACOMaintenance.DataAccess
             throw new NotImplementedException();
         }
 
-        public PlantRequest GetSignalPlantRequestInfo(int Id)
+        public async Task<PlantRequest> GetSignalPlantRequestInfo(int Id)
         {
-            var plantRequest = _areaDBContext.PlantRequests.FirstOrDefault(i => i.Id == Id);
+            var plantRequest = await _areaDBContext.PlantRequests.FirstOrDefaultAsync(i => i.Id == Id);
             return plantRequest;
         }
 
-        public PlantRequest GetSinalPlantRequestInfo(int Id)
+        public async Task<PlantRequest> GetSinalPlantRequestInfo(int Id)
         {
-            var plantRequest = _areaDBContext.PlantRequests.FirstOrDefault(i => i.MaintRequestId == Id);
+            var plantRequest = await _areaDBContext.PlantRequests.FirstOrDefaultAsync(i => i.MaintRequestId == Id);
             return plantRequest;
         }
     }

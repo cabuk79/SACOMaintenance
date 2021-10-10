@@ -57,12 +57,12 @@ namespace SACOMaintenance.DataAccess
             return equipment;
         }
 
-        public Equipment ViewSingleEquipment(int equipmentId)
+        public async Task<Equipment> ViewSingleEquipment(int equipmentId)
         {
-            var equipment = _equipmentDBContext.Equipment
+            var equipment = await _equipmentDBContext.Equipment
                 .Where(i => i.Id == equipmentId)
                 .Include(p => p.Parts)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             return equipment;
         }
     }

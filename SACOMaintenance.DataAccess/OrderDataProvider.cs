@@ -27,9 +27,9 @@ namespace SACOMaintenance.DataAccess
             return orders;
         }
 
-        public Order LoadSingleOrder(int Id)
+        public async Task<Order> LoadSingleOrder(int Id)
         {
-            var order = _sacoMaintenanceContext.Orders.FirstOrDefault(o => o.Id == Id);
+            var order = await _sacoMaintenanceContext.Orders.FirstOrDefaultAsync(o => o.Id == Id);
             return order;
         }
     }

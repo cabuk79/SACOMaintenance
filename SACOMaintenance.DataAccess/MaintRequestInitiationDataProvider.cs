@@ -269,15 +269,15 @@ namespace SACOMaintenance.DataAccess
         }
 
         //Get the Risks for the type of request it is General or Plant
-        public void LoadRisksByMaintType(string maintType)
+        public async Task<List<Risk>> LoadRisksByMaintType (string maintType)
         {
             if(maintType == "Plant")
             {
-                riskList = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.ToList());
+                return await _requestInitationDBContext.Risks.ToListAsync();
             }
             else
             {
-                riskList = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToList());
+                return await _requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToListAsync();
             }
         }
 

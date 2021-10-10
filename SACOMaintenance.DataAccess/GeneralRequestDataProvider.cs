@@ -1,7 +1,8 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.DataAccess
 {
@@ -50,9 +51,9 @@ namespace SACOMaintenance.DataAccess
             
         }
 
-        public GeneralRequest GetSingalGeneralRequestInfo(int maintReqId)
+        public async Task<GeneralRequest> GetSingalGeneralRequestInfo(int maintReqId)
         {
-            var generalRequest = _sacoMaintenanceContext.GeneralRequests.FirstOrDefault(i => i.MaintRequestId == maintReqId);
+            var generalRequest = await _sacoMaintenanceContext.GeneralRequests.FirstOrDefaultAsync(i => i.MaintRequestId == maintReqId);
             return generalRequest;
         }
     }

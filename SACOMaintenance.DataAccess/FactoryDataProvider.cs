@@ -43,12 +43,12 @@ namespace SACOMaintenance.DataAccess
 
         
 
-        public Factory ViewSingleFactory(int Id)
+        public async Task<Factory> ViewSingleFactory(int Id)
         {
-            var factory = _factoryDBContext.Factories
+            var factory = await _factoryDBContext.Factories
                 .Where(i => i.Id == Id)
                 .Include(a => a.Areas)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             return factory;
 
         }

@@ -19,10 +19,10 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        public PostCodeTown LoadPostCodesByRef(string postCode)
+        public async Task<PostCodeTown> LoadPostCodesByRef(string postCode)
         {
-            var postCodes = _sacoMaintenanceContext.PostCodeTowns
-                .Where(pc => pc.PostCode == postCode).FirstOrDefault();
+            var postCodes = await _sacoMaintenanceContext.PostCodeTowns
+                .Where(pc => pc.PostCode == postCode).FirstOrDefaultAsync();
             return postCodes;
         }
 
@@ -32,20 +32,20 @@ namespace SACOMaintenance.DataAccess
             return suppliers;
         }
 
-        public Supplier LoadSingleSupplier(int Id)
+        public async Task<Supplier> LoadSingleSupplier(int Id)
         {
-            var singleSupplier = _sacoMaintenanceContext.Suppliers
+            var singleSupplier = await _sacoMaintenanceContext.Suppliers
                 .Where(i => i.Id == Id)
                 .Include(sp => sp.SupplierParts)
                 .Include(pc => pc.Postcode)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             
             return singleSupplier;
         }
 
-        public PostCodeTown GetPostCode(string postCode)
+        public async Task<PostCodeTown> GetPostCode(string postCode)
         {
-            var singlePostCode = _sacoMaintenanceContext.PostCodeTowns.Where(code => code.PostCode == postCode).FirstOrDefault();
+            var singlePostCode = await _sacoMaintenanceContext.PostCodeTowns.Where(code => code.PostCode == postCode).FirstOrDefaultAsync();
             return singlePostCode;
         }
 

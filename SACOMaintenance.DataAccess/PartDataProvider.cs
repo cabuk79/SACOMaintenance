@@ -19,14 +19,14 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        public Part GetSinglePartAndSuppliers(int Id)
+        public async Task<Part> GetSinglePartAndSuppliers(int Id)
         {
-            var singlePart = _sacoMaintenanceContext.Parts
+            var singlePart = await _sacoMaintenanceContext.Parts
                 .Where(i => i.Id == Id)
                 .Include(s => s.SupplierParts)
                 .Include(d => d.Drawings)
                 .Include(e => e.Equipment)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             return singlePart;
         }
 

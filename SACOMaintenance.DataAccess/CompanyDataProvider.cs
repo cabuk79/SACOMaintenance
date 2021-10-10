@@ -26,14 +26,14 @@ namespace SACOMaintenance.DataAccess
             return companies;
         }
 
-        public Company LoadSingleCompany(int Id)
+        public async Task<Company> LoadSingleCompany(int Id)
         {
-            var company = _companyDBContext.Companies
+            var company = await _companyDBContext.Companies
                 .Where(i => i.Id == Id)
                 .Include(c => c.MaintenanceRequestIniations)
                 .ThenInclude(a => a.Area)
                 .Include(f => f.MaintenanceRequestIniations).ThenInclude(f => f.Factory)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             return company;
         }
 

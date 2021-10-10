@@ -31,9 +31,9 @@ namespace SACOMaintenance.DataAccess
             _areaDBContext.SaveChanges();
         }
 
-        public AreaModel FindAreaByName(string areaName)
+        public async Task<AreaModel> FindAreaByName(string areaName)
         {
-            var area = _areaDBContext.Areas.FirstOrDefault(n => n.AreaName == areaName);
+            var area = await _areaDBContext.Areas.FirstOrDefaultAsync(n => n.AreaName == areaName);
             return area;
         }
 
@@ -49,9 +49,9 @@ namespace SACOMaintenance.DataAccess
             return areas;
         }
 
-        public AreaModel LoadSingleArea(int Id)
+        public async Task<AreaModel> LoadSingleArea(int Id)
         {
-            var area = _areaDBContext.Areas.FirstOrDefault(i => i.Id == Id);
+            var area = await _areaDBContext.Areas.FirstOrDefaultAsync(i => i.Id == Id);
             return area;
         }
 

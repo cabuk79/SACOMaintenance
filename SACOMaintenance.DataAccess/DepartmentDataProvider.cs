@@ -1,4 +1,5 @@
-﻿using SACOMaintenance.Common.ModelDB;
+﻿using Microsoft.EntityFrameworkCore;
+using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System;
@@ -19,13 +20,13 @@ namespace SACOMaintenance.DataAccess
 
         public async Task<List<Department>> LoadAllDepartments()
         {
-            var departments = await await _sacoMaintenanceContext.Departments.ToListAsync();
+            var departments = await _sacoMaintenanceContext.Departments.ToListAsync();
             return departments;
         }
 
-        public Department LoadSingleDepartment(int Id)
+        public async Task<Department> LoadSingleDepartment(int Id)
         {
-            var department = _sacoMaintenanceContext.Departments.FirstOrDefault(d => d.Id == Id);
+            var department = await _sacoMaintenanceContext.Departments.FirstOrDefaultAsync(d => d.Id == Id);
             return department;
         }
     }

@@ -21,10 +21,10 @@ namespace SACOMaintenance.DataAccess
             _sacoContext = sacoContext;
         }
     
-        public AuthorizationRequest FindAuthorizationByReqAndUser(string userId, int maintReqId)
+        public async Task<AuthorizationRequest> FindAuthorizationByReqAndUser(string userId, int maintReqId)
         {
-            var auth = _sacoContext.AuthorizationRequests
-                            .FirstOrDefault(i => i.UserId == userId && i.MaintRequestInitiationId == maintReqId);
+            var auth = await _sacoContext.AuthorizationRequests
+                            .FirstOrDefaultAsync(i => i.UserId == userId && i.MaintRequestInitiationId == maintReqId);
 
             return auth;
         }

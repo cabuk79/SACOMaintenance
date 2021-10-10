@@ -29,9 +29,9 @@ namespace SACOMaintenance.DataAccess
             );
         }
 
-        public Status GetSingleStatus(int Id)
+        public async Task<Status> GetSingleStatus(int Id)
         {
-            var status = SacoMaintenanceContext.Statuses.FirstOrDefault(i => i.Id == Id);
+            var status = await SacoMaintenanceContext.Statuses.FirstOrDefaultAsync(i => i.Id == Id);
             return status;
         }
 

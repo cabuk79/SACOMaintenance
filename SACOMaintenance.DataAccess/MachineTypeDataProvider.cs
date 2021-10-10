@@ -41,9 +41,9 @@ namespace SACOMaintenance.DataAccess
             return machines;
         }
 
-        public MachineType ViewSingleMachineType(int machineTypeId)
+        public async Task<MachineType> ViewSingleMachineType(int machineTypeId)
         {
-            var machineType = _machineTypeDBContext.MachineTypes.FirstOrDefault(i => i.Id == machineTypeId);
+            var machineType = await _machineTypeDBContext.MachineTypes.FirstOrDefaultAsync(i => i.Id == machineTypeId);
             return machineType;
         }
     }

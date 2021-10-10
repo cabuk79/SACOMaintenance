@@ -37,9 +37,9 @@ namespace SACOMaintenance.DataAccess
 
         }
 
-        public Risk ViewSingleRisk(int riskId)
+        public async Task<Risk> ViewSingleRisk(int riskId)
         {
-            var risk = _sacoMaintenanceContext.Risks.FirstOrDefault(i => i.Id == riskId);
+            var risk = await _sacoMaintenanceContext.Risks.FirstOrDefaultAsync(i => i.Id == riskId);
             return risk;
         }
     }
