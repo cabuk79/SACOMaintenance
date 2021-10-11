@@ -2,6 +2,7 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -21,6 +22,6 @@ namespace SACOMaintenance.ViewModel.Interfaces
         void AddNewArea(AreaModel areaToAdd);
         void Load();
         void SaveArea(AreaModel area);
-        AreaModel LoadSingleArea(int areaId);
+       Task<AreaModel> LoadSingleArea(int areaId);
     }
 }

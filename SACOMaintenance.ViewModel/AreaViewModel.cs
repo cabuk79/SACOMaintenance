@@ -44,7 +44,7 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        async Task<AreaModel> LoadSingleArea(int areaId)
+        public async Task<AreaModel> LoadSingleArea(int areaId)
         {
             area = await AreaDataProvider.LoadSingleArea(areaId);
             return area;

@@ -18,11 +18,11 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public IPriorities PriorityDataProvider { get; }
         
 
-        public IEnumerable<AreaModel> Areas { get; set; }
-        public IEnumerable<Factory> Factories { get; }
-        public IEnumerable<Equipment> Equipment { get; set; }
-        public IEnumerable<Priority> Priorities { get; set; }
-        public IEnumerable<Company> Companies { get; set; }
+        public ObservableCollection<AreaModel> Areas { get; set; }
+        public ObservableCollection<Factory> Factories { get; }
+        public ObservableCollection<Equipment> Equipment { get; set; }
+        public ObservableCollection<Priority> Priorities { get; set; }
+        public ObservableCollection<Company> Companies { get; set; }
         
 
         public MaintRequestInitiation MaintReq { get; set; }

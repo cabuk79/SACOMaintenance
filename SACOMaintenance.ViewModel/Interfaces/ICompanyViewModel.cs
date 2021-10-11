@@ -2,6 +2,7 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -20,7 +21,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region Methods
         void AddNewCompany(Company company);
         void LoadAllCompanies();
-        Company LoadSingleCompany(int CompanyId);
+        Task<Company> LoadSingleCompany(int CompanyId);
         void UpdateCompany(Company company);
         #endregion
 

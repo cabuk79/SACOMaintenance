@@ -69,7 +69,7 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        async Task<Company> LoadSingleCompany(int CompanyId)
+        public async Task<Company> LoadSingleCompany(int CompanyId)
         {
             company = await CompanyDataProvider.LoadSingleCompany(CompanyId);
             maintRegs = new ObservableCollection<MaintRequestInitiation>(company.MaintenanceRequestIniations);

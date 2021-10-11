@@ -2,6 +2,7 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -19,7 +20,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region Methods
         void AddNewMachineType(MachineType machineType);
         void LoadAllMachineTypes();
-        MachineType LoadSingleMachineType(int machineTypeId);
+        Task<MachineType> LoadSingleMachineType(int machineTypeId);
         void UpdateMachineType(MachineType machineType);
         #endregion
 

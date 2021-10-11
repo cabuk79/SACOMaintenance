@@ -34,7 +34,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region methods
         public Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId);
         //ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId);
-        ObservableCollection<Factory> LoadFactories();
+        Task<ObservableCollection<Factory>> LoadFactories();
 
         //public void LoadMaintRiskData(int maintReqId);
         public Task<bool> LoadMaintRiskData(int maintReqId);

@@ -20,7 +20,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public AuthorizationRequest CompletedAuth { get; set; }
         public IUsers UsersDataProvider { get; set; }
         public IAuthorization AuthrizationDataProvider { get; }
-        public void GetGeneralRequest(int maintId);
+        Task<GeneralRequest> GetGeneralRequest(int maintId);
         public void LoadAllUsers();
         public void AddNewAuthrization(string status, string type);
         public void LoadStartToworkAuth();

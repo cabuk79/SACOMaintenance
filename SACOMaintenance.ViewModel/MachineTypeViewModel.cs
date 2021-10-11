@@ -81,7 +81,7 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        async Task<MachineType> LoadSingleMachineType(int machineTypeId)
+        public async Task<MachineType> LoadSingleMachineType(int machineTypeId)
         {
             machineType = await MachineTypeDataProvider.ViewSingleMachineType(machineTypeId);
             return machineType;

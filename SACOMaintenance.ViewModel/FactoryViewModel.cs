@@ -74,7 +74,7 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        async Task<Factory> LoadSingleFactory(int factoryId)
+        public async Task<Factory> LoadSingleFactory(int factoryId)
         {
             factory = await FactoryDataProvider.ViewSingleFactory(factoryId);
             return factory;

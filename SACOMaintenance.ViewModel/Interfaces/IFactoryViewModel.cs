@@ -2,6 +2,7 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -21,7 +22,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         void AddNewFactory(Factory factory);
         void Load();
         void UpdateFactory(Factory factory);
-        Factory LoadSingleFactory(int factoryId);
+        Task<Factory> LoadSingleFactory(int factoryId);
 
         event PropertyChangedEventHandler Propertychanged;
     }
