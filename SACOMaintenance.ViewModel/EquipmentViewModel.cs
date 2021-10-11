@@ -33,19 +33,19 @@ namespace SACOMaintenance.ViewModel
             //LoadAllEquipmentAndFactories(EquipmentId);
         }
 
-        public void LoadEquipment(int EquipmentId)
+        public async void LoadEquipment(int EquipmentId)
         {
-            equipment = EquipmentDataProvider.ViewSingleEquipment(EquipmentId);
+            equipment = await EquipmentDataProvider.ViewSingleEquipment(EquipmentId);
         }
 
-        public void LoadAllEquipmentAndFactories(int equipmentId)
+        public async void LoadAllEquipmentAndFactories(int equipmentId)
         {
             var equipmentList = EquipmentDataProvider
                 .ViewSingleEquipment(EquipmentId);
 
             //Load all the maintenance request for the chosen piece of equipment
-            var requestsList = EquipmentDataProvider
-                .GetMaintReqsForEquipment(EquipmentId);
+            var requestsList = new ObservableCollection<MaintRequestInitiation>(await  EquipmentDataProvider
+                .GetMaintReqsForEquipment(EquipmentId));
 
             maintReqsList.Clear();
 

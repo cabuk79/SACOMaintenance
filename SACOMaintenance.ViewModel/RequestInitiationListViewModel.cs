@@ -59,7 +59,7 @@ namespace SACOMaintenance.ViewModel
                 requests.Add(item);
             }
 
-            var statusLists = StatusDataProvider.LoadAllStatuses();
+            var statusLists = new ObservableCollection<Status>(await StatusDataProvider.LoadAllStatuses());
             
             foreach(var statusItem in statusLists)
             {

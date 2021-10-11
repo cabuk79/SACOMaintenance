@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
@@ -69,9 +70,9 @@ namespace SACOMaintenance.ViewModel
             throw new NotImplementedException();
         }
 
-        public void LoadAllMachineTypes()
+        public async void LoadAllMachineTypes()
         {
-            var machineList = MachineTypeDataProvider.LoadAllMachines();
+            var machineList = new ObservableCollection<MachineType>(await MachineTypeDataProvider.LoadAllMachines());
             machinesTypes.Clear();
 
             foreach(var machineTypeItem in machineList)
@@ -80,9 +81,9 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public MachineType LoadSingleMachineType(int machineTypeId)
+        async Task<MachineType> LoadSingleMachineType(int machineTypeId)
         {
-            machineType = MachineTypeDataProvider.ViewSingleMachineType(machineTypeId);
+            machineType = await MachineTypeDataProvider.ViewSingleMachineType(machineTypeId);
             return machineType;
         }
 

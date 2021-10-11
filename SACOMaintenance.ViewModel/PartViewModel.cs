@@ -25,9 +25,9 @@ namespace SACOMaintenance.ViewModel
             PartDataProvider = partDataProvider;
         }
 
-        public void LoadAllParts()
+        public async void LoadAllParts()
         {
-            var partsList = PartDataProvider.LoadAllPArts();
+            var partsList = new ObservableCollection<Part>(await PartDataProvider.LoadAllPArts());
             parts.Clear();
 
             foreach(var partItem in partsList)
@@ -43,10 +43,10 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void LoadSinglePart(int Id)
+        public async void LoadSinglePart(int Id)
         {
-            SelectedPart = PartDataProvider.GetSinglePartAndSuppliers(Id);
-            var allSuppliers = PartDataProvider.LoadAllSuppliers();
+            SelectedPart = await PartDataProvider.GetSinglePartAndSuppliers(Id);
+            var allSuppliers = new ObservableCollection<Supplier>(await PartDataProvider.LoadAllSuppliers());
             suppliers.Clear();
 
             foreach(var supplierItem in allSuppliers)

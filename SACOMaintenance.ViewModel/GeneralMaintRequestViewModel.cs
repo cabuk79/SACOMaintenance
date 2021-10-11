@@ -108,18 +108,18 @@ namespace SACOMaintenance.ViewModel
             AuthrizationDataProvider.AddNewAuthorization(completedAuth);
         }
 
-        public void LoadStartToworkAuth()
+        public async void LoadStartToworkAuth()
         {
-            AuthrazationReq = AuthrizationDataProvider.FindAuthorizationByReqAndUser(UserAuthIdStartWork, maintId);
+            AuthrazationReq = await AuthrizationDataProvider.FindAuthorizationByReqAndUser(UserAuthIdStartWork, maintId);
             if(AuthrazationReq == null)
             {
                 AuthrazationReq = new AuthorizationRequest();
             }
         }
 
-        public void LoadCompletedUser()
+        public async void LoadCompletedUser()
         {
-            CompletedAuth = AuthrizationDataProvider.FindAuthorizationByReqAndUser(MaintenanceUserCompletedId, maintId);
+            CompletedAuth = await AuthrizationDataProvider .FindAuthorizationByReqAndUser(MaintenanceUserCompletedId, maintId);
             if(CompletedAuth == null)
             {
                 CompletedAuth = new AuthorizationRequest();
@@ -139,9 +139,9 @@ namespace SACOMaintenance.ViewModel
             return true;
         }
 
-        public void LoadAllUsers()
+        public async void LoadAllUsers()
         {
-            Users = new ObservableCollection<User>(UsersDataProvider.GetAllUsers());
+            Users = new ObservableCollection<User>(await UsersDataProvider.GetAllUsers());
         }
 
         public async Task<GeneralRequest> GetGeneralRequest(int maintId)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using EmployeeManager.ViewModel.Command;
@@ -25,14 +26,14 @@ namespace SACOMaintenance.ViewModel
 
         public MaintRequestInitiation MaintReq { get; set; }
 
-        public IEnumerable<AreaModel> Areas { get; set; }
+        public ObservableCollection<AreaModel> Areas { get; set; }
 
 
-        public IEnumerable<Factory> Factories { get; set; }
+        public ObservableCollection<Factory> Factories { get; set; }
         public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
-        public IEnumerable<Equipment> Equipment { get; set; }
-        public IEnumerable<Priority> Priorities { get; set; }
-        public IEnumerable<Company> Companies { get; set; }
+        public ObservableCollection<Equipment> Equipment { get; set; }
+        public ObservableCollection<Priority> Priorities { get; set; }
+        public ObservableCollection<Company> Companies { get; set; }
         public bool SendTextMessageForEmergencyPriority { get; set; }
 
         public int NewAddedMaintId { get; set; }
@@ -131,7 +132,7 @@ namespace SACOMaintenance.ViewModel
             CompanyDataProvider = companyProvider;
 
             // Areas = AreaDataProvider.LoadAllAreas();
-            Factories = FactoryDataProvider.LoadAllFactories();
+            Factories = new ObservableCollection<Factory>((IEnumerable<Factory>)FactoryDataProvider.LoadAllFactories());
             //Equipment = EquipmentDataProvider.LoadAllEquipments();
             LoadPriorities();
             LoadCompanies();
@@ -158,29 +159,29 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void LoadFactoriesByCompany()
+        public async void LoadFactoriesByCompany()
         {
-            Factories = FactoryDataProvider.LoadAllFactories();
+            Factories = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
         }
 
-        public void LoadAreasByFactory()
+        public async void LoadAreasByFactory()
         {
-            Areas = AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId);
+            Areas = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId));
         }
 
-        private void LoadEquipmentByArea()
+        private async void LoadEquipmentByArea()
         {
-            Equipment = EquipmentDataProvider.LoadByArea(MaintReq.AreaId);
+            Equipment = new ObservableCollection<Equipment>(await EquipmentDataProvider.LoadByArea(MaintReq.AreaId));
         }
 
-        public void LoadCompanies()
+        public async void LoadCompanies()
         {
-            Companies = CompanyDataProvider.LoadCompanies();
+            Companies = new ObservableCollection<Company>(await CompanyDataProvider.LoadCompanies());
         }
 
-        public void LoadPriorities()
+        public async void LoadPriorities()
         {
-            Priorities = PriorityDataProvider.LoadAllPriorities();
+            Priorities = new ObservableCollection<Priority>(await PriorityDataProvider.LoadAllPriorities());
         }
     }
 }

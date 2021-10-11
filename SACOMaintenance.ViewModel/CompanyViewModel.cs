@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
@@ -57,9 +58,9 @@ namespace SACOMaintenance.ViewModel
             
         }
 
-        public void LoadAllCompanies()
+        public async void LoadAllCompanies()
         {
-            var companyList = CompanyDataProvider.LoadCompanies();
+            var companyList = new ObservableCollection<Company>(await CompanyDataProvider.LoadCompanies());
             companies.Clear();
 
             foreach (var companyItem in companyList)
@@ -68,9 +69,9 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public Company LoadSingleCompany(int CompanyId)
+        async Task<Company> LoadSingleCompany(int CompanyId)
         {
-            company = CompanyDataProvider.LoadSingleCompany(CompanyId);
+            company = await CompanyDataProvider.LoadSingleCompany(CompanyId);
             maintRegs = new ObservableCollection<MaintRequestInitiation>(company.MaintenanceRequestIniations);
             return company;
         }

@@ -142,20 +142,20 @@ namespace SACOMaintenance.ViewModel
             return true;
         }
 
-        public ObservableCollection<Factory> LoadFactories()
+        public async Task<ObservableCollection<Factory>> LoadFactories()
         {
-            FactoriesList = new ObservableCollection<Factory>(FactoryDataProvider.LoadAllFactories());
+            FactoriesList = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
             return FactoriesList;
         }
 
-        public void LoadAllUsers()
+        public async void LoadAllUsers()
         {
-            Users = new ObservableCollection<User>(UsersDataProvider.GetAllUsers());
+            Users = new ObservableCollection<User>(await UsersDataProvider.GetAllUsers());
         }
 
-        public void LoadRisks()
+        public async void LoadRisks()
         {
-            Risks = new ObservableCollection<Risk>(RiskDataProvider.LoadallRisks());
+            Risks = new ObservableCollection<Risk>(await RiskDataProvider.LoadallRisks());
         }
 
         public void ExportRequest()
@@ -177,20 +177,20 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public void LoadIsolations()
+        public  async void LoadIsolations()
         {
-            Isolations = new ObservableCollection<Isolation>(IsolationsDataProvider.LoadAllIsolations());
+            Isolations = new ObservableCollection<Isolation>(await IsolationsDataProvider .LoadAllIsolations());
         }
 
-        public void LoadIsoaltionsByMaint()
+        public async void LoadIsoaltionsByMaint()
         {
             AllIsolationIds.Clear();
 
-            AllIsolationIds = IsolationMaintReqDataProvider.LoadAllIsolationsIds();
+            AllIsolationIds = await IsolationMaintReqDataProvider.LoadAllIsolationsIds();
 
             SelectedIsolationIds.Clear();
 
-            IsolationByRequest = new ObservableCollection<Isolation>(IsolationMaintReqDataProvider.LoadIsolationsByMaint(maintReqId));
+            IsolationByRequest = new ObservableCollection<Isolation>(await IsolationMaintReqDataProvider.LoadIsolationsByMaint(maintReqId));
             
             foreach(var item in IsolationByRequest)
             {

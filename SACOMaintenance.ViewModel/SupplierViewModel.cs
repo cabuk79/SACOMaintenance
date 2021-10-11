@@ -29,9 +29,9 @@ namespace SACOMaintenance.ViewModel
             NewSupplier.Postcode = new();
         }
 
-        public void LoadAllSuppliers()
+        public async void LoadAllSuppliers()
         {
-            var suppliersList = SupplierDataProvider.LoadAllSuppliers();
+            var suppliersList = new ObservableCollection<Supplier>(await SupplierDataProvider.LoadAllSuppliers());
             suppliers.Clear();
 
             foreach (var supplierItem in suppliersList)
@@ -40,17 +40,17 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public void postcodefound (string value, string newEdit)
+        public async void postcodefound (string value, string newEdit)
         {
            // var postcode = SupplierDataProvider.LoadPostCodesByRef(value);
             if(newEdit == "Edit")
             {
-                SelectedSupplier.Postcode = SupplierDataProvider.GetPostCode(value);
+                SelectedSupplier.Postcode = await SupplierDataProvider.GetPostCode(value);
                 if (SelectedSupplier.Postcode == null) { SelectedSupplier.Postcode = new PostCodeTown(); }
             }
             else if(newEdit == "New")
             {
-                NewSupplier.Postcode = SupplierDataProvider.GetPostCode(value);
+                NewSupplier.Postcode = await SupplierDataProvider.GetPostCode(value);
                 if (NewSupplier.Postcode == null) { NewSupplier.Postcode = new PostCodeTown(); }
             }
             
@@ -65,9 +65,9 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void GetSingleSupplier(int Id)
+        public async void GetSingleSupplier(int Id)
         {
-            SelectedSupplier = SupplierDataProvider.LoadSingleSupplier(Id);
+            SelectedSupplier = await SupplierDataProvider .LoadSingleSupplier(Id);
 
         }
 

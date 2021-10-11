@@ -270,9 +270,9 @@ namespace SACOMaintenance.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void LoadAll(int id)
+        public async void LoadAll(int id)
         {
-            plantRequest = PlantDataProvider.GetSinalPlantRequestInfo(id);
+            plantRequest = await PlantDataProvider.GetSinalPlantRequestInfo(id);
             if(plantRequest == null)
             {
                 plantRequest = new PlantRequest();

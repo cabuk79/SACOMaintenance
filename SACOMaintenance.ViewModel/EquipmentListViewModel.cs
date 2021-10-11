@@ -20,9 +20,9 @@ namespace SACOMaintenance.ViewModel
             LoadAllEquipment();
         }
 
-        public void LoadAllEquipment()
+        public async void LoadAllEquipment()
         {
-            var equipList = EquipmentDataProvider.LoadAllEquipments();
+            var equipList = new ObservableCollection<Equipment>(await EquipmentDataProvider.LoadAllEquipments());
             EquipmentList.Clear();
 
             foreach(var item in equipList)

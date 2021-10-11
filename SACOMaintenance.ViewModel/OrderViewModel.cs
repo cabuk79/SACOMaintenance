@@ -24,9 +24,9 @@ namespace SACOMaintenance.ViewModel
 
         public ObservableCollection<Order> Orders { get; } = new();
 
-        public void LoadAllOrders()
+        public async void LoadAllOrders()
         {
-            var orderLists = OrderDataProvider.LoadAllOrders();
+            var orderLists = new ObservableCollection<Order>(await OrderDataProvider.LoadAllOrders());
             Orders.Clear();
 
             foreach(var item in orderLists)

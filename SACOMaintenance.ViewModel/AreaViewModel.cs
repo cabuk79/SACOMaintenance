@@ -4,6 +4,7 @@ using SACOMaintenance.ViewModel.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -24,9 +25,9 @@ namespace SACOMaintenance.ViewModel
             Load(); 
         }
 
-        public void Load()
+        public async void Load()
         {
-            var areasList = AreaDataProvider.LoadAllAreas();
+            var areasList = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAllAreas());
             areas.Clear();
 
             foreach (var areaItem in areasList)
@@ -34,7 +35,7 @@ namespace SACOMaintenance.ViewModel
                 areas.Add(areaItem);
             }
 
-            var factoriesList = factoryDataProvider.LoadAllFactories();
+            var factoriesList = new ObservableCollection<Factory>(await factoryDataProvider.LoadAllFactories());            
             factories.Clear();
 
             foreach (var factoryItem in factoriesList)
@@ -43,9 +44,9 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        AreaModel IAreaViewModel.LoadSingleArea(int areaId)
+        async Task<AreaModel> LoadSingleArea(int areaId)
         {
-            area = AreaDataProvider.LoadSingleArea(areaId);
+            area = await AreaDataProvider.LoadSingleArea(areaId);
             return area;
         }
 
@@ -113,9 +114,9 @@ namespace SACOMaintenance.ViewModel
             AreaDataProvider.UpdateArea(area);
         }
 
-        public void AddNewArea(AreaModel areaToAdd) //string areaName)
+        public async void AddNewArea(AreaModel areaToAdd) //string areaName)
         {
-            AreaModel areaExists = AreaDataProvider.FindAreaByName(areaToAdd.AreaName); // areaName);
+            AreaModel areaExists = await AreaDataProvider.FindAreaByName(areaToAdd.AreaName); // areaName);
 
             if (areaExists == null)
             {
