@@ -9,8 +9,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IFactory
     {
-        IEnumerable<Factory> LoadAllFactories();
-        Factory ViewSingleFactory(int Id);
+        Task<List<Factory>> LoadAllFactories();
+        Task<Factory> ViewSingleFactory(int Id);
         void AddEditFactory(Factory factory);
     }
 }

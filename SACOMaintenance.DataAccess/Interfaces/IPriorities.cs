@@ -10,6 +10,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IPriorities
     {
-        ObservableCollection<Priority> LoadAllPriorities();
+        Task<List<Priority>> LoadAllPriorities();
     }
 }

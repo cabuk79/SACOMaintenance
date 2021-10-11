@@ -9,7 +9,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IOrder
     {
-        IEnumerable<Order> LoadAllOrders();
-        Order LoadSingleOrder(int Id);
+        Task<List<Order>> LoadAllOrders();
+        Task<Order> LoadSingleOrder(int Id);
     }
 }

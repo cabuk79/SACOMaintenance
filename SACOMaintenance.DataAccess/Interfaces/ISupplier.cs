@@ -9,11 +9,11 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface ISupplier
     {
-        IEnumerable<Supplier> LoadAllSuppliers();
-        IEnumerable<PostCodeTown> LoadAllPostCodes();
-        public PostCodeTown GetPostCode(string postCode);
-        public PostCodeTown LoadPostCodesByRef(string postCode);
-        Supplier LoadSingleSupplier(int Id);
+        Task<List<Supplier>> LoadAllSuppliers();
+        Task<List<PostCodeTown>> LoadAllPostCodes();
+        Task<PostCodeTown> GetPostCode(string postCode);
+        Task<PostCodeTown> LoadPostCodesByRef(string postCode);
+        Task<Supplier> LoadSingleSupplier(int Id);
         public void AddNewSupplier(Supplier supplier);
         public void UpdateSupplier(Supplier supplier);
     }

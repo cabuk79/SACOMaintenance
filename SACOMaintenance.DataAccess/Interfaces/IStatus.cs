@@ -11,8 +11,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IStatus
     {
         //IEnumerable<Status> LoadAllStatuses();
-        IEnumerable<Status> LoadAllStatuses();
-        Status GetSingleStatus(int Id);
+        Task<List<Status>> LoadAllStatuses();
+        Task<Status> GetSingleStatus(int Id);
         void AddEditStatus(Status status);
     }
 }

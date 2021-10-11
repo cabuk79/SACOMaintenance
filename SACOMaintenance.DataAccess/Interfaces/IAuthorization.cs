@@ -10,7 +10,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IAuthorization
     {
-        AuthorizationRequest FindAuthorizationByReqAndUser(string userId, int maintReqId);
+        Task<AuthorizationRequest> FindAuthorizationByReqAndUser(string userId, int maintReqId);
         void AddNewAuthorization(AuthorizationRequest auth);
         void DeleteAuthorization(AuthorizationRequest auth);
     }
