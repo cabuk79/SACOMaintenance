@@ -182,14 +182,14 @@
 
     protected async Task UpdateRisks()
     {
-        maintReqInitation.UpdateMaintReqRisks();
-        CallLoadData();
-        if (IsConnected) await SendMessageSingleReq();
-        await risksGrid.Reload();
-        await InvokeAsync(() => StateHasChanged());
+        //maintReqInitation.UpdateMaintReqRisks();
+        //CallLoadData();
+        //if (IsConnected) await SendMessageSingleReq();
+        //await risksGrid.Reload();
+        //await InvokeAsync(() => StateHasChanged());
     }
 
-    Task SendMessageSingleReq() => hubConnection.SendAsync("broadcastHub");
+    //Task SendMessageSingleReq() => hubConnection.SendAsync("broadcastHub");
 
     public bool moveCol = false;
 
@@ -197,17 +197,17 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+        maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
 
-        // maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
+        //maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
-        maintReqInitation.LoadFactories();
+        await maintReqInitation.LoadFactories();
 
-        maintReqInitation.LoadRisks();
+        await maintReqInitation.LoadRisks();
 
         await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
-        maintReqInitation.LoadIsolations();
-        maintReqInitation.LoadIsoaltionsByMaint();
+        await maintReqInitation.LoadIsolations();
+        await maintReqInitation.LoadIsoaltionsByMaint();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
 
@@ -215,41 +215,40 @@
             maintReqInitation.IsolationByRequest
             .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
-        //Auto update
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-            .Build();
+        ////Auto update
+        //hubConnection = new HubConnectionBuilder()
+        //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+        //    .Build();
 
-        hubConnection.On("ReceiveMessageSingleReq", () =>
-        {
-            CallLoadData();
-            //InvokeAsync(() => StateHasChanged());
-            //risksGrid.Reload();
-        });
+        //hubConnection.On("ReceiveMessageSingleReq", () =>
+        //{
+        //    CallLoadData();
 
-        await hubConnection.StartAsync();
+        //});
+
+        //await hubConnection.StartAsync();
     }
 
 
 
     //Auto update code
     //TODO: may need to remove this or modiy to suit
-    private HubConnection hubConnection;
+    //private HubConnection hubConnection;
 
-    private void CallLoadData()
-    {
-        Task.Run(async () =>
-        {
-            maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
-            maintReqInitation.LoadMaintRiskData(Convert.ToInt32(maintReqID));
-        });
-    }
+    //private void CallLoadData()
+    //{
+    //    Task.Run(async () =>
+    //    {
+    //        await maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
+    //        await maintReqInitation.LoadMaintRiskData(Convert.ToInt32(maintReqID));
+    //    });
+    //}
 
-    public bool IsConnected =>
-        hubConnection.State == HubConnectionState.Connected;
+    //public bool IsConnected =>
+    //    hubConnection.State == HubConnectionState.Connected;
 
-    public void Dispose()
-    {
-        _ = hubConnection.DisposeAsync();
-    }
+    //public void Dispose()
+    //{
+    //    _ = hubConnection.DisposeAsync();
+    //}
 }

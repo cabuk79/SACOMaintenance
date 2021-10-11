@@ -4,6 +4,7 @@ using SACOMaintenance.ViewModel.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -29,7 +30,7 @@ namespace SACOMaintenance.ViewModel
             NewSupplier.Postcode = new();
         }
 
-        public async void LoadAllSuppliers()
+        public async Task<ObservableCollection<Supplier>> LoadAllSuppliers()
         {
             var suppliersList = new ObservableCollection<Supplier>(await SupplierDataProvider.LoadAllSuppliers());
             suppliers.Clear();
@@ -38,6 +39,7 @@ namespace SACOMaintenance.ViewModel
             {
                 suppliers.Add(supplierItem);
             }
+            return suppliers;
         }
 
         public async void postcodefound (string value, string newEdit)

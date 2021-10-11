@@ -14,7 +14,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<Supplier> suppliers { get; set; }
         public void postcodefound(string value, string newEdit);
         public void UpdateSupplier();
-        public void LoadAllSuppliers();
+        Task<ObservableCollection<Supplier>> LoadAllSuppliers();
         public void CreateEmptySupplier();
         public void AddNewSupplier();
         //public void LoadAllPostCodes();

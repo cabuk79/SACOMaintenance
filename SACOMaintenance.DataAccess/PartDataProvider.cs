@@ -32,7 +32,7 @@ namespace SACOMaintenance.DataAccess
 
         public async Task<List<Supplier>> LoadAllSuppliers()
         {
-            var suppliers = await _sacoMaintenanceContext.Suppliers.ToListAsync();
+            var suppliers = await _sacoMaintenanceContext.Suppliers.AsNoTracking().ToListAsync();
             return suppliers;
         }
 

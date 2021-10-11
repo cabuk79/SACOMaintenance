@@ -11,7 +11,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IMaintRequestInitiation
     {
         Task<List<MaintRequestInitiation>> LoadAllRequestInitations();
-        Task<MaintRequestInitiation> GetSingleRequestInitiation(int Id);
+        public MaintRequestInitiation GetSingleRequestInitiation(int Id);
         public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
         ObservableCollection<MaintRequestInitiationRisk> risksDataList { get; set; }
         Task<List<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId);

@@ -130,9 +130,9 @@ using SACOMaintenance.DataAccess.Interfaces;
        
     private IEnumerable<AreaModel> Areas { get; set; } = new List<AreaModel>();
 
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        Areas = AreaDataProvider.LoadAllAreas();
+        Areas = await AreaDataProvider.LoadAllAreas();
     }
 
 #line default

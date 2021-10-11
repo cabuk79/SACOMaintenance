@@ -202,17 +202,20 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
 
         GeneralViewModel.maintId = maintReq.Id;
-        GeneralViewModel.GetGeneralRequest(maintReq.Id);
-        await GeneralViewModel.LoadAllPPE();
-        GeneralViewModel.LoadStartToworkAuth();
-        GeneralViewModel.LoadCompletedUser();
+        Task.Run(async ()=> { await GeneralViewModel.GetGeneralRequest(maintReq.Id); }).Wait();
+        Task.Run(async ()=> { await GeneralViewModel.LoadAllPPE(); }).Wait();
+        Task.Run(async ()=> { await GeneralViewModel.LoadStartToworkAuth(); }).Wait();
+        Task.Run(async () => { await GeneralViewModel.LoadCompletedUser(); }).Wait();
+        //GeneralViewModel.LoadCompletedUser();
 
-        GeneralViewModel.PPEItemsSelected = GeneralViewModel.ppeList.Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+        GeneralViewModel.PPEItemsSelected = 
+            GeneralViewModel.ppeList
+            .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
 
         hubConnection = new HubConnectionBuilder()
-        .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-        .Build();
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
 
         //hubConnection.On("ReceiveMessage", () =>
         //{
@@ -220,7 +223,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         //    StateHasChanged();
         //});
 
-        hubConnection.StartAsync();
+        await hubConnection.StartAsync();
 
 
 
@@ -254,7 +257,7 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
         Task.Run(async () =>
         {
-            GeneralViewModel.GetGeneralRequest(maintReq.Id);
+            await GeneralViewModel.GetGeneralRequest(maintReq.Id);
             GeneralViewModel.LoadStartToworkAuth();
         });
     }
@@ -272,7 +275,6 @@ using Microsoft.AspNetCore.SignalR.Client;
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGeneralMaintRequestViewModel GeneralViewModel { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGeneralRequest GeneralRequestDataProvider { get; set; }
     }
 }
 #pragma warning restore 1591

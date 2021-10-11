@@ -137,9 +137,9 @@ using SACOMaintenance.DataAccess.Interfaces;
     private AreaModel AreaModelItem { get; set; } = new AreaModel();
     private string Title { get; set; } = "Create";
 
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        FactoryList = FactoryDataProvider.LoadAllFactories();
+        FactoryList = await FactoryDataProvider.LoadAllFactories();
     }
 
     private IEnumerable<Factory> FactoryList;

@@ -10,10 +10,12 @@
             @if (SelectedItems.Contains(item))
             {
                 <input id="@Id" type="checkbox" class="checkbox" checked @onchange="_ => HandleChange(item)" />
+                var i = 5;
             }
             else
             {
                 <input id="@Id" type="checkbox" class="checkbox" @onchange="_ => HandleChange(item)" />
+                var ii = 6;
             }
             <div class="option_inner theme">
                 <div class="tickmark"></div>

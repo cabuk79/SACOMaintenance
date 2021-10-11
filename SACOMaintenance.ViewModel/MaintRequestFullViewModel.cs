@@ -127,11 +127,17 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public async Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId)
+        public MaintRequestInitiation GetMaintReqInitation(int maintReqId)
         {
-            maintReqInitation = await MaintReqDataProvider.GetSingleRequestInitiation(maintReqId);
+            maintReqInitation = MaintReqDataProvider.GetSingleRequestInitiation(maintReqId);
             return maintReqInitation;
         }
+
+        //public async Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId)
+        //{
+        //    maintReqInitation = await MaintReqDataProvider.GetSingleRequestInitiation(maintReqId);
+        //    return maintReqInitation;
+        //}
 
         public async Task<bool> LoadMaintRiskData(int maintReqId)
         {
@@ -153,9 +159,10 @@ namespace SACOMaintenance.ViewModel
             Users = new ObservableCollection<User>(await UsersDataProvider.GetAllUsers());
         }
 
-        public async void LoadRisks()
+        public async Task<ObservableCollection<Risk>> LoadRisks()
         {
             Risks = new ObservableCollection<Risk>(await RiskDataProvider.LoadallRisks());
+            return Risks;
         }
 
         public void ExportRequest()
@@ -177,12 +184,13 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public  async void LoadIsolations()
+        public async Task<ObservableCollection<Isolation>> LoadIsolations()
         {
             Isolations = new ObservableCollection<Isolation>(await IsolationsDataProvider .LoadAllIsolations());
+            return Isolations;
         }
 
-        public async void LoadIsoaltionsByMaint()
+        public async Task<ObservableCollection<Isolation>> LoadIsoaltionsByMaint()
         {
             AllIsolationIds.Clear();
 
@@ -199,6 +207,8 @@ namespace SACOMaintenance.ViewModel
                     SelectedIsolationIds.Add(item.Id.ToString());
                 }                                               
             }
+
+            return IsolationByRequest;
         }
 
         public void UpdateMaintReqRisks()

@@ -23,10 +23,10 @@ namespace SACOMaintenance.ViewModel.Interfaces
         Task<GeneralRequest> GetGeneralRequest(int maintId);
         public void LoadAllUsers();
         public void AddNewAuthrization(string status, string type);
-        public void LoadStartToworkAuth();
+        Task<AuthorizationRequest> LoadStartToworkAuth();
         public void RemoveAuthStartToWorkUser();
         public void SaveGeneralRequest(GeneralRequest request, string newEdit);
-        public void LoadCompletedUser();
+        Task<AuthorizationRequest> LoadCompletedUser();
         public Task<bool> LoadAllPPE();
 
 

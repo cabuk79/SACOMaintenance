@@ -18,6 +18,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<Isolation> Isolations { get; set; }
         ObservableCollection<Isolation> IsolationByRequest { get; set; }        
         List<string> SelectedIsolationIds { get; set; }
+        public List<Isolation> IsolationsSelected { get; set; }
+        //List<PPE> PPEItemsSelected { get; set; }
 
         IMaintRequestInitiation MaintReqDataProvider { get; }
         IRisk RiskDataProvider { get; }       
@@ -28,21 +30,21 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public string areaName { get; }
         public string factoryName { get; }
         public string equipName { get; }
-        public List<Isolation> IsolationsSelected { get; set; }
         #endregion
 
         #region methods
-        public Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId);
+        public MaintRequestInitiation GetMaintReqInitation(int maintReqId);
+        //public Task<MaintRequestInitiation> GetMaintReqInitation(int maintReqId);
         //ObservableCollection<MaintRequestInitiationRisk> LoadRiskLevel(int maintReqId);
         Task<ObservableCollection<Factory>> LoadFactories();
 
         //public void LoadMaintRiskData(int maintReqId);
         public Task<bool> LoadMaintRiskData(int maintReqId);
-        public void LoadRisks();
+        Task<ObservableCollection<Risk>> LoadRisks();
         void ExportRequest();
         public void LoadPPE();
-        public void LoadIsolations();
-        public void LoadIsoaltionsByMaint();
+        Task<ObservableCollection<Isolation>> LoadIsolations();
+        Task<ObservableCollection<Isolation>> LoadIsoaltionsByMaint();
         public void UpdateRequest();
         public void UpdateMaintReqRisks();
         

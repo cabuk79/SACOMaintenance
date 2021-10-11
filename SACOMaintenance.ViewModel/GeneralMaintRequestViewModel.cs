@@ -13,28 +13,31 @@ using SACOMaintenance.DataAccess.Interfaces;
 namespace SACOMaintenance.ViewModel
 {
     public class GeneralMaintRequestViewModel : INotifyPropertyChanged, IGeneralMaintRequestViewModel
-    {    
-        public ObservableCollection<PPE> ppeList { get; set; }
+    {
+        public ObservableCollection<PPE> ppeList { get; set; } = new();
 
         public IPPE PpeDataProvider { get; }
         public IGeneralRequest _generalREquestDataProvider {get;}
         public IAuthorization AuthrizationDataProvider { get; }
+        public IAuthorization AuthDataProvider { get; }
         public GeneralRequest genralRequestInfo { get; set; }
         public int maintId { get; set; }
         public ObservableCollection<User> Users { get; set; } = new();
         public IUsers UsersDataProvider { get; set; }
         public AuthorizationRequest AuthrazationReq { get; set; }
         public AuthorizationRequest CompletedAuth { get; set; }
-        public List<PPE> PPEItemsSelected { get; set; }
+        public List<PPE> PPEItemsSelected { get; set; } = new();
 
         public GeneralMaintRequestViewModel(IPPE ppeDataProvider,
             IGeneralRequest generalRequestDataProvider, IUsers usersDataProvider,
-            IAuthorization authrizationDataProvider)
+            IAuthorization authrizationDataProvider, IAuthorization authTwo)
         {
             PpeDataProvider = ppeDataProvider;
             _generalREquestDataProvider = generalRequestDataProvider;
             UsersDataProvider = usersDataProvider;
             AuthrizationDataProvider = authrizationDataProvider;
+            AuthDataProvider = authrizationDataProvider;
+            AuthDataProvider = authTwo;
 
             genralRequestInfo = new GeneralRequest();
             AuthrazationReq = new AuthorizationRequest();
@@ -108,22 +111,24 @@ namespace SACOMaintenance.ViewModel
             AuthrizationDataProvider.AddNewAuthorization(completedAuth);
         }
 
-        public async void LoadStartToworkAuth()
+        public async Task<AuthorizationRequest> LoadStartToworkAuth()
         {
             AuthrazationReq = await AuthrizationDataProvider.FindAuthorizationByReqAndUser(UserAuthIdStartWork, maintId);
             if(AuthrazationReq == null)
             {
-                AuthrazationReq = new AuthorizationRequest();
+                return AuthrazationReq = new AuthorizationRequest();
             }
+            return AuthrazationReq;
         }
 
-        public async void LoadCompletedUser()
+        public async Task<AuthorizationRequest> LoadCompletedUser()
         {
-            CompletedAuth = await AuthrizationDataProvider .FindAuthorizationByReqAndUser(MaintenanceUserCompletedId, maintId);
+            CompletedAuth = await AuthDataProvider.FindAuthorizationByReqAndUser(MaintenanceUserCompletedId, maintId);
             if(CompletedAuth == null)
             {
-                CompletedAuth = new AuthorizationRequest();
+                return CompletedAuth = new AuthorizationRequest();
             }
+            return CompletedAuth;
         }
 
         public async Task<bool> LoadAllPPE()

@@ -133,7 +133,7 @@ using System.Text.RegularExpressions;
 
     protected override async Task OnInitializedAsync()
     {
-        supplierViewModel.LoadAllSuppliers();
+        await supplierViewModel.LoadAllSuppliers();
         
     }
 

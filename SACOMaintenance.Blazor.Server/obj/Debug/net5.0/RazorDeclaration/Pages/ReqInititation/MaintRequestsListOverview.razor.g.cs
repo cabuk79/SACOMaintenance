@@ -168,7 +168,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         await hubConnection.StartAsync();
 
-        maintReqListViewModel.LoadRequests();
+        //maintReqListViewModel.LoadRequests();
     }
 
     private void CallLoadData()

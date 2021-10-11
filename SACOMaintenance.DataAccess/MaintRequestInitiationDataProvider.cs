@@ -111,17 +111,18 @@ namespace SACOMaintenance.DataAccess
         }
 
         //Load a single request with all of the Navigvation properties populated
-        public async Task<MaintRequestInitiation> GetSingleRequestInitiation(int Id)
+        public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
-            var maintReqInitiation = await _requestInitationDBContext.MaintRequestInitiations
+            var maintReqInitiation = _requestInitationDBContext.MaintRequestInitiations
+                .AsNoTracking()
                 .Where(i => i.Id == Id)
                 .Include(e => e.Equipment)
                 .Include(c => c.Company)
                 .Include(a => a.Area)
                 .Include(f => f.Factory)
-                //.Include(p => p.PPEEquipment)
+                .Include(p => p.PPEEquipment)
                 .Include(r => r.Risks)
-                .FirstOrDefaultAsync();
+                .FirstOrDefault();
             return maintReqInitiation;
         }
 

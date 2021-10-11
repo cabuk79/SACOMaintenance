@@ -135,10 +135,10 @@ using SACOMaintenance.DataAccess.Interfaces;
 
     private Company CompanyModelItem { get; set; } = new Company();
 
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        CompanyModelItem = CompanyDataProvider.LoadSingleCompany(Convert.ToInt32(CompanyId));
-        ListOfMaintReqInitations = CompanyModelItem.MaintenanceRequestIniations;   
+        CompanyModelItem = await CompanyDataProvider.LoadSingleCompany(Convert.ToInt32(CompanyId));
+        ListOfMaintReqInitations = CompanyModelItem.MaintenanceRequestIniations;
     }
 
 

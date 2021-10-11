@@ -130,9 +130,9 @@ using SACOMaintenance.DataAccess.Interfaces;
        
     private IEnumerable<Company> Companies { get; set; } = new List<Company>();
 
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        Companies = CompanyDataProvider.LoadCompanies();
+        Companies = await CompanyDataProvider.LoadCompanies();
     }
 
 #line default
