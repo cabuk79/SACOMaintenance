@@ -1,6 +1,8 @@
 ﻿@inject SACOMaintenance.ViewModel.Interfaces.IUserRequestsAll userRequestAllViewModel
 @using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.Blazor.Server.Pages.ReqInititation
 
+<AddMaintReq></AddMaintReq>
 
 <div class="row">
     <div class="col-lg-12">
@@ -28,7 +30,7 @@
     </div>
 </div>
 
-@if(userRequestAllViewModel.Requests.Count > 0)
+@if (userRequestAllViewModel.Requests.Count > 0)
 {
     <div class="row row-allrequest-table">
         <div class="col-lg-12">
@@ -44,21 +46,21 @@
                                 <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
                                 <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status"></RadzenGridColumn>
                                 <RadzenGridColumn TItem="MaintRequestInitiation" Title="Staff Assigned">
-                                    <Template Context="data">                                      
-                                            @foreach(var item in data.Users)
-                                            {                                        
-                                                <img src="@item.AvatarLocation" 
-                                                     class="avatar-circle" width="50" height="50" />
-                                            }             
+                                    <Template Context="data">
+                                        @foreach (var item in data.Users)
+                                        {
+                                            <img src="@item.AvatarLocation"
+                                                 class="avatar-circle" width="50" height="50" />
+                                        }
                                     </Template>
-                                </RadzenGridColumn>  
+                                </RadzenGridColumn>
                             </Columns>
                         </RadzenGrid>
                     </div>
                 </div>
             </RadzenFieldset>
         </div>
-    </div>    
+    </div>
 }
 else
 {
@@ -103,6 +105,14 @@ else
 
 
 @code {
+
+    void showpopup()
+    {
+        ShowPopup = true;
+    }
+
+
+    bool ShowPopup = false;
 
     [Parameter]
     public string UserId { get; set; }

@@ -33,7 +33,7 @@ namespace SACOMaintenance.DataAccess
             _machineTypeDBContext.SaveChanges();
         }
 
-        public async Task<List<MachineType>> LoadAllMachines()
+        public async Task<IEnumerable<MachineType>> LoadAllMachines()
         {
             var machines = await _machineTypeDBContext.MachineTypes
                 .Include(eq => eq.EquipmentList)

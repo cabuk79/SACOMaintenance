@@ -19,7 +19,7 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext = sacoMaintenanceContext;
         }
 
-        public async Task<List<Order>> LoadAllOrders()
+        public async Task<IEnumerable<Order>> LoadAllOrders()
         {
             var orders = await _sacoMaintenanceContext.Orders
                 .Include(oi => oi.OrderItems)

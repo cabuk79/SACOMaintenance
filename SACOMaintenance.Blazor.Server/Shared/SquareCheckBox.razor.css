@@ -40,7 +40,7 @@ body {
 .option_item .option_inner {
     width: 100%;
     height: 100%;
-    background: #ebebf2; /*#fff;*/
+    background: #ebebf2;
     border-radius: 5px;
     text-align: center;
     padding: 58px 40px;
@@ -96,7 +96,4 @@ body {
 .option_item .option_inner.theme .tickmark {
     border-color: #ff0000 transparent transparent #ff0000;
 }
-
-
-/*border-color: #3b5999 transparent transparent #3b5999;*/
 

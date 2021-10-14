@@ -110,6 +110,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
+using SACOMaintenance.Blazor.Server.Pages.ReqInititation;
+
+#line default
+#line hidden
+#nullable disable
     public partial class RequestsForUserAll : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -118,8 +125,16 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
+#line 107 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
        
+
+    void showpopup()
+    {
+        ShowPopup = true;
+    }
+
+
+    bool ShowPopup = false;
 
     [Parameter]
     public string UserId { get; set; }

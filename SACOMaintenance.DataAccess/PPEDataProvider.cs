@@ -18,7 +18,7 @@ namespace SACOMaintenance.DataAccess
             _ppeDBContext = sacoMaintenanceContext;
         }
 
-        public async Task<List<PPE>> LoadAllPlantPPE(string ppeTypeName)
+        public async Task<IEnumerable<PPE>> LoadAllPlantPPE(string ppeTypeName)
         {
             var ppe = await _ppeDBContext.PPE.Where(t => t.MaintRequestType == ppeTypeName).ToListAsync();
             return ppe;
@@ -26,7 +26,7 @@ namespace SACOMaintenance.DataAccess
 
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
-        public async Task<List<PPE>> LoadAllPPE()
+        public async Task<IEnumerable<PPE>> LoadAllPPE()
         {
             var ppe = await _ppeDBContext.PPE.ToListAsync();
             return ppe;

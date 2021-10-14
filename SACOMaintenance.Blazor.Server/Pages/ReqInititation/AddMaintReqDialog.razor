@@ -1,0 +1,229 @@
+﻿@page "/addnewreq"
+
+@inject SACOMaintenance.ViewModel.Interfaces.IAddMaintReq AddReqViewModel
+
+<h3>List of Priorties</h3>
+<ul>
+    @foreach (var item in AddReqViewModel.Priorities)
+    {
+        <li>@item.Name</li>
+
+    }
+</ul>
+
+
+@code{
+
+    //public List<string> Names { get; set; } = new();
+
+
+    protected async override Task OnInitializedAsync()
+    {
+        //AddReqViewModel.LoadPriorities();
+        //await AddReqViewModel.LoadCompanies();
+        //await AddReqViewModel.LoadFactories();
+        //AddReqViewModel.LoadLists();
+    }
+
+    //void showpopup()
+    //{
+    //    ShowPopup = true;
+    //}
+
+    //bool ShowPopup = false;
+}
+
+@*<div class="row">
+        <div class="col-lg-12">
+            <label>Priority</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenDropDown TValue="int" Data="@AddReqViewModel.Priorities"
+                            @bind-Value="@AddReqViewModel.PriorityId"
+                            ValueProperty="Id" TextProperty="Name"
+                            Style="width: 100%; border-color: black" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Company</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenDropDown TValue="int" Data="@AddReqViewModel.Companies"
+                            @bind-Value="@AddReqViewModel.CompanyId"
+                            ValueProperty="Id" TextProperty="CompanyName"
+                            Style="width: 100%; border-color: black"></RadzenDropDown>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Factory</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenDropDown TValue="int" Data="@AddReqViewModel.Factories"
+                            ValueProperty="Id" TextProperty="FactoryName"
+                            @bind-Value="@AddReqViewModel.FactoryId"
+                            Style="width: 100%; border-color: black"></RadzenDropDown>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Area</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            @if (AddReqViewModel.Areas != null)
+            {
+                var numberAreasFound = AddReqViewModel.Areas.Count();
+                if (numberAreasFound > 0)
+                {
+                    <RadzenDropDown TValue="int" Data="@AddReqViewModel.Areas"
+                                    @bind-Value="AddReqViewModel.AreaId"
+                                    ValueProperty="Id" TextProperty="AreaName"
+                                    Style="width: 100%; border-color: black">
+                    </RadzenDropDown>
+
+                }
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Equipment</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenDropDown TValue="int" Data="@AddReqViewModel.Equipments"
+                            ValueProperty="Id" TextProperty="Name"
+                            Style="width: 100%; border-color: black"></RadzenDropDown>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Details</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenHtmlEditor Style="height: 500px; border-color: black"></RadzenHtmlEditor>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+@*@if (ShowPopup)
+    {*@
+
+
+@*<CBDialog Title="Add New Maintenance Request">
+        <ItemTemplate>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Priority</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenDropDown TValue="int" Data="@AddReqViewModel.Priorities"
+                                    @bind-Value="@AddReqViewModel.PriorityId"
+                                    ValueProperty="Id" TextProperty="Name"
+                                    Style="width: 100%; border-color: black" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Company</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenDropDown TValue="int" Data="@AddReqViewModel.Companies"
+                                    @bind-Value="@AddReqViewModel.CompanyId"
+                                    ValueProperty="Id" TextProperty="CompanyName"
+                                    Style="width: 100%; border-color: black"></RadzenDropDown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Factory</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenDropDown TValue="int" Data="@AddReqViewModel.Factories"
+                                    ValueProperty="Id" TextProperty="FactoryName"
+                                    @bind-Value="@AddReqViewModel.FactoryId"
+                                    Style="width: 100%; border-color: black"></RadzenDropDown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Area</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    @if(AddReqViewModel.Areas != null)
+                    {
+                        var numberAreasFound = AddReqViewModel.Areas.Count();
+                        if(numberAreasFound > 0)
+                        {
+                            <RadzenDropDown TValue="int" Data="@AddReqViewModel.Areas"
+                                    @bind-Value="AddReqViewModel.AreaId"
+                                    ValueProperty="Id" TextProperty="AreaName"
+                                    Style="width: 100%; border-color: black"></RadzenDropDown>
+
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Equipment</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenDropDown TValue="int" Data="@AddReqViewModel.Equipments"
+                                    ValueProperty="Id" TextProperty="Name"
+                                    Style="width: 100%; border-color: black"></RadzenDropDown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Details</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenHtmlEditor Style="height: 500px; border-color: black"></RadzenHtmlEditor>
+                </div>
+            </div>
+        </ItemTemplate>
+    </CBDialog>*@
+@*}*@
+
+
+@*<div class="row">
+        <div class="col-lg-12">
+            <button class="btn btn-outline-primary" @onclick="showpopup">Show Dialog Test</button>
+        </div>
+    </div>*@
+
+

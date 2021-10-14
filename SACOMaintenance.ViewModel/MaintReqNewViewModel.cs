@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using EmployeeManager.ViewModel.Command;
 using Microsoft.Extensions.Configuration;
 using SACOMaintenance.Common.ModelDB;
@@ -132,8 +133,10 @@ namespace SACOMaintenance.ViewModel
             CompanyDataProvider = companyProvider;
 
             // Areas = AreaDataProvider.LoadAllAreas();
-            Factories = new ObservableCollection<Factory>((IEnumerable<Factory>)FactoryDataProvider.LoadAllFactories());
+            //Factories = FactoryDataProvider.LoadAllFactories();
+            //Factories = new ObservableCollection<Factory>(FactoryDataProvider.LoadAllFactories());
             //Equipment = EquipmentDataProvider.LoadAllEquipments();
+            LoadFactories();
             LoadPriorities();
             LoadCompanies();
 
@@ -157,6 +160,10 @@ namespace SACOMaintenance.ViewModel
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+         public async void LoadFactories()
+        {
+            Factories = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
         }
 
         public async void LoadFactoriesByCompany()
@@ -182,6 +189,7 @@ namespace SACOMaintenance.ViewModel
         public async void LoadPriorities()
         {
             Priorities = new ObservableCollection<Priority>(await PriorityDataProvider.LoadAllPriorities());
+            //return Priorities;
         }
     }
 }

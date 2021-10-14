@@ -32,8 +32,8 @@ namespace SACOMaintenance.Blazor.Server
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContextFactory<SACOMaintenanceContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<SACOMaintenanceContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")),ServiceLifetime.Transient);
 
             //services.AddDbContext<SACOMaintenanceContext>(options=>
             //        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -84,6 +84,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IGeneralMaintRequestViewModel, GeneralMaintRequestViewModel>();
             services.AddScoped<IRequestsGraphViewModel, RequestsGraphViewModel>();
             services.AddScoped<IUserRequestsAll, UserRequestAllViewModel>();
+            services.AddScoped<IAddMaintReq, AddMaintReqViewModel>();
 
             services.AddHttpContextAccessor();
 

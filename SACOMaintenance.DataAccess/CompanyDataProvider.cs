@@ -20,7 +20,7 @@ namespace SACOMaintenance.DataAccess
 
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
-        public async Task<List<Company>> LoadCompanies()
+        public async Task<IEnumerable<Company>> LoadCompanies()
         {
             var companies = await _companyDBContext.Companies.ToListAsync();
             return companies;

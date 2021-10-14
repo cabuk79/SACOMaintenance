@@ -19,7 +19,7 @@ namespace SACOMaintenance.DataAccess
             _maintenanceDBContext = sacoMaintenanceContext;
         }
 
-        public async Task<List<Isolation>> LoadIsolationsByMaint(int Id)
+        public async Task<IEnumerable<Isolation>> LoadIsolationsByMaint(int Id)
         {
             var isolations = await _maintenanceDBContext.Isolations
                 .Include(b => b.MaintRequestInitiations.Where(i => i.Id == Id))
@@ -30,7 +30,7 @@ namespace SACOMaintenance.DataAccess
             return isolations;
         }
 
-        public async Task<List<int>> LoadAllIsolationsIds()
+        public async Task<IEnumerable<int>> LoadAllIsolationsIds()
         {
             List<int> ids = new();
             var allIsolationIds = await _maintenanceDBContext.Isolations.ToListAsync();

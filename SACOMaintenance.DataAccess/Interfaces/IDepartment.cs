@@ -9,7 +9,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IDepartment
     {
-        Task<List<Department>> LoadAllDepartments();
+        Task<IEnumerable<Department>> LoadAllDepartments();
         Task<Department> LoadSingleDepartment(int Id);
     }
 }

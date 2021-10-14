@@ -69,11 +69,14 @@
                             if (numberAreasEquipment > 0)
                             {
                                 <RadzenLabel Text="Area"></RadzenLabel>
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
+                                <RadzenDropDown AllowClear="true" TValue="int"
+                                                Style="width: 100%; border-color: black"
                                                 FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                @bind-Value="@AddReqViewModel.AreaId" FilterOperator="StringFilterOperator.Contains"
+                                                @bind-Value="@AddReqViewModel.AreaId" 
+                                                FilterOperator="StringFilterOperator.Contains"
                                                 AllowFiltering="true"
-                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName" ValueProperty="Id">
+                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName" 
+                                                ValueProperty="Id">
                                 </RadzenDropDown>
                                 <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
                             }

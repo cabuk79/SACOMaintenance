@@ -36,7 +36,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<Status> LoadAllStatuses()
-        public async Task<List<Status>> LoadAllStatuses()
+        public async Task<IEnumerable<Status>> LoadAllStatuses()
         {
             var statusList = await _statusDBContext.Statuses.ToListAsync();
             return statusList;

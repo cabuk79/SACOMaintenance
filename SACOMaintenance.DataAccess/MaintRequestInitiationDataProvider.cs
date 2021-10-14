@@ -128,7 +128,7 @@ namespace SACOMaintenance.DataAccess
 
         
         //public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
-        public async Task<List<MaintRequestInitiation>> LoadAllRequestInitations()
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadAllRequestInitations()
         {
             //var maintReqInitationList = _requestInitationDBContext.MaintRequestInitiations
             //    .Include(e => e.Equipment)
@@ -141,7 +141,7 @@ namespace SACOMaintenance.DataAccess
                 .ToListAsync();
         }
 
-        public async Task<List<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId)
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId)
         {
             //var maintReqInitationListStatus = _requestInitationDBContext.MaintRequestInitiations
             //    .Include(e => e.Equipment)
@@ -155,7 +155,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
-        public async Task<List<MaintRequestInitiation>> LoadRequestInitiationWithEquipment() 
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadRequestInitiationWithEquipment() 
         {
             //var maintReqInitationListEquip = _requestInitationDBContext.MaintRequestInitiations
             //    .Include(e => e.Equipment)
@@ -169,7 +169,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<Priority> LoadAllRequestsPriority()
-        public async Task<List<Priority>> LoadAllRequestsPriority()
+        public async Task<IEnumerable<Priority>> LoadAllRequestsPriority()
     {
         //var requestsPrio = _requestContext.Priorites.ToList();
         //return requestsPrio;
@@ -177,7 +177,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadReqsByUser(string userId)
-        public async Task<List<MaintRequestInitiation>> LoadReqsByUser(string userId)
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadReqsByUser(string userId)
         {
             //var maintReqsByUserAll = _requestInitationDBContext.MaintRequestInitiations
             //    .Where(u => u.UserId == userId)
@@ -198,7 +198,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadReqsByUserOpen(string userId)
-        public async Task<List<MaintRequestInitiation>> LoadReqsByUserOpen(string userId)
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadReqsByUserOpen(string userId)
         {
             //var maintReqsByUserStatus = _requestInitationDBContext.MaintRequestInitiations
             //    .Where(u => u.UserId == userId && u.StatusId != 3)
@@ -217,7 +217,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadNewRequests()
-        public async Task<List<MaintRequestInitiation>> LoadNewRequests()
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadNewRequests()
         {
             //var maintReqInitationListNew = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 7)
             //    .Include(e => e.Equipment)
@@ -232,7 +232,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadAllRequestsCurrentYear()
-        public async Task<List<MaintRequestInitiation>> LoadAllRequestsCurrentYear()
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadAllRequestsCurrentYear()
         {
             var currentYear = DateTime.Now.Year;
 
@@ -243,7 +243,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadReqsAssignedOpen()
-        public async Task<List<MaintRequestInitiation>> LoadReqsAssignedOpen()
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadReqsAssignedOpen()
         {
             //var maintReqInitationListAssignedOpen = _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)
             //    .Include(e => e.Equipment)
@@ -258,7 +258,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //public IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId)
-        public async Task<List<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId)
+        public async Task<IEnumerable<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId)
         {
             //var riskDataLinks = _requestInitationDBContext.MaintRequestInitiationRisk
             //    .Where(i => i.MaintRequestInitiationId == maintReqId).ToList();
@@ -270,7 +270,7 @@ namespace SACOMaintenance.DataAccess
         }
 
         //Get the Risks for the type of request it is General or Plant
-        public async Task<List<Risk>> LoadRisksByMaintType (string maintType)
+        public async Task<IEnumerable<Risk>> LoadRisksByMaintType (string maintType)
         {
             if(maintType == "Plant")
             {

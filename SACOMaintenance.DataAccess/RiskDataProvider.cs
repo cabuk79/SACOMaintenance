@@ -30,7 +30,7 @@ namespace SACOMaintenance.DataAccess
             _sacoMaintenanceContext.SaveChanges();
         }
 
-        public async Task<List<Risk>> LoadallRisks()
+        public async Task<IEnumerable<Risk>> LoadallRisks()
         {
             var risks = await _sacoMaintenanceContext.Risks.ToListAsync();
             return risks;

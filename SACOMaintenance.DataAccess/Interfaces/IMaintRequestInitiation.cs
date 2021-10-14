@@ -10,24 +10,24 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IMaintRequestInitiation
     {
-        Task<List<MaintRequestInitiation>> LoadAllRequestInitations();
+        Task<IEnumerable<MaintRequestInitiation>> LoadAllRequestInitations();
         public MaintRequestInitiation GetSingleRequestInitiation(int Id);
         public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation);
         ObservableCollection<MaintRequestInitiationRisk> risksDataList { get; set; }
-        Task<List<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId);
-        Task<List<MaintRequestInitiation>> LoadRequestInitiationWithEquipment();
-        Task<List<MaintRequestInitiation>> LoadNewRequests();
-        Task<List<MaintRequestInitiation>> LoadReqsAssignedOpen();
-        Task<List<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId);
-        Task<List<MaintRequestInitiation>> LoadReqsByUserOpen(string userId);
-        Task<List<Priority>> LoadAllRequestsPriority();
-        Task<List<MaintRequestInitiation>> LoadReqsByUser(string userId);
+        Task<IEnumerable<MaintRequestInitiationRisk>> LoadMaintRiskData(int maintReqId);
+        Task<IEnumerable<MaintRequestInitiation>> LoadRequestInitiationWithEquipment();
+        Task<IEnumerable<MaintRequestInitiation>> LoadNewRequests();
+        Task<IEnumerable<MaintRequestInitiation>> LoadReqsAssignedOpen();
+        Task<IEnumerable<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId);
+        Task<IEnumerable<MaintRequestInitiation>> LoadReqsByUserOpen(string userId);
+        Task<IEnumerable<Priority>> LoadAllRequestsPriority();
+        Task<IEnumerable<MaintRequestInitiation>> LoadReqsByUser(string userId);
         //IEnumerable<MaintRequestInitiationRisk> LoadMaintRiskData(int maintReqId);
-        Task<List<MaintRequestInitiation>> LoadAllRequestsCurrentYear();
+        Task<IEnumerable<MaintRequestInitiation>> LoadAllRequestsCurrentYear();
 
         public void LoadRiskLevel(int maintReqId);
 
-        Task<List<Risk>> LoadRisksByMaintType(string maintType);
+        Task<IEnumerable<Risk>> LoadRisksByMaintType(string maintType);
         public void UpdateMaintReq(MaintRequestInitiation maintReqToUpdate);
         public void UpdateRiskRecords(ObservableCollection<MaintRequestInitiationRisk> risksUpdate);
         public void UpdateIsolationsRecords(List<string> isolationsChosen, int maintId, List<int> allIsolationId);

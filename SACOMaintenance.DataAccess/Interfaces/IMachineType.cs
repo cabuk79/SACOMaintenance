@@ -6,7 +6,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IMachineType
     {
-        Task<List<MachineType>> LoadAllMachines();
+        Task<IEnumerable<MachineType>> LoadAllMachines();
         Task<MachineType> ViewSingleMachineType(int Id);
         void AddEditMachineType(MachineType machineType);
     }

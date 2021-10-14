@@ -9,8 +9,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IArea
     {
-        Task<List<AreaModel>> LoadAllAreas();
-        Task<List<AreaModel>> LoadAreasByFactory(int factoryId);
+        Task<IEnumerable<AreaModel>> LoadAllAreas();
+        Task<IEnumerable<AreaModel>> LoadAreasByFactory(int factoryId);
         Task<AreaModel> LoadSingleArea(int Id);
         Task<AreaModel> FindAreaByName(string areaName);
         void UpdateArea(AreaModel area);

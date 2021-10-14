@@ -1,0 +1,30 @@
+﻿
+
+<div class="modal req-modal-position" tabindex="-1" style="display: block" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h3>@Title</h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @ItemTemplate
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public String Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ItemTemplate { get; set; }
+
+}

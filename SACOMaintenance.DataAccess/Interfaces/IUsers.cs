@@ -10,6 +10,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IUsers
     {
-        Task<List<User>> GetAllUsers();
+        Task<IEnumerable<User>> GetAllUsers();
     }
 }

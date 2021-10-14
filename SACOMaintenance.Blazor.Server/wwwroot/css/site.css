@@ -289,6 +289,10 @@ app {
         right: 5px;
     }
     
+    .req-modal-position{
+        position: static;
+    }
+
     /* --- Hover tool tip ---- */
     
 }

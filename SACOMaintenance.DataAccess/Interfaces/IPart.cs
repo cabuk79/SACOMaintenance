@@ -9,8 +9,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IPart
     {
-        Task<List<Part>> LoadAllPArts();
+        Task<IEnumerable<Part>> LoadAllPArts();
         Task<Part> GetSinglePartAndSuppliers(int Id);
-        Task<List<Supplier>> LoadAllSuppliers();
+        Task<IEnumerable<Supplier>> LoadAllSuppliers();
     }
 }

@@ -9,9 +9,9 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IEquipment
     {
-        Task<List<Equipment>> LoadAllEquipments();
-        Task<List<Equipment>> LoadByArea(int areaId);
-        Task<List<MaintRequestInitiation>> GetMaintReqsForEquipment(int equipmentId); //get a list of the maint requests for the equipment
+        Task<IEnumerable<Equipment>> LoadAllEquipments();
+        Task<IEnumerable<Equipment>> LoadByArea(int areaId);
+        Task<IEnumerable<MaintRequestInitiation>> GetMaintReqsForEquipment(int equipmentId); //get a list of the maint requests for the equipment
         Task<Equipment> ViewSingleEquipment(int Id);
         void AddEditEquipment(Equipment equipment);
         

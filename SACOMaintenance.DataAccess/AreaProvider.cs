@@ -37,13 +37,13 @@ namespace SACOMaintenance.DataAccess
             return area;
         }
 
-        public async Task<List<AreaModel>> LoadAllAreas()
+        public async Task<IEnumerable<AreaModel>> LoadAllAreas()
         {
             var areas = await _areaDBContext.Areas.ToListAsync();
             return areas;
         }
 
-        public async Task<List<AreaModel>> LoadAreasByFactory(int factoryId)
+        public async Task<IEnumerable<AreaModel>> LoadAreasByFactory(int factoryId)
         {
             var areas = await _areaDBContext.Areas.Where(f => f.FactoryId == factoryId).ToListAsync();
             return areas;

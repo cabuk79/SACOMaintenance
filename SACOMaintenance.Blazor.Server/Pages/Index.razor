@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using SACOMaintenance.Blazor.Server.Pages.Dashboard
 @using SACOMaintenance.Blazor.Server.Components
+@using SACOMaintenance.Blazor.Server.Pages.ReqInititation
 @using Microsoft.AspNetCore.Identity;
 @inject UserManager<Common.ModelDB.User> _UserManager
 @using Microsoft.AspNetCore.Http;
@@ -9,11 +10,11 @@
 
 <AuthorizeView Roles="Administrators">
     @*<DashboardManager></DashboardManager>*@
-    <h1>Testing</h1>
 </AuthorizeView>
 
 <AuthorizeView Roles="General User">
-    <RequestsForUserAll UserId="@userId"></RequestsForUserAll>
+    @*<AddMaintReqDialog></AddMaintReqDialog>*@
+    @*<RequestsForUserAll UserId="@userId"></RequestsForUserAll>*@
 </AuthorizeView>
 
 

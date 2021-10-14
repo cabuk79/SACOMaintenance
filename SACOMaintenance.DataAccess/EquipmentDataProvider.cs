@@ -37,13 +37,13 @@ namespace SACOMaintenance.DataAccess
             _equipmentDBContext.SaveChanges();
         }
 
-        public async Task<List<MaintRequestInitiation>> GetMaintReqsForEquipment(int equipmentId)
+        public async Task<IEnumerable<MaintRequestInitiation>> GetMaintReqsForEquipment(int equipmentId)
         {
             var requests = await _equipmentDBContext.MaintRequestInitiations.Where(e => e.EquipmentId == equipmentId).ToListAsync();
             return requests;
         }
 
-        public async Task<List<Equipment>> LoadAllEquipments()
+        public async Task<IEnumerable<Equipment>> LoadAllEquipments()
         {
             var equipments = await _equipmentDBContext.Equipment
                 .Include(mt => mt.MachineType)
@@ -51,7 +51,7 @@ namespace SACOMaintenance.DataAccess
             return equipments;
         }
 
-        public async Task<List<Equipment>> LoadByArea(int areaId)
+        public async Task<IEnumerable<Equipment>> LoadByArea(int areaId)
         {
             var equipment = await _equipmentDBContext.Equipment.Where(a => a.AreaId == areaId).ToListAsync();
             return equipment;

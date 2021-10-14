@@ -19,7 +19,7 @@ namespace SACOMaintenance.DataAccess
             _usersContext = usersContext;
         }
 
-        public async Task<List<User>> GetAllUsers()
+        public async Task<IEnumerable<User>> GetAllUsers()
         {
             var allUsers = await _usersContext.Users.ToListAsync();
             return allUsers;

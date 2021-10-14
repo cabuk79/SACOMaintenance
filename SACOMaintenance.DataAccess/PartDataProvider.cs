@@ -30,13 +30,13 @@ namespace SACOMaintenance.DataAccess
             return singlePart;
         }
 
-        public async Task<List<Supplier>> LoadAllSuppliers()
+        public async Task<IEnumerable<Supplier>> LoadAllSuppliers()
         {
             var suppliers = await _sacoMaintenanceContext.Suppliers.AsNoTracking().ToListAsync();
             return suppliers;
         }
 
-        public async Task<List<Part>> LoadAllPArts()
+        public async Task<IEnumerable<Part>> LoadAllPArts()
         {
             var parts = await _sacoMaintenanceContext.Parts.ToListAsync();
             return parts;

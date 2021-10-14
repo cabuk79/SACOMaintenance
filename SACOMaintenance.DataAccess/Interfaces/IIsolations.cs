@@ -10,6 +10,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IIsolations
     {
-        Task<List<Isolation>> LoadAllIsolations();
+        Task<IEnumerable<Isolation>> LoadAllIsolations();
     }
 }

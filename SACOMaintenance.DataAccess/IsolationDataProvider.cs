@@ -20,7 +20,7 @@ namespace SACOMaintenance.DataAccess
             _maintenanceDBContext = sacoMaintenanceContext;
         }
 
-        public async Task<List<Isolation>> LoadAllIsolations()
+        public async Task<IEnumerable<Isolation>> LoadAllIsolations()
         {
             var isolations = await _maintenanceDBContext.Isolations.ToListAsync();
             return isolations;
