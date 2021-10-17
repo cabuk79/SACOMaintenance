@@ -10,6 +10,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IIsolationMaintRequestInitiation
     {
         Task<IEnumerable<Isolation>> LoadIsolationsByMaint(int Id);
-        Task<IEnumerable<int>> LoadAllIsolationsIds();
+        Task<List<int>> LoadAllIsolationsIds();
     }
 }

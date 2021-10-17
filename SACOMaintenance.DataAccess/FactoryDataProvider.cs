@@ -37,7 +37,7 @@ namespace SACOMaintenance.DataAccess
 
         public async Task<IEnumerable<Factory>> LoadAllFactories()
         {
-            var factories = await _factoryDBContext.Factories.ToListAsync();
+            IEnumerable<Factory> factories = await _factoryDBContext.Factories.ToListAsync();
             return factories;
         }
 

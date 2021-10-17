@@ -8,11 +8,11 @@ namespace SACOMaintenance.ViewModel.Interfaces
 {
     public interface IAreaViewModel
     {
-        public AreaModel area { get; set; }
+        public AreaModel Area { get; set; }
         IArea AreaDataProvider { get; }
         bool AreaExists { get; set; }
         string AreaName { get; set; }
-        string CommentsNotes { get; set; }
+        //string CommentsNotes { get; set; }
         ObservableCollection<AreaModel> areas { get; }
         ObservableCollection<Factory> factories { get; }
         int FactoryId { get; set; }
@@ -20,8 +20,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         event PropertyChangedEventHandler PropertyChanged;
 
         void AddNewArea(AreaModel areaToAdd);
-        void Load();
+        Task Load();
         void SaveArea(AreaModel area);
-       Task<AreaModel> LoadSingleArea(int areaId);
+        Task LoadSingleArea(int Id);
     }
 }

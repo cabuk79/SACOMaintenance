@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -19,7 +20,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         
 
         public ObservableCollection<AreaModel> Areas { get; set; }
-        public ObservableCollection<Factory> Factories { get; }
+        public IEnumerable<Factory> Factories { get; }
         public ObservableCollection<Equipment> Equipment { get; set; }
         public ObservableCollection<Priority> Priorities { get; set; }
         public ObservableCollection<Company> Companies { get; set; }
@@ -38,8 +39,9 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region methods
 
+        public Task LoadFactories();
         public void AddNewRequest();
-        public void LoadAreasByFactory();
+        public Task LoadAreasByFactory();
         public void LoadPriorities();
         
         #endregion

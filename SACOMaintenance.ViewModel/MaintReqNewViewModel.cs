@@ -14,29 +14,27 @@ namespace SACOMaintenance.ViewModel
 {
     public class MaintReqNewViewModel : INotifyPropertyChanged, IMaintReqNewViewModel
     {
+        #region Data Providers
+
         public IMaintRequestInitiation MaintReqDataProvider { get; }
-
         public IFactory FactoryDataProvider { get; }
-
         public IEquipment EquipmentDataProvider { get; }
-
         public IArea AreaDataProvider { get; }
-
         public IPriorities PriorityDataProvider { get; }
         public ICompany CompanyDataProvider { get; }
 
+        #endregion
+
+
         public MaintRequestInitiation MaintReq { get; set; }
-
-        public ObservableCollection<AreaModel> Areas { get; set; }
-
-
-        public ObservableCollection<Factory> Factories { get; set; }
-        public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
+        public ObservableCollection<AreaModel> Areas { get; set; } = new();
+        public IEnumerable<Factory> Factories { get; set; }
         public ObservableCollection<Equipment> Equipment { get; set; }
-        public ObservableCollection<Priority> Priorities { get; set; }
-        public ObservableCollection<Company> Companies { get; set; }
-        public bool SendTextMessageForEmergencyPriority { get; set; }
+        public ObservableCollection<Priority> Priorities { get; set; } = new();
+        public ObservableCollection<Company> Companies { get; set; } = new();
 
+        public bool SendTextMessageForEmergencyPriority { get; set; }
+        public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
         public int NewAddedMaintId { get; set; }
 
         public int CompanyId
@@ -48,7 +46,7 @@ namespace SACOMaintenance.ViewModel
                 {
                     MaintReq.CompanyId = value;
                     RaisePropertychangedEvent();
-                    LoadFactoriesByCompany();
+                    //LoadFactoriesByCompany();
                 }
             }
         }
@@ -62,11 +60,15 @@ namespace SACOMaintenance.ViewModel
                 {
                     MaintReq.FactoryId = value;
                     RaisePropertychangedEvent();
-                    LoadAreasByFactory();
+
+                    //new Task(async() =>
+                    //{
+                    //    await LoadAreasByFactory();
+                    //}).Start();
+                    //await LoadAreasByFactory();
                 }
             }
         }
-
 
         public int AreaId
         {
@@ -76,7 +78,7 @@ namespace SACOMaintenance.ViewModel
                 if (MaintReq.AreaId != value)
                 {
                     MaintReq.AreaId = value;
-                    if (AreaId == 31)
+                    if (AreaId == 1)
                     {
                         MaintReq.RequestTypeId = 1;
                     }
@@ -136,7 +138,9 @@ namespace SACOMaintenance.ViewModel
             //Factories = FactoryDataProvider.LoadAllFactories();
             //Factories = new ObservableCollection<Factory>(FactoryDataProvider.LoadAllFactories());
             //Equipment = EquipmentDataProvider.LoadAllEquipments();
-            LoadFactories();
+
+            //LoadFactories();
+            
             LoadPriorities();
             LoadCompanies();
 
@@ -161,9 +165,9 @@ namespace SACOMaintenance.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-         public async void LoadFactories()
+        public async Task LoadFactories()
         {
-            Factories = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
+            Factories = await FactoryDataProvider.LoadAllFactories();
         }
 
         public async void LoadFactoriesByCompany()
@@ -171,9 +175,14 @@ namespace SACOMaintenance.ViewModel
             Factories = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
         }
 
-        public async void LoadAreasByFactory()
+        public async Task LoadAreasByFactory()
         {
-            Areas = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId));
+            Areas.Clear();
+            Areas = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAreasByFactory(FactoryId)); //(MaintReq.FactoryId));
+            //foreach(var item in list)
+            //{
+            //    Areas.Add(item);
+            //}
         }
 
         private async void LoadEquipmentByArea()
@@ -183,12 +192,20 @@ namespace SACOMaintenance.ViewModel
 
         public async void LoadCompanies()
         {
-            Companies = new ObservableCollection<Company>(await CompanyDataProvider.LoadCompanies());
+            var comps = await CompanyDataProvider.LoadCompanies();
+            foreach(var item in comps)
+            {
+                Companies.Add(item);
+            }
         }
 
         public async void LoadPriorities()
         {
-            Priorities = new ObservableCollection<Priority>(await PriorityDataProvider.LoadAllPriorities());
+            var prios = await PriorityDataProvider.LoadAllPriorities();
+            foreach(var item in prios)
+            {
+                Priorities.Add(item);
+            }
             //return Priorities;
         }
     }

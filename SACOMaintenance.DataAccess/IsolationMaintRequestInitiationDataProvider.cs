@@ -30,7 +30,7 @@ namespace SACOMaintenance.DataAccess
             return isolations;
         }
 
-        public async Task<IEnumerable<int>> LoadAllIsolationsIds()
+        public async Task<List<int>> LoadAllIsolationsIds()
         {
             List<int> ids = new();
             var allIsolationIds = await _maintenanceDBContext.Isolations.ToListAsync();

@@ -126,29 +126,28 @@ using SACOMaintenance.DataAccess.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
+#line 71 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
        
 
-    [Parameter]
-    public string AreaId { get; set; }
+    //[Parameter]
+    //public string AreaId { get; set; }
 
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        //areaViewModel.LoadSingleArea(Convert.ToInt32(AreaId));
-        //AreaModelItem = AreaDataProvider.LoadSingleArea(Convert.ToInt32(AreaId));
-        //FactoryList = FactoryDataProvider.LoadAllFactories();
+        await areaViewModel.Load();
     }
 
-    void OnChange(object value, string name)
+    public async Task OnChange(object value, string name)
     {
         //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
-        areaViewModel.LoadSingleArea(Convert.ToInt32(value));
+        await areaViewModel.LoadSingleArea(Convert.ToInt32(value)); //LoadSingleArea(Convert.ToInt32(value));
         //console.Log($"{name} value changed to {str}");
+        StateHasChanged();
     }
 
     private void UpdateArea(MouseEventArgs e)
     {
-        areaViewModel.SaveArea(areaViewModel.area);
+        areaViewModel.SaveArea(areaViewModel.Area);
     }
 
     //private AreaModel AreaModelItem { get; set; } = new AreaModel();

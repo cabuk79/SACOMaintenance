@@ -2,10 +2,13 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\ref\SACOMaintenance.DataAccess.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.DataAccess.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Data.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Common.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\SACOMaintenance.Data.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.csproj.AssemblyReference.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.AssemblyInfoInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.AssemblyInfo.cs
@@ -14,6 +17,3 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\ref\SACOMaintenance.DataAccess.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net5.0\SACOMaintenance.DataAccess.csproj.AssemblyReference.cache
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\Models.DTO.dll
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\bin\Debug\net5.0\Models.DTO.pdb

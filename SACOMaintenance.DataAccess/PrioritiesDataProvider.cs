@@ -22,7 +22,7 @@ namespace SACOMaintenance.DataAccess
         
         public async Task<IEnumerable<Priority>> LoadAllPriorities()
         {
-            var priorities = await _sacoMaintContext.Priorites.ToListAsync();
+            IEnumerable<Priority> priorities = await _sacoMaintContext.Priorites.ToListAsync();
 
             return priorities;
         }

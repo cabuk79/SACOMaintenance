@@ -33,7 +33,7 @@ namespace SACOMaintenance.Blazor.Server
         {
 
             services.AddDbContext<SACOMaintenanceContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")),ServiceLifetime.Transient);
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient); 
 
             //services.AddDbContext<SACOMaintenanceContext>(options=>
             //        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

@@ -5,6 +5,10 @@
 @*@inject IArea AreaDataProvider
     @inject IFactory FactoryDataProvider*@
 
+
+@*Property Area Name:  @areaViewModel.AreaName <br />*@
+Model Area Name:  @areaViewModel.AreaName <br />
+
 <div section="header">
     <div class="container-fluid">
         <h1>Areas</h1>
@@ -17,18 +21,18 @@
             <div class="col-lg-2">
                 <RadzenListBox TValue="int" Data=@areaViewModel.areas TextProperty="AreaName"
                                ValueProperty="Id" Style="height:500px" Name="areasListBox"
-                               Change=@(args => OnChange(args, "ListBox")) />
+                               Change=@(args => OnChange(args, "areasListBox")) />
             </div>
 
             <div class="col-lg-10">
                 <section class="area-form">
                     <div class="area-form-area">
-                        <h3>Viewing: @areaViewModel.AreaName</h3>
-                        <EditForm Model="@areaViewModel.area">
+                        <h3>Viewing: @areaViewModel.Area.AreaName</h3>
+                        <EditForm Model="@areaViewModel.Area">
                             <div class="form-group">
                                 <div class="form-group-row">
                                     <label style="font-weight:bold">Name</label>
-                                    <InputText @bind-Value="areaViewModel.AreaName" class="form-control"></InputText>
+                                    <InputText @bind-Value="areaViewModel.Area.AreaName" class="form-control"></InputText>
                                 </div>
                                 <div class="form-group-row">
                                     <label style="font-weight:bold">Factory</label>
@@ -42,7 +46,7 @@
                                 </div>
                                 <div class="form-group-row">
                                     <label style="font-weight:bold">Comments</label>
-                                    <RadzenHtmlEditor @bind-Value=@areaViewModel.CommentsNotes></RadzenHtmlEditor>
+                                    <RadzenHtmlEditor @bind-Value=@areaViewModel.Area.CommentsNotes></RadzenHtmlEditor>
                                 </div>
                             </div>
                         </EditForm>
@@ -66,86 +70,28 @@
 
 @code {
 
-    [Parameter]
-    public string AreaId { get; set; }
+    //[Parameter]
+    //public string AreaId { get; set; }
 
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        //areaViewModel.LoadSingleArea(Convert.ToInt32(AreaId));
-        //AreaModelItem = AreaDataProvider.LoadSingleArea(Convert.ToInt32(AreaId));
-        //FactoryList = FactoryDataProvider.LoadAllFactories();
+        await areaViewModel.Load();
     }
 
-    void OnChange(object value, string name)
+    public async Task OnChange(object value, string name)
     {
         //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
-        areaViewModel.LoadSingleArea(Convert.ToInt32(value));
+        await areaViewModel.LoadSingleArea(Convert.ToInt32(value)); //LoadSingleArea(Convert.ToInt32(value));
         //console.Log($"{name} value changed to {str}");
+        StateHasChanged();
     }
 
     private void UpdateArea(MouseEventArgs e)
     {
-        areaViewModel.SaveArea(areaViewModel.area);
+        areaViewModel.SaveArea(areaViewModel.Area);
     }
 
     //private AreaModel AreaModelItem { get; set; } = new AreaModel();
     //private IEnumerable<Factory> FactoryList; // { get; set; } = new IEnumerable<Factory>();
 }
-
-@*<section class="area-form">
-        <div class="area-form-area">
-            <h3>Editing @areaViewModel.AreaName</h3>
-            <EditForm Model="@areaViewModel.area">
-                <div class="form-group">
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Name</label>
-                        <InputText @bind-Value="areaViewModel.AreaName" class="form-control"></InputText>
-                    </div>
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Factory</label>
-                        <InputSelect id="factory" class="form-control"
-                                     col-sm-8 @bind-Value="@areaViewModel.FactoryId">
-                            @foreach (var factory in areaViewModel.factories)
-                            {
-                                <option value="@factory.Id">@factory.FactoryName</option>
-                            }
-                        </InputSelect>
-                    </div>
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Comments</label>
-                        <InputTextArea @bind-Value="areaViewModel.CommentsNotes" class="form-control"></InputTextArea>
-                    </div>
-                </div>
-            </EditForm>
-        </div>
-    </section>*@
-
-@*<section class="area-form">
-        <div class="area-form-area">
-            <h3>Editing @AreaModelItem.AreaName</h3>
-            <EditForm Model="AreaModelItem">
-                <div class="form-group">
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Name</label>
-                        <InputText @bind-Value="AreaModelItem.AreaName" class="form-control"></InputText>
-                    </div>
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Factory</label>
-                        <InputSelect id="factory" class="form-control" col-sm-8 @bind-Value="@AreaModelItem.FactoryId">
-                            @foreach (var factory in FactoryList)
-                            {
-                                <option value="@factory.Id">@factory.FactoryName</option>
-                            }
-                        </InputSelect>
-                    </div>
-                    <div class="form-group-row">
-                        <label style="font-weight:bold">Comments</label>
-                        <InputTextArea @bind-Value="AreaModelItem.CommentsNotes" class="form-control"></InputTextArea>
-                    </div>
-                </div>
-            </EditForm>
-        </div>
-    </section>*@
-
-
 

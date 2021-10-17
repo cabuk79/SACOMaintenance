@@ -147,23 +147,40 @@ using Microsoft.AspNetCore.Http;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 118 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 137 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
 
+    public int numberAreasEquipment = 0;
 
     Common.ModelDB.User objUser = new Common.ModelDB.User();
     string userId { get; set; }
 
 
-    private HubConnection hubConnection;
+
+    public async Task OnChange(object value, string name)
+    {
+        //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+        //await areaViewModel.LoadSingleArea(Convert.ToInt32(value)); //LoadSingleArea(Convert.ToInt32(value));
+        //console.Log($"{name} value changed to {str}");
+        await AddReqViewModel.LoadAreasByFactory();
+        StateHasChanged();
+    }
+
+
+    //private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
     {
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-            .Build();
 
-        await hubConnection.StartAsync();
+
+        await AddReqViewModel.LoadFactories();
+        //hubConnection = new HubConnectionBuilder()
+        //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+        //    .Build();
+
+        //AddReqViewModel.LoadFactories();
+
+        //await hubConnection.StartAsync();
 
         //Get the current logged in users ID
         var principal = HttpContextAccessor.HttpContext.User;
@@ -206,7 +223,7 @@ using Microsoft.AspNetCore.Http;
             //string MessageIdTwo = respone.Messages[0].MessageId;
         }
 
-        if (IsConnected) await SendMessage();
+        //if (IsConnected) await SendMessage();
 
         ShowNotification(new NotificationMessage
         {
@@ -222,15 +239,15 @@ using Microsoft.AspNetCore.Http;
         NotificationService.Notify(message);
     }
 
-    Task SendMessage() => hubConnection.SendAsync("SendMessage");
+    //Task SendMessage() => hubConnection.SendAsync("SendMessage");
 
-    public bool IsConnected =>
-        hubConnection.State == HubConnectionState.Connected;
+    //public bool IsConnected =>
+    //    hubConnection.State == HubConnectionState.Connected;
 
-    public void Dispose()
-    {
-        _ = hubConnection.DisposeAsync();
-    }
+    //public void Dispose()
+    //{
+    //    _ = hubConnection.DisposeAsync();
+    //}
 
 #line default
 #line hidden

@@ -13,6 +13,26 @@
 
 <RadzenNotification></RadzenNotification>
 
+@if (AddReqViewModel.Priorities != null)
+{
+    foreach (var item in AddReqViewModel.Priorities)
+    {
+        @item.Name
+        <br />
+    }
+}
+
+
+@*@if (AddReqViewModel.Areas != null)
+{
+    foreach (var item in AddReqViewModel.Areas)
+    {
+        @item.AreaName
+        <br />
+    }
+}*@
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
@@ -59,28 +79,27 @@
                                         FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                         @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
                                         AllowFiltering="true"
-                                        Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id">
+                                        Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id"
+                                        Change=@(args => OnChange(args, "areasListBox")) >
                         </RadzenDropDown>
                     </div>
-                    <div class="col-lg-4">
-                        @if (AddReqViewModel.Areas != null)
-                        {
-                            var numberAreasEquipment = AddReqViewModel.Areas.Count();
+                    <div class="col-lg-4"> 
+                        @{numberAreasEquipment = AddReqViewModel.Areas.Count();
                             if (numberAreasEquipment > 0)
                             {
                                 <RadzenLabel Text="Area"></RadzenLabel>
                                 <RadzenDropDown AllowClear="true" TValue="int"
                                                 Style="width: 100%; border-color: black"
                                                 FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                @bind-Value="@AddReqViewModel.AreaId" 
+                                                @bind-Value="@AddReqViewModel.AreaId"
                                                 FilterOperator="StringFilterOperator.Contains"
                                                 AllowFiltering="true"
-                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName" 
+                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName"
                                                 ValueProperty="Id">
                                 </RadzenDropDown>
                                 <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
+                                }
                             }
-                        }
                     </div>
                     <div class="col-lg-4">
                         @if (AddReqViewModel.Equipment != null)
@@ -117,20 +136,37 @@
 
 @code {
 
+    public int numberAreasEquipment = 0;
 
     Common.ModelDB.User objUser = new Common.ModelDB.User();
     string userId { get; set; }
 
 
-    private HubConnection hubConnection;
+
+    public async Task OnChange(object value, string name)
+    {
+        //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+        //await areaViewModel.LoadSingleArea(Convert.ToInt32(value)); //LoadSingleArea(Convert.ToInt32(value));
+        //console.Log($"{name} value changed to {str}");
+        await AddReqViewModel.LoadAreasByFactory();
+        StateHasChanged();
+    }
+
+
+    //private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync()
     {
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-            .Build();
 
-        await hubConnection.StartAsync();
+
+        await AddReqViewModel.LoadFactories();
+        //hubConnection = new HubConnectionBuilder()
+        //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+        //    .Build();
+
+        //AddReqViewModel.LoadFactories();
+
+        //await hubConnection.StartAsync();
 
         //Get the current logged in users ID
         var principal = HttpContextAccessor.HttpContext.User;
@@ -173,7 +209,7 @@
             //string MessageIdTwo = respone.Messages[0].MessageId;
         }
 
-        if (IsConnected) await SendMessage();
+        //if (IsConnected) await SendMessage();
 
         ShowNotification(new NotificationMessage
         {
@@ -189,13 +225,13 @@
         NotificationService.Notify(message);
     }
 
-    Task SendMessage() => hubConnection.SendAsync("SendMessage");
+    //Task SendMessage() => hubConnection.SendAsync("SendMessage");
 
-    public bool IsConnected =>
-        hubConnection.State == HubConnectionState.Connected;
+    //public bool IsConnected =>
+    //    hubConnection.State == HubConnectionState.Connected;
 
-    public void Dispose()
-    {
-        _ = hubConnection.DisposeAsync();
-    }
+    //public void Dispose()
+    //{
+    //    _ = hubConnection.DisposeAsync();
+    //}
 }

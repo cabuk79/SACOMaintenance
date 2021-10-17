@@ -2,8 +2,11 @@ C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ExcelLibs
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ref\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ExcelLibs.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\SACOMaintenance.Common.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.AssemblyReference.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.AssemblyInfoInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.AssemblyInfo.cs
@@ -12,6 +15,3 @@ C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ref\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.dll
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.AssemblyReference.cache

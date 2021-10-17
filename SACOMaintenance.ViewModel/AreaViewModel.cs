@@ -1,6 +1,7 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -10,22 +11,80 @@ namespace SACOMaintenance.ViewModel
 {
     public class AreaViewModel : INotifyPropertyChanged, IAreaViewModel
     {
-        
 
-        public AreaModel area { get; set; }
+        public AreaModel Area { get; set; } = new();
         public ObservableCollection<AreaModel> areas { get; } = new();
         public ObservableCollection<Factory> factories { get; } = new();
-        public IArea AreaDataProvider { get; }
-        public AreaViewModel(IArea areaDataProvider, IFactory factoryDataProvider)
+
+
+        public string AreaName { get; set; }
+        //{
+        //    get => Area.AreaName;
+        //    set
+        //    {
+        //        if (Area.AreaName != value)
+        //        {
+        //            Area.AreaName = value;
+        //            RaisePropertychangedEvent();
+        //        }
+        //    }
+        //}
+
+        public int AreaId
         {
-            //this.area = area;
-            area = new AreaModel();
-            AreaDataProvider = areaDataProvider;
-            this.factoryDataProvider = factoryDataProvider;
-            Load(); 
+            get => Area.Id;
+            set
+            {
+                if (Area.Id != value)
+                {
+                    Area.Id = value;
+                    RaisePropertychangedEvent();
+                }
+            }
         }
 
-        public async void Load()
+        public string CommentsNotes
+        {
+            get => Area.CommentsNotes;
+            set
+            {
+                if (Area.CommentsNotes != value) ;
+                {
+                    Area.CommentsNotes = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
+        public int FactoryId
+        {
+            get => Area.FactoryId;
+            set
+            {
+                if (Area.FactoryId != value)
+                {
+                    Area.FactoryId = value;
+                    RaisePropertychangedEvent();
+                }
+            }
+        }
+
+
+        public IArea AreaDataProvider { get; }
+        public IFactory FactoryDataProvider { get; }
+        public IArea AreaDataProviderSingle { get; }
+
+
+        public AreaViewModel(IArea areaDataProvider, IFactory factoryDataProvider, IArea areaDataProviderSingle)
+        {           
+            AreaDataProvider = areaDataProvider;
+            FactoryDataProvider = factoryDataProvider;
+            AreaDataProviderSingle = areaDataProviderSingle;
+        }
+
+
+        //public async void Load()
+        public async Task Load()
         {
             var areasList = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAllAreas());
             areas.Clear();
@@ -35,7 +94,7 @@ namespace SACOMaintenance.ViewModel
                 areas.Add(areaItem);
             }
 
-            var factoriesList = new ObservableCollection<Factory>(await factoryDataProvider.LoadAllFactories());            
+            var factoriesList = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());            
             factories.Clear();
 
             foreach (var factoryItem in factoriesList)
@@ -44,70 +103,15 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public async Task<AreaModel> LoadSingleArea(int areaId)
+        public async Task LoadSingleArea(int areaId)
         {
-            area = await AreaDataProvider.LoadSingleArea(areaId);
-            return area;
+            Area = await AreaDataProviderSingle.LoadSingleArea(areaId);
+            AreaName = Area.AreaName;
         }
-
-    
-
-        public string AreaName
-        {
-            get => area.AreaName;
-            set
-            {
-                if (area.AreaName != value)
-                {
-                    area.AreaName = value;
-                    RaisePropertychangedEvent();
-                }
-            }
-        }
-
-        public int AreaId
-        {
-            get => area.Id;
-            set
-            {
-                if(area.Id != value)
-                {
-                    area.Id = value;
-                    RaisePropertychangedEvent();
-                }
-            }
-        }
-
-        public string CommentsNotes
-        {
-            get => area.CommentsNotes;
-            set
-            {
-                if (area.CommentsNotes != value);
-                {
-                    area.CommentsNotes = value;
-                    RaisePropertychangedEvent();
-                }
-            }
-        }
-
-        public int FactoryId
-        {
-            get => area.FactoryId;
-            set
-            {
-                if (area.FactoryId != value)
-                {
-                    area.FactoryId = value;
-                    RaisePropertychangedEvent();
-                }
-            }
-        }
-
+     
         public bool AreaExists { get; set; }
 
         public AreaModel newArea = new AreaModel();
-        private readonly IFactory factoryDataProvider;
 
         public void SaveArea(AreaModel area)
         {
@@ -138,6 +142,11 @@ namespace SACOMaintenance.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
+
+       
+
 
         
     }

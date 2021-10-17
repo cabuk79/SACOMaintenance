@@ -45,7 +45,7 @@ namespace SACOMaintenance.DataAccess
 
         public async Task<IEnumerable<AreaModel>> LoadAreasByFactory(int factoryId)
         {
-            var areas = await _areaDBContext.Areas.Where(f => f.FactoryId == factoryId).ToListAsync();
+            IEnumerable<AreaModel> areas = await _areaDBContext.Areas.Where(f => f.FactoryId == factoryId).ToListAsync();
             return areas;
         }
 
