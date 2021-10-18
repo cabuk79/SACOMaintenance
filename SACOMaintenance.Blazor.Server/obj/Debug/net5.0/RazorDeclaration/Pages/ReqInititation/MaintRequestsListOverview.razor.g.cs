@@ -133,69 +133,70 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 54 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
-      
+#line 71 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+          
 
-    public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
+        public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
-    private HubConnection hubConnection;
+        private HubConnection hubConnection;
 
-    void OnChange()
-    {
-
-        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
-        maintGrid.Reload();
-        InvokeAsync(StateHasChanged);
-
-
-
-        //= maintReqListViewModel.requests
-        //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
-
-
-        //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
-        //e.Status == maintReqListViewModel.currentStatus : true);
-    }
-
-
-    protected override async Task OnInitializedAsync()
-    {
-        maintReqListViewModel.LoadRequests();
-
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-            .Build();
-
-        hubConnection.On("ReceiveMessage", () =>
+        void OnChange()
         {
-            CallLoadData();
-            InvokeAsync(() => StateHasChanged());
+
+            maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
             maintGrid.Reload();
-        });
+            InvokeAsync(StateHasChanged);
 
-        await hubConnection.StartAsync();
 
-        //maintReqListViewModel.LoadRequests();
-    }
 
-    private void CallLoadData()
-    {
-        Task.Run(async () =>
+            //= maintReqListViewModel.requests
+            //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
+
+
+            //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
+            //e.Status == maintReqListViewModel.currentStatus : true);
+        }
+
+
+        protected override async Task OnInitializedAsync()
         {
             maintReqListViewModel.LoadRequests();
-        });
-    }
+
+            hubConnection = new HubConnectionBuilder()
+                .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+                .Build();
+
+            hubConnection.On("ReceiveMessage", () =>
+            {
+                CallLoadData();
+                InvokeAsync(() => StateHasChanged());
+                maintGrid.Reload();
+            });
+
+            await hubConnection.StartAsync();
+
+            //maintReqListViewModel.LoadRequests();
+        }
+
+        private void CallLoadData()
+        {
+            Task.Run(async () =>
+            {
+                maintReqListViewModel.LoadRequests();
+            });
+        }
 
 
 
-    public bool IsConnected =>
-        hubConnection.State == HubConnectionState.Connected;
+        public bool IsConnected =>
+            hubConnection.State == HubConnectionState.Connected;
 
-    public void Dispose()
-    {
-        _ = hubConnection.DisposeAsync();
-    }
+        public void Dispose()
+        {
+            _ = hubConnection.DisposeAsync();
+        }
 
+    
 
 #line default
 #line hidden

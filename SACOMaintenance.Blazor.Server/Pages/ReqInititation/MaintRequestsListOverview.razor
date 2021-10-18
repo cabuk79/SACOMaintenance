@@ -5,112 +5,129 @@
 @using Microsoft.AspNetCore.SignalR.Client
 @using SACOMaintenance.Blazor.Server.Components 
 
-<h3>All Maintenance Requests</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10">
+            <h1>All Maintenance Requests</h1>
+        </div>
+        <div class="col-lg-2">
+            <RadzenButton Click=@(args => @maintReqListViewModel.ExportList()) Text="Export All Requests"
+                          Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenGrid Data="@maintReqListViewModel.requests"
+                        SelectionMode="DataGridSelectionMode.Single"
+                        @ref="maintGrid" AllowSorting="true"
+                        AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                        FilterMode="FilterMode.Advanced" AllowColumnResize="true"
+                        AllowPaging="true">
+                <Columns>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number" Width="100px">
+                        <Template Context="data">
+                            MAINT-@data.Id
+                        </Template>
+                    </RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details" Width="250px">
+                        <Template Context="data">
+                            <p style="white-space:pre-wrap">@((MarkupString)data.RequestDetails)</p>
+                        </Template>
+                    </RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised" Width="100px"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name" Width="100px"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status" Width="80px">
+                        <FilterTemplate>
+                            <RadzenDropDown @bind-Value="@maintReqListViewModel.StatusId" TextProperty="Text"
+                                            ValueProperty="Value" Style="width:100%"
+                                            Change=@OnChange
+                                            Data="@maintReqListViewModel.statusList.Select(t => new { Text = $"{t.StatusName}", Value = t.Id })" />
 
-<RadzenButton Click=@(args => @maintReqListViewModel.ExportList()) Text="Export All Requests" 
-               Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
-
-<RadzenGrid Data="@maintReqListViewModel.requests"
-            SelectionMode="DataGridSelectionMode.Single"
-            @ref="maintGrid" AllowSorting="true"
-            AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-            FilterMode="FilterMode.Advanced" AllowColumnResize="true" 
-             AllowPaging="true">
-    <Columns>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number" Width="50px"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details">
-            <Template Context="data">
-                <p style="white-space:pre-wrap">@data.RequestDetails</p>
-            </Template>
-        </RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name"></RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status">
-            <FilterTemplate>
-                <RadzenDropDown @bind-Value="@maintReqListViewModel.StatusId" TextProperty="Text"
-                                ValueProperty="Value" Style="width:100%"
-                                Change=@OnChange 
-                                Data="@maintReqListViewModel.statusList.Select(t => new { Text = $"{t.StatusName}", Value = t.Id })" />
-
-            </FilterTemplate>
-        </RadzenGridColumn>
-        <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions">
-            <Template Context="data">
-                <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
-                    <i class="fa fa-pencil-square"></i>
-                </a>
-            </Template>
-        </RadzenGridColumn>
-    </Columns>
-</RadzenGrid>
-
-
-
-
-
-
-
-
-@code{
-
-    public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
-
-    private HubConnection hubConnection;
-
-    void OnChange()
-    {
-
-        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
-        maintGrid.Reload();
-        InvokeAsync(StateHasChanged);
+                        </FilterTemplate>
+                    </RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions" Width="30px"
+                                      TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+                        <Template Context="data">
+                            <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
+                                <i class="fa fa-pencil-square"></i>
+                            </a>
+                        </Template>
+                    </RadzenGridColumn>
+                </Columns>
+            </RadzenGrid>
+        </div>
+    </div>
+</div>
 
 
 
-        //= maintReqListViewModel.requests
-        //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
 
 
-        //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
-        //e.Status == maintReqListViewModel.currentStatus : true);
-    }
 
 
-    protected override async Task OnInitializedAsync()
-    {
-        maintReqListViewModel.LoadRequests();
 
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-            .Build();
 
-        hubConnection.On("ReceiveMessage", () =>
+
+    @code{
+
+        public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
+
+        private HubConnection hubConnection;
+
+        void OnChange()
         {
-            CallLoadData();
-            InvokeAsync(() => StateHasChanged());
+
+            maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
             maintGrid.Reload();
-        });
+            InvokeAsync(StateHasChanged);
 
-        await hubConnection.StartAsync();
 
-        //maintReqListViewModel.LoadRequests();
-    }
 
-    private void CallLoadData()
-    {
-        Task.Run(async () =>
+            //= maintReqListViewModel.requests
+            //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
+
+
+            //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
+            //e.Status == maintReqListViewModel.currentStatus : true);
+        }
+
+
+        protected override async Task OnInitializedAsync()
         {
             maintReqListViewModel.LoadRequests();
-        });
+
+            hubConnection = new HubConnectionBuilder()
+                .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+                .Build();
+
+            hubConnection.On("ReceiveMessage", () =>
+            {
+                CallLoadData();
+                InvokeAsync(() => StateHasChanged());
+                maintGrid.Reload();
+            });
+
+            await hubConnection.StartAsync();
+
+            //maintReqListViewModel.LoadRequests();
+        }
+
+        private void CallLoadData()
+        {
+            Task.Run(async () =>
+            {
+                maintReqListViewModel.LoadRequests();
+            });
+        }
+
+
+
+        public bool IsConnected =>
+            hubConnection.State == HubConnectionState.Connected;
+
+        public void Dispose()
+        {
+            _ = hubConnection.DisposeAsync();
+        }
+
     }
-
-
-
-    public bool IsConnected =>
-        hubConnection.State == HubConnectionState.Connected;
-
-    public void Dispose()
-    {
-        _ = hubConnection.DisposeAsync();
-    }
-
-}
