@@ -147,7 +147,7 @@ using Microsoft.AspNetCore.Http;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 137 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 259 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
 
     public int numberAreasEquipment = 0;
@@ -155,7 +155,9 @@ using Microsoft.AspNetCore.Http;
     Common.ModelDB.User objUser = new Common.ModelDB.User();
     string userId { get; set; }
 
-
+    void OnInvalidSubmit(FormInvalidSubmitEventArgs args)
+    { 
+    }
 
     public async Task OnChange(object value, string name)
     {
