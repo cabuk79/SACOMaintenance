@@ -22,44 +22,52 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <RadzenTemplateForm TItem="MaintRequestInitiation" Data="@AddReqViewModel.MaintReq" InvalidSubmit=@OnInvalidSubmit>
-                <RadzenFieldset Text="Enter Request Details">
+            <RadzenTemplateForm TItem="MaintRequestInitiation" Data="@AddReqViewModel.MaintReq" Submit="@OnSubmit" InvalidSubmit=@OnInvalidSubmit>
+                <RadzenFieldset Text="Enter Request Details" Style="border-color: black">
                     <div class="row">
                         <div class="col-lg-4">
-                            <RadzenLabel Text="Priority"></RadzenLabel>
-                            <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black; display: block"
-                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" Name="PriorityDrop"
-                                            @bind-Value="@AddReqViewModel.PriorityId" FilterOperator="StringFilterOperator.Contains"
-                                            AllowFiltering="true"
-                                            Data="@AddReqViewModel.Priorities" TextProperty="Name" ValueProperty="Id">
-                                <Template Context="DropDownPrioTemplate">
-                                    <div class="row">
-                                        <div class="col-lg-1">
-                                            <i class="@((DropDownPrioTemplate as Priority).Icon)"></i>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            @((DropDownPrioTemplate as Priority).Name)
-                                        </div>
-                                    </div>
-                                </Template>
-                            </RadzenDropDown>
                             <div class="row">
-                                <div lcass="col-lg-12">
+                                <div class="col-lg-12">
+                                    <RadzenLabel Text="Priority"></RadzenLabel>
+                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black; display: block"
+                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" Name="PriorityDrop"
+                                                    @bind-Value="@AddReqViewModel.PriorityId" FilterOperator="StringFilterOperator.Contains"
+                                                    AllowFiltering="true"
+                                                    Data="@AddReqViewModel.Priorities" TextProperty="Name" ValueProperty="Id">
+                                        <Template Context="DropDownPrioTemplate">
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <i class="@((DropDownPrioTemplate as Priority).Icon)"></i>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    @((DropDownPrioTemplate as Priority).Name)
+                                                </div>
+                                            </div>
+                                        </Template>
+                                    </RadzenDropDown>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <RadzenRequiredValidator Component="PriorityDrop" Text="You must selected a priority!" DefaultValue="0" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <RadzenLabel Text="Company"></RadzenLabel>
-                            <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                            Context="DropDownCompanyTemplate"
-                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" Name="CompanyDrop"
-                                            @bind-Value="@AddReqViewModel.CompanyId" FilterOperator="StringFilterOperator.Contains"
-                                            AllowFiltering="true"
-                                            Data="@AddReqViewModel.Companies" TextProperty="CompanyName" ValueProperty="Id">
-                            </RadzenDropDown>
                             <div class="row">
-                                <div lcass="col-lg-12">
+                                <div class="col-lg-12">
+                                    <RadzenLabel Text="Company"></RadzenLabel>
+                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
+                                                    Context="DropDownCompanyTemplate"
+                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" Name="CompanyDrop"
+                                                    @bind-Value="@AddReqViewModel.CompanyId" FilterOperator="StringFilterOperator.Contains"
+                                                    AllowFiltering="true"
+                                                    Data="@AddReqViewModel.Companies" TextProperty="CompanyName" ValueProperty="Id">
+                                    </RadzenDropDown>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <RadzenRequiredValidator Component="CompanyDrop" Text="You must selected a company!" DefaultValue="0" />
                                 </div>
                             </div>
@@ -67,191 +75,103 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
-                            <RadzenLabel Text="Factory"></RadzenLabel>
-                            <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                            @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
-                                            AllowFiltering="true" Name="FactoryDrop"
-                                            Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id"
-                                            Change=@(args => OnChange(args, "areasListBox"))>
-                            </RadzenDropDown>
                             <div class="row">
-                                <div lcass="col-lg-12">
+                                <div class="col-lg-12">
+                                    <RadzenLabel Text="Factory"></RadzenLabel>
+                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
+                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                    @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
+                                                    AllowFiltering="true" Name="FactoryDrop"
+                                                    Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id"
+                                                    Change=@(args => OnFactoryChange(args, "areasListBox"))>
+                                    </RadzenDropDown>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <RadzenRequiredValidator Component="FactoryDrop" Text="You must selected a factory!" DefaultValue="0" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            @{numberAreasEquipment = AddReqViewModel.Areas.Count();
-                                if (numberAreasEquipment > 0)
-                                {
-                                    <RadzenLabel Text="Area"></RadzenLabel>
-                                    <RadzenDropDown AllowClear="true" TValue="int"
-                                                    Style="width: 100%; border-color: black"
-                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                    @bind-Value="@AddReqViewModel.AreaId"
-                                                    FilterOperator="StringFilterOperator.Contains"
-                                                    AllowFiltering="true" Name="AreaDrop"
-                                                    Data="@AddReqViewModel.Areas" TextProperty="AreaName"
-                                                    ValueProperty="Id">
-                                    </RadzenDropDown>
-                                    <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
-                                    <div class="row">
-                                        <div lcass="col-lg-12">
-                                            <RadzenRequiredValidator Component="AreaDrop" Text="You must selected an area!" DefaultValue="0" />
-                                        </div>
-                                    </div>
-                                }
-                            }
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @{numberAreasEquipment = AddReqViewModel.Areas.Count();
+                                        if (numberAreasEquipment > 0)
+                                        {
+                                            <RadzenLabel Text="Area"></RadzenLabel>
+                                            <RadzenDropDown AllowClear="true" TValue="int"
+                                                            Style="width: 100%; border-color: black"
+                                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                            @bind-Value="@AddReqViewModel.AreaId"
+                                                            FilterOperator="StringFilterOperator.Contains"
+                                                            AllowFiltering="true" Name="AreaDrop"
+                                                            Data="@AddReqViewModel.Areas" TextProperty="AreaName"
+                                                            ValueProperty="Id"
+                                                            Change=@(args => OnAreaChange(args, "EquipmentListBox"))>
+                                            </RadzenDropDown>
+                                            <RadzenLabel Text="If the area is want is not in the list please contact maintenance!" class="drop-down-request"></RadzenLabel>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <RadzenRequiredValidator Component="AreaDrop" Text="You must selected an area!" DefaultValue="0" />
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-4">
-                            @if (AddReqViewModel.Equipment != null)
-                            {
-                                var numberEuipmentItems = AddReqViewModel.Equipment.Count();
-                                if (numberEuipmentItems > 0)
-                                {
-                                    <RadzenLabel Text="Equipment"></RadzenLabel>
-                                    <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                    @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
-                                                    AllowFiltering="true" Name="EquipmentDrop"
-                                                    Data="@AddReqViewModel.Equipment" TextProperty="Name" ValueProperty="Id">
-                                    </RadzenDropDown>
-                                    <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
-                                    <div class="row">
-                                        <div lcass="col-lg-12">
-                                            <RadzenRequiredValidator Component="EquipmentDrop" Text="You must selected  piece of equipment!" DefaultValue="0" />
-                                        </div>
-                                    </div>
-                                }
-                            }
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @if (AddReqViewModel.Equipment != null)
+                                    {
+                                        var numberEuipmentItems = AddReqViewModel.Equipment.Count();
+                                        if (numberEuipmentItems > 0)
+                                        {
+                                            <RadzenLabel Text="Equipment"></RadzenLabel>
+                                            <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
+                                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                            @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
+                                                            AllowFiltering="true" Name="EquipmentDrop"
+                                                            Data="@AddReqViewModel.Equipment" TextProperty="Name" ValueProperty="Id">
+                                            </RadzenDropDown>
+                                            <RadzenLabel Text="If the area is want is not in the list please contact maintenance!" class="drop-down-request"></RadzenLabel>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <RadzenRequiredValidator Component="EquipmentDrop" Text="You must selected  piece of equipment!" DefaultValue="0" />
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <RadzenHtmlEditor @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="height: 500px; border-color: black" Name="DetailsHTML"></RadzenHtmlEditor>
+                            <RadzenHtmlEditor @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="height: 500px; border-color: black" Name="DetailsHTML">
+                                <RadzenHtmlEditorUndo />
+                                <RadzenHtmlEditorRedo />
+                                <RadzenHtmlEditorSeparator />
+                                <RadzenHtmlEditorBold />
+                                <RadzenHtmlEditorItalic />
+                                <RadzenHtmlEditorUnderline />
+                                <RadzenHtmlEditorSeparator />
+                                <RadzenHtmlEditorColor />
+                                <RadzenHtmlEditorUnorderedList />
+                            </RadzenHtmlEditor>
                             <RadzenRequiredValidator Component="DetailsHTML" Text="You must selected detail what the issue is!" />
                         </div>
                     </div>    
                     <div class="row">
-                        <div lcass="col-lg-12">
-                            <RadzenButton ButtonType="ButtonType.Submit" Text="Submit"></RadzenButton>
+                        <div class="col-lg-12">
+                            <RadzenButton ButtonType="ButtonType.Submit" Style="margin: 10px 2px 2px 0px" Icon="save" Text="Save"></RadzenButton>
                         </div>
                     </div>                    
                 </RadzenFieldset>
             </RadzenTemplateForm>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="row">
-        <div class="col-lg-12">
-            <RadzenFieldset Text="Enter Request Details">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <RadzenLabel Text="Priority"></RadzenLabel>
-                        <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                        @bind-Value="@AddReqViewModel.PriorityId" FilterOperator="StringFilterOperator.Contains"
-                                        AllowFiltering="true"
-                                        Data="@AddReqViewModel.Priorities" TextProperty="Name" ValueProperty="Id">
-                            <Template>
-                                <div class="row">
-                                    <div class="col-lg-1">
-                                        <i class="@((context as Priority).Icon)"></i>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        @((context as Priority).Name)
-                                    </div>
-                                </div>
-                            </Template>
-                        </RadzenDropDown>
-                    </div>
-                    <div class="col-lg-4">
-                        <RadzenLabel Text="Company"></RadzenLabel>
-                        <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                        @bind-Value="@AddReqViewModel.CompanyId" FilterOperator="StringFilterOperator.Contains"
-                                        AllowFiltering="true"
-                                        Data="@AddReqViewModel.Companies" TextProperty="CompanyName" ValueProperty="Id">
-                        </RadzenDropDown>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <RadzenLabel Text="Factory"></RadzenLabel>
-                        <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                        @bind-Value="@AddReqViewModel.FactoryId" FilterOperator="StringFilterOperator.Contains"
-                                        AllowFiltering="true"
-                                        Data="@AddReqViewModel.Factories" TextProperty="FactoryName" ValueProperty="Id"
-                                        Change=@(args => OnChange(args, "areasListBox"))>
-                        </RadzenDropDown>
-                    </div>
-                    <div class="col-lg-4">
-                        @{numberAreasEquipment = AddReqViewModel.Areas.Count();
-                            if (numberAreasEquipment > 0)
-                            {
-                                <RadzenLabel Text="Area"></RadzenLabel>
-                                <RadzenDropDown AllowClear="true" TValue="int"
-                                                Style="width: 100%; border-color: black"
-                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                @bind-Value="@AddReqViewModel.AreaId"
-                                                FilterOperator="StringFilterOperator.Contains"
-                                                AllowFiltering="true"
-                                                Data="@AddReqViewModel.Areas" TextProperty="AreaName"
-                                                ValueProperty="Id">
-                                </RadzenDropDown>
-                                <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
-                            }
-                        }
-                    </div>
-                    <div class="col-lg-4">
-                        @if (AddReqViewModel.Equipment != null)
-                        {
-                            var numberEuipmentItems = AddReqViewModel.Equipment.Count();
-                            if (numberEuipmentItems > 0)
-                            {
-                                <RadzenLabel Text="Equipment"></RadzenLabel>
-                                <RadzenDropDown AllowClear="true" TValue="int" Style="width: 100%; border-color: black"
-                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                                @bind-Value="@AddReqViewModel.EquipmentId" FilterOperator="StringFilterOperator.Contains"
-                                                AllowFiltering="true"
-                                                Data="@AddReqViewModel.Equipment" TextProperty="Name" ValueProperty="Id">
-                                </RadzenDropDown>
-                                <RadzenLabel Text="If the area is want is not in the list please contact maintenance!"></RadzenLabel>
-                            }
-                        }
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <RadzenHtmlEditor @bind-Value="AddReqViewModel.MaintReq.RequestDetails" Style="height: 500px; border-color: black"></RadzenHtmlEditor>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <RadzenButton Click="@UpdateBook" Text="Save New Request" Icon="save" Style="margin-bottom: 20px; width: 200px" />
-                    </div>
-                </div>             
-            </RadzenFieldset>
         </div>
     </div>
 </div>
@@ -264,15 +184,23 @@
     string userId { get; set; }
 
     void OnInvalidSubmit(FormInvalidSubmitEventArgs args)
-    { 
+    {
     }
 
-    public async Task OnChange(object value, string name)
+    async Task OnSubmit()
     {
-        //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
-        //await areaViewModel.LoadSingleArea(Convert.ToInt32(value)); //LoadSingleArea(Convert.ToInt32(value));
-        //console.Log($"{name} value changed to {str}");
+        await UpdateBook();
+    }
+
+    public async Task OnFactoryChange(object value, string name)
+    {
         await AddReqViewModel.LoadAreasByFactory();
+        StateHasChanged();
+    }
+
+    public async Task OnAreaChange(object value, string name)
+    {
+        await AddReqViewModel.LoadEquipmentByArea();
         StateHasChanged();
     }
 

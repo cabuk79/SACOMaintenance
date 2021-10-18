@@ -147,7 +147,7 @@ using Microsoft.AspNetCore.Http;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 259 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 180 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
 
     public int numberAreasEquipment = 0;
@@ -156,15 +156,23 @@ using Microsoft.AspNetCore.Http;
     string userId { get; set; }
 
     void OnInvalidSubmit(FormInvalidSubmitEventArgs args)
-    { 
+    {
     }
 
-    public async Task OnChange(object value, string name)
+    async Task OnSubmit()
     {
-        //var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
-        //await areaViewModel.LoadSingleArea(Convert.ToInt32(value)); //LoadSingleArea(Convert.ToInt32(value));
-        //console.Log($"{name} value changed to {str}");
+        await UpdateBook();
+    }
+
+    public async Task OnFactoryChange(object value, string name)
+    {
         await AddReqViewModel.LoadAreasByFactory();
+        StateHasChanged();
+    }
+
+    public async Task OnAreaChange(object value, string name)
+    {
+        await AddReqViewModel.LoadEquipmentByArea();
         StateHasChanged();
     }
 

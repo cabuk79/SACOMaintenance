@@ -21,7 +21,7 @@ namespace SACOMaintenance.DataAccess
             _requestInitationDBContext = sacoMaintenanceContext;
     }
 
-        ObservableCollection<Risk> riskList { get; set; }
+        ObservableCollection<Risk> riskList { get; set; } = new();
 
         IEnumerable<MaintRequestInitiationRisk> risksDataList { get; set; }
         ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.risksDataList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

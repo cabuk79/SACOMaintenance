@@ -42,6 +42,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public Task LoadFactories();
         public void AddNewRequest();
         public Task LoadAreasByFactory();
+        public Task LoadFactoriesByCompany();
+        public Task LoadEquipmentByArea();
         public void LoadPriorities();
         
         #endregion

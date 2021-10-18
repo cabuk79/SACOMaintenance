@@ -29,7 +29,7 @@ namespace SACOMaintenance.ViewModel
         public MaintRequestInitiation MaintReq { get; set; }
         public ObservableCollection<AreaModel> Areas { get; set; } = new();
         public IEnumerable<Factory> Factories { get; set; }
-        public ObservableCollection<Equipment> Equipment { get; set; }
+        public ObservableCollection<Equipment> Equipment { get; set; } = new();
         public ObservableCollection<Priority> Priorities { get; set; } = new();
         public ObservableCollection<Company> Companies { get; set; } = new();
 
@@ -87,7 +87,7 @@ namespace SACOMaintenance.ViewModel
                         MaintReq.RequestTypeId = 0;
                     }
                     RaisePropertychangedEvent();
-                    LoadEquipmentByArea();
+                    //LoadEquipmentByArea();
                 }
             }
         }
@@ -170,7 +170,7 @@ namespace SACOMaintenance.ViewModel
             Factories = await FactoryDataProvider.LoadAllFactories();
         }
 
-        public async void LoadFactoriesByCompany()
+        public async Task LoadFactoriesByCompany()
         {
             Factories = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
         }
@@ -178,15 +178,16 @@ namespace SACOMaintenance.ViewModel
         public async Task LoadAreasByFactory()
         {
             Areas.Clear();
-            Areas = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAreasByFactory(FactoryId)); //(MaintReq.FactoryId));
+            Areas = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId)); //(MaintReq.FactoryId));
             //foreach(var item in list)
             //{
             //    Areas.Add(item);
             //}
         }
 
-        private async void LoadEquipmentByArea()
+        public async Task LoadEquipmentByArea()
         {
+            Equipment.Clear();
             Equipment = new ObservableCollection<Equipment>(await EquipmentDataProvider.LoadByArea(MaintReq.AreaId));
         }
 

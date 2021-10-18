@@ -293,6 +293,14 @@ app {
         position: static;
     }
 
+    .drop-down-request{
+        color: grey;
+        font-weight: lighter;
+        font-size: 12px;
+    }
+
+    
+
     /* --- Hover tool tip ---- */
     
 }
