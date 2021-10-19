@@ -161,7 +161,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 77 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+#line 81 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
 
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
@@ -185,31 +185,14 @@ using System.IO;
         //e.Status == maintReqListViewModel.currentStatus : true);
     }
 
-
+    public async Task DownloadToolDrg()
+    {
+        await ExcelExport.DownloadPDF();
+    }
 
     public async Task ExportExcelFile()
     {
-        //ExportListToExcel();
-
-
-        // Generate a text file
-
         await ExcelExport.ExportListToExcel(maintReqListViewModel.requests);
-
-        //MaintenanceRequestsExcel exportExcel = new();
-
-        //exportExcel.ExportListToExcel(maintReqListViewModel.requests);
-
-        //byte[] file = System.Text.Encoding.UTF8.GetBytes("Hello world!");
-        //await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", "file.txt", "text/plain", @"C:\Excel Export Test\All Maint Requests.xlsx");
-
-
-
-
-
-        //JSRuntime.InvokeVoidAsync("downloadFile", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", base64String, "All Maint Requests - Copy.docx");
-
-        //JSRuntime.InvokeVoidAsync("downloadFile", "All Maint Requests.xlsx"); // ("All Maint Requests.xlsx"));
     }
 
 
@@ -254,9 +237,9 @@ using System.IO;
 
 
 
+    
 
-
-
+   
 
 
 

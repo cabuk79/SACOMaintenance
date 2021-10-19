@@ -9,7 +9,9 @@
 @inject IJSRuntime JSRuntime
 @using ClosedXML.Excel;
 @using System.IO;
-@inject MaintenanceRequestsExcel ExcelExport 
+@inject MaintenanceRequestsExcel ExcelExport
+
+
 
 <div class="container-fluid">
     <div class="row">
@@ -18,6 +20,8 @@
         </div>
         <div class="col-lg-2">
             <RadzenButton Click="@ExportExcelFile" Text="Export All Requests"
+                          Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
+            <RadzenButton Click="@DownloadToolDrg" Text="Drawing PDF"
                           Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
         </div>
     </div>
@@ -97,31 +101,14 @@
         //e.Status == maintReqListViewModel.currentStatus : true);
     }
 
-
+    public async Task DownloadToolDrg()
+    {
+        await ExcelExport.DownloadPDF();
+    }
 
     public async Task ExportExcelFile()
     {
-        //ExportListToExcel();
-
-
-        // Generate a text file
-
         await ExcelExport.ExportListToExcel(maintReqListViewModel.requests);
-
-        //MaintenanceRequestsExcel exportExcel = new();
-
-        //exportExcel.ExportListToExcel(maintReqListViewModel.requests);
-
-        //byte[] file = System.Text.Encoding.UTF8.GetBytes("Hello world!");
-        //await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", "file.txt", "text/plain", @"C:\Excel Export Test\All Maint Requests.xlsx");
-
-
-
-
-
-        //JSRuntime.InvokeVoidAsync("downloadFile", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", base64String, "All Maint Requests - Copy.docx");
-
-        //JSRuntime.InvokeVoidAsync("downloadFile", "All Maint Requests.xlsx"); // ("All Maint Requests.xlsx"));
     }
 
 
@@ -166,9 +153,9 @@
 
 
 
+    
 
-
-
+   
 
 
 
