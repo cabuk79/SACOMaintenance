@@ -124,6 +124,34 @@ using SACOMaintenance.Blazor.Server.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+using SACOMaintenance.Blazor.Server.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+using ClosedXML.Excel;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maintrequests-list")]
     public partial class MaintRequestsListOverview : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -133,74 +161,188 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 71 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
-          
+#line 77 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+      
 
-        public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
+    public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
-        private HubConnection hubConnection;
+    private HubConnection hubConnection;
 
-        void OnChange()
+    void OnChange()
+    {
+
+        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
+        maintGrid.Reload();
+        InvokeAsync(StateHasChanged);
+
+
+
+        //= maintReqListViewModel.requests
+        //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
+
+
+        //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
+        //e.Status == maintReqListViewModel.currentStatus : true);
+    }
+
+
+
+    public async Task ExportExcelFile()
+    {
+        //ExportListToExcel();
+
+
+        // Generate a text file
+
+        await ExcelExport.ExportListToExcel(maintReqListViewModel.requests);
+
+        //MaintenanceRequestsExcel exportExcel = new();
+
+        //exportExcel.ExportListToExcel(maintReqListViewModel.requests);
+
+        //byte[] file = System.Text.Encoding.UTF8.GetBytes("Hello world!");
+        //await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", "file.txt", "text/plain", @"C:\Excel Export Test\All Maint Requests.xlsx");
+
+
+
+
+
+        //JSRuntime.InvokeVoidAsync("downloadFile", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", base64String, "All Maint Requests - Copy.docx");
+
+        //JSRuntime.InvokeVoidAsync("downloadFile", "All Maint Requests.xlsx"); // ("All Maint Requests.xlsx"));
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        maintReqListViewModel.LoadRequests();
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
+
+        hubConnection.On("ReceiveMessage", () =>
         {
-
-            maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
+            CallLoadData();
+            InvokeAsync(() => StateHasChanged());
             maintGrid.Reload();
-            InvokeAsync(StateHasChanged);
+        });
 
+        await hubConnection.StartAsync();
 
+        //maintReqListViewModel.LoadRequests();
+    }
 
-            //= maintReqListViewModel.requests
-            //.Where(e => e.StatusId == maintReqListViewModel.currentStatus.Id);
-
-
-            //.Where(e => Convert.ToInt32(maintReqListViewModel.currentStatus) >= 0 ?
-            //e.Status == maintReqListViewModel.currentStatus : true);
-        }
-
-
-        protected override async Task OnInitializedAsync()
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
         {
             maintReqListViewModel.LoadRequests();
+        });
+    }
 
-            hubConnection = new HubConnectionBuilder()
-                .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-                .Build();
 
-            hubConnection.On("ReceiveMessage", () =>
-            {
-                CallLoadData();
-                InvokeAsync(() => StateHasChanged());
-                maintGrid.Reload();
-            });
 
-            await hubConnection.StartAsync();
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
 
-            //maintReqListViewModel.LoadRequests();
-        }
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
 
-        private void CallLoadData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public async Task ExportListToExcel()
+    {
+
+        using (var workbook = new XLWorkbook())
         {
-            Task.Run(async () =>
+            var worksheet = workbook.Worksheets.Add("Maint Requests All");
+
+            worksheet.Cell("A1").Value = "All Maintenance Requests";
+            worksheet.Cell("A1").Style.Font.Bold = true;
+            worksheet.Cell("A1").Style.Font.FontSize = 20;
+            worksheet.Range("A1", "E1").Merge(true);
+
+            worksheet.Cell("A2").Value = "Id";
+            worksheet.Cell("A2").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Cell("A2").Style.Font.Bold = true;
+
+            worksheet.Cell("B2").Value = "Details";
+            worksheet.Cell("B2").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Cell("B2").Style.Font.Bold = true;
+
+            worksheet.Cell("C2").Value = "Date Raised";
+            worksheet.Cell("C2").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Cell("C2").Style.Font.Bold = true;
+
+            worksheet.Cell("D2").Value = "Equipment Name";
+            worksheet.Cell("D2").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Cell("D2").Style.Font.Bold = true;
+
+            worksheet.Cell("E2").Value = "Status";
+            worksheet.Cell("E2").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Cell("E2").Style.Font.Bold = true;
+
+            worksheet.Column(1).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Column(3).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Column(4).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+            worksheet.Column(5).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+            worksheet.Range("A2", "E2").SetAutoFilter();
+
+            //loop through the collection and put the items in columns then increment to the next row
+            var i = 3; //declare the row number to start
+
+            //loop through the items in the list
+            foreach (var item in maintReqListViewModel.requests)
             {
-                maintReqListViewModel.LoadRequests();
-            });
+                worksheet.Cell("A" + i).Value = item.Id;
+                worksheet.Cell("B" + i).Value = item.RequestDetails;
+                worksheet.Cell("C" + i).Value = item.DateRaised;
+                worksheet.Cell("D" + i).Value = item.Equipment.Name;
+                worksheet.Cell("E" + i).Value = item.Status.StatusName;
+                i++;
+            }
+
+            worksheet.Columns("A", "E").AdjustToContents();
+
+            //Save workbook on server
+            workbook.SaveAs(@"C:\Excel Export Test\All Maint Requests.xlsx");
+
+            using (var stream = new MemoryStream())
+            {
+                workbook.SaveAs(stream);
+                var content = stream.ToArray();
+
+                var fileName = "Countries.xlsx";
+                await JSRuntime.InvokeAsync<object>("saveAsFile", fileName, Convert.ToBase64String(content));
+                // await JSRuntime.InvokeAsync<object>("BlazorDownloadFile", Convert.ToBase64String(content), fileName);
+
+            }
         }
+    }
 
-
-
-        public bool IsConnected =>
-            hubConnection.State == HubConnectionState.Connected;
-
-        public void Dispose()
-        {
-            _ = hubConnection.DisposeAsync();
-        }
-
-    
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private MaintenanceRequestsExcel ExcelExport { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IRequestInitiationListViewModel maintReqListViewModel { get; set; }
     }

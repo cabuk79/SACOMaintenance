@@ -1,3 +1,9 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.AssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.CoreCompileInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\NOTICE.TXT
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ExcelLibs.deps.json
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\ref\ExcelLibs.dll
@@ -6,11 +12,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DT
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\SACOMaintenance.Common.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\SACOMaintenance.Common.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\bin\Debug\net5.0\Models.DTO.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.AssemblyReference.cache
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.AssemblyInfoInputs.cache
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.AssemblyInfo.cs
-C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.CoreCompileInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.csproj.CopyComplete
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ExcelLibs.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\ExcelLibs\obj\Debug\net5.0\ref\ExcelLibs.dll

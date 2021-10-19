@@ -1,4 +1,5 @@
-﻿using ExcelLibs;
+﻿//using ExcelLibs;
+using Microsoft.JSInterop;
 using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.DataAccess.Interfaces;
 using SACOMaintenance.ViewModel.Interfaces;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+
 
 namespace SACOMaintenance.ViewModel
 {
@@ -37,11 +39,12 @@ namespace SACOMaintenance.ViewModel
         }
 
         public IStatus StatusDataProvider;
-     
-        public RequestInitiationListViewModel(IMaintRequestInitiation maintReqDataProvider, IStatus statusDataProvider)
+        public IJSRuntime jSRuntime;
+        public RequestInitiationListViewModel(IMaintRequestInitiation maintReqDataProvider, IStatus statusDataProvider, IJSRuntime JSRuntime)
         {
             MaintReqDataProvider = maintReqDataProvider;
             StatusDataProvider = statusDataProvider;
+            jSRuntime = JSRuntime;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -93,8 +96,15 @@ namespace SACOMaintenance.ViewModel
 
         public void ExportList()
         {
-            MaintenanceRequestsExcel exportReqList = new MaintenanceRequestsExcel();
-            exportReqList.ExportListToExcel(requests);
+            //Create excel fiel on server
+            //MaintenanceRequestsExcel exportReqList = new MaintenanceRequestsExcel();
+            //exportReqList.ExportListToExcel(requests);
+
+            //var base64String = exportReqList.Download().Result;
+            //JSRuntime jsRuntime;
+
+            //await jSRuntime.InvokeVoidAsync("downloadFile", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", base64String, "All Maint Requests - Copy.docx");
+
         }
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)

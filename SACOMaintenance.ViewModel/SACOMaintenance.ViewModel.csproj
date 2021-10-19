@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.JSInterop" Version="5.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BuisnessModels\SACOMaintenance.Common.csproj" />
     <ProjectReference Include="..\ExcelLibs\ExcelLibs.csproj" />
     <ProjectReference Include="..\SACOMaintenance.DataAccess\SACOMaintenance.DataAccess.csproj" />

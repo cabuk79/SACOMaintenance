@@ -5,11 +5,24 @@ using System.Collections.ObjectModel;
 using System.Text;
 using SACOMaintenance.Common.ModelDB;
 using ClosedXML.Report;
+//using System.IO;
+using System.Data;
+using Microsoft.AspNetCore.Http;
+using System.Net;
+using System.Net.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+//using System.IO;
+using System.Web;
+using OpenQA.Selenium.Interactions;
+using System.IO;
+
 
 namespace ExcelLibs
 {
     public class MaintenanceRequestsExcel
     {
+     
 
         public void ExportSingalReqest(MaintRequestInitiation maintReqSingle, ObservableCollection<MaintRequestInitiationRisk> maintReqRiskList)
         {
@@ -67,8 +80,9 @@ namespace ExcelLibs
     
          
 
-        public void ExportListToExcel(ObservableCollection<MaintRequestInitiation> exportList)
+        public IActionResult ExportListToExcel(ObservableCollection<MaintRequestInitiation> exportList)
        {
+        
             using (var workbook = new XLWorkbook())
             {
                 var worksheet = workbook.Worksheets.Add("Maint Requests All");
@@ -121,9 +135,30 @@ namespace ExcelLibs
 
                 worksheet.Columns("A", "E").AdjustToContents();
 
-                workbook.SaveAs(@"C:\Excel Export Test\All Maint Requests.xlsx");
+                //Save workbook on server
+                //workbook.SaveAs(@"C:\Excel Export Test\All Maint Requests.xlsx");
+
+                return null;
+   
+            }
+        }
+
+        public async Task<string> Download()
+        {
+            var filePath = @"C:\Excel Export Test\All Maint Requests - Copy.docx";
+
+            using(var fileInput = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                MemoryStream memoryStream = new MemoryStream();
+                await fileInput.CopyToAsync(memoryStream);
+
+                var buffer = memoryStream.ToArray();
+                return Convert.ToBase64String(buffer);
             }
         }
 
     }
+
+
+  
 }

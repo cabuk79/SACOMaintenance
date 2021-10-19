@@ -1,3 +1,4 @@
+using BlazorDownloadFile;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -6,9 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.JSInterop;
 using Radzen;
 using SACOMaintenance.Blazor.Server.Data;
 using SACOMaintenance.Blazor.Server.Hubs;
+using SACOMaintenance.Blazor.Server.Services;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess;
 using SACOMaintenance.DataAccess.Interfaces;
@@ -86,7 +89,11 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IUserRequestsAll, UserRequestAllViewModel>();
             services.AddScoped<IAddMaintReq, AddMaintReqViewModel>();
 
+            services.AddScoped<MaintenanceRequestsExcel>();
+
             services.AddHttpContextAccessor();
+
+          
 
             services.AddSingleton<SmsService>();
 
