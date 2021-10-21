@@ -122,7 +122,16 @@
                     <RadzenFieldset Text="Isolations" Style="border-color: black" AllowCollapse="true">
                         <div class="row">
                             <div class="col-lg-12 float-lg-right">
-                                <SquareCheckBox Items="maintReqInitation.Isolations" Context="Isolation" @bind-SelectedItems="maintReqInitation.IsolationsSelected">
+                                <ul>
+                                    @foreach(var item in maintReqInitation.IsolationsSelected)
+                                    {
+                                        <li>
+                                            @item.Name
+                                        </li>
+                                    }
+                                </ul>
+                                <SquareCheckBox Items="maintReqInitation.Isolations" Context="Isolation"
+                                                @bind-SelectedItems="maintReqInitation.IsolationsSelected">
                                     <ItemTemplate>
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -201,19 +210,24 @@
 
         //maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
-        await maintReqInitation.LoadFactories();
+        Task.Run(async ()=> { await maintReqInitation.LoadFactories(); }).Wait();
 
-        await maintReqInitation.LoadRisks();
+        Task.Run(async () => { await maintReqInitation.LoadRisks(); }).Wait();
 
-        await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
-        await maintReqInitation.LoadIsolations();
-        await maintReqInitation.LoadIsoaltionsByMaint();
+        Task.Run(async () => { await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId); }).Wait();
+        Task.Run(async () => { await maintReqInitation.LoadIsolations(); }).Wait();
+        Task.Run(async () => { await maintReqInitation.LoadIsoaltionsByMaint(); }).Wait();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
 
+        maintReqInitation.LoadPPE();
+
+        //Load the selected isolations from the Isolations
+        //This is done below so that the genric SquareComboBox will find the isolations
         maintReqInitation.IsolationsSelected =
-            maintReqInitation.IsolationByRequest
-            .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+            maintReqInitation.Isolations
+            .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();    
+
 
         ////Auto update
         //hubConnection = new HubConnectionBuilder()

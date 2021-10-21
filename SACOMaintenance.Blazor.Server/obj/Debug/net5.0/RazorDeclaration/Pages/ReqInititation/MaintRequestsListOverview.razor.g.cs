@@ -161,7 +161,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 81 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+#line 82 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
 
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
@@ -187,7 +187,7 @@ using System.IO;
 
     public async Task DownloadToolDrg()
     {
-        await ExcelExport.DownloadPDF();
+        await FileDownload.DownloadPDF(@"C:\Excel Export Test\test.pdf");
     }
 
     public async Task ExportExcelFile()
@@ -324,6 +324,7 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileDownloadService FileDownload { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private MaintenanceRequestsExcel ExcelExport { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }

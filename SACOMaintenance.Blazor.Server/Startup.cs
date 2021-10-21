@@ -90,6 +90,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IAddMaintReq, AddMaintReqViewModel>();
 
             services.AddScoped<MaintenanceRequestsExcel>();
+            services.AddScoped<FileDownloadService>();
 
             services.AddHttpContextAccessor();
 

@@ -28,7 +28,9 @@ namespace SACOMaintenance.DataAccess
 
         public async Task<IEnumerable<PPE>> LoadAllPPE()
         {
-            var ppe = await _ppeDBContext.PPE.ToListAsync();
+            var ppe = await _ppeDBContext.PPE
+                .Include(m => m.MaintRequestInitiations)
+                .ToListAsync();
             return ppe;
         }
 

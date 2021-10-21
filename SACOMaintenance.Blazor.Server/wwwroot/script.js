@@ -8,7 +8,8 @@
 ////}
 
 
-function saveAsFile(filename, fileContent) {
+//Funvtion for downloading excel files
+function saveAsFile(filename, bytesBase64) {
     var link = document.createElement('a');
     link.download = filename;
     link.href = "data:application/octet-stream;base64," + bytesBase64;
@@ -17,6 +18,8 @@ function saveAsFile(filename, fileContent) {
     document.body.removeChild(link);
 }
 
+
+//Function for downloading PDF's from the server
 function downloadPdfTool(mimeType, base64String, fileName){
     var fileDataUrl = "data:" + mimeType + ";base64," + base64String;
     fetch(fileDataUrl)

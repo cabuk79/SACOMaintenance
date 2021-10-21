@@ -5,6 +5,7 @@ using SACOMaintenance.ViewModel.Interfaces;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using WordLibs;
@@ -116,8 +117,8 @@ namespace SACOMaintenance.ViewModel
         }
 
         public ObservableCollection<Risk> Risks { get; set; }
-        public ObservableCollection<PPE> Ppe { get; set; }
-        public ObservableCollection<Isolation> IsolationByRequest { get; set; }
+        public ObservableCollection<PPE> Ppe { get; set; } = new();
+        public ObservableCollection<Isolation> IsolationByRequest { get; set; } = new();
         public List<int> AllIsolationIds { get; set; } = new();
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -186,7 +187,15 @@ namespace SACOMaintenance.ViewModel
 
         public async Task<ObservableCollection<Isolation>> LoadIsolations()
         {
-            Isolations = new ObservableCollection<Isolation>(await IsolationsDataProvider .LoadAllIsolations());
+            //Isolations = new ObservableCollection<Isolation>(await IsolationsDataProvider .LoadAllIsolations());
+            
+            var list = new ObservableCollection<Isolation>(await IsolationsDataProvider.LoadAllIsolations());
+
+            foreach(var item in list)
+            {
+                Isolations.Add(item);
+            }
+
             return Isolations;
         }
 
@@ -198,8 +207,13 @@ namespace SACOMaintenance.ViewModel
 
             SelectedIsolationIds.Clear();
 
-            IsolationByRequest = new ObservableCollection<Isolation>(await IsolationMaintReqDataProvider.LoadIsolationsByMaint(maintReqId));
+            var isoList = new ObservableCollection<Isolation>(await IsolationMaintReqDataProvider.LoadIsolationsByMaint(maintReqId));
             
+            foreach(var item in isoList)
+            {
+                IsolationByRequest.Add(item);
+            }
+
             foreach(var item in IsolationByRequest)
             {
                 if(item.MaintRequestInitiations.Count > 0)
@@ -208,7 +222,11 @@ namespace SACOMaintenance.ViewModel
                 }                                               
             }
 
-            return IsolationByRequest;
+            //IsolationsSelected  = IsolationByRequest.Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+            ObservableCollection<Isolation> TempList = new ObservableCollection<Isolation>();
+
+            return TempList;
+            //return IsolationByRequest;
         }
 
         public void UpdateMaintReqRisks()

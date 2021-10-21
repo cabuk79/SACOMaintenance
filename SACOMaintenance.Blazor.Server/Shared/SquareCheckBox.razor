@@ -1,12 +1,16 @@
 ﻿@typeparam TItem
+    var matchingvalues = myList
+    .Where(stringToCheck => stringToCheck.Contains(myString));
+
+
 
 <div class="container">
     @foreach (var item in Items)
     {
         var Id = Guid.NewGuid();
-    
-        <label for="@Id" class="option_item" >
-            <!-- Check to see if the checkbox needs to be checked or not from the user data byt checking if any of the items are already in the SelectedList -->
+
+        <label for="@Id" class="option_item">
+            <!-- Check to see if the checkbox needs to be checked or not from the user data by checking if any of the items are already in the SelectedList -->
             @if (SelectedItems.Contains(item))
             {
                 <input id="@Id" type="checkbox" class="checkbox" checked @onchange="_ => HandleChange(item)" />

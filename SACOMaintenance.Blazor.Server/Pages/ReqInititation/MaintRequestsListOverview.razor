@@ -10,6 +10,7 @@
 @using ClosedXML.Excel;
 @using System.IO;
 @inject MaintenanceRequestsExcel ExcelExport
+@inject FileDownloadService FileDownload
 
 
 
@@ -103,7 +104,7 @@
 
     public async Task DownloadToolDrg()
     {
-        await ExcelExport.DownloadPDF();
+        await FileDownload.DownloadPDF(@"C:\Excel Export Test\test.pdf");
     }
 
     public async Task ExportExcelFile()

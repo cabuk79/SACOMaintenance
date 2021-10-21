@@ -22,7 +22,9 @@ namespace SACOMaintenance.DataAccess
 
         public async Task<IEnumerable<Isolation>> LoadAllIsolations()
         {
-            var isolations = await _maintenanceDBContext.Isolations.ToListAsync();
+            var isolations = await _maintenanceDBContext.Isolations
+                .Include(iso => iso.MaintRequestInitiations)
+                .ToListAsync();
             return isolations;
         }
     }

@@ -133,7 +133,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 160 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 169 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
     [Parameter]
     public string maintReqID { get; set; }
@@ -178,19 +178,26 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         //maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
-        await maintReqInitation.LoadFactories();
+        Task.Run(async ()=> { await maintReqInitation.LoadFactories(); }).Wait();
 
-        await maintReqInitation.LoadRisks();
+        Task.Run(async () => { await maintReqInitation.LoadRisks(); }).Wait();
 
-        await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId);
-        await maintReqInitation.LoadIsolations();
-        await maintReqInitation.LoadIsoaltionsByMaint();
+        Task.Run(async () => { await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId); }).Wait();
+        Task.Run(async () => { await maintReqInitation.LoadIsolations(); }).Wait();
+        Task.Run(async () => { await maintReqInitation.LoadIsoaltionsByMaint(); }).Wait();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
 
+        maintReqInitation.LoadPPE();
+
+
+
         maintReqInitation.IsolationsSelected =
-            maintReqInitation.IsolationByRequest
-            .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+            maintReqInitation.Isolations
+            .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
+        //maintReqInitation.IsolationByRequest
+        //.Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+
 
         ////Auto update
         //hubConnection = new HubConnectionBuilder()

@@ -111,7 +111,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\SquareCheckBox.razor"
+#line 36 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\SquareCheckBox.razor"
        
     [Parameter]
     public IEnumerable<TItem> Items { get; set; }

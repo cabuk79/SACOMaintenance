@@ -8,7 +8,8 @@ using ClosedXML.Report;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.JSInterop;
-
+using Microsoft.AspNetCore.Components;
+using System.Text.RegularExpressions;
 
 namespace SACOMaintenance.Blazor.Server.Services
 {
@@ -123,8 +124,10 @@ namespace SACOMaintenance.Blazor.Server.Services
                 //loop through the items in the list
                 foreach(var item in exportList)
                 {
+                    var details = "";
+                    if (item.RequestDetails != null) { details = StripTagsRegex(item.RequestDetails); } else { details = ""; }
                     worksheet.Cell("A" + i).Value = item.Id;
-                    worksheet.Cell("B" + i).Value = item.RequestDetails;
+                    worksheet.Cell("B" + i).Value = details;
                     worksheet.Cell("C" + i).Value = item.DateRaised;
                     worksheet.Cell("D" + i).Value = item.Equipment.Name;
                     worksheet.Cell("E" + i).Value = item.Status.StatusName;
@@ -145,29 +148,13 @@ namespace SACOMaintenance.Blazor.Server.Services
             }
         }
 
-        public async Task<string> GetPDF()
+        //TODO: html agility pack instead of Regex below to keep some text formatting in place
+        /// <summary>
+        /// Remove HTML from string with Regex.
+        /// </summary>
+        public static string StripTagsRegex(string source)
         {
-            var filePath = @"C:\Excel Export Test\test.pdf";
-
-            //await JSRuntime.InvokeVoidAsync("downloadPdfTool", @"C:\Excel Export Test\test.pdf", ""); //, @"C:\Excel Export Test\test.pdf");
-            using (var fileInput = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-            {
-                MemoryStream memoryStream = new MemoryStream();
-                await fileInput.CopyToAsync(memoryStream);
-
-                var buffer = memoryStream.ToArray();
-                var base64String = Convert.ToBase64String(buffer);
-                return Convert.ToBase64String(buffer);
-            }
-
-            //await JSRuntime.InvokeVoidAsync("downloadPdfTool", "application/pdf", base64String, ); //, @"C:\Excel Export Test\test.pdf");
-        }
-
-        public async Task DownloadPDF()
-        {
-            var baseString = await GetPDF();
-
-            await JSRuntime.InvokeVoidAsync("downloadPdfTool", "application/pdf", baseString, "test.pdf");
+            return Regex.Replace(source, "<.*?>", string.Empty);
         }
     }  
 }

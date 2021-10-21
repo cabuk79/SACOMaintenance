@@ -55,6 +55,7 @@ namespace SACOMaintenance.DataAccess
         {
             var generalRequest = await _sacoMaintenanceContext.GeneralRequests
                 .Include(p => p.MaintRequestInitiation.PPEEquipment)
+                .Include(pp => pp.MaintRequestInitiation.PPEEquipment)
                 .FirstOrDefaultAsync(i => i.MaintRequestId == maintReqId);
             return generalRequest;
         }

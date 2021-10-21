@@ -18,7 +18,8 @@
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black" AllowCollapse="true">
-                <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE" @bind-SelectedItems="GeneralViewModel.PPEItemsSelected">
+                <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE"
+                                @bind-SelectedItems="GeneralViewModel.PPEItemsSelected">
                     <ItemTemplate>
                         <div class="row">
                             <div class="col-lg-12">
@@ -258,9 +259,12 @@ else
         Task.Run(async () => { await GeneralViewModel.LoadCompletedUser(); }).Wait();
         //GeneralViewModel.LoadCompletedUser();
 
-        GeneralViewModel.PPEItemsSelected = 
-            GeneralViewModel.ppeList
-            .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+
+        //Load the selected isolations from the PPE
+        //This is done below so that the genric SquareComboBox will find the PPE
+        GeneralViewModel.PPEItemsSelected =
+        GeneralViewModel.ppeList
+        .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
 
         hubConnection = new HubConnectionBuilder()
