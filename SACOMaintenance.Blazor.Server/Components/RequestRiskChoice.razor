@@ -1,40 +1,54 @@
 ﻿@using SACOMaintenance.Common.ModelDB
 @using System.Collections.ObjectModel;
+@using System;
 
-@foreach (var item in ItemsChosen)
-{
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2">
-                <h2>@item.RiskId</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-2">
-                <h4>H</h4>
-                <input name="@item.RiskId" type="radio" 
-                        value="H" checked="@(item.Level.Equals("H"))" 
-                       @onchange="_ => HandleChangeHigh(item)" />
-            </div>
-            <div class="col-lg-2">
-                <h4>M</h4>
-                <input name="@item.RiskId" type="radio"
-                        value="M" checked="@(item.Level.Equals("M"))"
-                       @onchange="_ => HandleChangeMedium(item)" />
-            </div>
-            <div class="col-lg-2">
-                <h4>L</h4>
-                <input name="@item.RiskId" type="radio"
-                        value="L" checked="@(item.Level.Equals("L"))" 
-                       @onchange="_ => HandleChangeLow(item)" />
-            </div>
-        </div>
+<div class="continer">
+    <div class="row">
+        <div class="col-lg-3"><label>NAME</label></div>
+        <div class="col-lg-1"><label>H</label></div>
+        <div class="col-lg-1"><label>M</label></div>
+        <div class="col-lg-1"><label>L</label></div>
+        <div class="col-lg-3"><label>NAME</label></div>
+        <div class="col-lg-1"><label>H</label></div>
+        <div class="col-lg-1"><label>M</label></div>
+        <div class="col-lg-1"><label>L</label></div>
     </div>
+    @foreach (var item in ItemsChosen)
+    {
 
+            <div class="row">
+                <div class="col-lg-3">
+                    @foreach (var itemRisk in Risks)
+                    {
+                        if (itemRisk.Id == item.RiskId)
+                        {
+                            <RadzenLabel Text="@itemRisk.RiskName"></RadzenLabel>
+                        }
+                    }
+                </div>
+                <div class="col-lg-1">
+                    <input name="@item.RiskId" type="radio"
+                           value="H" checked="@(item.Level.Equals("H"))"
+                           @onchange="_ => HandleChangeHigh(item)" />
+                </div>
+                <div class="col-lg-1">
+                    <input name="@item.RiskId" type="radio"
+                           value="M" checked="@(item.Level.Equals("M"))"
+                           @onchange="_ => HandleChangeMedium(item)" />
+                </div>
+                <div class="col-lg-1">
+                    <input name="@item.RiskId" type="radio"
+                           value="L" checked="@(item.Level.Equals("L"))"
+                           @onchange="_ => HandleChangeLow(item)" />
+                </div>
+            </div>
+   
+       
+        
+        
 
-
-
-}
+    }
+</div>
 
 @code{
     [Parameter]
@@ -45,6 +59,28 @@
 
     [Parameter]
     public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
+
+    private int LeftSide;
+    private int RightSide;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //check if the total count is odd and if so then remove one form the total and split then add on to the left side
+        var totalCount = ItemsChosen.Count();
+        if(totalCount %2 == 0)
+        {
+            var split = totalCount / 2;
+            LeftSide = split;
+            RightSide = split;
+        }
+        else
+        {
+            var RemoveOne = totalCount - 1;
+            var split = RemoveOne / 2;
+            LeftSide = split + 1;
+            RightSide = split;
+        }
+    }
 
     void HandleChangeHigh(MaintRequestInitiationRisk item)
     {

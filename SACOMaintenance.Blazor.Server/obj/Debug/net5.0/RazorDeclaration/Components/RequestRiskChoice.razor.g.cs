@@ -7,7 +7,6 @@
 namespace SACOMaintenance.Blazor.Server.Components
 {
     #line hidden
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -117,6 +116,13 @@ using System.Collections.ObjectModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
+using System;
+
+#line default
+#line hidden
+#nullable disable
     public partial class RequestRiskChoice : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -125,7 +131,7 @@ using System.Collections.ObjectModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
+#line 53 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
       
     [Parameter]
     public ObservableCollection<Risk> Risks { get; set; }
@@ -135,6 +141,28 @@ using System.Collections.ObjectModel;
 
     [Parameter]
     public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
+
+    private int LeftSide;
+    private int RightSide;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //check if the total count is odd and if so then remove one form the total and split then add on to the left side
+        var totalCount = ItemsChosen.Count();
+        if(totalCount %2 == 0)
+        {
+            var split = totalCount / 2;
+            LeftSide = split;
+            RightSide = split;
+        }
+        else
+        {
+            var RemoveOne = totalCount - 1;
+            var split = RemoveOne / 2;
+            LeftSide = split + 1;
+            RightSide = split;
+        }
+    }
 
     void HandleChangeHigh(MaintRequestInitiationRisk item)
     {
