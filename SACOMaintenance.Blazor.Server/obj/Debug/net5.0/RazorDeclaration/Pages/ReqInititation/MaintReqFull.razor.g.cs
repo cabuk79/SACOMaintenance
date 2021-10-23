@@ -133,10 +133,10 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 169 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 182 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
-    [Parameter]
-    public string maintReqID { get; set; }
+        [Parameter]
+        public string maintReqID { get; set; }
 
     public RadzenGrid<MaintRequestInitiationRisk> risksGrid { get; set; }
 
@@ -155,6 +155,8 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
 
     }
+
+    string riskvalue;
 
 
     protected async Task UpdateRisks()
@@ -178,7 +180,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         //maintReqInitation.LoadRiskLevel(Convert.ToInt32(maintReqID));
 
-        Task.Run(async ()=> { await maintReqInitation.LoadFactories(); }).Wait();
+        Task.Run(async () => { await maintReqInitation.LoadFactories(); }).Wait();
 
         Task.Run(async () => { await maintReqInitation.LoadRisks(); }).Wait();
 
@@ -188,17 +190,16 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         detailMarkUp = maintReqInitation.maintReqDetails;
 
-        maintReqInitation.LoadPPE();
+        Task.Run(async () => { await maintReqInitation.LoadPPE(); }).Wait();
 
-
-
+        //Load the selected isolations from the Isolations
+        //This is done below so that the genric SquareComboBox will find the isolations
         maintReqInitation.IsolationsSelected =
             maintReqInitation.Isolations
             .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
-        //maintReqInitation.IsolationByRequest
-        //.Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
-
+        maintReqInitation.RiskListsChosen =
+            maintReqInitation.RiskInfoList.ToList();
         ////Auto update
         //hubConnection = new HubConnectionBuilder()
         //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
@@ -212,29 +213,6 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         //await hubConnection.StartAsync();
     }
-
-
-
-    //Auto update code
-    //TODO: may need to remove this or modiy to suit
-    //private HubConnection hubConnection;
-
-    //private void CallLoadData()
-    //{
-    //    Task.Run(async () =>
-    //    {
-    //        await maintReqInitation.GetMaintReqInitation(Convert.ToInt32(maintReqID));
-    //        await maintReqInitation.LoadMaintRiskData(Convert.ToInt32(maintReqID));
-    //    });
-    //}
-
-    //public bool IsConnected =>
-    //    hubConnection.State == HubConnectionState.Connected;
-
-    //public void Dispose()
-    //{
-    //    _ = hubConnection.DisposeAsync();
-    //}
 
 #line default
 #line hidden

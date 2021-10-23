@@ -28,6 +28,7 @@ namespace SACOMaintenance.ViewModel
         public IIsolationMaintRequestInitiation IsolationMaintReqDataProvider { get; }
         public IUsers UsersDataProvider { get; set; }
         public List<Isolation> IsolationsSelected { get; set; } = new();
+        public List<MaintRequestInitiationRisk> RiskListsChosen { get; set; } = new();
 
 
 
@@ -174,7 +175,7 @@ namespace SACOMaintenance.ViewModel
             WordExport.CreateMaintenanceRequestReport(maintReqInitation);
         }
 
-        public async void LoadPPE()
+        public async Task LoadPPE()
         {
             var list = new ObservableCollection<PPE>(await PpeDataProvider.LoadAllPPE());
             Ppe.Clear();

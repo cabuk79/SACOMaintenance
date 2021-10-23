@@ -208,9 +208,12 @@ using Microsoft.AspNetCore.SignalR.Client;
         Task.Run(async () => { await GeneralViewModel.LoadCompletedUser(); }).Wait();
         //GeneralViewModel.LoadCompletedUser();
 
-        GeneralViewModel.PPEItemsSelected = 
-            GeneralViewModel.ppeList
-            .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+
+        //Load the selected isolations from the PPE
+        //This is done below so that the genric SquareComboBox will find the PPE
+        GeneralViewModel.PPEItemsSelected =
+        GeneralViewModel.ppeList
+        .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
 
 
         hubConnection = new HubConnectionBuilder()

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Shared
+namespace SACOMaintenance.Blazor.Server.Components
 {
     #line hidden
     using System;
@@ -103,7 +103,21 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
-    public partial class SquareCheckBox<TItem> : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 1 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
+using SACOMaintenance.Common.ModelDB;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
+using System.Collections.ObjectModel;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class RequestRiskChoice : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,32 +125,36 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\SquareCheckBox.razor"
-       
+#line 39 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
+      
     [Parameter]
-    public IEnumerable<TItem> Items { get; set; }
+    public ObservableCollection<Risk> Risks { get; set; }
 
     [Parameter]
-    public RenderFragment<TItem> ItemTemplate { get; set; }
+    public List<MaintRequestInitiationRisk> ItemsChosen { get; set; } = new();
 
     [Parameter]
-    public List<TItem> SelectedItems { get; set; } = new();
+    public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
 
-    [Parameter]
-    public EventCallback<List<TItem>> SelectedItemsChanged { get; set; }
-
-    void HandleChange(TItem item)
+    void HandleChangeHigh(MaintRequestInitiationRisk item)
     {
-        if (SelectedItems.Contains(item))
-        {
-            SelectedItems.Remove(item);
-        }
-        else
-        {
-            SelectedItems.Add(item);
-        }
 
-        SelectedItemsChanged.InvokeAsync(SelectedItems);
+        item.Level = "H";
+        ItemsChosenChanged.InvokeAsync(ItemsChosen);
+    }
+
+    void HandleChangeMedium(MaintRequestInitiationRisk item)
+    {
+
+        item.Level = "M";
+        ItemsChosenChanged.InvokeAsync(ItemsChosen);
+    }
+
+    void HandleChangeLow(MaintRequestInitiationRisk item)
+    {
+
+        item.Level = "L";
+        ItemsChosenChanged.InvokeAsync(ItemsChosen);
     }
 
 #line default

@@ -19,6 +19,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<Isolation> IsolationByRequest { get; set; }        
         List<string> SelectedIsolationIds { get; set; }
         public List<Isolation> IsolationsSelected { get; set; }
+        public List<MaintRequestInitiationRisk> RiskListsChosen { get; set; }
         //List<PPE> PPEItemsSelected { get; set; }
 
         IMaintRequestInitiation MaintReqDataProvider { get; }
@@ -42,7 +43,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public Task<bool> LoadMaintRiskData(int maintReqId);
         Task<ObservableCollection<Risk>> LoadRisks();
         void ExportRequest();
-        public void LoadPPE();
+        public Task LoadPPE();
         Task<ObservableCollection<Isolation>> LoadIsolations();
         Task<ObservableCollection<Isolation>> LoadIsoaltionsByMaint();
         public void UpdateRequest();

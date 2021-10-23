@@ -1,0 +1,69 @@
+﻿@using SACOMaintenance.Common.ModelDB
+@using System.Collections.ObjectModel;
+
+@foreach (var item in ItemsChosen)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <h2>@item.RiskId</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <h4>H</h4>
+                <input name="@item.RiskId" type="radio" 
+                        value="H" checked="@(item.Level.Equals("H"))" 
+                       @onchange="_ => HandleChangeHigh(item)" />
+            </div>
+            <div class="col-lg-2">
+                <h4>M</h4>
+                <input name="@item.RiskId" type="radio"
+                        value="M" checked="@(item.Level.Equals("M"))"
+                       @onchange="_ => HandleChangeMedium(item)" />
+            </div>
+            <div class="col-lg-2">
+                <h4>L</h4>
+                <input name="@item.RiskId" type="radio"
+                        value="L" checked="@(item.Level.Equals("L"))" 
+                       @onchange="_ => HandleChangeLow(item)" />
+            </div>
+        </div>
+    </div>
+
+
+
+
+}
+
+@code{
+    [Parameter]
+    public ObservableCollection<Risk> Risks { get; set; }
+
+    [Parameter]
+    public List<MaintRequestInitiationRisk> ItemsChosen { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
+
+    void HandleChangeHigh(MaintRequestInitiationRisk item)
+    {
+
+        item.Level = "H";
+        ItemsChosenChanged.InvokeAsync(ItemsChosen);
+    }
+
+    void HandleChangeMedium(MaintRequestInitiationRisk item)
+    {
+
+        item.Level = "M";
+        ItemsChosenChanged.InvokeAsync(ItemsChosen);
+    }
+
+    void HandleChangeLow(MaintRequestInitiationRisk item)
+    {
+
+        item.Level = "L";
+        ItemsChosenChanged.InvokeAsync(ItemsChosen);
+    }
+}

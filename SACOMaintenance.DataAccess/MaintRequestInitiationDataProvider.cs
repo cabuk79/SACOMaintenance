@@ -57,9 +57,9 @@ namespace SACOMaintenance.DataAccess
             {
                 newRisk.MaintRequestInitiationId = newRequest.Id;
                 newRisk.RiskId = item.Id;
-                newRisk.H = false;
-                newRisk.M = false;
-                newRisk.L = false;
+                //newRisk.H = false;
+                //newRisk.M = false;
+                //newRisk.L = false;
 
                 _requestInitationDBContext.Add(newRisk);
                 _requestInitationDBContext.SaveChanges();
@@ -82,9 +82,9 @@ namespace SACOMaintenance.DataAccess
                 var foundItem = _requestInitationDBContext.MaintRequestInitiationRisk
                     .Where(ri => ri.RiskId == item.RiskId && ri.MaintRequestInitiationId == item.MaintRequestInitiationId).FirstOrDefault();
 
-                foundItem.H = item.H;
-                foundItem.M = item.M;
-                foundItem.L = item.L;
+                //foundItem.H = item.H;
+                //foundItem.M = item.M;
+                //foundItem.L = item.L;
 
                 _requestInitationDBContext.Update(foundItem);
                 _requestInitationDBContext.SaveChanges();
