@@ -131,59 +131,60 @@ using System;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
-      
-    [Parameter]
-    public ObservableCollection<Risk> Risks { get; set; }
+#line 55 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
+              
+            [Parameter]
+            public ObservableCollection<Risk> Risks { get; set; }
 
-    [Parameter]
-    public List<MaintRequestInitiationRisk> ItemsChosen { get; set; } = new();
+            [Parameter]
+            public List<MaintRequestInitiationRisk> ItemsChosen { get; set; } = new();
 
-    [Parameter]
-    public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
+            [Parameter]
+            public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
 
     private int LeftSide;
-    private int RightSide;
+        private int RightSide;
 
-    protected override async Task OnInitializedAsync()
-    {
-        //check if the total count is odd and if so then remove one form the total and split then add on to the left side
-        var totalCount = ItemsChosen.Count();
-        if(totalCount %2 == 0)
+        protected override async Task OnInitializedAsync()
         {
-            var split = totalCount / 2;
-            LeftSide = split;
-            RightSide = split;
+            //check if the total count is odd and if so then remove one form the total and split then add on to the left side
+            var totalCount = ItemsChosen.Count();
+            if (totalCount % 2 == 0)
+            {
+                var split = totalCount / 2;
+                LeftSide = split;
+                RightSide = split;
+            }
+            else
+            {
+                var RemoveOne = totalCount - 1;
+                var split = RemoveOne / 2;
+                LeftSide = split + 1;
+                RightSide = split;
+            }
         }
-        else
+
+        void HandleChangeHigh(MaintRequestInitiationRisk item)
         {
-            var RemoveOne = totalCount - 1;
-            var split = RemoveOne / 2;
-            LeftSide = split + 1;
-            RightSide = split;
+
+            item.Level = "H";
+            ItemsChosenChanged.InvokeAsync(ItemsChosen);
         }
-    }
 
-    void HandleChangeHigh(MaintRequestInitiationRisk item)
-    {
+        void HandleChangeMedium(MaintRequestInitiationRisk item)
+        {
 
-        item.Level = "H";
-        ItemsChosenChanged.InvokeAsync(ItemsChosen);
-    }
+            item.Level = "M";
+            ItemsChosenChanged.InvokeAsync(ItemsChosen);
+        }
 
-    void HandleChangeMedium(MaintRequestInitiationRisk item)
-    {
+        void HandleChangeLow(MaintRequestInitiationRisk item)
+        {
 
-        item.Level = "M";
-        ItemsChosenChanged.InvokeAsync(ItemsChosen);
-    }
-
-    void HandleChangeLow(MaintRequestInitiationRisk item)
-    {
-
-        item.Level = "L";
-        ItemsChosenChanged.InvokeAsync(ItemsChosen);
-    }
+            item.Level = "L";
+            ItemsChosenChanged.InvokeAsync(ItemsChosen);
+        }
+        
 
 #line default
 #line hidden

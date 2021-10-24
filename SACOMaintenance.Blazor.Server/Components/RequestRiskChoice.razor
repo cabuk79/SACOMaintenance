@@ -2,104 +2,106 @@
 @using System.Collections.ObjectModel;
 @using System;
 
-<div class="continer">
-    <div class="row">
-        <div class="col-lg-3"><label>NAME</label></div>
-        <div class="col-lg-1"><label>H</label></div>
-        <div class="col-lg-1"><label>M</label></div>
-        <div class="col-lg-1"><label>L</label></div>
-        <div class="col-lg-3"><label>NAME</label></div>
-        <div class="col-lg-1"><label>H</label></div>
-        <div class="col-lg-1"><label>M</label></div>
-        <div class="col-lg-1"><label>L</label></div>
-    </div>
-    @foreach (var item in ItemsChosen)
-    {
+<div class="container-full">
+    <RadzenFieldset Text="Risks">
+        <div class="inner-radio-container">
+        @foreach (var item in ItemsChosen)
+        {
 
-            <div class="row">
-                <div class="col-lg-3">
-                    @foreach (var itemRisk in Risks)
+            <div class="container-outer">
+                <div class="row">
+                    @foreach (var riskItem in Risks)
                     {
-                        if (itemRisk.Id == item.RiskId)
+                        if (riskItem.Id == item.RiskId)
                         {
-                            <RadzenLabel Text="@itemRisk.RiskName"></RadzenLabel>
+                            <label>@riskItem.RiskName</label>
                         }
                     }
                 </div>
-                <div class="col-lg-1">
-                    <input name="@item.RiskId" type="radio"
-                           value="H" checked="@(item.Level.Equals("H"))"
-                           @onchange="_ => HandleChangeHigh(item)" />
-                </div>
-                <div class="col-lg-1">
-                    <input name="@item.RiskId" type="radio"
-                           value="M" checked="@(item.Level.Equals("M"))"
-                           @onchange="_ => HandleChangeMedium(item)" />
-                </div>
-                <div class="col-lg-1">
-                    <input name="@item.RiskId" type="radio"
-                           value="L" checked="@(item.Level.Equals("L"))"
-                           @onchange="_ => HandleChangeLow(item)" />
+                <div class="row">
+                    <div class="input-container">
+                        <input name="@item.RiskId" type="radio" id="H" class="radio-button-H"
+                               value="H" checked="@(item.Level.Equals("H"))"
+                               @onchange="_ => HandleChangeHigh(item)" />
+                        <div class="radio-tile-H">
+                            <label>H</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input name="@item.RiskId" type="radio" id="M" class="radio-button-M"
+                               value="H" checked="@(item.Level.Equals("M"))"
+                               @onchange="_ => HandleChangeMedium(item)" />
+                        <div class="radio-tile-M">
+                            <label>M</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input name="@item.RiskId" type="radio" id="L" class="radio-button-L"
+                               value="H" checked="@(item.Level.Equals("L"))"
+                               @onchange="_ => HandleChangeLow(item)" />
+                        <div class="radio-tile-L">
+                            <label>L</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-   
-       
-        
-        
+        }
+        </div>
+    </RadzenFieldset>
 
-    }
-</div>
+    
+        </div>
 
-@code{
-    [Parameter]
-    public ObservableCollection<Risk> Risks { get; set; }
+        @code{
+            [Parameter]
+            public ObservableCollection<Risk> Risks { get; set; }
 
-    [Parameter]
-    public List<MaintRequestInitiationRisk> ItemsChosen { get; set; } = new();
+            [Parameter]
+            public List<MaintRequestInitiationRisk> ItemsChosen { get; set; } = new();
 
-    [Parameter]
-    public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
+            [Parameter]
+            public EventCallback<List<MaintRequestInitiationRisk>> ItemsChosenChanged { get; set; }
 
     private int LeftSide;
-    private int RightSide;
+        private int RightSide;
 
-    protected override async Task OnInitializedAsync()
-    {
-        //check if the total count is odd and if so then remove one form the total and split then add on to the left side
-        var totalCount = ItemsChosen.Count();
-        if(totalCount %2 == 0)
+        protected override async Task OnInitializedAsync()
         {
-            var split = totalCount / 2;
-            LeftSide = split;
-            RightSide = split;
+            //check if the total count is odd and if so then remove one form the total and split then add on to the left side
+            var totalCount = ItemsChosen.Count();
+            if (totalCount % 2 == 0)
+            {
+                var split = totalCount / 2;
+                LeftSide = split;
+                RightSide = split;
+            }
+            else
+            {
+                var RemoveOne = totalCount - 1;
+                var split = RemoveOne / 2;
+                LeftSide = split + 1;
+                RightSide = split;
+            }
         }
-        else
+
+        void HandleChangeHigh(MaintRequestInitiationRisk item)
         {
-            var RemoveOne = totalCount - 1;
-            var split = RemoveOne / 2;
-            LeftSide = split + 1;
-            RightSide = split;
+
+            item.Level = "H";
+            ItemsChosenChanged.InvokeAsync(ItemsChosen);
         }
-    }
 
-    void HandleChangeHigh(MaintRequestInitiationRisk item)
-    {
+        void HandleChangeMedium(MaintRequestInitiationRisk item)
+        {
 
-        item.Level = "H";
-        ItemsChosenChanged.InvokeAsync(ItemsChosen);
-    }
+            item.Level = "M";
+            ItemsChosenChanged.InvokeAsync(ItemsChosen);
+        }
 
-    void HandleChangeMedium(MaintRequestInitiationRisk item)
-    {
+        void HandleChangeLow(MaintRequestInitiationRisk item)
+        {
 
-        item.Level = "M";
-        ItemsChosenChanged.InvokeAsync(ItemsChosen);
-    }
-
-    void HandleChangeLow(MaintRequestInitiationRisk item)
-    {
-
-        item.Level = "L";
-        ItemsChosenChanged.InvokeAsync(ItemsChosen);
-    }
-}
+            item.Level = "L";
+            ItemsChosenChanged.InvokeAsync(ItemsChosen);
+        }
+        }

@@ -5,19 +5,6 @@
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager NavigationManager
 
-@foreach (var item in maintReqInitation.RiskListsChosen)
-{
-    @item.Level
-}
- 
-<RequestRiskChoice @bind-ItemsChosen="maintReqInitation.RiskListsChosen" Risks="maintReqInitation.Risks">
-</RequestRiskChoice>
-
-@*@bind-Items="maintReqInitation.RiskInfoList"*@
-
-
-
-
 
 <h3>Maintenance Request @maintReqInitation.maintReqId</h3>
 
@@ -31,7 +18,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <RadzenFieldset Text="Details" Style="border-color: black">
                                 <div class="row">
                                     <div class="col-lg-4"><RadzenLabel Style="font-weight: bold" Text="Factory" /></div>
@@ -67,67 +54,14 @@
                                 </div>
                             </RadzenFieldset>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <RadzenButton Click="@UpdateRisks"></RadzenButton>
-                                    @*<RadzenFieldset Text="Risk Assemssment" Style="border-color: black">
-                                            <RadzenGrid @ref="risksGrid" Data="@maintReqInitation.RiskInfoList" TItem="MaintRequestInitiationRisk">
-                                                <Columns>
-                                                    <RadzenGridColumn TItem="MaintRequestInitiationRisk" Property="RiskId" Title="Risk Name" Width="15px">
-                                                        <Template Context="data">
-                                                            @foreach (var riskItem in maintReqInitation.Risks)
-                                                            {
-                                                                if (riskItem.Id == data.RiskId)
-                                                                {
-                                                                    @riskItem.RiskName
-                                                                }
-                                                            }
-                                                        </Template>
-                                                    </RadzenGridColumn>
-                                                    <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="H" Width="10px">
-                                                        <Template Context="data">
-                                                            @if (data.M == true || data.L == true || isReadOnly == true)
-                                                            {
-                                                                <RadzenCheckBox @bind-Value="data.H" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
-                                                            }
-                                                            else
-                                                            {
-                                                                <RadzenCheckBox @bind-Value="data.H" TValue="bool" Style="border-color: black"></RadzenCheckBox>
-                                                            }
-                                                        </Template>
-                                                    </RadzenGridColumn>
-                                                    <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="M" Width="10px">
-                                                        <Template Context="data">
-                                                            @if (data.H == true || data.L == true || isReadOnly == true)
-                                                            {
-                                                                <RadzenCheckBox @bind-Value="data.M" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
-                                                            }
-                                                            else
-                                                            {
-                                                                <RadzenCheckBox @bind-Value="data.M" TValue="bool" Style="border-color: black"></RadzenCheckBox>
-                                                            }
-                                                        </Template>
-                                                    </RadzenGridColumn>
-                                                    <RadzenGridColumn TItem="@MaintRequestInitiationRisk" Property="RiskLevel" Title="L" Width="10px">
-                                                        <Template Context="data">
-                                                            @if (data.H == true || data.M == true || isReadOnly == true)
-                                                            {
-                                                                <RadzenCheckBox @bind-Value="data.L" TValue="bool" Style="border-color: black" Disabled="true"></RadzenCheckBox>
-                                                            }
-                                                            else
-                                                            {
-                                                                <RadzenCheckBox @bind-Value="data.L" TValue="bool" Style="border-color: black"></RadzenCheckBox>
-                                                            }
-                                                        </Template>
-                                                    </RadzenGridColumn>
-                                                </Columns>
-                                            </RadzenGrid>
-                                        </RadzenFieldset>*@
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenButton Click="@UpdateRisks"></RadzenButton>
+                    <RequestRiskChoice @bind-ItemsChosen="maintReqInitation.RiskListsChosen" Risks="maintReqInitation.Risks">
+                    </RequestRiskChoice>
                 </div>
             </div>
             <div class="row">
@@ -173,7 +107,7 @@
             }
             else
             {
-                @*<GeneralMaintReqComponent maintReq="maintReqInitation.maintReqInitation" ReqReadOnly="false" ReqReadOnlyChanged="ReqChangeBool"></GeneralMaintReqComponent>*@
+                <GeneralMaintReqComponent maintReq="maintReqInitation.maintReqInitation" ReqReadOnly="false" ReqReadOnlyChanged="ReqChangeBool"></GeneralMaintReqComponent>
             }
         </div>
     </div>
