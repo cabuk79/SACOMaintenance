@@ -88,6 +88,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IRequestsGraphViewModel, RequestsGraphViewModel>();
             services.AddScoped<IUserRequestsAll, UserRequestAllViewModel>();
             services.AddScoped<IAddMaintReq, AddMaintReqViewModel>();
+            services.AddScoped<IRequestAuthorisation, RequestAuthorisation>();
 
             services.AddScoped<MaintenanceRequestsExcel>();
             services.AddScoped<FileDownloadService>();

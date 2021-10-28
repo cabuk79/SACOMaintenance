@@ -21,6 +21,16 @@ namespace SACOMaintenance.DataAccess
             _sacoContext = sacoContext;
         }
     
+        public async Task<IEnumerable<AuthorizationRequest>> LoadAuthRequestsByUserType(string UserId, string Type, string Status)
+        {
+            var authorisations = await _sacoContext.AuthorizationRequests
+                                        .Where(u => u.UserId == UserId 
+                                                && u.Satus == Status
+                                                && u.AuthorizationType == Type)
+                                        .ToListAsync();
+            return authorisations;
+        }
+
         public async Task<AuthorizationRequest> FindAuthorizationByReqAndUser(string userId, int maintReqId)
         {
             var auth = await _sacoContext.AuthorizationRequests

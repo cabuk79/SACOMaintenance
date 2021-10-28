@@ -1,0 +1,24 @@
+﻿@inject SACOMaintenance.ViewModel.Interfaces.IRequestAuthorisation AuthViewModel
+@using SACOMaintenance.Common.ModelDB 
+
+<h3>Requests Needing Approval</h3>
+
+<RadzenGrid Data="@AuthViewModel.MaintReqsNeedingApproval">
+    <Columns>
+        <RadzenGridColumn TItem="Authorization" Property="MaintRequestInitiationId"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+@code {
+    [Parameter]
+    public string UserId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Task.Run(async () =>
+        {
+            await AuthViewModel.MaintReqsNeedingApproval(UserId, "AuthorityToWork");
+        }).Wait();
+    }
+
+}

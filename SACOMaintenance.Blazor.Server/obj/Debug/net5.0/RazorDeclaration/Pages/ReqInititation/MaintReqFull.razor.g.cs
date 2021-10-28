@@ -200,6 +200,9 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         maintReqInitation.RiskListsChosen =
             maintReqInitation.RiskInfoList.ToList();
+
+       
+
         ////Auto update
         //hubConnection = new HubConnectionBuilder()
         //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
