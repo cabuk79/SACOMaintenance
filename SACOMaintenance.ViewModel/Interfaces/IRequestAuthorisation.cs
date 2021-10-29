@@ -13,6 +13,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         #region Properties
         
         public AuthorizationRequest Authorisation { get; set; }
+        ObservableCollection<AuthorizationRequest> AuthroizationsForUser { get; set; }
 
         #endregion
 
@@ -20,7 +21,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         public void UpdateAuthorisation(string UserId, int MaintReqId);
 
-        public Task<ObservableCollection<AuthorizationRequest>> MaintReqsNeedingApproval(string ApprovalType, string UserId, string Status); 
+        public Task MaintReqsNeedingApproval(string ApprovalType, string UserId, string Status); 
 
         #endregion
     }

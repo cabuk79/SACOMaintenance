@@ -1,101 +1,102 @@
 ﻿@page "/maint-req/auth/{MaintReqID}"
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel MaintRequestViewModel
+@using SACOMaintenance.Blazor.Server.Components
 
-<h3>Maintenance Request</h3>
+    <h3>Maintenance Request</h3>
 
-@*
+    @*
 
-    UI layout
+        UI layout
 
-    General details - section
+        General details - section
 
 
-    Risks - section
+        Risks - section
 
-    Isolations - section
+        Isolations - section
 
-    Control measures taken - section
+        Control measures taken - section
 
-    PPE - section
+        PPE - section
 
-    Approval or Rejection Section - enter details - only part not read only
+        Approval or Rejection Section - enter details - only part not read only
 
-*@
+    *@
 
-<RadzenFieldset Text="General Details">
-    <div class="row">
-        <div class="col-lg-4"><RadzenLabel Text="Factory"></RadzenLabel></div>
-        <div class="col-lg-4"><RadzenLabel Text="Area"></RadzenLabel></div>
-        <div class="col-lg-4"><RadzenLabel Text="Equipment"></RadzenLabel></div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">@MaintRequestViewModel.maintReqInitation.Factory.FactoryName</div>
-        <div class="col-lg-4">@MaintRequestViewModel.maintReqInitation.Area.AreaName</div>
-        <div class="col-lg-4">@MaintRequestViewModel.maintReqInitation.Equipment.Name</div>
-    </div>
-    <div class="row"><RadzenLabel Text="Details"></RadzenLabel></div>
-    <div class="row">
-        <div class="col-lg-12">
-            @MaintRequestViewModel.maintReqInitation.RequestDetails
+    <RadzenFieldset Text="General Details">
+        <div class="row">
+            <div class="col-lg-4"><RadzenLabel Text="Factory"></RadzenLabel></div>
+            <div class="col-lg-4"><RadzenLabel Text="Area"></RadzenLabel></div>
+            <div class="col-lg-4"><RadzenLabel Text="Equipment"></RadzenLabel></div>
         </div>
-    </div>
-</RadzenFieldset>
+        <div class="row">
+            <div class="col-lg-4">@MaintRequestViewModel.maintReqInitation.Factory.FactoryName</div>
+            <div class="col-lg-4">@MaintRequestViewModel.maintReqInitation.Area.AreaName</div>
+            <div class="col-lg-4">@MaintRequestViewModel.maintReqInitation.Equipment.Name</div>
+        </div>
+        <div class="row"><RadzenLabel Text="Details"></RadzenLabel></div>
+        <div class="row">
+            <div class="col-lg-12">
+                @MaintRequestViewModel.maintReqInitation.RequestDetails
+            </div>
+        </div>
+    </RadzenFieldset>
 
-<RadzenFieldset Text="Risks">
-    <ul>
-        @foreach(var item in MaintRequestViewModel.RiskInfoList)
-        {
-            foreach(var riskItem in MaintRequestViewModel.Risks)
+    <RadzenFieldset Text="Risks">
+        <ul>
+            @foreach (var item in MaintRequestViewModel.RiskInfoList)
             {
-                if(riskItem.Id == item.RiskId)
+                foreach (var riskItem in MaintRequestViewModel.Risks)
                 {
-                    <li>@riskItem.RiskName + "   Risk Level: " + @item.Level</li>
+                    if (riskItem.Id == item.RiskId)
+                    {
+                        <li>@riskItem.RiskName + "   Risk Level: " + @item.Level</li>
+                    }
                 }
             }
-        }
-    </ul>
-</RadzenFieldset>
+        </ul>
+    </RadzenFieldset>
 
-<RadzenFieldset Text="Isolations">
-    <ul>
-        @foreach(var item in MaintRequestViewModel.IsolationByRequest)
+    <RadzenFieldset Text="Isolations">
+        <ul>
+            @foreach (var item in MaintRequestViewModel.IsolationByRequest)
+            {
+                <li>@item.Name</li>
+            }
+        </ul>
+    </RadzenFieldset>
+
+    <RadzenFieldset Text="PPE Items Required">
+        <ul>
+            @foreach (var item in MaintRequestViewModel.Ppe)
+            {
+                <li>@item.PPEName</li>
+            }
+        </ul>
+    </RadzenFieldset>
+
+    <RadzenFieldset Text="Approval">
+        <ApprovalComponent></ApprovalComponent>
+    </RadzenFieldset>
+
+
+    @code {
+
+        [Parameter]
+        public string MaintReqID { get; set; }
+
+        protected override async Task OnInitializedAsync()
         {
-            <li>@item.Name</li>
+            MaintRequestViewModel.GetMaintReqInitation(Convert.ToInt32(MaintReqID));
+
+            Task.Run(async () => { await MaintRequestViewModel.LoadRisks(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadMaintRiskData(Convert.ToInt32(MaintReqID)); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadIsolations(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadIsoaltionsByMaint(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadPPE(); }).Wait();
+
+            MaintRequestViewModel.IsolationsSelected =
+            MaintRequestViewModel.Isolations
+            .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
         }
-    </ul>
-</RadzenFieldset>
-
-<RadzenFieldset Text="PPE Items Required">
-    <ul>
-        @foreach(var item in MaintRequestViewModel.Ppe)
-        {
-            <li>@item.PPEName</li>
-        }
-    </ul>
-</RadzenFieldset>
-
-<RadzenFieldset Text="Approval">
-    <SACOMaintenance.Blazor.Server.Components.ApprovalComponent></SACOMaintenance.Blazor.Server.Components.ApprovalComponent>
-</RadzenFieldset>
-
-
-@code {
-
-    [Parameter]
-    public string MaintReqID { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        MaintRequestViewModel.GetMaintReqInitation(Convert.ToInt32(MaintReqID));
-
-        Task.Run(async () => { await MaintRequestViewModel.LoadRisks(); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadMaintRiskData(Convert.ToInt32(MaintReqID)); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadIsolations(); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadIsoaltionsByMaint(); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadPPE(); }).Wait();
-
-        MaintRequestViewModel.IsolationsSelected =
-        MaintRequestViewModel.Isolations
-        .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
     }
-}

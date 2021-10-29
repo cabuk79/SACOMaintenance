@@ -15,6 +15,7 @@ namespace SACOMaintenance.DataAccess
         private readonly SACOMaintenanceContext _sacoContext;
 
         public AuthorizationRequest authorizationRequest { get; set; }
+        public MaintRequestInitiation maintReq { get; set; }
 
         public AuthorizationDataProvider(SACOMaintenanceContext sacoContext)
         {

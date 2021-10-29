@@ -640,3 +640,7 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\ref\SACOMaintenance.Blazor.Server.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.pdb
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.genruntimeconfig.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Components\RequestsNeedingApproval.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Dashboard\DashboardGeneralUser.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\RequestsNeedingApproval.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\Dashboard\DashboardGeneralUser.razor.g.cs

@@ -97,7 +97,28 @@ using Radzen.Blazor.Rendering;
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\_Imports.razor"
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
+using SACOMaintenance.Blazor.Server.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
+using Microsoft.AspNetCore.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
 using System.Security.Claims;
 
 #line default
@@ -110,6 +131,24 @@ using System.Security.Claims;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
+       
+    [Parameter]
+    public string UserId { get; set; }
+
+    //protected async override Task OnInitializedAsync()
+    //{
+    //    var principal = HttpContextAccessor.HttpContext.User;
+    //    userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+    //}
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpContextAccessor HttpContextAccessor { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UserManager<Common.ModelDB.User> _UserManager { get; set; }
     }
 }
 #pragma warning restore 1591

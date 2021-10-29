@@ -1,5 +1,23 @@
-﻿<h3>DashboardMaintenanceStandard</h3>
+﻿
+@using SACOMaintenance.Blazor.Server.Components
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<Common.ModelDB.User> _UserManager
+@using Microsoft.AspNetCore.Http;
+@using System.Security.Claims
+@inject IHttpContextAccessor HttpContextAccessor
+
+<h3>DashboardMaintenanceStandard</h3>
+
+<RequestsNeedingApproval UserId="@UserId"></RequestsNeedingApproval>
 
 @code {
+    [Parameter]
+    public string UserId { get; set; }
+
+    //protected async override Task OnInitializedAsync()
+    //{
+    //    var principal = HttpContextAccessor.HttpContext.User;
+    //    userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+    //}
 
 }

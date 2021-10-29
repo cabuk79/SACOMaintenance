@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +17,7 @@ namespace SACOMaintenance.Common.ModelDB
         public string Satus { get; set; }
         public DateTime RequestedDate { get; set; }
         public DateTime LastChaseDate { get; set; }
+        //[ForeignKey("MaintRequestInitiationId")]
+        //public virtual MaintRequestInitiation MaintRequestInitiation { get; set; }
     }
 }

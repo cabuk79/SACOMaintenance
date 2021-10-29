@@ -103,6 +103,13 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\RequestAuthorisation.razor"
+using SACOMaintenance.Blazor.Server.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/auth/{MaintReqID}")]
     public partial class RequestAuthorisation : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,26 +119,27 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 82 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\RequestAuthorisation.razor"
-       
+#line 83 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\RequestAuthorisation.razor"
+           
 
-    [Parameter]
-    public string MaintReqID { get; set; }
+        [Parameter]
+        public string MaintReqID { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        MaintRequestViewModel.GetMaintReqInitation(Convert.ToInt32(MaintReqID));
+        protected override async Task OnInitializedAsync()
+        {
+            MaintRequestViewModel.GetMaintReqInitation(Convert.ToInt32(MaintReqID));
 
-        Task.Run(async () => { await MaintRequestViewModel.LoadRisks(); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadMaintRiskData(Convert.ToInt32(MaintReqID)); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadIsolations(); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadIsoaltionsByMaint(); }).Wait();
-        Task.Run(async () => { await MaintRequestViewModel.LoadPPE(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadRisks(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadMaintRiskData(Convert.ToInt32(MaintReqID)); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadIsolations(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadIsoaltionsByMaint(); }).Wait();
+            Task.Run(async () => { await MaintRequestViewModel.LoadPPE(); }).Wait();
 
-        MaintRequestViewModel.IsolationsSelected =
-        MaintRequestViewModel.Isolations
-        .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
-    }
+            MaintRequestViewModel.IsolationsSelected =
+            MaintRequestViewModel.Isolations
+            .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
+        }
+    
 
 #line default
 #line hidden

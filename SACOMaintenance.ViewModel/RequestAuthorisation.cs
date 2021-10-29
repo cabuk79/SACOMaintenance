@@ -19,6 +19,7 @@ namespace SACOMaintenance.ViewModel
         public IAuthorization AuthorizationDataProvider { get; }
 
         public AuthorizationRequest Authorisation { get; set; }
+        public ObservableCollection<AuthorizationRequest> AuthroizationsForUser { get; set; } = new();
 
         #endregion
 
@@ -34,11 +35,13 @@ namespace SACOMaintenance.ViewModel
             //Authorisation = new ObservableCollection<AuthorizationRequest>(await AuthorizationDataProvider.FindAuthorizationByReqAndUser(UserId, MaintReqId));
         }
 
-        public async Task<ObservableCollection<AuthorizationRequest>> MaintReqsNeedingApproval
+        public async Task MaintReqsNeedingApproval
             (string ApprovalType, string UserId, string Status)
         {
-            //TODO: complete the authorasation component for generla user dahsboard
-            return null;
+            //TODO: complete the authorasation component for general user dashboard
+            AuthroizationsForUser = new ObservableCollection<AuthorizationRequest>
+                (await AuthorizationDataProvider.LoadAuthRequestsByUserType
+                (UserId, ApprovalType, Status));
         }
 
         #endregion

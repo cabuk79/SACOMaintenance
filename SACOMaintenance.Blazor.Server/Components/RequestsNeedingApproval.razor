@@ -3,9 +3,11 @@
 
 <h3>Requests Needing Approval</h3>
 
-<RadzenGrid Data="@AuthViewModel.MaintReqsNeedingApproval">
+<RadzenGrid Data="@AuthViewModel.AuthroizationsForUser">
     <Columns>
-        <RadzenGridColumn TItem="Authorization" Property="MaintRequestInitiationId"></RadzenGridColumn>
+        <RadzenGridColumn TItem="AuthorizationRequest" Property="MaintRequestInitiationId"></RadzenGridColumn>
+        <RadzenGridColumn TItem="AuthorizationRequest" Property="Satus"></RadzenGridColumn>
+        <RadzenGridColumn TItem="AuthorizationRequest" Property="RequestedDate"></RadzenGridColumn>
     </Columns>
 </RadzenGrid>
 
@@ -17,7 +19,7 @@
     {
         Task.Run(async () =>
         {
-            await AuthViewModel.MaintReqsNeedingApproval(UserId, "AuthorityToWork");
+            await AuthViewModel.MaintReqsNeedingApproval("AuthorityToWork", UserId , "Requested");
         }).Wait();
     }
 
