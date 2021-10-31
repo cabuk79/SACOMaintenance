@@ -6,18 +6,25 @@
 @using System.Security.Claims
 @inject IHttpContextAccessor HttpContextAccessor
 
-<h3>DashboardMaintenanceStandard</h3>
+<h2>Dashboard</h2>
 
-<RequestsNeedingApproval UserId="@UserId"></RequestsNeedingApproval>
+<hr />
+
+<div class="row">
+    <div class="col-lg-6">
+        <RadzenFieldset Text="All Requests You Have Raised" Style="border-color: black" AllowCollapse="true">
+
+        </RadzenFieldset>
+    </div>
+    <div class="col-lg-6">
+        <RadzenFieldset Text="Authorise To Work Requests" Style="border-color: black" AllowCollapse="true">
+            <RequestsNeedingApproval UserId="@UserId"></RequestsNeedingApproval>
+        </RadzenFieldset>
+    </div>
+</div>
+
 
 @code {
     [Parameter]
     public string UserId { get; set; }
-
-    //protected async override Task OnInitializedAsync()
-    //{
-    //    var principal = HttpContextAccessor.HttpContext.User;
-    //    userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
-    //}
-
 }

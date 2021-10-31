@@ -1,8 +1,12 @@
-﻿@page "/maint-req/auth/{MaintReqID}"
+﻿@page "/maint-req/auth/{MaintReqID}/{AuthId}"
 @inject SACOMaintenance.ViewModel.Interfaces.IMaintRequestFullViewModel MaintRequestViewModel
 @using SACOMaintenance.Blazor.Server.Components
 
     <h3>Maintenance Request</h3>
+
+@MaintReqID
+
+@AuthId
 
     @*
 
@@ -76,7 +80,7 @@
     </RadzenFieldset>
 
     <RadzenFieldset Text="Approval">
-        <ApprovalComponent></ApprovalComponent>
+        <ApprovalComponent AuthId="Convert.ToInt32(AuthId)"></ApprovalComponent>
     </RadzenFieldset>
 
 
@@ -84,6 +88,9 @@
 
         [Parameter]
         public string MaintReqID { get; set; }
+
+        [Parameter]
+        public string AuthId { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

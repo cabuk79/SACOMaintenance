@@ -1,6 +1,8 @@
 ﻿@using SACOMaintenance.ViewModel.Interfaces
 @inject IRequestAuthorisation AuthViewModel
 
+@AuthId
+
 <div class="row">
     <div class="col-lg-12">
         <label>Comments/Rejection Reason</label>
@@ -23,16 +25,9 @@
 
 
 @code {
-
     [Parameter]
-    public int MaintReqId { get; set; }
+    public int AuthId { get; set; }
 
-    [Parameter]
-    public int UserId { get; set; }
+    //TODO: Create method for approval and rejection
 
-
-    protected override async Task OnInitializedAsync()
-    {
-       // AuthViewModel.LoadAuthorisation(UserId, MaintReqId);
-    }
 }

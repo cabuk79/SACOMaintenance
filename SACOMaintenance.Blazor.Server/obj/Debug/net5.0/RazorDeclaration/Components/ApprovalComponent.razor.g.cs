@@ -118,20 +118,13 @@ using SACOMaintenance.ViewModel.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\ApprovalComponent.razor"
+#line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\ApprovalComponent.razor"
        
-
     [Parameter]
-    public int MaintReqId { get; set; }
+    public int AuthId { get; set; }
 
-    [Parameter]
-    public int UserId { get; set; }
+    //TODO: Create method for approval and rejection
 
-
-    protected override async Task OnInitializedAsync()
-    {
-       // AuthViewModel.LoadAuthorisation(UserId, MaintReqId);
-    }
 
 #line default
 #line hidden

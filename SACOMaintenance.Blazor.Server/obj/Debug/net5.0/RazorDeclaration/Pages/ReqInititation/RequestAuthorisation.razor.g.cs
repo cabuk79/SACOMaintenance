@@ -110,7 +110,7 @@ using SACOMaintenance.Blazor.Server.Components;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/auth/{MaintReqID}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/maint-req/auth/{MaintReqID}/{AuthId}")]
     public partial class RequestAuthorisation : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -119,11 +119,14 @@ using SACOMaintenance.Blazor.Server.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\RequestAuthorisation.razor"
+#line 87 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\RequestAuthorisation.razor"
            
 
         [Parameter]
         public string MaintReqID { get; set; }
+
+        [Parameter]
+        public string AuthId { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

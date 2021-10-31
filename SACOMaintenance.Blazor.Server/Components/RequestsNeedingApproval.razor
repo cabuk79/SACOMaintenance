@@ -1,13 +1,21 @@
 ﻿@inject SACOMaintenance.ViewModel.Interfaces.IRequestAuthorisation AuthViewModel
 @using SACOMaintenance.Common.ModelDB 
 
-<h3>Requests Needing Approval</h3>
-
-<RadzenGrid Data="@AuthViewModel.AuthroizationsForUser">
+<RadzenGrid Data="AuthViewModel.AuthroizationsForUser" TItem="AuthorizationRequest">
     <Columns>
-        <RadzenGridColumn TItem="AuthorizationRequest" Property="MaintRequestInitiationId"></RadzenGridColumn>
-        <RadzenGridColumn TItem="AuthorizationRequest" Property="Satus"></RadzenGridColumn>
-        <RadzenGridColumn TItem="AuthorizationRequest" Property="RequestedDate"></RadzenGridColumn>
+        <RadzenGridColumn TItem="AuthorizationRequest" Property="MaintRequestInitiationId" Title="Request Number">
+            <Template Context="data">
+                MAINT-@data.MaintRequestInitiationId
+            </Template>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="AuthorizationRequest" Property="RequestedDate" Title="Requested Date"></RadzenGridColumn>
+        <RadzenGridColumn TItem="AuthorizationRequest" Property="MaintRequestInitiationId" Width="60px">
+            <Template Context="data">
+                <a href="@($"maint-req/auth/{data.MaintRequestInitiationId}/{data.Id}")" class="btn btn-primary table-btn">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </Template>
+        </RadzenGridColumn>
     </Columns>
 </RadzenGrid>
 

@@ -132,17 +132,10 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
+#line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardMaintenanceStandard.razor"
        
     [Parameter]
     public string UserId { get; set; }
-
-    //protected async override Task OnInitializedAsync()
-    //{
-    //    var principal = HttpContextAccessor.HttpContext.User;
-    //    userId = principal.FindFirstValue(ClaimTypes.NameIdentifier);
-    //}
-
 
 #line default
 #line hidden

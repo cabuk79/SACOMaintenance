@@ -299,7 +299,11 @@ app {
         font-size: 12px;
     }
 
-    
+    .approval-article {
+        background: #fff;
+        padding: 2px 2px 2px 2px;
+        filter: drop-shadow(0 0 15px rgba(51, 51, 51, .2));
+    }
 
     /* --- Hover tool tip ---- */
     
