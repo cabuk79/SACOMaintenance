@@ -62,11 +62,13 @@ namespace SACOMaintenance.DataAccess
             _sacoContext.SaveChanges();
         }
 
-        public void Update(int AuthId, string Type)
+        public void Update(int AuthId, string Type, string CommentReason)
         {
             var getAuth = _sacoContext.AuthorizationRequests.FirstOrDefault(i => i.Id == AuthId);
 
             getAuth.Satus = Type;
+            getAuth.CommentRejection = CommentReason;
+            getAuth.ConfirmationDate = DateTime.Now;
 
             _sacoContext.Update<AuthorizationRequest>(getAuth);
             _sacoContext.SaveChanges();

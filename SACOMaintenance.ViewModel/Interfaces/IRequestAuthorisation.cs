@@ -19,7 +19,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region Methods
 
-        public Task UpdateAuthorisationAcceptReject(int AuthId, string Type);
+        public Task UpdateAuthorisationAcceptReject(int AuthId, string Type, string CommentReason);
 
         public Task MaintReqsNeedingApproval(string ApprovalType, string UserId, string Status); 
 

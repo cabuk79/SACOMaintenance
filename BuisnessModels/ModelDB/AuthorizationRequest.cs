@@ -17,6 +17,8 @@ namespace SACOMaintenance.Common.ModelDB
         public string Satus { get; set; }
         public DateTime RequestedDate { get; set; }
         public DateTime LastChaseDate { get; set; }
+        public DateTime ConfirmationDate { get; set; }
+        public string CommentRejection { get; set; }
         //[ForeignKey("MaintRequestInitiationId")]
         //public virtual MaintRequestInitiation MaintRequestInitiation { get; set; }
     }
