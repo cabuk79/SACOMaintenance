@@ -61,5 +61,15 @@ namespace SACOMaintenance.DataAccess
             _sacoContext.AuthorizationRequests.Remove(auth);
             _sacoContext.SaveChanges();
         }
+
+        public void Update(int AuthId, string Type)
+        {
+            var getAuth = _sacoContext.AuthorizationRequests.FirstOrDefault(i => i.Id == AuthId);
+
+            getAuth.Satus = Type;
+
+            _sacoContext.Update<AuthorizationRequest>(getAuth);
+            _sacoContext.SaveChanges();
+        }
     }
 }

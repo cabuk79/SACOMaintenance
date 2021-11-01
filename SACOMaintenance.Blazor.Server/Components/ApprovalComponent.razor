@@ -15,10 +15,10 @@
 </div>
 <div class="row">
     <div class="col-lg-2">
-        <RadzenButton Text="Approve"></RadzenButton>
+        <button @onclick="@(() => Update("Approved"))" class="btn-outline-primary">Approve</button>
     </div>
     <div class="col-lg-2">
-        <RadzenButton Text="Reject"></RadzenButton>
+        <button @onclick="@(() => Update("Rejected"))" class="btn-outline-primary">Reject</button>
     </div>
 </div>
 
@@ -29,5 +29,8 @@
     public int AuthId { get; set; }
 
     //TODO: Create method for approval and rejection
-
+    void Update(string Type)
+    {
+        AuthViewModel.UpdateAuthorisationAcceptReject(AuthId, Type);
+    }
 }

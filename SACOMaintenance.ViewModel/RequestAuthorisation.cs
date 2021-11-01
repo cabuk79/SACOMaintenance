@@ -37,6 +37,7 @@ namespace SACOMaintenance.ViewModel
         /// <param name="AuthType">This is the type which is approved or rejected</param>
         public async Task UpdateAuthorisationAcceptReject(int AuthId, string Type)
         {
+            AuthorizationDataProvider.Update(AuthId, Type);
             //Authorisation = new ObservableCollection<AuthorizationRequest>(await AuthorizationDataProvider.FindAuthorizationByReqAndUser(UserId, MaintReqId));
         }
 

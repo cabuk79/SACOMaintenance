@@ -124,7 +124,10 @@ using SACOMaintenance.ViewModel.Interfaces;
     public int AuthId { get; set; }
 
     //TODO: Create method for approval and rejection
-
+    void Update(string Type)
+    {
+        AuthViewModel.UpdateAuthorisationAcceptReject(AuthId, Type);
+    }
 
 #line default
 #line hidden
