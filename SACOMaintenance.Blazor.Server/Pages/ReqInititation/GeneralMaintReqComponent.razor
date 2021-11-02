@@ -48,7 +48,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            @if (GeneralViewModel.AuthrazationReq == null || GeneralViewModel.AuthrazationReq.Satus == null)
+            @if (GeneralViewModel.AuthrazationReq == null || GeneralViewModel.AuthrazationReq.Satus == null && GeneralViewModel.AuthrazationReq.Satus != "Approved")
             {
                 <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
                     <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"

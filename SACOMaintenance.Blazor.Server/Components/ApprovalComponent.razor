@@ -1,5 +1,6 @@
 ﻿@using SACOMaintenance.ViewModel.Interfaces
 @inject IRequestAuthorisation AuthViewModel
+@using SACOMaintenance.Common.ModelDB
 
 <div class="row">
     <div class="col-lg-12">
@@ -12,12 +13,21 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-2">
-        <button @onclick="@(() => Update("Approved"))" class="btn-outline-primary">Approve</button>
-    </div>
-    <div class="col-lg-2">
-        <button @onclick="@(() => Update("Rejected"))" class="btn-outline-primary">Reject</button>
-    </div>
+    @if (AuthorisationToWorkStatus == false)
+    {
+        <div class="col-lg-2">
+            <button @onclick="@(() => Update("Approved"))" class="btn-outline-primary">Approve</button>
+        </div>
+        <div class="col-lg-2">
+            <button @onclick="@(() => Update("Rejected"))" class="btn-outline-primary">Reject</button>
+        </div>
+    }
+    else
+    {
+        <div class="col-lg-12">
+            <p>Approved to work on the @AuthViewModel.Authorisation.ConfirmationDate</p>
+        </div>
+    }
 </div>
 
 
@@ -27,6 +37,19 @@
     public int AuthId { get; set; }
 
     public string CommentReason;
+
+    public bool AuthorisationToWorkStatus;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        Task.Run(async () => { await AuthViewModel.GetSingleAuthRequest(AuthId); }).Wait();
+
+        if (AuthViewModel.Authorisation.Satus == "Approved")
+        {
+            AuthorisationToWorkStatus = true;
+        }
+    }
 
     void Update(string Type)
     {

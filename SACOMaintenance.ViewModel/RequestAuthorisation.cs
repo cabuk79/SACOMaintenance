@@ -41,6 +41,11 @@ namespace SACOMaintenance.ViewModel
             //Authorisation = new ObservableCollection<AuthorizationRequest>(await AuthorizationDataProvider.FindAuthorizationByReqAndUser(UserId, MaintReqId));
         }
 
+        public async Task GetSingleAuthRequest(int AuthId)
+        {
+            Authorisation = await AuthorizationDataProvider.FindAuthRequestById(AuthId);
+        }
+
         public async Task MaintReqsNeedingApproval
             (string ApprovalType, string UserId, string Status)
         {

@@ -113,7 +113,7 @@ namespace SACOMaintenance.ViewModel
 
         public async Task<AuthorizationRequest> LoadStartToworkAuth()
         {
-            AuthrazationReq = await AuthrizationDataProvider.FindAuthorizationByReqAndUser(UserAuthIdStartWork, maintId);
+            AuthrazationReq = await AuthrizationDataProvider.FindAuthorizationByReqAndUser(genralRequestInfo.AuthorityToWorkUserId, maintId); //(UserAuthIdStartWork, maintId);
             if(AuthrazationReq == null)
             {
                 return AuthrazationReq = new AuthorizationRequest();

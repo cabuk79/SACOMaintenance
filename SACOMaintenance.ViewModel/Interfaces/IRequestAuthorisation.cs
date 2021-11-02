@@ -21,8 +21,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         public Task UpdateAuthorisationAcceptReject(int AuthId, string Type, string CommentReason);
 
-        public Task MaintReqsNeedingApproval(string ApprovalType, string UserId, string Status); 
-
+        public Task MaintReqsNeedingApproval(string ApprovalType, string UserId, string Status);
+        public Task GetSingleAuthRequest(int AuthId);
         #endregion
     }
 }

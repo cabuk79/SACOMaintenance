@@ -32,6 +32,14 @@ namespace SACOMaintenance.DataAccess
             return authorisations;
         }
 
+        public async Task<AuthorizationRequest> FindAuthRequestById(int Id)
+        {
+            var auth = await _sacoContext.AuthorizationRequests
+                .FirstOrDefaultAsync(i => i.Id == Id);
+
+            return auth;
+        }
+
         public async Task<AuthorizationRequest> FindAuthorizationByReqAndUser(string userId, int maintReqId)
         {
             var auth = await _sacoContext.AuthorizationRequests

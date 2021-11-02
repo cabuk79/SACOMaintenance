@@ -12,6 +12,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
     {
         Task<IEnumerable<AuthorizationRequest>> LoadAuthRequestsByUserType(string UserId, string Type, string Status);
         Task<AuthorizationRequest> FindAuthorizationByReqAndUser(string userId, int maintReqId);
+        Task<AuthorizationRequest> FindAuthRequestById(int Id);
         void AddNewAuthorization(AuthorizationRequest auth);
         void DeleteAuthorization(AuthorizationRequest auth);
         void Update(int AuthId, string Type, string CommentReason);
