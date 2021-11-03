@@ -109,6 +109,10 @@ namespace SACOMaintenance.ViewModel
             completedAuth.AuthorizationType = type;
 
             AuthrizationDataProvider.AddNewAuthorization(completedAuth);
+
+            //Update the General ViewModel and table
+            genralRequestInfo.AuthorityToWorkUserId = UserAuthIdStartWork;
+            _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
         }
 
         public async Task<AuthorizationRequest> LoadStartToworkAuth()
@@ -144,7 +148,7 @@ namespace SACOMaintenance.ViewModel
             return true;
         }
 
-        public async void LoadAllUsers()
+        public async Task LoadAllUsers()
         {
             Users = new ObservableCollection<User>(await UsersDataProvider.GetAllUsers());
         }

@@ -21,7 +21,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public IUsers UsersDataProvider { get; set; }
         public IAuthorization AuthrizationDataProvider { get; }
         Task<GeneralRequest> GetGeneralRequest(int maintId);
-        public void LoadAllUsers();
+        public Task LoadAllUsers();
         public void AddNewAuthrization(string status, string type);
         Task<AuthorizationRequest> LoadStartToworkAuth();
         public void RemoveAuthStartToWorkUser();

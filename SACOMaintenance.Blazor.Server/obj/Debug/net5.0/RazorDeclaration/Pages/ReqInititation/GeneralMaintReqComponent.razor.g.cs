@@ -206,6 +206,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         Task.Run(async ()=> { await GeneralViewModel.LoadAllPPE(); }).Wait();
         Task.Run(async ()=> { await GeneralViewModel.LoadStartToworkAuth(); }).Wait();
         Task.Run(async () => { await GeneralViewModel.LoadCompletedUser(); }).Wait();
+        Task.Run(async () => { await GeneralViewModel.LoadAllUsers(); }).Wait();
         //GeneralViewModel.LoadCompletedUser();
 
 
@@ -254,6 +255,10 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
 
         ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+
+        Task.Run(async () => { await GeneralViewModel.LoadStartToworkAuth(); }).Wait();
+
+        InvokeAsync(() => StateHasChanged());
     }
 
     private void CallLoadData()
