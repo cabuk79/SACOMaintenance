@@ -54,5 +54,6 @@
     void Update(string Type)
     {
         AuthViewModel.UpdateAuthorisationAcceptReject(AuthId, Type, CommentReason);
+        AuthorisationToWorkStatus = true;
     }
 }

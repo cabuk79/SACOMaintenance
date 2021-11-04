@@ -148,6 +148,7 @@ using SACOMaintenance.Common.ModelDB;
     void Update(string Type)
     {
         AuthViewModel.UpdateAuthorisationAcceptReject(AuthId, Type, CommentReason);
+        AuthorisationToWorkStatus = true;
     }
 
 #line default

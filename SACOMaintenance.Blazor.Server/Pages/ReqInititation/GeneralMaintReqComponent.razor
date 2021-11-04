@@ -152,8 +152,9 @@
                             }
                         }
                         @if (GeneralViewModel.CompletedAuth == null
-                           || GeneralViewModel.CompletedAuth.Satus == null)
+                           || GeneralViewModel.CompletedAuth.Satus == null && GeneralViewModel.UserCompletedRequest == false)
                         {
+                            <RadzenLabel Text="Select You Name"></RadzenLabel>
                             <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
                                             FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                             @bind-value="@GeneralViewModel.MaintenanceUserCompletedId"
@@ -169,13 +170,12 @@
                                     </div>
                                 </Template>
                             </RadzenDropDown>
-                            <RadzenLabel Text="Sign Off on Work Details Completed"></RadzenLabel>
-                            <RadzenButton Text="Save" Click="@SignOffWorkCompleted" Icon="Save" @oninput="IsReadOnlyChanged"
+                            <RadzenButton Text="Completed Request" Click="@SignOffWorkCompleted" Icon="save" @oninput="IsReadOnlyChanged"
                                           Style="margin-bottom: 20px; width: 200px"></RadzenButton>
                         }
                         else
                         {
-                            <span>This has been completed.</span>
+                            <span>Work on the request has been completed.</span>
                         }
 
                     </div>
@@ -186,7 +186,16 @@
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="Sign Off">
-                <RadzenTextArea @bind-value="GeneralViewModel.genralRequestInfo.SignOffDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <RadzenTextArea @bind-value="GeneralViewModel.genralRequestInfo.SignOffDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                    </div>
+                </div>
             </RadzenFieldset>
         </div>
     </div>
@@ -288,6 +297,11 @@ else
     private void SignOffWorkCompleted(MouseEventArgs e)
     {
         GeneralViewModel.AddNewAuthrization("Approved", "Completed");
+
+        //Task.Run(async () => { await GeneralViewModel.LoadStartToworkAuth(); }).Wait();
+        Task.Run(async ()=> { await GeneralViewModel.GetGeneralRequest(maintReq.Id); }).Wait();
+
+        InvokeAsync(() => StateHasChanged());
     }
 
 

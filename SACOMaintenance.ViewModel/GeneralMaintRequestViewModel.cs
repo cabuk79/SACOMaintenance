@@ -27,6 +27,7 @@ namespace SACOMaintenance.ViewModel
         public AuthorizationRequest AuthrazationReq { get; set; }
         public AuthorizationRequest CompletedAuth { get; set; }
         public List<PPE> PPEItemsSelected { get; set; } = new();
+        public bool UserCompletedRequest { get; set; }
 
         public GeneralMaintRequestViewModel(IPPE ppeDataProvider,
             IGeneralRequest generalRequestDataProvider, IUsers usersDataProvider,
@@ -95,24 +96,26 @@ namespace SACOMaintenance.ViewModel
         {
             AuthorizationRequest completedAuth = new AuthorizationRequest();
 
-            if(type == "AuthorityToWork")
-            {
-                completedAuth.UserId = UserAuthIdStartWork;
-            }
-            else if(type == "Completed")
-            {
-                completedAuth.UserId = MaintenanceUserCompletedId;
-            }
-
             completedAuth.MaintRequestInitiationId = maintId;
             completedAuth.Satus = status;
             completedAuth.AuthorizationType = type;
 
-            AuthrizationDataProvider.AddNewAuthorization(completedAuth);
+            if (type == "AuthorityToWork")
+            {
+                completedAuth.UserId = UserAuthIdStartWork;
+                //Update the General ViewModel and table
+                genralRequestInfo.AuthorityToWorkUserId = UserAuthIdStartWork;
+                _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
+            }
+            else if(type == "Completed")
+            {
+                completedAuth.UserId = MaintenanceUserCompletedId;
+                //Update the General ViewModel and table
+                genralRequestInfo.DetailOfWorkCompeltedUserId = MaintenanceUserCompletedId;
+                _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
+            }
 
-            //Update the General ViewModel and table
-            genralRequestInfo.AuthorityToWorkUserId = UserAuthIdStartWork;
-            _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
+            AuthrizationDataProvider.AddNewAuthorization(completedAuth);            
         }
 
         public async Task<AuthorizationRequest> LoadStartToworkAuth()
@@ -157,6 +160,7 @@ namespace SACOMaintenance.ViewModel
         {
             var req = await _generalREquestDataProvider.GetSingalGeneralRequestInfo(maintId);
             genralRequestInfo = req;
+            if(req.DetailOfWorkCompeltedUserId == "") { UserCompletedRequest = false; } else { UserCompletedRequest = true; }
             return genralRequestInfo;
         }
 
