@@ -149,7 +149,7 @@ using System.Security.Claims;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(15);
             __builder.AddAttribute(16, "class", "nav-link");
             __builder.AddAttribute(17, "href", "");
-            __builder.AddAttribute(18, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(18, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                      NavLinkMatch.All
@@ -173,7 +173,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(27);
                 __builder2.AddAttribute(28, "class", "nav-link");
                 __builder2.AddAttribute(29, "href", "/maint-req/add");
-                __builder2.AddAttribute(30, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(30, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                        NavLinkMatch.All
@@ -230,7 +230,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(48);
                 __builder2.AddAttribute(49, "class", "nav-link");
                 __builder2.AddAttribute(50, "href", "maintrequests-list");
-                __builder2.AddAttribute(51, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(51, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 39 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                             NavLinkMatch.All
@@ -251,7 +251,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(57);
                 __builder2.AddAttribute(58, "class", "nav-link");
                 __builder2.AddAttribute(59, "href", "/maint-req/add");
-                __builder2.AddAttribute(60, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(60, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 45 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                                    NavLinkMatch.All
@@ -280,7 +280,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(65);
                 __builder2.AddAttribute(66, "class", "nav-link");
                 __builder2.AddAttribute(67, "href", "areas");
-                __builder2.AddAttribute(68, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(68, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 53 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                               NavLinkMatch.All
@@ -301,7 +301,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(74);
                 __builder2.AddAttribute(75, "class", "nav-link");
                 __builder2.AddAttribute(76, "href", "company-view-edit");
-                __builder2.AddAttribute(77, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(77, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 58 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                           NavLinkMatch.All
@@ -322,7 +322,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(83);
                 __builder2.AddAttribute(84, "class", "nav-link");
                 __builder2.AddAttribute(85, "href", "ppe-list");
-                __builder2.AddAttribute(86, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(86, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 63 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                  NavLinkMatch.All
@@ -343,7 +343,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(92);
                 __builder2.AddAttribute(93, "class", "nav-link");
                 __builder2.AddAttribute(94, "href", "");
-                __builder2.AddAttribute(95, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(95, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 68 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                          NavLinkMatch.All
@@ -364,7 +364,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(101);
                 __builder2.AddAttribute(102, "class", "nav-link");
                 __builder2.AddAttribute(103, "href", "equipmentList");
-                __builder2.AddAttribute(104, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(104, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 73 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                       NavLinkMatch.All
@@ -385,7 +385,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(110);
                 __builder2.AddAttribute(111, "class", "nav-link");
                 __builder2.AddAttribute(112, "href", "machinetype-view-edit");
-                __builder2.AddAttribute(113, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(113, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 78 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                               NavLinkMatch.All
@@ -406,7 +406,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(119);
                 __builder2.AddAttribute(120, "class", "nav-link");
                 __builder2.AddAttribute(121, "href", "factories-view-edit");
-                __builder2.AddAttribute(122, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(122, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 83 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                             NavLinkMatch.All
@@ -427,7 +427,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(128);
                 __builder2.AddAttribute(129, "class", "nav-link");
                 __builder2.AddAttribute(130, "href", "suppliers-list");
-                __builder2.AddAttribute(131, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(131, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 88 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                        NavLinkMatch.All
@@ -448,7 +448,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(137);
                 __builder2.AddAttribute(138, "class", "nav-link");
                 __builder2.AddAttribute(139, "href", "parts-list");
-                __builder2.AddAttribute(140, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(140, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 93 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                    NavLinkMatch.All
@@ -469,7 +469,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(146);
                 __builder2.AddAttribute(147, "class", "nav-link");
                 __builder2.AddAttribute(148, "href", "orders-list");
-                __builder2.AddAttribute(149, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(149, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 98 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                                     NavLinkMatch.All
@@ -520,7 +520,7 @@ using System.Security.Claims;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(164);
                 __builder2.AddAttribute(165, "class", "nav-link");
                 __builder2.AddAttribute(166, "href", "administration-viewusers");
-                __builder2.AddAttribute(167, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+                __builder2.AddAttribute(167, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 115 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\NavMenu.razor"
                                                 NavLinkMatch.All

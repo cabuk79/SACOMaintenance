@@ -17,9 +17,10 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<PPE> ppeList { get; set; } = new();
 
         public IPPE PpeDataProvider { get; }
-        public IGeneralRequest _generalREquestDataProvider {get;}
+        public IGeneralRequest _generalREquestDataProvider { get; }
         public IAuthorization AuthrizationDataProvider { get; }
         public IAuthorization AuthDataProvider { get; }
+        public IMaintRequestInitiation MaintReqInitation { get; }
         public GeneralRequest genralRequestInfo { get; set; }
         public int maintId { get; set; }
         public ObservableCollection<User> Users { get; set; } = new();
@@ -31,7 +32,7 @@ namespace SACOMaintenance.ViewModel
 
         public GeneralMaintRequestViewModel(IPPE ppeDataProvider,
             IGeneralRequest generalRequestDataProvider, IUsers usersDataProvider,
-            IAuthorization authrizationDataProvider, IAuthorization authTwo)
+            IAuthorization authrizationDataProvider, IAuthorization authTwo, IMaintRequestInitiation maintReqInitation)
         {
             PpeDataProvider = ppeDataProvider;
             _generalREquestDataProvider = generalRequestDataProvider;
@@ -39,6 +40,7 @@ namespace SACOMaintenance.ViewModel
             AuthrizationDataProvider = authrizationDataProvider;
             AuthDataProvider = authrizationDataProvider;
             AuthDataProvider = authTwo;
+            MaintReqInitation = maintReqInitation;
 
             genralRequestInfo = new GeneralRequest();
             AuthrazationReq = new AuthorizationRequest();
@@ -61,6 +63,7 @@ namespace SACOMaintenance.ViewModel
                 }
             }
         }
+
 
         public string MaintenanceUserCompletedId
         {
@@ -112,6 +115,13 @@ namespace SACOMaintenance.ViewModel
                 completedAuth.UserId = MaintenanceUserCompletedId;
                 //Update the General ViewModel and table
                 genralRequestInfo.DetailOfWorkCompeltedUserId = MaintenanceUserCompletedId;
+                _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
+            }
+            else if (type == "SignOff")
+            {
+                completedAuth.UserId = MaintenanceUserCompletedId;
+                //Update the General ViewModel and table
+                genralRequestInfo.WorkCompletedSignOffUserId = genralRequestInfo.WorkCompletedSignOffUserId;             
                 _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
             }
 

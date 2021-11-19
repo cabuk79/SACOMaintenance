@@ -130,7 +130,7 @@ using SACOMaintenance.DataAccess.Interfaces;
             __builder.OpenElement(7, "div");
             __builder.AddAttribute(8, "class", "card");
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(9);
-            __builder.AddAttribute(10, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(10, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEAddComponent.razor"
                              PpeModelItem
@@ -148,7 +148,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(17);
                 __builder2.AddAttribute(18, "class", "form-control");
                 __builder2.AddAttribute(19, "placeholder", "Enter a PPE name");
-                __builder2.AddAttribute(20, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(20, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 14 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEAddComponent.razor"
                                                 PpeModelItem.PPEName
@@ -157,8 +157,8 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(21, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PpeModelItem.PPEName = __value, PpeModelItem.PPEName))));
-                __builder2.AddAttribute(22, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PpeModelItem.PPEName));
+                __builder2.AddAttribute(21, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PpeModelItem.PPEName = __value, PpeModelItem.PPEName))));
+                __builder2.AddAttribute(22, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PpeModelItem.PPEName));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(23, "\r\n                    ");
@@ -166,7 +166,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.AddAttribute(25, "class", "form-group-row");
                 __builder2.AddMarkupContent(26, "<label style=\"font-weight:bold\">Choose Image</label>\r\n                        ");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenUpload>(27);
-                __builder2.AddAttribute(28, "Multiple", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(28, "Multiple", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEAddComponent.razor"
                                                 false
@@ -178,7 +178,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.AddAttribute(29, "Accept", "image/*");
                 __builder2.AddAttribute(30, "Url", "css/images/");
                 __builder2.AddAttribute(31, "Style", "margin-bottom: 20px;");
-                __builder2.AddAttribute(32, "Progress", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Radzen.UploadProgressArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Radzen.UploadProgressArgs>(this, 
+                __builder2.AddAttribute(32, "Progress", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Radzen.UploadProgressArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Radzen.UploadProgressArgs>(this, 
 #nullable restore
 #line 20 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEAddComponent.razor"
                                                   args => OnProgress(args, "Images Only Allowed")

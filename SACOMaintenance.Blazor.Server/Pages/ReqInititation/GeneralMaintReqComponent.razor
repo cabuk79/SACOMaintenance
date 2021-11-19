@@ -11,28 +11,60 @@
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="Control Measures Taken" Style="width: 100%; border-color: black">
-                <RadzenTextArea Style="width: 100%; border-color: black"></RadzenTextArea>
+               <!-- Bind this to the relvant model field -->
+               <RadzenHtmlEditor @bind-Value="GeneralViewModel.genralRequestInfo.ControlMeasuresTaken" Style="height: 500px; border-color: black" Name="DetailsHTML">
+                                <RadzenHtmlEditorUndo />
+                                <RadzenHtmlEditorRedo />
+                                <RadzenHtmlEditorSeparator />
+                                <RadzenHtmlEditorBold />
+                                <RadzenHtmlEditorItalic />
+                                <RadzenHtmlEditorUnderline />
+                                <RadzenHtmlEditorSeparator />
+                                <RadzenHtmlEditorColor />
+                                <RadzenHtmlEditorUnorderedList />
+                            </RadzenHtmlEditor>
             </RadzenFieldset>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black" AllowCollapse="true">
-                <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE"
-                                @bind-SelectedItems="GeneralViewModel.PPEItemsSelected">
-                    <ItemTemplate>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <img src="@PPE.IconFileLocation" alt="@PPE.PPEName" width="60" height="60" />
+                @if(GeneralViewModel.genralRequestInfo.WorkCompletedSignOffUserId == "")
+                {
+                    <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE"
+                                    @bind-SelectedItems="GeneralViewModel.PPEItemsSelected"> <!-- Set the diabled here through a variable -->
+                        <ItemTemplate>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <img src="@PPE.IconFileLocation" alt="@PPE.PPEName" width="60" height="60" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                @PPE.PPEName
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @PPE.PPEName
+                                </div>
                             </div>
-                        </div>
-                    </ItemTemplate>
-                </SquareCheckBox>
+                        </ItemTemplate>
+                    </SquareCheckBox>               
+                }
+                else
+                {
+                    <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE"
+                                    @bind-SelectedItems="GeneralViewModel.PPEItemsSelected" Disabled="disabled"> <!-- Set the diabled here through a variable -->
+                        <ItemTemplate>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <img src="@PPE.IconFileLocation" alt="@PPE.PPEName" width="60" height="60" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @PPE.PPEName
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </SquareCheckBox>  
+                }
             </RadzenFieldset>
         </div>
     </div>
@@ -49,7 +81,7 @@
     <div class="row">
         <div class="col-lg-12">
             @if (GeneralViewModel.AuthrazationReq == null || GeneralViewModel.AuthrazationReq.Satus == null && GeneralViewModel.AuthrazationReq.Satus != "Approved")
-            {
+            {             
                 <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
                     <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
                                     FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
@@ -137,7 +169,14 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <RadzenTextArea @bind-Value="GeneralViewModel.genralRequestInfo.DetailOfWorkCompleted" Style="width: 100%; border-color: black"></RadzenTextArea>
+                        @if(@GeneralViewModel.genralRequestInfo.DetailOfWorkCompeltedUserId != "")
+                        {
+                            <RadzenTextArea @bind-Value="GeneralViewModel.genralRequestInfo.DetailOfWorkCompleted" Style="width: 100%; border-color: black" ReadOnly="true"></RadzenTextArea>                            
+                        }
+                        else
+                        {
+                            <RadzenTextArea @bind-Value="GeneralViewModel.genralRequestInfo.DetailOfWorkCompleted" Style="width: 100%; border-color: black"></RadzenTextArea>                            
+                        }
                     </div>
                 </div>
                 <div class="row"><!-- Sign off by the maintenance user for work completed -->
@@ -185,20 +224,53 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <RadzenFieldset Text="Sign Off">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <RadzenTextArea @bind-value="GeneralViewModel.genralRequestInfo.SignOffDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
+            @if(@GeneralViewModel.genralRequestInfo.DetailOfWorkCompeltedUserId == "")
+            {
+                <RadzenFieldset Text="Sign Off Approval Details">
+                    @*<div class="row">
+                        <div class="col-lg-12">
+                            <RadzenTextArea @bind-value="GeneralViewModel.genralRequestInfo.SignOffDetails" Style="width: 100%; border-color: black"></RadzenTextArea>
+                        </div>
+                    </div>*@
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
+                                <RadzenDropDown AllowClear="true" TValue="string" Style="width: 40%; border-color: black"
+                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                            @bind-value=@GeneralViewModel.genralRequestInfo.WorkCompletedSignOffUserId
+                                            Data="@GeneralViewModel.Users" TextProperty="FullName" ValueProperty="Id">
+                                <Template>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img class="avatar-circle" src="@((context as User).AvatarLocation)" width="20" height="20" />
+                                        </div>
+                                        <div class="co-lg-11">
+                                            @((context as User).FullName)
+                                        </div>
+                                    </div>
+                                </Template>
+                            </RadzenDropDown>
+                            <RadzenLabel Text="Choose Person to Authorise"></RadzenLabel>
+                            <!-- Change the click on event method to one that is relevant to the sign off -->
+                             <RadzenButton Text="Request and Save Request Data" Click="@SignOffWorkRequest" Icon="Save" @oninput="IsReadOnlyChanged"
+                                      Style="margin-bottom: 20px; width: 200px"></RadzenButton>
+                        </RadzenFieldset>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-
-                    </div>
-                </div>
-            </RadzenFieldset>
+                </RadzenFieldset>
+            }
+            else
+            {
+                <RadzenFieldset Text="Authority to Start Work" Style="width: 100%; border-color: black">
+                    The request has been signed off by @GeneralViewModel.genralRequestInfo.WorkCompletedSignOffUserId
+                </RadzenFieldset>
+            }
         </div>
     </div>
+    <div class="row">
+        
+    </div>
+
 }
 else
 {
@@ -308,6 +380,27 @@ else
     private void StartWorkRequest(MouseEventArgs e)
     {
         GeneralViewModel.AddNewAuthrization("Requested", "AuthorityToWork");
+        GeneralViewModel.LoadStartToworkAuth();
+
+        if (ReqReadOnly == true)
+        {
+            ReqReadOnly = false;
+        }
+        else if (ReqReadOnly == false)
+        {
+            ReqReadOnly = true;
+        }
+
+        ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+
+        Task.Run(async () => { await GeneralViewModel.LoadStartToworkAuth(); }).Wait();
+
+        InvokeAsync(() => StateHasChanged());
+    }
+
+    private void SignOffWorkRequest(MouseEventArgs e)
+    {
+        GeneralViewModel.AddNewAuthrization("Requested", "SignOff");
         GeneralViewModel.LoadStartToworkAuth();
 
         if (ReqReadOnly == true)

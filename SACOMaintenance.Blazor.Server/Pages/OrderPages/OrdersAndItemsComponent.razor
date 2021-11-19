@@ -3,7 +3,7 @@
 
 <RadzenGrid Data="@orderViewModel.Orders" TItem="Order" ExpandMode="DataGridExpandMode.Single">
     <Template Context="order">
-        <RadzenGrid Data="@order.OrderItems" TItem="OrderItem">
+        <RadzenGrid @*Data="@order.OrderItems"*@ TItem="OrderItem">
             <Columns>
                 <RadzenGridColumn TItem="OrderItem" Property="Id" Title="ID"></RadzenGridColumn>
                 <RadzenGridColumn TItem="OrderItem" Property="ItemName" Title="Item Name"></RadzenGridColumn>

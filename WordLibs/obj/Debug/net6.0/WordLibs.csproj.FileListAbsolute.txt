@@ -1,0 +1,5 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net6.0\WordLibs.csproj.AssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net6.0\WordLibs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net6.0\WordLibs.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net6.0\WordLibs.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\WordLibs\obj\Debug\net6.0\WordLibs.csproj.CoreCompileInputs.cache

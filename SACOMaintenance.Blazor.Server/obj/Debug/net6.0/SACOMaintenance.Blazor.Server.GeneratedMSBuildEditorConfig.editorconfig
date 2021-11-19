@@ -1,0 +1,444 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SACOMaintenance.Blazor.Server
+build_property.RootNamespace = SACOMaintenance.Blazor.Server
+build_property.ProjectDir = C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/ApprovalComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHByb3ZhbENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/CBDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDQkRpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/MaintRequestApprovalComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWludFJlcXVlc3RBcHByb3ZhbENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/NewMaintReqs.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOZXdNYWludFJlcXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/PPEEquipmentComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQUEVFcXVpcG1lbnRDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestPriorityDashboardItem.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0UHJpb3JpdHlEYXNoYm9hcmRJdGVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestsForUserAll.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0c0ZvclVzZXJBbGwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestsGraph.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0c0dyYXBoLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestsMonthYearGraphComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0c01vbnRoWWVhckdyYXBoQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestsNeedingApproval.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0c05lZWRpbmdBcHByb3ZhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestsYearGraphComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0c1llYXJHcmFwaENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RiskLevelsChooser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSaXNrTGV2ZWxzQ2hvb3Nlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/TotalMaintReqCurrentYear.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUb3RhbE1haW50UmVxQ3VycmVudFllYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/TotalOpenMaintReqs.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUb3RhbE9wZW5NYWludFJlcXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/AreaPages/AreaAddComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYVBhZ2VzXEFyZWFBZGRDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/AreaPages/AreaEditComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYVBhZ2VzXEFyZWFFZGl0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/AreaPages/AreaListComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYVBhZ2VzXEFyZWFMaXN0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/CompanyPages/CompanyListComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhZ2VzXENvbXBhbnlMaXN0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/CompanyPages/CompanyViewComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhZ2VzXENvbXBhbnlWaWV3Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/CompanyPages/CompanyViewEditComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhZ2VzXENvbXBhbnlWaWV3RWRpdENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Dashboard/DashboardGeneralUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXERhc2hib2FyZEdlbmVyYWxVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Dashboard/DashboardMaintenanceStandard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXERhc2hib2FyZE1haW50ZW5hbmNlU3RhbmRhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Dashboard/DashboardManager.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXERhc2hib2FyZE1hbmFnZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Dashboard/MaintReqAssignedOpen.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1haW50UmVxQXNzaWduZWRPcGVuLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Dashboard/MaintReqUnassigned.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1haW50UmVxVW5hc3NpZ25lZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Dashboard/RequestsPriorityInfoGroupComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFJlcXVlc3RzUHJpb3JpdHlJbmZvR3JvdXBDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/EquipmentPages/EquipmentListComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXF1aXBtZW50UGFnZXNcRXF1aXBtZW50TGlzdENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/EquipmentPages/EquipmentOverviewPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXF1aXBtZW50UGFnZXNcRXF1aXBtZW50T3ZlcnZpZXdQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/EquipmentPages/EquipmentSinglePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXF1aXBtZW50UGFnZXNcRXF1aXBtZW50U2luZ2xlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/FactoryPages/FactoryViewEditComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmFjdG9yeVBhZ2VzXEZhY3RvcnlWaWV3RWRpdENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/MachineTypePages/MachineTypeEditView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFjaGluZVR5cGVQYWdlc1xNYWNoaW5lVHlwZUVkaXRWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/OrderPages/OrdersAndItemsComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJQYWdlc1xPcmRlcnNBbmRJdGVtc0NvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/OrderPages/OrdersOverviewPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJQYWdlc1xPcmRlcnNPdmVydmlld1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/PartPages/AllParts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydFBhZ2VzXEFsbFBhcnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/PartPages/PartFullView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydFBhZ2VzXFBhcnRGdWxsVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/PPEPages/PPEAddComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUFBFUGFnZXNcUFBFQWRkQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/PPEPages/PPEListComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUFBFUGFnZXNcUFBFTGlzdENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/AddMaintReq.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cQWRkTWFpbnRSZXEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/AddMaintReqDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cQWRkTWFpbnRSZXFEaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/GeneralMaintReqComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cR2VuZXJhbE1haW50UmVxQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/MaintReqFull.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cTWFpbnRSZXFGdWxsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/MaintRequestsListOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cTWFpbnRSZXF1ZXN0c0xpc3RPdmVydmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/PlantMaintReqComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cUGxhbnRNYWludFJlcUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/ReqInititation/RequestAuthorisation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxSW5pdGl0YXRpb25cUmVxdWVzdEF1dGhvcmlzYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/SuppliersPages/AddSupplierPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJzUGFnZXNcQWRkU3VwcGxpZXJQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/SuppliersPages/AllSuppliers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJzUGFnZXNcQWxsU3VwcGxpZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/SuppliersPages/SingleSupplier.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJzUGFnZXNcU2luZ2xlU3VwcGxpZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/TestPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/UserAdmin/SettingsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFkbWluXFNldHRpbmdzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/UserAdmin/ViewUsers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFkbWluXFZpZXdVc2Vycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/CheckListBox.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENoZWNrTGlzdEJveC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/NotLoggedDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5vdExvZ2dlZERpc3BsYXkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Components/RequestRiskChoice.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXF1ZXN0Umlza0Nob2ljZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-t4da6dbceu
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Shared/SquareCheckBox.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNxdWFyZUNoZWNrQm94LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-tv8wdhpw7e
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Lockout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cabuk/source/repos/SACOMaintenance/SACOMaintenance.Blazor.Server/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

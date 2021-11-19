@@ -163,7 +163,7 @@ using System.IO;
             __builder.OpenElement(5, "div");
             __builder.AddAttribute(6, "class", "col-lg-2");
             __builder.OpenComponent<Radzen.Blazor.RadzenButton>(7);
-            __builder.AddAttribute(8, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddAttribute(8, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 23 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                   ExportExcelFile
@@ -174,7 +174,7 @@ using System.IO;
             )));
             __builder.AddAttribute(9, "Text", "Export All Requests");
             __builder.AddAttribute(10, "Icon", "import_export");
-            __builder.AddAttribute(11, "ButtonStyle", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonStyle>(
+            __builder.AddAttribute(11, "ButtonStyle", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonStyle>(
 #nullable restore
 #line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                                             ButtonStyle.Secondary
@@ -186,7 +186,7 @@ using System.IO;
             __builder.CloseComponent();
             __builder.AddMarkupContent(12, "\r\n            ");
             __builder.OpenComponent<Radzen.Blazor.RadzenButton>(13);
-            __builder.AddAttribute(14, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddAttribute(14, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 25 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                   DownloadToolDrg
@@ -197,7 +197,7 @@ using System.IO;
             )));
             __builder.AddAttribute(15, "Text", "Drawing PDF");
             __builder.AddAttribute(16, "Icon", "import_export");
-            __builder.AddAttribute(17, "ButtonStyle", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonStyle>(
+            __builder.AddAttribute(17, "ButtonStyle", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonStyle>(
 #nullable restore
 #line 26 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                                             ButtonStyle.Secondary
@@ -285,15 +285,13 @@ using System.IO;
                 __builder2.AddAttribute(36, "Width", "100px");
                 __builder2.AddAttribute(37, "Template", (Microsoft.AspNetCore.Components.RenderFragment<MaintRequestInitiation>)((data) => (__builder3) => {
                     __builder3.AddMarkupContent(38, "\r\n                            MAINT-");
-                    __builder3.AddContent(39, 
 #nullable restore
 #line 40 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
-                                   data.Id
+__builder3.AddContent(39, data.Id);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                 }
                 ));
                 __builder2.CloseComponent();
@@ -305,15 +303,13 @@ using System.IO;
                 __builder2.AddAttribute(45, "Template", (Microsoft.AspNetCore.Components.RenderFragment<MaintRequestInitiation>)((data) => (__builder3) => {
                     __builder3.OpenElement(46, "p");
                     __builder3.AddAttribute(47, "style", "white-space:pre-wrap");
-                    __builder3.AddContent(48, 
 #nullable restore
 #line 45 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
-                                                              (MarkupString)data.RequestDetails
+__builder3.AddContent(48, (MarkupString)data.RequestDetails);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
                 }
                 ));
@@ -360,7 +356,7 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
-                    , 72, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => maintReqListViewModel.StatusId = __value, maintReqListViewModel.StatusId)), 73, () => maintReqListViewModel.StatusId);
+                    , 72, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => maintReqListViewModel.StatusId = __value, maintReqListViewModel.StatusId)), 73, () => maintReqListViewModel.StatusId);
                 }
                 ));
                 __builder2.CloseComponent();
@@ -369,7 +365,7 @@ using System.IO;
                 __builder2.AddAttribute(76, "Property", "maintReqListViewModel.Id");
                 __builder2.AddAttribute(77, "Title", "Actions");
                 __builder2.AddAttribute(78, "Width", "30px");
-                __builder2.AddAttribute(79, "TextAlign", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
+                __builder2.AddAttribute(79, "TextAlign", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
 #nullable restore
 #line 60 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                                  TextAlign.Center
@@ -378,7 +374,7 @@ using System.IO;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(80, "Filterable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(80, "Filterable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 60 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                                                                false
@@ -387,7 +383,7 @@ using System.IO;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(81, "Sortable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(81, "Sortable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 60 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
                                                                                                 false

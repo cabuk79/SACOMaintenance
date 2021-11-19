@@ -2,6 +2,7 @@
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -11,6 +12,6 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public ObservableCollection<Equipment> EquipmentList { get; set; }
         public IEquipment EquipmentDataProvider { get; }
 
-        public void LoadAllEquipment();
+        public Task LoadAllEquipment();
     }
 }

@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ae77b019-6856-4ec3-b937-520232d190e1": {
+      "ProjectGuid": "ae77b019-6856-4ec3-b937-520232d190e1",
+      "DisplayName": "SACOMaintenance.Blazor.Server",
+      "ColorIndex": 0
+    },
+    "331c9386-1749-4980-b819-41e2c7dfea27": {
+      "ProjectGuid": "331c9386-1749-4980-b819-41e2c7dfea27",
+      "DisplayName": "WordLibs",
+      "ColorIndex": 1
+    },
+    "b6412468-9bcb-4c2d-9c52-66acfccda3a3": {
+      "ProjectGuid": "b6412468-9bcb-4c2d-9c52-66acfccda3a3",
+      "DisplayName": "SACOMaintenance.ViewModel",
+      "ColorIndex": 2
+    },
+    "b8600aa4-4bd4-44e2-b235-b8e3e091f394": {
+      "ProjectGuid": "b8600aa4-4bd4-44e2-b235-b8e3e091f394",
+      "DisplayName": "SACOMaintenance.DataAccess",
+      "ColorIndex": 3
+    },
+    "0be8cb30-77f8-459d-ab1e-5ddfb2649912": {
+      "ProjectGuid": "0be8cb30-77f8-459d-ab1e-5ddfb2649912",
+      "DisplayName": "SACOMaintenance.Data",
+      "ColorIndex": 4
+    },
+    "6259ac7a-22f6-46c8-9e94-0770285fe486": {
+      "ProjectGuid": "6259ac7a-22f6-46c8-9e94-0770285fe486",
+      "DisplayName": "SACOMaintenance.Common",
+      "ColorIndex": 5
+    },
+    "0cdc1aba-2ea3-49ce-95ee-5db6d3998319": {
+      "ProjectGuid": "0cdc1aba-2ea3-49ce-95ee-5db6d3998319",
+      "DisplayName": "Models.DTO",
+      "ColorIndex": 6
+    },
+    "4b80087e-360f-44a8-a803-226e46d19a90": {
+      "ProjectGuid": "4b80087e-360f-44a8-a803-226e46d19a90",
+      "DisplayName": "ExcelLibs",
+      "ColorIndex": 7
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 8
+}

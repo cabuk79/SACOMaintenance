@@ -158,27 +158,23 @@ using SACOMaintenance.DataAccess.Interfaces;
 #nullable disable
             __builder.OpenElement(21, "tr");
             __builder.OpenElement(22, "td");
-            __builder.AddContent(23, 
 #nullable restore
 #line 32 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyListComponent.razor"
-                                 companyItem.Id
+__builder.AddContent(23, companyItem.Id);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(24, "\r\n                            ");
             __builder.OpenElement(25, "td");
-            __builder.AddContent(26, 
 #nullable restore
 #line 33 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyListComponent.razor"
-                                 companyItem.CompanyName
+__builder.AddContent(26, companyItem.CompanyName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(27, "\r\n                            ");
             __builder.OpenElement(28, "td");

@@ -10,3 +10,5 @@ VALUES ('Medium', 'These will affect operations eventually and need to be perfor
 INSERT INTO Priorites (Name, Notes) 
 VALUES ('Low', 'Fill in type work that are not vital to day to day operations such as non-critical repairs, cosmetic painting etc.');
 
+
+

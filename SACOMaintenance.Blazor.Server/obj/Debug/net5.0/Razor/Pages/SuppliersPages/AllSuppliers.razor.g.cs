@@ -180,7 +180,7 @@ using System.Text.RegularExpressions;
                     __builder3.AddAttribute(33, "Property", "Id");
                     __builder3.AddAttribute(34, "Title", "ID");
                     __builder3.AddAttribute(35, "Width", "10px");
-                    __builder3.AddAttribute(36, "TextAlign", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
+                    __builder3.AddAttribute(36, "TextAlign", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
 #nullable restore
 #line 29 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
                                                                                                                     TextAlign.Center
@@ -195,7 +195,7 @@ using System.Text.RegularExpressions;
                     __builder3.AddAttribute(39, "Property", "Name");
                     __builder3.AddAttribute(40, "Title", "Name");
                     __builder3.AddAttribute(41, "Width", "75px");
-                    __builder3.AddAttribute(42, "TextAlign", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
+                    __builder3.AddAttribute(42, "TextAlign", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
 #nullable restore
 #line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
                                                                                                                         TextAlign.Center
@@ -210,7 +210,7 @@ using System.Text.RegularExpressions;
                     __builder3.AddAttribute(45, "Property", "Comments");
                     __builder3.AddAttribute(46, "Title", "Comments");
                     __builder3.AddAttribute(47, "Width", "320px");
-                    __builder3.AddAttribute(48, "TextAlign", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
+                    __builder3.AddAttribute(48, "TextAlign", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
 #nullable restore
 #line 31 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
                                                                                                                                  TextAlign.Left
@@ -230,15 +230,13 @@ using System.Text.RegularExpressions;
 #line default
 #line hidden
 #nullable disable
-                        __builder4.AddContent(50, 
 #nullable restore
 #line 36 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
-                                             nonHtmlComment
+__builder4.AddContent(50, nonHtmlComment);
 
 #line default
 #line hidden
 #nullable disable
-                        );
 #nullable restore
 #line 36 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
                                                            
@@ -254,7 +252,7 @@ using System.Text.RegularExpressions;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenGridColumn<Supplier>>(52);
                     __builder3.AddAttribute(53, "Property", "Id");
                     __builder3.AddAttribute(54, "Title", "Actions");
-                    __builder3.AddAttribute(55, "TextAlign", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
+                    __builder3.AddAttribute(55, "TextAlign", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.TextAlign>(
 #nullable restore
 #line 40 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AllSuppliers.razor"
                                                                                                             TextAlign.Center

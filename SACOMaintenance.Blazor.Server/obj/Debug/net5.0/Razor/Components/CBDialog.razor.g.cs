@@ -119,15 +119,13 @@ using System.Security.Claims;
             __builder.OpenElement(11, "div");
             __builder.AddAttribute(12, "class", "modal-title");
             __builder.OpenElement(13, "h3");
-            __builder.AddContent(14, 
 #nullable restore
 #line 8 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\CBDialog.razor"
-                         Title
+__builder.AddContent(14, Title);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -138,15 +136,13 @@ using System.Security.Claims;
             __builder.AddAttribute(19, "class", "row");
             __builder.OpenElement(20, "div");
             __builder.AddAttribute(21, "class", "col-lg-12");
-            __builder.AddContent(22, 
 #nullable restore
 #line 14 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\CBDialog.razor"
-                         ItemTemplate
+__builder.AddContent(22, ItemTemplate);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

@@ -161,15 +161,13 @@ using System;
 #nullable disable
                 __builder2.OpenElement(15, "label");
                 __builder2.AddAttribute(16, "b-t4da6dbceu");
-                __builder2.AddContent(17, 
 #nullable restore
 #line 17 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"
-                                    riskItem.RiskName
+__builder2.AddContent(17, riskItem.RiskName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
 #nullable restore
 #line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestRiskChoice.razor"

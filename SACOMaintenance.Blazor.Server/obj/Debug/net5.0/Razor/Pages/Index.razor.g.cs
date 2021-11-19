@@ -149,7 +149,7 @@ using System.Security.Claims;
             __builder.AddAttribute(4, "Roles", "General User");
             __builder.AddAttribute(5, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Authorization.AuthenticationState>)((context) => (__builder2) => {
                 __builder2.OpenComponent<SACOMaintenance.Blazor.Server.Pages.Dashboard.DashboardMaintenanceStandard>(6);
-                __builder2.AddAttribute(7, "UserId", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(7, "UserId", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Index.razor"
                                            userId

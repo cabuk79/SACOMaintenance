@@ -20,6 +20,7 @@ namespace SACOMaintenance.ViewModel
 
         public AuthorizationRequest Authorisation { get; set; }
         public ObservableCollection<AuthorizationRequest> AuthroizationsForUser { get; set; } = new();
+        public ObservableCollection<AuthorizationRequest> SignOffRequest { get; set; } = new();
 
         #endregion
 
@@ -49,10 +50,18 @@ namespace SACOMaintenance.ViewModel
         public async Task MaintReqsNeedingApproval
             (string ApprovalType, string UserId, string Status)
         {
-            //TODO: complete the authorasation component for general user dashboard
-            AuthroizationsForUser = new ObservableCollection<AuthorizationRequest>
-                (await AuthorizationDataProvider.LoadAuthRequestsByUserType
-                (UserId, ApprovalType, Status));
+           if(ApprovalType == "AuthorityToWork")
+            {
+                AuthroizationsForUser = new ObservableCollection<AuthorizationRequest>
+                    (await AuthorizationDataProvider.LoadAuthRequestsByUserType
+                    (UserId, ApprovalType, Status));
+            }
+
+           if(ApprovalType == "SignOff")
+            {
+                SignOffRequest = new ObservableCollection<AuthorizationRequest>(await AuthorizationDataProvider.LoadAuthRequestsByUserType
+                    (UserId, ApprovalType, Status));
+            }
         }
 
         #endregion

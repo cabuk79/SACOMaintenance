@@ -123,15 +123,13 @@ using System.Security.Claims;
                 __builder2.AddMarkupContent(11, "\r\n\r\n            ");
                 __builder2.OpenElement(12, "div");
                 __builder2.AddAttribute(13, "class", "content px-4");
-                __builder2.AddContent(14, 
 #nullable restore
 #line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\MainLayout.razor"
-                 Body
+__builder2.AddContent(14, Body);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
             }

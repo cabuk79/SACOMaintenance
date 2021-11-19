@@ -173,7 +173,7 @@ using SACOMaintenance.Blazor.Server.Pages.ReqInititation;
             __builder.AddAttribute(29, "class", "col-lg-12");
             __builder.OpenComponent<Radzen.Blazor.RadzenFieldset>(30);
             __builder.AddAttribute(31, "Text", "Your Open Requests");
-            __builder.AddAttribute(32, "AllowCollapse", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+            __builder.AddAttribute(32, "AllowCollapse", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 37 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
                                                                      true
@@ -324,7 +324,7 @@ else
             __builder.AddAttribute(83, "class", "col-lg-12");
             __builder.OpenComponent<Radzen.Blazor.RadzenFieldset>(84);
             __builder.AddAttribute(85, "Text", "All Requests");
-            __builder.AddAttribute(86, "AllowCollapse", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+            __builder.AddAttribute(86, "AllowCollapse", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 78 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsForUserAll.razor"
                                                            true

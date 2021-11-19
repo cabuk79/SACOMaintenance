@@ -78,11 +78,34 @@
             }
         </ul>
     </RadzenFieldset>
+    
+    <!-- If the current status is not Id 5 - Waiting Approval to Work then show the sign off component othwise just show it as approved -->
+    @if(@MaintRequestViewModel.maintReqInitation.StatusId == 5)
+    {
+        <RadzenFieldset Text="Approval">
+                <ApprovalComponent AuthId="Convert.ToInt32(AuthId)"></ApprovalComponent>
+        </RadzenFieldset>
+    }
+    else
+    {
+        <RadzenFieldset Text="Approval">
+            Approved.
+        </RadzenFieldset>
+    }
 
-    <RadzenFieldset Text="Approval">
-        <ApprovalComponent AuthId="Convert.ToInt32(AuthId)"></ApprovalComponent>
-    </RadzenFieldset>
-
+    <!-- If the current status is set to Id 4 - Waiting Sign Off then show the sign off component otherwise just output text that the request has been signed off as completed -->
+    @if(@MaintRequestViewModel.maintReqInitation.StatusId == 4)
+    {
+        <RadzenFieldset Text="Request Sign Off">
+            <ApprovalComponent AuthId="Convert.ToInt32(AuthId)"></ApprovalComponent>
+        </RadzenFieldset>
+    }
+    else
+    {
+        <RadzenFieldset Text="Request Sign Off">
+           Approved and closed off.
+        </RadzenFieldset>     
+    }
 
     @code {
 

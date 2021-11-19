@@ -141,15 +141,13 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(5, "class", "col");
             __builder.OpenElement(6, "h1");
             __builder.AddContent(7, "Dashboard for ");
-            __builder.AddContent(8, 
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\DashboardManager.razor"
-                               dashboardViewModel.yearStart
+__builder.AddContent(8, dashboardViewModel.yearStart);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

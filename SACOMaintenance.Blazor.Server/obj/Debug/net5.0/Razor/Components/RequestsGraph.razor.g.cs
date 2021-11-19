@@ -126,7 +126,7 @@ using System.Globalization;
                 , 5, "statusName", 6, "Status Type", 7, "number");
                 __builder2.AddMarkupContent(8, "\r\n    ");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenColumnOptions>(9);
-                __builder2.AddAttribute(10, "Radius", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Double>(
+                __builder2.AddAttribute(10, "Radius", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Double>(
 #nullable restore
 #line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsGraph.razor"
                                  5
@@ -140,7 +140,7 @@ using System.Globalization;
                 __builder2.OpenComponent<Radzen.Blazor.RadzenValueAxis>(12);
                 __builder2.AddAttribute(13, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
                     __builder3.OpenComponent<Radzen.Blazor.RadzenGridLines>(14);
-                    __builder3.AddAttribute(15, "Visible", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(15, "Visible", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsGraph.razor"
                                   true

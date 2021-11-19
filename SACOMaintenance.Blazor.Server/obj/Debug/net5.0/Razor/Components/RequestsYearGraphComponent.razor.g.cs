@@ -128,7 +128,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
-            , 3, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => startYear = __value, startYear)), 4, () => startYear);
+            , 3, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => startYear = __value, startYear)), 4, () => startYear);
             __builder.AddMarkupContent(5, "\r\n");
             __builder.OpenComponent<Radzen.Blazor.RadzenChart>(6);
             __builder.AddAttribute(7, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
@@ -143,7 +143,7 @@ using System.Globalization;
                 , 10, "YearName", 11, "Year", 12, "YearNumber");
                 __builder2.AddMarkupContent(13, "\r\n    ");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenColumnOptions>(14);
-                __builder2.AddAttribute(15, "Radius", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Double>(
+                __builder2.AddAttribute(15, "Radius", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Double>(
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
                                  5
@@ -157,7 +157,7 @@ using System.Globalization;
                 __builder2.OpenComponent<Radzen.Blazor.RadzenValueAxis>(17);
                 __builder2.AddAttribute(18, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
                     __builder3.OpenComponent<Radzen.Blazor.RadzenGridLines>(19);
-                    __builder3.AddAttribute(20, "Visible", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(20, "Visible", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
                                   true

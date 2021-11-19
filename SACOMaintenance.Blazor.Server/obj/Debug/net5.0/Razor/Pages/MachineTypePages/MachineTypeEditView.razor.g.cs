@@ -123,7 +123,7 @@ using SACOMaintenance.Common.ModelDB;
             __builder.OpenElement(7, "div");
             __builder.AddAttribute(8, "class", "col-lg-2");
             __builder.OpenComponent<Radzen.Blazor.RadzenListBox<int>>(9);
-            __builder.AddAttribute(10, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+            __builder.AddAttribute(10, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 15 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
                                                    machineViewModel.machinesTypes
@@ -136,7 +136,7 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(12, "ValueProperty", "Id");
             __builder.AddAttribute(13, "Style", "height:500px");
             __builder.AddAttribute(14, "Name", "machineTypeListBox");
-            __builder.AddAttribute(15, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
+            __builder.AddAttribute(15, "Change", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
 #nullable restore
 #line 17 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
                                         args => OnChange(args, "ListBox")
@@ -156,19 +156,17 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(22, "class", "area-form-area");
             __builder.OpenElement(23, "h3");
             __builder.AddContent(24, "Viewing ");
-            __builder.AddContent(25, 
 #nullable restore
 #line 23 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
-                                     machineViewModel.MachineTypeName
+__builder.AddContent(25, machineViewModel.MachineTypeName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(26, "\r\n                        ");
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(27);
-            __builder.AddAttribute(28, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(28, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
                                           machineViewModel.machineType
@@ -185,7 +183,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddMarkupContent(34, "<label style=\"font-weight:bold\">Name</label>\r\n                                    ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(35);
                 __builder2.AddAttribute(36, "class", "form-control");
-                __builder2.AddAttribute(37, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(37, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 28 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
                                                             machineViewModel.MachineTypeName
@@ -194,8 +192,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(38, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => machineViewModel.MachineTypeName = __value, machineViewModel.MachineTypeName))));
-                __builder2.AddAttribute(39, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => machineViewModel.MachineTypeName));
+                __builder2.AddAttribute(38, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => machineViewModel.MachineTypeName = __value, machineViewModel.MachineTypeName))));
+                __builder2.AddAttribute(39, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => machineViewModel.MachineTypeName));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(40, "\r\n                                ");
@@ -204,7 +202,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddMarkupContent(43, "<label style=\"font-weight:bold\">Description</label>\r\n                                    ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(44);
                 __builder2.AddAttribute(45, "class", "form-control");
-                __builder2.AddAttribute(46, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(46, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 32 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
                                                             machineViewModel.MachineTypeDescription
@@ -213,8 +211,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(47, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => machineViewModel.MachineTypeDescription = __value, machineViewModel.MachineTypeDescription))));
-                __builder2.AddAttribute(48, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => machineViewModel.MachineTypeDescription));
+                __builder2.AddAttribute(47, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => machineViewModel.MachineTypeDescription = __value, machineViewModel.MachineTypeDescription))));
+                __builder2.AddAttribute(48, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => machineViewModel.MachineTypeDescription));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

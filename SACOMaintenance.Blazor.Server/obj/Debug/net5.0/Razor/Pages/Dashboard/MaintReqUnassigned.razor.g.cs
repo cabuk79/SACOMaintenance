@@ -194,15 +194,13 @@ using Microsoft.AspNetCore.SignalR.Client;
                 __builder2.AddAttribute(22, "Template", (Microsoft.AspNetCore.Components.RenderFragment<MaintRequestInitiation>)((data) => (__builder3) => {
                     __builder3.OpenElement(23, "p");
                     __builder3.AddAttribute(24, "style", "white-space:pre-wrap");
-                    __builder3.AddContent(25, 
 #nullable restore
 #line 15 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
-                                                         data.RequestDetails
+__builder3.AddContent(25, data.RequestDetails);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
                 }
                 ));
@@ -212,7 +210,7 @@ using Microsoft.AspNetCore.SignalR.Client;
                 __builder2.AddAttribute(28, "Property", "DateRaised");
                 __builder2.AddAttribute(29, "Title", "Origin Date");
                 __builder2.AddAttribute(30, "Width", "100px");
-                __builder2.AddAttribute(31, "Filterable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(31, "Filterable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
                                                                                                                                      true
@@ -227,7 +225,7 @@ using Microsoft.AspNetCore.SignalR.Client;
                 __builder2.AddAttribute(34, "Property", "maintReqListViewModel.Id");
                 __builder2.AddAttribute(35, "Title", "Actions");
                 __builder2.AddAttribute(36, "Width", "50px");
-                __builder2.AddAttribute(37, "Sortable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(37, "Sortable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 19 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
                                                                                                                                             false

@@ -156,15 +156,13 @@ using Microsoft.AspNetCore.SignalR.Client;
                 __builder2.AddAttribute(13, "Template", (Microsoft.AspNetCore.Components.RenderFragment<MaintRequestInitiation>)((data) => (__builder3) => {
                     __builder3.OpenElement(14, "p");
                     __builder3.AddAttribute(15, "style", "white-space:pre-wrap");
-                    __builder3.AddContent(16, 
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqAssignedOpen.razor"
-                                                 data.RequestDetails
+__builder3.AddContent(16, data.RequestDetails);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
                 }
                 ));

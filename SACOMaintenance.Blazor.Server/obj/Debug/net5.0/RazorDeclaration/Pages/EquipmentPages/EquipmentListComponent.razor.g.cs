@@ -152,7 +152,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         
         await hubConnection.StartAsync();
 
-        equipmentListViewModel.LoadAllEquipment();
+        Task.Run(async ()=> { await equipmentListViewModel.LoadAllEquipment(); }).Wait();
     }
 
     private void CallLoadData()
@@ -170,7 +170,6 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
         _ = hubConnection.DisposeAsync();
     }
-
 
 #line default
 #line hidden

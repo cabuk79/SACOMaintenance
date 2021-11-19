@@ -14,6 +14,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         
         public AuthorizationRequest Authorisation { get; set; }
         ObservableCollection<AuthorizationRequest> AuthroizationsForUser { get; set; }
+        ObservableCollection<AuthorizationRequest> SignOffRequest { get; set; }
 
         #endregion
 

@@ -25,7 +25,7 @@ namespace SACOMaintenance.ViewModel
             PartDataProvider = partDataProvider;
         }
 
-        public async void LoadAllParts()
+        public async Task LoadAllParts()
         {
             var partsList = new ObservableCollection<Part>(await PartDataProvider.LoadAllPArts());
             parts.Clear();

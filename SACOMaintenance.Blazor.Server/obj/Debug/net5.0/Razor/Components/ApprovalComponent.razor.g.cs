@@ -126,7 +126,7 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(4, "class", "col-lg-12");
             __builder.OpenComponent<Radzen.Blazor.RadzenTextArea>(5);
             __builder.AddAttribute(6, "Style", "width: 100%");
-            __builder.AddAttribute(7, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+            __builder.AddAttribute(7, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 12 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\ApprovalComponent.razor"
                                                           CommentReason
@@ -135,8 +135,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(8, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => CommentReason = __value, CommentReason))));
-            __builder.AddAttribute(9, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => CommentReason));
+            __builder.AddAttribute(8, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => CommentReason = __value, CommentReason))));
+            __builder.AddAttribute(9, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => CommentReason));
             __builder.CloseComponent();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -197,15 +197,13 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(27, "class", "col-lg-12");
             __builder.OpenElement(28, "p");
             __builder.AddContent(29, "Approved to work on the ");
-            __builder.AddContent(30, 
 #nullable restore
 #line 28 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\ApprovalComponent.razor"
-                                        AuthViewModel.Authorisation.ConfirmationDate
+__builder.AddContent(30, AuthViewModel.Authorisation.ConfirmationDate);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
 #nullable restore

@@ -145,15 +145,13 @@ using Microsoft.AspNetCore.Identity;
                 __builder2.AddContent(7, "    ");
                 __builder2.OpenElement(8, "label");
                 __builder2.AddContent(9, "Hello, ");
-                __builder2.AddContent(10, 
 #nullable restore
 #line 14 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\LoginDisplay.razor"
-                                                                                                 UserFullName
+__builder2.AddContent(10, UserFullName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(11, "\r\n        ");
                 __builder2.AddMarkupContent(12, "<a href=\"Identity/Account/Logout\">Logout</a>");

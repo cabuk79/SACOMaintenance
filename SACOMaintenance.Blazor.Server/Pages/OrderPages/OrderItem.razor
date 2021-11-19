@@ -1,0 +1,49 @@
+﻿@*@page "/orderitemtest"*@
+
+<h3>Add Order Item</h3>
+
+<div class="item-body">
+    <div class="row">
+        <div class="col-lg-4"><RadzenLabel Text="Existing Part?"></RadzenLabel></div>
+        <div class="col-lg-4"><RadzenSwitch></RadzenSwitch></div>
+        <div class="col-lg-4"><RadzenLabel Text="Part"></RadzenLabel></div>
+        <div class="col-lg-4"><RadzenDropDown TValue="string"></RadzenDropDown></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6">
+                    <RadzenLabel Text="Quanity"></RadzenLabel>
+                </div><div class="col-lg-6">
+                    <RadzenLabel Text="Price"></RadzenLabel>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <RadzenDropDown TValue="string"></RadzenDropDown>
+                    </div>
+                    <div class="col-lg-6">
+                        <RadzenDropDown TValue="string"></RadzenDropDown>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenLabel Text="Description"></RadzenLabel>
+                </div>
+                <div class="col-lg-12">
+                    <RadzenTextArea></RadzenTextArea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"><RadzenButton Text="Save"></RadzenButton></div>
+                <div class="col-lg-2"><RadzenButton Text="Cancel"></RadzenButton></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+@code {
+
+}

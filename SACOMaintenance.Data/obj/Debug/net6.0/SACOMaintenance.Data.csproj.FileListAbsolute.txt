@@ -1,0 +1,5 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net6.0\SACOMaintenance.Data.csproj.AssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net6.0\SACOMaintenance.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net6.0\SACOMaintenance.Data.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net6.0\SACOMaintenance.Data.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Data\obj\Debug\net6.0\SACOMaintenance.Data.csproj.CoreCompileInputs.cache

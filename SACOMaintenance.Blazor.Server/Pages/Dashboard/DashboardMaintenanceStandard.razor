@@ -6,21 +6,28 @@
 @using System.Security.Claims
 @inject IHttpContextAccessor HttpContextAccessor
 
-<h2>Dashboard</h2>
+<h2>Dashboard - Hot Reload Not Working</h2>
 
 <hr />
 
+<hr />
+
+
 <div class="row">
     <div class="col-lg-6">
-        <RadzenFieldset Text="All Requests You Have Raised" Style="border-color: black" AllowCollapse="true">
-
+        <RadzenFieldset Text="Requests Requring Sign Off" Style="border-color: black" AllowCollapse="true">
+            <RequestsNeedingApproval UserId="@UserId" ApprovalType="SignOff"></RequestsNeedingApproval>
         </RadzenFieldset>
     </div>
     <div class="col-lg-6">
         <RadzenFieldset Text="Authorise To Work Requests" Style="border-color: black" AllowCollapse="true">
-            <RequestsNeedingApproval UserId="@UserId"></RequestsNeedingApproval>
+            <RequestsNeedingApproval UserId="@UserId" ApprovalType="AuthorityToWork"></RequestsNeedingApproval>
         </RadzenFieldset>
     </div>
+</div>
+<div class="row">
+    <div class="col-lg-12"></div>
+    <RadzenFieldset Text="All Requests You Have Raised" Style="border-color: black" AllowCollapse="true"></RadzenFieldset>
 </div>
 
 

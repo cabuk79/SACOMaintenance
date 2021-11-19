@@ -148,64 +148,54 @@ using Microsoft.AspNetCore.Identity;
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(15, "\r\n                        ");
                 __builder2.OpenElement(16, "td");
-                __builder2.AddContent(17, 
 #nullable restore
 #line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                             user.Id.Substring(0, 5)
+__builder2.AddContent(17, user.Id.Substring(0, 5));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.AddContent(18, " ...");
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(19, "\r\n                        ");
                 __builder2.OpenElement(20, "td");
-                __builder2.AddContent(21, 
 #nullable restore
 #line 28 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                             user.UserName
+__builder2.AddContent(21, user.UserName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(22, "\r\n                        ");
                 __builder2.OpenElement(23, "td");
-                __builder2.AddContent(24, 
 #nullable restore
 #line 29 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                             user.FirstName
+__builder2.AddContent(24, user.FirstName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(25, "\r\n                        ");
                 __builder2.OpenElement(26, "td");
-                __builder2.AddContent(27, 
 #nullable restore
 #line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                             user.LastName
+__builder2.AddContent(27, user.LastName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(28, "\r\n                        ");
                 __builder2.OpenElement(29, "td");
-                __builder2.AddContent(30, 
 #nullable restore
 #line 31 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                             user.Email
+__builder2.AddContent(30, user.Email);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(31, "\r\n                        ");
                 __builder2.OpenElement(32, "td");
@@ -316,15 +306,13 @@ using Microsoft.AspNetCore.Identity;
                 __builder2.AddAttribute(78, "class", "col-lg-12");
                 __builder2.AddMarkupContent(79, "<label><strong>User Id</strong></label>\r\n                                        ");
                 __builder2.OpenElement(80, "p");
-                __builder2.AddContent(81, 
 #nullable restore
 #line 81 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                                            objUser.Id
+__builder2.AddContent(81, objUser.Id);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -350,15 +338,13 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
                 __builder2.AddMarkupContent(86, "<label>Username</label>\r\n                                        ");
                 __builder2.OpenElement(87, "p");
-                __builder2.AddContent(88, 
 #nullable restore
 #line 92 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                                            objUser.UserName
+__builder2.AddContent(88, objUser.UserName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
 #nullable restore
 #line 93 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
@@ -507,15 +493,13 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddContent(154, 
 #nullable restore
 #line 155 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                                                 option
+__builder2.AddContent(154, option);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
 #nullable restore
 #line 157 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
@@ -586,15 +570,13 @@ using Microsoft.AspNetCore.Identity;
                 __builder2.AddAttribute(175, "class", "col-lg-12");
                 __builder2.OpenElement(176, "span");
                 __builder2.AddAttribute(177, "style", "color:red");
-                __builder2.AddContent(178, 
 #nullable restore
 #line 183 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\UserAdmin\ViewUsers.razor"
-                                                             strError
+__builder2.AddContent(178, strError);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

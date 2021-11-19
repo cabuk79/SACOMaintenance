@@ -115,19 +115,17 @@ using SACOMaintenance.Common.ModelDB;
         {
             __builder.OpenElement(0, "h3");
             __builder.AddContent(1, "Details for ");
-            __builder.AddContent(2, 
 #nullable restore
 #line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentSinglePage.razor"
-                 equipmentViewModel.equipment.Name
+__builder.AddContent(2, equipmentViewModel.equipment.Name);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(3, "\r\n\r\n");
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(4);
-            __builder.AddAttribute(5, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(5, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 7 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentSinglePage.razor"
                  equipmentViewModel
@@ -144,7 +142,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddMarkupContent(11, "<label>Description</label>\r\n            ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputTextArea>(12);
                 __builder2.AddAttribute(13, "class", "form-control");
-                __builder2.AddAttribute(14, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(14, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentSinglePage.razor"
                                         equipmentViewModel.equipment.Description
@@ -153,8 +151,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(15, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => equipmentViewModel.equipment.Description = __value, equipmentViewModel.equipment.Description))));
-                __builder2.AddAttribute(16, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => equipmentViewModel.equipment.Description));
+                __builder2.AddAttribute(15, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => equipmentViewModel.equipment.Description = __value, equipmentViewModel.equipment.Description))));
+                __builder2.AddAttribute(16, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => equipmentViewModel.equipment.Description));
                 __builder2.CloseComponent();
                 __builder2.AddMarkupContent(17, "\r\n>        ");
                 __builder2.CloseElement();
@@ -164,7 +162,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddMarkupContent(21, "<label>Serial Number</label>\r\n            ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputTextArea>(22);
                 __builder2.AddAttribute(23, "class", "form-control");
-                __builder2.AddAttribute(24, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(24, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 15 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentSinglePage.razor"
                                         equipmentViewModel.equipment.SerialIdentifierNumber
@@ -173,8 +171,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(25, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => equipmentViewModel.equipment.SerialIdentifierNumber = __value, equipmentViewModel.equipment.SerialIdentifierNumber))));
-                __builder2.AddAttribute(26, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => equipmentViewModel.equipment.SerialIdentifierNumber));
+                __builder2.AddAttribute(25, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => equipmentViewModel.equipment.SerialIdentifierNumber = __value, equipmentViewModel.equipment.SerialIdentifierNumber))));
+                __builder2.AddAttribute(26, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => equipmentViewModel.equipment.SerialIdentifierNumber));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(27, "\r\n        ");
@@ -182,7 +180,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(29, "class", "row");
                 __builder2.AddMarkupContent(30, "<label>General Comments</label>\r\n            ");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenHtmlEditor>(31);
-                __builder2.AddAttribute(32, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(32, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 19 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\EquipmentPages\EquipmentSinglePage.razor"
                                            equipmentViewModel.equipment.Comments
@@ -191,8 +189,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(33, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => equipmentViewModel.equipment.Comments = __value, equipmentViewModel.equipment.Comments))));
-                __builder2.AddAttribute(34, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => equipmentViewModel.equipment.Comments));
+                __builder2.AddAttribute(33, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => equipmentViewModel.equipment.Comments = __value, equipmentViewModel.equipment.Comments))));
+                __builder2.AddAttribute(34, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => equipmentViewModel.equipment.Comments));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

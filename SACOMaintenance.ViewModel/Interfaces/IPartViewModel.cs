@@ -11,7 +11,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
     public interface IPartViewModel
     {
         ObservableCollection<Part> parts { get; set; }
-        public void LoadAllParts();
+        public Task LoadAllParts();
         public void LoadSinglePart(int Id);
         public Part SelectedPart { get; set; }
         ObservableCollection<Supplier> suppliers { get; set; }

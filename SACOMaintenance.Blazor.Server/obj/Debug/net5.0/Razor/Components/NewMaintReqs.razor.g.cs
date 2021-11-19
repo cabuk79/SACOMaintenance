@@ -123,15 +123,13 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(8, "class", "card-text, containerDashNumberCountNumber");
             __builder.AddAttribute(9, "align", "center");
             __builder.OpenElement(10, "containerDashNumberCountNumber");
-            __builder.AddContent(11, 
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\NewMaintReqs.razor"
-                                                                                                                 dashboardViewModel.MaintReqsNew.Count
+__builder.AddContent(11, dashboardViewModel.MaintReqsNew.Count);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

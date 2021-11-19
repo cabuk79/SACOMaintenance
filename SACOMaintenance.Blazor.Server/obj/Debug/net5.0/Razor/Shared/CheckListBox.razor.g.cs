@@ -153,15 +153,13 @@ using System.Security.Claims;
 #nullable disable
             ));
             __builder.CloseElement();
-            __builder.AddContent(6, 
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CheckListBox.razor"
-             Text
+__builder.AddContent(6, Text);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.AddMarkupContent(7, " <br>");
 #nullable restore
 #line 17 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CheckListBox.razor"
@@ -171,15 +169,13 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(8, 
 #nullable restore
 #line 19 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CheckListBox.razor"
-     ChildContent
+__builder.AddContent(8, ChildContent);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
         }
         #pragma warning restore 1998

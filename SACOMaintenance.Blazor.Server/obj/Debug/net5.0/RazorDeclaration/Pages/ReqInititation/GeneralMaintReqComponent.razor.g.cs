@@ -146,7 +146,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 210 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 282 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
 
     public bool ppeIsChecked;
@@ -248,6 +248,27 @@ using Microsoft.AspNetCore.SignalR.Client;
     private void StartWorkRequest(MouseEventArgs e)
     {
         GeneralViewModel.AddNewAuthrization("Requested", "AuthorityToWork");
+        GeneralViewModel.LoadStartToworkAuth();
+
+        if (ReqReadOnly == true)
+        {
+            ReqReadOnly = false;
+        }
+        else if (ReqReadOnly == false)
+        {
+            ReqReadOnly = true;
+        }
+
+        ReqReadOnlyChanged.InvokeAsync(ReqReadOnly);
+
+        Task.Run(async () => { await GeneralViewModel.LoadStartToworkAuth(); }).Wait();
+
+        InvokeAsync(() => StateHasChanged());
+    }
+
+    private void SignOffWorkRequest(MouseEventArgs e)
+    {
+        GeneralViewModel.AddNewAuthrization("Requested", "SignOff");
         GeneralViewModel.LoadStartToworkAuth();
 
         if (ReqReadOnly == true)

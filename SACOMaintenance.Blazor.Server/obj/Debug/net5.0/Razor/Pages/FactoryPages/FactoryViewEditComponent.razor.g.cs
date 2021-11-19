@@ -128,7 +128,7 @@ using SACOMaintenance.Common.ModelDB;
             __builder.OpenElement(10, "div");
             __builder.AddAttribute(11, "class", "col-lg-4");
             __builder.OpenComponent<Radzen.Blazor.RadzenDropDown<int>>(12);
-            __builder.AddAttribute(13, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+            __builder.AddAttribute(13, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\FactoryPages\FactoryViewEditComponent.razor"
                                                 factoryViewModel.factories
@@ -140,7 +140,7 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(14, "TextProperty", "FactoryName");
             __builder.AddAttribute(15, "ValueProperty", "Id");
             __builder.AddAttribute(16, "Name", "factoryDropDown");
-            __builder.AddAttribute(17, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
+            __builder.AddAttribute(17, "Change", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
 #nullable restore
 #line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\FactoryPages\FactoryViewEditComponent.razor"
                                      args => OnChange(args, "DropDown")
@@ -174,7 +174,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(35, "class", "col-lg-4");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(36);
                 __builder2.AddAttribute(37, "Style", "border-color: black; width: 100%");
-                __builder2.AddAttribute(38, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(38, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 29 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\FactoryPages\FactoryViewEditComponent.razor"
                                                     factoryViewModel.FactoryName
@@ -183,8 +183,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(39, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => factoryViewModel.FactoryName = __value, factoryViewModel.FactoryName))));
-                __builder2.AddAttribute(40, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => factoryViewModel.FactoryName));
+                __builder2.AddAttribute(39, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => factoryViewModel.FactoryName = __value, factoryViewModel.FactoryName))));
+                __builder2.AddAttribute(40, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => factoryViewModel.FactoryName));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(41, "\r\n                    ");

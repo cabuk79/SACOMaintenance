@@ -605,7 +605,7 @@ namespace SACOMaintenance.Data.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PartId")
+                    b.Property<int?>("PartId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -1331,9 +1331,7 @@ namespace SACOMaintenance.Data.Migrations
 
                     b.HasOne("SACOMaintenance.Common.ModelDB.Part", "Part")
                         .WithMany()
-                        .HasForeignKey("PartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PartId");
 
                     b.Navigation("Order");
 

@@ -1,0 +1,78 @@
+﻿@page "/testingorder"
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Adding new order</h3>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4"><RadzenLabel Text="Date Test"></RadzenLabel></div>
+        <div class="col-lg-4"><RadzenLabel Text="Supplier"></RadzenLabel></div>
+        <div class="col-lg-4"><RadzenLabel Text="Department"></RadzenLabel></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><RadzenDatePicker DateFormat="d" TValue="DateTime?"></RadzenDatePicker></div>
+        <div class="col-lg-4"><RadzenDropDown TValue="string"></RadzenDropDown></div>
+        <div class="col-lg-4"><RadzenDropDown TValue="string"></RadzenDropDown></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><RadzenLabel Text="Description"></RadzenLabel></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><RadzenTextArea></RadzenTextArea></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2"><button type="button" @onclick="(() => Showdialog())">Add Item</button> @*<RadzenButton Text="Add Item" @onclick="(() => Showdialog())"></RadzenButton>*@</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><RadzenLabel Text="Items in order"></RadzenLabel></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <RadzenGrid TItem="string">
+                <Columns>
+                    <RadzenGridColumn TItem="string" Title="Id"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="string" Title="Item Name"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="string" Title="Description"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="string" Title="Qty"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="string" Title="Price"></RadzenGridColumn>
+                </Columns>
+            </RadzenGrid>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2"><RadzenButton Text="Save"></RadzenButton></div>
+        <div class="col-lg-2"><RadzenButton Text="Cancel"></RadzenButton></div>
+    </div>
+
+</div>
+
+
+@if(ShowPopup)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog" style="border-color: black">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <OrderItem></OrderItem>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@code {
+    bool ShowPopup = false;
+
+    void Showdialog()
+    {
+        ShowPopup = true;
+    }
+
+
+
+}

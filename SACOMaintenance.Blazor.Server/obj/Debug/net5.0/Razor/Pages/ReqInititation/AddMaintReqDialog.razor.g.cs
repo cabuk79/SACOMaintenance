@@ -117,15 +117,13 @@ using System.Security.Claims;
 #line hidden
 #nullable disable
             __builder.OpenElement(2, "li");
-            __builder.AddContent(3, 
 #nullable restore
 #line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReqDialog.razor"
-             item.Name
+__builder.AddContent(3, item.Name);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReqDialog.razor"

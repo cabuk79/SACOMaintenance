@@ -115,15 +115,13 @@ using SACOMaintenance.Common.ModelDB;
         {
             __builder.OpenElement(0, "h3");
             __builder.AddContent(1, "Information for ");
-            __builder.AddContent(2, 
 #nullable restore
 #line 6 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
-                         partViewModel.SelectedPart.Name
+__builder.AddContent(2, partViewModel.SelectedPart.Name);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(3, "\r\n\r\n    ");
             __Blazor.SACOMaintenance.Blazor.Server.Pages.PartPages.PartFullView.TypeInference.CreateRadzenTemplateForm_0(__builder, 4, 5, 
@@ -165,7 +163,7 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                     );
-                    __builder3.AddAttribute(27, "valueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => partViewModel.SelectedPart.Comment = __value, partViewModel.SelectedPart.Comment));
+                    __builder3.AddAttribute(27, "valueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => partViewModel.SelectedPart.Comment = __value, partViewModel.SelectedPart.Comment));
                     __builder3.CloseComponent();
                     __builder3.CloseElement();
                     __builder3.CloseElement();
@@ -220,7 +218,7 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
-                                , 67, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => partViewModel.SelectedPart.CurrentQty = __value, partViewModel.SelectedPart.CurrentQty)), 68, () => partViewModel.SelectedPart.CurrentQty);
+                                , 67, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => partViewModel.SelectedPart.CurrentQty = __value, partViewModel.SelectedPart.CurrentQty)), 68, () => partViewModel.SelectedPart.CurrentQty);
                                 __builder6.CloseElement();
                                 __builder6.AddMarkupContent(69, "\r\n                                                        ");
                                 __builder6.OpenElement(70, "div");
@@ -240,7 +238,7 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
-                                , 80, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => partViewModel.SelectedPart.MinQtyInStock = __value, partViewModel.SelectedPart.MinQtyInStock)), 81, () => partViewModel.SelectedPart.MinQtyInStock);
+                                , 80, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => partViewModel.SelectedPart.MinQtyInStock = __value, partViewModel.SelectedPart.MinQtyInStock)), 81, () => partViewModel.SelectedPart.MinQtyInStock);
                                 __builder6.CloseElement();
                                 __builder6.CloseElement();
 #nullable restore
@@ -293,7 +291,7 @@ using SACOMaintenance.Common.ModelDB;
                                 __builder6.OpenElement(103, "div");
                                 __builder6.AddAttribute(104, "class", "col-lg-12");
                                 __builder6.OpenComponent<Radzen.Blazor.RadzenGrid<TechnicalDrawingsLocation>>(105);
-                                __builder6.AddAttribute(106, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<TechnicalDrawingsLocation>>(
+                                __builder6.AddAttribute(106, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<TechnicalDrawingsLocation>>(
 #nullable restore
 #line 67 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
                                                                               partViewModel.SelectedPart.Drawings
@@ -318,7 +316,7 @@ using SACOMaintenance.Common.ModelDB;
                                     __builder7.AddAttribute(118, "Title", "Action");
                                     __builder7.AddAttribute(119, "Template", (Microsoft.AspNetCore.Components.RenderFragment<TechnicalDrawingsLocation>)((drawingData) => (__builder8) => {
                                         __builder8.OpenComponent<Radzen.Blazor.RadzenButton>(120);
-                                        __builder8.AddAttribute(121, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+                                        __builder8.AddAttribute(121, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 73 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
                                                                                                   args => openDrawing(drawingData.DrawingFileLocation)
@@ -363,7 +361,7 @@ using SACOMaintenance.Common.ModelDB;
                                 __builder6.OpenElement(138, "div");
                                 __builder6.AddAttribute(139, "class", "col-lg-12");
                                 __builder6.OpenComponent<Radzen.Blazor.RadzenGrid<Equipment>>(140);
-                                __builder6.AddAttribute(141, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<Equipment>>(
+                                __builder6.AddAttribute(141, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<Equipment>>(
 #nullable restore
 #line 90 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
                                                                               partViewModel.SelectedPart.Equipment
@@ -417,7 +415,7 @@ using SACOMaintenance.Common.ModelDB;
                                 __builder6.OpenElement(168, "div");
                                 __builder6.AddAttribute(169, "class", "col-lg-12");
                                 __builder6.OpenComponent<Radzen.Blazor.RadzenGrid<PartSupplier>>(170);
-                                __builder6.AddAttribute(171, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<PartSupplier>>(
+                                __builder6.AddAttribute(171, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<PartSupplier>>(
 #nullable restore
 #line 109 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
                                                                               partViewModel.SelectedPart.SupplierParts
@@ -452,15 +450,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
-                                        __builder8.AddContent(185, 
 #nullable restore
 #line 119 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
-                                                                                     supp.Name
+__builder8.AddContent(185, supp.Name);
 
 #line default
 #line hidden
 #nullable disable
-                                        );
 #nullable restore
 #line 119 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
                                                                                               ;

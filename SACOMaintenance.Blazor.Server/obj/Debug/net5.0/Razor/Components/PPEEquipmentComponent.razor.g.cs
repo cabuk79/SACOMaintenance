@@ -132,7 +132,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(9, "div");
                 __builder2.AddAttribute(10, "class", "col-lg-12 d-flex justify-content-center");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenImage>(11);
-                __builder2.AddAttribute(12, "Path", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(12, "Path", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\PPEEquipmentComponent.razor"
                                             ppe.IconFileLocation
@@ -151,7 +151,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(17, "div");
                 __builder2.AddAttribute(18, "class", "col-lg-12 d-flex justify-content-center");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenLabel>(19);
-                __builder2.AddAttribute(20, "Text", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(20, "Text", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 15 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\PPEEquipmentComponent.razor"
                                             ppe.PPEName
@@ -184,7 +184,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(27, "div");
                 __builder2.AddAttribute(28, "class", "col-lg-12 d-flex justify-content-center");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenImage>(29);
-                __builder2.AddAttribute(30, "Path", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(30, "Path", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 25 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\PPEEquipmentComponent.razor"
                                             ppe.IconFileLocation
@@ -203,7 +203,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(35, "div");
                 __builder2.AddAttribute(36, "class", "col-lg-12 d-flex justify-content-center");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenLabel>(37);
-                __builder2.AddAttribute(38, "Text", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(38, "Text", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\PPEEquipmentComponent.razor"
                                             ppe.PPEName

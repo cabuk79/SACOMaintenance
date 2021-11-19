@@ -125,6 +125,9 @@ using System.Security.Claims;
     [Parameter]
     public EventCallback<List<TItem>> SelectedItemsChanged { get; set; }
 
+    [Parameter]
+    public string Disabled { get; set; }
+
     void HandleChange(TItem item)
     {
         if (SelectedItems.Contains(item))

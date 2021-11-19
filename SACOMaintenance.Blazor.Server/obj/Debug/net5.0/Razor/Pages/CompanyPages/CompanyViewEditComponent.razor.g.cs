@@ -127,7 +127,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(11, "div");
                 __builder2.AddAttribute(12, "class", "col-lg-2");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenListBox<int>>(13);
-                __builder2.AddAttribute(14, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+                __builder2.AddAttribute(14, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 14 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
                                                            companyViewModel.companies
@@ -139,7 +139,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(15, "TextProperty", "CompanyName");
                 __builder2.AddAttribute(16, "ValueProperty", "Id");
                 __builder2.AddAttribute(17, "Name", "companyListBox");
-                __builder2.AddAttribute(18, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
+                __builder2.AddAttribute(18, "Change", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
                                                 args => OnChange(args, "ListBox")
@@ -159,19 +159,17 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(25, "class", "area-form-area");
                 __builder2.OpenElement(26, "h3");
                 __builder2.AddContent(27, "Viewing ");
-                __builder2.AddContent(28, 
 #nullable restore
 #line 21 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
-                                             companyViewModel.CompanyName
+__builder2.AddContent(28, companyViewModel.CompanyName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(29, "\r\n                                ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(30);
-                __builder2.AddAttribute(31, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                __builder2.AddAttribute(31, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 22 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
                                                   companyViewModel.company
@@ -188,7 +186,7 @@ using SACOMaintenance.Common.ModelDB;
                     __builder3.AddMarkupContent(37, "<label style=\"font-weight:bold\">Name</label>\r\n                                            ");
                     __builder3.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(38);
                     __builder3.AddAttribute(39, "class", "form-control");
-                    __builder3.AddAttribute(40, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                    __builder3.AddAttribute(40, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 26 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
                                                                     companyViewModel.CompanyName
@@ -197,8 +195,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(41, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => companyViewModel.CompanyName = __value, companyViewModel.CompanyName))));
-                    __builder3.AddAttribute(42, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => companyViewModel.CompanyName));
+                    __builder3.AddAttribute(41, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => companyViewModel.CompanyName = __value, companyViewModel.CompanyName))));
+                    __builder3.AddAttribute(42, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => companyViewModel.CompanyName));
                     __builder3.CloseComponent();
                     __builder3.CloseElement();
                     __builder3.CloseElement();
@@ -215,7 +213,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(46, "div");
                 __builder2.AddAttribute(47, "class", "col-lg-10");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenGrid<MaintRequestInitiation>>(48);
-                __builder2.AddAttribute(49, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<MaintRequestInitiation>>(
+                __builder2.AddAttribute(49, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<MaintRequestInitiation>>(
 #nullable restore
 #line 36 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
                                            companyViewModel.maintRegs

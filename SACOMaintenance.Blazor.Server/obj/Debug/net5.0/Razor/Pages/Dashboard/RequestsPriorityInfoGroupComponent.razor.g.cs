@@ -146,7 +146,7 @@ using System.Collections.ObjectModel;
                 __builder2.OpenElement(9, "div");
                 __builder2.AddAttribute(10, "class", "col-lg-3 requestPriorityCentre");
                 __builder2.OpenComponent<SACOMaintenance.Blazor.Server.Components.RequestPriorityDashboardItem>(11);
-                __builder2.AddAttribute(12, "imageLocation", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(12, "imageLocation", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 13 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
                                                                       item.Icon
@@ -155,7 +155,7 @@ using System.Collections.ObjectModel;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(13, "color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(13, "color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 14 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
                                                               item.Colour
@@ -164,7 +164,7 @@ using System.Collections.ObjectModel;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(14, "text", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(14, "text", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 15 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
                                                              item.Name
@@ -173,7 +173,7 @@ using System.Collections.ObjectModel;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(15, "count", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+                __builder2.AddAttribute(15, "count", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
                                                               item.MaintRes.Count

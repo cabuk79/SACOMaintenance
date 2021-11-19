@@ -139,27 +139,23 @@ using System.Security.Claims;
             __builder.OpenElement(13, "div");
             __builder.AddAttribute(14, "class", "requestPriorityRight");
             __builder.OpenElement(15, "h2");
-            __builder.AddContent(16, 
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestPriorityDashboardItem.razor"
-                         text
+__builder.AddContent(16, text);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(17, "\r\n                    ");
             __builder.OpenElement(18, "h2");
-            __builder.AddContent(19, 
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestPriorityDashboardItem.razor"
-                         count
+__builder.AddContent(19, count);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

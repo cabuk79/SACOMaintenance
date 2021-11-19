@@ -121,10 +121,10 @@ using SACOMaintenance.Common.ModelDB;
 #nullable restore
 #line 44 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\AllParts.razor"
        
-   
+
     protected override async Task OnInitializedAsync()
     {
-        partViewModel.LoadAllParts();
+        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
     }
 
     public void CellRenderQty(Radzen.CellRenderEventArgs<Part> args)

@@ -1,0 +1,5 @@
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net6.0\SACOMaintenance.DataAccess.csproj.AssemblyReference.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net6.0\SACOMaintenance.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net6.0\SACOMaintenance.DataAccess.AssemblyInfoInputs.cache
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net6.0\SACOMaintenance.DataAccess.AssemblyInfo.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.DataAccess\obj\Debug\net6.0\SACOMaintenance.DataAccess.csproj.CoreCompileInputs.cache

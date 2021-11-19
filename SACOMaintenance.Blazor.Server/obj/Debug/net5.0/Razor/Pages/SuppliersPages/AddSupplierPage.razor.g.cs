@@ -153,7 +153,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(32, "class", "col-lg-8");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(33);
                 __builder2.AddAttribute(34, "Style", "width: 100%; border-color: black");
-                __builder2.AddAttribute(35, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(35, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 20 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                 supplierViewModel.NewSupplier.Name
@@ -162,8 +162,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(36, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Name = __value, supplierViewModel.NewSupplier.Name))));
-                __builder2.AddAttribute(37, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Name));
+                __builder2.AddAttribute(36, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Name = __value, supplierViewModel.NewSupplier.Name))));
+                __builder2.AddAttribute(37, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Name));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -181,7 +181,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(47, "class", "col-lg-8");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(48);
                 __builder2.AddAttribute(49, "Style", "width: 100%; border-color: black");
-                __builder2.AddAttribute(50, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(50, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                 supplierViewModel.NewSupplier.AddressLineOne
@@ -190,8 +190,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(51, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.AddressLineOne = __value, supplierViewModel.NewSupplier.AddressLineOne))));
-                __builder2.AddAttribute(52, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.AddressLineOne));
+                __builder2.AddAttribute(51, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.AddressLineOne = __value, supplierViewModel.NewSupplier.AddressLineOne))));
+                __builder2.AddAttribute(52, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.AddressLineOne));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -210,7 +210,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(63, "class", "col-lg-8");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(64);
                 __builder2.AddAttribute(65, "Style", "width: 100%; border-color: black");
-                __builder2.AddAttribute(66, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(66, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 34 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                 supplierViewModel.NewSupplier.AddressLineTwo
@@ -219,8 +219,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(67, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.AddressLineTwo = __value, supplierViewModel.NewSupplier.AddressLineTwo))));
-                __builder2.AddAttribute(68, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.AddressLineTwo));
+                __builder2.AddAttribute(67, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.AddressLineTwo = __value, supplierViewModel.NewSupplier.AddressLineTwo))));
+                __builder2.AddAttribute(68, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.AddressLineTwo));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -239,7 +239,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(79, "class", "col-lg-8");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(80);
                 __builder2.AddAttribute(81, "Style", "width: 100%; border-color: black");
-                __builder2.AddAttribute(82, "ReadOnly", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(82, "ReadOnly", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 40 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                                                       true
@@ -248,7 +248,7 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(83, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(83, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 41 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                 supplierViewModel.NewSupplier.Postcode.County
@@ -257,8 +257,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(84, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Postcode.County = __value, supplierViewModel.NewSupplier.Postcode.County))));
-                __builder2.AddAttribute(85, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Postcode.County));
+                __builder2.AddAttribute(84, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Postcode.County = __value, supplierViewModel.NewSupplier.Postcode.County))));
+                __builder2.AddAttribute(85, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Postcode.County));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -277,7 +277,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(96, "class", "col-lg-8");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(97);
                 __builder2.AddAttribute(98, "Style", "width: 100%; border-color: black");
-                __builder2.AddAttribute(99, "ReadOnly", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(99, "ReadOnly", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 47 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                                                       true
@@ -286,7 +286,7 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(100, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(100, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 48 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                 supplierViewModel.NewSupplier.Postcode.District
@@ -295,8 +295,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(101, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Postcode.District = __value, supplierViewModel.NewSupplier.Postcode.District))));
-                __builder2.AddAttribute(102, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Postcode.District));
+                __builder2.AddAttribute(101, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Postcode.District = __value, supplierViewModel.NewSupplier.Postcode.District))));
+                __builder2.AddAttribute(102, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Postcode.District));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -315,7 +315,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(113, "class", "col-lg-4");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenTextBox>(114);
                 __builder2.AddAttribute(115, "Style", "width: 100%; border-color: black");
-                __builder2.AddAttribute(116, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(116, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 55 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                 supplierViewModel.NewSupplier.Postcode.PostCode
@@ -324,8 +324,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(117, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Postcode.PostCode = __value, supplierViewModel.NewSupplier.Postcode.PostCode))));
-                __builder2.AddAttribute(118, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Postcode.PostCode));
+                __builder2.AddAttribute(117, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Postcode.PostCode = __value, supplierViewModel.NewSupplier.Postcode.PostCode))));
+                __builder2.AddAttribute(118, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Postcode.PostCode));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(119, "\r\n                                    ");
@@ -333,7 +333,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(121, "class", "col-lg-4");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenButton>(122);
                 __builder2.AddAttribute(123, "Text", "Search");
-                __builder2.AddAttribute(124, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+                __builder2.AddAttribute(124, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 58 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                             args => PostCodeOnChange(supplierViewModel.NewSupplier.Postcode.PostCode)
@@ -359,7 +359,7 @@ using SACOMaintenance.Common.ModelDB;
 #nullable disable
                 __builder2.OpenComponent<Radzen.Blazor.RadzenLabel>(130);
                 __builder2.AddAttribute(131, "Style", "color: red");
-                __builder2.AddAttribute(132, "Text", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(132, "Text", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 64 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                                    postCodeFoundError
@@ -392,7 +392,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(142, "div");
                 __builder2.AddAttribute(143, "class", "col-lg-12");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenHtmlEditor>(144);
-                __builder2.AddAttribute(145, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(145, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 70 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                                           supplierViewModel.NewSupplier.Comments
@@ -401,8 +401,8 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(146, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Comments = __value, supplierViewModel.NewSupplier.Comments))));
-                __builder2.AddAttribute(147, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Comments));
+                __builder2.AddAttribute(146, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => supplierViewModel.NewSupplier.Comments = __value, supplierViewModel.NewSupplier.Comments))));
+                __builder2.AddAttribute(147, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => supplierViewModel.NewSupplier.Comments));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -413,7 +413,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(152, "class", "col-lg-4");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenButton>(153);
                 __builder2.AddAttribute(154, "Text", "SAVE");
-                __builder2.AddAttribute(155, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+                __builder2.AddAttribute(155, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 73 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                                              args => AddNewSupplier()
@@ -431,7 +431,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenElement(157, "div");
                 __builder2.AddAttribute(158, "class", "col-lg-6");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenGoogleMap>(159);
-                __builder2.AddAttribute(160, "Zoom", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Double>(
+                __builder2.AddAttribute(160, "Zoom", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Double>(
 #nullable restore
 #line 78 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                   15
@@ -441,7 +441,7 @@ using SACOMaintenance.Common.ModelDB;
 #nullable disable
                 ));
                 __builder2.AddAttribute(161, "ApiKey", "AIzaSyB69EiMRd7IfrT6PK_0T-6H-ESsf8YakMM");
-                __builder2.AddAttribute(162, "Center", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.GoogleMapPosition>(
+                __builder2.AddAttribute(162, "Center", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.GoogleMapPosition>(
 #nullable restore
 #line 79 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                       new GoogleMapPosition()
@@ -456,7 +456,7 @@ using SACOMaintenance.Common.ModelDB;
                 ));
                 __builder2.AddAttribute(163, "Markers", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
                     __builder3.OpenComponent<Radzen.Blazor.RadzenGoogleMapMarker>(164);
-                    __builder3.AddAttribute(165, "Title", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                    __builder3.AddAttribute(165, "Title", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 85 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                    supplierViewModel.NewSupplier.Postcode.District
@@ -465,7 +465,7 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(166, "Label", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                    __builder3.AddAttribute(166, "Label", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 86 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                    supplierViewModel.NewSupplier.Postcode.District
@@ -474,7 +474,7 @@ using SACOMaintenance.Common.ModelDB;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(167, "Position", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.GoogleMapPosition>(
+                    __builder3.AddAttribute(167, "Position", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.GoogleMapPosition>(
 #nullable restore
 #line 87 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\SuppliersPages\AddSupplierPage.razor"
                                                                       new GoogleMapPosition()

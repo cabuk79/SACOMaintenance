@@ -135,7 +135,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.AddAttribute(11, "Property", "IconLocation");
                 __builder2.AddAttribute(12, "Template", (Microsoft.AspNetCore.Components.RenderFragment<PPE>)((data) => (__builder3) => {
                     __builder3.OpenComponent<Radzen.Blazor.RadzenImage>(13);
-                    __builder3.AddAttribute(14, "Path", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                    __builder3.AddAttribute(14, "Path", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEListComponent.razor"
                                     data.IconFileLocation

@@ -122,30 +122,26 @@ using SACOMaintenance.Common.ModelDB;
             __builder.AddAttribute(7, "class", "card-title");
             __builder.AddAttribute(8, "align", "center");
             __builder.AddContent(9, "Total for ");
-            __builder.AddContent(10, 
 #nullable restore
 #line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\TotalMaintReqCurrentYear.razor"
-                                                             DateTime.Now.Year
+__builder.AddContent(10, DateTime.Now.Year);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(11, "\r\n            ");
             __builder.OpenElement(12, "p");
             __builder.AddAttribute(13, "class", "card-text, containerDashNumberCountNumber");
             __builder.AddAttribute(14, "align", "center");
             __builder.OpenElement(15, "containerDashNumberCountNumber");
-            __builder.AddContent(16, 
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\TotalMaintReqCurrentYear.razor"
-                                                                                                                 dashboardViewModel.MaintReqCurrentYear.Count
+__builder.AddContent(16, dashboardViewModel.MaintReqCurrentYear.Count);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

@@ -152,7 +152,7 @@ using Microsoft.AspNetCore.Http;
             __builder.OpenElement(7, "div");
             __builder.AddAttribute(8, "class", "col-lg-12");
             __builder.OpenComponent<Radzen.Blazor.RadzenTemplateForm<MaintRequestInitiation>>(9);
-            __builder.AddAttribute(10, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MaintRequestInitiation>(
+            __builder.AddAttribute(10, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MaintRequestInitiation>(
 #nullable restore
 #line 25 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                       AddReqViewModel.MaintReq
@@ -161,7 +161,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(11, "Submit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<MaintRequestInitiation>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<MaintRequestInitiation>(this, 
+            __builder.AddAttribute(11, "Submit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<MaintRequestInitiation>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<MaintRequestInitiation>(this, 
 #nullable restore
 #line 25 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                          OnSubmit
@@ -170,7 +170,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(12, "InvalidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Radzen.FormInvalidSubmitEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Radzen.FormInvalidSubmitEventArgs>(this, 
+            __builder.AddAttribute(12, "InvalidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Radzen.FormInvalidSubmitEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Radzen.FormInvalidSubmitEventArgs>(this, 
 #nullable restore
 #line 25 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                                   OnInvalidSubmit
@@ -197,7 +197,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(28, "\r\n                                    ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenDropDown<int>>(29);
-                    __builder3.AddAttribute(30, "AllowClear", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(30, "AllowClear", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 32 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                 true
@@ -207,7 +207,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(31, "Style", "width: 100%; border-color: black; display: block");
-                    __builder3.AddAttribute(32, "FilterCaseSensitivity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
+                    __builder3.AddAttribute(32, "FilterCaseSensitivity", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
 #nullable restore
 #line 33 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                            FilterCaseSensitivity.CaseInsensitive
@@ -217,7 +217,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(33, "Name", "PriorityDrop");
-                    __builder3.AddAttribute(34, "FilterOperator", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
+                    __builder3.AddAttribute(34, "FilterOperator", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
 #nullable restore
 #line 34 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                               StringFilterOperator.Contains
@@ -226,7 +226,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(35, "AllowFiltering", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(35, "AllowFiltering", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 35 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                     true
@@ -235,7 +235,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(36, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+                    __builder3.AddAttribute(36, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 36 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                            AddReqViewModel.Priorities
@@ -246,7 +246,7 @@ using Microsoft.AspNetCore.Http;
                     ));
                     __builder3.AddAttribute(37, "TextProperty", "Name");
                     __builder3.AddAttribute(38, "ValueProperty", "Id");
-                    __builder3.AddAttribute(39, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(39, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 34 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                   AddReqViewModel.PriorityId
@@ -255,8 +255,8 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(40, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.PriorityId = __value, AddReqViewModel.PriorityId))));
-                    __builder3.AddAttribute(41, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.PriorityId));
+                    __builder3.AddAttribute(40, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.PriorityId = __value, AddReqViewModel.PriorityId))));
+                    __builder3.AddAttribute(41, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.PriorityId));
                     __builder3.AddAttribute(42, "Template", (Microsoft.AspNetCore.Components.RenderFragment<dynamic>)((DropDownPrioTemplate) => (__builder4) => {
                         __builder4.OpenElement(43, "div");
                         __builder4.AddAttribute(44, "class", "row");
@@ -277,15 +277,13 @@ using Microsoft.AspNetCore.Http;
                         __builder4.AddMarkupContent(49, "\r\n                                                ");
                         __builder4.OpenElement(50, "div");
                         __builder4.AddAttribute(51, "class", "col-lg-5");
-                        __builder4.AddContent(52, 
 #nullable restore
 #line 43 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
-                                                      (DropDownPrioTemplate as Priority).Name
+__builder4.AddContent(52, (DropDownPrioTemplate as Priority).Name);
 
 #line default
 #line hidden
 #nullable disable
-                        );
                         __builder4.CloseElement();
                         __builder4.CloseElement();
                     }
@@ -301,7 +299,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenRequiredValidator>(58);
                     __builder3.AddAttribute(59, "Component", "PriorityDrop");
                     __builder3.AddAttribute(60, "Text", "You must selected a priority!");
-                    __builder3.AddAttribute(61, "DefaultValue", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(61, "DefaultValue", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 52 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                                          0
@@ -326,7 +324,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(71, "\r\n                                    ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenDropDown<int>>(72);
-                    __builder3.AddAttribute(73, "AllowClear", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(73, "AllowClear", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 60 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                 true
@@ -336,7 +334,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(74, "Style", "width: 100%; border-color: black");
-                    __builder3.AddAttribute(75, "FilterCaseSensitivity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
+                    __builder3.AddAttribute(75, "FilterCaseSensitivity", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
 #nullable restore
 #line 62 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                            FilterCaseSensitivity.CaseInsensitive
@@ -346,7 +344,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(76, "Name", "CompanyDrop");
-                    __builder3.AddAttribute(77, "FilterOperator", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
+                    __builder3.AddAttribute(77, "FilterOperator", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
 #nullable restore
 #line 63 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                              StringFilterOperator.Contains
@@ -355,7 +353,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(78, "AllowFiltering", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(78, "AllowFiltering", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 64 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                     true
@@ -364,7 +362,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(79, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+                    __builder3.AddAttribute(79, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 65 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                            AddReqViewModel.Companies
@@ -375,7 +373,7 @@ using Microsoft.AspNetCore.Http;
                     ));
                     __builder3.AddAttribute(80, "TextProperty", "CompanyName");
                     __builder3.AddAttribute(81, "ValueProperty", "Id");
-                    __builder3.AddAttribute(82, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(82, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 63 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                   AddReqViewModel.CompanyId
@@ -384,8 +382,8 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(83, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.CompanyId = __value, AddReqViewModel.CompanyId))));
-                    __builder3.AddAttribute(84, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.CompanyId));
+                    __builder3.AddAttribute(83, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.CompanyId = __value, AddReqViewModel.CompanyId))));
+                    __builder3.AddAttribute(84, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.CompanyId));
                     __builder3.CloseComponent();
                     __builder3.CloseElement();
                     __builder3.CloseElement();
@@ -397,7 +395,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenRequiredValidator>(90);
                     __builder3.AddAttribute(91, "Component", "CompanyDrop");
                     __builder3.AddAttribute(92, "Text", "You must selected a company!");
-                    __builder3.AddAttribute(93, "DefaultValue", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(93, "DefaultValue", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 71 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                                        0
@@ -425,7 +423,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(105, "\r\n                                    ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenDropDown<int>>(106);
-                    __builder3.AddAttribute(107, "AllowClear", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(107, "AllowClear", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 81 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                 true
@@ -435,7 +433,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(108, "Style", "width: 100%; border-color: black");
-                    __builder3.AddAttribute(109, "FilterCaseSensitivity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
+                    __builder3.AddAttribute(109, "FilterCaseSensitivity", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
 #nullable restore
 #line 82 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                            FilterCaseSensitivity.CaseInsensitive
@@ -444,7 +442,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(110, "FilterOperator", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
+                    __builder3.AddAttribute(110, "FilterOperator", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
 #nullable restore
 #line 83 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                              StringFilterOperator.Contains
@@ -453,7 +451,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(111, "AllowFiltering", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(111, "AllowFiltering", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 84 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                     true
@@ -463,7 +461,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(112, "Name", "FactoryDrop");
-                    __builder3.AddAttribute(113, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+                    __builder3.AddAttribute(113, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 85 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                            AddReqViewModel.Factories
@@ -474,7 +472,7 @@ using Microsoft.AspNetCore.Http;
                     ));
                     __builder3.AddAttribute(114, "TextProperty", "FactoryName");
                     __builder3.AddAttribute(115, "ValueProperty", "Id");
-                    __builder3.AddAttribute(116, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
+                    __builder3.AddAttribute(116, "Change", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
 #nullable restore
 #line 86 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                              args => OnFactoryChange(args, "areasListBox")
@@ -483,7 +481,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     )));
-                    __builder3.AddAttribute(117, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(117, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 83 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                   AddReqViewModel.FactoryId
@@ -492,8 +490,8 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(118, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.FactoryId = __value, AddReqViewModel.FactoryId))));
-                    __builder3.AddAttribute(119, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.FactoryId));
+                    __builder3.AddAttribute(118, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.FactoryId = __value, AddReqViewModel.FactoryId))));
+                    __builder3.AddAttribute(119, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.FactoryId));
                     __builder3.CloseComponent();
                     __builder3.CloseElement();
                     __builder3.CloseElement();
@@ -505,7 +503,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenRequiredValidator>(125);
                     __builder3.AddAttribute(126, "Component", "FactoryDrop");
                     __builder3.AddAttribute(127, "Text", "You must selected a factory!");
-                    __builder3.AddAttribute(128, "DefaultValue", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(128, "DefaultValue", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 92 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                                        0
@@ -539,7 +537,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(138, "\r\n                                            ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenDropDown<int>>(139);
-                    __builder3.AddAttribute(140, "AllowClear", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(140, "AllowClear", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 103 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                         true
@@ -549,7 +547,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(141, "Style", "width: 100%; border-color: black");
-                    __builder3.AddAttribute(142, "FilterCaseSensitivity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
+                    __builder3.AddAttribute(142, "FilterCaseSensitivity", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
 #nullable restore
 #line 105 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                    FilterCaseSensitivity.CaseInsensitive
@@ -558,7 +556,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(143, "FilterOperator", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
+                    __builder3.AddAttribute(143, "FilterOperator", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
 #nullable restore
 #line 107 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                             StringFilterOperator.Contains
@@ -567,7 +565,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(144, "AllowFiltering", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(144, "AllowFiltering", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 108 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                             true
@@ -577,7 +575,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(145, "Name", "AreaDrop");
-                    __builder3.AddAttribute(146, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+                    __builder3.AddAttribute(146, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 109 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                    AddReqViewModel.Areas
@@ -588,7 +586,7 @@ using Microsoft.AspNetCore.Http;
                     ));
                     __builder3.AddAttribute(147, "TextProperty", "AreaName");
                     __builder3.AddAttribute(148, "ValueProperty", "Id");
-                    __builder3.AddAttribute(149, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
+                    __builder3.AddAttribute(149, "Change", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
 #nullable restore
 #line 111 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                      args => OnAreaChange(args, "EquipmentListBox")
@@ -597,7 +595,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     )));
-                    __builder3.AddAttribute(150, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(150, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 106 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                           AddReqViewModel.AreaId
@@ -606,8 +604,8 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(151, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.AreaId = __value, AddReqViewModel.AreaId))));
-                    __builder3.AddAttribute(152, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.AreaId));
+                    __builder3.AddAttribute(151, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.AreaId = __value, AddReqViewModel.AreaId))));
+                    __builder3.AddAttribute(152, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.AreaId));
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(153, "\r\n                                            ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenLabel>(154);
@@ -622,7 +620,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenRequiredValidator>(162);
                     __builder3.AddAttribute(163, "Component", "AreaDrop");
                     __builder3.AddAttribute(164, "Text", "You must selected an area!");
-                    __builder3.AddAttribute(165, "DefaultValue", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(165, "DefaultValue", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 116 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                                                   0
@@ -668,7 +666,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(175, "\r\n                                            ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenDropDown<int>>(176);
-                    __builder3.AddAttribute(177, "AllowClear", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(177, "AllowClear", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 133 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                         true
@@ -678,7 +676,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(178, "Style", "width: 100%; border-color: black");
-                    __builder3.AddAttribute(179, "FilterCaseSensitivity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
+                    __builder3.AddAttribute(179, "FilterCaseSensitivity", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.FilterCaseSensitivity>(
 #nullable restore
 #line 134 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                    FilterCaseSensitivity.CaseInsensitive
@@ -687,7 +685,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(180, "FilterOperator", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
+                    __builder3.AddAttribute(180, "FilterOperator", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.StringFilterOperator>(
 #nullable restore
 #line 135 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                        StringFilterOperator.Contains
@@ -696,7 +694,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(181, "AllowFiltering", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                    __builder3.AddAttribute(181, "AllowFiltering", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 136 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                             true
@@ -706,7 +704,7 @@ using Microsoft.AspNetCore.Http;
 #nullable disable
                     ));
                     __builder3.AddAttribute(182, "Name", "EquipmentDrop");
-                    __builder3.AddAttribute(183, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+                    __builder3.AddAttribute(183, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 137 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                    AddReqViewModel.Equipment
@@ -717,7 +715,7 @@ using Microsoft.AspNetCore.Http;
                     ));
                     __builder3.AddAttribute(184, "TextProperty", "Name");
                     __builder3.AddAttribute(185, "ValueProperty", "Id");
-                    __builder3.AddAttribute(186, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(186, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 135 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                           AddReqViewModel.EquipmentId
@@ -726,8 +724,8 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(187, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.EquipmentId = __value, AddReqViewModel.EquipmentId))));
-                    __builder3.AddAttribute(188, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.EquipmentId));
+                    __builder3.AddAttribute(187, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<int>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<int>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.EquipmentId = __value, AddReqViewModel.EquipmentId))));
+                    __builder3.AddAttribute(188, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<int>>>(() => AddReqViewModel.EquipmentId));
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(189, "\r\n                                            ");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenLabel>(190);
@@ -742,7 +740,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenRequiredValidator>(198);
                     __builder3.AddAttribute(199, "Component", "EquipmentDrop");
                     __builder3.AddAttribute(200, "Text", "You must selected  piece of equipment!");
-                    __builder3.AddAttribute(201, "DefaultValue", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+                    __builder3.AddAttribute(201, "DefaultValue", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 142 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                                                                                                                                    0
@@ -774,7 +772,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenComponent<Radzen.Blazor.RadzenHtmlEditor>(207);
                     __builder3.AddAttribute(208, "Style", "height: 500px; border-color: black");
                     __builder3.AddAttribute(209, "Name", "DetailsHTML");
-                    __builder3.AddAttribute(210, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                    __builder3.AddAttribute(210, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 154 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                            AddReqViewModel.MaintReq.RequestDetails
@@ -783,8 +781,8 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(211, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.MaintReq.RequestDetails = __value, AddReqViewModel.MaintReq.RequestDetails))));
-                    __builder3.AddAttribute(212, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => AddReqViewModel.MaintReq.RequestDetails));
+                    __builder3.AddAttribute(211, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => AddReqViewModel.MaintReq.RequestDetails = __value, AddReqViewModel.MaintReq.RequestDetails))));
+                    __builder3.AddAttribute(212, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => AddReqViewModel.MaintReq.RequestDetails));
                     __builder3.AddAttribute(213, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
                         __builder4.OpenComponent<Radzen.Blazor.RadzenHtmlEditorUndo>(214);
                         __builder4.CloseComponent();
@@ -828,7 +826,7 @@ using Microsoft.AspNetCore.Http;
                     __builder3.OpenElement(238, "div");
                     __builder3.AddAttribute(239, "class", "col-lg-12");
                     __builder3.OpenComponent<Radzen.Blazor.RadzenButton>(240);
-                    __builder3.AddAttribute(241, "ButtonType", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonType>(
+                    __builder3.AddAttribute(241, "ButtonType", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonType>(
 #nullable restore
 #line 170 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
                                                       ButtonType.Submit

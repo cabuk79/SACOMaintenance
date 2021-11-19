@@ -126,15 +126,13 @@ using SACOMaintenance.DataAccess.Interfaces;
             __builder.AddAttribute(3, "class", "row");
             __builder.OpenElement(4, "h3");
             __builder.AddContent(5, "Company View for ");
-            __builder.AddContent(6, 
 #nullable restore
 #line 8 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewComponent.razor"
-                              CompanyModelItem.CompanyName
+__builder.AddContent(6, CompanyModelItem.CompanyName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(7, "\r\n    ");
@@ -142,15 +140,13 @@ using SACOMaintenance.DataAccess.Interfaces;
             __builder.AddAttribute(9, "class", "row");
             __builder.OpenElement(10, "h3");
             __builder.AddContent(11, "Lsit of Maintenance Requests Linked to ");
-            __builder.AddContent(12, 
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewComponent.razor"
-                                                    CompanyModelItem.CompanyName
+__builder.AddContent(12, CompanyModelItem.CompanyName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(13, "\r\n    ");
@@ -184,7 +180,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.OpenComponent<Radzen.Blazor.RadzenGridColumn<MaintRequestInitiation>>(21);
                 __builder2.AddAttribute(22, "Property", "Id");
                 __builder2.AddAttribute(23, "Title", "Id");
-                __builder2.AddAttribute(24, "Filterable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(24, "Filterable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewComponent.razor"
                                                                                                       false
@@ -213,7 +209,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.OpenComponent<Radzen.Blazor.RadzenGridColumn<MaintRequestInitiation>>(38);
                 __builder2.AddAttribute(39, "Property", "Area.Id");
                 __builder2.AddAttribute(40, "Title", "Actions");
-                __builder2.AddAttribute(41, "Filterable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(41, "Filterable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 20 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewComponent.razor"
                                                                                                                 false

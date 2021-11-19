@@ -121,15 +121,13 @@ using SACOMaintenance.DataAccess.Interfaces;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.AddContent(0, "Model Area Name:  ");
-            __builder.AddContent(1, 
 #nullable restore
 #line 10 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
-                   areaViewModel.AreaName
+__builder.AddContent(1, areaViewModel.AreaName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.AddMarkupContent(2, " <br>\r\n\r\n");
             __builder.AddMarkupContent(3, "<div section=\"header\"><div class=\"container-fluid\"><h1>Areas</h1></div></div>\r\n\r\n");
             __builder.OpenElement(4, "div");
@@ -141,7 +139,7 @@ using SACOMaintenance.DataAccess.Interfaces;
             __builder.OpenElement(10, "div");
             __builder.AddAttribute(11, "class", "col-lg-2");
             __builder.OpenComponent<Radzen.Blazor.RadzenListBox<int>>(12);
-            __builder.AddAttribute(13, "Data", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
+            __builder.AddAttribute(13, "Data", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.IEnumerable>(
 #nullable restore
 #line 22 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
                                                   areaViewModel.areas
@@ -154,7 +152,7 @@ using SACOMaintenance.DataAccess.Interfaces;
             __builder.AddAttribute(15, "ValueProperty", "Id");
             __builder.AddAttribute(16, "Style", "height:500px");
             __builder.AddAttribute(17, "Name", "areasListBox");
-            __builder.AddAttribute(18, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
+            __builder.AddAttribute(18, "Change", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Object>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Object>(this, 
 #nullable restore
 #line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
                                         args => OnChange(args, "areasListBox")
@@ -174,19 +172,17 @@ using SACOMaintenance.DataAccess.Interfaces;
             __builder.AddAttribute(25, "class", "area-form-area");
             __builder.OpenElement(26, "h3");
             __builder.AddContent(27, "Viewing: ");
-            __builder.AddContent(28, 
 #nullable restore
 #line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
-                                      areaViewModel.Area.AreaName
+__builder.AddContent(28, areaViewModel.Area.AreaName);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(29, "\r\n                        ");
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(30);
-            __builder.AddAttribute(31, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(31, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 31 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
                                           areaViewModel.Area
@@ -203,7 +199,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.AddMarkupContent(37, "<label style=\"font-weight:bold\">Name</label>\r\n                                    ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(38);
                 __builder2.AddAttribute(39, "class", "form-control");
-                __builder2.AddAttribute(40, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(40, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 35 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
                                                             areaViewModel.Area.AreaName
@@ -212,8 +208,8 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(41, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => areaViewModel.Area.AreaName = __value, areaViewModel.Area.AreaName))));
-                __builder2.AddAttribute(42, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => areaViewModel.Area.AreaName));
+                __builder2.AddAttribute(41, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => areaViewModel.Area.AreaName = __value, areaViewModel.Area.AreaName))));
+                __builder2.AddAttribute(42, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => areaViewModel.Area.AreaName));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(43, "\r\n                                ");
@@ -228,7 +224,7 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line default
 #line hidden
 #nullable disable
-                , 52, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => areaViewModel.FactoryId = __value, areaViewModel.FactoryId)), 53, () => areaViewModel.FactoryId, 54, (__builder3) => {
+                , 52, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => areaViewModel.FactoryId = __value, areaViewModel.FactoryId)), 53, () => areaViewModel.FactoryId, 54, (__builder3) => {
 #nullable restore
 #line 41 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
                                          foreach (var factory in areaViewModel.factories)
@@ -247,15 +243,13 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line hidden
 #nullable disable
                     );
-                    __builder3.AddContent(57, 
 #nullable restore
 #line 43 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
-                                                                         factory.FactoryName
+__builder3.AddContent(57, factory.FactoryName);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 44 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
@@ -272,7 +266,7 @@ using SACOMaintenance.DataAccess.Interfaces;
                 __builder2.AddAttribute(60, "class", "form-group-row");
                 __builder2.AddMarkupContent(61, "<label style=\"font-weight:bold\">Comments</label>\r\n                                    ");
                 __builder2.OpenComponent<Radzen.Blazor.RadzenHtmlEditor>(62);
-                __builder2.AddAttribute(63, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(63, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 49 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\AreaPages\AreaEditComponent.razor"
                                                                    areaViewModel.Area.CommentsNotes
@@ -281,8 +275,8 @@ using SACOMaintenance.DataAccess.Interfaces;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(64, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => areaViewModel.Area.CommentsNotes = __value, areaViewModel.Area.CommentsNotes))));
-                __builder2.AddAttribute(65, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => areaViewModel.Area.CommentsNotes));
+                __builder2.AddAttribute(64, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => areaViewModel.Area.CommentsNotes = __value, areaViewModel.Area.CommentsNotes))));
+                __builder2.AddAttribute(65, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => areaViewModel.Area.CommentsNotes));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

@@ -134,7 +134,7 @@ using SACOMaintenance.Common.ModelDB;
                 __builder2.OpenComponent<Radzen.Blazor.RadzenGridColumn<AreaModel>>(10);
                 __builder2.AddAttribute(11, "Property", "areaViewModel.Id");
                 __builder2.AddAttribute(12, "Title", "Actions");
-                __builder2.AddAttribute(13, "Filterable", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(13, "Filterable", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 12 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\TestPage.razor"
                                                                                                         false

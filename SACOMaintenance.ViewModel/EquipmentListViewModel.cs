@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using SACOMaintenance.DataAccess.Interfaces;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -20,8 +21,9 @@ namespace SACOMaintenance.ViewModel
             LoadAllEquipment();
         }
 
-        public async void LoadAllEquipment()
+        public async Task LoadAllEquipment()
         {
+            //Review the async method on this
             var equipList = new ObservableCollection<Equipment>(await EquipmentDataProvider.LoadAllEquipments());
             EquipmentList.Clear();
 

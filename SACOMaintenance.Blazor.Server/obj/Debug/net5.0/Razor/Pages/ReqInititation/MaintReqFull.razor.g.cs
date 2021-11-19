@@ -129,19 +129,17 @@ using Microsoft.AspNetCore.SignalR.Client;
         {
             __builder.OpenElement(0, "h3");
             __builder.AddContent(1, "Maintenance Request ");
-            __builder.AddContent(2, 
 #nullable restore
 #line 9 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                         maintReqInitation.maintReqId
+__builder.AddContent(2, maintReqInitation.maintReqId);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(3, "\r\n\r\n");
             __builder.OpenComponent<Radzen.Blazor.RadzenButton>(4);
-            __builder.AddAttribute(5, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddAttribute(5, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 11 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                       args => maintReqInitation.ExportRequest()
@@ -152,7 +150,7 @@ using Microsoft.AspNetCore.SignalR.Client;
             )));
             __builder.AddAttribute(6, "Text", "Create Request Form Word");
             __builder.AddAttribute(7, "Icon", "import_export");
-            __builder.AddAttribute(8, "ButtonStyle", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonStyle>(
+            __builder.AddAttribute(8, "ButtonStyle", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.ButtonStyle>(
 #nullable restore
 #line 12 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                 ButtonStyle.Secondary
@@ -213,45 +211,39 @@ using Microsoft.AspNetCore.SignalR.Client;
                 __builder2.OpenElement(50, "div");
                 __builder2.AddAttribute(51, "class", "col-lg-4");
                 __builder2.OpenElement(52, "span");
-                __builder2.AddContent(53, 
 #nullable restore
 #line 29 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                                                                 maintReqInitation.factoryName
+__builder2.AddContent(53, maintReqInitation.factoryName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(54, "\r\n                                    ");
                 __builder2.OpenElement(55, "div");
                 __builder2.AddAttribute(56, "class", "col-lg-4");
                 __builder2.OpenElement(57, "span");
-                __builder2.AddContent(58, 
 #nullable restore
 #line 30 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                                                                 maintReqInitation.areaName
+__builder2.AddContent(58, maintReqInitation.areaName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(59, "\r\n                                    ");
                 __builder2.OpenElement(60, "div");
                 __builder2.AddAttribute(61, "class", "col-lg-4");
                 __builder2.OpenElement(62, "span");
-                __builder2.AddContent(63, 
 #nullable restore
 #line 31 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                                                                 maintReqInitation.equipName
+__builder2.AddContent(63, maintReqInitation.equipName);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -274,15 +266,13 @@ using Microsoft.AspNetCore.SignalR.Client;
                 __builder2.AddAttribute(80, "class", "row");
                 __builder2.OpenElement(81, "div");
                 __builder2.AddAttribute(82, "class", "col-lg-12");
-                __builder2.AddContent(83, 
 #nullable restore
 #line 46 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                                                                  (MarkupString)detailMarkUp
+__builder2.AddContent(83, (MarkupString)detailMarkUp);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -304,7 +294,7 @@ using Microsoft.AspNetCore.SignalR.Client;
             __builder.OpenElement(87, "div");
             __builder.AddAttribute(88, "class", "col-lg-12");
             __builder.OpenComponent<Radzen.Blazor.RadzenButton>(89);
-            __builder.AddAttribute(90, "Click", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddAttribute(90, "Click", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 62 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                           UpdateRisks
@@ -316,7 +306,7 @@ using Microsoft.AspNetCore.SignalR.Client;
             __builder.CloseComponent();
             __builder.AddMarkupContent(91, "\r\n                    ");
             __builder.OpenComponent<SACOMaintenance.Blazor.Server.Components.RequestRiskChoice>(92);
-            __builder.AddAttribute(93, "Risks", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.ObjectModel.ObservableCollection<SACOMaintenance.Common.ModelDB.Risk>>(
+            __builder.AddAttribute(93, "Risks", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.ObjectModel.ObservableCollection<SACOMaintenance.Common.ModelDB.Risk>>(
 #nullable restore
 #line 63 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                                                                     maintReqInitation.Risks
@@ -325,7 +315,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(94, "ItemsChosen", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk>>(
+            __builder.AddAttribute(94, "ItemsChosen", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk>>(
 #nullable restore
 #line 63 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                           maintReqInitation.RiskListsChosen
@@ -334,7 +324,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(95, "ItemsChosenChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Collections.Generic.List<SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk>>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Collections.Generic.List<SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk>>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => maintReqInitation.RiskListsChosen = __value, maintReqInitation.RiskListsChosen))));
+            __builder.AddAttribute(95, "ItemsChosenChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Collections.Generic.List<SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk>>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Collections.Generic.List<SACOMaintenance.Common.ModelDB.MaintRequestInitiationRisk>>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => maintReqInitation.RiskListsChosen = __value, maintReqInitation.RiskListsChosen))));
             __builder.CloseComponent();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -346,7 +336,7 @@ using Microsoft.AspNetCore.SignalR.Client;
             __builder.OpenComponent<Radzen.Blazor.RadzenFieldset>(101);
             __builder.AddAttribute(102, "Text", "Isolations");
             __builder.AddAttribute(103, "Style", "border-color: black");
-            __builder.AddAttribute(104, "AllowCollapse", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+            __builder.AddAttribute(104, "AllowCollapse", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 69 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                                                                  true
@@ -370,15 +360,13 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
                 __builder2.OpenElement(111, "li");
-                __builder2.AddContent(112, 
 #nullable restore
 #line 76 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                                             item.Name
+__builder2.AddContent(112, item.Name);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
 #nullable restore
 #line 78 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
@@ -405,7 +393,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line default
 #line hidden
 #nullable disable
-                , 117, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => maintReqInitation.IsolationsSelected = __value, maintReqInitation.IsolationsSelected)), 118, (Isolation) => (__builder3) => {
+                , 117, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => maintReqInitation.IsolationsSelected = __value, maintReqInitation.IsolationsSelected)), 118, (Isolation) => (__builder3) => {
                     __builder3.OpenElement(119, "div");
                     __builder3.AddAttribute(120, "class", "row");
                     __builder3.OpenElement(121, "div");
@@ -439,15 +427,13 @@ using Microsoft.AspNetCore.SignalR.Client;
                     __builder3.AddAttribute(130, "class", "row");
                     __builder3.OpenElement(131, "div");
                     __builder3.AddAttribute(132, "class", "col-lg-12");
-                    __builder3.AddContent(133, 
 #nullable restore
 #line 90 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
-                                                 Isolation.Name
+__builder3.AddContent(133, Isolation.Name);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
                     __builder3.CloseElement();
                 }
@@ -486,7 +472,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
             __builder.OpenComponent<SACOMaintenance.Blazor.Server.Pages.ReqInititation.GeneralMaintReqComponent>(139);
-            __builder.AddAttribute(140, "maintReq", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SACOMaintenance.Common.ModelDB.MaintRequestInitiation>(
+            __builder.AddAttribute(140, "maintReq", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SACOMaintenance.Common.ModelDB.MaintRequestInitiation>(
 #nullable restore
 #line 110 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                     maintReqInitation.maintReqInitation
@@ -495,7 +481,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(141, "ReqReadOnly", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+            __builder.AddAttribute(141, "ReqReadOnly", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 110 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                                                                       false
@@ -504,7 +490,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(142, "ReqReadOnlyChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Boolean>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Boolean>(this, 
+            __builder.AddAttribute(142, "ReqReadOnlyChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Boolean>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Boolean>(this, 
 #nullable restore
 #line 110 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
                                                                                                                                  ReqChangeBool
