@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace SACOMaintenance.Blazor.Server.Pages.OrderPages
+namespace SACOMaintenance.Blazor.Server.Shared
 {
     #line hidden
     using System;
@@ -103,15 +103,7 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\OrderItem.razor"
-using SACOMaintenance.Common.ModelDB;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/orderitemtest")]
-    public partial class OrderItem : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class CbDropDown<TItem> : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,43 +111,35 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 78 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\OrderItem.razor"
+#line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbDropDown.razor"
        
 
+    private void OnSelect(ChangeEventArgs e)
+    {
+        var selectedValueIdString = e.Value.ToString();
+        SelectedItem = selectedValueIdString;
+        SelectedItemChanged.InvokeAsync(SelectedItem);
+    }
+
     [Parameter]
-    public string Content { get; set; } = string.Empty;
+    public IEnumerable<TItem> Items { get; set; }
 
+    [Parameter]
+    public string ValueId { get; set; }
 
-    public string selectedid { get; set; }
+    [Parameter]
+    public string Text {  get;  set; }
 
-    void LoadParts()
-    {
-        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
+    [Parameter]
+    public string SelectedItem { get; set; }
 
-    }
-
-    Part partSelected = new();
-    //string partIdSelected;
-
-    public List<string> Testing = new();
-
-
-    private void SelectedItemChosen(Part part)
-    {
-        //partSelected = part;
-        //partIdSelected = partSelected.Id.ToString();
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
-    }
+    [Parameter]
+    public EventCallback<string> SelectedItemChanged { get; set; }
 
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

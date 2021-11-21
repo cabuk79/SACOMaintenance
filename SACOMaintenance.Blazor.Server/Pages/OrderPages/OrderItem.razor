@@ -1,4 +1,6 @@
-﻿@*@page "/orderitemtest"*@
+﻿@page "/orderitemtest"
+@inject SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel
+@using SACOMaintenance.Common.ModelDB
 
 <h3>Add Order Item</h3>
 
@@ -7,7 +9,17 @@
         <div class="col-lg-4"><RadzenLabel Text="Existing Part?"></RadzenLabel></div>
         <div class="col-lg-4"><RadzenSwitch></RadzenSwitch></div>
         <div class="col-lg-4"><RadzenLabel Text="Part"></RadzenLabel></div>
-        <div class="col-lg-4"><RadzenDropDown TValue="string"></RadzenDropDown></div>
+        <div class="col-lg-4">
+            <button type="button" @onclick="(() => LoadParts())">Show Items</button>
+            <RadzenDropDown TValue="int" Data=@partViewModel.parts
+                        TextProperty="Name" ValueProperty="Id">
+            </RadzenDropDown>
+        </div>
+
+        @foreach(var item in partViewModel.parts)
+        {
+            <h4>@item.Name</h4>
+        }
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -19,7 +31,26 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <RadzenDropDown TValue="string"></RadzenDropDown>
+                        <div class="dropdown">
+                            <button class="btn btn-alert-secondary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                            Items
+                        </button>
+
+                        <h3>Part</h3>
+                        
+                       
+
+                          <CbDropDown Items="@partViewModel.parts"
+                          ValueId="Id" Text="Name" @bind-SelectedItem="@selectedid">
+                          </CbDropDown>
+
+                        
+                       
+                          @selectedid
+                        </div>
+                        @*<RadzenDropDown TValue="string" Data="@Testing">
+                        </RadzenDropDown>*@
                     </div>
                     <div class="col-lg-6">
                         <RadzenDropDown TValue="string"></RadzenDropDown>
@@ -45,5 +76,34 @@
 </div>
 
 @code {
+
+    [Parameter]
+    public string Content { get; set; } = string.Empty;
+
+
+    public string selectedid { get; set; }
+
+    void LoadParts()
+    {
+        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
+
+    }
+
+    Part partSelected = new();
+    //string partIdSelected;
+
+    public List<string> Testing = new();
+
+
+    private void SelectedItemChosen(Part part)
+    {
+        //partSelected = part;
+        //partIdSelected = partSelected.Id.ToString();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
+    }
 
 }

@@ -1,0 +1,40 @@
+﻿@typeparam TItem
+
+<div class="container">
+    <select class="form-control" @onchange="@OnSelect">
+        @foreach (var item in Items)
+        {
+            var valueOfItem = typeof(TItem).GetProperty(ValueId).GetValue(item);
+            var text = typeof(TItem).GetProperty(Text).GetValue(item);
+            <option value=@valueOfItem>@text</option>
+        }
+    </select>
+</div>
+
+
+
+@code {
+
+    private void OnSelect(ChangeEventArgs e)
+    {
+        var selectedValueIdString = e.Value.ToString();
+        SelectedItem = selectedValueIdString;
+        SelectedItemChanged.InvokeAsync(SelectedItem);
+    }
+
+    [Parameter]
+    public IEnumerable<TItem> Items { get; set; }
+
+    [Parameter]
+    public string ValueId { get; set; }
+
+    [Parameter]
+    public string Text {  get;  set; }
+
+    [Parameter]
+    public string SelectedItem { get; set; }
+
+    [Parameter]
+    public EventCallback<string> SelectedItemChanged { get; set; }
+
+}
