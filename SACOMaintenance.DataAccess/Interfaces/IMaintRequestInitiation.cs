@@ -27,7 +27,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
 
         public void LoadRiskLevel(int maintReqId);
 
-        Task<IEnumerable<Risk>> LoadRisksByMaintType(string maintType);
+        //Task<IEnumerable<Risk>> LoadRisksByMaintType(string maintType);
+        //public void LoadRisksByMaintType(string maintType);
         public void UpdateMaintReq(MaintRequestInitiation maintReqToUpdate);
         public void UpdateRiskRecords(ObservableCollection<MaintRequestInitiationRisk> risksUpdate);
         public void UpdateIsolationsRecords(List<string> isolationsChosen, int maintId, List<int> allIsolationId);

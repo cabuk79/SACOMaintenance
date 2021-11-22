@@ -54,10 +54,12 @@ namespace SACOMaintenance.DataAccess
         public async Task<GeneralRequest> GetSingalGeneralRequestInfo(int maintReqId)
         {
             var generalRequest = await _sacoMaintenanceContext.GeneralRequests
-                .Include(p => p.MaintRequestInitiation.PPEEquipment)
-                .Include(pp => pp.MaintRequestInitiation.PPEEquipment)
+                .Include(p => p.MaintRequestInitiation.PPEEquipment)               
                 .FirstOrDefaultAsync(i => i.MaintRequestId == maintReqId);
             return generalRequest;
+
+
+            //.Include(pp => pp.MaintRequestInitiation.PPEEquipment)
         }
     }
 }

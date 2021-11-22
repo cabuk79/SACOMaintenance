@@ -111,7 +111,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbDropDown.razor"
+#line 20 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbDropDown.razor"
        
 
     [Parameter]
@@ -119,20 +119,24 @@ using System.Security.Claims;
 
     private void OnSelect(ChangeEventArgs e)
     {
-        var selectedValueIdString = e.Value.ToString();
+        var selectedValueIdString = e.Value.ToString();  //Get the value selected
         SelectedItem = selectedValueIdString;
-        SelectedItemChanged.InvokeAsync(SelectedItem);
+        SelectedItemChanged.InvokeAsync(SelectedItem); //Call the Eventcallback
     }
 
+    //The Items to populate the drop down list
     [Parameter]
     public IEnumerable<TItem> Items { get; set; }
 
+    //The ID to be used for the option
     [Parameter]
     public string ValueId { get; set; }
 
+    //The display text wanted for the dropdown list
     [Parameter]
     public string Text {  get;  set; }
 
+    //the item selected from the drop down list
     [Parameter]
     public string SelectedItem { get; set; }
 

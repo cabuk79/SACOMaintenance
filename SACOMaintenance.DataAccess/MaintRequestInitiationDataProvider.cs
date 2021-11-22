@@ -21,10 +21,16 @@ namespace SACOMaintenance.DataAccess
             _requestInitationDBContext = sacoMaintenanceContext;
     }
 
-        ObservableCollection<Risk> riskList { get; set; } = new();
+        //IEnumerable<Risk> riskList { get; set; }
 
-        IEnumerable<MaintRequestInitiationRisk> risksDataList { get; set; }
+        ObservableCollection<MaintRequestInitiationRisk> risksDataList { get; set; }
+        ObservableCollection<Risk> listOfRisks { get; set; } = new();
         ObservableCollection<MaintRequestInitiationRisk> IMaintRequestInitiation.risksDataList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        private void LoadRisksBasedOnMaintenanceType()
+        {
+            listOfRisks = new ObservableCollection<Risk>(_requestInitationDBContext.Risks.Where(type => type.MaintRequestType == "Both").ToList());
+        }
 
         public int AddEditRequestInitiation(MaintRequestInitiation maintRequestInitiation)
         {
@@ -49,23 +55,34 @@ namespace SACOMaintenance.DataAccess
             //Get all the risks for the request type either General or Plant
             var riskType = ""; 
             if(newRequest.RequestTypeId == 1) { riskType = "Plant"; } else { riskType = "Both"; }
-            LoadRisksByMaintType(riskType);
+           
+            LoadRisksBasedOnMaintenanceType();
 
             //Loop through the risks and add them into the maintreqrisk link table
-            var newRisk = new MaintRequestInitiationRisk();
-            foreach (var item in riskList)
+            foreach (var item in listOfRisks)
             {
+                var newRisk = new MaintRequestInitiationRisk();
                 newRisk.MaintRequestInitiationId = newRequest.Id;
                 newRisk.RiskId = item.Id;
-                //newRisk.H = false;
-                //newRisk.M = false;
-                //newRisk.L = false;
-
-                _requestInitationDBContext.Add(newRisk);
+                newRisk.Level = "L";
+ 
+                _requestInitationDBContext.MaintRequestInitiationRisk.Add(newRisk);
                 _requestInitationDBContext.SaveChanges();
             }
 
+            //Create a General Maintenance Record in the database
+            AddNewRecordToGeneralRequests(newRequest.Id);
+
             return newRequest.Id;
+        }
+
+        //Method to create a new record in the GeneralRequest table
+        private void AddNewRecordToGeneralRequests(int reqId)
+        {
+            var GenReq = new GeneralRequest();
+            GenReq.MaintRequestId = reqId;
+            _requestInitationDBContext.GeneralRequests.Add(GenReq);
+            _requestInitationDBContext.SaveChanges();
         }
 
         public void UpdateMaintReq(MaintRequestInitiation maintReqToUpdate)
@@ -109,7 +126,7 @@ namespace SACOMaintenance.DataAccess
                 }                
             }  
         }
-
+        
         //Load a single request with all of the Navigvation properties populated
         public MaintRequestInitiation GetSingleRequestInitiation(int Id)
         {
@@ -270,17 +287,20 @@ namespace SACOMaintenance.DataAccess
         }
 
         //Get the Risks for the type of request it is General or Plant
-        public async Task<IEnumerable<Risk>> LoadRisksByMaintType (string maintType)
-        {
-            if(maintType == "Plant")
-            {
-                return await _requestInitationDBContext.Risks.ToListAsync();
-            }
-            else
-            {
-                return await _requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToListAsync();
-            }
-        }
+        //public void LoadRisksByMaintType (string maintType)
+        //{
+        //    //if(maintType == "Plant")
+        //    //{
+        //    //    //return await _requestInitationDBContext.Risks.ToListAsync();
+        //    //    riskList = new ObservableCollection<Risk>((IEnumerable<Risk>)_requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToListAsync());
+        //    //}
+        //    //else
+        //    //{
+        //    //    //return
+        //    risksDataList = _requestInitationDBContext.Risks.Where(type => type.MaintRequestType == maintType).ToList();
+        //    //return risks;
+        //    //}
+        //}
 
         public void LoadRiskLevel(int maintReqId)
         {
