@@ -3,6 +3,7 @@ using SACOMaintenance.Common.ModelDB;
 using SACOMaintenance.Data;
 using SACOMaintenance.DataAccess.Interfaces;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,6 +25,14 @@ namespace SACOMaintenance.DataAccess
             return ppe;
         }
 
+        //public async Task<IEnumerable<PPE>> GetPpeAndRequests(int maintId)
+        //{
+        //    from maintRequestInitation in _ppeDBContext.MaintRequestInitiations
+        //    where maintRequestInitation.Id == maintId
+        //    from ppe in maintRequestInitation.PPEEquipment
+        //    select ppe;
+        //}
+
         //public SACOMaintenanceContext SacoMaintenanceContext { get; }
 
         public async Task<IEnumerable<PPE>> LoadAllPPE()
@@ -33,7 +42,7 @@ namespace SACOMaintenance.DataAccess
                 .ToListAsync();
             return ppe;
         }
-
+       
         public void SaveAddPPE(PPE ppe)
         {
             _ppeDBContext.PPE.Add

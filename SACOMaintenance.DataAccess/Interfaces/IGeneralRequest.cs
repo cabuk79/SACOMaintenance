@@ -9,7 +9,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
 {
     public interface IGeneralRequest
     {
-        void GetGeneralRequestInfo(int maintReqId);
+        //void GetGeneralRequestInfo(int maintReqId);
         void AddEditGeneralRequestInfo(int maintReqId, GeneralRequest generalRequest, string newEdit);
         Task<GeneralRequest> GetSingalGeneralRequestInfo(int Id);
     }

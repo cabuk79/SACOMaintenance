@@ -16,6 +16,7 @@ namespace SACOMaintenance.ViewModel
     {
         public ObservableCollection<PPE> ppeList { get; set; } = new();
 
+        public MaintRequestInitiation reqInit { get; set; }
         public IPPE PpeDataProvider { get; }
         public IGeneralRequest _generalREquestDataProvider { get; }
         public IAuthorization AuthrizationDataProvider { get; }
@@ -94,6 +95,13 @@ namespace SACOMaintenance.ViewModel
             _generalREquestDataProvider.AddEditGeneralRequestInfo(maintId, genralRequestInfo, newEdit);
         }
 
+        public void LoadPPEItemsSelected()
+        {
+            var id = genralRequestInfo.MaintRequestInitiation.Id;
+
+            
+        }
+
         //Add new authrization request
         public void AddNewAuthrization(string status, string type)
         {
@@ -148,14 +156,29 @@ namespace SACOMaintenance.ViewModel
             return CompletedAuth;
         }
 
+        //Loads all of the PPE and also put any PPE that have been selected into a list of SelectedItem
+        //It is done like this so when the SquareCheckBox component does a contains it sees the objects in the ppeList and PPEItemsSelected as the same
+        //otherwise it does not and ignores the contains
         public async Task<bool> LoadAllPPE()
         {
             var list = new ObservableCollection<PPE>(await PpeDataProvider.LoadAllPPE());
             ppeList.Clear();
+            PPEItemsSelected.Clear();
 
-            foreach(var item in list)
+            //loop through all of the PPE items
+            foreach (var item in list)
             {
                 ppeList.Add(item);
+
+                //loop through each maintenance request linked to the PPE items
+                foreach(var item2 in item.MaintRequestInitiations)
+                {
+                    //if the ppe item finds a maintenance request with the correct request Id then add it to the PPEItemsSelectedlist
+                    if(item2.Id == reqInit.Id)
+                    {
+                        PPEItemsSelected.Add(item);
+                    }
+                }              
             }
 
             return true;

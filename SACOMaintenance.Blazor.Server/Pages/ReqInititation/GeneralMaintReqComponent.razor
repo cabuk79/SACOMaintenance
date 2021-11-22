@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col-lg-12">
             <RadzenFieldset Text="PPE Required" Style="width: 100%; border-color: black" AllowCollapse="true">
-                @if(GeneralViewModel.genralRequestInfo.WorkCompletedSignOffUserId == "")
+                @if(GeneralViewModel.genralRequestInfo.WorkCompletedSignOffUserId == "" || GeneralViewModel.genralRequestInfo.WorkCompletedSignOffUserId == null)
                 {
                     <SquareCheckBox Items="GeneralViewModel.ppeList" Context="PPE"
                                     @bind-SelectedItems="GeneralViewModel.PPEItemsSelected"> <!-- Set the diabled here through a variable -->
@@ -332,7 +332,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-
+        GeneralViewModel.reqInit = maintReq;
         GeneralViewModel.maintId = maintReq.Id;
         Task.Run(async ()=> { await GeneralViewModel.GetGeneralRequest(maintReq.Id); }).Wait();
         Task.Run(async ()=> { await GeneralViewModel.LoadAllPPE(); }).Wait();
@@ -344,9 +344,15 @@ else
 
         //Load the selected isolations from the PPE
         //This is done below so that the genric SquareComboBox will find the PPE
-        GeneralViewModel.PPEItemsSelected =
-        GeneralViewModel.ppeList
-        .Where(i => i.MaintRequestInitiations.Count == 1).ToList();
+        //GeneralViewModel.PPEItemsSelected = GeneralViewModel.ppeList.Where(m => m.MaintRequestInitiations.Contains(maintReq)).ToList();
+
+        //GeneralViewModel.PPEItemsSelected = GeneralViewModel.ppeList.Where(m => m.MaintRequestInitiations.Find(x => x.Id == maintReq.Id)).ToList();
+        // GeneralViewModel.PPEItemsSelected = GeneralViewModel.ppeList.Where(i => i.MaintRequestInitiations.Id == 1).ToList();
+        //foreach(var item in maintReq.PPEEquipment)
+        //{
+        //    PPE ppe = item;
+        //    GeneralViewModel.PPEItemsSelected.Add(ppe);
+        //}
 
 
         hubConnection = new HubConnectionBuilder()

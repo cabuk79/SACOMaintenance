@@ -33,7 +33,7 @@ namespace SACOMaintenance.Data
         public DbSet<MaintReqUptateNote> MaintReqUptateNotes { get; set; }
         public DbSet<AuthorizationRequest> AuthorizationRequests { get; set; }
         public DbSet<MaintRequestUsersAssigned> MaintReqUsersAssigned { get; set; }
-
+        
 
         public SACOMaintenanceContext(DbContextOptions<SACOMaintenanceContext> options) : base (options)
         {

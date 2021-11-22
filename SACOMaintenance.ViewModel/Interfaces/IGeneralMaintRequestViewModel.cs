@@ -11,6 +11,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 {
     public interface IGeneralMaintRequestViewModel
     {
+        public MaintRequestInitiation reqInit { get; set; }
         ObservableCollection<PPE> ppeList { get; set; }
         public List<PPE> PPEItemsSelected { get; set; }
         public int maintId { get; set; }
