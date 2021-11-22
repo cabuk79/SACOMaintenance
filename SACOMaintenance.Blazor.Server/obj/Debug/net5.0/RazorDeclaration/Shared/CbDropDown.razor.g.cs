@@ -111,8 +111,11 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbDropDown.razor"
+#line 21 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbDropDown.razor"
        
+
+    [Parameter]
+    public bool Search { get; set; }
 
     private void OnSelect(ChangeEventArgs e)
     {

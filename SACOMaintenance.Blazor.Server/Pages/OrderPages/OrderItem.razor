@@ -42,15 +42,13 @@
                        
 
                           <CbDropDown Items="@partViewModel.parts"
-                          ValueId="Id" Text="Name" @bind-SelectedItem="@selectedid">
+                          ValueId="Id" Text="Name" @bind-SelectedItem="@selectedid" Search="true">
                           </CbDropDown>
 
                         
                        
                           @selectedid
                         </div>
-                        @*<RadzenDropDown TValue="string" Data="@Testing">
-                        </RadzenDropDown>*@
                     </div>
                     <div class="col-lg-6">
                         <RadzenDropDown TValue="string"></RadzenDropDown>
