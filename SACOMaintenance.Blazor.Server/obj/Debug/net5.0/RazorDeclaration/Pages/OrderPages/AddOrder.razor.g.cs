@@ -119,7 +119,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
+#line 98 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
        
     public List<OrderItem> OrderItemsList = new List<OrderItem>();
     public RadzenGrid<OrderItem> OrderItemsTable = new();
@@ -129,6 +129,8 @@ using SACOMaintenance.Common.ModelDB;
     protected override async Task OnInitializedAsync()
     {
         Task.Run(async () => { await orderViewModel.LoadSuppliers(); }).Wait();
+        Task.Run(async () => { await orderViewModel.LoadDepartments(); }).Wait();
+        
         OrderItem testingitem = new();
         testingitem.Comments = "ttttest";
         OrderItemsList.Add(testingitem);

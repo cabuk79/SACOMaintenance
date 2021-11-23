@@ -65,6 +65,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IIsolations, IsolationDataProvider>();
             services.AddScoped<IIsolationMaintRequestInitiation, IsolationMaintRequestInitiationDataProvider>();
             services.AddScoped<IUsers, UsersDataProvider>();
+            services.AddScoped<IDepartment, DepartmentDataProvider>();
             services.AddScoped<IAuthorization, AuthorizationDataProvider>();
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
