@@ -122,6 +122,7 @@ using System.Security.Claims;
         var selectedValueIdString = e.Value.ToString();  //Get the value selected
         SelectedItem = selectedValueIdString;
         SelectedItemChanged.InvokeAsync(SelectedItem); //Call the Eventcallback
+        OnClickCallback.InvokeAsync(SelectedItem);
     }
 
     //The Items to populate the drop down list
@@ -142,6 +143,9 @@ using System.Security.Claims;
 
     [Parameter]
     public EventCallback<string> SelectedItemChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClickCallback {get;set;}
 
 
 #line default

@@ -12,7 +12,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
     {
         ObservableCollection<Part> parts { get; set; }
         public Task LoadAllParts();
-        public void LoadSinglePart(int Id);
+        public Task LoadSinglePart(int Id);
         public Part SelectedPart { get; set; }
         ObservableCollection<Supplier> suppliers { get; set; }
     }

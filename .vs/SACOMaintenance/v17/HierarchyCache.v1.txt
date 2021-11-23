@@ -1,0 +1,1008 @@
+﻿++Solution 'SACOMaintenance' ‎(8 of 12 projects)
+i:{00000000-0000-0000-0000-000000000000}:SACOMaintenance.sln
+++WinUI
+i:{00000000-0000-0000-0000-000000000000}:WinUI
+++SACOMaintenance.UI (Package) (unloaded)
+i:{7b3b5eb0-b8b8-4562-8c90-c0d9d27a5308}:SACOMaintenance.UI (Package)
+++SACOMaintenance.UI (unloaded)
+i:{7b3b5eb0-b8b8-4562-8c90-c0d9d27a5308}:SACOMaintenance.UI
+++Testing
+i:{00000000-0000-0000-0000-000000000000}:Testing
+++SACOMaintenance.DbContextTesting (unloaded)
+i:{a1f3190e-ab4c-4535-a696-6524ae234c26}:SACOMaintenance.DbContextTesting
+++WinForms
+i:{00000000-0000-0000-0000-000000000000}:WinForms
+++SACOMaintenance.WinForms (unloaded)
+i:{999e3184-7226-4909-a5d6-8dde9f483fb5}:SACOMaintenance.WinForms
+++Libraries
+i:{00000000-0000-0000-0000-000000000000}:Libraries
+++SACOMaintenance.DataAccess
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:SACOMaintenance.DataAccess
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\bin\debug\net5.0\sacomaintenance.dataaccess.dll
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\bin\debug\net5.0\sacomaintenance.dataaccess.dll
+++Dependencies
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:>1050
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:>1053
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:>1052
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:>1070
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:>1051
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>1112
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:>2007
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3335
+++Interfaces
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\
+++AreaProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\areaprovider.cs
+++AuthorizationDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\authorizationdataprovider.cs
+++CompanyDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\companydataprovider.cs
+++DepartmentDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\departmentdataprovider.cs
+++EquipmentDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\equipmentdataprovider.cs
+++FactoryDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\factorydataprovider.cs
+++GeneralRequestDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\generalrequestdataprovider.cs
+++IsolationDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\isolationdataprovider.cs
+++IsolationMaintRequestInitiationDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\isolationmaintrequestinitiationdataprovider.cs
+++MachineTypeDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\machinetypedataprovider.cs
+++MaintRequestInitiationDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\maintrequestinitiationdataprovider.cs
+++OrderDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\orderdataprovider.cs
+++PartDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\partdataprovider.cs
+++PlantRequestDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\plantrequestdataprovider.cs
+++PPEDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\ppedataprovider.cs
+++PrioritiesDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\prioritiesdataprovider.cs
+++RiskDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\riskdataprovider.cs
+++StatusDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\statusdataprovider.cs
+++SupplierDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\supplierdataprovider.cs
+++UsersDataProvider.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\usersdataprovider.cs
+++Analyzers
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:analyzers
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:analyzers
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:analyzers
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:analyzers
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:analyzers
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:analyzers
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:analyzers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:analyzers
+++Frameworks
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:frameworks
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:frameworks
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:frameworks
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:frameworks
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:frameworks
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:frameworks
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:frameworks
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:frameworks
+++Packages
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:packages
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:packages
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:packages
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:packages
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:packages
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:packages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:packages
+++Projects
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:projects
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:projects
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:projects
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:projects
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:projects
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:projects
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:projects
+++IArea.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iarea.cs
+++IAuthorization.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iauthorization.cs
+++ICompany.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\icompany.cs
+++IDepartment.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\idepartment.cs
+++IEquipment.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iequipment.cs
+++IFactory.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\ifactory.cs
+++IGeneralRequest.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\igeneralrequest.cs
+++IIsolationMaintRequestInitiation.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iisolationmaintrequestinitiation.cs
+++IIsolations.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iisolations.cs
+++IMachineType.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\imachinetype.cs
+++IMaintRequestInitiation.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\imaintrequestinitiation.cs
+++IOrder.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iorder.cs
+++IPart.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\ipart.cs
+++IPlantRequest.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iplantrequest.cs
+++IPPE.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\ippe.cs
+++IPriorities.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\ipriorities.cs
+++IRisk.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\irisk.cs
+++IStatus.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\istatus.cs
+++ISupplier.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\isupplier.cs
+++IUsers.cs
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\interfaces\iusers.cs
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.9\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.9\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.6\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.9\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.6\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.6\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.9\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.NETCore.App
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.dataaccess\microsoft.netcore.app
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\microsoft.netcore.app
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\microsoft.netcore.app
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\microsoft.netcore.app
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\microsoft.netcore.app
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\source\repos\sacomaintenance\excellibs\microsoft.netcore.app
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\users\cabuk\source\repos\sacomaintenance\wordlibs\microsoft.netcore.app
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\microsoft.netcore.app
+++Microsoft.AspNetCore.Mvc.Core (2.2.5)
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:>3395
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3371
+++SACOMaintenance.Common
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\bin\debug\net5.0\sacomaintenance.common.dll
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\bin\debug\net5.0\sacomaintenance.common.dll
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:SACOMaintenance.Common
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\bin\debug\net5.0\sacomaintenance.common.dll
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\bin\debug\net5.0\sacomaintenance.common.dll
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\bin\debug\net5.0\sacomaintenance.common.dll
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\bin\debug\net5.0\sacomaintenance.common.dll
+++SACOMaintenance.Data
+i:{b8600aa4-4bd4-44e2-b235-b8e3e091f394}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\bin\debug\net5.0\sacomaintenance.data.dll
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:SACOMaintenance.Data
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\bin\debug\net5.0\sacomaintenance.data.dll
+++SACOMaintenance.ViewModel
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:SACOMaintenance.ViewModel
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\bin\debug\net5.0\sacomaintenance.viewmodel.dll
+++Commands
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\commands\
+++IAddMaintReq.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iaddmaintreq.cs
+++IAreaViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iareaviewmodel.cs
+++ICompanyViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\icompanyviewmodel.cs
+++IDashboardViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\idashboardviewmodel.cs
+++IEquipmentListViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iequipmentlistviewmodel.cs
+++IEquipmentViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iequipmentviewmodel.cs
+++IFactoryViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\ifactoryviewmodel.cs
+++IGeneralMaintRequestViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\igeneralmaintrequestviewmodel.cs
+++IMachineTypeViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\imachinetypeviewmodel.cs
+++IMaintReqNewViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\imaintreqnewviewmodel.cs
+++IMaintRequestFullViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\imaintrequestfullviewmodel.cs
+++IMaintRequestsByAreaViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\imaintrequestsbyareaviewmodel.cs
+++IOrderViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iorderviewmodel.cs
+++IPartViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\ipartviewmodel.cs
+++IPlantMaintReqViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iplantmaintreqviewmodel.cs
+++IPPEViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\ippeviewmodel.cs
+++IRequestAuthorisation.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\irequestauthorisation.cs
+++IRequestInitiationListViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\irequestinitiationlistviewmodel.cs
+++IRequestsGraphDateViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\irequestsgraphdateviewmodel.cs
+++IRequestsGraphViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\irequestsgraphviewmodel.cs
+++ISupplierViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\isupplierviewmodel.cs
+++IUserRequestsAll.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\interfaces\iuserrequestsall.cs
+++AddMaintReqViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\addmaintreqviewmodel.cs
+++AreaViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\areaviewmodel.cs
+++CompanyViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\companyviewmodel.cs
+++DashboardViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\dashboardviewmodel.cs
+++EquipmentListViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\equipmentlistviewmodel.cs
+++EquipmentViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\equipmentviewmodel.cs
+++FactoryViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\factoryviewmodel.cs
+++GeneralMaintRequestViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\generalmaintrequestviewmodel.cs
+++MachineTypeViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\machinetypeviewmodel.cs
+++MaintReqNewViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\maintreqnewviewmodel.cs
+++MaintRequestFullViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\maintrequestfullviewmodel.cs
+++MainViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\mainviewmodel.cs
+++OrderViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\orderviewmodel.cs
+++PartViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\partviewmodel.cs
+++PlantMaintReqModelView.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\plantmaintreqmodelview.cs
+++PPEViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\ppeviewmodel.cs
+++RequestAuthorisation.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\requestauthorisation.cs
+++RequestInitiationListViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\requestinitiationlistviewmodel.cs
+++RequestsGraphDateViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\requestsgraphdateviewmodel.cs
+++RequestsGraphViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\requestsgraphviewmodel.cs
+++RequestsViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\requestsviewmodel.cs
+++SupplierViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\supplierviewmodel.cs
+++UserRequestAllViewModel.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\userrequestallviewmodel.cs
+++DelegateCommand.cs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.viewmodel\commands\delegatecommand.cs
+++Microsoft.JSInterop (5.0.11)
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:>3452
+++ExcelLibs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\excellibs\bin\debug\net5.0\excellibs.dll
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:ExcelLibs
+++WordLibs
+i:{b6412468-9bcb-4c2d-9c52-66acfccda3a3}:c:\users\cabuk\source\repos\sacomaintenance\wordlibs\bin\debug\net5.0\wordlibs.dll
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:WordLibs
+++DataProvider
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\dataprovider\
+++ModelDB
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\
+++AreaModel.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\areamodel.cs
+++AuthorizationRequest.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\authorizationrequest.cs
+++Company.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\company.cs
+++Department.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\department.cs
+++Equipment.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\equipment.cs
+++Factory.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\factory.cs
+++GeneralRequest.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\generalrequest.cs
+++Isolation.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\isolation.cs
+++MachineType.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\machinetype.cs
+++MaintRequestInitiation.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\maintrequestinitiation.cs
+++MaintRequestInitiationRisk.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\maintrequestinitiationrisk.cs
+++MaintRequestType.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\maintrequesttype.cs
+++MaintRequestUsersAssigned.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\maintrequestusersassigned.cs
+++MaintReqUptateNote.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\maintrequptatenote.cs
+++Order.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\order.cs
+++OrderItem.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\orderitem.cs
+++Part.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\part.cs
+++PartSupplier.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\partsupplier.cs
+++PlantRequest.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\plantrequest.cs
+++PostCodeTown.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\postcodetown.cs
+++PPE.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\ppe.cs
+++Priority.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\priority.cs
+++RequestDailyRegister.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\requestdailyregister.cs
+++Risk.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\risk.cs
+++Status.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\status.cs
+++Supplier.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\supplier.cs
+++TechnicalDrawingsLocation.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\technicaldrawingslocation.cs
+++User.cs
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modeldb\user.cs
+++ModelUI
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\buisnessmodels\modelui\
+++EntityFrameworkCore.EncryptColumn (5.0.6)
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:>3363
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3418
+++Microsoft.EntityFrameworkCore.Abstractions (5.0.10)
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:>3366
+++Microsoft.Extensions.Identity.Stores (5.0.10)
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:>3367
+++Models.DTO
+i:{6259ac7a-22f6-46c8-9e94-0770285fe486}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\bin\debug\net5.0\models.dto.dll
+i:{efc17da9-afaa-4dc4-a034-47de9af2d26d}:Models.DTO
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\bin\debug\net5.0\models.dto.dll
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\bin\debug\net5.0\models.dto.dll
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\bin\debug\net5.0\models.dto.dll
+++Migrations
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\
+++SACOMaintenanceContext.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\sacomaintenancecontext.cs
+++20210924151513_Restarted the migrations.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210924151513_restarted the migrations.cs
+++20210925144042_Worked on and removed the fields that are nullable etc.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210925144042_worked on and removed the fields that are nullable etc.cs
+++20210927122339_Added the MaintReqUptateNotes model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210927122339_added the maintrequptatenotes model.cs
+++20210928131344_Added ControlMeasuresTaken to GeenralRequest model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210928131344_added controlmeasurestaken to geenralrequest model.cs
+++20210928133556_Changed the GeneralRequest integer to be nullable.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210928133556_changed the generalrequest integer to be nullable.cs
+++20210928133702_Changed the GeneralRequest Datetimes to be nullable.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210928133702_changed the generalrequest datetimes to be nullable.cs
+++20210929063452_Added encrypted column Pin in User model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210929063452_added encrypted column pin in user model.cs
+++20210929075302_Updating after adding Identy code information.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210929075302_updating after adding identy code information.cs
+++20210929201626_Added AuthrozationRequest model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210929201626_added authrozationrequest model.cs
+++20210930130642_Changed the Authrization IDs in the GeenralMaintenance Model to string to match the User table.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210930130642_changed the authrization ids in the geenralmaintenance model to string to match the user table.cs
+++20210930142733_Added RequestedDate and LastChaseDate to AhutoraziationRequest model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210930142733_added requesteddate and lastchasedate to ahutoraziationrequest model.cs
+++20211001082508_Added a OK to the Authroization Model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211001082508_added a ok to the authroization model.cs
+++20211003105419_Changed Compelted user Id from int to string.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211003105419_changed compelted user id from int to string.cs
+++20211003183229_Added Colour property to Priority model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211003183229_added colour property to priority model.cs
+++20211006132515_Added ImageLocation field to the Isolation model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211006132515_added imagelocation field to the isolation model.cs
+++20211006192202_Changed RequestedById to UserId and added User navigation in MaintRequestInitation model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211006192202_changed requestedbyid to userid and added user navigation in maintrequestinitation model.cs
+++20211007103402_Added the MaintRequestUsersAssigned model and information into the DbContext to assign the FK to Users and MaintReqInitiation.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211007103402_added the maintrequestusersassigned model and information into the dbcontext to assign the fk to users and maintreqinitiation.cs
+++20211021171628_Updated MaintRequestInitationRisk model to remove the HML as bools and replaced with a string Level.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211021171628_updated maintrequestinitationrisk model to remove the hml as bools and replaced with a string level.cs
+++20211029171631_Added to MaintRequestInitation navigation link to Authorization Requests and vice versa in the AuthriseRequest model.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211029171631_added to maintrequestinitation navigation link to authorization requests and vice versa in the authriserequest model.cs
+++20211029173154_Changed the navigation property in the AuthroizationRequest model from List to virtual MaintRequestInitation.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211029173154_changed the navigation property in the authroizationrequest model from list to virtual maintrequestinitation.cs
+++20211029175222_Removed maint req to auth requests navigations.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211029175222_removed maint req to auth requests navigations.cs
+++20211101205029_Added to the Authorisation model ConfrimationDate and CommentReason.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211101205029_added to the authorisation model confrimationdate and commentreason.cs
+++20211116204135_Made the PartId in the orderItem model nullable.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211116204135_made the partid in the orderitem model nullable.cs
+++SACOMaintenanceContextModelSnapshot.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\sacomaintenancecontextmodelsnapshot.cs
+++FluentAssertions (6.1.0)
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:>3382
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (5.0.9)
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:>3383
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3420
+++Microsoft.EntityFrameworkCore.SqlServer (5.0.9)
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:>3381
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3414
+++Microsoft.EntityFrameworkCore.Tools (5.0.9)
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:>3385
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3424
+++System.Configuration.ConfigurationManager (5.0.0)
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:>3384
+++20210924151513_Restarted the migrations.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210924151513_restarted the migrations.designer.cs
+++20210925144042_Worked on and removed the fields that are nullable etc.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210925144042_worked on and removed the fields that are nullable etc.designer.cs
+++20210927122339_Added the MaintReqUptateNotes model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210927122339_added the maintrequptatenotes model.designer.cs
+++20210928131344_Added ControlMeasuresTaken to GeenralRequest model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210928131344_added controlmeasurestaken to geenralrequest model.designer.cs
+++20210928133556_Changed the GeneralRequest integer to be nullable.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210928133556_changed the generalrequest integer to be nullable.designer.cs
+++20210928133702_Changed the GeneralRequest Datetimes to be nullable.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210928133702_changed the generalrequest datetimes to be nullable.designer.cs
+++20210929063452_Added encrypted column Pin in User model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210929063452_added encrypted column pin in user model.designer.cs
+++20210929075302_Updating after adding Identy code information.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210929075302_updating after adding identy code information.designer.cs
+++20210929201626_Added AuthrozationRequest model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210929201626_added authrozationrequest model.designer.cs
+++20210930130642_Changed the Authrization IDs in the GeenralMaintenance Model to string to match the User table.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210930130642_changed the authrization ids in the geenralmaintenance model to string to match the user table.designer.cs
+++20210930142733_Added RequestedDate and LastChaseDate to AhutoraziationRequest model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20210930142733_added requesteddate and lastchasedate to ahutoraziationrequest model.designer.cs
+++20211001082508_Added a OK to the Authroization Model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211001082508_added a ok to the authroization model.designer.cs
+++20211003105419_Changed Compelted user Id from int to string.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211003105419_changed compelted user id from int to string.designer.cs
+++20211003183229_Added Colour property to Priority model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211003183229_added colour property to priority model.designer.cs
+++20211006132515_Added ImageLocation field to the Isolation model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211006132515_added imagelocation field to the isolation model.designer.cs
+++20211006192202_Changed RequestedById to UserId and added User navigation in MaintRequestInitation model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211006192202_changed requestedbyid to userid and added user navigation in maintrequestinitation model.designer.cs
+++20211007103402_Added the MaintRequestUsersAssigned model and information into the DbContext to assign the FK to Users and MaintReqInitiation.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211007103402_added the maintrequestusersassigned model and information into the dbcontext to assign the fk to users and maintreqinitiation.designer.cs
+++20211021171628_Updated MaintRequestInitationRisk model to remove the HML as bools and replaced with a string Level.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211021171628_updated maintrequestinitationrisk model to remove the hml as bools and replaced with a string level.designer.cs
+++20211029171631_Added to MaintRequestInitation navigation link to Authorization Requests and vice versa in the AuthriseRequest model.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211029171631_added to maintrequestinitation navigation link to authorization requests and vice versa in the authriserequest model.designer.cs
+++20211029173154_Changed the navigation property in the AuthroizationRequest model from List to virtual MaintRequestInitation.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211029173154_changed the navigation property in the authroizationrequest model from list to virtual maintrequestinitation.designer.cs
+++20211029175222_Removed maint req to auth requests navigations.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211029175222_removed maint req to auth requests navigations.designer.cs
+++20211101205029_Added to the Authorisation model ConfrimationDate and CommentReason.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211101205029_added to the authorisation model confrimationdate and commentreason.designer.cs
+++20211116204135_Made the PartId in the orderItem model nullable.Designer.cs
+i:{0be8cb30-77f8-459d-ab1e-5ddfb2649912}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.data\migrations\20211116204135_made the partid in the orderitem model nullable.designer.cs
+++AreasDTO.cs
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\areasdto.cs
+++PppMaintTypeEnum.cs
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\pppmainttypeenum.cs
+++YearMaintenanceRequestModel.cs
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\yearmaintenancerequestmodel.cs
+++YearMonthModel.cs
+i:{0cdc1aba-2ea3-49ce-95ee-5db6d3998319}:c:\users\cabuk\source\repos\sacomaintenance\models.dto\yearmonthmodel.cs
+++MaintenanceRequestsExcel.cs
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\source\repos\sacomaintenance\excellibs\maintenancerequestsexcel.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\services\maintenancerequestsexcel.cs
+++MaintenanceRequestsGraphsExportToExcel.cs
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\source\repos\sacomaintenance\excellibs\maintenancerequestsgraphsexporttoexcel.cs
+++NOTICE.TXT
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:c:\users\cabuk\.nuget\packages\dotnetcore.npoi\1.2.3\contentfiles\any\netstandard2.0\notice.txt
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\.nuget\packages\dotnetcore.npoi\1.2.3\contentfiles\any\netstandard2.0\notice.txt
+++ClosedXML (0.95.4)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3373
+++ClosedXML.Report (0.2.1)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3365
+++DocumentFormat.OpenXml (2.12.3)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3374
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:>3441
+++DotNetCore.NPOI (1.2.3)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3370
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3423
+++Microsoft.AspNet.Mvc (5.2.7)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3368
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3422
+++Microsoft.AspNetCore.Http.Abstractions (2.2.0)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3372
+++Microsoft.AspNetCore.Mvc.Abstractions (2.2.0)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3369
+++Selenium.WebDriver (4.0.0)
+i:{4b80087e-360f-44a8-a803-226e46d19a90}:>3364
+++MaintenanceRequestWordExport.cs
+i:{331c9386-1749-4980-b819-41e2c7dfea27}:c:\users\cabuk\source\repos\sacomaintenance\wordlibs\maintenancerequestwordexport.cs
+++SACOMaintenance.Blazor.Server
+i:{00000000-0000-0000-0000-000000000000}:SACOMaintenance.Blazor.Server
+++Connected Services 
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3336
+++Properties
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\properties\
+++wwwroot
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\
+++css
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\css\
+++bootstrap
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\bootstrap\
+++Images
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\
+++open-iconic
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\
+++site.css
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\site.css
+++favicon.ico
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\favicon.ico
+++script.js
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\script.js
+++Areas
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\
+++Components
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\
+++ApprovalComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\approvalcomponent.razor
+++CBDialog.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\cbdialog.razor
+++GraphYearStatusModel.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\graphyearstatusmodel.cs
+++MaintRequestApprovalComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\maintrequestapprovalcomponent.razor
+++NewMaintReqs.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\newmaintreqs.razor
+++PPEEquipmentComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\ppeequipmentcomponent.razor
+++RequestPriorityDashboardItem.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestprioritydashboarditem.razor
+++RequestRiskChoice.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestriskchoice.razor
+++RequestsForUserAll.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestsforuserall.razor
+++RequestsGraph.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestsgraph.razor
+++RequestsMonthYearGraphComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestsmonthyeargraphcomponent.razor
+++RequestsNeedingApproval.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestsneedingapproval.razor
+++RequestsYearGraphComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestsyeargraphcomponent.razor
+++RiskLevelsChooser.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\risklevelschooser.razor
+++TotalMaintReqCurrentYear.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\totalmaintreqcurrentyear.razor
+++TotalOpenMaintReqs.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\totalopenmaintreqs.razor
+++Data
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\data\
+++Hubs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\hubs\
+++Pages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\
+++AreaPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\areapages\
+++AreaAddComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\areapages\areaaddcomponent.razor
+++AreaEditComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\areapages\areaeditcomponent.razor
+++AreaListComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\areapages\arealistcomponent.razor
+++CompanyPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\companypages\
+++Dashboard
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\
+++DashboardGeneralUser.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\dashboardgeneraluser.razor
+++DashboardMaintenanceStandard.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\dashboardmaintenancestandard.razor
+++DashboardManager.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\dashboardmanager.razor
+++MaintReqAssignedOpen.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\maintreqassignedopen.razor
+++MaintReqUnassigned.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\maintrequnassigned.razor
+++RequestsPriorityInfoGroupComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\dashboard\requestspriorityinfogroupcomponent.razor
+++EquipmentPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\equipmentpages\
+++EquipmentListComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\equipmentpages\equipmentlistcomponent.razor
+++EquipmentOverviewPage.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\equipmentpages\equipmentoverviewpage.razor
+++EquipmentSinglePage.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\equipmentpages\equipmentsinglepage.razor
+++FactoryPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\factorypages\
+++FactoryViewEditComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\factorypages\factoryvieweditcomponent.razor
+++MachineTypePages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\machinetypepages\
+++OrderPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\orderpages\
+++AddOrder.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\orderpages\addorder.razor
+++OrderItem.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\orderpages\orderitem.razor
+++OrdersAndItemsComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\orderpages\ordersanditemscomponent.razor
+++OrdersOverviewPage.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\orderpages\ordersoverviewpage.razor
+++PartPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\partpages\
+++AllParts.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\partpages\allparts.razor
+++PartFullView.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\partpages\partfullview.razor
+++PPEPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\ppepages\
+++ReqInititation
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\
+++AddMaintReq.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\addmaintreq.razor
+++AddMaintReqDialog.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\addmaintreqdialog.razor
+++GeneralMaintReqComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\generalmaintreqcomponent.razor
+++MaintReqFull.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\maintreqfull.razor
+++MaintRequestsListOverview.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\maintrequestslistoverview.razor
+++PlantMaintReqComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\plantmaintreqcomponent.razor
+++RequestAuthorisation.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\reqinititation\requestauthorisation.razor
+++Shared
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\shared\
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\
+++SuppliersPages
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\supplierspages\
+++UserAdmin
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\useradmin\
+++SettingsPage.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\useradmin\settingspage.razor
+++ViewUsers.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\useradmin\viewusers.razor
+++_Host.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\_host.cshtml
+++_ViewImports.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\_viewimports.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\_viewimports.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\_viewimports.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\_viewstart.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\_viewstart.cshtml
+++Error.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\error.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\error.cshtml
+++Index.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\index.razor
+++TestPage.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\testpage.razor
+++Services
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\services\
+++CbDropDown.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\cbdropdown.razor
+++CheckListBox.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\checklistbox.razor
+++LoginDisplay.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\logindisplay.razor
+++MainLayout.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\mainlayout.razor
+++NavMenu.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\navmenu.razor
+++NotLoggedDisplay.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\notloggeddisplay.razor
+++SquareCheckBox.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\squarecheckbox.razor
+++SurveyPrompt.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\surveyprompt.razor
+++_Imports.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\_imports.razor
+++All Maint Requests.xlsx
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\all maint requests.xlsx
+++App.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\app.razor
+++appsettings.json
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\appsettings.json
+++Dockerfile
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\dockerfile
+++Program.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\program.cs
+++ScaffoldingReadMe.txt
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\scaffoldingreadme.txt
+++Startup.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\startup.cs
+++No service dependencies discovered
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3337
+++launchSettings.json
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\properties\launchsettings.json
+++bootstrap.min.css
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\bootstrap\bootstrap.min.css
+++AuthoisizedNot
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\authoisizednot\
+++Isolations
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\
+++PPE Icons
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\
+++UserProfilePics
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\userprofilepics\
+++font
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\
+++FONT-LICENSE
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font-license
+++ICON-LICENSE
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\icon-license
+++README.md
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\readme.md
+++Identity
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\
+++RequestRiskChoice.razor.css
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\components\requestriskchoice.razor.css
+++SmsService.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\data\smsservice.cs
+++BroadcastHub.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\hubs\broadcasthub.cs
+++CompanyListComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\companypages\companylistcomponent.razor
+++CompanyViewComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\companypages\companyviewcomponent.razor
+++CompanyViewEditComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\companypages\companyvieweditcomponent.razor
+++MachineTypeEditView.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\machinetypepages\machinetypeeditview.razor
+++PPEAddComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\ppepages\ppeaddcomponent.razor
+++PPEListComponent.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\ppepages\ppelistcomponent.razor
+++_Layout.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\shared\_layout.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\_layout.cshtml
+++_LoginPartial.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\shared\_loginpartial.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\shared\_validationscriptspartial.cshtml
+++AddSupplierPage.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\supplierspages\addsupplierpage.razor
+++AllSuppliers.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\supplierspages\allsuppliers.razor
+++SingleSupplier.razor
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\pages\supplierspages\singlesupplier.razor
+++FileDownloadService.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\services\filedownloadservice.cs
+++SquareCheckBox.razor.css
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\shared\squarecheckbox.razor.css
+++appsettings.Development.json
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\appsettings.development.json
+++.dockerignore
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\.dockerignore
+++Microsoft.AspNetCore.Analyzers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.CodeAnalysis.Analyzers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.Analyzers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+++Microsoft.AspNetCore.App
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\microsoft.aspnetcore.app
+++BlazorDownloadFile (2.1.6)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3419
+++Microsoft.AspNetCore.Identity (2.2.0)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3416
+++Microsoft.AspNetCore.Identity.UI (5.0.9)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3427
+++Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation (5.0.10)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3413
+++Microsoft.AspNetCore.SignalR.Client (5.0.9)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3417
+++Microsoft.EntityFrameworkCore.Design (5.0.9)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3415
+++Microsoft.VisualStudio.Azure.Containers.Tools.Targets (1.10.9)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3425
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (5.0.2)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3426
+++Radzen.Blazor (3.1.3)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3421
+++Vonage (5.9.0)
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:>3412
+++bootstrap.min.css.map
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\bootstrap\bootstrap.min.css.map
+++notallowed.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\authoisizednot\notallowed.png
+++chemical.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\chemical.png
+++electrical.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\electrical.png
+++hyd.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\hyd.png
+++mech.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\mech.png
+++Other.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\other.png
+++pneumatic.jpg
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\isolations\pneumatic.jpg
+++boots.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\boots.png
+++earplugs.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\earplugs.png
+++glasses.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\glasses.png
+++gloves.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\gloves.png
+++helmet.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\helmet.png
+++masks.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\masks.png
+++overalls.PNG
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\overalls.png
+++q.jpg
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\ppe icons\q.jpg
+++blankprofilepic.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\userprofilepics\blankprofilepic.png
+++camera.png
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\userprofilepics\camera.png
+++craig.brunton.jpg
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\images\userprofilepics\craig.brunton.jpg
+++fonts
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\fonts\
+++Controllers
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\controllers\
+++IdentityHostingStartup.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\identityhostingstartup.cs
+++open-iconic-bootstrap.min.css
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css
+++open-iconic.eot
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\fonts\open-iconic.eot
+++open-iconic.otf
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\fonts\open-iconic.otf
+++open-iconic.svg
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\fonts\open-iconic.svg
+++open-iconic.ttf
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf
+++open-iconic.woff
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\wwwroot\css\open-iconic\font\fonts\open-iconic.woff
+++Account
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\
+++Manage
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\
+++_StatusMessage.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\_statusmessage.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\_statusmessage.cshtml
+++AccessDenied.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\accessdenied.cshtml
+++ConfirmEmail.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\confirmemail.cshtml
+++ConfirmEmailChange.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\confirmemailchange.cshtml
+++ExternalLogin.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\externallogin.cshtml
+++ForgotPassword.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\forgotpassword.cshtml
+++ForgotPasswordConfirmation.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\forgotpasswordconfirmation.cshtml
+++Lockout.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\lockout.cshtml
+++Login.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\login.cshtml
+++LoginWith2fa.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\loginwith2fa.cshtml
+++LoginWithRecoveryCode.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\loginwithrecoverycode.cshtml
+++Logout.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\logout.cshtml
+++Register.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\register.cshtml
+++RegisterConfirmation.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\registerconfirmation.cshtml
+++ResendEmailConfirmation.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\resendemailconfirmation.cshtml
+++ResetPassword.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\resetpassword.cshtml
+++ResetPasswordConfirmation.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\resetpasswordconfirmation.cshtml
+++Error.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\error.cshtml.cs
+++_ManageNav.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\_managenav.cshtml
+++ChangePassword.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\changepassword.cshtml
+++DeletePersonalData.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\deletepersonaldata.cshtml
+++Disable2fa.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\disable2fa.cshtml
+++DownloadPersonalData.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\downloadpersonaldata.cshtml
+++Email.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\email.cshtml
+++EnableAuthenticator.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\enableauthenticator.cshtml
+++ExternalLogins.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\externallogins.cshtml
+++GenerateRecoveryCodes.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\generaterecoverycodes.cshtml
+++Index.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\index.cshtml
+++ManageNavPages.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\managenavpages.cs
+++PersonalData.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\personaldata.cshtml
+++ResetAuthenticator.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\resetauthenticator.cshtml
+++SetPassword.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\setpassword.cshtml
+++ShowRecoveryCodes.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\showrecoverycodes.cshtml
+++TwoFactorAuthentication.cshtml
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\twofactorauthentication.cshtml
+++AccessDenied.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\accessdenied.cshtml.cs
+++ConfirmEmail.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\confirmemail.cshtml.cs
+++ConfirmEmailChange.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\confirmemailchange.cshtml.cs
+++ExternalLogin.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\externallogin.cshtml.cs
+++ForgotPassword.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\forgotpassword.cshtml.cs
+++ForgotPasswordConfirmation.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\forgotpasswordconfirmation.cshtml.cs
+++Lockout.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\lockout.cshtml.cs
+++Login.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\login.cshtml.cs
+++LoginWith2fa.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\loginwith2fa.cshtml.cs
+++LoginWithRecoveryCode.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\loginwithrecoverycode.cshtml.cs
+++Register.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\register.cshtml.cs
+++RegisterConfirmation.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\registerconfirmation.cshtml.cs
+++ResendEmailConfirmation.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\resendemailconfirmation.cshtml.cs
+++ResetPassword.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\resetpassword.cshtml.cs
+++ResetPasswordConfirmation.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\resetpasswordconfirmation.cshtml.cs
+++ChangePassword.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\changepassword.cshtml.cs
+++DeletePersonalData.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\deletepersonaldata.cshtml.cs
+++Disable2fa.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\disable2fa.cshtml.cs
+++DownloadPersonalData.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\downloadpersonaldata.cshtml.cs
+++Email.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\email.cshtml.cs
+++EnableAuthenticator.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\enableauthenticator.cshtml.cs
+++ExternalLogins.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\externallogins.cshtml.cs
+++GenerateRecoveryCodes.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\generaterecoverycodes.cshtml.cs
+++Index.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\index.cshtml.cs
+++PersonalData.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\personaldata.cshtml.cs
+++ResetAuthenticator.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\resetauthenticator.cshtml.cs
+++SetPassword.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\setpassword.cshtml.cs
+++ShowRecoveryCodes.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\showrecoverycodes.cshtml.cs
+++TwoFactorAuthentication.cshtml.cs
+i:{ae77b019-6856-4ec3-b937-520232d190e1}:c:\users\cabuk\source\repos\sacomaintenance\sacomaintenance.blazor.server\areas\identity\pages\account\manage\twofactorauthentication.cshtml.cs

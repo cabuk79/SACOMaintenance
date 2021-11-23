@@ -43,7 +43,7 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public async void LoadSinglePart(int Id)
+        public async Task LoadSinglePart(int Id)
         {
             SelectedPart = await PartDataProvider.GetSinglePartAndSuppliers(Id);
             var allSuppliers = new ObservableCollection<Supplier>(await PartDataProvider.LoadAllSuppliers());

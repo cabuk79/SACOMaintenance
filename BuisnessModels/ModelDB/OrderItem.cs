@@ -18,5 +18,14 @@ namespace SACOMaintenance.Common.ModelDB
         public int? PartId { get; set; }
         public virtual Part Part { get; set; }
 
+        public decimal FullPrice
+        {
+            get
+            {               
+                return Qty * Price;
+            }
+
+        }
+
     }
 }

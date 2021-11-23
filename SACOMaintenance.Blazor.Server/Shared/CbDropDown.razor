@@ -27,6 +27,7 @@
         var selectedValueIdString = e.Value.ToString();  //Get the value selected
         SelectedItem = selectedValueIdString;
         SelectedItemChanged.InvokeAsync(SelectedItem); //Call the Eventcallback
+        OnClickCallback.InvokeAsync(SelectedItem);
     }
 
     //The Items to populate the drop down list
@@ -47,5 +48,8 @@
 
     [Parameter]
     public EventCallback<string> SelectedItemChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClickCallback {get;set;}
 
 }

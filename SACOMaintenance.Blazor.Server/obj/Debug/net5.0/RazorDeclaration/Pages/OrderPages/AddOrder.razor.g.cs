@@ -103,6 +103,13 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
+using SACOMaintenance.Common.ModelDB;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/testingorder")]
     public partial class AddOrder : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,9 +119,27 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
+#line 87 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
        
+    public List<OrderItem> OrderItemsList = new List<OrderItem>();
+    public RadzenGrid<OrderItem> OrderItemsTable = new();
+
     bool ShowPopup = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        OrderItem testingitem = new();
+        testingitem.Comments = "ttttest";
+        OrderItemsList.Add(testingitem);
+
+    }
+
+    public void UpdatePage()
+    {
+        OrderItemsTable.Reload();
+        //StateHasChanged();
+   }
+
 
     void Showdialog()
     {

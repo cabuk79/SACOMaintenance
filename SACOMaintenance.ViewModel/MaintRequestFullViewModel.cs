@@ -191,10 +191,20 @@ namespace SACOMaintenance.ViewModel
             //Isolations = new ObservableCollection<Isolation>(await IsolationsDataProvider .LoadAllIsolations());
             
             var list = new ObservableCollection<Isolation>(await IsolationsDataProvider.LoadAllIsolations());
+            Isolations.Clear();
+            IsolationsSelected.Clear();
 
             foreach(var item in list)
             {
                 Isolations.Add(item);
+
+                foreach(var item2 in item.MaintRequestInitiations)
+                {
+                    if(item2.Id == maintReqId)
+                    {
+                        IsolationsSelected.Add(item);
+                    }
+                }
             }
 
             return Isolations;

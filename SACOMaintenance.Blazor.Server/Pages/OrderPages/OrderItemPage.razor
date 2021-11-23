@@ -1,0 +1,141 @@
+﻿@*@page "/orderitemtest"*@
+@inject SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel
+@using SACOMaintenance.Common.ModelDB
+
+<h3>Add Order Item</h3>
+
+<div class="item-body">
+    <div class="row">
+        <div class="col-lg-4"><RadzenLabel Text="Existing Part?"></RadzenLabel></div>
+        <div class="col-lg-4"><RadzenSwitch @bind-Value=@switchValue></RadzenSwitch></div>
+        @switchValue
+        @*<div class="col-lg-4"><RadzenLabel Text="Part"></RadzenLabel></div>*@
+        @*<div class="col-lg-4">
+            <button type="button" @onclick="(() => LoadParts())">Show Items</button>
+            <RadzenDropDown TValue="int" Data=@partViewModel.parts
+                        TextProperty="Name" ValueProperty="Id">
+            </RadzenDropDown>
+        </div>*@
+    </div>
+    @if(switchValue == true)       
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <RadzenLabel Text="Select Part"></RadzenLabel>
+            </div>       
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <CbDropDown Items="@partViewModel.parts"
+                              ValueId="Id" Text="Name" @bind-SelectedItem="@selectedid" Search="false" OnClickCallback="@LoadSinglePart">
+                 </CbDropDown>
+            </div>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenLabel Text="Item Name"></RadzenLabel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenTextBox @bind-Value="itemtoadd.ItemName" Style="width: 100%"></RadzenTextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <RadzenLabel Text="Quantity"></RadzenLabel>
+                </div><div class="col-lg-6">
+                    <RadzenLabel Text="Price"></RadzenLabel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                        <RadzenNumeric TValue="int" @bind-Value="itemtoadd.Qty"></RadzenNumeric>
+                </div>
+                <div class="col-lg-6">
+                        <RadzenNumeric TValue="decimal" @bind-Value="itemtoadd.Price"></RadzenNumeric>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <RadzenLabel Text="Description"></RadzenLabel>
+                </div>
+                <div class="col-lg-12">
+                    <RadzenTextArea @bind-Value="itemtoadd.Comments" Style="width: 100%"></RadzenTextArea>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-3"><RadzenButton Text="Save" Click=@(args => AddItem())></RadzenButton></div>
+                <div class="col-lg-3"><RadzenButton Text="Cancel"></RadzenButton></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@code {
+    bool switchValue;
+
+    [Parameter]
+    public string Content { get; set; } = string.Empty;
+
+    [Parameter]
+    public List<OrderItem> OrderItems { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<List<OrderItem>> OrderItemsChanged { get; set; } 
+
+    [Parameter]
+    public EventCallback<List<OrderItem>> OnClickCallback {get;set;}
+
+    public OrderItem itemtoadd = new();
+
+    public string selectedid { get; set; }
+
+    public void AddItem()
+    {
+        OrderItems.Add(itemtoadd);
+        itemtoadd = new();
+        OrderItemsChanged.InvokeAsync(OrderItems);
+        OnClickCallback.InvokeAsync(OrderItems);
+    }
+
+    public void LoadSinglePart()
+    {
+        Task.Run(async () => { await partViewModel.LoadSinglePart(Convert.ToInt32(selectedid)); }).Wait();
+        itemtoadd = new();
+        if(partViewModel.SelectedPart != null)
+        {
+            itemtoadd.ItemName = partViewModel.SelectedPart.Name;
+            itemtoadd.Comments = partViewModel.SelectedPart.Comment;          
+        }
+    }
+
+    void LoadParts()
+    {
+        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
+
+    }
+
+    Part partSelected = new();
+    //string partIdSelected;
+
+    public List<string> Testing = new();
+
+
+    private void SelectedItemChosen(Part part)
+    {
+        //partSelected = part;
+        //partIdSelected = partSelected.Id.ToString();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Task.Run(async () => { await partViewModel.LoadAllParts(); }).Wait();
+    }
+
+}

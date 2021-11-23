@@ -104,14 +104,13 @@ using System.Security.Claims;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\OrderItem.razor"
+#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\OrderItemPage.razor"
 using SACOMaintenance.Common.ModelDB;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/orderitemtest")]
-    public partial class OrderItem : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class OrderItemPage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,14 +118,44 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\OrderItem.razor"
+#line 80 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\OrderItemPage.razor"
        
+    bool switchValue;
 
     [Parameter]
     public string Content { get; set; } = string.Empty;
 
+    [Parameter]
+    public List<OrderItem> OrderItems { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<List<OrderItem>> OrderItemsChanged { get; set; } 
+
+    [Parameter]
+    public EventCallback<List<OrderItem>> OnClickCallback {get;set;}
+
+    public OrderItem itemtoadd = new();
 
     public string selectedid { get; set; }
+
+    public void AddItem()
+    {
+        OrderItems.Add(itemtoadd);
+        itemtoadd = new();
+        OrderItemsChanged.InvokeAsync(OrderItems);
+        OnClickCallback.InvokeAsync(OrderItems);
+    }
+
+    public void LoadSinglePart()
+    {
+        Task.Run(async () => { await partViewModel.LoadSinglePart(Convert.ToInt32(selectedid)); }).Wait();
+        itemtoadd = new();
+        if(partViewModel.SelectedPart != null)
+        {
+            itemtoadd.ItemName = partViewModel.SelectedPart.Name;
+            itemtoadd.Comments = partViewModel.SelectedPart.Comment;          
+        }
+    }
 
     void LoadParts()
     {

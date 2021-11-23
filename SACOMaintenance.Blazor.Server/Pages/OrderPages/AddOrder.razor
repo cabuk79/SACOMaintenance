@@ -1,4 +1,5 @@
 ﻿@page "/testingorder"
+@using SACOMaintenance.Common.ModelDB
 
 <div class="container">
     <div class="row">
@@ -32,13 +33,22 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <RadzenGrid TItem="string">
+            <RadzenGrid TItem="OrderItem" Data="@OrderItemsList" @ref="OrderItemsTable">
                 <Columns>
-                    <RadzenGridColumn TItem="string" Title="Id"></RadzenGridColumn>
-                    <RadzenGridColumn TItem="string" Title="Item Name"></RadzenGridColumn>
-                    <RadzenGridColumn TItem="string" Title="Description"></RadzenGridColumn>
-                    <RadzenGridColumn TItem="string" Title="Qty"></RadzenGridColumn>
-                    <RadzenGridColumn TItem="string" Title="Price"></RadzenGridColumn>
+                   @* <RadzenGridColumn TItem="string" Title="Id"></RadzenGridColumn>*@
+                    <RadzenGridColumn TItem="OrderItem" Title="Item Name" Property="ItemName"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="OrderItem" Title="Description" Property="Comments"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="OrderItem" Title="Qty" Property="Qty"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="OrderItem" Title="Price" Property="Price">
+                        <Template Context="price">
+                            @String.Format(new System.Globalization.CultureInfo("en-GB"), "{0:C}", price.Price)
+                        </Template>
+                    </RadzenGridColumn>
+                    <RadzenGridColumn TItem="OrderItem" Title="Total Price Per Part" Property="FullPrice">
+                        <FooterTemplate>
+                            Order Total: <b>@String.Format(new System.Globalization.CultureInfo("en-GB"), "{0:C}", OrderItemsList.Sum(o => o.FullPrice))</b>
+                        </FooterTemplate>
+                    </RadzenGridColumn>    
                 </Columns>
             </RadzenGrid>
         </div>
@@ -47,6 +57,14 @@
         <div class="col-lg-2"><RadzenButton Text="Save"></RadzenButton></div>
         <div class="col-lg-2"><RadzenButton Text="Cancel"></RadzenButton></div>
     </div>
+
+
+    <h1>Item orders</h1><br /><br />
+    @foreach(var orderItem in OrderItemsList)
+    {
+        @orderItem.Comments
+
+    }
 
 </div>
 
@@ -57,16 +75,35 @@
         <div class="modal-dialog" style="border-color: black">
             <div class="modal-content">
                 <div class="modal-body">
-                    <OrderItem></OrderItem>
+                    <OrderItemPage @bind-OrderItems="OrderItemsList"
+                    OnClickCallback="@UpdatePage">            
+                    </OrderItemPage>
                 </div>
             </div>
         </div>
     </div>
-
 }
 
 @code {
+    public List<OrderItem> OrderItemsList = new List<OrderItem>();
+    public RadzenGrid<OrderItem> OrderItemsTable = new();
+
     bool ShowPopup = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        OrderItem testingitem = new();
+        testingitem.Comments = "ttttest";
+        OrderItemsList.Add(testingitem);
+
+    }
+
+    public void UpdatePage()
+    {
+        OrderItemsTable.Reload();
+        //StateHasChanged();
+   }
+
 
     void Showdialog()
     {

@@ -186,17 +186,11 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         Task.Run(async () => { await maintReqInitation.LoadMaintRiskData(maintReqInitation.maintReqId); }).Wait();
         Task.Run(async () => { await maintReqInitation.LoadIsolations(); }).Wait();
-        Task.Run(async () => { await maintReqInitation.LoadIsoaltionsByMaint(); }).Wait();
+       // Task.Run(async () => { await maintReqInitation.LoadIsoaltionsByMaint(); }).Wait();
 
         detailMarkUp = maintReqInitation.maintReqDetails;
 
         Task.Run(async () => { await maintReqInitation.LoadPPE(); }).Wait();
-
-        //Load the selected isolations from the Isolations
-        //This is done below so that the genric SquareComboBox will find the isolations
-        maintReqInitation.IsolationsSelected =
-            maintReqInitation.Isolations
-            .Where(maint => maint.MaintRequestInitiations.Count == 1).ToList();
 
         maintReqInitation.RiskListsChosen =
             maintReqInitation.RiskInfoList.ToList();
