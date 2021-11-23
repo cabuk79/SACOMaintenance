@@ -119,7 +119,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 87 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
+#line 89 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
        
     public List<OrderItem> OrderItemsList = new List<OrderItem>();
     public RadzenGrid<OrderItem> OrderItemsTable = new();
@@ -128,6 +128,7 @@ using SACOMaintenance.Common.ModelDB;
 
     protected override async Task OnInitializedAsync()
     {
+        Task.Run(async () => { await orderViewModel.LoadSuppliers(); }).Wait();
         OrderItem testingitem = new();
         testingitem.Comments = "ttttest";
         OrderItemsList.Add(testingitem);
@@ -138,7 +139,7 @@ using SACOMaintenance.Common.ModelDB;
     {
         OrderItemsTable.Reload();
         //StateHasChanged();
-   }
+    }
 
 
     void Showdialog()
@@ -146,12 +147,16 @@ using SACOMaintenance.Common.ModelDB;
         ShowPopup = true;
     }
 
-
+    void CloseDialog()
+    {
+        ShowPopup = false;
+    }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IOrderViewModel orderViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

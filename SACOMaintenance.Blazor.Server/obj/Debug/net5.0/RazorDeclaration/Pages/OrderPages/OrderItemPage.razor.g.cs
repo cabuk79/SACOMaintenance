@@ -134,6 +134,9 @@ using SACOMaintenance.Common.ModelDB;
     [Parameter]
     public EventCallback<List<OrderItem>> OnClickCallback {get;set;}
 
+    [Parameter] 
+    public EventCallback<bool> CloseDialogCallback { get; set; }
+
     public OrderItem itemtoadd = new();
 
     public string selectedid { get; set; }
@@ -173,6 +176,12 @@ using SACOMaintenance.Common.ModelDB;
     {
         //partSelected = part;
         //partIdSelected = partSelected.Id.ToString();
+    }
+
+    void Close()
+    {
+        CloseDialogCallback.InvokeAsync(false);
+        //ShowPopup = false;
     }
 
     protected override async Task OnInitializedAsync()

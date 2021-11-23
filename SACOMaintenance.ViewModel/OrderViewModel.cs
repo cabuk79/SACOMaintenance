@@ -16,13 +16,16 @@ namespace SACOMaintenance.ViewModel
     {
 
         IOrder OrderDataProvider { get; }
+        ISupplier SupplierDataProvider { get; }
 
-        public OrderViewModel(IOrder orderDataProvider)
+        public OrderViewModel(IOrder orderDataProvider, ISupplier supplierDataProvider)
         {
             OrderDataProvider = orderDataProvider;
+            SupplierDataProvider = supplierDataProvider;
         }
 
         public ObservableCollection<Order> Orders { get; } = new();
+        public ObservableCollection<Supplier> Suppliers { get; } = new();
 
         public async void LoadAllOrders()
         {
@@ -35,6 +38,16 @@ namespace SACOMaintenance.ViewModel
             }    
         }
 
+        public async Task LoadSuppliers()
+        {
+            var suppliersList = new ObservableCollection<Supplier>(await SupplierDataProvider.LoadAllSuppliers());
+            Suppliers.Clear();
+
+            foreach(var item in suppliersList)
+            {
+                Suppliers.Add(item);
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

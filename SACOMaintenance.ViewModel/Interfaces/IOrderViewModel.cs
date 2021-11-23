@@ -11,6 +11,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
     public interface IOrderViewModel
     {
         ObservableCollection<Order> Orders { get; }
+        ObservableCollection<Supplier> Suppliers { get; }
         void LoadAllOrders();
+        Task LoadSuppliers(); 
     }
 }

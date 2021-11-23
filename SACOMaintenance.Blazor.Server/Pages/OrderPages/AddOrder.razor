@@ -1,5 +1,6 @@
 ﻿@page "/testingorder"
 @using SACOMaintenance.Common.ModelDB
+@inject SACOMaintenance.ViewModel.Interfaces.IOrderViewModel orderViewModel
 
 <div class="container">
     <div class="row">
@@ -16,17 +17,18 @@
     </div>
     <div class="row">
         <div class="col-lg-4"><RadzenDatePicker DateFormat="d" TValue="DateTime?"></RadzenDatePicker></div>
-        <div class="col-lg-4"><RadzenDropDown TValue="string"></RadzenDropDown></div>
+        <div class="col-lg-4"><RadzenDropDown TValue="int" Data="@orderViewModel.Suppliers"
+                        TextProperty="Name" ValueProperty="Id"></RadzenDropDown></div>
         <div class="col-lg-4"><RadzenDropDown TValue="string"></RadzenDropDown></div>
     </div>
     <div class="row">
         <div class="col-lg-12"><RadzenLabel Text="Description"></RadzenLabel></div>
     </div>
     <div class="row">
-        <div class="col-lg-12"><RadzenTextArea></RadzenTextArea></div>
+        <div class="col-lg-12"><RadzenTextArea Style="width: 100%"></RadzenTextArea></div>
     </div>
     <div class="row">
-        <div class="col-lg-2"><button type="button" @onclick="(() => Showdialog())">Add Item</button> @*<RadzenButton Text="Add Item" @onclick="(() => Showdialog())"></RadzenButton>*@</div>
+        <div class="col-lg-2"><button type="button" @onclick="(() => Showdialog())">Add Item</button></div>
     </div>
     <div class="row">
         <div class="col-lg-12"><RadzenLabel Text="Items in order"></RadzenLabel></div>
@@ -55,7 +57,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2"><RadzenButton Text="Save"></RadzenButton></div>
-        <div class="col-lg-2"><RadzenButton Text="Cancel"></RadzenButton></div>
+        <div class="col-lg-2"><RadzenButton Text="Close"></RadzenButton></div>
     </div>
 
 
@@ -76,7 +78,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <OrderItemPage @bind-OrderItems="OrderItemsList"
-                    OnClickCallback="@UpdatePage">            
+                    OnClickCallback="@UpdatePage" CloseDialogCallback="@CloseDialog">            
                     </OrderItemPage>
                 </div>
             </div>
@@ -92,6 +94,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        Task.Run(async () => { await orderViewModel.LoadSuppliers(); }).Wait();
         OrderItem testingitem = new();
         testingitem.Comments = "ttttest";
         OrderItemsList.Add(testingitem);
@@ -102,7 +105,7 @@
     {
         OrderItemsTable.Reload();
         //StateHasChanged();
-   }
+    }
 
 
     void Showdialog()
@@ -110,6 +113,9 @@
         ShowPopup = true;
     }
 
-
+    void CloseDialog()
+    {
+        ShowPopup = false;
+    }
 
 }

@@ -70,7 +70,7 @@
             </div>    
             <div class="row">
                 <div class="col-lg-3"><RadzenButton Text="Save" Click=@(args => AddItem())></RadzenButton></div>
-                <div class="col-lg-3"><RadzenButton Text="Cancel"></RadzenButton></div>
+                <div class="col-lg-3"><RadzenButton Text="Cancel"  Click=@(args => Close())></RadzenButton></div>
             </div>
         </div>
     </div>
@@ -91,6 +91,9 @@
 
     [Parameter]
     public EventCallback<List<OrderItem>> OnClickCallback {get;set;}
+
+    [Parameter] 
+    public EventCallback<bool> CloseDialogCallback { get; set; }
 
     public OrderItem itemtoadd = new();
 
@@ -131,6 +134,12 @@
     {
         //partSelected = part;
         //partIdSelected = partSelected.Id.ToString();
+    }
+
+    void Close()
+    {
+        CloseDialogCallback.InvokeAsync(false);
+        //ShowPopup = false;
     }
 
     protected override async Task OnInitializedAsync()
