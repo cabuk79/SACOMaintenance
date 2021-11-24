@@ -134,7 +134,7 @@ using System.Globalization;
 
     protected override void OnInitialized()
     {
-        requestViewModel.GetRequests();
+        Task.Run(async () => { await requestViewModel.GetRequests(); }).Wait();
 
         //UpdateStartYear();
 

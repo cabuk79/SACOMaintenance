@@ -13,7 +13,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<Order> Orders { get; }
         ObservableCollection<Supplier> Suppliers { get; }
         ObservableCollection<Department> Departments { get; }
-        void LoadAllOrders();
+        Task LoadAllOrders();
         Task LoadSuppliers();
         Task LoadDepartments();
     }

@@ -1,6 +1,7 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using System.Collections.ObjectModel;
 using SACOMaintenance.DataAccess.Interfaces;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel.Interfaces
 {
@@ -21,10 +22,10 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region methods
 
-        public void LoadMaintReqs();
-        public void LoadAssignedOpenReqs();
-        public void LoadNewReqs();
-        public void LoadReqsCurrentYear();
+        public Task LoadMaintReqs();
+        public Task LoadAssignedOpenReqs();
+        public Task LoadNewReqs();
+        public Task LoadReqsCurrentYear();
         #endregion
     }
 }

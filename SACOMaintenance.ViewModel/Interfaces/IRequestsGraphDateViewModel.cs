@@ -12,8 +12,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
     public interface IRequestsGraphDateViewModel
     {
         public IMaintRequestInitiation MaintReqDataProvider { get; }
-        public IEnumerable<MaintRequestInitiation> MaintReqs { get; set; }
+        public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; }
 
-        public void GetRequests();
+        public Task GetRequests();
     }
 }

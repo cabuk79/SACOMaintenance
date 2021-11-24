@@ -249,17 +249,17 @@ app {
     }
 
     /* Request Card Priority */
-    .requestPriorityCentre{
+    /*.requestPriorityCentre{
         display: flex;
         justify-content: center;
         object-fit: cover;
     }
 
     .requestPriorityRight {
-        margin: auto;
+        margin: auto;*/
         /*padding: 0px;*/
-        text-align: right;
-    }
+        /*text-align: right;
+    }*/
 
 
     /* Users Avatars */

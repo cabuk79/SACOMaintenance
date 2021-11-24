@@ -17,6 +17,7 @@ namespace SACOMaintenance.ViewModel
         public IMaintRequestInitiation MaintReqDataProvider { get; }
 
         public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; } = new();
+        public ObservableCollection<Priority> prios { get; set; } = new();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -40,10 +41,17 @@ namespace SACOMaintenance.ViewModel
             return MaintReqs.Count;
         }
 
-        public async Task<ObservableCollection<Priority>> GetPriorties()
+        public async Task GetPriorties()
         {
-            var prios = new ObservableCollection<Priority>(await MaintReqDataProvider.LoadAllRequestsPriority());
-            return prios;
+            prios.Clear();
+            var list = new ObservableCollection<Priority>(await MaintReqDataProvider.LoadAllRequestsPriority());
+            
+            foreach(var item in list)
+            {
+                prios.Add(item);
+            }
+            
+     
         }
 
         //public ObservableCollection<MaintRequestInitiation> GetRequestsByPriority()

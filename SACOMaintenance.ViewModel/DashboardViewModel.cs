@@ -6,6 +6,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -32,41 +33,38 @@ namespace SACOMaintenance.ViewModel
             //LoadMaintReqs();
         }
 
-        public async void LoadMaintReqs()
+        public async Task LoadMaintReqs()
         {
             MaintReqs.Clear();
-            //var list = MaintReqDataProvider.LoadAllRequestInitations();
-            MaintReqs = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadNewRequests());
-            
+            var list = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadAllRequestInitations());
+            //MaintReqs = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadNewRequests());
 
-            //foreach(var item in list)
-            //{
-            //    MaintReqs.Add(item);
-            //}
+            foreach (var item in list)
+            {
+                MaintReqs.Add(item);
+            }
         }
 
-        public async void LoadNewReqs()
+        public async Task LoadNewReqs()
         {
             MaintReqsNew.Clear();
-            MaintReqsNew = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadNewRequests());
-           
+            var list = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadNewRequests());
 
-            //foreach(var item in list)
-            //{
-            //    MaintReqsNew.Add(item);
-            //}
+            foreach (var item in list)
+            {
+                MaintReqsNew.Add(item);
+            }
         }
 
-        public async void LoadAssignedOpenReqs()
+        public async Task LoadAssignedOpenReqs()
         {
             MaintReqsAssignedOpen.Clear();
-            MaintReqsAssignedOpen = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqsAssignedOpen());
-            
+            var list = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqsAssignedOpen());
 
-            //foreach(var item in list)
-            //{
-            //    MaintReqsAssignedOpen.Add(item);
-            //}
+            foreach (var item in list)
+            {
+                MaintReqsAssignedOpen.Add(item);
+            }
         }
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)
@@ -74,7 +72,7 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public async void LoadReqsCurrentYear()
+        public async Task LoadReqsCurrentYear()
         {
             var list = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadAllRequestsCurrentYear());
             MaintReqCurrentYear.Clear();

@@ -123,7 +123,7 @@ using SACOMaintenance.Common.ModelDB;
 
         protected override async Task OnInitializedAsync()
         {
-            dashboardViewModel.LoadAssignedOpenReqs();
+            Task.Run(async () => { await dashboardViewModel.LoadAssignedOpenReqs(); }).Wait();
         }
     
 

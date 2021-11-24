@@ -30,7 +30,7 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<Supplier> Suppliers { get; } = new();
         public ObservableCollection<Department> Departments { get; } = new();
 
-        public async void LoadAllOrders()
+        public async Task LoadAllOrders()
         {
             var orderLists = new ObservableCollection<Order>(await OrderDataProvider.LoadAllOrders());
             Orders.Clear();

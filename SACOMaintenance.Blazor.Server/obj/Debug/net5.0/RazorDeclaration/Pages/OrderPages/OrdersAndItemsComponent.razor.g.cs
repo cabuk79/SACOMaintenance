@@ -122,13 +122,8 @@ using SACOMaintenance.Common.ModelDB;
        
     protected override async Task OnInitializedAsync()
     {
-        orderViewModel.LoadAllOrders();
+        Task.Run(async () => { await orderViewModel.LoadAllOrders(); }).Wait();
     }
-
-    //void RowRender(RowRenderEventArgs<Order> args)
-    //{
-    //    args.Expandable = args.Data.ShipCountry == "France" || args.Data.ShipCountry == "Brazil";
-    //}
 
 #line default
 #line hidden

@@ -1,0 +1,27 @@
+.Priority-Cards[b-o7x39q8qvi] {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.Priority-Card[b-o7x39q8qvi]{
+    flex: 0 1 24%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .Priority-Cards[b-o7x39q8qvi] {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .Priority-Card[b-o7x39q8qvi] {
+        flex: 0 1 calc(25% - 1em);
+    }
+}

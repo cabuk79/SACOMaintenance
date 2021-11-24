@@ -127,49 +127,43 @@ using Microsoft.AspNetCore.SignalR.Client;
         #pragma warning restore 1998
 #nullable restore
 #line 34 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\MaintReqUnassigned.razor"
-              
+      
+    private HubConnection hubConnection;
+    public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        Task.Run(async () => { await dashboardViewModel.LoadMaintReqs(); }).Wait();
 
-            private HubConnection hubConnection;
-            public RadzenGrid<MaintRequestInitiation> reqGrid { get; set; }
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
+            .Build();
 
-            protected override async Task OnInitializedAsync()
-            {
-                dashboardViewModel.LoadMaintReqs();
+        hubConnection.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            reqGrid.Reload();
+            InvokeAsync(() => StateHasChanged());
+        });
 
-                hubConnection = new HubConnectionBuilder()
-                    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
-                    .Build();
+        await hubConnection.StartAsync();
 
-                hubConnection.On("ReceiveMessage", () =>
-                {
-                    CallLoadData();
-                    reqGrid.Reload();
-                    InvokeAsync(() => StateHasChanged());
-                });
+        Task.Run(async () => { await dashboardViewModel.LoadMaintReqs(); }).Wait();
+    }
 
-                await hubConnection.StartAsync();
+    private async Task CallLoadData()
+    {                
+        Task.Run(async () => { await dashboardViewModel.LoadMaintReqs(); }).Wait();               
+    }
 
-                dashboardViewModel.LoadMaintReqs();
-            }
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
 
-            private void CallLoadData()
-            {
-                Task.Run(async () =>
-                {
-                    dashboardViewModel.LoadMaintReqs();
-                });
-            }
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
 
-            public bool IsConnected =>
-                hubConnection.State == HubConnectionState.Connected;
-
-            public void Dispose()
-            {
-                _ = hubConnection.DisposeAsync();
-            }
-
-        
 
 #line default
 #line hidden

@@ -148,7 +148,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         await hubConnection.StartAsync();
 
-        dashboardViewModel.LoadAssignedOpenReqs();
+        Task.Run(async () => { await dashboardViewModel.LoadAssignedOpenReqs(); }).Wait();
     }
 
     private void CallLoadData()

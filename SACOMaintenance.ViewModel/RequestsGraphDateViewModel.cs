@@ -16,7 +16,7 @@ namespace SACOMaintenance.ViewModel
     {
         public IMaintRequestInitiation MaintReqDataProvider { get; }
 
-        public IEnumerable<MaintRequestInitiation> MaintReqs { get; set; }
+        public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -25,9 +25,15 @@ namespace SACOMaintenance.ViewModel
             MaintReqDataProvider = requestDataProvider;
         }
 
-        public async void GetRequests()
+        public async Task GetRequests()
         {
-            MaintReqs = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadAllRequestInitations());
+            MaintReqs.Clear();
+            var list = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadAllRequestInitations());
+        
+            foreach(var item in list)
+            {
+                MaintReqs.Add(item);
+            }
         }
 
         private void RaisePropertychangedEvent([CallerMemberName] string propertyName = null)

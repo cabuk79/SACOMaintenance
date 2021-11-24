@@ -110,7 +110,7 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/testingorder")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addneworder")]
     public partial class AddOrder : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -119,7 +119,7 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 98 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
+#line 89 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\OrderPages\AddOrder.razor"
        
     public List<OrderItem> OrderItemsList = new List<OrderItem>();
     public RadzenGrid<OrderItem> OrderItemsTable = new();
@@ -140,7 +140,6 @@ using SACOMaintenance.Common.ModelDB;
     public void UpdatePage()
     {
         OrderItemsTable.Reload();
-        //StateHasChanged();
     }
 
 

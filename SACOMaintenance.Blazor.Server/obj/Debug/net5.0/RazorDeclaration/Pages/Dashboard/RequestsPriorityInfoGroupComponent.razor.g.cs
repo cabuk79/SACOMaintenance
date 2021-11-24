@@ -132,15 +132,15 @@ using System.Collections.ObjectModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
+#line 23 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\Dashboard\RequestsPriorityInfoGroupComponent.razor"
        
 
-    public ObservableCollection<MaintRequestInitiation> regs;
-    public ObservableCollection<Priority> prios;
+    public ObservableCollection<MaintRequestInitiation> regs = new();
+    
 
     protected override async Task OnInitializedAsync()
     {
-        prios = await viewMod.GetPriorties();
+        Task.Run(async () => { await viewMod.GetPriorties(); }).Wait();
     }
 
 

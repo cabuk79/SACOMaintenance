@@ -190,7 +190,9 @@ namespace SACOMaintenance.DataAccess
     {
         //var requestsPrio = _requestContext.Priorites.ToList();
         //return requestsPrio;
-        return await _requestInitationDBContext.Priorites.ToListAsync();
+        return await _requestInitationDBContext.Priorites
+                .Include(m => m.MaintRes)
+                .ToListAsync();
         }
 
         //public IEnumerable<MaintRequestInitiation> LoadReqsByUser(string userId)
@@ -242,7 +244,7 @@ namespace SACOMaintenance.DataAccess
             //    .ToList();
             //return maintReqInitationListNew;
 
-            return await _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 7)
+            return await _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 1)
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
                 .ToListAsync();
@@ -268,7 +270,7 @@ namespace SACOMaintenance.DataAccess
             //    .ToList();
             //return maintReqInitationListAssignedOpen;
 
-            return await _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 8)  //TOD: workout this maybe do it on name?
+            return await _requestInitationDBContext.MaintRequestInitiations.Where(s => s.StatusId == 2)  //TOD: workout this maybe do it on name?
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
                 .ToListAsync();

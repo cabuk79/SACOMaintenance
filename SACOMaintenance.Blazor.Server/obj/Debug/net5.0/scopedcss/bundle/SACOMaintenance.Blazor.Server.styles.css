@@ -1,3 +1,32 @@
+/* _content/SACOMaintenance.Blazor.Server/Components/RequestPriorityDashboardItem.razor.rz.scp.css */
+/*
+.card {
+    text-align: center;   
+}*/
+
+/*.card-body {
+    display: flex;
+    justify-content: space-between;*/
+    /*justify-content: space-between;*/
+/*}*/
+
+.RequestPriorityMain[b-uf00n0v108] {
+    display: flex;
+    /*flex-direction: row;
+    flex-wrap: wrap;*/
+    justify-content: space-between;
+}
+
+.requestPriorityCentre[b-uf00n0v108] {
+   /* display: flex;*/
+    justify-content: left;
+    /*object-fit: fill;*/
+}
+
+.requestPriorityRight[b-uf00n0v108] {
+    /*margin: auto;*/
+    text-align: right;
+}
 /* _content/SACOMaintenance.Blazor.Server/Components/RequestRiskChoice.razor.rz.scp.css */
 .container-full[b-t4da6dbceu] {
     display: flex;
@@ -118,6 +147,34 @@
         background-color: green;
     }
 
+/* _content/SACOMaintenance.Blazor.Server/Pages/Dashboard/RequestsPriorityInfoGroupComponent.razor.rz.scp.css */
+.Priority-Cards[b-o7x39q8qvi] {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.Priority-Card[b-o7x39q8qvi]{
+    flex: 0 1 24%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .Priority-Cards[b-o7x39q8qvi] {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .Priority-Card[b-o7x39q8qvi] {
+        flex: 0 1 calc(25% - 1em);
+    }
+}
 /* _content/SACOMaintenance.Blazor.Server/Shared/SquareCheckBox.razor.rz.scp.css */
 
 body[b-tv8wdhpw7e] {

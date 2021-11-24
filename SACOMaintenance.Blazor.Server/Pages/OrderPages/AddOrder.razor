@@ -1,4 +1,4 @@
-﻿@page "/testingorder"
+﻿@page "/addneworder"
 @using SACOMaintenance.Common.ModelDB
 @inject SACOMaintenance.ViewModel.Interfaces.IOrderViewModel orderViewModel
 
@@ -68,15 +68,6 @@
         <div class="col-lg-2"><RadzenButton Text="Save"></RadzenButton></div>
         <div class="col-lg-2"><RadzenButton Text="Close"></RadzenButton></div>
     </div>
-
-
-    <h1>Item orders</h1><br /><br />
-    @foreach(var orderItem in OrderItemsList)
-    {
-        @orderItem.Comments
-
-    }
-
 </div>
 
 
@@ -115,7 +106,6 @@
     public void UpdatePage()
     {
         OrderItemsTable.Reload();
-        //StateHasChanged();
     }
 
 

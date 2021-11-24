@@ -1,0 +1,28 @@
+﻿/*
+.card {
+    text-align: center;   
+}*/
+
+/*.card-body {
+    display: flex;
+    justify-content: space-between;*/
+    /*justify-content: space-between;*/
+/*}*/
+
+.RequestPriorityMain {
+    display: flex;
+    /*flex-direction: row;
+    flex-wrap: wrap;*/
+    justify-content: space-between;
+}
+
+.requestPriorityCentre {
+   /* display: flex;*/
+    justify-content: left;
+    /*object-fit: fill;*/
+}
+
+.requestPriorityRight {
+    /*margin: auto;*/
+    text-align: right;
+}
