@@ -129,19 +129,19 @@ using System.Globalization;
 
     //public DataItem[] statusData = new DataItem[2];
 
-    public static int closedCount;
-    public static int newCount;
-    public static int countAssigned;
-    public static int onHoldCount;
-    public static int cancelledCount;
+    public static int closedCount = 0;
+    public static int newCount = 0;
+    public static int countAssigned = 0;
+    public static int onHoldCount = 0;
+    public static int cancelledCount = 0;
 
     protected override async Task OnInitializedAsync()
     {
-        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6).Result;
-        newCount = requestGraphViewModel.GetRequestsByStatusCount(7).Result;
-        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8).Result;
-        onHoldCount = requestGraphViewModel.GetRequestsByStatusCount(11).Result;
-        cancelledCount = requestGraphViewModel.GetRequestsByStatusCount(10).Result;
+        Task.Run(async ()=> { await requestGraphViewModel.GetRequestsByStatusCount(); }).Wait();
+
+        closedCount = requestGraphViewModel.closedCount;
+        newCount = requestGraphViewModel.newCount;
+        onHoldCount = requestGraphViewModel.onHoldCount;
     }
 
     DataItem[] statusData = new DataItem[]
@@ -175,32 +175,32 @@ using System.Globalization;
     // getStatusCount();
 
 
-    public void getStatusCount()
-    {
-        closedCount = requestGraphViewModel.GetRequestsByStatusCount(6).Result;
-        newCount = requestGraphViewModel.GetRequestsByStatusCount(7).Result;
-        countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8).Result;
+    //public void getStatusCount()
+    //{
+    //    closedCount = requestGraphViewModel.GetRequestsByStatusCount(3).Result;
+    //    newCount = requestGraphViewModel.GetRequestsByStatusCount(1).Result;
+    //    //countAssigned = requestGraphViewModel.GetRequestsByStatusCount(8).Result;
 
 
-        DataItem[] statusData = new DataItem[]
-        {
-            new DataItem
-            {
-                number = closedCount,
-                statusName = "Closed"
-            },
-            new DataItem
-            {
-                number = newCount,
-                statusName = "New"
-            },
-            new DataItem
-            {
-                number = countAssigned,
-                statusName = "Assigned"
-            }
-        };
-    }
+    //    DataItem[] statusData = new DataItem[]
+    //    {
+    //        new DataItem
+    //        {
+    //            number = closedCount,
+    //            statusName = "Closed"
+    //        },
+    //        new DataItem
+    //        {
+    //            number = newCount,
+    //            statusName = "New"
+    //        },
+    //        new DataItem
+    //        {
+    //            number = countAssigned,
+    //            statusName = "Assigned"
+    //        }
+    //    };
+    //}
 
 #line default
 #line hidden

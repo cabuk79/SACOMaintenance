@@ -74,7 +74,7 @@ namespace SACOMaintenance.ViewModel
 
         public async void LoadReqsByStatusId(int statusId)
         {
-            var maintReqList = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus(statusId));
+            var maintReqList = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus()); // (statusId));
             requests.Clear();
 
             foreach(var item in maintReqList)

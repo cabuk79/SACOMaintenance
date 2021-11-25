@@ -16,7 +16,7 @@ namespace SACOMaintenance.ViewModel
     {
         public IMaintRequestInitiation MaintReqDataProvider { get; }
 
-        public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; }
+        public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; } = new();
 
         public event PropertyChangedEventHandler PropertyChanged;
 

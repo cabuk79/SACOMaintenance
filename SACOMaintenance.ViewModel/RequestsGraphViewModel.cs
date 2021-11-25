@@ -15,6 +15,9 @@ namespace SACOMaintenance.ViewModel
     public class RequestsGraphViewModel : INotifyPropertyChanged, IRequestsGraphViewModel
     {
         public IMaintRequestInitiation MaintReqDataProvider { get; }
+        public int closedCount { get; set; } = 0;
+        public int newCount { get; set; } = 0;
+        public int onHoldCount { get; set; } = 0;
 
         public ObservableCollection<MaintRequestInitiation> MaintReqs { get; set; } = new();
         public ObservableCollection<Priority> prios { get; set; } = new();
@@ -27,18 +30,18 @@ namespace SACOMaintenance.ViewModel
         }
 
       
-        public async Task<int> GetRequestsByStatusCount(int statusId)
+        public async Task GetRequestsByStatusCount()
         {
             MaintReqs.Clear();
-            MaintReqs = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus(statusId));
-        
+            var list = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus());
 
-            //foreach(var item in maintRequests)
-            //{
-            //    MaintReqs.Add(item);
-            //}
-
-            return MaintReqs.Count;
+            foreach (var item in list)
+            {
+                if(item.StatusId == 3) { closedCount++; }
+                if(item.StatusId == 1) { newCount++; }
+                if(item.StatusId == 6) { onHoldCount++; }
+                MaintReqs.Add(item);
+            }        
         }
 
         public async Task GetPriorties()

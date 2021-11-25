@@ -160,7 +160,7 @@ using ExcelLibs;
         augCount = 0; septCount = 0; octCount = 0; novCount = 0; decCount = 0;
 
 
-        requestViewModel.GetRequests();
+        Task.Run(async () => { await requestViewModel.GetRequests(); }).Wait();
 
         foreach (var item in requestViewModel.MaintReqs)
         {

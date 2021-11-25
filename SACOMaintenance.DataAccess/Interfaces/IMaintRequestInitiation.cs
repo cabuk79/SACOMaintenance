@@ -18,7 +18,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
         Task<IEnumerable<MaintRequestInitiation>> LoadRequestInitiationWithEquipment();
         Task<IEnumerable<MaintRequestInitiation>> LoadNewRequests();
         Task<IEnumerable<MaintRequestInitiation>> LoadReqsAssignedOpen();
-        Task<IEnumerable<MaintRequestInitiation>> LoadReqBasedOnStatus(int statusId);
+        Task<IEnumerable<MaintRequestInitiation>> LoadReqBasedOnStatus(); //(int statusId);
         Task<IEnumerable<MaintRequestInitiation>> LoadReqsByUserOpen(string userId);
         Task<IEnumerable<Priority>> LoadAllRequestsPriority();
         Task<IEnumerable<MaintRequestInitiation>> LoadReqsByUser(string userId);
