@@ -48,12 +48,33 @@
                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised" Width="100px"></RadzenGridColumn>
                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name" Width="100px"></RadzenGridColumn>
                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status" Width="80px">
+                       <Template Context="data">
+                           @*@if(data.Status.StatusName == "New") { <i class="fas fa-plus"></i>     @data.Status.StatusName } else { @data.Status.StatusName }*@
+
+                           @switch (data.Status.StatusName)
+                           {
+                                case "New":
+                                    <i class="fas fa-plus"></i> @data.Status.StatusName;
+                                    break;
+                                case "Closed":
+                                    <i class="fas fa-door-closed"></i> @data.Status.StatusName;
+                                    break;
+                                case "Open":
+                                    <i class="fas fa-door-open"></i> @data.Status.StatusName;
+                                    break;
+                                case "Waiting Sign Off":
+                                    <i class="fas fa-file-signature"></i> @data.Status.StatusName;
+                                    break;
+                                default:
+                                    @data.Status.StatusName;
+                                    break;
+                            }
+                        </Template>
                         <FilterTemplate>
                             <RadzenDropDown @bind-Value="@maintReqListViewModel.StatusId" TextProperty="Text"
                                             ValueProperty="Value" Style="width:100%"
                                             Change=@OnChange
                                             Data="@maintReqListViewModel.statusList.Select(t => new { Text = $"{t.StatusName}", Value = t.Id })" />
-
                         </FilterTemplate>
                     </RadzenGridColumn>
                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions" Width="30px"
@@ -88,7 +109,7 @@
     void OnChange()
     {
 
-        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
+        Task.Run(async () => { await maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId); }).Wait();
         maintGrid.Reload();
         InvokeAsync(StateHasChanged);
 

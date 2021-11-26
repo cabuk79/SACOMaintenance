@@ -125,7 +125,7 @@ using System.Globalization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
+#line 19 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\RequestsYearGraphComponent.razor"
        
     //TODO: workout why the years are going up in halfs i.e. 2019>2019.5>2020>2020.5
     public int startYear;// = 2019; //TODO: make this a global varibale that can be set on install or by user once logged in etc.
@@ -146,7 +146,7 @@ using System.Globalization;
 
         while (yearDiffernce > 0)
         {
-            YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear, YearNumber = 0 });
+            YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear.ToString(), YearNumber = 0 });
             startYear++;
             yearDiffernce--;
         }
@@ -155,7 +155,7 @@ using System.Globalization;
         {
             foreach (var yearItem in YearsList)
             {
-                if (item.DateRaised.Year == yearItem.YearName)
+                if (item.DateRaised.Year.ToString() == yearItem.YearName.ToString())
                 {
                     yearItem.YearNumber++;
                 }
@@ -172,7 +172,7 @@ using System.Globalization;
 
             while (yearDiffernce >= 0)
             {
-                YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear, YearNumber = 0 });
+                YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear.ToString(), YearNumber = 0 });
                 startYear++;
                 yearDiffernce--;
             }
@@ -181,7 +181,7 @@ using System.Globalization;
             {
                 foreach (var yearItem in YearsList)
                 {
-                    if (item.DateRaised.Year == yearItem.YearName)
+                    if (item.DateRaised.Year.ToString() == yearItem.YearName.ToString())
                     {
                         yearItem.YearNumber++;
                     }

@@ -29,7 +29,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         void LoadRequests();
         void LoadNewRequests();
-        void LoadReqsByStatusId(int statusId);
+        Task LoadReqsByStatusId(int statusId);
         void ExportList();
 
         #endregion

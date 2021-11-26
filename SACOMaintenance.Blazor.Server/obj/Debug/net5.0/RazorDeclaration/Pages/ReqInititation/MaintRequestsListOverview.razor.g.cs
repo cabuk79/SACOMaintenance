@@ -161,7 +161,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 82 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+#line 103 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
 
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
@@ -171,7 +171,7 @@ using System.IO;
     void OnChange()
     {
 
-        maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId);
+        Task.Run(async () => { await maintReqListViewModel.LoadReqsByStatusId(maintReqListViewModel.StatusId); }).Wait();
         maintGrid.Reload();
         InvokeAsync(StateHasChanged);
 

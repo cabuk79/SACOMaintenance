@@ -1,7 +1,9 @@
 ﻿@page "/part/full/{Id}"
 @inject SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel
-
+@inject FileDownloadService FileDownload
 @using SACOMaintenance.Common.ModelDB
+@using SACOMaintenance.Blazor.Server.Services
+
 
     <h3>Information for @partViewModel.SelectedPart.Name</h3>
 
@@ -142,14 +144,6 @@
                         </div>
                     </div>
                 </RadzenFieldset>
-                
-             
-
-
-
-
-
-
             </div>
             </div>
         
@@ -157,25 +151,27 @@
     </RadzenTemplateForm>
 
 
-    @code {
-        [Parameter]
-        public string Id { get; set; }
+@code {
+    [Parameter]
+    public string Id { get; set; }
 
-        protected override void OnInitialized()
-        {
-            partViewModel.LoadSinglePart(Convert.ToInt32(Id));
-        }
+    protected override void OnInitialized()
+    {
+        Task.Run(async () => { await partViewModel.LoadSinglePart(Convert.ToInt32(Id)); }).Wait();
+    }
 
-        public void openDrawing(string fileLocation)
-        {
 
-            var p = new System.Diagnostics.Process();
+    public async Task openDrawing(string fileLocation)
+    {
+        await FileDownload.DownloadPDF(fileLocation);// (@"C:\Excel Export Test\test.pdf");
 
-            p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
-            {
-                UseShellExecute = true
-            };
+            //var p = new System.Diagnostics.Process();
 
-            p.Start();
+            //p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+            //{
+            //    UseShellExecute = true
+            //};
+
+            //p.Start();
         }
     }

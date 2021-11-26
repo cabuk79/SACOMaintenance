@@ -110,6 +110,13 @@ using SACOMaintenance.Common.ModelDB;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
+using SACOMaintenance.Blazor.Server.Services;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/part/full/{Id}")]
     public partial class PartFullView : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -119,33 +126,36 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 160 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
-           
-        [Parameter]
-        public string Id { get; set; }
+#line 154 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PartPages\PartFullView.razor"
+       
+    [Parameter]
+    public string Id { get; set; }
 
-        protected override void OnInitialized()
-        {
-            partViewModel.LoadSinglePart(Convert.ToInt32(Id));
-        }
+    protected override void OnInitialized()
+    {
+        Task.Run(async () => { await partViewModel.LoadSinglePart(Convert.ToInt32(Id)); }).Wait();
+    }
 
-        public void openDrawing(string fileLocation)
-        {
 
-            var p = new System.Diagnostics.Process();
+    public async Task openDrawing(string fileLocation)
+    {
+        await FileDownload.DownloadPDF(fileLocation);// (@"C:\Excel Export Test\test.pdf");
 
-            p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
-            {
-                UseShellExecute = true
-            };
+            //var p = new System.Diagnostics.Process();
 
-            p.Start();
+            //p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
+            //{
+            //    UseShellExecute = true
+            //};
+
+            //p.Start();
         }
     
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileDownloadService FileDownload { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IPartViewModel partViewModel { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
-
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -72,9 +72,9 @@ namespace SACOMaintenance.ViewModel
 
         
 
-        public async void LoadReqsByStatusId(int statusId)
+        public async Task LoadReqsByStatusId(int statusId)
         {
-            var maintReqList = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatus()); // (statusId));
+            var maintReqList = new ObservableCollection<MaintRequestInitiation>(await MaintReqDataProvider.LoadReqBasedOnStatusId(statusId));
             requests.Clear();
 
             foreach(var item in maintReqList)

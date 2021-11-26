@@ -26,6 +26,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
         Task<IEnumerable<MaintRequestInitiation>> LoadAllRequestsCurrentYear();
 
         public void LoadRiskLevel(int maintReqId);
+        Task<IEnumerable<MaintRequestInitiation>> LoadReqBasedOnStatusId(int statusId);
 
         //Task<IEnumerable<Risk>> LoadRisksByMaintType(string maintType);
         //public void LoadRisksByMaintType(string maintType);

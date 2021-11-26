@@ -12,7 +12,7 @@ namespace Models.DTO
 {
     public class YearMaintenanceRequestModel
     {
-        public int YearName { get; set; }
+        public string YearName { get; set; }
         public int YearNumber { get; set; }
     }
 }

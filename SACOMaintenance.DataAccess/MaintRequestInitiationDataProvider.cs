@@ -171,6 +171,19 @@ namespace SACOMaintenance.DataAccess
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<MaintRequestInitiation>> LoadReqBasedOnStatusId(int statusId)
+        {
+            //var maintReqInitationListStatus = _requestInitationDBContext.MaintRequestInitiations
+            //    .Include(e => e.Equipment)
+            //    .Include(s => s.Status).Where(si => si.StatusId == statusId)
+            //    .ToList();
+            //return maintReqInitationListStatus;
+            return await _requestInitationDBContext.MaintRequestInitiations
+                .Include(e => e.Equipment)
+                .Include(s => s.Status).Where(si => si.StatusId == statusId)
+                .ToListAsync();
+        }
+
         //public IEnumerable<MaintRequestInitiation> LoadRequestInitiationWithEquipment()
         public async Task<IEnumerable<MaintRequestInitiation>> LoadRequestInitiationWithEquipment() 
         {

@@ -9,6 +9,7 @@
     <RadzenColumnSeries Data="@YearsList" CategoryProperty="YearName" Title="Year"
                         ValueProperty="YearNumber"></RadzenColumnSeries>
     <RadzenColumnOptions Radius="5" />
+    <RadzenLegend Visible="false" />
     <RadzenValueAxis>
         <RadzenGridLines Visible="true" />
         <RadzenAxisTitle Text="Number of Status" />
@@ -35,7 +36,7 @@
 
         while (yearDiffernce > 0)
         {
-            YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear, YearNumber = 0 });
+            YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear.ToString(), YearNumber = 0 });
             startYear++;
             yearDiffernce--;
         }
@@ -44,7 +45,7 @@
         {
             foreach (var yearItem in YearsList)
             {
-                if (item.DateRaised.Year == yearItem.YearName)
+                if (item.DateRaised.Year.ToString() == yearItem.YearName.ToString())
                 {
                     yearItem.YearNumber++;
                 }
@@ -61,7 +62,7 @@
 
             while (yearDiffernce >= 0)
             {
-                YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear, YearNumber = 0 });
+                YearsList.Add(new YearMaintenanceRequestModel { YearName = startYear.ToString(), YearNumber = 0 });
                 startYear++;
                 yearDiffernce--;
             }
@@ -70,7 +71,7 @@
             {
                 foreach (var yearItem in YearsList)
                 {
-                    if (item.DateRaised.Year == yearItem.YearName)
+                    if (item.DateRaised.Year.ToString() == yearItem.YearName.ToString())
                     {
                         yearItem.YearNumber++;
                     }
