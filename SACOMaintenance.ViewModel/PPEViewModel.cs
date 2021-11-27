@@ -4,6 +4,7 @@ using SACOMaintenance.ViewModel.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace SACOMaintenance.ViewModel
 {
@@ -16,7 +17,7 @@ namespace SACOMaintenance.ViewModel
         public PPEViewModel(IPPE ppeAreaProvider)
         {
             PPEDataProvider = ppeAreaProvider;
-            LoadAllPPE();
+            //LoadAllPPE();
         }
 
         public int Id 
@@ -62,7 +63,7 @@ namespace SACOMaintenance.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public async void LoadAllPPE()
+        public async Task LoadAllPPE()
         {
             var list = await PPEDataProvider.LoadAllPPE();
             PPEList.Clear();

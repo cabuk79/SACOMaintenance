@@ -24,31 +24,31 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<Company> companies { get; set; } = new();
         public ObservableCollection<MaintRequestInitiation> maintRegs { get; set; } = new();
 
-        public int CompanyId
-        {
-            get => company.Id;
-            set
-            {
-                if(company.Id != value)
-                {
-                    company.Id = value;
-                    RaisePropertychangedEvent();
-                }
-            }
-        }
+        //public int CompanyId
+        //{
+        //    get => company.Id;
+        //    set
+        //    {
+        //        if(company.Id != value)
+        //        {
+        //            company.Id = value;
+        //            RaisePropertychangedEvent();
+        //        }
+        //    }
+        //}
 
-        public string CompanyName
-        {
-            get => company.CompanyName;
-            set
-            {
-                if(company.CompanyName != value)
-                {
-                    company.CompanyName = value;
-                    RaisePropertychangedEvent();
-                }
-            }
-        }
+        //public string CompanyName
+        //{
+        //    get => company.CompanyName;
+        //    set
+        //    {
+        //        if(company.CompanyName != value)
+        //        {
+        //            company.CompanyName = value;
+        //            RaisePropertychangedEvent();
+        //        }
+        //    }
+        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event PropertyChangedEventHandler Propertychanged;
@@ -72,7 +72,7 @@ namespace SACOMaintenance.ViewModel
         public async Task<Company> LoadSingleCompany(int CompanyId)
         {
             company = await CompanyDataProvider.LoadSingleCompany(CompanyId);
-            maintRegs = new ObservableCollection<MaintRequestInitiation>(company.MaintenanceRequestIniations);
+            //maintRegs = new ObservableCollection<MaintRequestInitiation>(company.MaintenanceRequestIniations);
             return company;
         }
 

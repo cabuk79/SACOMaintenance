@@ -139,16 +139,7 @@ using SACOMaintenance.Blazor.Server.Services;
 
     public async Task openDrawing(string fileLocation)
     {
-        await FileDownload.DownloadPDF(fileLocation);// (@"C:\Excel Export Test\test.pdf");
-
-            //var p = new System.Diagnostics.Process();
-
-            //p.StartInfo = new System.Diagnostics.ProcessStartInfo(fileLocation)
-            //{
-            //    UseShellExecute = true
-            //};
-
-            //p.Start();
+        await FileDownload.DownloadPDF(fileLocation);
         }
     
 

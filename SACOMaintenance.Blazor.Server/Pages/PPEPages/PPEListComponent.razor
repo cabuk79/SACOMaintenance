@@ -1,12 +1,13 @@
 ﻿@page "/ppe-list"
 @inject SACOMaintenance.ViewModel.Interfaces.IPPEViewModel ppeViewModel
 @using SACOMaintenance.Common.ModelDB
-@*@using SACOMaintenance.DataAccess.Interfaces
-@inject IPPE PPEDataProvider**@
 
+<h3>List of PPE Equipment</h3>
 
-<h3>PPE List</h3>
-
+<a href="@($"ppe/create/")" class="btn btn-primary">
+    <i class="fa fa-plus-square"></i> Add New PPE
+</a>
+ 
 <RadzenGrid Data="@ppeViewModel.PPEList">
     <Columns>
         <RadzenGridColumn TItem="PPE" Property="Id"></RadzenGridColumn>
@@ -15,7 +16,15 @@
             <Template Context="data">
                 <RadzenImage Path="@data.IconFileLocation" Style="width:30px"></RadzenImage>
             </Template>
-            @*<img src="@ppeViewModel.IconLocation" class="ppe_image" />*@
         </RadzenGridColumn>
     </Columns>
 </RadzenGrid>
+
+@code{
+
+    protected override async Task OnInitializedAsync()
+    {
+        Task.Run(async () => { await ppeViewModel.LoadAllPPE(); }).Wait();
+    }
+
+}

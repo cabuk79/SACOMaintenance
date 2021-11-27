@@ -119,12 +119,17 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
+#line 56 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\CompanyPages\CompanyViewEditComponent.razor"
        
 
-    void OnChange(object value, string name)
+    protected async override Task OnInitializedAsync()
     {
-        companyViewModel.LoadSingleCompany(Convert.ToInt32(value));
+        //Task.Run(async () => { await companyViewModel.LoadSingleCompany(0); }).Wait();
+}
+
+    async Task OnChange(object value, string name)
+    {
+         Task.Run(async () => { await companyViewModel.LoadSingleCompany(Convert.ToInt32(value)); }).Wait();
     }
 
 #line default

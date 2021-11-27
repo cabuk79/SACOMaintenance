@@ -118,6 +118,19 @@ using SACOMaintenance.Common.ModelDB;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 23 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\PPEPages\PPEListComponent.razor"
+      
+
+    protected override async Task OnInitializedAsync()
+    {
+        Task.Run(async () => { await ppeViewModel.LoadAllPPE(); }).Wait();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IPPEViewModel ppeViewModel { get; set; }
     }
 }

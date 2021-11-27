@@ -32,5 +32,14 @@ namespace SACOMaintenance.Common.ModelDB
         public virtual Status Status { get; set; }
         //public List<AuthorizationRequest> AuthorizationRequests { get; set; } = new();
         public int AssignedTo { get; set; }  //TODO: check if there needs to be multiple people assigned as well as single
+
+        public string FullMaintCode
+        {
+            get
+            {
+                return "MAINT-" + String.Format("{0:D4}", Id);
+            }
+
+        }
     }
 }

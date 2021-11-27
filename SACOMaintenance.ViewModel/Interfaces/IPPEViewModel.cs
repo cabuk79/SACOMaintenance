@@ -24,7 +24,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region methods
 
-        void LoadAllPPE();
+        Task LoadAllPPE();
 
         #endregion
     }
