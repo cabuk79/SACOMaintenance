@@ -25,6 +25,26 @@
             <RadzenTemplateForm TItem="MaintRequestInitiation" Data="@AddReqViewModel.MaintReq" Submit="@OnSubmit" InvalidSubmit=@OnInvalidSubmit>
                 <RadzenFieldset Text="Enter Request Details" Style="border-color: black">
                     <div class="row">
+                        <div class="col-lg-12">  
+                            
+                            <InputRadioGroup @bind-Value="@AddReqViewModel.MaintReq.DepartmentId">
+                                @foreach(var option in @AddReqViewModel.Departments)
+                                {
+                                    <InputRadio Value="option.Id" /> @option.Name <br />
+                                }
+                            </InputRadioGroup>
+
+                            @*<input type="radio" name="department" value="Electrical" 
+                            checked="@(DepartmentSelected == "electrical")" 
+                            onchange="@(DepartmentSelected = "electrical")" />Electrical
+
+                            <input type="radio" name="department" value="Mechanical"
+                            checked="@(DepartmentSelected == "mechanical")"
+                            onchange="@(DepartmentSelected = "mechanical")" />Mechanical*@
+                        </div>
+                        @AddReqViewModel.MaintReq.DepartmentId
+                    </div>
+                    <div class="row">
                         <div class="col-lg-4">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -177,8 +197,10 @@
 </div>
 
 @code {
-
+    public string DepartmentSelected;
     public int numberAreasEquipment = 0;
+
+    public List<int> DepartmentList = new();
 
     Common.ModelDB.User objUser = new Common.ModelDB.User();
     string userId { get; set; }
@@ -231,6 +253,10 @@
         userId = objUser.Id;
 
         AddReqViewModel.MaintReq.UserId = userId;
+
+        DepartmentList.Add(1);
+        DepartmentList.Add(2);
+
     }
 
     protected async Task UpdateBook()

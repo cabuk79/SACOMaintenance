@@ -138,6 +138,7 @@ namespace SACOMaintenance.Blazor.Server
                 app.UseHsts();
             }
 
+            
 
             app.UseAuthentication();
             app.UseHttpsRedirection();

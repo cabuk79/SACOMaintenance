@@ -17,6 +17,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public IEquipment EquipmentDataProvider { get; }
         public IArea AreaDataProvider { get; }
         public IPriorities PriorityDataProvider { get; }
+        public IDepartment DepartmentDataProvider { get; }
         
 
         public ObservableCollection<AreaModel> Areas { get; set; }
@@ -24,7 +25,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public ObservableCollection<Equipment> Equipment { get; set; }
         public ObservableCollection<Priority> Priorities { get; set; }
         public ObservableCollection<Company> Companies { get; set; }
-        
+        ObservableCollection<Department> Departments { get; set; }
+
 
         public MaintRequestInitiation MaintReq { get; set; }
         public int FactoryId { get; set; }
@@ -45,6 +47,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public Task LoadFactoriesByCompany();
         public Task LoadEquipmentByArea();
         public void LoadPriorities();
+        public void LoadDepartments();
         
         #endregion
     }

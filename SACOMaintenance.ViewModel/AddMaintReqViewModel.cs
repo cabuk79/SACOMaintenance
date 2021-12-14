@@ -14,6 +14,7 @@ namespace SACOMaintenance.ViewModel
         #region Properties
 
         public ObservableCollection<Priority> Priorities { get; set; } = new();
+        public ObservableCollection<Department> Departments { get; set; } = new();
         //public ObservableCollection<Factory> Factories { get; set; } = new();
         //public ObservableCollection<AreaModel> Areas { get; set; }
         //public ObservableCollection<Equipment> Equipments { get; set; } = new();
@@ -23,6 +24,7 @@ namespace SACOMaintenance.ViewModel
 
 
         public IPriorities PriorityDataProvider { get; }
+        public IDepartment DepartmentDataProvider { get; }
         //private IFactory FactoryDataProvider { get; }
         //private IArea AreaDataProvider { get; }
         //private IEquipment EquipmentDataProvider { get; }
@@ -118,13 +120,14 @@ namespace SACOMaintenance.ViewModel
 
         #region Methods
 
-        public AddMaintReqViewModel(IPriorities priorityProvider)
+        public AddMaintReqViewModel(IPriorities priorityProvider, IDepartment departmentProvider)
             
         
         //, IFactory factoryDataProvider, IArea areaDataProvider,
         //    IEquipment equipmentDataProvider, ICompany companyDataProvider)
         {
             PriorityDataProvider = priorityProvider;
+            DepartmentDataProvider = departmentProvider;
             //FactoryDataProvider = factoryDataProvider;
             //AreaDataProvider = areaDataProvider;
             //EquipmentDataProvider = equipmentDataProvider;
@@ -133,6 +136,7 @@ namespace SACOMaintenance.ViewModel
             //MaintReq = new MaintRequestInitiation();
 
             LoadPriorities();
+            LoadDepartments();
         }
 
         //public async Task<ObservableCollection<Priority>> LoadPriorities()
@@ -145,6 +149,11 @@ namespace SACOMaintenance.ViewModel
             //    Priorities.Add(item);
             //}
             //return Priorities;
+        }
+
+        public async void LoadDepartments()
+        {
+            Departments = new ObservableCollection<Department>(await DepartmentDataProvider.LoadAllDepartments());
         }
 
         //public async Task<ObservableCollection<Company>> LoadCompanies()

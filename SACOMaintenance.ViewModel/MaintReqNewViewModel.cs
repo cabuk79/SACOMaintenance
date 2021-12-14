@@ -22,6 +22,7 @@ namespace SACOMaintenance.ViewModel
         public IArea AreaDataProvider { get; }
         public IPriorities PriorityDataProvider { get; }
         public ICompany CompanyDataProvider { get; }
+        public IDepartment DepartmentDataProvider { get; }
 
         #endregion
 
@@ -32,6 +33,7 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<Equipment> Equipment { get; set; } = new();
         public ObservableCollection<Priority> Priorities { get; set; } = new();
         public ObservableCollection<Company> Companies { get; set; } = new();
+        public ObservableCollection<Department> Departments { get; set; } = new();
 
         public bool SendTextMessageForEmergencyPriority { get; set; }
         public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
@@ -125,7 +127,7 @@ namespace SACOMaintenance.ViewModel
 
         public MaintReqNewViewModel(IMaintRequestInitiation maintReqDataProvider,
             IFactory factoryDataProvider, IEquipment equipmentProvider, IArea areaProvider,
-            IPriorities priorityProvider, ICompany companyProvider, IConfiguration config)
+            IPriorities priorityProvider, ICompany companyProvider, IConfiguration config, IDepartment departmentProvider)
         {
             FactoryDataProvider = factoryDataProvider;
             EquipmentDataProvider = equipmentProvider;
@@ -133,6 +135,7 @@ namespace SACOMaintenance.ViewModel
             MaintReqDataProvider = maintReqDataProvider;
             PriorityDataProvider = priorityProvider;
             CompanyDataProvider = companyProvider;
+            DepartmentDataProvider = departmentProvider;
 
             // Areas = AreaDataProvider.LoadAllAreas();
             //Factories = FactoryDataProvider.LoadAllFactories();
@@ -140,9 +143,10 @@ namespace SACOMaintenance.ViewModel
             //Equipment = EquipmentDataProvider.LoadAllEquipments();
 
             //LoadFactories();
-            
+
             LoadPriorities();
             LoadCompanies();
+            LoadDepartments();
 
             SaveCommand = new DelegateCommand(AddNewRequest);
 
@@ -157,6 +161,11 @@ namespace SACOMaintenance.ViewModel
             NewAddedMaintId =  MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
             //NewAddedMaintId = MaintReq.Id;
 
+        }
+
+        public async void LoadDepartments()
+        {
+            Departments = new ObservableCollection<Department>(await DepartmentDataProvider.LoadAllDepartments());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

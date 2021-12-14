@@ -8,7 +8,9 @@ namespace SACOMaintenance.Common.ModelDB
         public int Id { get; set; }
         public bool Closed { get; set; }
         public DateTime DateRaised { get; set; }
-        public int CompanyId { get; set; } //FK to company table
+        public int? DepartmentId { get; set; }
+        public virtual Department Department { get; set; }
+        public int CompanyId { get; set; } //FK to company table        
         public virtual Company Company { get; set; }
         public virtual int FactoryId { get; set; } //FK to factory table
         public virtual Factory Factory { get; set; }

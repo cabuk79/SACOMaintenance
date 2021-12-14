@@ -147,10 +147,12 @@ using Microsoft.AspNetCore.Http;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 179 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 199 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
-
+    public string DepartmentSelected;
     public int numberAreasEquipment = 0;
+
+    public List<int> DepartmentList = new();
 
     Common.ModelDB.User objUser = new Common.ModelDB.User();
     string userId { get; set; }
@@ -203,6 +205,10 @@ using Microsoft.AspNetCore.Http;
         userId = objUser.Id;
 
         AddReqViewModel.MaintReq.UserId = userId;
+
+        DepartmentList.Add(1);
+        DepartmentList.Add(2);
+
     }
 
     protected async Task UpdateBook()

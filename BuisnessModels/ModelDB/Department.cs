@@ -11,5 +11,6 @@ namespace SACOMaintenance.Common.ModelDB
         public int Id { get; set; }
         public string Name { get; set; }
         public string Comments { get; set; }
+        public List<MaintRequestInitiation> Maintreqs { get; set; } = new();
     }
 }

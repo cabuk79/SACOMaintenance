@@ -7,6 +7,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
     public interface IAddMaintReq
     {
         ObservableCollection<Priority> Priorities { get; set; }
+        ObservableCollection<Department> Departments { get; set; }
         //ObservableCollection<Factory> Factories { get; set; }
         //ObservableCollection<AreaModel> Areas { get; set; }
         //ObservableCollection<Equipment> Equipments { get; set; }
@@ -23,6 +24,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         ////Task<ObservableCollection<Priority>> LoadPriorities();
         public void LoadPriorities();
+        public void LoadDepartments();
         //Task<ObservableCollection<Company>> LoadCompanies();
         //Task<ObservableCollection<Factory>> LoadFactories();
         //// Task<ObservableCollection<AreaModel>> LoadAreasByFactory();
