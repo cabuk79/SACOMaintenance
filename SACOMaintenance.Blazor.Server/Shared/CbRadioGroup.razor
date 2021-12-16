@@ -1,0 +1,39 @@
+﻿@typeparam TItem
+@using System.Collections.ObjectModel
+@using System.Reflection
+
+
+@foreach(var item in Items)
+{
+    Type type = item.GetType();
+    PropertyInfo[] props = type.GetProperties();
+
+    foreach(var prop in props)
+    {
+        if (prop.Name == IdValue)
+        {
+            <input type="radio" name="test" id=@prop.Name />
+        }
+        if(prop.Name == TextValue)
+        {
+            <label>@prop.GetValue(item)</label>            
+        }
+    }   
+}
+
+
+
+@code {
+
+    [Parameter]
+    public ObservableCollection<TItem> Items { get; set; } 
+
+    [Parameter]
+    public string IdValue { get; set; }
+
+    [Parameter]
+    public string TextValue { get; set; }
+
+    [Parameter]
+    public string RadioGroupName { get; set; }
+}

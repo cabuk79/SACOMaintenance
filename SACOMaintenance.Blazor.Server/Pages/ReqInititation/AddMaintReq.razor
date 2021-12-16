@@ -27,20 +27,19 @@
                     <div class="row">
                         <div class="col-lg-12">  
                             
-                            <InputRadioGroup @bind-Value="@AddReqViewModel.MaintReq.DepartmentId">
-                                @foreach(var option in @AddReqViewModel.Departments)
-                                {
-                                    <InputRadio Value="option.Id" /> @option.Name <br />
-                                }
-                            </InputRadioGroup>
+                            <CbRadioGroup Items="AddReqViewModel.Departments" IdValue="Id" TextValue="Name"
+                                RadioGroupName="Departments">
+                            </CbRadioGroup>
 
-                            @*<input type="radio" name="department" value="Electrical" 
-                            checked="@(DepartmentSelected == "electrical")" 
-                            onchange="@(DepartmentSelected = "electrical")" />Electrical
-
-                            <input type="radio" name="department" value="Mechanical"
-                            checked="@(DepartmentSelected == "mechanical")"
-                            onchange="@(DepartmentSelected = "mechanical")" />Mechanical*@
+                                @*<InputRadioGroup @bind-Value="@AddReqViewModel.MaintReq.DepartmentId">
+                                    @foreach(var option in @AddReqViewModel.Departments)
+                                    {                                                                             
+                                        <label class="deptRdoLabel"><div class="radioBtn"><InputRadio Value="option.Id"
+                                            class="rdoButton" />
+                                            </div><label>@option.Name</label></label>                                      
+                                    }
+                               </InputRadioGroup>*@
+                                                                               
                         </div>
                         @AddReqViewModel.MaintReq.DepartmentId
                     </div>
