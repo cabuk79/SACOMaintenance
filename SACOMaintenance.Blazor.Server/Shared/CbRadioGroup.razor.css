@@ -16,7 +16,7 @@
 }
 
 .radio-toolbar input[type="radio"]:checked + .CbLabel {
-    background-color: green; /*#bfb;*/
+    background-color: #bfb;
     border-color: #4c4;
 }
 
@@ -25,5 +25,5 @@
 }
 
 .radio-toolbar .CbLabel:hover {
-    background-color: red; /*#dfd;*/
+    background-color: #dfd;
 }

@@ -263,7 +263,7 @@
 }
 
 .radio-toolbar input[type="radio"]:checked + .CbLabel[b-vyvsl6v941] {
-    background-color: green; /*#bfb;*/
+    background-color: #bfb;
     border-color: #4c4;
 }
 
@@ -272,7 +272,7 @@
 }
 
 .radio-toolbar .CbLabel:hover[b-vyvsl6v941] {
-    background-color: red; /*#dfd;*/
+    background-color: #dfd;
 }
 /* _content/SACOMaintenance.Blazor.Server/Shared/SquareCheckBox.razor.rz.scp.css */
 

@@ -25,24 +25,19 @@
             <RadzenTemplateForm TItem="MaintRequestInitiation" Data="@AddReqViewModel.MaintReq" Submit="@OnSubmit" InvalidSubmit=@OnInvalidSubmit>
                 <RadzenFieldset Text="Enter Request Details" Style="border-color: black">
                     <div class="row">
-                        <div class="col-lg-12">  
-                            
+                        <div class="col-lg-12">                            
                             <CbRadioGroup Items="AddReqViewModel.Departments" IdValue="Id" TextValue="Name"
                                 RadioGroupName="Departments" @bind-ChosenId="AddReqViewModel.DeptIdChosen">
-                            </CbRadioGroup>
-
-                            @AddReqViewModel.DeptIdChosen
-                                @*<InputRadioGroup @bind-Value="@AddReqViewModel.MaintReq.DepartmentId">
-                                    @foreach(var option in @AddReqViewModel.Departments)
-                                    {                                                                             
-                                        <label class="deptRdoLabel"><div class="radioBtn"><InputRadio Value="option.Id"
-                                            class="rdoButton" />
-                                            </div><label>@option.Name</label></label>                                      
-                                    }
-                               </InputRadioGroup>*@
-                                                                               
+                            </CbRadioGroup>                                                
                         </div>
-                        @AddReqViewModel.MaintReq.DepartmentId
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @if(showDeptError == true)
+                            {
+                                <label>You must select a department</label>
+                            }
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
@@ -199,6 +194,7 @@
 @code {
     public string DepartmentSelected;
     public int numberAreasEquipment = 0;
+    private bool showDeptError = false;
 
     public List<int> DepartmentList = new();
 
@@ -211,6 +207,16 @@
 
     async Task OnSubmit()
     {
+        if(AddReqViewModel.DeptIdChosen == "" || AddReqViewModel.DeptIdChosen == null)
+        {
+            showDeptError = true;
+            return;
+        }
+        else
+        {
+            showDeptError = false;
+        }
+
         await UpdateBook();
     }
 
@@ -261,6 +267,7 @@
 
     protected async Task UpdateBook()
     {
+        
         //hubConnection = new HubConnectionBuilder()
         //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
         //    .Build();

@@ -26,6 +26,7 @@ namespace SACOMaintenance.ViewModel
 
         #endregion
 
+        #region Lists
 
         public MaintRequestInitiation MaintReq { get; set; }
         public ObservableCollection<AreaModel> Areas { get; set; } = new();
@@ -35,7 +36,9 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<Company> Companies { get; set; } = new();
         public ObservableCollection<Department> Departments { get; set; } = new();
 
+        #endregion
 
+        #region Properties
 
         public bool SendTextMessageForEmergencyPriority { get; set; }
         public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
@@ -53,7 +56,6 @@ namespace SACOMaintenance.ViewModel
                 {
                     MaintReq.CompanyId = value;
                     RaisePropertychangedEvent();
-                    //LoadFactoriesByCompany();
                 }
             }
         }
@@ -66,13 +68,6 @@ namespace SACOMaintenance.ViewModel
                 if (MaintReq.FactoryId != value)
                 {
                     MaintReq.FactoryId = value;
-                    RaisePropertychangedEvent();
-
-                    //new Task(async() =>
-                    //{
-                    //    await LoadAreasByFactory();
-                    //}).Start();
-                    //await LoadAreasByFactory();
                 }
             }
         }
@@ -94,7 +89,6 @@ namespace SACOMaintenance.ViewModel
                         MaintReq.RequestTypeId = 0;
                     }
                     RaisePropertychangedEvent();
-                    //LoadEquipmentByArea();
                 }
             }
         }
@@ -126,9 +120,9 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-       
-
         public IConfiguration _config;
+
+        #endregion
 
         public MaintReqNewViewModel(IMaintRequestInitiation maintReqDataProvider,
             IFactory factoryDataProvider, IEquipment equipmentProvider, IArea areaProvider,
@@ -141,13 +135,6 @@ namespace SACOMaintenance.ViewModel
             PriorityDataProvider = priorityProvider;
             CompanyDataProvider = companyProvider;
             DepartmentDataProvider = departmentProvider;
-
-            // Areas = AreaDataProvider.LoadAllAreas();
-            //Factories = FactoryDataProvider.LoadAllFactories();
-            //Factories = new ObservableCollection<Factory>(FactoryDataProvider.LoadAllFactories());
-            //Equipment = EquipmentDataProvider.LoadAllEquipments();
-
-            //LoadFactories();
 
             LoadPriorities();
             LoadCompanies();
@@ -165,8 +152,12 @@ namespace SACOMaintenance.ViewModel
         {
             MaintReq.DepartmentId = Convert.ToInt32(DeptIdChosen);
             NewAddedMaintId =  MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
-            //NewAddedMaintId = MaintReq.Id;
+ 
+            MaintReq = new MaintRequestInitiation();
+            LoadCompanies();
 
+            Areas.Clear();
+            Equipment.Clear();
         }
 
         public async void LoadDepartments()
@@ -181,7 +172,7 @@ namespace SACOMaintenance.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public async Task LoadFactories()
-        {
+        {       
             Factories = await FactoryDataProvider.LoadAllFactories();
         }
 
@@ -194,10 +185,6 @@ namespace SACOMaintenance.ViewModel
         {
             Areas.Clear();
             Areas = new ObservableCollection<AreaModel>(await AreaDataProvider.LoadAreasByFactory(MaintReq.FactoryId)); //(MaintReq.FactoryId));
-            //foreach(var item in list)
-            //{
-            //    Areas.Add(item);
-            //}
         }
 
         public async Task LoadEquipmentByArea()
@@ -208,6 +195,8 @@ namespace SACOMaintenance.ViewModel
 
         public async void LoadCompanies()
         {
+            Companies.Clear();
+
             var comps = await CompanyDataProvider.LoadCompanies();
             foreach(var item in comps)
             {
@@ -222,7 +211,6 @@ namespace SACOMaintenance.ViewModel
             {
                 Priorities.Add(item);
             }
-            //return Priorities;
         }
     }
 }

@@ -125,7 +125,7 @@ using System.Reflection;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbRadioGroup.razor"
+#line 27 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbRadioGroup.razor"
        
     private string id;
 

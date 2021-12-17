@@ -147,10 +147,11 @@ using Microsoft.AspNetCore.Http;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 199 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
+#line 194 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\AddMaintReq.razor"
        
     public string DepartmentSelected;
     public int numberAreasEquipment = 0;
+    private bool showDeptError = false;
 
     public List<int> DepartmentList = new();
 
@@ -163,6 +164,16 @@ using Microsoft.AspNetCore.Http;
 
     async Task OnSubmit()
     {
+        if(AddReqViewModel.DeptIdChosen == "" || AddReqViewModel.DeptIdChosen == null)
+        {
+            showDeptError = true;
+            return;
+        }
+        else
+        {
+            showDeptError = false;
+        }
+
         await UpdateBook();
     }
 
@@ -213,6 +224,7 @@ using Microsoft.AspNetCore.Http;
 
     protected async Task UpdateBook()
     {
+        
         //hubConnection = new HubConnectionBuilder()
         //    .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))
         //    .Build();
