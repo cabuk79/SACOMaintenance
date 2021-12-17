@@ -28,9 +28,10 @@
                         <div class="col-lg-12">  
                             
                             <CbRadioGroup Items="AddReqViewModel.Departments" IdValue="Id" TextValue="Name"
-                                RadioGroupName="Departments">
+                                RadioGroupName="Departments" @bind-ChosenId="AddReqViewModel.DeptIdChosen">
                             </CbRadioGroup>
 
+                            @AddReqViewModel.DeptIdChosen
                                 @*<InputRadioGroup @bind-Value="@AddReqViewModel.MaintReq.DepartmentId">
                                     @foreach(var option in @AddReqViewModel.Departments)
                                     {                                                                             

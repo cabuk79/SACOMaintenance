@@ -2,28 +2,31 @@
 @using System.Collections.ObjectModel
 @using System.Reflection
 
-
-@foreach(var item in Items)
-{
-    Type type = item.GetType();
-    PropertyInfo[] props = type.GetProperties();
-
-    foreach(var prop in props)
+<div class="radio-toolbar">
+    @* Lop through the items in the list *@
+    @foreach(var item in Items)
     {
-        if (prop.Name == IdValue)
-        {
-            <input type="radio" name="test" id=@prop.Name />
-        }
-        if(prop.Name == TextValue)
-        {
-            <label>@prop.GetValue(item)</label>            
-        }
-    }   
-}
+        @* Get the type of each item *@
+        Type type = item.GetType();
 
+        var propItem = type.GetProperty(IdValue);
+        var value = propItem.GetValue(item);
 
+        <input type="radio" name="departments" id=@value.ToString() value=@value
+                        @onchange="_ => HandleChanged(value.ToString())">
+
+        var propItemValue = type.GetProperty(TextValue);
+        var valueValue = propItemValue.GetValue(item);
+
+        @* the aspfor value is to link the label to the radio button so when the label is clicked it marks the radio as checked or unchecked 
+            depending on its current state.  The label sets the text for the label
+        *@
+         <div class="CbLabel"><CbLabel aspfor=@value.ToString()  label=@valueValue.ToString()></CbLabel></div>
+    }
+</div>
 
 @code {
+    private string id;
 
     [Parameter]
     public ObservableCollection<TItem> Items { get; set; } 
@@ -36,4 +39,16 @@
 
     [Parameter]
     public string RadioGroupName { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ChosenIdChanged { get; set; }
+
+    [Parameter]
+    public string ChosenId { get; set; }
+
+    void HandleChanged(string changedId)
+    {
+        ChosenId = changedId;
+        ChosenIdChanged.InvokeAsync(ChosenId);
+    }
 }

@@ -29,6 +29,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
 
         public MaintRequestInitiation MaintReq { get; set; }
+        public string DeptIdChosen { get; set; }
         public int FactoryId { get; set; }
         public int AreaId { get; set; }
         public int EquipmentId { get; set; }

@@ -1,0 +1,12 @@
+﻿
+<label for="@fortag">@label</label>
+
+@code {
+    [Parameter]
+    public string aspfor { get; set; }
+
+    [Parameter]
+    public string label { get; set; }
+
+    private string fortag => aspfor;
+}

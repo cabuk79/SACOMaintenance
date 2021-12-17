@@ -103,21 +103,7 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbRadioGroup.razor"
-using System.Collections.ObjectModel;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbRadioGroup.razor"
-using System.Reflection;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class CbRadioGroup<TItem> : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class CbLabel : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -125,33 +111,15 @@ using System.Reflection;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbRadioGroup.razor"
+#line 4 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Shared\CbLabel.razor"
        
-    private string id;
+    [Parameter]
+    public string aspfor { get; set; }
 
     [Parameter]
-    public ObservableCollection<TItem> Items { get; set; } 
+    public string label { get; set; }
 
-    [Parameter]
-    public string IdValue { get; set; }
-
-    [Parameter]
-    public string TextValue { get; set; }
-
-    [Parameter]
-    public string RadioGroupName { get; set; }
-
-    [Parameter]
-    public EventCallback<string> ChosenIdChanged { get; set; }
-
-    [Parameter]
-    public string ChosenId { get; set; }
-
-    void HandleChanged(string changedId)
-    {
-        ChosenId = changedId;
-        ChosenIdChanged.InvokeAsync(ChosenId);
-    }
+    private string fortag => aspfor;
 
 #line default
 #line hidden

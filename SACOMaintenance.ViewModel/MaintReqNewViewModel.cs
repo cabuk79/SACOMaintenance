@@ -35,9 +35,14 @@ namespace SACOMaintenance.ViewModel
         public ObservableCollection<Company> Companies { get; set; } = new();
         public ObservableCollection<Department> Departments { get; set; } = new();
 
+
+
         public bool SendTextMessageForEmergencyPriority { get; set; }
         public DelegateCommand SaveCommand { get; } //Delehgate command is for MVVM for desktop GUI's
         public int NewAddedMaintId { get; set; }
+
+
+        public string DeptIdChosen { get; set; }
 
         public int CompanyId
         {
@@ -158,6 +163,7 @@ namespace SACOMaintenance.ViewModel
 
         public void AddNewRequest()
         {
+            MaintReq.DepartmentId = Convert.ToInt32(DeptIdChosen);
             NewAddedMaintId =  MaintReqDataProvider.AddEditRequestInitiation(MaintReq);
             //NewAddedMaintId = MaintReq.Id;
 
