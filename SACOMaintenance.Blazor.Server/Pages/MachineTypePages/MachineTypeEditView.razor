@@ -53,8 +53,9 @@
 
 
 @code {
-    void OnChange(object value, string name)
+    public async Task OnChange(object value, string name)
     {
-        machineViewModel.LoadSingleMachineType(Convert.ToInt32(value));
+        await machineViewModel.LoadSingleMachineType(Convert.ToInt32(value));
+        StateHasChanged();
     }
 }

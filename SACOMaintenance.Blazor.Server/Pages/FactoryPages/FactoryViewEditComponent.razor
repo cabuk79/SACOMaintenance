@@ -26,7 +26,7 @@
                         <RadzenLabel Text="Name"></RadzenLabel>
                     </div>
                     <div class="col-lg-4">
-                        <RadzenTextBox @bind-Value="factoryViewModel.FactoryName" Style="border-color: black; width: 100%"></RadzenTextBox>
+                        <RadzenTextBox @bind-Value="factoryViewModel.factory.FactoryName" Style="border-color: black; width: 100%"></RadzenTextBox>
                     </div>
                     <div class="col-lg-1">
                         <button class="btn btn-primary" @onclick="@UpdateArea">Save</button>
@@ -45,7 +45,7 @@
                     <div class="col-lg-12">
                         <RadzenGrid Data="@factoryViewModel.factory.Areas">
                             <Columns>
-                                <RadzenGridColumn TItem="AreaModel" Property="Id" Title="Id" Width="50px"></RadzenGridColumn>
+                                <RadzenGridColumn TItem="AreaModel" Property=Id Title="Id" Width="50px"></RadzenGridColumn>
                                 <RadzenGridColumn TItem="AreaModel" Property="AreaName" Title="Area Name"></RadzenGridColumn>
                                 <RadzenGridColumn TItem="AreaModel" Property="CommentsNotes" Title="Comments/Notes"></RadzenGridColumn>
                             </Columns>
@@ -65,14 +65,20 @@
 
 @code {
 
-    void OnChange(object value, string name)
+    public async Task OnChange(object value, string name)
     {        
-        factoryViewModel.LoadSingleFactory(Convert.ToInt32(value));
+        await factoryViewModel.LoadSingleFactory(Convert.ToInt32(value));
+        StateHasChanged();
     }
 
     private void UpdateArea(MouseEventArgs e)
     {
         //areaViewModel.SaveArea(areaViewModel.area);
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await factoryViewModel.Load();
     }
 
 }

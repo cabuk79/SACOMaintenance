@@ -122,14 +122,20 @@ using SACOMaintenance.Common.ModelDB;
 #line 66 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\FactoryPages\FactoryViewEditComponent.razor"
        
 
-    void OnChange(object value, string name)
+    public async Task OnChange(object value, string name)
     {        
-        factoryViewModel.LoadSingleFactory(Convert.ToInt32(value));
+        await factoryViewModel.LoadSingleFactory(Convert.ToInt32(value));
+        StateHasChanged();
     }
 
     private void UpdateArea(MouseEventArgs e)
     {
         //areaViewModel.SaveArea(areaViewModel.area);
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await factoryViewModel.Load();
     }
 
 

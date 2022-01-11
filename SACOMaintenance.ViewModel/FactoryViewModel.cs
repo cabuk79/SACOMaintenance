@@ -21,7 +21,7 @@ namespace SACOMaintenance.ViewModel
         public FactoryViewModel(IFactory factoryDataProvider)
         {
             this.FactoryDataProvider = factoryDataProvider;
-            Load();
+            //Load();
         }
 
         public ObservableCollection<Factory> factories { get; set; } = new();
@@ -63,7 +63,7 @@ namespace SACOMaintenance.ViewModel
             throw new NotImplementedException();
         }
 
-        public async void Load()
+        public async Task Load()
         {
             var factoryList = new ObservableCollection<Factory>(await FactoryDataProvider.LoadAllFactories());
             factories.Clear();
@@ -74,10 +74,10 @@ namespace SACOMaintenance.ViewModel
             }
         }
 
-        public async Task<Factory> LoadSingleFactory(int factoryId)
+        public async Task LoadSingleFactory(int factoryId)
         {
             factory = await FactoryDataProvider.ViewSingleFactory(factoryId);
-            return factory;
+            //return factory;
         }
 
         public void UpdateFactory(Factory factory)

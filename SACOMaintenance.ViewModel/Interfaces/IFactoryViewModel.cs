@@ -20,9 +20,9 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
 
         void AddNewFactory(Factory factory);
-        void Load();
+        Task Load();
         void UpdateFactory(Factory factory);
-        Task<Factory> LoadSingleFactory(int factoryId);
+        Task LoadSingleFactory(int factoryId);
 
         event PropertyChangedEventHandler Propertychanged;
     }

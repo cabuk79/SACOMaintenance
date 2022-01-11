@@ -121,9 +121,10 @@ using SACOMaintenance.Common.ModelDB;
 #nullable restore
 #line 55 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\MachineTypePages\MachineTypeEditView.razor"
        
-    void OnChange(object value, string name)
+    public async Task OnChange(object value, string name)
     {
-        machineViewModel.LoadSingleMachineType(Convert.ToInt32(value));
+        await machineViewModel.LoadSingleMachineType(Convert.ToInt32(value));
+        StateHasChanged();
     }
 
 #line default
