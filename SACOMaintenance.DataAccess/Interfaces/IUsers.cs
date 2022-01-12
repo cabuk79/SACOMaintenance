@@ -11,5 +11,8 @@ namespace SACOMaintenance.DataAccess.Interfaces
     public interface IUsers
     {
         Task<IEnumerable<User>> GetAllUsers();
+
+        Task<IEnumerable<MaintRequestInitiation>> GetUsersForMaintReq(int MaintId);
+        Task<IEnumerable<User>> GetUsersByDepartment(int departmentId);
     }
 }

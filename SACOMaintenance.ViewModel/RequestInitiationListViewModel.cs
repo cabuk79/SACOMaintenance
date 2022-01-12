@@ -24,6 +24,8 @@ namespace SACOMaintenance.ViewModel
 
         public ObservableCollection<Equipment> equipment { get; } = new();
 
+        public int MaintReqId { get; set; }
+
         public IMaintRequestInitiation MaintReqDataProvider { get; }
         public int StatusId
         {
@@ -49,7 +51,7 @@ namespace SACOMaintenance.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public async void LoadRequests()
+        public async Task LoadRequests()
         {
             
             var items = new ObservableCollection<MaintRequestInitiation>

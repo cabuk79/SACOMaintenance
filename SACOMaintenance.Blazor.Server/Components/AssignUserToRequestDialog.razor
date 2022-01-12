@@ -1,0 +1,105 @@
+﻿@page "/adduserdialog"
+@inject SACOMaintenance.ViewModel.Interfaces.IAssignMaintStaffToRequestViewModel userRequestViewModel
+@using SACOMaintenance.Common.ModelDB;
+
+
+
+<h3>Assign User(s) To Request MAINT-@RequestId</h3>
+
+<div class="flex-container">
+    <div>
+        Not Assigned<br />
+        <RadzenListBox TValue="User" Data=@userRequestViewModel.MaintUsers TextProperty="FullName" Change=@(args => AddName(args)) Style="min-height: 200px; width: 200px;">           
+        </RadzenListBox>
+    </div>
+    <div class="btn-col"> 
+        <RadzenButton Text=">" Click=@(args => AddNameToList()) Disabled=@AddBtnEnabled></RadzenButton>
+        <RadzenButton Text="<" Click=@(args => RemoveNameFromAssigned()) Disabled=@RemoveBtnEnabled></RadzenButton>
+    </div>
+    <div>
+        Assigned<br />
+        <RadzenListBox TValue="User" Data=@userRequestViewModel.MaintUsersAssigned TextProperty="FullName" Change=@(args => RemoveName(args)) Style="min-height: 200px; width: 200px;">
+        </RadzenListBox>
+    </div>
+</div>
+
+@*@foreach(var item in userRequestViewModel.MaintUsersAssigned )
+{
+    @item.FullName
+}*@
+
+
+@code {
+
+    [Parameter]
+    public int RequestId { get; set; }
+
+    public bool AddBtnEnabled = true;
+    public bool RemoveBtnEnabled = true;
+
+    public User NameSelectedAdd = null;
+    public User NameSelectedRemove = null;
+
+    public List<string> NameMaint = new();
+    public List<string> Assigned = new();
+
+    protected async override Task OnInitializedAsync()
+    {
+        userRequestViewModel.LoadSingleRequest(RequestId);
+        await userRequestViewModel.LoadAllUsers(1);
+
+        NameMaint.Add("Craig");
+        NameMaint.Add("Bob");
+        NameMaint.Add("John");
+        NameMaint.Add("Steve");
+
+        Assigned.Add("Steve");
+
+        //check if users have already been assigned and if so remove from the avaiable list
+        for(int i = 0; i < NameMaint.Count; i++)
+        {
+            for (int ii = 0; ii < Assigned.Count; ii++)
+            {            
+                if (NameMaint[i] == Assigned[ii])
+                {
+                    NameMaint.Remove(NameMaint[i]);
+                }
+            }  
+        }
+    }
+
+    void AddName(object value)
+    {
+        var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+
+        NameSelectedAdd = (User)str;
+
+        AddBtnEnabled = false;
+    }
+
+    void RemoveName(object value)
+    {
+        var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+
+        NameSelectedRemove = (User)str;
+
+        RemoveBtnEnabled = false;
+    }
+
+    void AddNameToList()
+    {              
+        userRequestViewModel.MaintUsersAssigned.Add(NameSelectedAdd);
+        userRequestViewModel.MaintUsers.Remove(NameSelectedAdd);
+        NameSelectedAdd = null;
+        AddBtnEnabled = true;
+    }
+
+    void RemoveNameFromAssigned()
+    {
+        userRequestViewModel.MaintUsers.Add(NameSelectedRemove);
+        userRequestViewModel.MaintUsersAssigned.Remove(NameSelectedRemove);
+        NameSelectedRemove = null;
+        RemoveBtnEnabled = true;
+    }
+
+}

@@ -46,8 +46,8 @@
                         </Template>
                     </RadzenGridColumn>
                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="DateRaised" Title="Date Raised" Width="100px"></RadzenGridColumn>
-                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name" Width="100px"></RadzenGridColumn>
-                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status" Width="80px">
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Equipment.Name" Title="Equipment Name" Width="80px"></RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Status.StatusName" Title="Status" Width="70px">
                        <Template Context="data">
                            @*@if(data.Status.StatusName == "New") { <i class="fas fa-plus"></i>     @data.Status.StatusName } else { @data.Status.StatusName }*@
 
@@ -77,12 +77,26 @@
                                             Data="@maintReqListViewModel.statusList.Select(t => new { Text = $"{t.StatusName}", Value = t.Id })" />
                         </FilterTemplate>
                     </RadzenGridColumn>
-                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Actions" Width="30px"
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Users" Title="Users Assigned" Width="80px">
+                        <Template Context="data">
+                            @foreach(var user in data.Users)
+                            {
+                                <img src="@user.AvatarLocation" width="30px" height="30px" /> @user.FullName;<br />
+                            }
+                        </Template>
+                    </RadzenGridColumn>
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="View" Width="30px"
                                       TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
                         <Template Context="data">
                             <a href="@($"maint-req/full-add/{data.Id}")" class="btn btn-primary table-btn">
                                 <i class="fa fa-pencil-square"></i>
                             </a>
+                        </Template>
+                    </RadzenGridColumn>
+                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Add Staff" Width="30px"
+                                      TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+                        <Template Context="data">
+                            <button class="btn btn-success" @onclick="() => AssignStaff(data.Id)">Add Staff</button>
                         </Template>
                     </RadzenGridColumn>
                 </Columns>
@@ -91,20 +105,32 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
+@if(ShowPopup)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog" style="border-color: black">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <AssignUserToRequestDialog RequestId="maintReqListViewModel.MaintReqId"></AssignUserToRequestDialog>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 @code{
 
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
     private HubConnection hubConnection;
+
+    bool ShowPopup = false;
+
+    void AssignStaff(int maintIdSelected)
+    {
+        maintReqListViewModel.MaintReqId = maintIdSelected;
+        ShowPopup = true;
+    }
 
     void OnChange()
     {
@@ -137,7 +163,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        maintReqListViewModel.LoadRequests();
+        await maintReqListViewModel.LoadRequests();
 
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))

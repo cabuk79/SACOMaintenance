@@ -24,5 +24,26 @@ namespace SACOMaintenance.DataAccess
             var allUsers = await _usersContext.Users.ToListAsync();
             return allUsers;
         }
+
+        public async Task<IEnumerable<User>> GetUsersByDepartment(int departmentId)
+        {
+            var returnUsers =
+                await _usersContext.Users
+                .Where(d => d.DepartmentId == departmentId)
+                .ToListAsync();           
+            
+            return returnUsers;
+        }
+
+        public async Task<IEnumerable<MaintRequestInitiation>> GetUsersForMaintReq(int MaintId)
+        {
+            var requestUsers =
+                await _usersContext.MaintRequestInitiations
+                .Include(u => u.Users)
+                .Where(i => i.Id == MaintId)
+                .ToListAsync();
+
+            return requestUsers;
+        }
     }
 }

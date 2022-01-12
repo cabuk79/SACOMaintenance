@@ -1,3 +1,15 @@
+/* _content/SACOMaintenance.Blazor.Server/Components/AssignUserToRequestDialog.razor.rz.scp.css */
+.flex-container[b-a4f23dpgph] {
+    display: grid;
+    align-content: center;
+    grid-template-columns: 200px 100px 200px;
+}
+
+.btn-col[b-a4f23dpgph] {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
 /* _content/SACOMaintenance.Blazor.Server/Components/RequestPriorityDashboardItem.razor.rz.scp.css */
 /*
 .card {

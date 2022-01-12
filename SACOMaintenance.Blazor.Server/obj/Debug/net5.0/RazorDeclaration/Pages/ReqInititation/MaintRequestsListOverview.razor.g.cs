@@ -161,12 +161,20 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 103 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+#line 121 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
 
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
     private HubConnection hubConnection;
+
+    bool ShowPopup = false;
+
+    void AssignStaff(int maintIdSelected)
+    {
+        maintReqListViewModel.MaintReqId = maintIdSelected;
+        ShowPopup = true;
+    }
 
     void OnChange()
     {
@@ -199,7 +207,7 @@ using System.IO;
 
     protected override async Task OnInitializedAsync()
     {
-        maintReqListViewModel.LoadRequests();
+        await maintReqListViewModel.LoadRequests();
 
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/broadcastHub"))

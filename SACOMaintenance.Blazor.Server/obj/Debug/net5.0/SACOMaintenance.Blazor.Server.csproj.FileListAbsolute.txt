@@ -644,7 +644,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Dashboard\DashboardGeneralUser.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\RequestsNeedingApproval.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\Dashboard\DashboardGeneralUser.razor.g.cs
-C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\SACOMaintenance.Blazor.Server.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Pages\OrderPages\AddOrder.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Pages\OrderPages\AddOrder.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Shared\CbDropDown.razor.g.cs
@@ -659,3 +658,6 @@ C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\De
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\scopedcss\Shared\CbRadioGroup.razor.rz.scp.css
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Shared\CbLabel.razor.g.cs
 C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Shared\CbLabel.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\RazorDeclaration\Components\AssignUserToRequestDialog.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\Razor\Components\AssignUserToRequestDialog.razor.g.cs
+C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\obj\Debug\net5.0\scopedcss\Components\AssignUserToRequestDialog.razor.rz.scp.css

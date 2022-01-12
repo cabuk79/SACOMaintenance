@@ -18,6 +18,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<Equipment> equipment { get; }
         public ObservableCollection<Status> statusList { get; set; }
         public int StatusId { get; set; }
+        public int MaintReqId { get; set; }
 
         //int RequestId { get; }
         //string RequestDetails { get; }
@@ -27,7 +28,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
 
         #region Methods
 
-        void LoadRequests();
+        Task LoadRequests();
         void LoadNewRequests();
         Task LoadReqsByStatusId(int statusId);
         void ExportList();

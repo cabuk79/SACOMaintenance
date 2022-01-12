@@ -28,7 +28,7 @@ namespace SACOMaintenance.Common.ModelDB
         public List<Isolation> Isolations { get; set; } = new List<Isolation>();
         public List<Risk> Risks { get; set; } = new List<Risk>();
         public List<PPE> PPEEquipment { get; set; } = new List<PPE>();
-        public List<User> Users { get; set; } = new List<User>(); //Is this needed?
+        public List<User> Users { get; set; } = new List<User>(); //For maintenance staff assigned to the request
         public List<MaintReqUptateNote> UpdateNotes { get; set; } = new();
         public int StatusId { get; set; }
         public virtual Status Status { get; set; }

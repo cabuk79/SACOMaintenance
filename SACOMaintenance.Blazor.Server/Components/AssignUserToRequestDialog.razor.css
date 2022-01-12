@@ -1,0 +1,11 @@
+﻿.flex-container {
+    display: grid;
+    align-content: center;
+    grid-template-columns: 200px 100px 200px;
+}
+
+.btn-col {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}

@@ -140,11 +140,12 @@ namespace SACOMaintenance.DataAccess
                 .Include(f => f.Factory)
                 .Include(p => p.PPEEquipment)
                 .Include(r => r.Risks)
+                .Include(u => u.Users)
                 .FirstOrDefault();
             return maintReqInitiation;
         }
 
-        
+         
         //public IEnumerable<MaintRequestInitiation> LoadAllRequestInitations()
         public async Task<IEnumerable<MaintRequestInitiation>> LoadAllRequestInitations()
         {
@@ -156,6 +157,7 @@ namespace SACOMaintenance.DataAccess
             return await _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
+                .Include(u => u.Users)
                 .ToListAsync();
         }
 
