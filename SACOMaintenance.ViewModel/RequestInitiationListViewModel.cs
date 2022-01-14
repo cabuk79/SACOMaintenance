@@ -56,8 +56,8 @@ namespace SACOMaintenance.ViewModel
             
             var items = new ObservableCollection<MaintRequestInitiation>
                 (await MaintReqDataProvider.LoadRequestInitiationWithEquipment());
+            
             requests.Clear();
-
 
             foreach (var item in items)
             {

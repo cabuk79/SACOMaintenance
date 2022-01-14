@@ -161,19 +161,29 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 121 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
+#line 129 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintRequestsListOverview.razor"
       
-
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
     private HubConnection hubConnection;
 
-    bool ShowPopup = false;
+    public bool ShowPopupModal { get; set;}
 
     void AssignStaff(int maintIdSelected)
     {
         maintReqListViewModel.MaintReqId = maintIdSelected;
-        ShowPopup = true;
+        ShowPopupModal = true;
+    }
+
+    private async Task OnCanceldialogClose(bool accepted)
+    {      
+        ShowPopupModal = false;      
+        await InvokeAsync(() => StateHasChanged());
+        
+        //TODO: for some reason on LoadRequests it still loads the old users
+        await maintReqListViewModel.LoadRequests();
+        await maintGrid.Reload();
+
     }
 
     void OnChange()

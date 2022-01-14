@@ -35,12 +35,12 @@
                         FilterMode="FilterMode.Advanced" AllowColumnResize="true"
                         AllowPaging="true">
                 <Columns>
-                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number" Width="100px">
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="Id" Title="Number" Width="50px">
                         <Template Context="data">
                             MAINT-@data.Id
                         </Template>
                     </RadzenGridColumn>
-                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details" Width="250px">
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="RequestDetails" Title="Details" Width="200px">
                         <Template Context="data">
                             <p style="white-space:pre-wrap">@((MarkupString)data.RequestDetails)</p>
                         </Template>
@@ -52,21 +52,26 @@
                            @*@if(data.Status.StatusName == "New") { <i class="fas fa-plus"></i>     @data.Status.StatusName } else { @data.Status.StatusName }*@
 
                            @switch (data.Status.StatusName)
-                           {
+                            {
                                 case "New":
-                                    <i class="fas fa-plus"></i> @data.Status.StatusName;
+                                    <i class="fas fa-plus"></i> @data.Status.StatusName
+                                    ;
                                     break;
                                 case "Closed":
-                                    <i class="fas fa-door-closed"></i> @data.Status.StatusName;
+                                    <i class="fas fa-door-closed"></i> @data.Status.StatusName
+                                    ;
                                     break;
                                 case "Open":
-                                    <i class="fas fa-door-open"></i> @data.Status.StatusName;
+                                    <i class="fas fa-door-open"></i> @data.Status.StatusName
+                                    ;
                                     break;
                                 case "Waiting Sign Off":
-                                    <i class="fas fa-file-signature"></i> @data.Status.StatusName;
+                                    <i class="fas fa-file-signature"></i> @data.Status.StatusName
+                                    ;
                                     break;
                                 default:
-                                    @data.Status.StatusName;
+                                    @data.Status.StatusName
+                                    ;
                                     break;
                             }
                         </Template>
@@ -79,9 +84,10 @@
                     </RadzenGridColumn>
                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="Users" Title="Users Assigned" Width="80px">
                         <Template Context="data">
-                            @foreach(var user in data.Users)
+                            @foreach (var user in data.Users)
                             {
-                                <img src="@user.AvatarLocation" width="30px" height="30px" /> @user.FullName;<br />
+                                <img src="@user.AvatarLocation" class="avatar-circle" width="30px" height="30px" /> @user.FullName                          
+                                <br />
                             }
                         </Template>
                     </RadzenGridColumn>
@@ -93,10 +99,10 @@
                             </a>
                         </Template>
                     </RadzenGridColumn>
-                     <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Add Staff" Width="30px"
+                    <RadzenGridColumn TItem="MaintRequestInitiation" Property="maintReqListViewModel.Id" Title="Staff" Width="30px"
                                       TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
                         <Template Context="data">
-                            <button class="btn btn-success" @onclick="() => AssignStaff(data.Id)">Add Staff</button>
+                            <button class="​btn btn-primary table-btn" @onclick="() => AssignStaff(data.Id)"><span class="fa fa-plus"></span> / <span class="fa fa-minus"></span></button>
                         </Template>
                     </RadzenGridColumn>
                 </Columns>
@@ -105,13 +111,15 @@
     </div>
 </div>
 
-@if(ShowPopup)
+@if (ShowPopupModal)
 {
     <div class="modal" tabindex="-1" style="display:block" role="dialog">
         <div class="modal-dialog" style="border-color: black">
             <div class="modal-content">
                 <div class="modal-body">
-                    <AssignUserToRequestDialog RequestId="maintReqListViewModel.MaintReqId"></AssignUserToRequestDialog>
+                    <AssignUserToRequestDialog RequestId="maintReqListViewModel.MaintReqId"
+                    OnClose="@OnCanceldialogClose">
+                    </AssignUserToRequestDialog>
                 </div>
             </div>
         </div>
@@ -119,17 +127,27 @@
 }
 
 @code{
-
     public RadzenGrid<MaintRequestInitiation> maintGrid { get; set; }
 
     private HubConnection hubConnection;
 
-    bool ShowPopup = false;
+    public bool ShowPopupModal { get; set;}
 
     void AssignStaff(int maintIdSelected)
     {
         maintReqListViewModel.MaintReqId = maintIdSelected;
-        ShowPopup = true;
+        ShowPopupModal = true;
+    }
+
+    private async Task OnCanceldialogClose(bool accepted)
+    {      
+        ShowPopupModal = false;      
+        await InvokeAsync(() => StateHasChanged());
+        
+        //TODO: for some reason on LoadRequests it still loads the old users
+        await maintReqListViewModel.LoadRequests();
+        await maintGrid.Reload();
+
     }
 
     void OnChange()

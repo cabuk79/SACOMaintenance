@@ -16,13 +16,15 @@ namespace SACOMaintenance.ViewModel
         public IUsers UserDataProvider { get; }
 
         public IMaintRequestInitiation ReqDataPropvider { get; }
+        public IMaintReqUsersAssigned MaintUserAssignedProvider { get; }
 
      
         public AssignMaintStaffToRequestViewModel(IUsers userDataProvider,
-            IMaintRequestInitiation reqdataProvider)
+            IMaintRequestInitiation reqdataProvider, IMaintReqUsersAssigned maintUserAssignedProvider)
         {
             UserDataProvider = userDataProvider;
             ReqDataPropvider = reqdataProvider;
+            MaintUserAssignedProvider = maintUserAssignedProvider;
         }
 
         public void LoadSingleRequest(int MaintId)
@@ -35,18 +37,17 @@ namespace SACOMaintenance.ViewModel
                 {
                     MaintUsersAssigned.Add
                         (
-                        new User { FirstName = item.FirstName, LastName = item.LastName }
+                        new User { Id = item.Id, FirstName = item.FirstName, LastName = item.LastName }
                         );
                 }
-            }
-            
+            }        
         }
 
-        public async Task LoadUsersAssigned(int maintId)
-        {
-            var maint = new ObservableCollection<MaintRequestInitiation>
-                (await UserDataProvider.GetUsersForMaintReq(maintId));
-        }
+        //public async Task LoadUsersAssigned(int maintId)
+        //{
+        //    var maint = new ObservableCollection<MaintRequestInitiation>
+        //        (await UserDataProvider.GetUsersForMaintReq(maintId));
+        //}
 
         public async Task LoadAllUsers(int departmentId)
         {
@@ -57,6 +58,15 @@ namespace SACOMaintenance.ViewModel
                 MaintUsers.Add(item);
             }
         
+        }
+
+        /// <summary>
+        /// this method saves the assigned users to the MaintReqUsersAssigned table
+        /// </summary>
+        /// <param name="requestId">The selected maintenance request</param>
+        public void SaveAssignedUsers(int requestId)
+        {
+            MaintUserAssignedProvider.Save(requestId, MaintUsersAssigned);
         }
     }
 }

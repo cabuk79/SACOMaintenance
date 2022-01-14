@@ -15,8 +15,10 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public ObservableCollection<User> MaintUsersAssigned { get; set; }
         public MaintRequestInitiation req { get; set; }
         IUsers UserDataProvider { get; }
-        Task LoadUsersAssigned(int maintId);
+        IMaintReqUsersAssigned MaintUserAssignedProvider { get; }
+        //Task LoadUsersAssigned(int maintId);
         void LoadSingleRequest(int MaintId);
         Task LoadAllUsers(int departmentId);
+        void SaveAssignedUsers(int requestId);
     }
 }

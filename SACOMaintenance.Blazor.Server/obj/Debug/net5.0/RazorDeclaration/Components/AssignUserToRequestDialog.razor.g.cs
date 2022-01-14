@@ -119,14 +119,20 @@ using SACOMaintenance.Common.ModelDB;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\AssignUserToRequestDialog.razor"
+#line 37 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Components\AssignUserToRequestDialog.razor"
        
 
     [Parameter]
     public int RequestId { get; set; }
 
+    [Parameter]
+    public EventCallback<bool> OnClose { get; set; }
+
     public bool AddBtnEnabled = true;
     public bool RemoveBtnEnabled = true;
+    public bool SaveBtndisabled;
+
+    public bool AssignedHadStaff;
 
     public User NameSelectedAdd = null;
     public User NameSelectedRemove = null;
@@ -134,28 +140,76 @@ using SACOMaintenance.Common.ModelDB;
     public List<string> NameMaint = new();
     public List<string> Assigned = new();
 
+    private Task ModalCancel()
+    {
+        userRequestViewModel.MaintUsersAssigned.Clear();
+        userRequestViewModel.MaintUsers.Clear();
+        return OnClose.InvokeAsync(false);
+    }
+
     protected async override Task OnInitializedAsync()
     {
         userRequestViewModel.LoadSingleRequest(RequestId);
         await userRequestViewModel.LoadAllUsers(1);
 
-        NameMaint.Add("Craig");
-        NameMaint.Add("Bob");
-        NameMaint.Add("John");
-        NameMaint.Add("Steve");
+        if(userRequestViewModel.MaintUsersAssigned.Count > 0)
+        {
+            AssignedHadStaff = true;
+        }
+        else
+        {
+            AssignedHadStaff = false;
+        }
 
-        Assigned.Add("Steve");
+        SetSavebutton();
 
         //check if users have already been assigned and if so remove from the avaiable list
-        for(int i = 0; i < NameMaint.Count; i++)
+        for(int i = 0; i < userRequestViewModel.MaintUsers.Count; i++)
         {
-            for (int ii = 0; ii < Assigned.Count; ii++)
-            {            
-                if (NameMaint[i] == Assigned[ii])
+            for (int ii = 0; ii < userRequestViewModel.MaintUsersAssigned.Count; ii++)
+            {
+                if (userRequestViewModel.MaintUsers[i].Id == userRequestViewModel.MaintUsersAssigned[ii].Id)
                 {
-                    NameMaint.Remove(NameMaint[i]);
+                    userRequestViewModel.MaintUsers.Remove(userRequestViewModel.MaintUsers[i]);
                 }
             }  
+        }
+    }
+
+    void Save()
+    {
+        userRequestViewModel.SaveAssignedUsers(RequestId);
+
+        ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Success,
+            Summary = "Saved",
+            Detail = "Staff assigned altered.",
+            Duration = 4000
+        });
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+    }
+
+    void SetSavebutton()
+    {     
+        if(userRequestViewModel.MaintUsersAssigned.Count == 0)
+        {
+            if(AssignedHadStaff == true)
+            {
+                SaveBtndisabled = false;
+            }
+            else
+            {
+                SaveBtndisabled = true;
+            }   
+        }
+        else
+        {
+            SaveBtndisabled = false;
         }
     }
 
@@ -175,6 +229,7 @@ using SACOMaintenance.Common.ModelDB;
         NameSelectedRemove = (User)str;
 
         RemoveBtnEnabled = false;
+     
     }
 
     void AddNameToList()
@@ -183,6 +238,8 @@ using SACOMaintenance.Common.ModelDB;
         userRequestViewModel.MaintUsers.Remove(NameSelectedAdd);
         NameSelectedAdd = null;
         AddBtnEnabled = true;
+
+        SetSavebutton();
     }
 
     void RemoveNameFromAssigned()
@@ -191,12 +248,15 @@ using SACOMaintenance.Common.ModelDB;
         userRequestViewModel.MaintUsersAssigned.Remove(NameSelectedRemove);
         NameSelectedRemove = null;
         RemoveBtnEnabled = true;
+
+        SetSavebutton();
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NotificationService NotificationService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SACOMaintenance.ViewModel.Interfaces.IAssignMaintStaffToRequestViewModel userRequestViewModel { get; set; }
     }
 }

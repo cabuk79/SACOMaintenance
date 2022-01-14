@@ -198,6 +198,7 @@ namespace SACOMaintenance.DataAccess
             return await _requestInitationDBContext.MaintRequestInitiations
                 .Include(e => e.Equipment)
                 .Include(s => s.Status)
+                .Include(u => u.Users)
                 .ToListAsync();
         }
 

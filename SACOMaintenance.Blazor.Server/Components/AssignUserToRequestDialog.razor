@@ -1,8 +1,9 @@
 ﻿@page "/adduserdialog"
 @inject SACOMaintenance.ViewModel.Interfaces.IAssignMaintStaffToRequestViewModel userRequestViewModel
 @using SACOMaintenance.Common.ModelDB;
+@inject NotificationService NotificationService
 
-
+<RadzenNotification></RadzenNotification>
 
 <h3>Assign User(s) To Request MAINT-@RequestId</h3>
 
@@ -22,11 +23,15 @@
         </RadzenListBox>
     </div>
 </div>
+<div class="row">
+    <div class="col-lg-3">
+        <RadzenButton Text="Save" Click=@(args => Save()) Disabled=@SaveBtndisabled></RadzenButton>
+    </div>
+    <div class="col-lg-3">
+        <RadzenButton Text="Close" Click=@(args => ModalCancel())></RadzenButton>
+    </div>
+</div>
 
-@*@foreach(var item in userRequestViewModel.MaintUsersAssigned )
-{
-    @item.FullName
-}*@
 
 
 @code {
@@ -34,8 +39,14 @@
     [Parameter]
     public int RequestId { get; set; }
 
+    [Parameter]
+    public EventCallback<bool> OnClose { get; set; }
+
     public bool AddBtnEnabled = true;
     public bool RemoveBtnEnabled = true;
+    public bool SaveBtndisabled;
+
+    public bool AssignedHadStaff;
 
     public User NameSelectedAdd = null;
     public User NameSelectedRemove = null;
@@ -43,28 +54,76 @@
     public List<string> NameMaint = new();
     public List<string> Assigned = new();
 
+    private Task ModalCancel()
+    {
+        userRequestViewModel.MaintUsersAssigned.Clear();
+        userRequestViewModel.MaintUsers.Clear();
+        return OnClose.InvokeAsync(false);
+    }
+
     protected async override Task OnInitializedAsync()
     {
         userRequestViewModel.LoadSingleRequest(RequestId);
         await userRequestViewModel.LoadAllUsers(1);
 
-        NameMaint.Add("Craig");
-        NameMaint.Add("Bob");
-        NameMaint.Add("John");
-        NameMaint.Add("Steve");
+        if(userRequestViewModel.MaintUsersAssigned.Count > 0)
+        {
+            AssignedHadStaff = true;
+        }
+        else
+        {
+            AssignedHadStaff = false;
+        }
 
-        Assigned.Add("Steve");
+        SetSavebutton();
 
         //check if users have already been assigned and if so remove from the avaiable list
-        for(int i = 0; i < NameMaint.Count; i++)
+        for(int i = 0; i < userRequestViewModel.MaintUsers.Count; i++)
         {
-            for (int ii = 0; ii < Assigned.Count; ii++)
-            {            
-                if (NameMaint[i] == Assigned[ii])
+            for (int ii = 0; ii < userRequestViewModel.MaintUsersAssigned.Count; ii++)
+            {
+                if (userRequestViewModel.MaintUsers[i].Id == userRequestViewModel.MaintUsersAssigned[ii].Id)
                 {
-                    NameMaint.Remove(NameMaint[i]);
+                    userRequestViewModel.MaintUsers.Remove(userRequestViewModel.MaintUsers[i]);
                 }
             }  
+        }
+    }
+
+    void Save()
+    {
+        userRequestViewModel.SaveAssignedUsers(RequestId);
+
+        ShowNotification(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Success,
+            Summary = "Saved",
+            Detail = "Staff assigned altered.",
+            Duration = 4000
+        });
+    }
+
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+    }
+
+    void SetSavebutton()
+    {     
+        if(userRequestViewModel.MaintUsersAssigned.Count == 0)
+        {
+            if(AssignedHadStaff == true)
+            {
+                SaveBtndisabled = false;
+            }
+            else
+            {
+                SaveBtndisabled = true;
+            }   
+        }
+        else
+        {
+            SaveBtndisabled = false;
         }
     }
 
@@ -84,6 +143,7 @@
         NameSelectedRemove = (User)str;
 
         RemoveBtnEnabled = false;
+     
     }
 
     void AddNameToList()
@@ -92,6 +152,8 @@
         userRequestViewModel.MaintUsers.Remove(NameSelectedAdd);
         NameSelectedAdd = null;
         AddBtnEnabled = true;
+
+        SetSavebutton();
     }
 
     void RemoveNameFromAssigned()
@@ -100,6 +162,8 @@
         userRequestViewModel.MaintUsersAssigned.Remove(NameSelectedRemove);
         NameSelectedRemove = null;
         RemoveBtnEnabled = true;
+
+        SetSavebutton();
     }
 
 }

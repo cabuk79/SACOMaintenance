@@ -67,6 +67,7 @@ namespace SACOMaintenance.Blazor.Server
             services.AddScoped<IUsers, UsersDataProvider>();
             services.AddScoped<IDepartment, DepartmentDataProvider>();
             services.AddScoped<IAuthorization, AuthorizationDataProvider>();
+            services.AddScoped<IMaintReqUsersAssigned, MaintReqUsersAssigneddataProvider>();
 
             services.AddScoped<IMachineTypeViewModel, MachineTypeViewModel>();
             services.AddScoped<IAreaViewModel, AreaViewModel>();
