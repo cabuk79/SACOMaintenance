@@ -95,6 +95,12 @@ namespace SACOMaintenance.ViewModel
             _generalREquestDataProvider.AddEditGeneralRequestInfo(maintId, genralRequestInfo, newEdit);
         }
 
+        public void SaveRequestSelectedPPE()
+        {
+            PpeDataProvider.UpdatePPE(PPEItemsSelected, maintId);
+        }
+
+
         public void LoadPPEItemsSelected()
         {
             var id = genralRequestInfo.MaintRequestInitiation.Id;

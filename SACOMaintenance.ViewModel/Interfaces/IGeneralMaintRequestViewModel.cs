@@ -30,6 +30,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         Task<AuthorizationRequest> LoadCompletedUser();
         public Task<bool> LoadAllPPE();
         public bool UserCompletedRequest { get; set; }
+        void SaveRequestSelectedPPE();
 
 
         public string UserAuthIdStartWork { get; set; }

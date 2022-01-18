@@ -146,7 +146,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 282 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
+#line 283 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\GeneralMaintReqComponent.razor"
        
 
     public bool ppeIsChecked;
@@ -167,10 +167,11 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     public void seeppe()
     {
-        foreach (var item in maintReq.PPEEquipment)
-        {
-            Console.WriteLine(item.Id + "       " + item.PPEName);
-        }
+        GeneralViewModel.SaveRequestSelectedPPE();
+        //foreach (var item in maintReq.PPEEquipment)
+        //{
+        //    Console.WriteLine(item.Id + "       " + item.PPEName);
+        //}
     }
 
     public void DeleteAuthroization()
@@ -253,6 +254,9 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     private void StartWorkRequest(MouseEventArgs e)
     {
+        //Save the details of the Request updated by the maint user
+
+
         GeneralViewModel.AddNewAuthrization("Requested", "AuthorityToWork");
         GeneralViewModel.LoadStartToworkAuth();
 

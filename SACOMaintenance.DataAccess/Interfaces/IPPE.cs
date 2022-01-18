@@ -1,6 +1,7 @@
 ﻿using SACOMaintenance.Common.ModelDB;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,5 +14,6 @@ namespace SACOMaintenance.DataAccess.Interfaces
         Task<IEnumerable<PPE>> LoadAllPlantPPE(string ppeTypeName);
         void SaveAddPPE(PPE ppe);
         Task<PPE> ViewSinglePPEI(int Id);
+        void UpdatePPE(List<PPE> PPEItems, int MaintId);
     }
 }

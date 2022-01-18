@@ -29,6 +29,7 @@ namespace SACOMaintenance.ViewModel
         public IUsers UsersDataProvider { get; set; }
         public List<Isolation> IsolationsSelected { get; set; } = new();
         public List<MaintRequestInitiationRisk> RiskListsChosen { get; set; } = new();
+        public List<PPE> PPEItemsSelected { get; set; } = new();//From child component
 
 
 

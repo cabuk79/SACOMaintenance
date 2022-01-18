@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <RadzenButton Click="seeppe"></RadzenButton>
+    <RadzenButton Click="seeppe" Text="seepee Button"></RadzenButton>
 
     @foreach (var item in maintReq.PPEEquipment)
     {
@@ -99,8 +99,9 @@
                         </Template>
                     </RadzenDropDown>
                     <RadzenLabel Text="Choose Person to Authorise"></RadzenLabel>
+                    <!-- Saving the General Request -->
                     <RadzenButton Text="Request and Save Request Data" Click="@StartWorkRequest" Icon="Save" @oninput="IsReadOnlyChanged"
-                                  Style="margin-bottom: 20px; width: 200px"></RadzenButton>
+                                  Style="margin-bottom: 20px; width: auto"></RadzenButton>
                 </RadzenFieldset>
             }
             else
@@ -299,10 +300,11 @@ else
 
     public void seeppe()
     {
-        foreach (var item in maintReq.PPEEquipment)
-        {
-            Console.WriteLine(item.Id + "       " + item.PPEName);
-        }
+        GeneralViewModel.SaveRequestSelectedPPE();
+        //foreach (var item in maintReq.PPEEquipment)
+        //{
+        //    Console.WriteLine(item.Id + "       " + item.PPEName);
+        //}
     }
 
     public void DeleteAuthroization()
@@ -385,6 +387,9 @@ else
 
     private void StartWorkRequest(MouseEventArgs e)
     {
+        //Save the details of the Request updated by the maint user
+
+
         GeneralViewModel.AddNewAuthrization("Requested", "AuthorityToWork");
         GeneralViewModel.LoadStartToworkAuth();
 

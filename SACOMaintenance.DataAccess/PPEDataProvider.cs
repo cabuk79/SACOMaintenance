@@ -58,7 +58,30 @@ namespace SACOMaintenance.DataAccess
             _ppeDBContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Updates the PPE list for the chosen maintenance request
+        /// </summary>
+        /// <param name="PPEItems">The list of selected PPE</param>
+        /// <param name="MaintId">the request Id</param>
+        public void UpdatePPE(List<PPE> PPEItems, int MaintId)
+        {
+            //Get the maintenance request
+            var Request = _ppeDBContext.MaintRequestInitiations.Where(id => id.Id == MaintId).FirstOrDefault();
 
+            //Remove the PPE equipment if any
+            Request.PPEEquipment.Clear();
+
+            //Loop through the PPEITems and add to the Request
+            foreach(var item in PPEItems)
+            {
+                Request.PPEEquipment.Add(item);
+            }
+
+            //update and save
+            _ppeDBContext.Update(Request);
+            _ppeDBContext.SaveChanges();
+            
+        }
 
         public async Task<PPE> ViewSinglePPEI(int ppeId)
         {

@@ -16,7 +16,8 @@ namespace SACOMaintenance.ViewModel.Interfaces
         ObservableCollection<Risk> Risks { get; set; }
         ObservableCollection<PPE> Ppe { get; set; }
         ObservableCollection<Isolation> Isolations { get; set; }
-        ObservableCollection<Isolation> IsolationByRequest { get; set; }        
+        ObservableCollection<Isolation> IsolationByRequest { get; set; }
+        List<PPE> PPEItemsSelected { get; set; }
         List<string> SelectedIsolationIds { get; set; }
         public List<Isolation> IsolationsSelected { get; set; }
         public List<MaintRequestInitiationRisk> RiskListsChosen { get; set; }
