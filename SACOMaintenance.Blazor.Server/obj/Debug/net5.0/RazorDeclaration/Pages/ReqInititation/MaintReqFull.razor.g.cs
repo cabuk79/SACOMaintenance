@@ -133,10 +133,12 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 116 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
+#line 133 "C:\Users\cabuk\source\repos\SACOMaintenance\SACOMaintenance.Blazor.Server\Pages\ReqInititation\MaintReqFull.razor"
        
-        [Parameter]
-        public string maintReqID { get; set; }
+    [Parameter]
+    public string maintReqID { get; set; }
+
+    public bool ShowPopupModal { get; set;}
 
     public RadzenGrid<MaintRequestInitiationRisk> risksGrid { get; set; }
 
@@ -148,6 +150,16 @@ using Microsoft.AspNetCore.SignalR.Client;
     private void ReqChangeBool(bool isReadOnlyPage)
     {
         isReadOnly = isReadOnlyPage;
+    }
+
+    private async Task OnCanceldialogClose(bool accepted)
+    {      
+        ShowPopupModal = false;      
+    }
+
+    void AssignStaff(int maintIdSelected)
+    {
+        ShowPopupModal = true;
     }
 
 

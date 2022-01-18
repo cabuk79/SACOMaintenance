@@ -33,6 +33,7 @@ namespace SACOMaintenance.DataAccess.Interfaces
         public void UpdateMaintReq(MaintRequestInitiation maintReqToUpdate);
         public void UpdateRiskRecords(ObservableCollection<MaintRequestInitiationRisk> risksUpdate);
         public void UpdateIsolationsRecords(List<string> isolationsChosen, int maintId, List<int> allIsolationId);
+        public void UpdateRequestStatus(int statusId, int requestId);
         //public void UpdateRecords(ObservableCollection<MaintRequestInitiationRisk> risksUpdate);
     }
 }

@@ -109,6 +109,21 @@ namespace SACOMaintenance.DataAccess
             }
         }
 
+        /// <summary>
+        /// Updates the status of the maintenance request
+        /// </summary>
+        /// <param name="statusId">The ID of the staus to update the request to</param>
+        /// <param name="requestId">The ID of the maintenance request to Update</param>
+        public void UpdateRequestStatus(int statusId, int requestId)
+        {
+            var foundRequest = _requestInitationDBContext.MaintRequestInitiations
+                .Where(id => id.Id == requestId).FirstOrDefault();
+
+            foundRequest.StatusId = statusId;
+            _requestInitationDBContext.Update(foundRequest);
+            _requestInitationDBContext.SaveChanges();
+        }
+
         public void UpdateIsolationsRecords(List<string> isolationsChosen, int maintId, List<int> allIsolationId)  //add the isolations full list to remove them all then use IsolationsChosen to add them
         {
             foreach(var item in allIsolationId)

@@ -117,6 +117,7 @@ namespace SACOMaintenance.ViewModel
                 //Update the General ViewModel and table
                 genralRequestInfo.AuthorityToWorkUserId = UserAuthIdStartWork;
                 _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
+                MaintReqInitation.UpdateRequestStatus(5, maintId);
             }
             else if(type == "Completed")
             {
@@ -131,6 +132,7 @@ namespace SACOMaintenance.ViewModel
                 //Update the General ViewModel and table
                 genralRequestInfo.WorkCompletedSignOffUserId = genralRequestInfo.WorkCompletedSignOffUserId;             
                 _generalREquestDataProvider.AddEditGeneralRequestInfo(genralRequestInfo.Id, genralRequestInfo, "Edit");
+                MaintReqInitation.UpdateRequestStatus(4, maintId);
             }
 
             AuthrizationDataProvider.AddNewAuthorization(completedAuth);            

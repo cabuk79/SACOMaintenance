@@ -80,6 +80,12 @@ namespace SACOMaintenance.DataAccess
 
             _sacoContext.Update<AuthorizationRequest>(getAuth);
             _sacoContext.SaveChanges();
+
+            //Set the status to be 2 == Open
+            var foundRequest = _sacoContext.MaintRequestInitiations.Where(id => id.Id == getAuth.MaintRequestInitiationId).FirstOrDefault();
+            foundRequest.StatusId = 2;
+            _sacoContext.Update(foundRequest);
+            _sacoContext.SaveChanges();
         }
     }
 }

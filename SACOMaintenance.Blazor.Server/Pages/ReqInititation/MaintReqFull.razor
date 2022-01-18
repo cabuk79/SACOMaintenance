@@ -11,6 +11,7 @@
 <RadzenButton Click=@(args => maintReqInitation.ExportRequest()) Text="Create Request Form Word"
               Icon="import_export" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
 
+<button class="​btn btn-primary table-btn" @onclick="() => AssignStaff(maintReqInitation.maintReqId)"><span class="fa fa-plus"></span> / <span class="fa fa-minus"></span></button>
 
 <div class="container-fluid">
     <div class="row">
@@ -51,7 +52,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>                               
                             </RadzenFieldset>
                         </div>
                     </div>
@@ -113,9 +114,27 @@
     </div>
 </div>
 
+
+@if (ShowPopupModal)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog" style="border-color: black">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <AssignUserToRequestDialog RequestId="maintReqInitation.maintReqId"
+                    OnClose="@OnCanceldialogClose">
+                    </AssignUserToRequestDialog>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
 @code {
-        [Parameter]
-        public string maintReqID { get; set; }
+    [Parameter]
+    public string maintReqID { get; set; }
+
+    public bool ShowPopupModal { get; set;}
 
     public RadzenGrid<MaintRequestInitiationRisk> risksGrid { get; set; }
 
@@ -127,6 +146,16 @@
     private void ReqChangeBool(bool isReadOnlyPage)
     {
         isReadOnly = isReadOnlyPage;
+    }
+
+    private async Task OnCanceldialogClose(bool accepted)
+    {      
+        ShowPopupModal = false;      
+    }
+
+    void AssignStaff(int maintIdSelected)
+    {
+        ShowPopupModal = true;
     }
 
 

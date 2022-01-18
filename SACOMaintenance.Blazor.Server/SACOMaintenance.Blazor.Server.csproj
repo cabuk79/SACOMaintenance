@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Controllers\" />
+    <Folder Include="Components\Dashboard\" />
     <Folder Include="wwwroot\css\Images\" />
   </ItemGroup>
 
