@@ -2,6 +2,7 @@ C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\net5.0\Models.D
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\net5.0\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\net5.0\ref\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\bin\Debug\net5.0\Models.DTO.pdb
+C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.csproj.AssemblyReference.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.AssemblyInfoInputs.cache
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.AssemblyInfo.cs
@@ -9,4 +10,3 @@ C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.D
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\ref\Models.DTO.dll
 C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.pdb
-C:\Users\cabuk\source\repos\SACOMaintenance\Models.DTO\obj\Debug\net5.0\Models.DTO.csproj.AssemblyReference.cache

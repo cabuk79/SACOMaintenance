@@ -47,7 +47,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         public Task LoadPPE();
         Task<ObservableCollection<Isolation>> LoadIsolations();
         Task<ObservableCollection<Isolation>> LoadIsoaltionsByMaint();
-        public void UpdateRequest();
+        public void UpdateRequest(int id);
         public void UpdateMaintReqRisks();
         
 

@@ -164,8 +164,13 @@ using Microsoft.AspNetCore.SignalR.Client;
         ShowPopupModal = true;
     }
 
+    /// <summary>
+    /// Saves the details of the request and the child component data as well
+    /// </summary>
     private void SaveRequestDetails()
     {
+        //maintReqInitation.UpdateRequest(7);
+        maintReqInitation.UpdateMaintReqRisks(); //save the request risks and isolations
         GeneralChild.seeppe(); //save PPE method from child
     }
 

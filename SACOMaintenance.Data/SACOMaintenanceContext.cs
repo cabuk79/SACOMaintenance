@@ -43,12 +43,16 @@ namespace SACOMaintenance.Data
         //TODO: remove this and inject at runtime
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging();
+           // DbContextOptionsBuilder.EnableSensitiveDataLogging;
             //optionsBuilder.UseSqlServer(
             //    "Data Source=LAPTOP-GMOCCUAU\\SQLEXPRESSLOCADB; Initial Catalog=SACOMaintenanceApp; Trusted_Connection=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //DbContextOptionsBuilder.EnableSensitiveDataLogging;
+
             base.OnModelCreating(modelBuilder);
 
             
