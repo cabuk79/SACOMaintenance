@@ -127,42 +127,52 @@ namespace SACOMaintenance.DataAccess
             }
         }
 
-        public void UpdateIsolationsRecords(List<Isolation> IsolationsSelected)//, MaintRequestInitiation maintReqId)
+        /// <summary>
+        /// Updates the requets isolatiosn chosen
+        /// </summary>
+        /// <param name="IsolationsSelected">List of isolations the user has chosen</param>
+        /// <param name="MaintReqId">The maitnenance ID of the isolations</param>
+        public void UpdateIsolationsRecords(List<Isolation> IsolationsSelected, int MaintReqId)
         {
-            foreach(var isolationItem in IsolationsSelected)
+            //Remove the maintenance requests for each isolation
+            foreach (var isolationItem in IsolationsSelected)
             {
                 isolationItem.MaintRequestInitiations.Clear();
             }
-            //delete all isolations for the maintenance request
-            //get the maint request
+
+            //Get the required maintenance request
             var req = _requestInitationDBContext.MaintRequestInitiations
-                .Where(i => i.Id == 133)
+                .Where(i => i.Id == MaintReqId)
                 .Include(iso => iso.Isolations)
                 .Single();
 
-            //req.Isolations.Clear();
-            //maintReqId.Isolations.Clear();
-            //maintReqId.Isolations.Clear();
-            //loop through the isolations selected and add to the maintenance request
-            //foreach (var item in req.Isolations)
-            //{
             req.Isolations.Clear();
             _requestInitationDBContext.SaveChanges();
-            //}
 
             var req2 = _requestInitationDBContext.MaintRequestInitiations
-                .Where(i => i.Id == 133)
+                .Where(i => i.Id == MaintReqId)
                 .Include(iso => iso.Isolations)
                 .Single();
 
             req2.Isolations.AddRange(IsolationsSelected);
 
             _requestInitationDBContext.SaveChanges();
-            //_requestInitationDBContext.Update(req);
-            //_requestInitationDBContext.Update(req);
-            //_requestInitationDBContext.SaveChanges();
-            //_requestInitationDBContext.SaveChanges();
-            //_requestInitationDBContext.Entry(req).State = EntityState.Detached;
+        }
+
+        /// <summary>
+        /// Updates the control measures note of the General Request details
+        /// </summary>
+        /// <param name="NotesDetails">The details of the notes</param>
+        /// <param name="MaintReqId"></param>
+        public void UpdateControlMeasuresNote(string NotesDetails, int MaintReqId)
+        {
+            var genReq = _requestInitationDBContext.GeneralRequests
+                .Where(i => i.MaintRequestId == MaintReqId)
+                .FirstOrDefault();
+
+            genReq.ControlMeasuresTaken = NotesDetails;
+
+            _requestInitationDBContext.SaveChanges();
         }
 
         //public void UpdateIsolationsRecords(MaintRequestInitiation reqinit,

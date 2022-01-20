@@ -309,5 +309,15 @@ app {
     }
 
     /* --- Hover tool tip ---- */
+
+    .bottom-save-btn {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        z-index: 100;
+        width: 200px;
+        height: 150px;
+        background-color: #1b6ec2 !important;
+    }
     
 }

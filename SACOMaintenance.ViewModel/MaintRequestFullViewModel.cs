@@ -243,13 +243,9 @@ namespace SACOMaintenance.ViewModel
 
         public void UpdateMaintReqRisks()
         {
-            var testing = maintReqInitation;
-            // RiskInfoList
             MaintReqDataProvider.UpdateRiskRecords(RiskInfoList);
 
-            MaintReqDataProvider.UpdateIsolationsRecords(IsolationsSelected); //, testing);
-                //maintReqInitation);
-            //MaintReqDataProvider.UpdateIsolationsRecords(IsolationsSelected, maintReqId);
+            MaintReqDataProvider.UpdateIsolationsRecords(IsolationsSelected, maintReqId);
         }
 
 

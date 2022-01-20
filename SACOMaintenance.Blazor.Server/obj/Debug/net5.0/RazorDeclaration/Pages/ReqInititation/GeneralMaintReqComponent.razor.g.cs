@@ -168,6 +168,7 @@ using Microsoft.AspNetCore.SignalR.Client;
     public void seeppe()
     {
         GeneralViewModel.SaveRequestSelectedPPE();
+        GeneralViewModel.SaveControlMeasuresTaken();
         //foreach (var item in maintReq.PPEEquipment)
         //{
         //    Console.WriteLine(item.Id + "       " + item.PPEName);

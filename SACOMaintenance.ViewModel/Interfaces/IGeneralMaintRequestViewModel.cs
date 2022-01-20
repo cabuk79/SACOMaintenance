@@ -27,6 +27,7 @@ namespace SACOMaintenance.ViewModel.Interfaces
         Task<AuthorizationRequest> LoadStartToworkAuth();
         public void RemoveAuthStartToWorkUser();
         public void SaveGeneralRequest(GeneralRequest request, string newEdit);
+        public void SaveControlMeasuresTaken();
         Task<AuthorizationRequest> LoadCompletedUser();
         public Task<bool> LoadAllPPE();
         public bool UserCompletedRequest { get; set; }

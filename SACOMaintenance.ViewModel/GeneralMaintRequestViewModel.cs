@@ -100,6 +100,11 @@ namespace SACOMaintenance.ViewModel
             PpeDataProvider.UpdatePPE(PPEItemsSelected, maintId);
         }
 
+        public void SaveControlMeasuresTaken()
+        {
+            MaintReqInitation.UpdateControlMeasuresNote(genralRequestInfo.ControlMeasuresTaken,
+                genralRequestInfo.MaintRequestId);
+        }
 
         public void LoadPPEItemsSelected()
         {

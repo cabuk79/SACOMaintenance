@@ -169,9 +169,9 @@ using Microsoft.AspNetCore.SignalR.Client;
     /// </summary>
     private void SaveRequestDetails()
     {
-        //maintReqInitation.UpdateRequest(7);
         maintReqInitation.UpdateMaintReqRisks(); //save the request risks and isolations
         GeneralChild.seeppe(); //save PPE method from child
+
     }
 
 
